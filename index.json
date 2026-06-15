@@ -538,7 +538,7 @@
     "root_pack_source": "raw/llms.txt"
   },
   "generated_by": "Projects/Hermes Mission Control/kpr-render-static-html.py",
-  "html_base": "/pixi-wiki/wiki/",
+  "html_base": "/pixi-wiki/",
   "lastUpdated": "2026-06-15",
   "pack_count": 7,
   "packs": [
@@ -1110,7 +1110,7 @@
       "title": "ObsidianVault Root Pack"
     }
   ],
-  "raw_base": "/pixi-wiki/pixi-wiki/wiki/raw/",
+  "raw_base": "/pixi-wiki/pixi-wiki/raw/",
   "schema_version": "kpr-index-manifest-v1",
   "scope": {
     "covers": "Pixiedust agent knowledge routing, Knowledge concepts, project entrypoints, MOCs, and KPR operating boundaries.",

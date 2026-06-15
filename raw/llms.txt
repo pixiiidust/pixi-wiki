@@ -113,7 +113,7 @@ Knowledge Pack Routing V1, stack-level integration, and integration QA are compl
 
 | Project | Status | Next gate | Pack |
 |---|---|---|---|
-| KPR V2 Planning | #74/#75/#76 closed; public derived wiki deployed at https://pixiiidust.github.io/pixi-wiki/pixi-wiki/wiki/ | Maintain only on source-boundary changes; deferred gaps #88–#91 stay parked | `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md` |
+| KPR V2 Planning | #74/#75/#76 closed; public derived wiki deployed at https://pixiiidust.github.io/pixi-wiki/pixi-wiki/ | Maintain only on source-boundary changes; deferred gaps #88–#91 stay parked | `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md` |
 | Vault-wide Entry Mesh | #77 closed; #79–#83 complete | Maintain mesh only on source-boundary changes | `https://github.com/pixiiidust/ObsidianVault/issues/77` |
 | Planned Program Intel | Active; build queue complete; first KPR proof | Optional deck/Loom packaging only if re-prioritized | `Projects/Planned Program Intel/llms.txt` |
 | Hermes Mission Control | Active agent-ops hub | Maintain current KPR surfaces only when source boundaries change | `Projects/Hermes Mission Control/llms.txt` |
