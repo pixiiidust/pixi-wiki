@@ -3,31 +3,28 @@
 > Agent-readable public index for Pixiedust knowledge packs and concepts.
 > Raw Markdown for any page: /wiki/raw/<path>.
 
-## Entrypoints
+## Start here
 
-- /wiki/index.json — JSON document registry
-- /wiki/llms-full.txt — entire public corpus in one fetch
-- /wiki/raw/<path> — raw Markdown with frontmatter where present
-- /wiki/ — human HTML surface
+- Root pack HTML: /wiki/root.html
+- Root pack raw Markdown: /wiki/raw/llms.txt
+- JSON document registry: /wiki/index.json
+- Full public corpus: /wiki/llms-full.txt
+- Human HTML surface: /wiki/
 
 ## Scope
 
 Covers: Pixiedust agent knowledge routing, Knowledge concepts, project entrypoints, MOCs, and KPR operating boundaries.
 
-Not covered: private vault content outside the generated public surface, secrets, raw memory/Honcho data, runtime automation internals, or facts newer than source dates.
+Not covered: private vault content outside the generated public surface, secrets, raw memory/Honcho data, runtime automation internals, MCP/search/RAG/confidence calibration, or facts newer than source dates.
 
-## Knowledge packs
+## Domains
 
-- [Knowledge Domain Pack](/wiki/knowledge.html) — raw: `/wiki/raw/Knowledge/llms.txt` — current: 2026-06-15
-- [Maps of Content Domain Pack](/wiki/maps-of-content.html) — raw: `/wiki/raw/Maps of Content/llms.txt` — current: 2026-06-15
-- [Critical Ranger FFM Pack](/wiki/projects-critical-ranger-ffm.html) — raw: `/wiki/raw/Projects/Critical Ranger FFM/llms.txt` — current: 2026-06-15
-- [Hermes Mission Control Pack](/wiki/projects-hermes-mission-control.html) — raw: `/wiki/raw/Projects/Hermes Mission Control/llms.txt` — current: 2026-06-15
-- [Planned Program Intel Pack](/wiki/projects-planned-program-intel.html) — raw: `/wiki/raw/Projects/Planned Program Intel/llms.txt` — current: 2026-06-15
-- [Projects Domain Pack](/wiki/projects.html) — raw: `/wiki/raw/Projects/llms.txt` — current: 2026-06-15
-- [ObsidianVault Root Pack](/wiki/root.html) — raw: `/wiki/raw/llms.txt` — current: 2026-06-15
+### Knowledge
 
-## Concepts
+Entrypoints:
+- [Knowledge Domain Pack](/wiki/knowledge.html) — role: `domain-entrypoint` — raw: `/wiki/raw/Knowledge/llms.txt` — current: 2026-06-15
 
+Concepts:
 - [AI-Native Problem Framing Framework](/wiki/concept-knowledge-concepts-ai-native-problem-framing-framework.html) — raw: `/wiki/raw/Knowledge/concepts/ai-native-problem-framing-framework.md` — updated: 2026-06-11
 - [Agent Capability Route Pattern](/wiki/concept-knowledge-concepts-agent-capability-route-pattern.html) — raw: `/wiki/raw/Knowledge/concepts/agent-capability-route-pattern.md` — updated: 2026-06-13
 - [Agent Wikis](/wiki/concept-knowledge-concepts-agent-wikis.html) — raw: `/wiki/raw/Knowledge/concepts/agent-wikis.md` — updated: 2026-06-15 — Agent-native knowledge surfaces that give agents maintained, scoped, source-backed maps before they act.
@@ -42,3 +39,21 @@ Not covered: private vault content outside the generated public surface, secrets
 - [Runtime Memory Knowledge Routing](/wiki/concept-knowledge-concepts-runtime-memory-knowledge-routing.html) — raw: `/wiki/raw/Knowledge/concepts/runtime-memory-knowledge-routing.md` — updated: 2026-06-15 — Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.
 - [Self-Improving Agent Systems](/wiki/concept-knowledge-concepts-self-improving-agent-systems.html) — raw: `/wiki/raw/Knowledge/concepts/self-improving-agent-systems.md` — updated: 2026-06-13 — Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
 - [Verb-First Product Positioning](/wiki/concept-knowledge-concepts-verb-first-product-positioning.html) — raw: `/wiki/raw/Knowledge/concepts/verb-first-product-positioning.md` — updated: 2026-06-11
+
+### Maps of Content
+
+Entrypoints:
+- [Maps of Content Domain Pack](/wiki/maps-of-content.html) — role: `domain-entrypoint` — raw: `/wiki/raw/Maps of Content/llms.txt` — current: 2026-06-15
+
+### Projects
+
+Entrypoints:
+- [Critical Ranger FFM Pack](/wiki/projects-critical-ranger-ffm.html) — role: `project-entrypoint` — raw: `/wiki/raw/Projects/Critical Ranger FFM/llms.txt` — current: 2026-06-15
+- [Hermes Mission Control Pack](/wiki/projects-hermes-mission-control.html) — role: `project-entrypoint` — raw: `/wiki/raw/Projects/Hermes Mission Control/llms.txt` — current: 2026-06-15
+- [Planned Program Intel Pack](/wiki/projects-planned-program-intel.html) — role: `project-entrypoint` — raw: `/wiki/raw/Projects/Planned Program Intel/llms.txt` — current: 2026-06-15
+- [Projects Domain Pack](/wiki/projects.html) — role: `domain-entrypoint` — raw: `/wiki/raw/Projects/llms.txt` — current: 2026-06-15
+
+### Vault Root
+
+Entrypoints:
+- [ObsidianVault Root Pack](/wiki/root.html) — role: `root-entrypoint` — raw: `/wiki/raw/llms.txt` — current: 2026-06-15

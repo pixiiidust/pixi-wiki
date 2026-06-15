@@ -205,172 +205,301 @@
   "documentCount": 21,
   "documents": [
     {
+      "collection": "entrypoints",
+      "domain": "Knowledge",
       "html_path": "knowledge.html",
       "path": "Knowledge/llms.txt",
       "raw_path": "raw/Knowledge/llms.txt",
+      "role": "domain-entrypoint",
       "title": "Knowledge Domain Pack",
       "type": "knowledge-pack",
       "updated": "2026-06-15"
     },
     {
+      "collection": "entrypoints",
+      "domain": "Maps of Content",
       "html_path": "maps-of-content.html",
       "path": "Maps of Content/llms.txt",
       "raw_path": "raw/Maps of Content/llms.txt",
+      "role": "domain-entrypoint",
       "title": "Maps of Content Domain Pack",
       "type": "knowledge-pack",
       "updated": "2026-06-15"
     },
     {
+      "collection": "entrypoints",
+      "domain": "Projects",
       "html_path": "projects-critical-ranger-ffm.html",
       "path": "Projects/Critical Ranger FFM/llms.txt",
       "raw_path": "raw/Projects/Critical Ranger FFM/llms.txt",
+      "role": "project-entrypoint",
       "title": "Critical Ranger FFM Pack",
       "type": "knowledge-pack",
       "updated": "2026-06-15"
     },
     {
+      "collection": "entrypoints",
+      "domain": "Projects",
       "html_path": "projects-hermes-mission-control.html",
       "path": "Projects/Hermes Mission Control/llms.txt",
       "raw_path": "raw/Projects/Hermes Mission Control/llms.txt",
+      "role": "project-entrypoint",
       "title": "Hermes Mission Control Pack",
       "type": "knowledge-pack",
       "updated": "2026-06-15"
     },
     {
+      "collection": "entrypoints",
+      "domain": "Projects",
       "html_path": "projects-planned-program-intel.html",
       "path": "Projects/Planned Program Intel/llms.txt",
       "raw_path": "raw/Projects/Planned Program Intel/llms.txt",
+      "role": "project-entrypoint",
       "title": "Planned Program Intel Pack",
       "type": "knowledge-pack",
       "updated": "2026-06-15"
     },
     {
+      "collection": "entrypoints",
+      "domain": "Projects",
       "html_path": "projects.html",
       "path": "Projects/llms.txt",
       "raw_path": "raw/Projects/llms.txt",
+      "role": "domain-entrypoint",
       "title": "Projects Domain Pack",
       "type": "knowledge-pack",
       "updated": "2026-06-15"
     },
     {
+      "collection": "entrypoints",
+      "domain": "Vault Root",
       "html_path": "root.html",
       "path": "llms.txt",
       "raw_path": "raw/llms.txt",
+      "role": "root-entrypoint",
       "title": "ObsidianVault Root Pack",
       "type": "knowledge-pack",
       "updated": "2026-06-15"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-agent-capability-route-pattern.html",
       "path": "Knowledge/concepts/agent-capability-route-pattern.md",
       "raw_path": "raw/Knowledge/concepts/agent-capability-route-pattern.md",
+      "role": "knowledge-document",
       "title": "Agent Capability Route Pattern",
       "type": "concept",
       "updated": "2026-06-13"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-agent-wikis.html",
       "path": "Knowledge/concepts/agent-wikis.md",
       "raw_path": "raw/Knowledge/concepts/agent-wikis.md",
+      "role": "knowledge-document",
       "title": "Agent Wikis",
       "type": "concept",
       "updated": "2026-06-15"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-ai-native-problem-framing-framework.html",
       "path": "Knowledge/concepts/ai-native-problem-framing-framework.md",
       "raw_path": "raw/Knowledge/concepts/ai-native-problem-framing-framework.md",
+      "role": "knowledge-document",
       "title": "AI-Native Problem Framing Framework",
       "type": "concept",
       "updated": "2026-06-11"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-bounded-context-tree-pattern.html",
       "path": "Knowledge/concepts/bounded-context-tree-pattern.md",
       "raw_path": "raw/Knowledge/concepts/bounded-context-tree-pattern.md",
+      "role": "knowledge-document",
       "title": "Bounded Context Tree Pattern",
       "type": "concept",
       "updated": "2026-06-07"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-building-software-is-learning.html",
       "path": "Knowledge/concepts/building-software-is-learning.md",
       "raw_path": "raw/Knowledge/concepts/building-software-is-learning.md",
+      "role": "knowledge-document",
       "title": "Building Software Is Learning",
       "type": "concept",
       "updated": "2026-06-11"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-find-the-lock-problem-first.html",
       "path": "Knowledge/concepts/find-the-lock-problem-first.md",
       "raw_path": "raw/Knowledge/concepts/find-the-lock-problem-first.md",
+      "role": "knowledge-document",
       "title": "Find the Lock: Problem-First Approach",
       "type": "concept",
       "updated": "2026-06-11"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-hermes-soul-md-wiring.html",
       "path": "Knowledge/concepts/hermes-soul-md-wiring.md",
       "raw_path": "raw/Knowledge/concepts/hermes-soul-md-wiring.md",
+      "role": "knowledge-document",
       "title": "Hermes SOUL.md Wiring",
       "type": "concept",
       "updated": "2026-06-12"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
       "path": "Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
       "raw_path": "raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
+      "role": "knowledge-document",
       "title": "Matt Pocock SDLC Rhythm",
       "type": "concept",
       "updated": "2026-06-07"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-moc-knowledge-cortex.html",
       "path": "Knowledge/concepts/moc-knowledge-cortex.md",
       "raw_path": "raw/Knowledge/concepts/moc-knowledge-cortex.md",
+      "role": "knowledge-document",
       "title": "MOC Knowledge Cortex",
       "type": "concept",
       "updated": "2026-06-13"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
       "path": "Knowledge/concepts/peer-profiles-vs-child-processes.md",
       "raw_path": "raw/Knowledge/concepts/peer-profiles-vs-child-processes.md",
+      "role": "knowledge-document",
       "title": "Peer Profiles vs Child Processes",
       "type": "concept",
       "updated": "2026-06-13"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-profile-memory-boundaries.html",
       "path": "Knowledge/concepts/profile-memory-boundaries.md",
       "raw_path": "raw/Knowledge/concepts/profile-memory-boundaries.md",
+      "role": "knowledge-document",
       "title": "Profile Memory Boundaries",
       "type": "concept",
       "updated": "2026-06-13"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
       "path": "Knowledge/concepts/runtime-memory-knowledge-routing.md",
       "raw_path": "raw/Knowledge/concepts/runtime-memory-knowledge-routing.md",
+      "role": "knowledge-document",
       "title": "Runtime Memory Knowledge Routing",
       "type": "concept",
       "updated": "2026-06-15"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-self-improving-agent-systems.html",
       "path": "Knowledge/concepts/self-improving-agent-systems.md",
       "raw_path": "raw/Knowledge/concepts/self-improving-agent-systems.md",
+      "role": "knowledge-document",
       "title": "Self-Improving Agent Systems",
       "type": "concept",
       "updated": "2026-06-13"
     },
     {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-verb-first-product-positioning.html",
       "path": "Knowledge/concepts/verb-first-product-positioning.md",
       "raw_path": "raw/Knowledge/concepts/verb-first-product-positioning.md",
+      "role": "knowledge-document",
       "title": "Verb-First Product Positioning",
       "type": "concept",
       "updated": "2026-06-11"
+    }
+  ],
+  "domains": [
+    {
+      "collections": {
+        "concepts": [
+          "Knowledge/concepts/agent-capability-route-pattern.md",
+          "Knowledge/concepts/agent-wikis.md",
+          "Knowledge/concepts/ai-native-problem-framing-framework.md",
+          "Knowledge/concepts/bounded-context-tree-pattern.md",
+          "Knowledge/concepts/building-software-is-learning.md",
+          "Knowledge/concepts/find-the-lock-problem-first.md",
+          "Knowledge/concepts/hermes-soul-md-wiring.md",
+          "Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
+          "Knowledge/concepts/moc-knowledge-cortex.md",
+          "Knowledge/concepts/peer-profiles-vs-child-processes.md",
+          "Knowledge/concepts/profile-memory-boundaries.md",
+          "Knowledge/concepts/runtime-memory-knowledge-routing.md",
+          "Knowledge/concepts/self-improving-agent-systems.md",
+          "Knowledge/concepts/verb-first-product-positioning.md"
+        ]
+      },
+      "concept_count": 14,
+      "document_count": 15,
+      "entrypoints": [
+        "Knowledge/llms.txt"
+      ],
+      "name": "Knowledge",
+      "pack_count": 1,
+      "slug": "knowledge"
+    },
+    {
+      "collections": {},
+      "concept_count": 0,
+      "document_count": 1,
+      "entrypoints": [
+        "Maps of Content/llms.txt"
+      ],
+      "name": "Maps of Content",
+      "pack_count": 1,
+      "slug": "maps-of-content"
+    },
+    {
+      "collections": {},
+      "concept_count": 0,
+      "document_count": 4,
+      "entrypoints": [
+        "Projects/Critical Ranger FFM/llms.txt",
+        "Projects/Hermes Mission Control/llms.txt",
+        "Projects/Planned Program Intel/llms.txt",
+        "Projects/llms.txt"
+      ],
+      "name": "Projects",
+      "pack_count": 4,
+      "slug": "projects"
+    },
+    {
+      "collections": {},
+      "concept_count": 0,
+      "document_count": 1,
+      "entrypoints": [
+        "llms.txt"
+      ],
+      "name": "Vault Root",
+      "pack_count": 1,
+      "slug": "vault-root"
     }
   ],
   "entrypoints": {
