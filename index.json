@@ -873,6 +873,11 @@
           "label": "KPR ledger impact audit issue",
           "path_or_url": "https://github.com/pixiiidust/ObsidianVault/issues/112",
           "role": "coordination"
+        },
+        {
+          "label": "KPR static retrieval eval",
+          "path_or_url": "Projects/Hermes Mission Control/KPR Static Retrieval Eval - 2026-06-15.md",
+          "role": "evaluation"
         }
       ],
       "title": "Hermes Mission Control Pack"

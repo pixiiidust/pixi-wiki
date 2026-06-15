@@ -527,6 +527,9 @@ sources:
   - label: KPR ledger impact audit issue
     path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/112
     role: coordination
+  - label: KPR static retrieval eval
+    path_or_url: Projects/Hermes Mission Control/KPR Static Retrieval Eval - 2026-06-15.md
+    role: evaluation
 human_surface:
   - path_or_url: Projects/Hermes Mission Control/Index.md
   - path_or_url: Maps of Content/Agent Operations MOC.md
@@ -585,7 +588,7 @@ Use this pack before crew-ops work: cron, gateway, delivery, profile routing, ca
 
 ## Current Narrative / Operating Posture
 
-Mission Control is the crew-ops hub. Agent-ops harness, reuse gate, capability registry, persona webhook migration, harmonization, Knowledge Pack Routing V1, stack-level workflow integration, integration QA, static HTML, freshness reporting, source availability checks, and domain-first public wiki publishing are complete. The public KPR wiki is `https://pixiiidust.github.io/pixi-wiki/` from repo `pixiiidust/pixi-wiki`. #91 is no longer framed as immediate MCP/search/RAG work; the accepted lock is a KPR change-propagation ledger for RAG-ready compiled wikis. #91/#111/#112 are closed: the design path resolved to a change-propagation ledger contract and downstream vault-impact audit. MCP/RAG/vector DB/runtime services remain deferred until a future thin implementation issue proves dependency freshness and confidence on one KPR change chain. Planned Program Intel is the first consumed project pack — proof, not primary goal. Deck/Loom/application work is optional portfolio packaging.
+Mission Control is the crew-ops hub. Agent-ops harness, reuse gate, capability registry, persona webhook migration, harmonization, Knowledge Pack Routing V1, stack-level workflow integration, integration QA, static HTML, freshness reporting, source availability checks, and domain-first public wiki publishing are complete. The public KPR wiki is `https://pixiiidust.github.io/pixi-wiki/` from repo `pixiiidust/pixi-wiki`. #91 is no longer framed as immediate MCP/search/RAG work; the accepted lock is a KPR change-propagation ledger for RAG-ready compiled wikis. #91/#111/#112 are closed: the design path resolved to a change-propagation ledger contract and downstream vault-impact audit. MCP/RAG/vector DB/runtime services remain deferred: the six-question static retrieval eval passed, so future retrieval infrastructure requires a concrete eval failure first. Planned Program Intel is the first consumed project pack — proof, not primary goal. Deck/Loom/application work is optional portfolio packaging.
 
 Pixoid is the default Hermes control plane and Discord gateway. Worker profiles are bounded by route contracts. Outbound webhooks give personas voice/identity; they do not prove live inbound execution.
 
