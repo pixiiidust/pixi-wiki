@@ -1,12 +1,12 @@
 # Pixiedust Knowledge Wiki
 
 > Agent-readable public index for Pixiedust knowledge packs and concepts.
-> Raw Markdown for any page: /pixi-wiki/wiki/raw/<path>.
+> Raw Markdown for any page: /pixi-wiki/pixi-wiki/wiki/raw/<path>.
 
 ## Start here
 
 - Root pack HTML: /pixi-wiki/wiki/root.html
-- Root pack raw Markdown: /pixi-wiki/wiki/raw/llms.txt
+- Root pack raw Markdown: /pixi-wiki/pixi-wiki/wiki/raw/llms.txt
 - JSON document registry: /pixi-wiki/wiki/index.json
 - Full public corpus: /pixi-wiki/wiki/llms-full.txt
 - Human HTML surface: /pixi-wiki/wiki/
@@ -22,41 +22,42 @@ Not covered: private vault content outside the generated public surface, secrets
 ### Knowledge
 
 Entrypoints:
-- [Knowledge Domain Pack](/pixi-wiki/wiki/knowledge.html) — role: `domain-entrypoint` — raw: `/pixi-wiki/wiki/raw/Knowledge/llms.txt` — current: 2026-06-15
+- [Knowledge Domain Pack](/pixi-wiki/wiki/knowledge.html) — role: `domain-entrypoint` — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/llms.txt` — current: 2026-06-15
 
 Concepts:
-- [AI-Native Problem Framing Framework](/pixi-wiki/wiki/concept-knowledge-concepts-ai-native-problem-framing-framework.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/ai-native-problem-framing-framework.md` — updated: 2026-06-11
-- [Agent Capability Route Pattern](/pixi-wiki/wiki/concept-knowledge-concepts-agent-capability-route-pattern.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/agent-capability-route-pattern.md` — updated: 2026-06-13
-- [Agent Wikis](/pixi-wiki/wiki/concept-knowledge-concepts-agent-wikis.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/agent-wikis.md` — updated: 2026-06-15 — Agent-native knowledge surfaces that give agents maintained, scoped, source-backed maps before they act.
-- [Bounded Context Tree Pattern](/pixi-wiki/wiki/concept-knowledge-concepts-bounded-context-tree-pattern.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/bounded-context-tree-pattern.md` — updated: 2026-06-07
-- [Building Software Is Learning](/pixi-wiki/wiki/concept-knowledge-concepts-building-software-is-learning.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/building-software-is-learning.md` — updated: 2026-06-11
-- [Find the Lock: Problem-First Approach](/pixi-wiki/wiki/concept-knowledge-concepts-find-the-lock-problem-first.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/find-the-lock-problem-first.md` — updated: 2026-06-11
-- [Hermes SOUL.md Wiring](/pixi-wiki/wiki/concept-knowledge-concepts-hermes-soul-md-wiring.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/hermes-soul-md-wiring.md` — updated: 2026-06-12
-- [MOC Knowledge Cortex](/pixi-wiki/wiki/concept-knowledge-concepts-moc-knowledge-cortex.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/moc-knowledge-cortex.md` — updated: 2026-06-13 — Model of the MOC layer as the routing brain of the vault, keeping durable notes reachable through clear domain branches.
-- [Matt Pocock SDLC Rhythm](/pixi-wiki/wiki/concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md` — updated: 2026-06-07
-- [Peer Profiles vs Child Processes](/pixi-wiki/wiki/concept-knowledge-concepts-peer-profiles-vs-child-processes.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/peer-profiles-vs-child-processes.md` — updated: 2026-06-13 — Architecture decision for when Jamie's crew agents run as peer Hermes profiles versus child/subagent processes.
-- [Profile Memory Boundaries](/pixi-wiki/wiki/concept-knowledge-concepts-profile-memory-boundaries.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/profile-memory-boundaries.md` — updated: 2026-06-13 — Boundary model for routing durable knowledge between USER.md, Hermes memory, local knowledge, Obsidian/GitHub project truth, and skills.
-- [Runtime Memory Knowledge Routing](/pixi-wiki/wiki/concept-knowledge-concepts-runtime-memory-knowledge-routing.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/runtime-memory-knowledge-routing.md` — updated: 2026-06-15 — Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.
-- [Self-Improving Agent Systems](/pixi-wiki/wiki/concept-knowledge-concepts-self-improving-agent-systems.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/self-improving-agent-systems.md` — updated: 2026-06-13 — Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
-- [Verb-First Product Positioning](/pixi-wiki/wiki/concept-knowledge-concepts-verb-first-product-positioning.html) — raw: `/pixi-wiki/wiki/raw/Knowledge/concepts/verb-first-product-positioning.md` — updated: 2026-06-11
+- [AI-Native Problem Framing Framework](/pixi-wiki/wiki/concept-knowledge-concepts-ai-native-problem-framing-framework.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/ai-native-problem-framing-framework.md` — updated: 2026-06-11
+- [Agent Capability Route Pattern](/pixi-wiki/wiki/concept-knowledge-concepts-agent-capability-route-pattern.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/agent-capability-route-pattern.md` — updated: 2026-06-13
+- [Agent Wikis](/pixi-wiki/wiki/concept-knowledge-concepts-agent-wikis.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/agent-wikis.md` — updated: 2026-06-15 — Agent-native knowledge surfaces that give agents maintained, scoped, source-backed maps before they act.
+- [Bounded Context Tree Pattern](/pixi-wiki/wiki/concept-knowledge-concepts-bounded-context-tree-pattern.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/bounded-context-tree-pattern.md` — updated: 2026-06-07
+- [Building Software Is Learning](/pixi-wiki/wiki/concept-knowledge-concepts-building-software-is-learning.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/building-software-is-learning.md` — updated: 2026-06-11
+- [Find the Lock: Problem-First Approach](/pixi-wiki/wiki/concept-knowledge-concepts-find-the-lock-problem-first.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/find-the-lock-problem-first.md` — updated: 2026-06-11
+- [Hermes SOUL.md Wiring](/pixi-wiki/wiki/concept-knowledge-concepts-hermes-soul-md-wiring.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/hermes-soul-md-wiring.md` — updated: 2026-06-12
+- [Local Retrieval-Augmented Agent Infrastructure](/pixi-wiki/wiki/concept-knowledge-concepts-local-retrieval-agent-infrastructure.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/local-retrieval-agent-infrastructure.md` — updated: 2026-06-15 — Applied architecture lessons from Krill's dual-RTX 5090 local agent stack — hardware setup, retrieval pipeline (Qdrant + Ollama + MCP), agent workflow governance, and relevance to Jamie's PC build decisions.
+- [MOC Knowledge Cortex](/pixi-wiki/wiki/concept-knowledge-concepts-moc-knowledge-cortex.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/moc-knowledge-cortex.md` — updated: 2026-06-13 — Model of the MOC layer as the routing brain of the vault, keeping durable notes reachable through clear domain branches.
+- [Matt Pocock SDLC Rhythm](/pixi-wiki/wiki/concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md` — updated: 2026-06-07
+- [Peer Profiles vs Child Processes](/pixi-wiki/wiki/concept-knowledge-concepts-peer-profiles-vs-child-processes.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/peer-profiles-vs-child-processes.md` — updated: 2026-06-13 — Architecture decision for when Jamie's crew agents run as peer Hermes profiles versus child/subagent processes.
+- [Profile Memory Boundaries](/pixi-wiki/wiki/concept-knowledge-concepts-profile-memory-boundaries.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/profile-memory-boundaries.md` — updated: 2026-06-13 — Boundary model for routing durable knowledge between USER.md, Hermes memory, local knowledge, Obsidian/GitHub project truth, and skills.
+- [Runtime Memory Knowledge Routing](/pixi-wiki/wiki/concept-knowledge-concepts-runtime-memory-knowledge-routing.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/runtime-memory-knowledge-routing.md` — updated: 2026-06-15 — Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.
+- [Self-Improving Agent Systems](/pixi-wiki/wiki/concept-knowledge-concepts-self-improving-agent-systems.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/self-improving-agent-systems.md` — updated: 2026-06-13 — Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
+- [Verb-First Product Positioning](/pixi-wiki/wiki/concept-knowledge-concepts-verb-first-product-positioning.html) — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Knowledge/concepts/verb-first-product-positioning.md` — updated: 2026-06-11
 
 ### Maps of Content
 
 Entrypoints:
-- [Maps of Content Domain Pack](/pixi-wiki/wiki/maps-of-content.html) — role: `domain-entrypoint` — raw: `/pixi-wiki/wiki/raw/Maps of Content/llms.txt` — current: 2026-06-15
+- [Maps of Content Domain Pack](/pixi-wiki/wiki/maps-of-content.html) — role: `domain-entrypoint` — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Maps of Content/llms.txt` — current: 2026-06-15
 
 ### Projects
 
 Entrypoints:
-- [Critical Ranger FFM Pack](/pixi-wiki/wiki/projects-critical-ranger-ffm.html) — role: `project-entrypoint` — raw: `/pixi-wiki/wiki/raw/Projects/Critical Ranger FFM/llms.txt` — current: 2026-06-15
-- [Hermes Mission Control Pack](/pixi-wiki/wiki/projects-hermes-mission-control.html) — role: `project-entrypoint` — raw: `/pixi-wiki/wiki/raw/Projects/Hermes Mission Control/llms.txt` — current: 2026-06-15
-- [Planned Program Intel Pack](/pixi-wiki/wiki/projects-planned-program-intel.html) — role: `project-entrypoint` — raw: `/pixi-wiki/wiki/raw/Projects/Planned Program Intel/llms.txt` — current: 2026-06-15
-- [Projects Domain Pack](/pixi-wiki/wiki/projects.html) — role: `domain-entrypoint` — raw: `/pixi-wiki/wiki/raw/Projects/llms.txt` — current: 2026-06-15
+- [Critical Ranger FFM Pack](/pixi-wiki/wiki/projects-critical-ranger-ffm.html) — role: `project-entrypoint` — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Projects/Critical Ranger FFM/llms.txt` — current: 2026-06-15
+- [Hermes Mission Control Pack](/pixi-wiki/wiki/projects-hermes-mission-control.html) — role: `project-entrypoint` — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Projects/Hermes Mission Control/llms.txt` — current: 2026-06-15
+- [Planned Program Intel Pack](/pixi-wiki/wiki/projects-planned-program-intel.html) — role: `project-entrypoint` — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Projects/Planned Program Intel/llms.txt` — current: 2026-06-15
+- [Projects Domain Pack](/pixi-wiki/wiki/projects.html) — role: `domain-entrypoint` — raw: `/pixi-wiki/pixi-wiki/wiki/raw/Projects/llms.txt` — current: 2026-06-15
 
 ### Vault Root
 
 Entrypoints:
-- [ObsidianVault Root Pack](/pixi-wiki/wiki/root.html) — role: `root-entrypoint` — raw: `/pixi-wiki/wiki/raw/llms.txt` — current: 2026-06-15
+- [ObsidianVault Root Pack](/pixi-wiki/wiki/root.html) — role: `root-entrypoint` — raw: `/pixi-wiki/pixi-wiki/wiki/raw/llms.txt` — current: 2026-06-15
 
 
 <!-- ===== Knowledge/llms.txt ===== -->
@@ -1680,6 +1681,115 @@ When querying or verifying SOUL.md files:
 
 - [[profile-memory-boundaries]] — broader boundary model for USER.md, MEMORY.md, local knowledge, and skills.
 - [[agent-capability-route-pattern]] — how profiles are triggered as bounded agent capabilities.
+
+<!-- ===== Knowledge/concepts/local-retrieval-agent-infrastructure.md ===== -->
+
+---
+title: Local Retrieval-Augmented Agent Infrastructure
+created: 2026-06-15
+updated: 2026-06-15
+type: concept
+description: Applied architecture lessons from Krill's dual-RTX 5090 local agent stack — hardware setup, retrieval pipeline (Qdrant + Ollama + MCP), agent workflow governance, and relevance to Jamie's PC build decisions.
+status: active
+domain: agent-systems
+tags: [agent-systems, ai, architecture, workflow]
+sources: [raw/articles/releasing-the-kraken-krill-blog.md]
+confidence: high
+---
+
+# Local Retrieval-Augmented Agent Infrastructure
+
+> Synthesised from [[raw/articles/releasing-the-kraken-krill-blog|Releasing The Kraken (Krill Blog, 2026-06-15)]]. Directly applicable to [[Projects/New PC Build Architecture/Index|New PC Build Architecture]].
+
+---
+
+## Hardware Lessons for a 5090 Build
+
+| Lesson | Implication for Jamie's Build |
+|---|---|
+| **Dual 5090 allows tensor-splitting 80B MoE models** — Krill runs `qwen3-coder-next` (80B MoE, ~3B active/token) at ~136 tok/s across 2×5090s. | Single 5090 is still excellent for 7B–32B full-VRAM. Dual 5090 is only needed for MoE 70B+ at speed. Jamie's build with **one 5090 first, add second later if needed** is validated. |
+| **CUDA 12.8 + `cu128` is mandatory for Blackwell (`sm_120`).** Half the prebuilt wheels silently fell back to CPU. | Verify torch and all inference libs are `cu128`-built. Ollama + Docker + NVIDIA container toolkit must use CUDA 12.8. |
+| **125 GiB RAM, ~7.4 TB NVMe** — not extreme. 32 logical cores. | Jamie's 128GB RAM + 4–8TB NVMe plan is well-aligned and sufficient. |
+| **Ollama bound to LAN** — clean local serving without cloud exposure. | Same pattern fits Jamie's Tailscale/LiteLLM routing layer between nodes. |
+
+---
+
+## Retrieval Pipeline (The Corpus / Second Brain)
+
+Krill's proven local RAG stack:
+
+```
+Ingest → Clean → Chunk → Embed (nomic-embed-text, 768d)
+→ Store (Qdrant) → Retrieve (top-40 semantic)
+→ Rerank (bge-reranker-v2-m3, cross-encoder, top-8)
+→ Serve (local Ollama + MCP)
+```
+
+**Key details:**
+- **Embedding model:** `nomic-embed-text` (768-dim) — lightweight, effective, runs on Ollama.
+- **Reranker:** `bge-reranker-v2-m3` — cross-encoder, pinned to one GPU in dual-5090 setups.
+- **Vector store:** Qdrant — proven, local, Docker-based.
+- **MCP server** (`Corpus MCP`) wraps retrieval so agents access memory locally with no data sent to API providers.
+
+**Applicability to Jamie's setup:** This is the exact architecture pattern for a local RAG system. The helper NVIDIA desktop (4090/3090) or 5090 PC can host the retrieval pipeline. Qdrant in Docker + Ollama + a lightweight MCP server is a realistic first-pass stack.
+
+> See also: [[hermes-soul-md-wiring]] for agent identity patterns that pair with local MCP servers.
+
+---
+
+## Guardrails (Sensitivity Doors)
+
+| Layer | Guard | Relevance |
+|---|---|---|
+| **Ingest** | Secrets neutralised → `[REDACTED]` markers | Apply to any local corpus ingest pipeline. |
+| **Retrieval** | Two doors: work door (withholds personal/financial) vs personal door (full fidelity, output forbidden from artifacts) | Critical for Jamie's mixed-use setup — separate work/personal retrieval contexts. |
+| **Egress** | Pre-commit scanner blocks secrets but passes non-secret PII | Pre-commit hooks for any agent-generated content. |
+
+---
+
+## Agent Workflow Governance
+
+| Rule | Why It Matters |
+|---|---|
+| **No agent can merge its own work.** No single agent owns more than one link in the chain. | Prevents any single agent from having unchecked write authority. Relevant to Jamie's Hermes crew (Pixoid dispatches, Quill writes, Ben decides). |
+| **Three-agent chain:** Ghost tests → Blue fixes → Kraken analyses/oversees → Ben decides/merges. | Well-bounded separation of concerns. The test/fix/oversight/decide quad is a repeatable pattern. |
+| **Lesson feedback loop:** Every fix writes to `docs/lessons/`. CI rejects PRs without one. Blue reads lessons before next fix. | Jamie's Knowledge wiki `log.md` and `concepts/` serve a similar compounding-memory function. Formalising a lesson-required gate could strengthen the agent crew. |
+| **No auto-promotion of voice adapters** — Ben reads the eval report before any QLoRA weights ship. | Human-in-the-loop for model changes. Relevant whenever Jamie incorporates adapters. |
+
+---
+
+## Local Models Reference
+
+| Model | Role | Notes for Jamie |
+|---|---|---|
+| `qwen3-coder-next` (80B MoE) | Coding, nightly judge | Requires dual 5090 for full speed; single 5090 can run smaller quants with offload. |
+| `qwen3.6:35b` | Reasoning/planning | ~165 tok/s on dual 5090; comfortable on single 5090 32GB. Good candidate for Jamie's daily inference model. |
+| `qwen2.5vl:7b` | Vision (captioning, OCR) | Lightweight vision model — good for photo/document ingest pipeline on helper node. |
+| `nomic-embed-text` | Embeddings (768d) | Standard for local RAG; runs on CPU or GPU trivially. |
+| `bge-reranker-v2-m3` | Cross-encoder reranker | Pins to one GPU; improves retrieval quality significantly over raw cosine similarity. |
+| QLoRA voice adapter (Qwen2.5-14B) | Writing style | Weekly retrain on human's writing samples. Fact vs voice separation is a key insight. |
+
+> Frontier Claude is used **only** for interactive/visual design judgment. **Everything touching the private corpus stays local.**
+
+---
+
+## Open Questions for Jamie's Setup
+
+1. Should Jamie's retrieval pipeline use the same stack (nomic-embed-text → Qdrant top-40 → bge-reranker top-8 via Ollama + MCP) or a lighter path?
+2. Two-door guardrail (work vs personal) — does Jamie need separate retrieval contexts for Pixoid work vs personal notes?
+3. Should the Hermes crew adopt a "no agent merges own work" rule more explicitly?
+4. Weekly QLoRA voice adapter — is Jamie's writing corpus large enough / stable enough to justify this?
+5. Once Jamie's 5090 build is live, could it host a Corpus MCP for the whole LAN, serving the Mac Studio / DGX Spark (if added later)?
+
+---
+
+## Related
+
+- [[Projects/New PC Build Architecture/Index|New PC Build Architecture]] — the project this concept directly informs
+- [[self-improving-agent-systems]] — compounding agent loops, related to the lesson feedback pattern
+- [[moc-knowledge-cortex]] — MOC layer as routing brain, related to the MCP server pattern
+- [[agent-wikis]] — maintained knowledge surfaces for agents, related to the Corpus pattern
+- [[projects-hermes-mission-control|Hermes Mission Control]] — agent crew architecture where governance patterns apply
 
 <!-- ===== Knowledge/concepts/matt-pocock-sdlc-rhythm.md ===== -->
 

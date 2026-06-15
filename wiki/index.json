@@ -7,7 +7,7 @@
     "no_search_index": true
   },
   "category": "agents",
-  "concept_count": 14,
+  "concept_count": 15,
   "concepts": [
     {
       "description": null,
@@ -107,6 +107,20 @@
       "updated": "2026-06-12"
     },
     {
+      "description": "Applied architecture lessons from Krill's dual-RTX 5090 local agent stack \u2014 hardware setup, retrieval pipeline (Qdrant + Ollama + MCP), agent workflow governance, and relevance to Jamie's PC build decisions.",
+      "html_path": "concept-knowledge-concepts-local-retrieval-agent-infrastructure.html",
+      "slug": "concept-knowledge-concepts-local-retrieval-agent-infrastructure",
+      "source_path": "Knowledge/concepts/local-retrieval-agent-infrastructure.md",
+      "tags": [
+        "agent-systems",
+        "ai",
+        "architecture",
+        "workflow"
+      ],
+      "title": "Local Retrieval-Augmented Agent Infrastructure",
+      "updated": "2026-06-15"
+    },
+    {
       "description": null,
       "html_path": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
       "slug": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm",
@@ -202,7 +216,7 @@
     }
   ],
   "description": "Agent-readable knowledge packs and concepts for Pixiedust/Hermes workflows.",
-  "documentCount": 21,
+  "documentCount": 22,
   "documents": [
     {
       "collection": "entrypoints",
@@ -361,6 +375,17 @@
     {
       "collection": "concepts",
       "domain": "Knowledge",
+      "html_path": "concept-knowledge-concepts-local-retrieval-agent-infrastructure.html",
+      "path": "Knowledge/concepts/local-retrieval-agent-infrastructure.md",
+      "raw_path": "raw/Knowledge/concepts/local-retrieval-agent-infrastructure.md",
+      "role": "knowledge-document",
+      "title": "Local Retrieval-Augmented Agent Infrastructure",
+      "type": "concept",
+      "updated": "2026-06-15"
+    },
+    {
+      "collection": "concepts",
+      "domain": "Knowledge",
       "html_path": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
       "path": "Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
       "raw_path": "raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
@@ -447,6 +472,7 @@
           "Knowledge/concepts/building-software-is-learning.md",
           "Knowledge/concepts/find-the-lock-problem-first.md",
           "Knowledge/concepts/hermes-soul-md-wiring.md",
+          "Knowledge/concepts/local-retrieval-agent-infrastructure.md",
           "Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
           "Knowledge/concepts/moc-knowledge-cortex.md",
           "Knowledge/concepts/peer-profiles-vs-child-processes.md",
@@ -456,8 +482,8 @@
           "Knowledge/concepts/verb-first-product-positioning.md"
         ]
       },
-      "concept_count": 14,
-      "document_count": 15,
+      "concept_count": 15,
+      "document_count": 16,
       "entrypoints": [
         "Knowledge/llms.txt"
       ],
@@ -1084,7 +1110,7 @@
       "title": "ObsidianVault Root Pack"
     }
   ],
-  "raw_base": "/pixi-wiki/wiki/raw/",
+  "raw_base": "/pixi-wiki/pixi-wiki/wiki/raw/",
   "schema_version": "kpr-index-manifest-v1",
   "scope": {
     "covers": "Pixiedust agent knowledge routing, Knowledge concepts, project entrypoints, MOCs, and KPR operating boundaries.",
