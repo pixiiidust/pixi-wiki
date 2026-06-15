@@ -11,7 +11,7 @@ scope:
     - Default Pixoid control-plane vs worker profile boundaries
     - Persona webhook delivery posture
     - Capability Registry / Reuse Gate and health-check surfaces
-    - KPR V2 tracker posture and vault-wide entrypoint design boundary
+    - KPR V2 tracker posture, vault-wide entrypoint design boundary, and KPR change-propagation ledger design
   not_covered:
     - Live webhook URLs, tokens, or secrets
     - Personal VPS/Docker setup detail
@@ -45,6 +45,18 @@ sources:
     role: coordination
   - label: Vault-wide entrypoint mesh design
     path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/77
+    role: coordination
+  - label: KPR change-propagation ledger PRD
+    path_or_url: Projects/Hermes Mission Control/PRD - KPR Change Propagation Ledger.md
+    role: requirements
+  - label: KPR change-propagation ledger design note
+    path_or_url: Projects/Hermes Mission Control/KPR Change Propagation Ledger.md
+    role: design-contract
+  - label: KPR change-propagation ledger design issue
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/111
+    role: coordination
+  - label: KPR ledger impact audit issue
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/112
     role: coordination
 human_surface:
   - path_or_url: Projects/Hermes Mission Control/Index.md
@@ -104,7 +116,7 @@ Use this pack before crew-ops work: cron, gateway, delivery, profile routing, ca
 
 ## Current Narrative / Operating Posture
 
-Mission Control is the crew-ops hub. Agent-ops harness, reuse gate, capability registry, persona webhook migration, harmonization, Knowledge Pack Routing V1, stack-level workflow integration, and integration QA are complete. KPR is now wired as a retrieval-first layer for Pixoid/Quill/Tinker/Boba workflows. KPR V2 PRD review is accepted and tracker issues exist: #74 parent, #75 static HTML human surface, and #76 non-mutating freshness report. No V2 implementation has started; the next gate is explicit Jamie/Pixoid routing of exactly one child issue, with #76 recommended first. Jamie also identified a broader vault-wide entrypoint mesh question; #77 tracks that as design only and must stay separate from #74/#75/#76. Planned Program Intel is the first consumed project pack — proof, not primary goal. Deck/Loom/application work is optional portfolio packaging.
+Mission Control is the crew-ops hub. Agent-ops harness, reuse gate, capability registry, persona webhook migration, harmonization, Knowledge Pack Routing V1, stack-level workflow integration, integration QA, static HTML, freshness reporting, source availability checks, and domain-first public wiki publishing are complete. The public KPR wiki is `https://pixiiidust.github.io/pixi-wiki/` from repo `pixiiidust/pixi-wiki`. #91 is no longer framed as immediate MCP/search/RAG work; the accepted lock is a KPR change-propagation ledger for RAG-ready compiled wikis. #111 now holds the design-note contract and #112 tracks the downstream agent-ops/vault impact audit. MCP/RAG/vector DB/runtime services remain deferred until the compiled wiki substrate can prove dependency freshness and confidence. Planned Program Intel is the first consumed project pack — proof, not primary goal. Deck/Loom/application work is optional portfolio packaging.
 
 Pixoid is the default Hermes control plane and Discord gateway. Worker profiles are bounded by route contracts. Outbound webhooks give personas voice/identity; they do not prove live inbound execution.
 
@@ -115,7 +127,7 @@ Pixoid is the default Hermes control plane and Discord gateway. Worker profiles 
 - Do not claim outbound delivery as inbound route proof.
 - Do not claim a repo-level test harness is a deployed operational route.
 - Do not start worker gateways without separate identity/route configuration.
-- Do not implement #75, #76, or #77 from this pack alone; require explicit routing.
+- Do not implement ledger runtime, MCP, RAG, crawler, vector DB, profile/gateway/webhook/provider, or cron changes from this pack alone; require explicit routing.
 
 ## Fallback Rules
 

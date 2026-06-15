@@ -796,7 +796,7 @@
           "Default Pixoid control-plane vs worker profile boundaries",
           "Persona webhook delivery posture",
           "Capability Registry / Reuse Gate and health-check surfaces",
-          "KPR V2 tracker posture and vault-wide entrypoint design boundary"
+          "KPR V2 tracker posture, vault-wide entrypoint design boundary, and KPR change-propagation ledger design"
         ],
         "not_covered": [
           "Live webhook URLs, tokens, or secrets",
@@ -852,6 +852,26 @@
         {
           "label": "Vault-wide entrypoint mesh design",
           "path_or_url": "https://github.com/pixiiidust/ObsidianVault/issues/77",
+          "role": "coordination"
+        },
+        {
+          "label": "KPR change-propagation ledger PRD",
+          "path_or_url": "Projects/Hermes Mission Control/PRD - KPR Change Propagation Ledger.md",
+          "role": "requirements"
+        },
+        {
+          "label": "KPR change-propagation ledger design note",
+          "path_or_url": "Projects/Hermes Mission Control/KPR Change Propagation Ledger.md",
+          "role": "design-contract"
+        },
+        {
+          "label": "KPR change-propagation ledger design issue",
+          "path_or_url": "https://github.com/pixiiidust/ObsidianVault/issues/111",
+          "role": "coordination"
+        },
+        {
+          "label": "KPR ledger impact audit issue",
+          "path_or_url": "https://github.com/pixiiidust/ObsidianVault/issues/112",
           "role": "coordination"
         }
       ],
@@ -1110,7 +1130,7 @@
       "title": "ObsidianVault Root Pack"
     }
   ],
-  "raw_base": "/pixi-wiki/pixi-wiki/raw/",
+  "raw_base": "/pixi-wiki/raw/",
   "schema_version": "kpr-index-manifest-v1",
   "scope": {
     "covers": "Pixiedust agent knowledge routing, Knowledge concepts, project entrypoints, MOCs, and KPR operating boundaries.",
