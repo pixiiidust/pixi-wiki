@@ -6,6 +6,200 @@
     "no_rag": true,
     "no_search_index": true
   },
+  "concept_count": 14,
+  "concepts": [
+    {
+      "description": null,
+      "html_path": "concept-knowledge-concepts-agent-capability-route-pattern.html",
+      "slug": "concept-knowledge-concepts-agent-capability-route-pattern",
+      "source_path": "Knowledge/concepts/agent-capability-route-pattern.md",
+      "tags": [
+        "architecture",
+        "agent-systems",
+        "workflow",
+        "governance"
+      ],
+      "title": "Agent Capability Route Pattern",
+      "updated": "2026-06-13"
+    },
+    {
+      "description": "Agent-native knowledge surfaces that give agents maintained, scoped, source-backed maps before they act.",
+      "html_path": "concept-knowledge-concepts-agent-wikis.html",
+      "slug": "concept-knowledge-concepts-agent-wikis",
+      "source_path": "Knowledge/concepts/agent-wikis.md",
+      "tags": [
+        "agent-systems",
+        "architecture",
+        "governance",
+        "workflow"
+      ],
+      "title": "Agent Wikis",
+      "updated": "2026-06-15"
+    },
+    {
+      "description": null,
+      "html_path": "concept-knowledge-concepts-ai-native-problem-framing-framework.html",
+      "slug": "concept-knowledge-concepts-ai-native-problem-framing-framework",
+      "source_path": "Knowledge/concepts/ai-native-problem-framing-framework.md",
+      "tags": [
+        "ai",
+        "concept",
+        "agent-systems",
+        "strategy",
+        "product-management"
+      ],
+      "title": "AI-Native Problem Framing Framework",
+      "updated": "2026-06-11"
+    },
+    {
+      "description": null,
+      "html_path": "concept-knowledge-concepts-bounded-context-tree-pattern.html",
+      "slug": "concept-knowledge-concepts-bounded-context-tree-pattern",
+      "source_path": "Knowledge/concepts/bounded-context-tree-pattern.md",
+      "tags": [
+        "architecture",
+        "workflow",
+        "ai"
+      ],
+      "title": "Bounded Context Tree Pattern",
+      "updated": "2026-06-07"
+    },
+    {
+      "description": null,
+      "html_path": "concept-knowledge-concepts-building-software-is-learning.html",
+      "slug": "concept-knowledge-concepts-building-software-is-learning",
+      "source_path": "Knowledge/concepts/building-software-is-learning.md",
+      "tags": [
+        "concept",
+        "workflow",
+        "product-management",
+        "customer-discovery"
+      ],
+      "title": "Building Software Is Learning",
+      "updated": "2026-06-11"
+    },
+    {
+      "description": null,
+      "html_path": "concept-knowledge-concepts-find-the-lock-problem-first.html",
+      "slug": "concept-knowledge-concepts-find-the-lock-problem-first",
+      "source_path": "Knowledge/concepts/find-the-lock-problem-first.md",
+      "tags": [
+        "concept",
+        "product-management",
+        "customer-discovery",
+        "workflow"
+      ],
+      "title": "Find the Lock: Problem-First Approach",
+      "updated": "2026-06-11"
+    },
+    {
+      "description": null,
+      "html_path": "concept-knowledge-concepts-hermes-soul-md-wiring.html",
+      "slug": "concept-knowledge-concepts-hermes-soul-md-wiring",
+      "source_path": "Knowledge/concepts/hermes-soul-md-wiring.md",
+      "tags": [
+        "agent-systems",
+        "governance",
+        "workflow"
+      ],
+      "title": "Hermes SOUL.md Wiring",
+      "updated": "2026-06-12"
+    },
+    {
+      "description": null,
+      "html_path": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
+      "slug": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm",
+      "source_path": "Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
+      "tags": [
+        "workflow",
+        "agent-systems",
+        "product-management",
+        "design"
+      ],
+      "title": "Matt Pocock SDLC Rhythm",
+      "updated": "2026-06-07"
+    },
+    {
+      "description": "Model of the MOC layer as the routing brain of the vault, keeping durable notes reachable through clear domain branches.",
+      "html_path": "concept-knowledge-concepts-moc-knowledge-cortex.html",
+      "slug": "concept-knowledge-concepts-moc-knowledge-cortex",
+      "source_path": "Knowledge/concepts/moc-knowledge-cortex.md",
+      "tags": [
+        "architecture",
+        "agent-systems",
+        "governance"
+      ],
+      "title": "MOC Knowledge Cortex",
+      "updated": "2026-06-13"
+    },
+    {
+      "description": "Architecture decision for when Jamie's crew agents run as peer Hermes profiles versus child/subagent processes.",
+      "html_path": "concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
+      "slug": "concept-knowledge-concepts-peer-profiles-vs-child-processes",
+      "source_path": "Knowledge/concepts/peer-profiles-vs-child-processes.md",
+      "tags": [
+        "agent-systems",
+        "governance",
+        "workflow"
+      ],
+      "title": "Peer Profiles vs Child Processes",
+      "updated": "2026-06-13"
+    },
+    {
+      "description": "Boundary model for routing durable knowledge between USER.md, Hermes memory, local knowledge, Obsidian/GitHub project truth, and skills.",
+      "html_path": "concept-knowledge-concepts-profile-memory-boundaries.html",
+      "slug": "concept-knowledge-concepts-profile-memory-boundaries",
+      "source_path": "Knowledge/concepts/profile-memory-boundaries.md",
+      "tags": [
+        "agent-systems",
+        "governance",
+        "workflow"
+      ],
+      "title": "Profile Memory Boundaries",
+      "updated": "2026-06-13"
+    },
+    {
+      "description": "Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.",
+      "html_path": "concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
+      "slug": "concept-knowledge-concepts-runtime-memory-knowledge-routing",
+      "source_path": "Knowledge/concepts/runtime-memory-knowledge-routing.md",
+      "tags": [
+        "agent-systems",
+        "knowledge-management",
+        "governance",
+        "memory"
+      ],
+      "title": "Runtime Memory Knowledge Routing",
+      "updated": "2026-06-15"
+    },
+    {
+      "description": "Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.",
+      "html_path": "concept-knowledge-concepts-self-improving-agent-systems.html",
+      "slug": "concept-knowledge-concepts-self-improving-agent-systems",
+      "source_path": "Knowledge/concepts/self-improving-agent-systems.md",
+      "tags": [
+        "agent-systems",
+        "governance",
+        "ai"
+      ],
+      "title": "Self-Improving Agent Systems",
+      "updated": "2026-06-13"
+    },
+    {
+      "description": null,
+      "html_path": "concept-knowledge-concepts-verb-first-product-positioning.html",
+      "slug": "concept-knowledge-concepts-verb-first-product-positioning",
+      "source_path": "Knowledge/concepts/verb-first-product-positioning.md",
+      "tags": [
+        "concept",
+        "product-management",
+        "strategy",
+        "customer-discovery"
+      ],
+      "title": "Verb-First Product Positioning",
+      "updated": "2026-06-11"
+    }
+  ],
   "entrypoints": {
     "html_index": "index.html",
     "root_pack_html": "root.html",

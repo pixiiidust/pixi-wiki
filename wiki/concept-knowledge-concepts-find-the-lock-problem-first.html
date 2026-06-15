@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KPR Wiki — Static Human Surface</title>
+<title>Find the Lock: Problem-First Approach</title>
 <style>
 :root {
   color-scheme: light dark;
@@ -168,9 +168,9 @@ th { background: var(--surface-soft); text-align: left; font-size: 12px; letter-
   <h2 class="sidebar-title">KPR Wiki</h2>
   <p class="doc-count">7 packs · 14 concepts</p>
   <p class="side-label">+ Overview</p>
-  <ul class="nav-list"><li><a class="active" href="index.html">⌂ Wiki overview</a></li></ul>
+  <ul class="nav-list"><li><a href="index.html">⌂ Wiki overview</a></li></ul>
   <p class="side-label">+ Knowledge 1</p><ul class="nav-list"><li><a href="knowledge.html">📄 Knowledge Domain Pack</a></li></ul><p class="side-label">+ Maps of Content 1</p><ul class="nav-list"><li><a href="maps-of-content.html">📄 Maps of Content Domain Pack</a></li></ul><p class="side-label">+ Projects 4</p><ul class="nav-list"><li><a href="projects-critical-ranger-ffm.html">📄 Critical Ranger FFM Pack</a></li><li><a href="projects-hermes-mission-control.html">📄 Hermes Mission Control Pack</a></li><li><a href="projects-planned-program-intel.html">📄 Planned Program Intel Pack</a></li><li><a href="projects.html">📄 Projects Domain Pack</a></li></ul><p class="side-label">+ Vault Root 1</p><ul class="nav-list"><li><a href="root.html">📄 ObsidianVault Root Pack</a></li></ul>
-  <p class="side-label">+ Concepts 14</p><ul class="nav-list"><li><a href="concept-knowledge-concepts-ai-native-problem-framing-framework.html">◇ AI-Native Problem Framing Framework</a></li><li><a href="concept-knowledge-concepts-agent-capability-route-pattern.html">◇ Agent Capability Route Pattern</a></li><li><a href="concept-knowledge-concepts-agent-wikis.html">◇ Agent Wikis</a></li><li><a href="concept-knowledge-concepts-bounded-context-tree-pattern.html">◇ Bounded Context Tree Pattern</a></li><li><a href="concept-knowledge-concepts-building-software-is-learning.html">◇ Building Software Is Learning</a></li><li><a href="concept-knowledge-concepts-find-the-lock-problem-first.html">◇ Find the Lock: Problem-First Approach</a></li><li><a href="concept-knowledge-concepts-hermes-soul-md-wiring.html">◇ Hermes SOUL.md Wiring</a></li><li><a href="concept-knowledge-concepts-moc-knowledge-cortex.html">◇ MOC Knowledge Cortex</a></li><li><a href="concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html">◇ Matt Pocock SDLC Rhythm</a></li><li><a href="concept-knowledge-concepts-peer-profiles-vs-child-processes.html">◇ Peer Profiles vs Child Processes</a></li><li><a href="concept-knowledge-concepts-profile-memory-boundaries.html">◇ Profile Memory Boundaries</a></li><li><a href="concept-knowledge-concepts-runtime-memory-knowledge-routing.html">◇ Runtime Memory Knowledge Routing</a></li><li><a href="concept-knowledge-concepts-self-improving-agent-systems.html">◇ Self-Improving Agent Systems</a></li><li><a href="concept-knowledge-concepts-verb-first-product-positioning.html">◇ Verb-First Product Positioning</a></li></ul>
+  <p class="side-label">+ Concepts 14</p><ul class="nav-list"><li><a href="concept-knowledge-concepts-ai-native-problem-framing-framework.html">◇ AI-Native Problem Framing Framework</a></li><li><a href="concept-knowledge-concepts-agent-capability-route-pattern.html">◇ Agent Capability Route Pattern</a></li><li><a href="concept-knowledge-concepts-agent-wikis.html">◇ Agent Wikis</a></li><li><a href="concept-knowledge-concepts-bounded-context-tree-pattern.html">◇ Bounded Context Tree Pattern</a></li><li><a href="concept-knowledge-concepts-building-software-is-learning.html">◇ Building Software Is Learning</a></li><li><a class="active" href="concept-knowledge-concepts-find-the-lock-problem-first.html">◇ Find the Lock: Problem-First Approach</a></li><li><a href="concept-knowledge-concepts-hermes-soul-md-wiring.html">◇ Hermes SOUL.md Wiring</a></li><li><a href="concept-knowledge-concepts-moc-knowledge-cortex.html">◇ MOC Knowledge Cortex</a></li><li><a href="concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html">◇ Matt Pocock SDLC Rhythm</a></li><li><a href="concept-knowledge-concepts-peer-profiles-vs-child-processes.html">◇ Peer Profiles vs Child Processes</a></li><li><a href="concept-knowledge-concepts-profile-memory-boundaries.html">◇ Profile Memory Boundaries</a></li><li><a href="concept-knowledge-concepts-runtime-memory-knowledge-routing.html">◇ Runtime Memory Knowledge Routing</a></li><li><a href="concept-knowledge-concepts-self-improving-agent-systems.html">◇ Self-Improving Agent Systems</a></li><li><a href="concept-knowledge-concepts-verb-first-product-positioning.html">◇ Verb-First Product Positioning</a></li></ul>
   <div id="for-agents">
     <p class="side-label">// For agents</p>
     <ul class="nav-list">
@@ -183,21 +183,91 @@ th { background: var(--surface-soft); text-align: left; font-size: 12px; letter-
 
   <article class="article">
     
-<nav class="breadcrumbs" aria-label="Breadcrumb"><span>wikis</span><span>KPR</span><span>index.html</span></nav>
+<nav class="breadcrumbs" aria-label="Breadcrumb"><span><a href="index.html">wikis</a></span><span>Knowledge</span><span>concepts</span><span>Knowledge/concepts/find-the-lock-problem-first.md</span></nav>
 <section class="hero">
-  <div class="meta-row"><span class="badge">updated: <strong>2026-06-15</strong></span><span class="badge">7 documents</span><span class="badge">themeable wiki interface</span></div>
-  <h1>KNOWLEDGE PACK WIKI</h1>
-  <p class="subtitle">A clean human surface for Pixiedust's agent-readable knowledge packs. Inspired by AgentWikis-style information architecture: clear scope, freshness, source boundaries, and machine-readable routing.</p>
+  <div class="meta-row"><span class="badge">concept</span><span class="badge">updated: <strong>2026-06-11</strong></span><span class="badge">source: Knowledge/concepts/find-the-lock-problem-first.md</span></div>
+  <h1>FIND THE LOCK: PROBLEM-FIRST APPROACH</h1>
+  <p class="subtitle">Durable Knowledge concept rendered from the vault Knowledge layer.</p>
 </section>
-<section class="scope-panel" aria-label="Wiki metadata">
-  <div class="scope-row"><div class="scope-label covers">Covers</div><p class="scope-value">Active KPR packs, source/routing boundaries, project/knowledge/MOC entrypoints, and current freshness posture.</p></div>
-  <div class="scope-row"><div class="scope-label not-covered">Not covered</div><p class="scope-value">Raw private vault content, secrets, memory dumps, runtime automation, or deferred #88–#91 work.</p></div>
-  <div class="scope-row"><div class="scope-label current">Current as of</div><p class="scope-value">Generated from the checked-in KPR packs. Markdown remains source/routing truth.</p></div>
+<section class="scope-panel" aria-label="Concept metadata">
+  <div class="scope-row"><div class="scope-label covers">Concept layer</div><p class="scope-value">Reusable synthesis from <code>Knowledge/concepts/find-the-lock-problem-first.md</code>.</p></div>
+  <div class="scope-row"><div class="scope-label not-covered">Not source truth</div><p class="scope-value">This rendered page is public derived output. Edit the Markdown concept note, not this HTML.</p></div>
+  <div class="scope-row"><div class="scope-label current">Tags</div><p class="scope-value"><span class="badge">#concept</span><span class="badge">#product-management</span><span class="badge">#customer-discovery</span><span class="badge">#workflow</span></p></div>
 </section>
-<section class="agent-callout"><strong>🤖 Agent access:</strong> start with the root pack, then follow domain/project packs and concepts. <div class="agent-links"><a href="root.html">root llms.txt</a><a href="projects.html">Projects pack</a><a href="knowledge.html">Knowledge pack</a><a href="index.json">index.json</a></div></section>
-<section class="wiki-section"><h2>Knowledge</h2><div class="pack-grid"><a class="pack-card" href="knowledge.html"><h3>Knowledge Domain Pack</h3><span class="pack-path">Knowledge/llms.txt</span></a></div></section><section class="wiki-section"><h2>Maps of Content</h2><div class="pack-grid"><a class="pack-card" href="maps-of-content.html"><h3>Maps of Content Domain Pack</h3><span class="pack-path">Maps of Content/llms.txt</span></a></div></section><section class="wiki-section"><h2>Projects</h2><div class="pack-grid"><a class="pack-card" href="projects-critical-ranger-ffm.html"><h3>Critical Ranger FFM Pack</h3><span class="pack-path">Projects/Critical Ranger FFM/llms.txt</span></a><a class="pack-card" href="projects-hermes-mission-control.html"><h3>Hermes Mission Control Pack</h3><span class="pack-path">Projects/Hermes Mission Control/llms.txt</span></a><a class="pack-card" href="projects-planned-program-intel.html"><h3>Planned Program Intel Pack</h3><span class="pack-path">Projects/Planned Program Intel/llms.txt</span></a><a class="pack-card" href="projects.html"><h3>Projects Domain Pack</h3><span class="pack-path">Projects/llms.txt</span></a></div></section><section class="wiki-section"><h2>Vault Root</h2><div class="pack-grid"><a class="pack-card" href="root.html"><h3>ObsidianVault Root Pack</h3><span class="pack-path">llms.txt</span></a></div></section>
-<section class="wiki-section"><h2>Knowledge Concepts</h2><div class="pack-grid"><a class="pack-card" href="concept-knowledge-concepts-ai-native-problem-framing-framework.html"><h3>AI-Native Problem Framing Framework</h3><span class="pack-path">Knowledge/concepts/ai-native-problem-framing-framework.md</span></a><a class="pack-card" href="concept-knowledge-concepts-agent-capability-route-pattern.html"><h3>Agent Capability Route Pattern</h3><span class="pack-path">Knowledge/concepts/agent-capability-route-pattern.md</span></a><a class="pack-card" href="concept-knowledge-concepts-agent-wikis.html"><h3>Agent Wikis</h3><span class="pack-path">Knowledge/concepts/agent-wikis.md</span></a><a class="pack-card" href="concept-knowledge-concepts-bounded-context-tree-pattern.html"><h3>Bounded Context Tree Pattern</h3><span class="pack-path">Knowledge/concepts/bounded-context-tree-pattern.md</span></a><a class="pack-card" href="concept-knowledge-concepts-building-software-is-learning.html"><h3>Building Software Is Learning</h3><span class="pack-path">Knowledge/concepts/building-software-is-learning.md</span></a><a class="pack-card" href="concept-knowledge-concepts-find-the-lock-problem-first.html"><h3>Find the Lock: Problem-First Approach</h3><span class="pack-path">Knowledge/concepts/find-the-lock-problem-first.md</span></a><a class="pack-card" href="concept-knowledge-concepts-hermes-soul-md-wiring.html"><h3>Hermes SOUL.md Wiring</h3><span class="pack-path">Knowledge/concepts/hermes-soul-md-wiring.md</span></a><a class="pack-card" href="concept-knowledge-concepts-moc-knowledge-cortex.html"><h3>MOC Knowledge Cortex</h3><span class="pack-path">Knowledge/concepts/moc-knowledge-cortex.md</span></a><a class="pack-card" href="concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html"><h3>Matt Pocock SDLC Rhythm</h3><span class="pack-path">Knowledge/concepts/matt-pocock-sdlc-rhythm.md</span></a><a class="pack-card" href="concept-knowledge-concepts-peer-profiles-vs-child-processes.html"><h3>Peer Profiles vs Child Processes</h3><span class="pack-path">Knowledge/concepts/peer-profiles-vs-child-processes.md</span></a><a class="pack-card" href="concept-knowledge-concepts-profile-memory-boundaries.html"><h3>Profile Memory Boundaries</h3><span class="pack-path">Knowledge/concepts/profile-memory-boundaries.md</span></a><a class="pack-card" href="concept-knowledge-concepts-runtime-memory-knowledge-routing.html"><h3>Runtime Memory Knowledge Routing</h3><span class="pack-path">Knowledge/concepts/runtime-memory-knowledge-routing.md</span></a><a class="pack-card" href="concept-knowledge-concepts-self-improving-agent-systems.html"><h3>Self-Improving Agent Systems</h3><span class="pack-path">Knowledge/concepts/self-improving-agent-systems.md</span></a><a class="pack-card" href="concept-knowledge-concepts-verb-first-product-positioning.html"><h3>Verb-First Product Positioning</h3><span class="pack-path">Knowledge/concepts/verb-first-product-positioning.md</span></a></div></section>
-<footer class="footer">This is plain semantic HTML. No JavaScript is required; agents and humans can both read it. Public pages are sanitized derived output.</footer>
+<section class="agent-callout"><strong>🤖 Agent access:</strong> use concepts as durable synthesis, then verify project/runtime facts against packs, GitHub, or live tools.<div class="agent-links"><a href="knowledge.html">Knowledge pack</a><a href="index.json">index.json</a><span>Markdown source: Knowledge/concepts/find-the-lock-problem-first.md</span></div></section>
+<nav class="toc" aria-label="Page sections"><p class="toc-title">// Contents</p><ul><li><a href="#concept-section-0">Definition</a></li><li><a href="#concept-section-1">Core rule</a></li><li><a href="#concept-section-2">Good lock criteria</a></li><li><a href="#concept-section-3">Anti-patterns</a></li><li><a href="#concept-section-4">How to use it</a></li><li><a href="#concept-section-5">Relationship to `/find-lock`</a></li><li><a href="#concept-section-6">Relationship to other concepts</a></li><li><a href="#concept-section-7">Short form</a></li></ul></nav>
+<section class="wiki-section"><div class="section-body"><h2 id="concept-section-0">Definition</h2>
+<p>Find the Lock is Jamie&#x27;s problem-first approach for turning solution-shaped ideas into crisp problem understanding before committing to a build.</p>
+<p>The metaphor:</p>
+<ul>
+<li><strong>Key</strong> — the proposed solution, feature, product, automation, agent capability, or implementation idea.</li>
+<li><strong>Lock</strong> — the real problem, constraint, friction, job, risk, missing trust, or blocked behavior that the key is supposed to unlock.</li>
+</ul>
+<p>Problem-first means the agent must identify the lock before polishing the key.</p>
+<h2 id="concept-section-1">Core rule</h2>
+<p>When the input arrives as a proposed key, slow down and ask: <strong>what lock is this key supposed to open?</strong></p>
+<p>Do not treat the proposed solution as validated just because it is concrete. Concrete keys can still fit the wrong lock.</p>
+<h2 id="concept-section-2">Good lock criteria</h2>
+<p>A good lock is:</p>
+<ol>
+<li><strong>Owned by a specific user or actor</strong> — someone experiences the friction.</li>
+<li><strong>Observable in behavior</strong> — it shows up in delays, errors, avoidance, workaround tools, repeated questions, manual cleanup, missed decisions, or money/time loss.</li>
+<li><strong>Costly enough to matter</strong> — it creates pain, risk, churn, lost revenue, blocked progress, or cognitive load.</li>
+<li><strong>Specific enough to probe</strong> — a prototype, interview, workflow trace, or data check can test whether it exists.</li>
+<li><strong>Independent from one favorite key</strong> — multiple possible keys could plausibly open it.</li>
+</ol>
+<h2 id="concept-section-3">Anti-patterns</h2>
+<ul>
+<li><strong>Key-first building</strong> — implementing the feature before naming the user friction.</li>
+<li><strong>Category-first thinking</strong> — starting with a noun like &quot;dashboard&quot;, &quot;agent&quot;, &quot;platform&quot;, or &quot;CRM&quot; before naming the blocked behavior.</li>
+<li><strong>Vibe lock</strong> — vague pain such as &quot;people need visibility&quot; without specifying visibility into what, for whom, at what decision point.</li>
+<li><strong>One-key tunnel vision</strong> — defending the first solution instead of comparing alternative keys.</li>
+<li><strong>Fake validation</strong> — treating excitement about the key as evidence that the lock is real.</li>
+</ul>
+<h2 id="concept-section-4">How to use it</h2>
+<p>Use Find the Lock when Jamie or an agent proposes:</p>
+<ul>
+<li>a feature</li>
+<li>a product idea</li>
+<li>an AI agent capability</li>
+<li>a workflow automation</li>
+<li>a dashboard or UI surface</li>
+<li>a startup wedge</li>
+<li>a PRD direction</li>
+<li>a technical implementation that may be premature</li>
+</ul>
+<p>The output should name:</p>
+<ol>
+<li>Proposed key</li>
+<li>Suspected lock</li>
+<li>Lock owner / affected actor</li>
+<li>Observable evidence</li>
+<li>Competing keys</li>
+<li>Fastest probe</li>
+<li>Recommended next move: prototype, grill, PRD, issue, or discard</li>
+</ol>
+<h2 id="concept-section-5">Relationship to <code>/find-lock</code></h2>
+<p>The reusable Hermes skill is <code>find-lock</code>, exposed conversationally as <code>/find-lock</code>. The skill is the operating procedure; this note is the durable human-facing concept.</p>
+<p>The skill&#x27;s compact output shape is:</p>
+<ol>
+<li>Proposed key</li>
+<li>Suspected lock</li>
+<li>Lock owner</li>
+<li>Observable evidence</li>
+<li>Competing keys</li>
+<li>Fastest probe</li>
+<li>Decision</li>
+</ol>
+<h2 id="concept-section-6">Relationship to other concepts</h2>
+<ul>
+<li>[[matt-pocock-sdlc-rhythm]] — Find the Lock explains why <code>/prototype</code> can be used as a probe when a proposed key hides a fuzzy lock.</li>
+<li>[[verb-first-product-positioning]] — Once the lock is found, verb-first positioning describes the action/outcome in concrete user language.</li>
+<li>[[ai-native-problem-framing-framework]] — For AI-native products, the lock helps define the environment, actions, goal, and constraints.</li>
+</ul>
+<h2 id="concept-section-7">Short form</h2>
+<p>Before building the key, find the lock.</p></div></section>
+<div class="next-card"><span>Generated from <code>Knowledge/concepts/find-the-lock-problem-first.md</code></span><a href="index.html">Back to wiki index →</a></div>
+<footer class="footer">Plain semantic HTML. Concepts are durable synthesis; Markdown remains source truth.</footer>
 
   </article>
 </div>
