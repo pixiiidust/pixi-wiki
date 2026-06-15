@@ -62,6 +62,8 @@ body {
 }
 a { color: var(--agent); text-decoration: none; }
 a:hover { text-decoration: underline; }
+.wiki-link { font-weight: 650; }
+.wiki-link.unresolved { color: var(--muted); border-bottom: 1px dashed var(--border-strong); cursor: help; }
 code {
   color: var(--code-text);
   background: var(--code-bg);
@@ -91,15 +93,26 @@ code {
 .theme-toggle { cursor: pointer; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--muted); padding: 6px 10px; font: inherit; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .theme-toggle:hover { color: var(--text); border-color: var(--accent); }
 .layout { display: grid; grid-template-columns: 286px minmax(0, 1fr); gap: 42px; max-width: 1240px; margin: 0 auto; padding: 28px 24px 70px; }
-.sidebar { position: sticky; top: 82px; align-self: start; padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: rgba(var(--surface-rgb),.76); box-shadow: 0 1px 2px rgba(15,23,42,.03); }
+.sidebar { position: sticky; top: 76px; align-self: start; max-height: calc(100vh - 92px); overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: rgba(var(--surface-rgb),.76); box-shadow: 0 1px 2px rgba(15,23,42,.03); }
+.sidebar::-webkit-scrollbar { width: 10px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border-strong); border: 3px solid transparent; border-radius: 999px; background-clip: content-box; }
 .sidebar-title { margin: 0; font-size: 16px; font-weight: 760; }
 .doc-count { margin: 2px 0 16px; color: var(--muted); font-size: 13px; }
-.side-label { margin: 20px 0 8px; color: var(--subtle); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.nav-section { margin: 10px 0; border-top: 1px solid var(--border); padding-top: 10px; }
+.nav-section:first-of-type { border-top: 0; padding-top: 0; }
+.nav-section summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; list-style: none; user-select: none; color: var(--subtle); font-size: 11px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.nav-section summary::-webkit-details-marker { display: none; }
+.nav-section summary::before { content: "▸"; color: var(--accent); font-size: 11px; transition: transform .16s ease; }
+.nav-section[open] summary::before { transform: rotate(90deg); }
+.nav-section summary:hover { color: var(--text); }
+.nav-count { margin-left: auto; color: var(--muted); font-size: 11px; letter-spacing: 0; text-transform: none; }
+.side-label { margin: 0; }
 .sub-label { margin: 10px 0 6px; color: var(--muted); font-size: 11px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
 .section-kicker { margin: -4px 0 16px; color: var(--muted); font-size: 14px; }
 .nav-list { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
 .nav-list a { display: block; padding: 8px 10px; border-left: 3px solid transparent; border-radius: 9px; color: var(--nav-text); font-size: 13px; line-height: 1.25; }
 .nav-list a.active { border-left-color: var(--accent); color: var(--text); background: var(--accent-soft); font-weight: 700; }
+.nav-section-body { padding-top: 8px; }
 .article { min-width: 0; max-width: 880px; }
 .breadcrumbs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 18px; color: var(--muted); font-size: 13px; }
 .breadcrumbs span::after { content: "/"; margin-left: 8px; color: var(--border-strong); }
@@ -146,7 +159,7 @@ th { background: var(--surface-soft); text-align: left; font-size: 12px; letter-
 .footer { margin-top: 40px; padding: 22px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
 @media (max-width: 860px) {
   .layout { grid-template-columns: 1fr; padding: 18px 16px 54px; }
-  .sidebar { position: static; max-height: none; }
+  .sidebar { position: static; max-height: none; overflow: visible; }
   .toplinks { display: flex; gap: 8px; }
   .toplinks a { display: none; }
   .scope-row { grid-template-columns: 1fr; gap: 6px; }
@@ -170,18 +183,20 @@ th { background: var(--surface-soft); text-align: left; font-size: 12px; letter-
 <aside class="sidebar" aria-label="Wiki contents">
   <h2 class="sidebar-title">KPR Wiki</h2>
   <p class="doc-count">7 packs · 14 concepts</p>
-  <p class="side-label">+ Overview</p>
-  <ul class="nav-list"><li><a href="index.html">⌂ Wiki overview</a></li></ul>
-  <p class="side-label">+ Knowledge 15</p><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a href="knowledge.html">📄 Start here: Knowledge Domain Pack</a></li></ul><p class="sub-label">Concepts</p><ul class="nav-list"><li><a href="concept-knowledge-concepts-ai-native-problem-framing-framework.html">◇ AI-Native Problem Framing Framework</a></li><li><a href="concept-knowledge-concepts-agent-capability-route-pattern.html">◇ Agent Capability Route Pattern</a></li><li><a href="concept-knowledge-concepts-agent-wikis.html">◇ Agent Wikis</a></li><li><a href="concept-knowledge-concepts-bounded-context-tree-pattern.html">◇ Bounded Context Tree Pattern</a></li><li><a href="concept-knowledge-concepts-building-software-is-learning.html">◇ Building Software Is Learning</a></li><li><a href="concept-knowledge-concepts-find-the-lock-problem-first.html">◇ Find the Lock: Problem-First Approach</a></li><li><a href="concept-knowledge-concepts-hermes-soul-md-wiring.html">◇ Hermes SOUL.md Wiring</a></li><li><a href="concept-knowledge-concepts-moc-knowledge-cortex.html">◇ MOC Knowledge Cortex</a></li><li><a href="concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html">◇ Matt Pocock SDLC Rhythm</a></li><li><a href="concept-knowledge-concepts-peer-profiles-vs-child-processes.html">◇ Peer Profiles vs Child Processes</a></li><li><a href="concept-knowledge-concepts-profile-memory-boundaries.html">◇ Profile Memory Boundaries</a></li><li><a href="concept-knowledge-concepts-runtime-memory-knowledge-routing.html">◇ Runtime Memory Knowledge Routing</a></li><li><a href="concept-knowledge-concepts-self-improving-agent-systems.html">◇ Self-Improving Agent Systems</a></li><li><a href="concept-knowledge-concepts-verb-first-product-positioning.html">◇ Verb-First Product Positioning</a></li></ul><p class="side-label">+ Maps of Content 1</p><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a class="active" href="maps-of-content.html">📄 Start here: Maps of Content Domain Pack</a></li></ul><p class="side-label">+ Projects 4</p><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a href="projects-critical-ranger-ffm.html">📄 Start here: Critical Ranger FFM Pack</a></li><li><a href="projects-hermes-mission-control.html">📄 Start here: Hermes Mission Control Pack</a></li><li><a href="projects-planned-program-intel.html">📄 Start here: Planned Program Intel Pack</a></li><li><a href="projects.html">📄 Start here: Projects Domain Pack</a></li></ul><p class="side-label">+ Vault Root 1</p><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a href="root.html">📄 Start here: ObsidianVault Root Pack</a></li></ul>
-  <div id="for-agents">
-    <p class="side-label">// For agents</p>
-    <ul class="nav-list">
+  <details class="nav-section">
+    <summary><span class="side-label">Overview</span><span class="nav-count">1</span></summary>
+    <div class="nav-section-body"><ul class="nav-list"><li><a href="index.html">⌂ Wiki overview</a></li></ul></div>
+  </details>
+  <details class="nav-section"><summary><span class="side-label">Knowledge</span><span class="nav-count">15</span></summary><div class="nav-section-body"><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a href="knowledge.html">📄 Start here: Knowledge Domain Pack</a></li></ul><p class="sub-label">Concepts</p><ul class="nav-list"><li><a href="concept-knowledge-concepts-ai-native-problem-framing-framework.html">◇ AI-Native Problem Framing Framework</a></li><li><a href="concept-knowledge-concepts-agent-capability-route-pattern.html">◇ Agent Capability Route Pattern</a></li><li><a href="concept-knowledge-concepts-agent-wikis.html">◇ Agent Wikis</a></li><li><a href="concept-knowledge-concepts-bounded-context-tree-pattern.html">◇ Bounded Context Tree Pattern</a></li><li><a href="concept-knowledge-concepts-building-software-is-learning.html">◇ Building Software Is Learning</a></li><li><a href="concept-knowledge-concepts-find-the-lock-problem-first.html">◇ Find the Lock: Problem-First Approach</a></li><li><a href="concept-knowledge-concepts-hermes-soul-md-wiring.html">◇ Hermes SOUL.md Wiring</a></li><li><a href="concept-knowledge-concepts-moc-knowledge-cortex.html">◇ MOC Knowledge Cortex</a></li><li><a href="concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html">◇ Matt Pocock SDLC Rhythm</a></li><li><a href="concept-knowledge-concepts-peer-profiles-vs-child-processes.html">◇ Peer Profiles vs Child Processes</a></li><li><a href="concept-knowledge-concepts-profile-memory-boundaries.html">◇ Profile Memory Boundaries</a></li><li><a href="concept-knowledge-concepts-runtime-memory-knowledge-routing.html">◇ Runtime Memory Knowledge Routing</a></li><li><a href="concept-knowledge-concepts-self-improving-agent-systems.html">◇ Self-Improving Agent Systems</a></li><li><a href="concept-knowledge-concepts-verb-first-product-positioning.html">◇ Verb-First Product Positioning</a></li></ul></div></details><details class="nav-section" open><summary><span class="side-label">Maps of Content</span><span class="nav-count">1</span></summary><div class="nav-section-body"><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a class="active" href="maps-of-content.html">📄 Start here: Maps of Content Domain Pack</a></li></ul></div></details><details class="nav-section"><summary><span class="side-label">Projects</span><span class="nav-count">4</span></summary><div class="nav-section-body"><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a href="projects-critical-ranger-ffm.html">📄 Start here: Critical Ranger FFM Pack</a></li><li><a href="projects-hermes-mission-control.html">📄 Start here: Hermes Mission Control Pack</a></li><li><a href="projects-planned-program-intel.html">📄 Start here: Planned Program Intel Pack</a></li><li><a href="projects.html">📄 Start here: Projects Domain Pack</a></li></ul></div></details><details class="nav-section"><summary><span class="side-label">Vault Root</span><span class="nav-count">1</span></summary><div class="nav-section-body"><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a href="root.html">📄 Start here: ObsidianVault Root Pack</a></li></ul></div></details>
+  <details class="nav-section" open id="for-agents">
+    <summary><span class="side-label">For agents</span><span class="nav-count">4</span></summary>
+    <div class="nav-section-body"><ul class="nav-list">
       <li><a href="raw/llms.txt">root raw llms.txt</a></li>
       <li><a href="llms.txt">llms.txt</a></li>
       <li><a href="llms-full.txt">llms-full.txt</a></li>
       <li><a href="index.json">index.json</a></li>
-    </ul>
-  </div>
+    </ul></div>
+  </details>
 </aside>
 
   <article class="article">
