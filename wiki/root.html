@@ -5,112 +5,181 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ObsidianVault Root Pack</title>
 <style>
-:root { color-scheme: dark; }
-body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #09111f; color: #e6edf7; }
-main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
-a { color: #7dd3fc; }
-header { border: 1px solid #26354f; background: linear-gradient(135deg, #111c33, #0e1729); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
-h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.04em; }
-h2 { margin-top: 32px; border-bottom: 1px solid #26354f; padding-bottom: 8px; color: #dbeafe; }
-.badge { display: inline-block; padding: 4px 10px; border: 1px solid #37506f; border-radius: 999px; color: #bfdbfe; background: #0f1d33; font-size: .82rem; margin-right: 8px; }
-.card { border: 1px solid #26354f; background: #0d1728; border-radius: 16px; padding: 20px; margin: 16px 0; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-pre { overflow-x: auto; background: #020617; border: 1px solid #26354f; padding: 16px; border-radius: 12px; }
-code { color: #fde68a; }
-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .94rem; }
-th, td { border: 1px solid #26354f; padding: 8px 10px; vertical-align: top; }
-th { color: #bfdbfe; background: #111c33; }
-li { margin: 6px 0; }
-.footer { margin-top: 40px; color: #94a3b8; font-size: .9rem; }
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+  --text: #172033;
+  --muted: #64748b;
+  --subtle: #94a3b8;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --accent: #d97706;
+  --accent-soft: #fff7ed;
+  --agent: #2563eb;
+  --agent-soft: #eff6ff;
+  --green: #15803d;
+  --green-soft: #f0fdf4;
+  --warn: #b45309;
+  --warn-soft: #fffbeb;
+  --shadow: 0 18px 48px rgba(15, 23, 42, .08);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #ffffff 0, var(--bg) 320px);
+  color: var(--text);
+  line-height: 1.65;
+}
+a { color: var(--agent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code {
+  color: #9a3412;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1px 5px;
+  font-family: "SF Mono", "JetBrains Mono", Consolas, monospace;
+  font-size: .88em;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+  padding: 0 24px;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 750; letter-spacing: -.02em; color: var(--text); }
+.brand-mark { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; background: var(--accent); color: #fff; font-size: 13px; }
+.toplinks { display: flex; align-items: center; gap: 18px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.toplinks a { color: var(--muted); }
+.layout { display: grid; grid-template-columns: 286px minmax(0, 1fr); gap: 42px; max-width: 1240px; margin: 0 auto; padding: 28px 24px 70px; }
+.sidebar { position: sticky; top: 82px; align-self: start; padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: rgba(255,255,255,.76); box-shadow: 0 1px 2px rgba(15,23,42,.03); }
+.sidebar-title { margin: 0; font-size: 16px; font-weight: 760; }
+.doc-count { margin: 2px 0 16px; color: var(--muted); font-size: 13px; }
+.side-label { margin: 20px 0 8px; color: var(--subtle); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.nav-list { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.nav-list a { display: block; padding: 8px 10px; border-left: 3px solid transparent; border-radius: 9px; color: var(--475569, #475569); font-size: 13px; line-height: 1.25; }
+.nav-list a.active { border-left-color: var(--accent); color: var(--text); background: var(--accent-soft); font-weight: 700; }
+.article { min-width: 0; max-width: 880px; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 18px; color: var(--muted); font-size: 13px; }
+.breadcrumbs span::after { content: "/"; margin-left: 8px; color: var(--border-strong); }
+.breadcrumbs span:last-child::after { content: ""; }
+.hero { padding: 4px 0 22px; border-bottom: 1px solid var(--border); }
+.hero h1 { margin: 0 0 12px; font-size: clamp(2.15rem, 6vw, 4.4rem); line-height: .96; letter-spacing: -.055em; font-weight: 830; }
+.subtitle { max-width: 760px; margin: 0; color: var(--muted); font-size: 17px; }
+.meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border: 1px solid var(--border); border-radius: 999px; background: #fff; color: var(--muted); font-size: 12px; font-weight: 700; }
+.badge strong { color: var(--accent); }
+.scope-panel { display: grid; gap: 0; margin: 24px 0; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); overflow: hidden; box-shadow: var(--shadow); }
+.scope-row { display: grid; grid-template-columns: 160px 1fr; gap: 18px; padding: 16px 18px; border-top: 1px solid var(--border); }
+.scope-row:first-child { border-top: 0; }
+.scope-label { font-size: 11px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.scope-label.covers { color: var(--green); }
+.scope-label.not-covered { color: var(--warn); }
+.scope-label.current { color: var(--agent); }
+.scope-value { margin: 0; color: #334155; }
+.scope-value ul { margin: 0; padding-left: 18px; }
+.agent-callout { margin: 22px 0 8px; padding: 16px 18px; border: 1px solid #bfdbfe; border-radius: 16px; background: var(--agent-soft); color: #1e3a8a; }
+.agent-callout strong { color: #1d4ed8; }
+.agent-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.agent-links a, .agent-links span { display: inline-block; padding: 5px 9px; border: 1px solid #bfdbfe; border-radius: 999px; background: #fff; font-family: "SF Mono", Consolas, monospace; font-size: 12px; }
+.toc { margin: 24px 0; padding: 14px 18px; border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.68); }
+.toc-title { margin: 0 0 8px; color: var(--muted); font-size: 11px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.toc ul { columns: 2; margin: 0; padding-left: 18px; }
+.wiki-section { padding: 26px 0; border-top: 1px solid var(--border); }
+.wiki-section h2 { margin: 0 0 12px; font-size: 22px; letter-spacing: -.02em; }
+.wiki-section h2::before { content: "// "; color: var(--accent); font-weight: 850; }
+.wiki-section h3 { margin: 18px 0 8px; font-size: 17px; }
+.wiki-section h4 { margin: 14px 0 6px; font-size: 15px; color: var(--muted); }
+.section-body p { margin: 10px 0; }
+.section-body ul, .section-body ol { padding-left: 22px; }
+.section-body li { margin: 6px 0; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; background: #fff; }
+th, td { border: 1px solid var(--border); padding: 10px 12px; vertical-align: top; }
+th { background: var(--surface-soft); text-align: left; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.pack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 14px; margin-top: 12px; }
+.pack-card { display: block; padding: 17px; border: 1px solid var(--border); border-radius: 16px; background: #fff; color: var(--text); box-shadow: 0 1px 2px rgba(15,23,42,.04); transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease; }
+.pack-card:hover { transform: translateY(-2px); border-color: #f59e0b; box-shadow: var(--shadow); text-decoration: none; }
+.pack-card h3 { margin: 0 0 5px; font-size: 16px; line-height: 1.25; }
+.pack-path { display: block; color: var(--muted); font-family: "SF Mono", Consolas, monospace; font-size: 12px; }
+.next-card { display: flex; justify-content: space-between; gap: 18px; margin: 34px 0 0; padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: #fff; }
+.footer { margin-top: 40px; padding: 22px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; padding: 18px 16px 54px; }
+  .sidebar { position: static; max-height: none; }
+  .toplinks { display: none; }
+  .scope-row { grid-template-columns: 1fr; gap: 6px; }
+  .toc ul { columns: 1; }
+}
 </style>
 </head>
 <body>
-<main>
-
-<header>
-  <span class="badge">Derived human surface</span>
-  <span class="badge">Markdown remains source truth</span>
-  <h1>ObsidianVault Root Pack</h1>
-  <p><strong>Source pack:</strong> <a href="#source-paths-are-private">llms.txt</a></p>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">✦</span><span>Pixiedust Wiki</span></a>
+  <nav class="toplinks" aria-label="Primary">
+    <a href="index.html">Wikis</a>
+    <a href="root.html">Root Pack</a>
+    <a href="#for-agents">For Agents</a>
+    <a href="https://github.com/pixiiidust/ObsidianVault">Source</a>
+  </nav>
 </header>
-<section class="card">
-  <h2>Frontmatter Summary</h2>
-  <pre>title: &quot;ObsidianVault Root Pack&quot;
-type: knowledge-pack
-status: active
-current_as: 2026-06-15
-confidence: high
-scope:
-  covers:
-    - Vault-level navigation and agent retrieval routing
-    - Active/parked/historical project context switching
-    - Source-of-truth hierarchy across GitHub, PRDs, Obsidian, Hermes knowledge, skills, memory, sessions, and web
-    - Current KPR V2 and vault-wide entrypoint planning gates
-  not_covered:
-    - Individual project build details
-    - Hermes profile/gateway runtime configuration
-    - Session-specific memory or conversation state
-freshness:
-  policy: on_change
-  stale_after_days: 60
-owners:
-  routing: Pixoid
-  maintenance: Quill
-sources:
-  - label: Home
-    path_or_url: Home.md
-    role: synthesis
-  - label: Projects Domain Pack
-    path_or_url: Projects/llms.txt
-    role: routing
-  - label: Projects MOC
-    path_or_url: Maps of Content/Projects MOC.md
-    role: synthesis
-  - label: Knowledge Domain Pack
-    path_or_url: Knowledge/llms.txt
-    role: routing
-  - label: Knowledge MOC
-    path_or_url: Maps of Content/Knowledge MOC.md
-    role: synthesis
-  - label: MOC Domain Pack
-    path_or_url: Maps of Content/llms.txt
-    role: routing
-  - label: Project Board
-    path_or_url: Project Board.md
-    role: coordination
-  - label: Knowledge Pack Contract V1
-    path_or_url: Projects/Hermes Mission Control/Knowledge Pack Contract V1.md
-    role: architecture
-  - label: KPR V2 tracker
-    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/74
-    role: coordination
-  - label: Vault-wide entrypoint mesh design
-    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/77
-    role: coordination
-human_surface:
-  - path_or_url: Home.md
-  - path_or_url: Maps of Content/Projects MOC.md
-  - path_or_url: Maps of Content/Knowledge MOC.md
-fallback_rules:
-  - If a project has no knowledge pack, fall back to its Projects/&lt;Name&gt;/Index.md.
-  - If no project index exists, fall back to Projects MOC and Project Board.
-  - If stale, use for orientation only and verify live GitHub/vault state before acting.
-v_next:
-  - static_html
-  - automated_freshness_check</pre>
+<div class="layout">
+  
+<aside class="sidebar" aria-label="Wiki contents">
+  <h2 class="sidebar-title">KPR Wiki</h2>
+  <p class="doc-count">7 documents</p>
+  <p class="side-label">+ Overview</p>
+  <ul class="nav-list"><li><a href="index.html">⌂ Wiki overview</a></li></ul>
+  <p class="side-label">+ Knowledge 1</p><ul class="nav-list"><li><a href="knowledge.html">📄 Knowledge Domain Pack</a></li></ul><p class="side-label">+ Maps of Content 1</p><ul class="nav-list"><li><a href="maps-of-content.html">📄 Maps of Content Domain Pack</a></li></ul><p class="side-label">+ Projects 4</p><ul class="nav-list"><li><a href="projects-critical-ranger-ffm.html">📄 Critical Ranger FFM Pack</a></li><li><a href="projects-hermes-mission-control.html">📄 Hermes Mission Control Pack</a></li><li><a href="projects-planned-program-intel.html">📄 Planned Program Intel Pack</a></li><li><a href="projects.html">📄 Projects Domain Pack</a></li></ul><p class="side-label">+ Vault Root 1</p><ul class="nav-list"><li><a class="active" href="root.html">📄 ObsidianVault Root Pack</a></li></ul>
+  <div id="for-agents">
+    <p class="side-label">// For agents</p>
+    <ul class="nav-list">
+      <li><a href="root.html">llms.txt</a></li>
+      <li><a href="index.html">index.html</a></li>
+      <li><a href="https://github.com/pixiiidust/ObsidianVault/issues/88">index.json planned</a></li>
+    </ul>
+  </div>
+</aside>
+
+  <article class="article">
+    
+<nav class="breadcrumbs" aria-label="Breadcrumb"><span><a href="index.html">wikis</a></span><span>KPR</span><span>llms.txt</span></nav>
+<section class="hero">
+  <div class="meta-row"><span class="badge">updated: <strong>2026-06-15</strong></span><span class="badge">derived HTML</span><span class="badge">source: llms.txt</span></div>
+  <h1>OBSIDIANVAULT ROOT PACK</h1>
+  <p class="subtitle">Human-readable view of a Knowledge Pack Routing contract. Markdown <code>llms.txt</code> remains source/routing truth.</p>
 </section>
-<section class="card"><h2>Agent Start Here</h2><p>Before project work, load this file to choose the right source. Then load the relevant project knowledge pack or project <code>Index.md</code>. This file is routing truth, not canonical truth.</p></section><section class="card"><h2>What This Pack Routes</h2><ul>
+
+<section class="scope-panel" aria-label="Scope metadata">
+  <div class="scope-row"><div class="scope-label covers">Covers</div><div><ul class="scope-value"><li>Vault-level navigation and agent retrieval routing</li><li>Active/parked/historical project context switching</li><li>Source-of-truth hierarchy across GitHub, PRDs, Obsidian, Hermes knowledge, skills, memory, sessions, and web</li><li>Current KPR V2 and vault-wide entrypoint planning gates</li></ul></div></div>
+  <div class="scope-row"><div class="scope-label not-covered">Not covered</div><div><ul class="scope-value"><li>Individual project build details</li><li>Hermes profile/gateway runtime configuration</li><li>Session-specific memory or conversation state</li></ul></div></div>
+  <div class="scope-row"><div class="scope-label current">Current as of</div><p class="scope-value">2026-06-15 · confidence high</p></div>
+</section>
+
+<section class="agent-callout"><strong>🤖 Agent access:</strong> load the source pack <code>llms.txt</code>, then follow its canonical sources. Public page paths are display surfaces only.<div class="agent-links"><span>llms.txt</span><a href="index.html">wiki index</a><a href="https://github.com/pixiiidust/ObsidianVault/issues/88">index.json planned</a></div></section>
+<nav class="toc" aria-label="Page sections"><p class="toc-title">// Contents</p><ul><li><a href="#section-0">Agent Start Here</a></li><li><a href="#section-1">What This Pack Routes</a></li><li><a href="#section-2">What This Pack Does Not Route</a></li><li><a href="#section-3">Source-of-Truth Hierarchy</a></li><li><a href="#section-4">Canonical Sources</a></li><li><a href="#section-5">Current Narrative / Operating Posture</a></li><li><a href="#section-6">Do Not Do</a></li><li><a href="#section-7">Fallback Rules</a></li><li><a href="#section-8">Human Surface</a></li><li><a href="#section-9">Maintenance Notes</a></li></ul></nav>
+<section class="wiki-section" id="section-0"><h2>Agent Start Here</h2><div class="section-body"><p>Before project work, load this file to choose the right source. Then load the relevant project knowledge pack or project <code>Index.md</code>. This file is routing truth, not canonical truth.</p></div></section><section class="wiki-section" id="section-1"><h2>What This Pack Routes</h2><div class="section-body"><ul>
 <li>Vault-wide source-of-truth hierarchy.</li>
 <li>Active project priority and next entrypoint.</li>
 <li>Where to find project hubs, MOCs, and Knowledge wiki surfaces.</li>
 <li>The distinction between human navigation (MOCs/indexes) and agent retrieval contracts (<code>llms.txt</code>).</li>
 <li>Crew roles: Pixoid routes/reviews; Quill maintains packs; Boba contributes sources; Tinker contributes implementation facts.</li>
-</ul></section><section class="card"><h2>What This Pack Does Not Route</h2><ul>
+</ul></div></section><section class="wiki-section" id="section-2"><h2>What This Pack Does Not Route</h2><div class="section-body"><ul>
 <li>Detailed project issue trees or implementation instructions.</li>
 <li>Live Hermes gateway/profile/cron mutation.</li>
 <li>Personal secrets or credentials.</li>
 <li>External web research except as fallback.</li>
-</ul></section><section class="card"><h2>Source-of-Truth Hierarchy</h2><ol>
+</ul></div></section><section class="wiki-section" id="section-3"><h2>Source-of-Truth Hierarchy</h2><div class="section-body"><ol>
 <li><strong>GitHub issues/PRs</strong> — coordination truth.</li>
 <li><strong>PRDs/ADRs</strong> — requirements and architecture truth.</li>
 <li><strong>Obsidian project notes</strong> — human synthesis and durable project context.</li>
@@ -120,41 +189,43 @@ v_next:
 <li><strong>Session search</strong> — conversation archaeology, never canonical alone.</li>
 <li><strong>Web / public Agent Wikis</strong> — external/current fallback.</li>
 <li><strong>Knowledge packs</strong> — routing truth: maps to the right source above.</li>
-</ol></section><section class="card"><h2>Canonical Sources</h2><table><tbody>
+</ol></div></section><section class="wiki-section" id="section-4"><h2>Canonical Sources</h2><div class="section-body"><table><tbody>
 <tr><th>Label</th><th>Path/URL</th><th>Role</th></tr>
 <tr><td>Projects MOC</td><td><code>Maps of Content/Projects MOC.md</code></td><td>synthesis</td></tr>
 <tr><td>Knowledge MOC</td><td><code>Maps of Content/Knowledge MOC.md</code></td><td>synthesis</td></tr>
 <tr><td>Agent Operations MOC</td><td><code>Maps of Content/Agent Operations MOC.md</code></td><td>synthesis</td></tr>
 <tr><td>Project Board</td><td><code>Project Board.md</code></td><td>coordination</td></tr>
 <tr><td>Contract</td><td><code>Projects/Hermes Mission Control/Knowledge Pack Contract V1.md</code></td><td>architecture</td></tr>
-</tbody></table></section><section class="card"><h2>Current Narrative / Operating Posture</h2><p>Knowledge Pack Routing V1, stack-level integration, and integration QA are complete. Planned Program Intel is the first proof/project pack, not the main goal. KPR V2 PRD review is accepted and tracker issues now exist: parent #74, static HTML child #75, and non-mutating freshness report child #76. No V2 implementation has started. The next default gate is explicit Jamie/Pixoid routing of exactly one child issue, with #76 freshness reporting recommended before #75 HTML. Jamie also raised a broader vault-wide entrypoint gap; design issue #77 tracks a future agent-entrypoint mesh and must not be conflated with KPR V2 implementation.</p>
+</tbody></table></div></section><section class="wiki-section" id="section-5"><h2>Current Narrative / Operating Posture</h2><div class="section-body"><p>Knowledge Pack Routing V1, stack-level integration, and integration QA are complete. Planned Program Intel is the first proof/project pack, not the main goal. KPR V2 parent #74 is closed: #76 freshness report is closed, #75 static HTML human surface is implemented as repo-local derived output under <code>Generated/kpr-static-html/</code>, #77 vault-wide entrypoint mesh is closed, and #86 runtime memory/knowledge routing smoke is closed. Deferred V2+ follow-ups #88–#91 track <code>index.json</code>, automated freshness delivery, link-rot/source checks, and MCP/search/RAG/confidence calibration; do not implement them until explicitly routed.</p>
 <table><tbody>
 <tr><th>Project</th><th>Status</th><th>Next gate</th><th>Pack</th></tr>
-<tr><td>KPR V2 Planning</td><td>PRD accepted; tracker created (#74/#75/#76)</td><td>Explicitly route one child; recommended first: #76 freshness report</td><td><code>Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md</code></td></tr>
-<tr><td>Vault-wide Entry Mesh</td><td>Design issue #77 open</td><td>Review coverage map before creating more packs</td><td><code>https://github.com/pixiiidust/ObsidianVault/issues/77</code></td></tr>
+<tr><td>KPR V2 Planning</td><td>#74/#75/#76 closed; public derived wiki deployed at https://pixiiidust.github.io/wiki/</td><td>Maintain only on source-boundary changes; deferred gaps #88–#91 stay parked</td><td><code>Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md</code></td></tr>
+<tr><td>Vault-wide Entry Mesh</td><td>#77 closed; #79–#83 complete</td><td>Maintain mesh only on source-boundary changes</td><td><code>https://github.com/pixiiidust/ObsidianVault/issues/77</code></td></tr>
 <tr><td>Planned Program Intel</td><td>Active; build queue complete; first KPR proof</td><td>Optional deck/Loom packaging only if re-prioritized</td><td><code>Projects/Planned Program Intel/llms.txt</code></td></tr>
-<tr><td>Hermes Mission Control</td><td>Active agent-ops hub</td><td>Maintain current surfaces; route #76 or #75 only by explicit approval</td><td><code>Projects/Hermes Mission Control/llms.txt</code></td></tr>
+<tr><td>Hermes Mission Control</td><td>Active agent-ops hub</td><td>Maintain current KPR surfaces only when source boundaries change</td><td><code>Projects/Hermes Mission Control/llms.txt</code></td></tr>
 <tr><td>Critical Ranger FFM</td><td>Active research/build</td><td>Zone-control action contract fixtures</td><td><code>Projects/Critical Ranger FFM/llms.txt</code></td></tr>
 <tr><td>Planned.com Demo</td><td>Historical</td><td>Reference only</td><td><code>Projects/Planned/Index.md</code></td></tr>
-</tbody></table></section><section class="card"><h2>Do Not Do</h2><ul>
+</tbody></table></div></section><section class="wiki-section" id="section-6"><h2>Do Not Do</h2><div class="section-body"><ul>
 <li>Do not treat MOCs as agent retrieval contracts; they are human navigation.</li>
 <li>Do not treat knowledge packs as canonical project truth.</li>
 <li>Do not use session search as the first source for current project state.</li>
 <li>Do not conflate <code>planned-program-intel</code> (active) with <code>planned-program-intelligence</code> (historical).</li>
 <li>Do not create runtime automation, MCP, HTML publishing, or freshness cron as part of V1.</li>
-</ul></section><section class="card"><h2>Fallback Rules</h2><ol>
+</ul></div></section><section class="wiki-section" id="section-7"><h2>Fallback Rules</h2><div class="section-body"><ol>
 <li>Pack exists and is current: load pack, then canonical sources listed in it.</li>
 <li>Pack exists but is stale: use pack for orientation only; verify source truth live.</li>
 <li>Pack missing: use project <code>Index.md</code>, then Projects MOC, then Project Board.</li>
 <li>Question is out of scope: skip the pack and route to the stated fallback.</li>
-</ol></section><section class="card"><h2>Human Surface</h2><ul>
+</ol></div></section><section class="wiki-section" id="section-8"><h2>Human Surface</h2><div class="section-body"><ul>
 <li><code>Home.md</code></li>
 <li><code>Maps of Content/Projects MOC.md</code></li>
 <li><code>Maps of Content/Knowledge MOC.md</code></li>
 <li><code>Project Board.md</code></li>
-</ul></section><section class="card"><h2>Maintenance Notes</h2><p>Update this root pack when a project changes active/parked/historical status, when a new project pack is added, or when the source-of-truth hierarchy changes. V2 should render this as static HTML and automate stale-pack checks.</p></section>
-<p class="footer">Generated from <code>llms.txt</code>. Do not edit this HTML as source truth.</p>
+</ul></div></section><section class="wiki-section" id="section-9"><h2>Maintenance Notes</h2><div class="section-body"><p>Update this root pack when a project changes active/parked/historical status, when a new project pack is added, or when the source-of-truth hierarchy changes. V2 should render this as static HTML and automate stale-pack checks.</p></div></section>
+<div class="next-card"><span>Generated from <code>llms.txt</code></span><a href="index.html">Back to wiki index →</a></div>
+<footer class="footer">Plain semantic HTML. No JavaScript is required to read this page. Do not edit generated HTML as source truth.</footer>
 
-</main>
+  </article>
+</div>
 </body>
 </html>

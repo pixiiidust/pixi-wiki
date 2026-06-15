@@ -5,105 +5,180 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Planned Program Intel Pack</title>
 <style>
-:root { color-scheme: dark; }
-body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #09111f; color: #e6edf7; }
-main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
-a { color: #7dd3fc; }
-header { border: 1px solid #26354f; background: linear-gradient(135deg, #111c33, #0e1729); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
-h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.04em; }
-h2 { margin-top: 32px; border-bottom: 1px solid #26354f; padding-bottom: 8px; color: #dbeafe; }
-.badge { display: inline-block; padding: 4px 10px; border: 1px solid #37506f; border-radius: 999px; color: #bfdbfe; background: #0f1d33; font-size: .82rem; margin-right: 8px; }
-.card { border: 1px solid #26354f; background: #0d1728; border-radius: 16px; padding: 20px; margin: 16px 0; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-pre { overflow-x: auto; background: #020617; border: 1px solid #26354f; padding: 16px; border-radius: 12px; }
-code { color: #fde68a; }
-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .94rem; }
-th, td { border: 1px solid #26354f; padding: 8px 10px; vertical-align: top; }
-th { color: #bfdbfe; background: #111c33; }
-li { margin: 6px 0; }
-.footer { margin-top: 40px; color: #94a3b8; font-size: .9rem; }
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+  --text: #172033;
+  --muted: #64748b;
+  --subtle: #94a3b8;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --accent: #d97706;
+  --accent-soft: #fff7ed;
+  --agent: #2563eb;
+  --agent-soft: #eff6ff;
+  --green: #15803d;
+  --green-soft: #f0fdf4;
+  --warn: #b45309;
+  --warn-soft: #fffbeb;
+  --shadow: 0 18px 48px rgba(15, 23, 42, .08);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #ffffff 0, var(--bg) 320px);
+  color: var(--text);
+  line-height: 1.65;
+}
+a { color: var(--agent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code {
+  color: #9a3412;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1px 5px;
+  font-family: "SF Mono", "JetBrains Mono", Consolas, monospace;
+  font-size: .88em;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+  padding: 0 24px;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 750; letter-spacing: -.02em; color: var(--text); }
+.brand-mark { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; background: var(--accent); color: #fff; font-size: 13px; }
+.toplinks { display: flex; align-items: center; gap: 18px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.toplinks a { color: var(--muted); }
+.layout { display: grid; grid-template-columns: 286px minmax(0, 1fr); gap: 42px; max-width: 1240px; margin: 0 auto; padding: 28px 24px 70px; }
+.sidebar { position: sticky; top: 82px; align-self: start; padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: rgba(255,255,255,.76); box-shadow: 0 1px 2px rgba(15,23,42,.03); }
+.sidebar-title { margin: 0; font-size: 16px; font-weight: 760; }
+.doc-count { margin: 2px 0 16px; color: var(--muted); font-size: 13px; }
+.side-label { margin: 20px 0 8px; color: var(--subtle); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.nav-list { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.nav-list a { display: block; padding: 8px 10px; border-left: 3px solid transparent; border-radius: 9px; color: var(--475569, #475569); font-size: 13px; line-height: 1.25; }
+.nav-list a.active { border-left-color: var(--accent); color: var(--text); background: var(--accent-soft); font-weight: 700; }
+.article { min-width: 0; max-width: 880px; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 18px; color: var(--muted); font-size: 13px; }
+.breadcrumbs span::after { content: "/"; margin-left: 8px; color: var(--border-strong); }
+.breadcrumbs span:last-child::after { content: ""; }
+.hero { padding: 4px 0 22px; border-bottom: 1px solid var(--border); }
+.hero h1 { margin: 0 0 12px; font-size: clamp(2.15rem, 6vw, 4.4rem); line-height: .96; letter-spacing: -.055em; font-weight: 830; }
+.subtitle { max-width: 760px; margin: 0; color: var(--muted); font-size: 17px; }
+.meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border: 1px solid var(--border); border-radius: 999px; background: #fff; color: var(--muted); font-size: 12px; font-weight: 700; }
+.badge strong { color: var(--accent); }
+.scope-panel { display: grid; gap: 0; margin: 24px 0; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); overflow: hidden; box-shadow: var(--shadow); }
+.scope-row { display: grid; grid-template-columns: 160px 1fr; gap: 18px; padding: 16px 18px; border-top: 1px solid var(--border); }
+.scope-row:first-child { border-top: 0; }
+.scope-label { font-size: 11px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.scope-label.covers { color: var(--green); }
+.scope-label.not-covered { color: var(--warn); }
+.scope-label.current { color: var(--agent); }
+.scope-value { margin: 0; color: #334155; }
+.scope-value ul { margin: 0; padding-left: 18px; }
+.agent-callout { margin: 22px 0 8px; padding: 16px 18px; border: 1px solid #bfdbfe; border-radius: 16px; background: var(--agent-soft); color: #1e3a8a; }
+.agent-callout strong { color: #1d4ed8; }
+.agent-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.agent-links a, .agent-links span { display: inline-block; padding: 5px 9px; border: 1px solid #bfdbfe; border-radius: 999px; background: #fff; font-family: "SF Mono", Consolas, monospace; font-size: 12px; }
+.toc { margin: 24px 0; padding: 14px 18px; border: 1px solid var(--border); border-radius: 16px; background: rgba(255,255,255,.68); }
+.toc-title { margin: 0 0 8px; color: var(--muted); font-size: 11px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.toc ul { columns: 2; margin: 0; padding-left: 18px; }
+.wiki-section { padding: 26px 0; border-top: 1px solid var(--border); }
+.wiki-section h2 { margin: 0 0 12px; font-size: 22px; letter-spacing: -.02em; }
+.wiki-section h2::before { content: "// "; color: var(--accent); font-weight: 850; }
+.wiki-section h3 { margin: 18px 0 8px; font-size: 17px; }
+.wiki-section h4 { margin: 14px 0 6px; font-size: 15px; color: var(--muted); }
+.section-body p { margin: 10px 0; }
+.section-body ul, .section-body ol { padding-left: 22px; }
+.section-body li { margin: 6px 0; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; background: #fff; }
+th, td { border: 1px solid var(--border); padding: 10px 12px; vertical-align: top; }
+th { background: var(--surface-soft); text-align: left; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.pack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 14px; margin-top: 12px; }
+.pack-card { display: block; padding: 17px; border: 1px solid var(--border); border-radius: 16px; background: #fff; color: var(--text); box-shadow: 0 1px 2px rgba(15,23,42,.04); transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease; }
+.pack-card:hover { transform: translateY(-2px); border-color: #f59e0b; box-shadow: var(--shadow); text-decoration: none; }
+.pack-card h3 { margin: 0 0 5px; font-size: 16px; line-height: 1.25; }
+.pack-path { display: block; color: var(--muted); font-family: "SF Mono", Consolas, monospace; font-size: 12px; }
+.next-card { display: flex; justify-content: space-between; gap: 18px; margin: 34px 0 0; padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: #fff; }
+.footer { margin-top: 40px; padding: 22px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; padding: 18px 16px 54px; }
+  .sidebar { position: static; max-height: none; }
+  .toplinks { display: none; }
+  .scope-row { grid-template-columns: 1fr; gap: 6px; }
+  .toc ul { columns: 1; }
+}
 </style>
 </head>
 <body>
-<main>
-
-<header>
-  <span class="badge">Derived human surface</span>
-  <span class="badge">Markdown remains source truth</span>
-  <h1>Planned Program Intel Pack</h1>
-  <p><strong>Source pack:</strong> <a href="#source-paths-are-private">Projects/Planned Program Intel/llms.txt</a></p>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">✦</span><span>Pixiedust Wiki</span></a>
+  <nav class="toplinks" aria-label="Primary">
+    <a href="index.html">Wikis</a>
+    <a href="root.html">Root Pack</a>
+    <a href="#for-agents">For Agents</a>
+    <a href="https://github.com/pixiiidust/ObsidianVault">Source</a>
+  </nav>
 </header>
-<section class="card">
-  <h2>Frontmatter Summary</h2>
-  <pre>title: &quot;Planned Program Intel Pack&quot;
-type: knowledge-pack
-status: active
-current_as: 2026-06-15
-confidence: high
-scope:
-  covers:
-    - Portfolio/application narrative for Planned Program Intel
-    - Active repo routing for pixiiidust/planned-program-intel
-    - Live demo and build-complete status
-    - Decision-routing and institutional-memory framing
-    - Deck, Loom, and application next work
-  not_covered:
-    - Historical planned-program-intelligence implementation work
-    - PDLC scoring as current project framing
-    - Further app-build slices unless Jamie explicitly reopens build work
-freshness:
-  policy: on_change
-  stale_after_days: 30
-owners:
-  routing: Pixoid
-  maintenance: Quill
-  source_inventory: Boba optional
-sources:
-  - label: Project Index
-    path_or_url: Projects/Planned Program Intel/Index.md
-    role: synthesis
-  - label: Active repo
-    path_or_url: https://github.com/pixiiidust/planned-program-intel
-    role: implementation
-  - label: Live demo
-    path_or_url: https://pixiiidust.github.io/planned-program-intel/
-    role: implementation
-  - label: Product context
-    path_or_url: https://github.com/pixiiidust/planned-program-intel/blob/main/docs/PRD.md
-    role: requirement
-  - label: Language reference
-    path_or_url: https://github.com/pixiiidust/planned-program-intel/blob/main/CONTEXT.md
-    role: architecture
-  - label: Prototype notes
-    path_or_url: https://github.com/pixiiidust/planned-program-intel/blob/main/prototype/NOTES.md
-    role: synthesis
-  - label: Historical predecessor
-    path_or_url: Projects/Planned/Index.md
-    role: historical
-human_surface:
-  - path_or_url: Projects/Planned Program Intel/Index.md
-  - path_or_url: Maps of Content/Projects MOC.md
-  - path_or_url: Portfolio.md
-fallback_rules:
-  - If the active repo is unreachable, use the Obsidian Index as last verified summary and state the caveat.
-  - If a question touches the old prototype or PDLC scoring, route to Projects/Planned/Index.md and label it historical.
-  - If stale, re-verify live demo and GitHub issue state before making claims.
-  - Packaging work does not reopen app-build scope; any app-build re-entry needs a fresh GitHub issue explicitly scoped and approved by Jamie.
-v_next:
-  - optional_portfolio_packaging_if_jamie_reprioritizes
-  - app_build_only_if_explicitly_reopened</pre>
+<div class="layout">
+  
+<aside class="sidebar" aria-label="Wiki contents">
+  <h2 class="sidebar-title">KPR Wiki</h2>
+  <p class="doc-count">7 documents</p>
+  <p class="side-label">+ Overview</p>
+  <ul class="nav-list"><li><a href="index.html">⌂ Wiki overview</a></li></ul>
+  <p class="side-label">+ Knowledge 1</p><ul class="nav-list"><li><a href="knowledge.html">📄 Knowledge Domain Pack</a></li></ul><p class="side-label">+ Maps of Content 1</p><ul class="nav-list"><li><a href="maps-of-content.html">📄 Maps of Content Domain Pack</a></li></ul><p class="side-label">+ Projects 4</p><ul class="nav-list"><li><a href="projects-critical-ranger-ffm.html">📄 Critical Ranger FFM Pack</a></li><li><a href="projects-hermes-mission-control.html">📄 Hermes Mission Control Pack</a></li><li><a class="active" href="projects-planned-program-intel.html">📄 Planned Program Intel Pack</a></li><li><a href="projects.html">📄 Projects Domain Pack</a></li></ul><p class="side-label">+ Vault Root 1</p><ul class="nav-list"><li><a href="root.html">📄 ObsidianVault Root Pack</a></li></ul>
+  <div id="for-agents">
+    <p class="side-label">// For agents</p>
+    <ul class="nav-list">
+      <li><a href="root.html">llms.txt</a></li>
+      <li><a href="index.html">index.html</a></li>
+      <li><a href="https://github.com/pixiiidust/ObsidianVault/issues/88">index.json planned</a></li>
+    </ul>
+  </div>
+</aside>
+
+  <article class="article">
+    
+<nav class="breadcrumbs" aria-label="Breadcrumb"><span><a href="index.html">wikis</a></span><span>KPR</span><span>Projects/Planned Program Intel/llms.txt</span></nav>
+<section class="hero">
+  <div class="meta-row"><span class="badge">updated: <strong>2026-06-15</strong></span><span class="badge">derived HTML</span><span class="badge">source: Projects/Planned Program Intel/llms.txt</span></div>
+  <h1>PLANNED PROGRAM INTEL PACK</h1>
+  <p class="subtitle">Human-readable view of a Knowledge Pack Routing contract. Markdown <code>llms.txt</code> remains source/routing truth.</p>
 </section>
-<section class="card"><h2>Agent Start Here</h2><p>This pack routes the active Planned portfolio/application project. Active repo: <code>pixiiidust/planned-program-intel</code>. Historical predecessor: <code>pixiiidust/planned-program-intelligence</code>. This pack is KPR V1&#x27;s first proof-of-consumption project pack, not the primary system goal. Current Planned work, if Jamie re-prioritizes it, is packaging the completed demo into deck, Loom, and application materials — not continuing app build work.</p></section><section class="card"><h2>What This Pack Routes</h2><ul>
+
+<section class="scope-panel" aria-label="Scope metadata">
+  <div class="scope-row"><div class="scope-label covers">Covers</div><div><ul class="scope-value"><li>Portfolio/application narrative for Planned Program Intel</li><li>Active repo routing for pixiiidust/planned-program-intel</li><li>Live demo and build-complete status</li><li>Decision-routing and institutional-memory framing</li><li>Deck, Loom, and application next work</li></ul></div></div>
+  <div class="scope-row"><div class="scope-label not-covered">Not covered</div><div><ul class="scope-value"><li>Historical planned-program-intelligence implementation work</li><li>PDLC scoring as current project framing</li><li>Further app-build slices unless Jamie explicitly reopens build work</li></ul></div></div>
+  <div class="scope-row"><div class="scope-label current">Current as of</div><p class="scope-value">2026-06-15 · confidence high</p></div>
+</section>
+
+<section class="agent-callout"><strong>🤖 Agent access:</strong> load the source pack <code>Projects/Planned Program Intel/llms.txt</code>, then follow its canonical sources. Public page paths are display surfaces only.<div class="agent-links"><span>llms.txt</span><a href="index.html">wiki index</a><a href="https://github.com/pixiiidust/ObsidianVault/issues/88">index.json planned</a></div></section>
+<nav class="toc" aria-label="Page sections"><p class="toc-title">// Contents</p><ul><li><a href="#section-0">Agent Start Here</a></li><li><a href="#section-1">What This Pack Routes</a></li><li><a href="#section-2">What This Pack Does Not Route</a></li><li><a href="#section-3">Source-of-Truth Hierarchy</a></li><li><a href="#section-4">Canonical Sources</a></li><li><a href="#section-5">Current Narrative / Operating Posture</a></li><li><a href="#section-6">Do Not Do</a></li><li><a href="#section-7">Fallback Rules</a></li><li><a href="#section-8">Human Surface</a></li><li><a href="#section-9">Maintenance Notes</a></li></ul></nav>
+<section class="wiki-section" id="section-0"><h2>Agent Start Here</h2><div class="section-body"><p>This pack routes the active Planned portfolio/application project. Active repo: <code>pixiiidust/planned-program-intel</code>. Historical predecessor: <code>pixiiidust/planned-program-intelligence</code>. This pack is KPR V1&#x27;s first proof-of-consumption project pack, not the primary system goal. Current Planned work, if Jamie re-prioritizes it, is packaging the completed demo into deck, Loom, and application materials — not continuing app build work.</p></div></section><section class="wiki-section" id="section-1"><h2>What This Pack Routes</h2><div class="section-body"><ul>
 <li>Portfolio/application narrative.</li>
 <li>Active repo and live demo routing.</li>
 <li>Decision-routing and institutional-memory vocabulary.</li>
 <li>The six-question decision moment.</li>
 <li>Next packaging work: slide deck, Loom walkthrough, application submission.</li>
-</ul></section><section class="card"><h2>What This Pack Does Not Route</h2><ul>
+</ul></div></section><section class="wiki-section" id="section-2"><h2>What This Pack Does Not Route</h2><div class="section-body"><ul>
 <li>Old <code>planned-program-intelligence</code> build issues or PDLC scoring as current framing.</li>
 <li>New app-build work unless Jamie explicitly reopens it.</li>
 <li>General event-planning operations outside the demo&#x27;s decision-intelligence layer.</li>
-</ul></section><section class="card"><h2>Source-of-Truth Hierarchy</h2><ol>
+</ul></div></section><section class="wiki-section" id="section-3"><h2>Source-of-Truth Hierarchy</h2><div class="section-body"><ol>
 <li><strong>GitHub issues/PRs on <code>planned-program-intel</code></strong> — coordination truth.</li>
 <li><strong><code>CONTEXT.md</code></strong> — product language truth.</li>
 <li><strong><code>docs/PRD.md</code></strong> — requirements truth.</li>
@@ -112,7 +187,7 @@ v_next:
 <li><strong>Live demo</strong> — current product surface.</li>
 <li><strong><code>Projects/Planned/Index.md</code></strong> — historical reference only.</li>
 <li><strong>Root <code>llms.txt</code></strong> — vault routing context.</li>
-</ol></section><section class="card"><h2>Canonical Sources</h2><table><tbody>
+</ol></div></section><section class="wiki-section" id="section-4"><h2>Canonical Sources</h2><div class="section-body"><table><tbody>
 <tr><th>Label</th><th>Path/URL</th><th>Role</th></tr>
 <tr><td>Active repo</td><td><code>https://github.com/pixiiidust/planned-program-intel</code></td><td>implementation</td></tr>
 <tr><td>Live demo</td><td><code>https://pixiiidust.github.io/planned-program-intel/</code></td><td>implementation</td></tr>
@@ -121,7 +196,7 @@ v_next:
 <tr><td>Prototype notes</td><td><code>https://github.com/pixiiidust/planned-program-intel/blob/main/prototype/NOTES.md</code></td><td>synthesis</td></tr>
 <tr><td>Obsidian project hub</td><td><code>Projects/Planned Program Intel/Index.md</code></td><td>synthesis</td></tr>
 <tr><td>Historical predecessor</td><td><code>Projects/Planned/Index.md</code></td><td>historical</td></tr>
-</tbody></table></section><section class="card"><h2>Current Narrative / Operating Posture</h2><p>Build queue is complete. The demo is live. The project now needs a crisp portfolio/application story: problem, decision-routing solution, inspectable evidence, compounding program memory, and roadmap.</p>
+</tbody></table></div></section><section class="wiki-section" id="section-5"><h2>Current Narrative / Operating Posture</h2><div class="section-body"><p>Build queue is complete. The demo is live. The project now needs a crisp portfolio/application story: problem, decision-routing solution, inspectable evidence, compounding program memory, and roadmap.</p>
 <p>Core language:</p>
 <ul>
 <li><strong>Decision</strong> — human resolution needed for an event program.</li>
@@ -130,25 +205,27 @@ v_next:
 <li><strong>Evidence</strong> — cases, exceptions, and precedents.</li>
 <li><strong>Program Memory</strong> — accumulated cases, patterns, exceptions, and precedents across events.</li>
 </ul>
-<p>KPR V1, stack-level integration, and integration QA are closed. Planned is the first proof/project pack demonstrating KPR consumption, not the main goal. Deck/Loom/application packaging remains optional portfolio work if Jamie re-prioritizes it.</p></section><section class="card"><h2>Do Not Do</h2><ul>
+<p>KPR V1, stack-level integration, and integration QA are closed. Planned is the first proof/project pack demonstrating KPR consumption, not the main goal. Deck/Loom/application packaging remains optional portfolio work if Jamie re-prioritizes it.</p></div></section><section class="wiki-section" id="section-6"><h2>Do Not Do</h2><div class="section-body"><ul>
 <li>Do not describe this as a chatbot, autonomous agent system, or RL product.</li>
 <li>Do not resume old <code>planned-program-intelligence</code> issues unless Jamie explicitly asks.</li>
 <li>Do not restart app-build slices by default; packaging is the current job.</li>
 <li>Do not describe the old repo or old GitHub Pages URL as current live demo.</li>
 <li>Do not use PDLC scoring as the primary current frame.</li>
-</ul></section><section class="card"><h2>Fallback Rules</h2><ol>
+</ul></div></section><section class="wiki-section" id="section-7"><h2>Fallback Rules</h2><div class="section-body"><ol>
 <li>Active repo unreachable: use the Obsidian Index and state that repo state needs re-verification.</li>
 <li>Question about old prototype: route to <code>Projects/Planned/Index.md</code>; label it historical.</li>
 <li>Pack stale: verify live demo HTTP status, active repo issue state, and current project index before claims.</li>
 <li>Question about external Planned.com product context: route to Boba/web research, not this pack alone.</li>
-</ol></section><section class="card"><h2>Human Surface</h2><ul>
+</ol></div></section><section class="wiki-section" id="section-8"><h2>Human Surface</h2><div class="section-body"><ul>
 <li><code>Projects/Planned Program Intel/Index.md</code></li>
 <li><code>Maps of Content/Projects MOC.md</code></li>
 <li><code>Portfolio.md</code></li>
 <li><code>Projects/Planned/Index.md</code> for historical predecessor only</li>
-</ul></section><section class="card"><h2>Maintenance Notes</h2><p>Update after deck creation, Loom script/final recording, application submission, or any new PR/issue on <code>planned-program-intel</code>. Keep this pack portfolio-first and execution-second.</p></section>
-<p class="footer">Generated from <code>Projects/Planned Program Intel/llms.txt</code>. Do not edit this HTML as source truth.</p>
+</ul></div></section><section class="wiki-section" id="section-9"><h2>Maintenance Notes</h2><div class="section-body"><p>Update after deck creation, Loom script/final recording, application submission, or any new PR/issue on <code>planned-program-intel</code>. Keep this pack portfolio-first and execution-second.</p></div></section>
+<div class="next-card"><span>Generated from <code>Projects/Planned Program Intel/llms.txt</code></span><a href="index.html">Back to wiki index →</a></div>
+<footer class="footer">Plain semantic HTML. No JavaScript is required to read this page. Do not edit generated HTML as source truth.</footer>
 
-</main>
+  </article>
+</div>
 </body>
 </html>
