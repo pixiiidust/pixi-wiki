@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Domain Pack</title>
+<style>
+:root { color-scheme: dark; }
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #09111f; color: #e6edf7; }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
+a { color: #7dd3fc; }
+header { border: 1px solid #26354f; background: linear-gradient(135deg, #111c33, #0e1729); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.04em; }
+h2 { margin-top: 32px; border-bottom: 1px solid #26354f; padding-bottom: 8px; color: #dbeafe; }
+.badge { display: inline-block; padding: 4px 10px; border: 1px solid #37506f; border-radius: 999px; color: #bfdbfe; background: #0f1d33; font-size: .82rem; margin-right: 8px; }
+.card { border: 1px solid #26354f; background: #0d1728; border-radius: 16px; padding: 20px; margin: 16px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+pre { overflow-x: auto; background: #020617; border: 1px solid #26354f; padding: 16px; border-radius: 12px; }
+code { color: #fde68a; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .94rem; }
+th, td { border: 1px solid #26354f; padding: 8px 10px; vertical-align: top; }
+th { color: #bfdbfe; background: #111c33; }
+li { margin: 6px 0; }
+.footer { margin-top: 40px; color: #94a3b8; font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <span class="badge">Derived human surface</span>
+  <span class="badge">Markdown remains source truth</span>
+  <h1>Knowledge Domain Pack</h1>
+  <p><strong>Source pack:</strong> <a href="#source-paths-are-private">Knowledge/llms.txt</a></p>
+</header>
+<section class="card">
+  <h2>Frontmatter Summary</h2>
+  <pre>title: &quot;Knowledge Domain Pack&quot;
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: high
+scope:
+  covers:
+    - Obsidian Knowledge wiki routing
+    - Schema, index, log, raw-source, and synthesized-page obligations
+    - Boundary between Obsidian Knowledge, local Hermes knowledge, memory/Honcho, projects, and skills
+  not_covered:
+    - Local Hermes knowledge files under ~/.hermes/knowledge
+    - Memory/Honcho retrieval internals
+    - Project execution state
+    - Broad schema rewrites or mass migrations
+freshness:
+  policy: on_change
+  stale_after_days: 30
+owners:
+  routing: Pixoid
+  maintenance: Quill
+  source_inventory: Boba optional
+sources:
+  - label: Knowledge Schema
+    path_or_url: Knowledge/SCHEMA.md
+    role: contract
+  - label: Knowledge Index
+    path_or_url: Knowledge/index.md
+    role: catalog
+  - label: Knowledge Log
+    path_or_url: Knowledge/log.md
+    role: maintenance-log
+  - label: Runtime Memory Knowledge Routing
+    path_or_url: Knowledge/concepts/runtime-memory-knowledge-routing.md
+    role: concept
+  - label: Knowledge Agent Instructions
+    path_or_url: Knowledge/AGENTS.md
+    role: operating-rule
+  - label: Knowledge MOC
+    path_or_url: Maps of Content/Knowledge MOC.md
+    role: human-navigation
+human_surface:
+  - path_or_url: Maps of Content/Knowledge MOC.md
+  - path_or_url: Knowledge/index.md
+  - path_or_url: Knowledge/SCHEMA.md
+fallback_rules:
+  - If a concept/entity/query is missing from the index, search `Knowledge/` before creating a page.
+  - If the content is project-specific state, route to Projects domain and GitHub/project hubs.
+  - If the content is a procedure, route to skills.
+  - If the content is a tiny stable user/profile fact, route to memory/USER/Honcho.
+  - If the content is agent-operational and not human-facing, check `~/.hermes/knowledge/llms.txt`.
+v_next:
+  - static_html
+  - automated_freshness_check</pre>
+</section>
+<section class="card"><h2>Agent Start Here</h2><p>Use this pack after the root <code>/llms.txt</code> when working with the Obsidian Knowledge wiki. This pack routes agents to schema/index/log/source obligations. It is routing truth, not canonical truth.</p></section><section class="card"><h2>What This Pack Routes</h2><ul>
+<li><code>Knowledge/SCHEMA.md</code> — operating contract and OKF-compatible canonical-note rules.</li>
+<li><code>Knowledge/index.md</code> — catalog of concepts, entities, comparisons, queries, and meta pages.</li>
+<li><code>Knowledge/log.md</code> — append-only maintenance trail.</li>
+<li><code>Knowledge/AGENTS.md</code> — short local editing instructions.</li>
+<li><code>Knowledge/concepts/</code>, <code>entities/</code>, <code>comparisons/</code>, <code>queries/</code>, <code>_meta/</code>, and <code>raw/</code>.</li>
+<li>Boundaries between Obsidian Knowledge, local Hermes knowledge, memory/Honcho, project truth, and skills.</li>
+</ul></section><section class="card"><h2>What This Pack Does Not Route</h2><ul>
+<li>Live project implementation or issue state.</li>
+<li>Local Hermes knowledge under <code>~/.hermes/knowledge/</code> except as a fallback/pointer.</li>
+<li>Memory/Honcho internals or transcript archaeology.</li>
+<li>Broad schema migrations or mass frontmatter rewrites.</li>
+<li>Runtime Hermes profile, gateway, cron, provider, or webhook mutation.</li>
+</ul></section><section class="card"><h2>Source-of-Truth Hierarchy</h2><ol>
+<li><strong>Knowledge/SCHEMA.md</strong> — wiki contract, frontmatter rules, page patterns, and ingest/query/lint workflows.</li>
+<li><strong>Knowledge/index.md</strong> — current catalog and first read for queries.</li>
+<li><strong>Knowledge/log.md</strong> — maintenance history.</li>
+<li><strong>Synthesized Knowledge pages</strong> — reusable human-facing concepts/entities/queries/comparisons.</li>
+<li><strong>Knowledge/raw/</strong> — immutable source evidence leaves.</li>
+<li><strong>Obsidian project/GitHub truth</strong> — project-specific state.</li>
+<li><strong>Hermes local knowledge</strong> — agent-operational reusable concepts.</li>
+<li><strong>Skills</strong> — repeatable procedures.</li>
+<li><strong>Memory/Honcho/USER</strong> — compact stable facts and preferences.</li>
+<li><strong>This pack</strong> — routing truth.</li>
+</ol></section><section class="card"><h2>Canonical Sources</h2><table><tbody>
+<tr><th>Label</th><th>Path/URL</th><th>Role</th></tr>
+<tr><td>Schema</td><td><code>Knowledge/SCHEMA.md</code></td><td>contract</td></tr>
+<tr><td>Index</td><td><code>Knowledge/index.md</code></td><td>catalog</td></tr>
+<tr><td>Log</td><td><code>Knowledge/log.md</code></td><td>maintenance log</td></tr>
+<tr><td>Agent instructions</td><td><code>Knowledge/AGENTS.md</code></td><td>operating rule</td></tr>
+<tr><td>Runtime Memory Knowledge Routing</td><td><code>Knowledge/concepts/runtime-memory-knowledge-routing.md</code></td><td>concept</td></tr>
+<tr><td>Knowledge MOC</td><td><code>Maps of Content/Knowledge MOC.md</code></td><td>human navigation</td></tr>
+</tbody></table></section><section class="card"><h2>Current Narrative / Operating Posture</h2><p>Obsidian Knowledge is Jamie&#x27;s human-facing durable knowledge wiki for reusable concepts, entities, comparisons, and substantial queries. It mirrors some local Hermes knowledge concepts when useful, but it is not the same layer as <code>~/.hermes/knowledge/</code> and not a replacement for memory/Honcho.</p>
+<p>The <code>agent-wikis</code> concept preserves the broader pattern: maintained, scoped, source-backed knowledge surfaces for agents. Knowledge Pack Routing is the current Pixiedust implementation.</p></section><section class="card"><h2>Do Not Do</h2><ul>
+<li>Do not edit files under <code>Knowledge/raw/</code> after ingest.</li>
+<li>Do not create pages for passing mentions.</li>
+<li>Do not put project execution state here when it belongs in GitHub/project hubs.</li>
+<li>Do not put long concept essays in memory.</li>
+<li>Do not create procedures here when they belong in skills.</li>
+<li>Do not mass-migrate or rewrite schema/frontmatter from this pack alone.</li>
+</ul></section><section class="card"><h2>Fallback Rules</h2><ol>
+<li>Query existing Knowledge: read <code>Knowledge/index.md</code>, then search <code>Knowledge/</code>.</li>
+<li>Creating/updating a Knowledge page: read <code>SCHEMA.md</code>, <code>index.md</code>, recent <code>log.md</code>, and search for existing pages first.</li>
+<li>After a content change: update the page, refresh <code>index.md</code>, append <code>log.md</code>, and update Knowledge MOC only if retrieval path changed.</li>
+<li>Project-specific fact: route to Projects domain and project/GitHub truth.</li>
+<li>Agent-operational reusable concept: check <code>~/.hermes/knowledge/llms.txt</code> and local Hermes knowledge before duplicating.</li>
+</ol></section><section class="card"><h2>Human Surface</h2><ul>
+<li><code>Maps of Content/Knowledge MOC.md</code></li>
+<li><code>Knowledge/index.md</code></li>
+<li><code>Knowledge/SCHEMA.md</code></li>
+</ul></section><section class="card"><h2>Maintenance Notes</h2><p>Update this pack when the Knowledge schema, index/log workflow, domain folders, or cross-layer boundary rules change. Keep it compact; detailed knowledge belongs in pages and schema, not this routing pack.</p></section>
+<p class="footer">Generated from <code>Knowledge/llms.txt</code>. Do not edit this HTML as source truth.</p>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes Mission Control Pack</title>
+<style>
+:root { color-scheme: dark; }
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #09111f; color: #e6edf7; }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
+a { color: #7dd3fc; }
+header { border: 1px solid #26354f; background: linear-gradient(135deg, #111c33, #0e1729); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.04em; }
+h2 { margin-top: 32px; border-bottom: 1px solid #26354f; padding-bottom: 8px; color: #dbeafe; }
+.badge { display: inline-block; padding: 4px 10px; border: 1px solid #37506f; border-radius: 999px; color: #bfdbfe; background: #0f1d33; font-size: .82rem; margin-right: 8px; }
+.card { border: 1px solid #26354f; background: #0d1728; border-radius: 16px; padding: 20px; margin: 16px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+pre { overflow-x: auto; background: #020617; border: 1px solid #26354f; padding: 16px; border-radius: 12px; }
+code { color: #fde68a; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .94rem; }
+th, td { border: 1px solid #26354f; padding: 8px 10px; vertical-align: top; }
+th { color: #bfdbfe; background: #111c33; }
+li { margin: 6px 0; }
+.footer { margin-top: 40px; color: #94a3b8; font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <span class="badge">Derived human surface</span>
+  <span class="badge">Markdown remains source truth</span>
+  <h1>Hermes Mission Control Pack</h1>
+  <p><strong>Source pack:</strong> <a href="#source-paths-are-private">Projects/Hermes Mission Control/llms.txt</a></p>
+</header>
+<section class="card">
+  <h2>Frontmatter Summary</h2>
+  <pre>title: &quot;Hermes Mission Control Pack&quot;
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: high
+scope:
+  covers:
+    - Pixoid/Crew agent-ops routing
+    - Cron governance and delivery routing
+    - Default Pixoid control-plane vs worker profile boundaries
+    - Persona webhook delivery posture
+    - Capability Registry / Reuse Gate and health-check surfaces
+    - KPR V2 tracker posture and vault-wide entrypoint design boundary
+  not_covered:
+    - Live webhook URLs, tokens, or secrets
+    - Personal VPS/Docker setup detail
+    - Individual project implementation work outside Mission Control
+freshness:
+  policy: before_use
+  stale_after_days: 7
+owners:
+  routing: Pixoid
+  maintenance: Quill
+  source_inventory: Boba
+  implementation_facts: Tinker
+sources:
+  - label: Mission Control Index
+    path_or_url: Projects/Hermes Mission Control/Index.md
+    role: coordination
+  - label: Agent Operations MOC
+    path_or_url: Maps of Content/Agent Operations MOC.md
+    role: synthesis
+  - label: Pixoid Setup
+    path_or_url: Projects/Personal/Pixoid Setup.md
+    role: architecture
+  - label: Pixoid Agent Capability Routes
+    path_or_url: Projects/Pixoid Agent Capability Routes/Index.md
+    role: architecture
+  - label: ObsidianVault issue tracker
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues
+    role: coordination
+  - label: KPR V2 tracker
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/74
+    role: coordination
+  - label: Vault-wide entrypoint mesh design
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/77
+    role: coordination
+human_surface:
+  - path_or_url: Projects/Hermes Mission Control/Index.md
+  - path_or_url: Maps of Content/Agent Operations MOC.md
+  - path_or_url: Project Board.md
+fallback_rules:
+  - If stale, verify live cron and issue/PR state before acting.
+  - Outbound persona delivery is not inbound execution proof.
+  - Repo/test harness proof is not deployed always-on operation.
+v_next:
+  - static_html
+  - automated_freshness_check</pre>
+</section>
+<section class="card"><h2>Agent Start Here</h2><p>Use this pack before crew-ops work: cron, gateway, delivery, profile routing, capability routing, or Pixoid/Crew coordination. Verify live runtime state before changing anything. This pack routes; it does not authorize mutations.</p></section><section class="card"><h2>What This Pack Routes</h2><ul>
+<li>Mission Control project hub and Agent Operations MOC.</li>
+<li>Cron governance and heartbeat/noise policy.</li>
+<li>Delivery routing and persona webhook architecture.</li>
+<li>Default Pixoid gateway/control-plane vs worker profiles (<code>tinker</code>, <code>quill</code>, <code>boba</code>; <code>pika</code> parked/future).</li>
+<li>Capability Registry / Reuse Gate and agent-ops health surfaces.</li>
+<li>Failure modes: rate limits, delivery failure, GitHub auth failure, silent-marker suppression.</li>
+</ul></section><section class="card"><h2>What This Pack Does Not Route</h2><ul>
+<li>Secrets, tokens, webhook URLs, or credentials.</li>
+<li>Profile/gateway/cron mutation without an approved issue.</li>
+<li>Project-specific build work outside Mission Control.</li>
+<li>Full VPS/Docker setup detail.</li>
+</ul></section><section class="card"><h2>Source-of-Truth Hierarchy</h2><ol>
+<li><strong>Live runtime checks</strong> for cron/profile/gateway state when action depends on runtime.</li>
+<li><strong>GitHub issues/PRs</strong> — coordination truth.</li>
+<li><strong>Mission Control Index</strong> — durable crew-ops synthesis.</li>
+<li><strong>Agent Operations MOC</strong> — human navigation.</li>
+<li><strong>Pixoid Setup</strong> — infrastructure truth.</li>
+<li><strong>Skills</strong> — procedural truth.</li>
+<li><strong>Session search</strong> — archaeology only.</li>
+<li><strong>This pack</strong> — routing truth.</li>
+</ol></section><section class="card"><h2>Canonical Sources</h2><table><tbody>
+<tr><th>Label</th><th>Path/URL</th><th>Role</th></tr>
+<tr><td>Mission Control Index</td><td><code>Projects/Hermes Mission Control/Index.md</code></td><td>coordination</td></tr>
+<tr><td>Agent Operations MOC</td><td><code>Maps of Content/Agent Operations MOC.md</code></td><td>synthesis</td></tr>
+<tr><td>Pixoid Setup</td><td><code>Projects/Personal/Pixoid Setup.md</code></td><td>architecture</td></tr>
+<tr><td>Capability Routes</td><td><code>Projects/Pixoid Agent Capability Routes/Index.md</code></td><td>architecture</td></tr>
+<tr><td>Vault issue tracker</td><td><code>https://github.com/pixiiidust/ObsidianVault/issues</code></td><td>coordination</td></tr>
+</tbody></table></section><section class="card"><h2>Current Narrative / Operating Posture</h2><p>Mission Control is the crew-ops hub. Agent-ops harness, reuse gate, capability registry, persona webhook migration, harmonization, Knowledge Pack Routing V1, stack-level workflow integration, and integration QA are complete. KPR is now wired as a retrieval-first layer for Pixoid/Quill/Tinker/Boba workflows. KPR V2 PRD review is accepted and tracker issues exist: #74 parent, #75 static HTML human surface, and #76 non-mutating freshness report. No V2 implementation has started; the next gate is explicit Jamie/Pixoid routing of exactly one child issue, with #76 recommended first. Jamie also identified a broader vault-wide entrypoint mesh question; #77 tracks that as design only and must stay separate from #74/#75/#76. Planned Program Intel is the first consumed project pack — proof, not primary goal. Deck/Loom/application work is optional portfolio packaging.</p>
+<p>Pixoid is the default Hermes control plane and Discord gateway. Worker profiles are bounded by route contracts. Outbound webhooks give personas voice/identity; they do not prove live inbound execution.</p></section><section class="card"><h2>Do Not Do</h2><ul>
+<li>Do not print or store secrets, webhook URLs, tokens, or credential material.</li>
+<li>Do not mutate profiles, gateways, webhooks, cron jobs, or provider configs without explicit issue approval.</li>
+<li>Do not claim outbound delivery as inbound route proof.</li>
+<li>Do not claim a repo-level test harness is a deployed operational route.</li>
+<li>Do not start worker gateways without separate identity/route configuration.</li>
+<li>Do not implement #75, #76, or #77 from this pack alone; require explicit routing.</li>
+</ul></section><section class="card"><h2>Fallback Rules</h2><ol>
+<li>If stale (&gt;7 days), run live checks before acting: <code>hermes cron list --all</code>, relevant issue/PR state, and profile/gateway state if needed.</li>
+<li>Infrastructure question: route to <code>Projects/Personal/Pixoid Setup.md</code>.</li>
+<li>Route-governance question: route to <code>Projects/Pixoid Agent Capability Routes/Index.md</code>.</li>
+<li>Skill/procedure question: load the relevant Hermes skill.</li>
+<li>Secrets request: refuse and do not derive or echo.</li>
+</ol></section><section class="card"><h2>Human Surface</h2><ul>
+<li><code>Projects/Hermes Mission Control/Index.md</code></li>
+<li><code>Maps of Content/Agent Operations MOC.md</code></li>
+<li><code>Project Board.md</code></li>
+</ul></section><section class="card"><h2>Maintenance Notes</h2><p>Update after cron schedule changes, route matrix changes, profile/gateway changes, capability registry changes, or crew composition changes. Use elevated Quill model for major source-of-truth rewrites; cheap model is acceptable for small freshness updates.</p></section>
+<p class="footer">Generated from <code>Projects/Hermes Mission Control/llms.txt</code>. Do not edit this HTML as source truth.</p>
+
+</main>
+</body>
+</html>

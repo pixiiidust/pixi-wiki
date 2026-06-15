@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maps of Content Domain Pack</title>
+<style>
+:root { color-scheme: dark; }
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #09111f; color: #e6edf7; }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
+a { color: #7dd3fc; }
+header { border: 1px solid #26354f; background: linear-gradient(135deg, #111c33, #0e1729); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.04em; }
+h2 { margin-top: 32px; border-bottom: 1px solid #26354f; padding-bottom: 8px; color: #dbeafe; }
+.badge { display: inline-block; padding: 4px 10px; border: 1px solid #37506f; border-radius: 999px; color: #bfdbfe; background: #0f1d33; font-size: .82rem; margin-right: 8px; }
+.card { border: 1px solid #26354f; background: #0d1728; border-radius: 16px; padding: 20px; margin: 16px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+pre { overflow-x: auto; background: #020617; border: 1px solid #26354f; padding: 16px; border-radius: 12px; }
+code { color: #fde68a; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .94rem; }
+th, td { border: 1px solid #26354f; padding: 8px 10px; vertical-align: top; }
+th { color: #bfdbfe; background: #111c33; }
+li { margin: 6px 0; }
+.footer { margin-top: 40px; color: #94a3b8; font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <span class="badge">Derived human surface</span>
+  <span class="badge">Markdown remains source truth</span>
+  <h1>Maps of Content Domain Pack</h1>
+  <p><strong>Source pack:</strong> <a href="#source-paths-are-private">Maps of Content/llms.txt</a></p>
+</header>
+<section class="card">
+  <h2>Frontmatter Summary</h2>
+  <pre>title: &quot;Maps of Content Domain Pack&quot;
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: high
+scope:
+  covers:
+    - MOC domain routing and maintenance boundaries
+    - Distinction between human navigation surfaces and agent retrieval contracts
+    - Which MOCs route to project, knowledge, agent-ops, tag, and maintenance surfaces
+  not_covered:
+    - Canonical project truth
+    - Full Knowledge wiki content
+    - Template content or note generation rules
+    - Runtime automation or static HTML publishing
+freshness:
+  policy: on_change
+  stale_after_days: 30
+owners:
+  routing: Pixoid
+  maintenance: Quill
+sources:
+  - label: Top-level MOC
+    path_or_url: Maps of Content/Maps of Content.md
+    role: human-navigation
+  - label: Projects MOC
+    path_or_url: Maps of Content/Projects MOC.md
+    role: project-navigation
+  - label: Knowledge MOC
+    path_or_url: Maps of Content/Knowledge MOC.md
+    role: knowledge-navigation
+  - label: Agent Operations MOC
+    path_or_url: Maps of Content/Agent Operations MOC.md
+    role: agent-ops-navigation
+  - label: MOC Maintenance Process
+    path_or_url: Maps of Content/MOC Maintenance Process.md
+    role: maintenance
+human_surface:
+  - path_or_url: Maps of Content/Maps of Content.md
+  - path_or_url: Maps of Content/Projects MOC.md
+  - path_or_url: Maps of Content/Knowledge MOC.md
+fallback_rules:
+  - If a task needs canonical project truth, route to `Projects/llms.txt` and GitHub/project hubs.
+  - If a task needs reusable concepts, route to `Knowledge/llms.txt` and local Hermes knowledge.
+  - If a task needs root vault orientation, route to `llms.txt`.
+  - If a template is needed, use `Templates/README.md`; no Templates pack exists yet.
+v_next:
+  - static_html
+  - automated_freshness_check</pre>
+</section>
+<section class="card"><h2>Agent Start Here</h2><p>Use this pack when working on MOCs themselves or when deciding whether a human navigation surface needs maintenance. MOCs are human navigation surfaces. <code>llms.txt</code> files are agent retrieval contracts. Do not collapse one into the other.</p></section><section class="card"><h2>What This Pack Routes</h2><ul>
+<li>Which MOC to inspect for vault navigation.</li>
+<li>How agents should maintain MOCs without treating them as canonical truth.</li>
+<li>Boundaries between MOCs, root/project/knowledge packs, project hubs, and GitHub.</li>
+<li>The current decision that <code>Templates/llms.txt</code> is deferred unless template-routing rules become distinct enough to justify it.</li>
+</ul></section><section class="card"><h2>What This Pack Does Not Route</h2><ul>
+<li>Current project implementation state.</li>
+<li>Full Knowledge wiki content.</li>
+<li>Template body content.</li>
+<li>Asset/evidence handling under <code>Attachments/</code>.</li>
+<li>Runtime automation, cron, MCP, RAG, crawler, search, vector DB, or public hosting.</li>
+</ul></section><section class="card"><h2>Source-of-Truth Hierarchy</h2><ol>
+<li><strong>Canonical domain sources</strong> — GitHub/project hubs/Knowledge schema/raw sources, depending on the topic.</li>
+<li><strong>Domain packs</strong> — root, Projects, Knowledge, and project-specific <code>llms.txt</code> files.</li>
+<li><strong>MOCs</strong> — human navigation and cross-link surfaces.</li>
+<li><strong>This pack</strong> — routing truth for MOC maintenance boundaries.</li>
+</ol></section><section class="card"><h2>Canonical Sources</h2><table><tbody>
+<tr><th>Label</th><th>Path/URL</th><th>Role</th></tr>
+<tr><td>Top-level MOC</td><td><code>Maps of Content/Maps of Content.md</code></td><td>human navigation</td></tr>
+<tr><td>Projects MOC</td><td><code>Maps of Content/Projects MOC.md</code></td><td>project navigation</td></tr>
+<tr><td>Knowledge MOC</td><td><code>Maps of Content/Knowledge MOC.md</code></td><td>knowledge navigation</td></tr>
+<tr><td>Agent Operations MOC</td><td><code>Maps of Content/Agent Operations MOC.md</code></td><td>agent-ops navigation</td></tr>
+<tr><td>MOC Maintenance Process</td><td><code>Maps of Content/MOC Maintenance Process.md</code></td><td>maintenance</td></tr>
+<tr><td>Tag Index</td><td><code>Maps of Content/Tag Index.md</code></td><td>tag navigation</td></tr>
+</tbody></table></section><section class="card"><h2>Current Narrative / Operating Posture</h2><p>The vault now has a small agent entrypoint mesh: root, Projects, Knowledge, project-specific packs, and this MOC domain pack. MOCs remain the human map layer. Agents should use MOCs to orient and discover, then verify against canonical domain sources before acting.</p>
+<p>Templates currently have a compact <code>Templates/README.md</code> and do not need a separate <code>Templates/llms.txt</code>. Create one later only if template selection/maintenance becomes a recurring agent routing problem.</p></section><section class="card"><h2>Do Not Do</h2><ul>
+<li>Do not treat MOC text as proof of current project state.</li>
+<li>Do not duplicate full project or Knowledge indexes inside this pack.</li>
+<li>Do not create one pack per folder by default.</li>
+<li>Do not create <code>Templates/llms.txt</code> just because the folder exists.</li>
+<li>Do not perform broad vault reorganization from this pack.</li>
+</ul></section><section class="card"><h2>Fallback Rules</h2><ol>
+<li>Need a project: root pack → Projects pack → project-specific pack or project <code>Index.md</code> → GitHub.</li>
+<li>Need a reusable concept: root pack → Knowledge pack → Knowledge index/schema → local Hermes knowledge if agent-operational.</li>
+<li>Need human navigation maintenance: this pack → relevant MOC → canonical domain source.</li>
+<li>Need a template: use <code>Templates/README.md</code>; stop and create a Templates pack only if distinct routing rules are necessary.</li>
+</ol></section><section class="card"><h2>Human Surface</h2><ul>
+<li><code>Maps of Content/Maps of Content.md</code></li>
+<li><code>Maps of Content/Projects MOC.md</code></li>
+<li><code>Maps of Content/Knowledge MOC.md</code></li>
+<li><code>Maps of Content/Agent Operations MOC.md</code></li>
+</ul></section><section class="card"><h2>Maintenance Notes</h2><p>Update this pack when MOC structure changes, when a new domain MOC becomes central to routing, or when Templates/Attachments/Daily Notes receive their own pack decision. Keep this as a routing surface, not a duplicate vault index.</p></section>
+<p class="footer">Generated from <code>Maps of Content/llms.txt</code>. Do not edit this HTML as source truth.</p>
+
+</main>
+</body>
+</html>

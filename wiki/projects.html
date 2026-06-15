@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects Domain Pack</title>
+<style>
+:root { color-scheme: dark; }
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #09111f; color: #e6edf7; }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
+a { color: #7dd3fc; }
+header { border: 1px solid #26354f; background: linear-gradient(135deg, #111c33, #0e1729); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.04em; }
+h2 { margin-top: 32px; border-bottom: 1px solid #26354f; padding-bottom: 8px; color: #dbeafe; }
+.badge { display: inline-block; padding: 4px 10px; border: 1px solid #37506f; border-radius: 999px; color: #bfdbfe; background: #0f1d33; font-size: .82rem; margin-right: 8px; }
+.card { border: 1px solid #26354f; background: #0d1728; border-radius: 16px; padding: 20px; margin: 16px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+pre { overflow-x: auto; background: #020617; border: 1px solid #26354f; padding: 16px; border-radius: 12px; }
+code { color: #fde68a; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .94rem; }
+th, td { border: 1px solid #26354f; padding: 8px 10px; vertical-align: top; }
+th { color: #bfdbfe; background: #111c33; }
+li { margin: 6px 0; }
+.footer { margin-top: 40px; color: #94a3b8; font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <span class="badge">Derived human surface</span>
+  <span class="badge">Markdown remains source truth</span>
+  <h1>Projects Domain Pack</h1>
+  <p><strong>Source pack:</strong> <a href="#source-paths-are-private">Projects/llms.txt</a></p>
+</header>
+<section class="card">
+  <h2>Frontmatter Summary</h2>
+  <pre>title: &quot;Projects Domain Pack&quot;
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: high
+scope:
+  covers:
+    - Project-domain routing across active, parked, historical, and personal/infrastructure contexts
+    - Project pack coverage and fallback behavior
+    - Source-of-truth hierarchy for project state
+  not_covered:
+    - Full project implementation details
+    - Repo code truth beyond links to GitHub/project hubs
+    - Session-specific task state
+freshness:
+  policy: on_change
+  stale_after_days: 30
+owners:
+  routing: Pixoid
+  maintenance: Quill
+  implementation_facts: Tinker optional
+  source_inventory: Boba optional
+sources:
+  - label: Projects MOC
+    path_or_url: Maps of Content/Projects MOC.md
+    role: synthesis
+  - label: Project Board
+    path_or_url: Project Board.md
+    role: coordination
+  - label: Root Pack
+    path_or_url: llms.txt
+    role: routing
+  - label: ObsidianVault issue tracker
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues
+    role: coordination
+human_surface:
+  - path_or_url: Maps of Content/Projects MOC.md
+  - path_or_url: Project Board.md
+fallback_rules:
+  - If a project has its own `llms.txt`, load it before touching project work.
+  - If no project pack exists, load the project `Index.md`.
+  - If no project index exists, use Projects MOC, Project Board, then GitHub/session/web fallback.
+  - If a project is parked or historical, do not route implementation unless Jamie explicitly reopens it.
+v_next:
+  - static_html
+  - automated_freshness_check</pre>
+</section>
+<section class="card"><h2>Agent Start Here</h2><p>Use this pack after the root <code>/llms.txt</code> when the task is project-related but before choosing a specific project hub. This pack routes agents through Jamie&#x27;s project bounded contexts. It is routing truth, not canonical truth.</p></section><section class="card"><h2>What This Pack Routes</h2><ul>
+<li>Active project contexts.</li>
+<li>Parked and historical project contexts.</li>
+<li>Project-specific knowledge-pack coverage.</li>
+<li>Which project surfaces are canonical for current state.</li>
+<li>Proof-project drift guardrails.</li>
+</ul></section><section class="card"><h2>What This Pack Does Not Route</h2><ul>
+<li>Detailed code implementation steps.</li>
+<li>Live repo branch/PR truth without GitHub verification.</li>
+<li>Runtime Hermes profile/gateway/cron mutations.</li>
+<li>Personal secrets, credentials, or private env details.</li>
+</ul></section><section class="card"><h2>Source-of-Truth Hierarchy</h2><ol>
+<li><strong>GitHub issues/PRs</strong> — coordination and implementation truth.</li>
+<li><strong>Project PRDs/ADRs</strong> — requirements and architecture truth.</li>
+<li><strong>Project <code>Index.md</code> notes</strong> — durable project synthesis and boundaries.</li>
+<li><strong>Project-specific <code>llms.txt</code> packs</strong> — routing truth for projects that have them.</li>
+<li><strong>Project Board</strong> — current queue and milestone navigation.</li>
+<li><strong>Projects MOC</strong> — human project map.</li>
+<li><strong>Skills</strong> — procedures.</li>
+<li><strong>Session search/web</strong> — fallback/archaeology only.</li>
+<li><strong>This pack</strong> — project-domain routing truth.</li>
+</ol></section><section class="card"><h2>Canonical Sources</h2><table><tbody>
+<tr><th>Label</th><th>Path/URL</th><th>Role</th></tr>
+<tr><td>Projects MOC</td><td><code>Maps of Content/Projects MOC.md</code></td><td>synthesis</td></tr>
+<tr><td>Project Board</td><td><code>Project Board.md</code></td><td>coordination</td></tr>
+<tr><td>Root Pack</td><td><code>llms.txt</code></td><td>routing</td></tr>
+<tr><td>ObsidianVault tracker</td><td><code>https://github.com/pixiiidust/ObsidianVault/issues</code></td><td>coordination</td></tr>
+</tbody></table></section><section class="card"><h2>Current Narrative / Operating Posture</h2><p>The project domain is organized as bounded contexts. Active contexts include Critical Ranger FFM, Planned Program Intel, Hermes Mission Control, Pixoid Agent Capability Routes, and Zerg AI Democratization Roadmap. Parked/historical contexts remain useful as references but should not become default work without explicit reprioritization.</p>
+<p>Knowledge Pack Routing is currently an architecture workstream under Hermes Mission Control, not a Planned Program Intel deliverable. Planned Program Intel was the first proof/project pack; it is not the default next project unless Jamie says so.</p></section><section class="card"><h2>Do Not Do</h2><ul>
+<li>Do not treat the most visible proof project as the default system goal.</li>
+<li>Do not implement parked/historical projects without explicit reopening.</li>
+<li>Do not trust project status from this pack without checking the listed canonical sources.</li>
+<li>Do not create a project-specific pack unless the project has distinct routing/freshness/ownership needs.</li>
+<li>Do not create runtime automation from this pack.</li>
+</ul></section><section class="card"><h2>Fallback Rules</h2><ol>
+<li>Project has <code>llms.txt</code>: load it, then its canonical sources.</li>
+<li>Project has no <code>llms.txt</code>: load <code>Projects/&lt;Project&gt;/Index.md</code>.</li>
+<li>Project has no index: use Projects MOC and Project Board.</li>
+<li>Current implementation state matters: verify GitHub issues/PRs and repo state live.</li>
+<li>Project is parked/historical: stop unless Jamie explicitly reopens it.</li>
+</ol></section><section class="card"><h2>Human Surface</h2><ul>
+<li><code>Maps of Content/Projects MOC.md</code></li>
+<li><code>Project Board.md</code></li>
+<li>project <code>Index.md</code> notes</li>
+</ul></section><section class="card"><h2>Maintenance Notes</h2><p>Update this pack when a project changes active/parked/historical status, when a new project pack is created, or when the default project routing queue changes. Keep project details in project hubs; this pack should stay a routing map.</p></section>
+<p class="footer">Generated from <code>Projects/llms.txt</code>. Do not edit this HTML as source truth.</p>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ObsidianVault Root Pack</title>
+<style>
+:root { color-scheme: dark; }
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #09111f; color: #e6edf7; }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
+a { color: #7dd3fc; }
+header { border: 1px solid #26354f; background: linear-gradient(135deg, #111c33, #0e1729); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.04em; }
+h2 { margin-top: 32px; border-bottom: 1px solid #26354f; padding-bottom: 8px; color: #dbeafe; }
+.badge { display: inline-block; padding: 4px 10px; border: 1px solid #37506f; border-radius: 999px; color: #bfdbfe; background: #0f1d33; font-size: .82rem; margin-right: 8px; }
+.card { border: 1px solid #26354f; background: #0d1728; border-radius: 16px; padding: 20px; margin: 16px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+pre { overflow-x: auto; background: #020617; border: 1px solid #26354f; padding: 16px; border-radius: 12px; }
+code { color: #fde68a; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .94rem; }
+th, td { border: 1px solid #26354f; padding: 8px 10px; vertical-align: top; }
+th { color: #bfdbfe; background: #111c33; }
+li { margin: 6px 0; }
+.footer { margin-top: 40px; color: #94a3b8; font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <span class="badge">Derived human surface</span>
+  <span class="badge">Markdown remains source truth</span>
+  <h1>ObsidianVault Root Pack</h1>
+  <p><strong>Source pack:</strong> <a href="#source-paths-are-private">llms.txt</a></p>
+</header>
+<section class="card">
+  <h2>Frontmatter Summary</h2>
+  <pre>title: &quot;ObsidianVault Root Pack&quot;
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: high
+scope:
+  covers:
+    - Vault-level navigation and agent retrieval routing
+    - Active/parked/historical project context switching
+    - Source-of-truth hierarchy across GitHub, PRDs, Obsidian, Hermes knowledge, skills, memory, sessions, and web
+    - Current KPR V2 and vault-wide entrypoint planning gates
+  not_covered:
+    - Individual project build details
+    - Hermes profile/gateway runtime configuration
+    - Session-specific memory or conversation state
+freshness:
+  policy: on_change
+  stale_after_days: 60
+owners:
+  routing: Pixoid
+  maintenance: Quill
+sources:
+  - label: Home
+    path_or_url: Home.md
+    role: synthesis
+  - label: Projects Domain Pack
+    path_or_url: Projects/llms.txt
+    role: routing
+  - label: Projects MOC
+    path_or_url: Maps of Content/Projects MOC.md
+    role: synthesis
+  - label: Knowledge Domain Pack
+    path_or_url: Knowledge/llms.txt
+    role: routing
+  - label: Knowledge MOC
+    path_or_url: Maps of Content/Knowledge MOC.md
+    role: synthesis
+  - label: MOC Domain Pack
+    path_or_url: Maps of Content/llms.txt
+    role: routing
+  - label: Project Board
+    path_or_url: Project Board.md
+    role: coordination
+  - label: Knowledge Pack Contract V1
+    path_or_url: Projects/Hermes Mission Control/Knowledge Pack Contract V1.md
+    role: architecture
+  - label: KPR V2 tracker
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/74
+    role: coordination
+  - label: Vault-wide entrypoint mesh design
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/77
+    role: coordination
+human_surface:
+  - path_or_url: Home.md
+  - path_or_url: Maps of Content/Projects MOC.md
+  - path_or_url: Maps of Content/Knowledge MOC.md
+fallback_rules:
+  - If a project has no knowledge pack, fall back to its Projects/&lt;Name&gt;/Index.md.
+  - If no project index exists, fall back to Projects MOC and Project Board.
+  - If stale, use for orientation only and verify live GitHub/vault state before acting.
+v_next:
+  - static_html
+  - automated_freshness_check</pre>
+</section>
+<section class="card"><h2>Agent Start Here</h2><p>Before project work, load this file to choose the right source. Then load the relevant project knowledge pack or project <code>Index.md</code>. This file is routing truth, not canonical truth.</p></section><section class="card"><h2>What This Pack Routes</h2><ul>
+<li>Vault-wide source-of-truth hierarchy.</li>
+<li>Active project priority and next entrypoint.</li>
+<li>Where to find project hubs, MOCs, and Knowledge wiki surfaces.</li>
+<li>The distinction between human navigation (MOCs/indexes) and agent retrieval contracts (<code>llms.txt</code>).</li>
+<li>Crew roles: Pixoid routes/reviews; Quill maintains packs; Boba contributes sources; Tinker contributes implementation facts.</li>
+</ul></section><section class="card"><h2>What This Pack Does Not Route</h2><ul>
+<li>Detailed project issue trees or implementation instructions.</li>
+<li>Live Hermes gateway/profile/cron mutation.</li>
+<li>Personal secrets or credentials.</li>
+<li>External web research except as fallback.</li>
+</ul></section><section class="card"><h2>Source-of-Truth Hierarchy</h2><ol>
+<li><strong>GitHub issues/PRs</strong> — coordination truth.</li>
+<li><strong>PRDs/ADRs</strong> — requirements and architecture truth.</li>
+<li><strong>Obsidian project notes</strong> — human synthesis and durable project context.</li>
+<li><strong>Hermes local knowledge</strong> — reusable concepts and agent-operational facts.</li>
+<li><strong>Skills</strong> — procedural truth.</li>
+<li><strong>Memory / USER</strong> — stable Jamie/environment preferences only.</li>
+<li><strong>Session search</strong> — conversation archaeology, never canonical alone.</li>
+<li><strong>Web / public Agent Wikis</strong> — external/current fallback.</li>
+<li><strong>Knowledge packs</strong> — routing truth: maps to the right source above.</li>
+</ol></section><section class="card"><h2>Canonical Sources</h2><table><tbody>
+<tr><th>Label</th><th>Path/URL</th><th>Role</th></tr>
+<tr><td>Projects MOC</td><td><code>Maps of Content/Projects MOC.md</code></td><td>synthesis</td></tr>
+<tr><td>Knowledge MOC</td><td><code>Maps of Content/Knowledge MOC.md</code></td><td>synthesis</td></tr>
+<tr><td>Agent Operations MOC</td><td><code>Maps of Content/Agent Operations MOC.md</code></td><td>synthesis</td></tr>
+<tr><td>Project Board</td><td><code>Project Board.md</code></td><td>coordination</td></tr>
+<tr><td>Contract</td><td><code>Projects/Hermes Mission Control/Knowledge Pack Contract V1.md</code></td><td>architecture</td></tr>
+</tbody></table></section><section class="card"><h2>Current Narrative / Operating Posture</h2><p>Knowledge Pack Routing V1, stack-level integration, and integration QA are complete. Planned Program Intel is the first proof/project pack, not the main goal. KPR V2 PRD review is accepted and tracker issues now exist: parent #74, static HTML child #75, and non-mutating freshness report child #76. No V2 implementation has started. The next default gate is explicit Jamie/Pixoid routing of exactly one child issue, with #76 freshness reporting recommended before #75 HTML. Jamie also raised a broader vault-wide entrypoint gap; design issue #77 tracks a future agent-entrypoint mesh and must not be conflated with KPR V2 implementation.</p>
+<table><tbody>
+<tr><th>Project</th><th>Status</th><th>Next gate</th><th>Pack</th></tr>
+<tr><td>KPR V2 Planning</td><td>PRD accepted; tracker created (#74/#75/#76)</td><td>Explicitly route one child; recommended first: #76 freshness report</td><td><code>Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md</code></td></tr>
+<tr><td>Vault-wide Entry Mesh</td><td>Design issue #77 open</td><td>Review coverage map before creating more packs</td><td><code>https://github.com/pixiiidust/ObsidianVault/issues/77</code></td></tr>
+<tr><td>Planned Program Intel</td><td>Active; build queue complete; first KPR proof</td><td>Optional deck/Loom packaging only if re-prioritized</td><td><code>Projects/Planned Program Intel/llms.txt</code></td></tr>
+<tr><td>Hermes Mission Control</td><td>Active agent-ops hub</td><td>Maintain current surfaces; route #76 or #75 only by explicit approval</td><td><code>Projects/Hermes Mission Control/llms.txt</code></td></tr>
+<tr><td>Critical Ranger FFM</td><td>Active research/build</td><td>Zone-control action contract fixtures</td><td><code>Projects/Critical Ranger FFM/llms.txt</code></td></tr>
+<tr><td>Planned.com Demo</td><td>Historical</td><td>Reference only</td><td><code>Projects/Planned/Index.md</code></td></tr>
+</tbody></table></section><section class="card"><h2>Do Not Do</h2><ul>
+<li>Do not treat MOCs as agent retrieval contracts; they are human navigation.</li>
+<li>Do not treat knowledge packs as canonical project truth.</li>
+<li>Do not use session search as the first source for current project state.</li>
+<li>Do not conflate <code>planned-program-intel</code> (active) with <code>planned-program-intelligence</code> (historical).</li>
+<li>Do not create runtime automation, MCP, HTML publishing, or freshness cron as part of V1.</li>
+</ul></section><section class="card"><h2>Fallback Rules</h2><ol>
+<li>Pack exists and is current: load pack, then canonical sources listed in it.</li>
+<li>Pack exists but is stale: use pack for orientation only; verify source truth live.</li>
+<li>Pack missing: use project <code>Index.md</code>, then Projects MOC, then Project Board.</li>
+<li>Question is out of scope: skip the pack and route to the stated fallback.</li>
+</ol></section><section class="card"><h2>Human Surface</h2><ul>
+<li><code>Home.md</code></li>
+<li><code>Maps of Content/Projects MOC.md</code></li>
+<li><code>Maps of Content/Knowledge MOC.md</code></li>
+<li><code>Project Board.md</code></li>
+</ul></section><section class="card"><h2>Maintenance Notes</h2><p>Update this root pack when a project changes active/parked/historical status, when a new project pack is added, or when the source-of-truth hierarchy changes. V2 should render this as static HTML and automate stale-pack checks.</p></section>
+<p class="footer">Generated from <code>llms.txt</code>. Do not edit this HTML as source truth.</p>
+
+</main>
+</body>
+</html>

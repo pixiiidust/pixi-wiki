@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KPR Static Human Surface</title>
+<style>
+:root { color-scheme: dark; }
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #09111f; color: #e6edf7; }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
+a { color: #7dd3fc; }
+header { border: 1px solid #26354f; background: linear-gradient(135deg, #111c33, #0e1729); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.04em; }
+h2 { margin-top: 32px; border-bottom: 1px solid #26354f; padding-bottom: 8px; color: #dbeafe; }
+.badge { display: inline-block; padding: 4px 10px; border: 1px solid #37506f; border-radius: 999px; color: #bfdbfe; background: #0f1d33; font-size: .82rem; margin-right: 8px; }
+.card { border: 1px solid #26354f; background: #0d1728; border-radius: 16px; padding: 20px; margin: 16px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+pre { overflow-x: auto; background: #020617; border: 1px solid #26354f; padding: 16px; border-radius: 12px; }
+code { color: #fde68a; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .94rem; }
+th, td { border: 1px solid #26354f; padding: 8px 10px; vertical-align: top; }
+th { color: #bfdbfe; background: #111c33; }
+li { margin: 6px 0; }
+.footer { margin-top: 40px; color: #94a3b8; font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <span class="badge">KPR V2</span>
+  <span class="badge">Repo-local static HTML</span>
+  <h1>Knowledge Pack Routing — Static Human Surface</h1>
+  <p>This generated surface makes active knowledge-pack posture scannable. It is derived output only; raw Markdown <code>llms.txt</code> files remain source/routing truth.</p>
+</header>
+<section class="card">
+  <h2>Generated Packs</h2>
+  <table><tbody><tr><th>Pack</th><th>Source path</th><th>Raw link</th></tr><tr><td><a href="knowledge.html">Knowledge Domain Pack</a></td><td><code>Knowledge/llms.txt</code></td><td><a href="#source-paths-are-private">raw</a></td></tr><tr><td><a href="maps-of-content.html">Maps of Content Domain Pack</a></td><td><code>Maps of Content/llms.txt</code></td><td><a href="#source-paths-are-private">raw</a></td></tr><tr><td><a href="projects-critical-ranger-ffm.html">Critical Ranger FFM Pack</a></td><td><code>Projects/Critical Ranger FFM/llms.txt</code></td><td><a href="#source-paths-are-private">raw</a></td></tr><tr><td><a href="projects-hermes-mission-control.html">Hermes Mission Control Pack</a></td><td><code>Projects/Hermes Mission Control/llms.txt</code></td><td><a href="#source-paths-are-private">raw</a></td></tr><tr><td><a href="projects-planned-program-intel.html">Planned Program Intel Pack</a></td><td><code>Projects/Planned Program Intel/llms.txt</code></td><td><a href="#source-paths-are-private">raw</a></td></tr><tr><td><a href="projects.html">Projects Domain Pack</a></td><td><code>Projects/llms.txt</code></td><td><a href="#source-paths-are-private">raw</a></td></tr><tr><td><a href="root.html">ObsidianVault Root Pack</a></td><td><code>llms.txt</code></td><td><a href="#source-paths-are-private">raw</a></td></tr></tbody></table>
+</section>
+<section class="card">
+  <h2>Boundary</h2>
+  <ul>
+    <li>This public copy is hosted on GitHub Pages; source Markdown remains private unless separately published.</li>
+    <li>No MCP, RAG, crawler, custom search, cron, profile/gateway/provider/webhook mutation, or automatic pack rewriting is introduced.</li>
+    <li>Regenerate with <code>python3 'Projects/Hermes Mission Control/kpr-render-static-html.py'</code>.</li>
+  </ul>
+</section>
+
+</main>
+</body>
+</html>
