@@ -1,0 +1,142 @@
+---
+title: "Planned Program Intel Pack"
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: high
+scope:
+  covers:
+    - Portfolio/application narrative for Planned Program Intel
+    - Active repo routing for pixiiidust/planned-program-intel
+    - Live demo and build-complete status
+    - Decision-routing and institutional-memory framing
+    - Deck, Loom, and application next work
+  not_covered:
+    - Historical planned-program-intelligence implementation work
+    - PDLC scoring as current project framing
+    - Further app-build slices unless Jamie explicitly reopens build work
+freshness:
+  policy: on_change
+  stale_after_days: 30
+owners:
+  routing: Pixoid
+  maintenance: Quill
+  source_inventory: Boba optional
+sources:
+  - label: Project Index
+    path_or_url: Projects/Planned Program Intel/Index.md
+    role: synthesis
+  - label: Active repo
+    path_or_url: https://github.com/pixiiidust/planned-program-intel
+    role: implementation
+  - label: Live demo
+    path_or_url: https://pixiiidust.github.io/planned-program-intel/
+    role: implementation
+  - label: Product context
+    path_or_url: https://github.com/pixiiidust/planned-program-intel/blob/main/docs/prd/2026-06-11-real-build-six-slices.md
+    role: requirement
+  - label: Language reference
+    path_or_url: https://github.com/pixiiidust/planned-program-intel/blob/main/CONTEXT.md
+    role: architecture
+  - label: Prototype notes
+    path_or_url: https://github.com/pixiiidust/planned-program-intel/blob/main/prototype/NOTES.md
+    role: synthesis
+  - label: Historical predecessor
+    path_or_url: Projects/Planned/Index.md
+    role: historical
+human_surface:
+  - path_or_url: Projects/Planned Program Intel/Index.md
+  - path_or_url: Maps of Content/Projects MOC.md
+  - path_or_url: Portfolio.md
+fallback_rules:
+  - If the active repo is unreachable, use the Obsidian Index as last verified summary and state the caveat.
+  - If a question touches the old prototype or PDLC scoring, route to Projects/Planned/Index.md and label it historical.
+  - If stale, re-verify live demo and GitHub issue state before making claims.
+  - Packaging work does not reopen app-build scope; any app-build re-entry needs a fresh GitHub issue explicitly scoped and approved by Jamie.
+v_next:
+  - optional_portfolio_packaging_if_jamie_reprioritizes
+  - app_build_only_if_explicitly_reopened
+---
+
+# Planned Program Intel Pack — Active Portfolio Project
+
+## Agent Start Here
+
+This pack routes the active Planned portfolio/application project. Active repo: `pixiiidust/planned-program-intel`. Historical predecessor: `pixiiidust/planned-program-intelligence`. This pack is KPR V1's first proof-of-consumption project pack, not the primary system goal. Current Planned work, if Jamie re-prioritizes it, is packaging the completed demo into deck, Loom, and application materials — not continuing app build work.
+
+## What This Pack Routes
+
+- Portfolio/application narrative.
+- Active repo and live demo routing.
+- Decision-routing and institutional-memory vocabulary.
+- The six-question decision moment.
+- Next packaging work: slide deck, Loom walkthrough, application submission.
+
+## What This Pack Does Not Route
+
+- Old `planned-program-intelligence` build issues or PDLC scoring as current framing.
+- New app-build work unless Jamie explicitly reopens it.
+- General event-planning operations outside the demo's decision-intelligence layer.
+
+## Source-of-Truth Hierarchy
+
+1. **GitHub issues/PRs on `planned-program-intel`** — coordination truth.
+2. **`CONTEXT.md`** — product language truth.
+3. **`docs/prd/2026-06-11-real-build-six-slices.md`** — requirements truth.
+4. **`prototype/NOTES.md`** — prototype findings.
+5. **Obsidian project Index** — durable synthesis.
+6. **Live demo** — current product surface.
+7. **`Projects/Planned/Index.md`** — historical reference only.
+8. **Root `llms.txt`** — vault routing context.
+
+## Canonical Sources
+
+| Label | Path/URL | Role |
+|---|---|---|
+| Active repo | `https://github.com/pixiiidust/planned-program-intel` | implementation |
+| Live demo | `https://pixiiidust.github.io/planned-program-intel/` | implementation |
+| Language reference | `https://github.com/pixiiidust/planned-program-intel/blob/main/CONTEXT.md` | architecture |
+| PRD | `https://github.com/pixiiidust/planned-program-intel/blob/main/docs/prd/2026-06-11-real-build-six-slices.md` | requirement |
+| Prototype notes | `https://github.com/pixiiidust/planned-program-intel/blob/main/prototype/NOTES.md` | synthesis |
+| Obsidian project hub | `Projects/Planned Program Intel/Index.md` | synthesis |
+| Historical predecessor | `Projects/Planned/Index.md` | historical |
+
+## Current Narrative / Operating Posture
+
+Build queue is complete. The demo is live. The project now needs a crisp portfolio/application story: problem, decision-routing solution, inspectable evidence, compounding program memory, and roadmap.
+
+Core language:
+
+- **Decision** — human resolution needed for an event program.
+- **Resolution** — accept/change/override/escalate plus reasoning.
+- **Owner** — best customer-side decision maker.
+- **Evidence** — cases, exceptions, and precedents.
+- **Program Memory** — accumulated cases, patterns, exceptions, and precedents across events.
+
+KPR V1, stack-level integration, and integration QA are closed. Planned is the first proof/project pack demonstrating KPR consumption, not the main goal. Deck/Loom/application packaging remains optional portfolio work if Jamie re-prioritizes it.
+
+## Do Not Do
+
+- Do not describe this as a chatbot, autonomous agent system, or RL product.
+- Do not resume old `planned-program-intelligence` issues unless Jamie explicitly asks.
+- Do not restart app-build slices by default; packaging is the current job.
+- Do not describe the old repo or old GitHub Pages URL as current live demo.
+- Do not use PDLC scoring as the primary current frame.
+
+## Fallback Rules
+
+1. Active repo unreachable: use the Obsidian Index and state that repo state needs re-verification.
+2. Question about old prototype: route to `Projects/Planned/Index.md`; label it historical.
+3. Pack stale: verify live demo HTTP status, active repo issue state, and current project index before claims.
+4. Question about external Planned.com product context: route to Boba/web research, not this pack alone.
+
+## Human Surface
+
+- `Projects/Planned Program Intel/Index.md`
+- `Maps of Content/Projects MOC.md`
+- `Portfolio.md`
+- `Projects/Planned/Index.md` for historical predecessor only
+
+## Maintenance Notes
+
+Update after deck creation, Loom script/final recording, application submission, or any new PR/issue on `planned-program-intel`. Keep this pack portfolio-first and execution-second.

@@ -6,6 +6,7 @@
     "no_rag": true,
     "no_search_index": true
   },
+  "category": "agents",
   "concept_count": 14,
   "concepts": [
     {
@@ -200,12 +201,190 @@
       "updated": "2026-06-11"
     }
   ],
+  "description": "Agent-readable knowledge packs and concepts for Pixiedust/Hermes workflows.",
+  "documentCount": 21,
+  "documents": [
+    {
+      "html_path": "knowledge.html",
+      "path": "Knowledge/llms.txt",
+      "raw_path": "raw/Knowledge/llms.txt",
+      "title": "Knowledge Domain Pack",
+      "type": "knowledge-pack",
+      "updated": "2026-06-15"
+    },
+    {
+      "html_path": "maps-of-content.html",
+      "path": "Maps of Content/llms.txt",
+      "raw_path": "raw/Maps of Content/llms.txt",
+      "title": "Maps of Content Domain Pack",
+      "type": "knowledge-pack",
+      "updated": "2026-06-15"
+    },
+    {
+      "html_path": "projects-critical-ranger-ffm.html",
+      "path": "Projects/Critical Ranger FFM/llms.txt",
+      "raw_path": "raw/Projects/Critical Ranger FFM/llms.txt",
+      "title": "Critical Ranger FFM Pack",
+      "type": "knowledge-pack",
+      "updated": "2026-06-15"
+    },
+    {
+      "html_path": "projects-hermes-mission-control.html",
+      "path": "Projects/Hermes Mission Control/llms.txt",
+      "raw_path": "raw/Projects/Hermes Mission Control/llms.txt",
+      "title": "Hermes Mission Control Pack",
+      "type": "knowledge-pack",
+      "updated": "2026-06-15"
+    },
+    {
+      "html_path": "projects-planned-program-intel.html",
+      "path": "Projects/Planned Program Intel/llms.txt",
+      "raw_path": "raw/Projects/Planned Program Intel/llms.txt",
+      "title": "Planned Program Intel Pack",
+      "type": "knowledge-pack",
+      "updated": "2026-06-15"
+    },
+    {
+      "html_path": "projects.html",
+      "path": "Projects/llms.txt",
+      "raw_path": "raw/Projects/llms.txt",
+      "title": "Projects Domain Pack",
+      "type": "knowledge-pack",
+      "updated": "2026-06-15"
+    },
+    {
+      "html_path": "root.html",
+      "path": "llms.txt",
+      "raw_path": "raw/llms.txt",
+      "title": "ObsidianVault Root Pack",
+      "type": "knowledge-pack",
+      "updated": "2026-06-15"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-agent-capability-route-pattern.html",
+      "path": "Knowledge/concepts/agent-capability-route-pattern.md",
+      "raw_path": "raw/Knowledge/concepts/agent-capability-route-pattern.md",
+      "title": "Agent Capability Route Pattern",
+      "type": "concept",
+      "updated": "2026-06-13"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-agent-wikis.html",
+      "path": "Knowledge/concepts/agent-wikis.md",
+      "raw_path": "raw/Knowledge/concepts/agent-wikis.md",
+      "title": "Agent Wikis",
+      "type": "concept",
+      "updated": "2026-06-15"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-ai-native-problem-framing-framework.html",
+      "path": "Knowledge/concepts/ai-native-problem-framing-framework.md",
+      "raw_path": "raw/Knowledge/concepts/ai-native-problem-framing-framework.md",
+      "title": "AI-Native Problem Framing Framework",
+      "type": "concept",
+      "updated": "2026-06-11"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-bounded-context-tree-pattern.html",
+      "path": "Knowledge/concepts/bounded-context-tree-pattern.md",
+      "raw_path": "raw/Knowledge/concepts/bounded-context-tree-pattern.md",
+      "title": "Bounded Context Tree Pattern",
+      "type": "concept",
+      "updated": "2026-06-07"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-building-software-is-learning.html",
+      "path": "Knowledge/concepts/building-software-is-learning.md",
+      "raw_path": "raw/Knowledge/concepts/building-software-is-learning.md",
+      "title": "Building Software Is Learning",
+      "type": "concept",
+      "updated": "2026-06-11"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-find-the-lock-problem-first.html",
+      "path": "Knowledge/concepts/find-the-lock-problem-first.md",
+      "raw_path": "raw/Knowledge/concepts/find-the-lock-problem-first.md",
+      "title": "Find the Lock: Problem-First Approach",
+      "type": "concept",
+      "updated": "2026-06-11"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-hermes-soul-md-wiring.html",
+      "path": "Knowledge/concepts/hermes-soul-md-wiring.md",
+      "raw_path": "raw/Knowledge/concepts/hermes-soul-md-wiring.md",
+      "title": "Hermes SOUL.md Wiring",
+      "type": "concept",
+      "updated": "2026-06-12"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
+      "path": "Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
+      "raw_path": "raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
+      "title": "Matt Pocock SDLC Rhythm",
+      "type": "concept",
+      "updated": "2026-06-07"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-moc-knowledge-cortex.html",
+      "path": "Knowledge/concepts/moc-knowledge-cortex.md",
+      "raw_path": "raw/Knowledge/concepts/moc-knowledge-cortex.md",
+      "title": "MOC Knowledge Cortex",
+      "type": "concept",
+      "updated": "2026-06-13"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
+      "path": "Knowledge/concepts/peer-profiles-vs-child-processes.md",
+      "raw_path": "raw/Knowledge/concepts/peer-profiles-vs-child-processes.md",
+      "title": "Peer Profiles vs Child Processes",
+      "type": "concept",
+      "updated": "2026-06-13"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-profile-memory-boundaries.html",
+      "path": "Knowledge/concepts/profile-memory-boundaries.md",
+      "raw_path": "raw/Knowledge/concepts/profile-memory-boundaries.md",
+      "title": "Profile Memory Boundaries",
+      "type": "concept",
+      "updated": "2026-06-13"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
+      "path": "Knowledge/concepts/runtime-memory-knowledge-routing.md",
+      "raw_path": "raw/Knowledge/concepts/runtime-memory-knowledge-routing.md",
+      "title": "Runtime Memory Knowledge Routing",
+      "type": "concept",
+      "updated": "2026-06-15"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-self-improving-agent-systems.html",
+      "path": "Knowledge/concepts/self-improving-agent-systems.md",
+      "raw_path": "raw/Knowledge/concepts/self-improving-agent-systems.md",
+      "title": "Self-Improving Agent Systems",
+      "type": "concept",
+      "updated": "2026-06-13"
+    },
+    {
+      "html_path": "concept-knowledge-concepts-verb-first-product-positioning.html",
+      "path": "Knowledge/concepts/verb-first-product-positioning.md",
+      "raw_path": "raw/Knowledge/concepts/verb-first-product-positioning.md",
+      "title": "Verb-First Product Positioning",
+      "type": "concept",
+      "updated": "2026-06-11"
+    }
+  ],
   "entrypoints": {
     "html_index": "index.html",
+    "json_index": "index.json",
+    "llms_full_txt": "llms-full.txt",
+    "llms_txt": "llms.txt",
+    "raw_base": "raw/",
     "root_pack_html": "root.html",
-    "root_pack_source": "llms.txt"
+    "root_pack_source": "raw/llms.txt"
   },
   "generated_by": "Projects/Hermes Mission Control/kpr-render-static-html.py",
+  "html_base": "/wiki/",
+  "lastUpdated": "2026-06-15",
   "pack_count": 7,
   "packs": [
     {
@@ -776,6 +955,19 @@
       "title": "ObsidianVault Root Pack"
     }
   ],
+  "raw_base": "/wiki/raw/",
   "schema_version": "kpr-index-manifest-v1",
-  "source_truth": "Markdown llms.txt knowledge packs remain source/routing truth; this JSON is derived output."
+  "scope": {
+    "covers": "Pixiedust agent knowledge routing, Knowledge concepts, project entrypoints, MOCs, and KPR operating boundaries.",
+    "currentAs": "2026-06-15",
+    "notCovered": "Private vault content outside the generated public surface, secrets, raw memory/Honcho data, runtime automation internals, and facts newer than the current source dates."
+  },
+  "slug": "pixiedust",
+  "source_truth": "Markdown llms.txt knowledge packs remain source/routing truth; this JSON is derived output.",
+  "tags": [
+    "agents",
+    "knowledge-management",
+    "workflow"
+  ],
+  "title": "Pixiedust Knowledge Wiki"
 }
