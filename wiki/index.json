@@ -1,0 +1,587 @@
+{
+  "boundary": {
+    "no_crawler": true,
+    "no_mcp": true,
+    "no_profile_gateway_webhook_changes": true,
+    "no_rag": true,
+    "no_search_index": true
+  },
+  "entrypoints": {
+    "html_index": "index.html",
+    "root_pack_html": "root.html",
+    "root_pack_source": "llms.txt"
+  },
+  "generated_by": "Projects/Hermes Mission Control/kpr-render-static-html.py",
+  "pack_count": 7,
+  "packs": [
+    {
+      "confidence": "high",
+      "current_as": "2026-06-15",
+      "freshness": {
+        "policy": null,
+        "stale_after_days": null
+      },
+      "html_path": "knowledge.html",
+      "human_surface": [
+        {
+          "path_or_url": "Maps of Content/Knowledge MOC.md"
+        },
+        {
+          "path_or_url": "Knowledge/index.md"
+        },
+        {
+          "path_or_url": "Knowledge/SCHEMA.md"
+        }
+      ],
+      "scope": {
+        "covers": [
+          "Obsidian Knowledge wiki routing",
+          "Schema, index, log, raw-source, and synthesized-page obligations",
+          "Boundary between Obsidian Knowledge, local Hermes knowledge, memory/Honcho, projects, and skills"
+        ],
+        "not_covered": [
+          "Local Hermes knowledge files under ~/.hermes/knowledge",
+          "Memory/Honcho retrieval internals",
+          "Project execution state",
+          "Broad schema rewrites or mass migrations"
+        ]
+      },
+      "sections": [
+        "Agent Start Here",
+        "What This Pack Routes",
+        "What This Pack Does Not Route",
+        "Source-of-Truth Hierarchy",
+        "Canonical Sources",
+        "Current Narrative / Operating Posture",
+        "Do Not Do",
+        "Fallback Rules",
+        "Human Surface",
+        "Maintenance Notes"
+      ],
+      "slug": "knowledge",
+      "source_path": "Knowledge/llms.txt",
+      "sources": [
+        {
+          "label": "Knowledge Schema",
+          "path_or_url": "Knowledge/SCHEMA.md",
+          "role": "contract"
+        },
+        {
+          "label": "Knowledge Index",
+          "path_or_url": "Knowledge/index.md",
+          "role": "catalog"
+        },
+        {
+          "label": "Knowledge Log",
+          "path_or_url": "Knowledge/log.md",
+          "role": "maintenance-log"
+        },
+        {
+          "label": "Runtime Memory Knowledge Routing",
+          "path_or_url": "Knowledge/concepts/runtime-memory-knowledge-routing.md",
+          "role": "concept"
+        },
+        {
+          "label": "Knowledge Agent Instructions",
+          "path_or_url": "Knowledge/AGENTS.md",
+          "role": "operating-rule"
+        },
+        {
+          "label": "Knowledge MOC",
+          "path_or_url": "Maps of Content/Knowledge MOC.md",
+          "role": "human-navigation"
+        }
+      ],
+      "title": "Knowledge Domain Pack"
+    },
+    {
+      "confidence": "high",
+      "current_as": "2026-06-15",
+      "freshness": {
+        "policy": null,
+        "stale_after_days": null
+      },
+      "html_path": "maps-of-content.html",
+      "human_surface": [
+        {
+          "path_or_url": "Maps of Content/Maps of Content.md"
+        },
+        {
+          "path_or_url": "Maps of Content/Projects MOC.md"
+        },
+        {
+          "path_or_url": "Maps of Content/Knowledge MOC.md"
+        }
+      ],
+      "scope": {
+        "covers": [
+          "MOC domain routing and maintenance boundaries",
+          "Distinction between human navigation surfaces and agent retrieval contracts",
+          "Which MOCs route to project, knowledge, agent-ops, tag, and maintenance surfaces"
+        ],
+        "not_covered": [
+          "Canonical project truth",
+          "Full Knowledge wiki content",
+          "Template content or note generation rules",
+          "Runtime automation or static HTML publishing"
+        ]
+      },
+      "sections": [
+        "Agent Start Here",
+        "What This Pack Routes",
+        "What This Pack Does Not Route",
+        "Source-of-Truth Hierarchy",
+        "Canonical Sources",
+        "Current Narrative / Operating Posture",
+        "Do Not Do",
+        "Fallback Rules",
+        "Human Surface",
+        "Maintenance Notes"
+      ],
+      "slug": "maps-of-content",
+      "source_path": "Maps of Content/llms.txt",
+      "sources": [
+        {
+          "label": "Top-level MOC",
+          "path_or_url": "Maps of Content/Maps of Content.md",
+          "role": "human-navigation"
+        },
+        {
+          "label": "Projects MOC",
+          "path_or_url": "Maps of Content/Projects MOC.md",
+          "role": "project-navigation"
+        },
+        {
+          "label": "Knowledge MOC",
+          "path_or_url": "Maps of Content/Knowledge MOC.md",
+          "role": "knowledge-navigation"
+        },
+        {
+          "label": "Agent Operations MOC",
+          "path_or_url": "Maps of Content/Agent Operations MOC.md",
+          "role": "agent-ops-navigation"
+        },
+        {
+          "label": "MOC Maintenance Process",
+          "path_or_url": "Maps of Content/MOC Maintenance Process.md",
+          "role": "maintenance"
+        }
+      ],
+      "title": "Maps of Content Domain Pack"
+    },
+    {
+      "confidence": "medium",
+      "current_as": "2026-06-15",
+      "freshness": {
+        "policy": null,
+        "stale_after_days": null
+      },
+      "html_path": "projects-critical-ranger-ffm.html",
+      "human_surface": [
+        {
+          "path_or_url": "Projects/Critical Ranger FFM/Index.md"
+        },
+        {
+          "path_or_url": "Project Board.md"
+        }
+      ],
+      "scope": {
+        "covers": [
+          "Zone-control RL MVP as active roadmap",
+          "Parked switch-point/single-cell efficacy work as diagnostic/prototype infrastructure",
+          "Active issue tree and next executable slice",
+          "Evidence gates and non-claim guardrails"
+        ],
+        "not_covered": [
+          "Real wildfire validity or policy recommendations",
+          "Publication-grade science claims",
+          "GPU/Puffer/render runs on VPS",
+          "Local WSL HITL commands without Jamie approval"
+        ]
+      },
+      "sections": [
+        "Agent Start Here",
+        "What This Pack Routes",
+        "What This Pack Does Not Route",
+        "Source-of-Truth Hierarchy",
+        "Canonical Sources",
+        "Current Narrative / Operating Posture",
+        "Do Not Do",
+        "Fallback Rules",
+        "Human Surface",
+        "Maintenance Notes"
+      ],
+      "slug": "projects-critical-ranger-ffm",
+      "source_path": "Projects/Critical Ranger FFM/llms.txt",
+      "sources": [
+        {
+          "label": "Critical Ranger FFM Index",
+          "path_or_url": "Projects/Critical Ranger FFM/Index.md",
+          "role": "synthesis"
+        },
+        {
+          "label": "Project repo",
+          "path_or_url": "https://github.com/pixiiidust/critical-ranger-ffm",
+          "role": "implementation"
+        },
+        {
+          "label": "Zone-control PRD",
+          "path_or_url": "https://github.com/pixiiidust/critical-ranger-ffm/blob/main/docs/PRD-zone-control-rl-mvp.md",
+          "role": "requirement"
+        },
+        {
+          "label": "Pivot tracker",
+          "path_or_url": "https://github.com/pixiiidust/critical-ranger-ffm/issues/53",
+          "role": "coordination"
+        },
+        {
+          "label": "Next slice",
+          "path_or_url": "https://github.com/pixiiidust/critical-ranger-ffm/issues/54",
+          "role": "implementation"
+        }
+      ],
+      "title": "Critical Ranger FFM Pack"
+    },
+    {
+      "confidence": "high",
+      "current_as": "2026-06-15",
+      "freshness": {
+        "policy": null,
+        "stale_after_days": null
+      },
+      "html_path": "projects-hermes-mission-control.html",
+      "human_surface": [
+        {
+          "path_or_url": "Projects/Hermes Mission Control/Index.md"
+        },
+        {
+          "path_or_url": "Maps of Content/Agent Operations MOC.md"
+        },
+        {
+          "path_or_url": "Project Board.md"
+        }
+      ],
+      "scope": {
+        "covers": [
+          "Pixoid/Crew agent-ops routing",
+          "Cron governance and delivery routing",
+          "Default Pixoid control-plane vs worker profile boundaries",
+          "Persona webhook delivery posture",
+          "Capability Registry / Reuse Gate and health-check surfaces",
+          "KPR V2 tracker posture and vault-wide entrypoint design boundary"
+        ],
+        "not_covered": [
+          "Live webhook URLs, tokens, or secrets",
+          "Personal VPS/Docker setup detail",
+          "Individual project implementation work outside Mission Control"
+        ]
+      },
+      "sections": [
+        "Agent Start Here",
+        "What This Pack Routes",
+        "What This Pack Does Not Route",
+        "Source-of-Truth Hierarchy",
+        "Canonical Sources",
+        "Current Narrative / Operating Posture",
+        "Do Not Do",
+        "Fallback Rules",
+        "Human Surface",
+        "Maintenance Notes"
+      ],
+      "slug": "projects-hermes-mission-control",
+      "source_path": "Projects/Hermes Mission Control/llms.txt",
+      "sources": [
+        {
+          "label": "Mission Control Index",
+          "path_or_url": "Projects/Hermes Mission Control/Index.md",
+          "role": "coordination"
+        },
+        {
+          "label": "Agent Operations MOC",
+          "path_or_url": "Maps of Content/Agent Operations MOC.md",
+          "role": "synthesis"
+        },
+        {
+          "label": "Pixoid Setup",
+          "path_or_url": "Projects/Personal/Pixoid Setup.md",
+          "role": "architecture"
+        },
+        {
+          "label": "Pixoid Agent Capability Routes",
+          "path_or_url": "Projects/Pixoid Agent Capability Routes/Index.md",
+          "role": "architecture"
+        },
+        {
+          "label": "ObsidianVault issue tracker",
+          "path_or_url": "https://github.com/pixiiidust/ObsidianVault/issues",
+          "role": "coordination"
+        },
+        {
+          "label": "KPR V2 tracker",
+          "path_or_url": "https://github.com/pixiiidust/ObsidianVault/issues/74",
+          "role": "coordination"
+        },
+        {
+          "label": "Vault-wide entrypoint mesh design",
+          "path_or_url": "https://github.com/pixiiidust/ObsidianVault/issues/77",
+          "role": "coordination"
+        }
+      ],
+      "title": "Hermes Mission Control Pack"
+    },
+    {
+      "confidence": "high",
+      "current_as": "2026-06-15",
+      "freshness": {
+        "policy": null,
+        "stale_after_days": null
+      },
+      "html_path": "projects-planned-program-intel.html",
+      "human_surface": [
+        {
+          "path_or_url": "Projects/Planned Program Intel/Index.md"
+        },
+        {
+          "path_or_url": "Maps of Content/Projects MOC.md"
+        },
+        {
+          "path_or_url": "Portfolio.md"
+        }
+      ],
+      "scope": {
+        "covers": [
+          "Portfolio/application narrative for Planned Program Intel",
+          "Active repo routing for pixiiidust/planned-program-intel",
+          "Live demo and build-complete status",
+          "Decision-routing and institutional-memory framing",
+          "Deck, Loom, and application next work"
+        ],
+        "not_covered": [
+          "Historical planned-program-intelligence implementation work",
+          "PDLC scoring as current project framing",
+          "Further app-build slices unless Jamie explicitly reopens build work"
+        ]
+      },
+      "sections": [
+        "Agent Start Here",
+        "What This Pack Routes",
+        "What This Pack Does Not Route",
+        "Source-of-Truth Hierarchy",
+        "Canonical Sources",
+        "Current Narrative / Operating Posture",
+        "Do Not Do",
+        "Fallback Rules",
+        "Human Surface",
+        "Maintenance Notes"
+      ],
+      "slug": "projects-planned-program-intel",
+      "source_path": "Projects/Planned Program Intel/llms.txt",
+      "sources": [
+        {
+          "label": "Project Index",
+          "path_or_url": "Projects/Planned Program Intel/Index.md",
+          "role": "synthesis"
+        },
+        {
+          "label": "Active repo",
+          "path_or_url": "https://github.com/pixiiidust/planned-program-intel",
+          "role": "implementation"
+        },
+        {
+          "label": "Live demo",
+          "path_or_url": "https://pixiiidust.github.io/planned-program-intel/",
+          "role": "implementation"
+        },
+        {
+          "label": "Product context",
+          "path_or_url": "https://github.com/pixiiidust/planned-program-intel/blob/main/docs/prd/2026-06-11-real-build-six-slices.md",
+          "role": "requirement"
+        },
+        {
+          "label": "Language reference",
+          "path_or_url": "https://github.com/pixiiidust/planned-program-intel/blob/main/CONTEXT.md",
+          "role": "architecture"
+        },
+        {
+          "label": "Prototype notes",
+          "path_or_url": "https://github.com/pixiiidust/planned-program-intel/blob/main/prototype/NOTES.md",
+          "role": "synthesis"
+        },
+        {
+          "label": "Historical predecessor",
+          "path_or_url": "Projects/Planned/Index.md",
+          "role": "historical"
+        }
+      ],
+      "title": "Planned Program Intel Pack"
+    },
+    {
+      "confidence": "high",
+      "current_as": "2026-06-15",
+      "freshness": {
+        "policy": null,
+        "stale_after_days": null
+      },
+      "html_path": "projects.html",
+      "human_surface": [
+        {
+          "path_or_url": "Maps of Content/Projects MOC.md"
+        },
+        {
+          "path_or_url": "Project Board.md"
+        }
+      ],
+      "scope": {
+        "covers": [
+          "Project-domain routing across active, parked, historical, and personal/infrastructure contexts",
+          "Project pack coverage and fallback behavior",
+          "Source-of-truth hierarchy for project state"
+        ],
+        "not_covered": [
+          "Full project implementation details",
+          "Repo code truth beyond links to GitHub/project hubs",
+          "Session-specific task state"
+        ]
+      },
+      "sections": [
+        "Agent Start Here",
+        "What This Pack Routes",
+        "What This Pack Does Not Route",
+        "Source-of-Truth Hierarchy",
+        "Canonical Sources",
+        "Current Narrative / Operating Posture",
+        "Do Not Do",
+        "Fallback Rules",
+        "Human Surface",
+        "Maintenance Notes"
+      ],
+      "slug": "projects",
+      "source_path": "Projects/llms.txt",
+      "sources": [
+        {
+          "label": "Projects MOC",
+          "path_or_url": "Maps of Content/Projects MOC.md",
+          "role": "synthesis"
+        },
+        {
+          "label": "Project Board",
+          "path_or_url": "Project Board.md",
+          "role": "coordination"
+        },
+        {
+          "label": "Root Pack",
+          "path_or_url": "llms.txt",
+          "role": "routing"
+        },
+        {
+          "label": "ObsidianVault issue tracker",
+          "path_or_url": "https://github.com/pixiiidust/ObsidianVault/issues",
+          "role": "coordination"
+        }
+      ],
+      "title": "Projects Domain Pack"
+    },
+    {
+      "confidence": "high",
+      "current_as": "2026-06-15",
+      "freshness": {
+        "policy": null,
+        "stale_after_days": null
+      },
+      "html_path": "root.html",
+      "human_surface": [
+        {
+          "path_or_url": "Home.md"
+        },
+        {
+          "path_or_url": "Maps of Content/Projects MOC.md"
+        },
+        {
+          "path_or_url": "Maps of Content/Knowledge MOC.md"
+        }
+      ],
+      "scope": {
+        "covers": [
+          "Vault-level navigation and agent retrieval routing",
+          "Active/parked/historical project context switching",
+          "Source-of-truth hierarchy across GitHub, PRDs, Obsidian, Hermes knowledge, skills, memory, sessions, and web",
+          "Current KPR V2 and vault-wide entrypoint planning gates"
+        ],
+        "not_covered": [
+          "Individual project build details",
+          "Hermes profile/gateway runtime configuration",
+          "Session-specific memory or conversation state"
+        ]
+      },
+      "sections": [
+        "Agent Start Here",
+        "What This Pack Routes",
+        "What This Pack Does Not Route",
+        "Source-of-Truth Hierarchy",
+        "Canonical Sources",
+        "Current Narrative / Operating Posture",
+        "Do Not Do",
+        "Fallback Rules",
+        "Human Surface",
+        "Maintenance Notes"
+      ],
+      "slug": "root",
+      "source_path": "llms.txt",
+      "sources": [
+        {
+          "label": "Home",
+          "path_or_url": "Home.md",
+          "role": "synthesis"
+        },
+        {
+          "label": "Projects Domain Pack",
+          "path_or_url": "Projects/llms.txt",
+          "role": "routing"
+        },
+        {
+          "label": "Projects MOC",
+          "path_or_url": "Maps of Content/Projects MOC.md",
+          "role": "synthesis"
+        },
+        {
+          "label": "Knowledge Domain Pack",
+          "path_or_url": "Knowledge/llms.txt",
+          "role": "routing"
+        },
+        {
+          "label": "Knowledge MOC",
+          "path_or_url": "Maps of Content/Knowledge MOC.md",
+          "role": "synthesis"
+        },
+        {
+          "label": "MOC Domain Pack",
+          "path_or_url": "Maps of Content/llms.txt",
+          "role": "routing"
+        },
+        {
+          "label": "Project Board",
+          "path_or_url": "Project Board.md",
+          "role": "coordination"
+        },
+        {
+          "label": "Knowledge Pack Contract V1",
+          "path_or_url": "Projects/Hermes Mission Control/Knowledge Pack Contract V1.md",
+          "role": "architecture"
+        },
+        {
+          "label": "KPR V2 tracker",
+          "path_or_url": "https://github.com/pixiiidust/ObsidianVault/issues/74",
+          "role": "coordination"
+        },
+        {
+          "label": "Vault-wide entrypoint mesh design",
+          "path_or_url": "https://github.com/pixiiidust/ObsidianVault/issues/77",
+          "role": "coordination"
+        }
+      ],
+      "title": "ObsidianVault Root Pack"
+    }
+  ],
+  "schema_version": "kpr-index-manifest-v1",
+  "source_truth": "Markdown llms.txt knowledge packs remain source/routing truth; this JSON is derived output."
+}
