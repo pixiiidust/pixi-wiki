@@ -247,7 +247,6 @@ class WikiRouteLinkTest(unittest.TestCase):
 # Concept page CTA hygiene  (should FAIL — current pages expose all three)
 # ---------------------------------------------------------------------------
 
-@unittest.expectedFailure
 class ConceptPageCTATest(unittest.TestCase):
     """Assert concept pages do NOT expose Agent alias, Agent text, and
     Markdown source as parallel primary CTAs."""
@@ -291,7 +290,6 @@ class ConceptPageCTATest(unittest.TestCase):
 # index.json schema  (should FAIL — current index.json uses old field names)
 # ---------------------------------------------------------------------------
 
-@unittest.expectedFailure
 class IndexJsonSchemaTest(unittest.TestCase):
     """Assert index.json document records include the new contract fields."""
 

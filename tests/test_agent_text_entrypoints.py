@@ -23,19 +23,22 @@ class AgentTextEntrypointsTest(unittest.TestCase):
                     (ROOT / "raw" / concept["source_path"]).read_text(encoding="utf-8"),
                 )
 
-    def test_agent_callouts_link_to_txt_not_markdown_source_span(self) -> None:
+    def test_agent_callouts_link_to_local_llms_and_markdown_provenance(self) -> None:
         data = json.loads((ROOT / "index.json").read_text(encoding="utf-8"))
         for concept in data["concepts"]:
             html = (ROOT / concept["html_path"]).read_text(encoding="utf-8")
             with self.subTest(concept=concept["title"]):
-                self.assertIn(f'href="{concept["raw_text_path"]}"', html)
                 agent_callout = re.search(r'<section class="agent-callout">.*?</section>', html, re.S)
                 self.assertIsNotNone(agent_callout)
                 assert agent_callout is not None
                 callout_html = agent_callout.group(0)
-                self.assertNotIn("Markdown source:", callout_html)
-                self.assertIn("Agent text", callout_html)
-
+                self.assertIn(f'href="{concept["local_llms_txt_path"]}"', callout_html)
+                self.assertIn(f'href="{concept["raw_source_path"]}"', callout_html)
+                self.assertIn("local llms.txt", callout_html)
+                self.assertIn("view as markdown", callout_html)
+                self.assertNotIn("Agent alias", callout_html)
+                self.assertNotIn("Agent text", callout_html)
+                self.assertNotIn("Markdown source", callout_html)
 
     def test_agent_layer_files_exist(self) -> None:
         for name in ["llms.txt", "llms-full.txt", "index.json"]:
@@ -74,14 +77,16 @@ class AgentTextEntrypointsTest(unittest.TestCase):
             with self.subTest(file=name):
                 self.assertTrue((ROOT / name).exists())
 
-    def test_llms_txt_raw_entries_are_clickable_txt_links(self) -> None:
+    def test_llms_txt_entries_use_clickable_wiki_and_raw_links(self) -> None:
         for name in ["llms.txt", "llms-full.txt"]:
             with self.subTest(file=name):
                 text = (ROOT / name).read_text(encoding="utf-8")
                 self.assertNotRegex(text, r"raw: `[^`]+`")
-                self.assertIn("[raw txt](/pixi-wiki/raw/Knowledge/concepts/ai-native-problem-framing-framework.txt)", text)
+                self.assertIn("[Knowledge domain llms.txt](/pixi-wiki/wiki/knowledge/llms.txt)", text)
+                self.assertIn("[Agent Wikis](/pixi-wiki/wiki/knowledge/concepts/agent-wikis/)", text)
+                self.assertIn("[markdown](/pixi-wiki/raw/Knowledge/concepts/agent-wikis.md)", text)
         root_text = (ROOT / "llms.txt").read_text(encoding="utf-8")
-        self.assertIn("[root raw llms.txt](/pixi-wiki/raw/llms.txt)", root_text)
+        self.assertIn("[source](/pixi-wiki/raw/llms.txt)", root_text)
 
 
 if __name__ == "__main__":
