@@ -1,15 +1,15 @@
 # Pixiedust Knowledge Wiki
 
 > Agent-readable public index for Pixiedust knowledge packs and concepts.
-> Raw Markdown for any page: /pixi-wiki/raw/<path>.
+> Agent text entrypoints are clickable `.txt` files under `/pixi-wiki/raw/`; Markdown source remains available beside them when useful.
 
 ## Start here
 
 - Root pack HTML: /pixi-wiki/root.html
-- Root pack raw Markdown: /pixi-wiki/raw/llms.txt
-- JSON document registry: /pixi-wiki/index.json
-- Full public corpus: /pixi-wiki/llms-full.txt
-- Human HTML surface: /pixi-wiki/
+- [root raw llms.txt](/pixi-wiki/raw/llms.txt)
+- [index.json](/pixi-wiki/index.json)
+- [llms-full.txt](/pixi-wiki/llms-full.txt)
+- [Human HTML surface](/pixi-wiki/)
 
 ## Scope
 
@@ -22,40 +22,40 @@ Not covered: private vault content outside the generated public surface, secrets
 ### Knowledge
 
 Entrypoints:
-- [Knowledge Domain Pack](/pixi-wiki/knowledge.html) — role: `domain-entrypoint` — raw: `/pixi-wiki/raw/Knowledge/llms.txt` — current: 2026-06-15
+- [Knowledge Domain Pack](/pixi-wiki/knowledge.html) — role: `domain-entrypoint` — raw: [raw llms.txt](/pixi-wiki/raw/Knowledge/llms.txt) — current: 2026-06-15
 
 Concepts:
-- [AI-Native Problem Framing Framework](/pixi-wiki/concept-knowledge-concepts-ai-native-problem-framing-framework.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/ai-native-problem-framing-framework.md` — updated: 2026-06-11
-- [Agent Capability Route Pattern](/pixi-wiki/concept-knowledge-concepts-agent-capability-route-pattern.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/agent-capability-route-pattern.md` — updated: 2026-06-13
-- [Agent Wikis](/pixi-wiki/concept-knowledge-concepts-agent-wikis.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/agent-wikis.md` — updated: 2026-06-15 — Agent-native knowledge surfaces that give agents maintained, scoped, source-backed maps before they act.
-- [Bounded Context Tree Pattern](/pixi-wiki/concept-knowledge-concepts-bounded-context-tree-pattern.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/bounded-context-tree-pattern.md` — updated: 2026-06-07
-- [Building Software Is Learning](/pixi-wiki/concept-knowledge-concepts-building-software-is-learning.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/building-software-is-learning.md` — updated: 2026-06-11
-- [Find the Lock: Problem-First Approach](/pixi-wiki/concept-knowledge-concepts-find-the-lock-problem-first.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/find-the-lock-problem-first.md` — updated: 2026-06-11
-- [Hermes SOUL.md Wiring](/pixi-wiki/concept-knowledge-concepts-hermes-soul-md-wiring.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/hermes-soul-md-wiring.md` — updated: 2026-06-12
-- [Local Retrieval-Augmented Agent Infrastructure](/pixi-wiki/concept-knowledge-concepts-local-retrieval-agent-infrastructure.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/local-retrieval-agent-infrastructure.md` — updated: 2026-06-15 — Applied architecture lessons from Krill's dual-RTX 5090 local agent stack — hardware setup, retrieval pipeline (Qdrant + Ollama + MCP), agent workflow governance, and relevance to Jamie's PC build decisions.
-- [MOC Knowledge Cortex](/pixi-wiki/concept-knowledge-concepts-moc-knowledge-cortex.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/moc-knowledge-cortex.md` — updated: 2026-06-13 — Model of the MOC layer as the routing brain of the vault, keeping durable notes reachable through clear domain branches.
-- [Matt Pocock SDLC Rhythm](/pixi-wiki/concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md` — updated: 2026-06-07
-- [Peer Profiles vs Child Processes](/pixi-wiki/concept-knowledge-concepts-peer-profiles-vs-child-processes.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/peer-profiles-vs-child-processes.md` — updated: 2026-06-13 — Architecture decision for when Jamie's crew agents run as peer Hermes profiles versus child/subagent processes.
-- [Profile Memory Boundaries](/pixi-wiki/concept-knowledge-concepts-profile-memory-boundaries.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/profile-memory-boundaries.md` — updated: 2026-06-13 — Boundary model for routing durable knowledge between USER.md, Hermes memory, local knowledge, Obsidian/GitHub project truth, and skills.
-- [RAG over Agent Wikis](/pixi-wiki/concept-knowledge-concepts-rag-over-agent-wikis.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/rag-over-agent-wikis.md` — updated: 2026-06-15 — Foundation for using embeddings, semantic search, and retrieval-augmented generation over compiled agent wiki pages instead of raw source dumps.
-- [Runtime Memory Knowledge Routing](/pixi-wiki/concept-knowledge-concepts-runtime-memory-knowledge-routing.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/runtime-memory-knowledge-routing.md` — updated: 2026-06-15 — Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.
-- [Self-Improving Agent Systems](/pixi-wiki/concept-knowledge-concepts-self-improving-agent-systems.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/self-improving-agent-systems.md` — updated: 2026-06-13 — Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
-- [Verb-First Product Positioning](/pixi-wiki/concept-knowledge-concepts-verb-first-product-positioning.html) — raw: `/pixi-wiki/raw/Knowledge/concepts/verb-first-product-positioning.md` — updated: 2026-06-11
+- [AI-Native Problem Framing Framework](/pixi-wiki/concept-knowledge-concepts-ai-native-problem-framing-framework.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/ai-native-problem-framing-framework.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/ai-native-problem-framing-framework.md) — updated: 2026-06-11
+- [Agent Capability Route Pattern](/pixi-wiki/concept-knowledge-concepts-agent-capability-route-pattern.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/agent-capability-route-pattern.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/agent-capability-route-pattern.md) — updated: 2026-06-13
+- [Agent Wikis](/pixi-wiki/concept-knowledge-concepts-agent-wikis.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/agent-wikis.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/agent-wikis.md) — updated: 2026-06-15 — Agent-native knowledge surfaces that give agents maintained, scoped, source-backed maps before they act.
+- [Bounded Context Tree Pattern](/pixi-wiki/concept-knowledge-concepts-bounded-context-tree-pattern.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/bounded-context-tree-pattern.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/bounded-context-tree-pattern.md) — updated: 2026-06-07
+- [Building Software Is Learning](/pixi-wiki/concept-knowledge-concepts-building-software-is-learning.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/building-software-is-learning.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/building-software-is-learning.md) — updated: 2026-06-11
+- [Find the Lock: Problem-First Approach](/pixi-wiki/concept-knowledge-concepts-find-the-lock-problem-first.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/find-the-lock-problem-first.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/find-the-lock-problem-first.md) — updated: 2026-06-11
+- [Hermes SOUL.md Wiring](/pixi-wiki/concept-knowledge-concepts-hermes-soul-md-wiring.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/hermes-soul-md-wiring.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/hermes-soul-md-wiring.md) — updated: 2026-06-12
+- [Local Retrieval-Augmented Agent Infrastructure](/pixi-wiki/concept-knowledge-concepts-local-retrieval-agent-infrastructure.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/local-retrieval-agent-infrastructure.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/local-retrieval-agent-infrastructure.md) — updated: 2026-06-15 — Applied architecture lessons from Krill's dual-RTX 5090 local agent stack — hardware setup, retrieval pipeline (Qdrant + Ollama + MCP), agent workflow governance, and relevance to Jamie's PC build decisions.
+- [MOC Knowledge Cortex](/pixi-wiki/concept-knowledge-concepts-moc-knowledge-cortex.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/moc-knowledge-cortex.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/moc-knowledge-cortex.md) — updated: 2026-06-13 — Model of the MOC layer as the routing brain of the vault, keeping durable notes reachable through clear domain branches.
+- [Matt Pocock SDLC Rhythm](/pixi-wiki/concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md) — updated: 2026-06-07
+- [Peer Profiles vs Child Processes](/pixi-wiki/concept-knowledge-concepts-peer-profiles-vs-child-processes.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/peer-profiles-vs-child-processes.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/peer-profiles-vs-child-processes.md) — updated: 2026-06-13 — Architecture decision for when Jamie's crew agents run as peer Hermes profiles versus child/subagent processes.
+- [Profile Memory Boundaries](/pixi-wiki/concept-knowledge-concepts-profile-memory-boundaries.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/profile-memory-boundaries.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/profile-memory-boundaries.md) — updated: 2026-06-13 — Boundary model for routing durable knowledge between USER.md, Hermes memory, local knowledge, Obsidian/GitHub project truth, and skills.
+- [RAG over Agent Wikis](/pixi-wiki/concept-knowledge-concepts-rag-over-agent-wikis.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/rag-over-agent-wikis.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/rag-over-agent-wikis.md) — updated: 2026-06-15 — Foundation for using embeddings, semantic search, and retrieval-augmented generation over compiled agent wiki pages instead of raw source dumps.
+- [Runtime Memory Knowledge Routing](/pixi-wiki/concept-knowledge-concepts-runtime-memory-knowledge-routing.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/runtime-memory-knowledge-routing.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/runtime-memory-knowledge-routing.md) — updated: 2026-06-15 — Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.
+- [Self-Improving Agent Systems](/pixi-wiki/concept-knowledge-concepts-self-improving-agent-systems.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/self-improving-agent-systems.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/self-improving-agent-systems.md) — updated: 2026-06-13 — Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
+- [Verb-First Product Positioning](/pixi-wiki/concept-knowledge-concepts-verb-first-product-positioning.html) — raw: [raw txt](/pixi-wiki/raw/Knowledge/concepts/verb-first-product-positioning.txt) · [md](/pixi-wiki/raw/Knowledge/concepts/verb-first-product-positioning.md) — updated: 2026-06-11
 
 ### Maps of Content
 
 Entrypoints:
-- [Maps of Content Domain Pack](/pixi-wiki/maps-of-content.html) — role: `domain-entrypoint` — raw: `/pixi-wiki/raw/Maps of Content/llms.txt` — current: 2026-06-15
+- [Maps of Content Domain Pack](/pixi-wiki/maps-of-content.html) — role: `domain-entrypoint` — raw: [raw llms.txt](/pixi-wiki/raw/Maps%20of%20Content/llms.txt) — current: 2026-06-15
 
 ### Projects
 
 Entrypoints:
-- [Critical Ranger FFM Pack](/pixi-wiki/projects-critical-ranger-ffm.html) — role: `project-entrypoint` — raw: `/pixi-wiki/raw/Projects/Critical Ranger FFM/llms.txt` — current: 2026-06-15
-- [Hermes Mission Control Pack](/pixi-wiki/projects-hermes-mission-control.html) — role: `project-entrypoint` — raw: `/pixi-wiki/raw/Projects/Hermes Mission Control/llms.txt` — current: 2026-06-15
-- [Planned Program Intel Pack](/pixi-wiki/projects-planned-program-intel.html) — role: `project-entrypoint` — raw: `/pixi-wiki/raw/Projects/Planned Program Intel/llms.txt` — current: 2026-06-15
-- [Projects Domain Pack](/pixi-wiki/projects.html) — role: `domain-entrypoint` — raw: `/pixi-wiki/raw/Projects/llms.txt` — current: 2026-06-15
+- [Critical Ranger FFM Pack](/pixi-wiki/projects-critical-ranger-ffm.html) — role: `project-entrypoint` — raw: [raw llms.txt](/pixi-wiki/raw/Projects/Critical%20Ranger%20FFM/llms.txt) — current: 2026-06-15
+- [Hermes Mission Control Pack](/pixi-wiki/projects-hermes-mission-control.html) — role: `project-entrypoint` — raw: [raw llms.txt](/pixi-wiki/raw/Projects/Hermes%20Mission%20Control/llms.txt) — current: 2026-06-15
+- [Planned Program Intel Pack](/pixi-wiki/projects-planned-program-intel.html) — role: `project-entrypoint` — raw: [raw llms.txt](/pixi-wiki/raw/Projects/Planned%20Program%20Intel/llms.txt) — current: 2026-06-15
+- [Projects Domain Pack](/pixi-wiki/projects.html) — role: `domain-entrypoint` — raw: [raw llms.txt](/pixi-wiki/raw/Projects/llms.txt) — current: 2026-06-15
 
 ### Vault Root
 
 Entrypoints:
-- [ObsidianVault Root Pack](/pixi-wiki/root.html) — role: `root-entrypoint` — raw: `/pixi-wiki/raw/llms.txt` — current: 2026-06-15
+- [ObsidianVault Root Pack](/pixi-wiki/root.html) — role: `root-entrypoint` — raw: [raw llms.txt](/pixi-wiki/raw/llms.txt) — current: 2026-06-15
