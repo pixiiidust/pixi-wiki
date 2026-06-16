@@ -1,0 +1,5 @@
+# Planned Program Intel Pack
+
+Project pack bundle.
+
+Source: Projects/Planned Program Intel/llms.txt

@@ -1,0 +1,5 @@
+# Self-Improving Agent Systems
+
+Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
+
+Source: Knowledge/concepts/self-improving-agent-systems.md

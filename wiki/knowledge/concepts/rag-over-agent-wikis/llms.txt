@@ -1,0 +1,5 @@
+# RAG over Agent Wikis
+
+Foundation for using embeddings, semantic search, and retrieval-augmented generation over compiled agent wiki pages instead of raw source dumps.
+
+Source: Knowledge/concepts/rag-over-agent-wikis.md

@@ -1,0 +1,5 @@
+# Runtime Memory Knowledge Routing
+
+Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.
+
+Source: Knowledge/concepts/runtime-memory-knowledge-routing.md

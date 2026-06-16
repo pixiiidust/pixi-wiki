@@ -1,0 +1,5 @@
+# Peer Profiles vs Child Processes
+
+Architecture decision for when Jamie's crew agents run as peer Hermes profiles versus child/subagent processes.
+
+Source: Knowledge/concepts/peer-profiles-vs-child-processes.md

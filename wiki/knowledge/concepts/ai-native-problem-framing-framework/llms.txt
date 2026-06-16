@@ -1,0 +1,5 @@
+# AI-Native Problem Framing Framework
+
+Durable Knowledge concept.
+
+Source: Knowledge/concepts/ai-native-problem-framing-framework.md

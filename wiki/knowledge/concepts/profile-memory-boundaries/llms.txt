@@ -1,0 +1,5 @@
+# Profile Memory Boundaries
+
+Boundary model for routing durable knowledge between USER.md, Hermes memory, local knowledge, Obsidian/GitHub project truth, and skills.
+
+Source: Knowledge/concepts/profile-memory-boundaries.md

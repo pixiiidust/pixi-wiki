@@ -1,0 +1,5 @@
+# Agent Capability Route Pattern
+
+Durable Knowledge concept.
+
+Source: Knowledge/concepts/agent-capability-route-pattern.md

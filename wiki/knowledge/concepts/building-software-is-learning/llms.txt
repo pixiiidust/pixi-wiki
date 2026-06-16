@@ -1,0 +1,5 @@
+# Building Software Is Learning
+
+Durable Knowledge concept.
+
+Source: Knowledge/concepts/building-software-is-learning.md

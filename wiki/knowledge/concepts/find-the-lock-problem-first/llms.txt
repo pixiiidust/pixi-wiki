@@ -1,0 +1,5 @@
+# Find the Lock: Problem-First Approach
+
+Durable Knowledge concept.
+
+Source: Knowledge/concepts/find-the-lock-problem-first.md

@@ -1,0 +1,5 @@
+# MOC Knowledge Cortex
+
+Model of the MOC layer as the routing brain of the vault, keeping durable notes reachable through clear domain branches.
+
+Source: Knowledge/concepts/moc-knowledge-cortex.md

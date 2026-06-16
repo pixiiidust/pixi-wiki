@@ -1,0 +1,5 @@
+# Bounded Context Tree Pattern
+
+Durable Knowledge concept.
+
+Source: Knowledge/concepts/bounded-context-tree-pattern.md

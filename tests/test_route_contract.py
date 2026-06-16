@@ -23,6 +23,7 @@ import json
 import re
 import unittest
 from pathlib import Path
+from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_BASE = "/pixi-wiki/"
@@ -75,10 +76,9 @@ class RootCompatibilityTest(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# Domain routes  (should FAIL — /wiki/... does not exist yet)
+# Domain routes  (should PASS — /wiki/... now exists)
 # ---------------------------------------------------------------------------
 
-@unittest.expectedFailure
 class DomainRoutesTest(unittest.TestCase):
     """Assert new /wiki/ domain routes exist."""
 
@@ -114,10 +114,9 @@ class DomainRoutesTest(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# Concept bundles  (should FAIL — /wiki/knowledge/concepts/... does not exist)
+# Concept bundles  (should PASS — /wiki/knowledge/concepts/... now exists)
 # ---------------------------------------------------------------------------
 
-@unittest.expectedFailure
 class ConceptBundleTest(unittest.TestCase):
     """Assert at least one concept exposes both human route and local llms.txt."""
 
@@ -160,10 +159,9 @@ class ConceptBundleTest(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# Project bundles  (should FAIL — /wiki/projects/... does not exist)
+# Project bundles  (should PASS — /wiki/projects/... now exists)
 # ---------------------------------------------------------------------------
 
-@unittest.expectedFailure
 class ProjectBundleTest(unittest.TestCase):
     """Assert at least one project exposes both human route and local llms.txt."""
 
@@ -202,10 +200,9 @@ class ProjectBundleTest(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# MOC index route  (should FAIL — /wiki/maps-of-content/ does not exist)
+# MOC index route  (should PASS — /wiki/maps-of-content/ now exists)
 # ---------------------------------------------------------------------------
 
-@unittest.expectedFailure
 class MOCIndexRouteTest(unittest.TestCase):
     """Assert MOC index route exists and exposes a map/traversal role."""
 
@@ -223,6 +220,27 @@ class MOCIndexRouteTest(unittest.TestCase):
         map_keywords = ["map", "traversal", "navigation", "cortex", "route"]
         found_keyword = any(kw in html.lower() for kw in map_keywords)
         self.assertTrue(found_keyword, "MOC index does not mention map/traversal role")
+
+
+class WikiRouteLinkTest(unittest.TestCase):
+    """Assert generated /wiki/ HTML links resolve within the static output."""
+
+    def test_wiki_html_internal_links_resolve(self) -> None:
+        wiki_dir = ROOT / "wiki"
+        self.assertTrue(wiki_dir.is_dir(), "wiki/ directory missing")
+        for html_file in sorted(wiki_dir.rglob("*.html")):
+            html = html_file.read_text(encoding="utf-8")
+            for href in re.findall(r'href="([^"]+)"', html):
+                if href.startswith(("http://", "https://", "#", "mailto:")):
+                    continue
+                target = (html_file.parent / unquote(href)).resolve()
+                if href.endswith("/"):
+                    target = target / "index.html"
+                with self.subTest(page=html_file.relative_to(ROOT), href=href):
+                    self.assertTrue(
+                        target.exists(),
+                        f"Broken wiki link from {html_file.relative_to(ROOT)}: {href} -> {target}",
+                    )
 
 
 # ---------------------------------------------------------------------------

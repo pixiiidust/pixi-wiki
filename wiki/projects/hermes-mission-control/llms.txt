@@ -1,0 +1,5 @@
+# Hermes Mission Control Pack
+
+Project pack bundle.
+
+Source: Projects/Hermes Mission Control/llms.txt

@@ -1,0 +1,5 @@
+# Critical Ranger FFM Pack
+
+Project pack bundle.
+
+Source: Projects/Critical Ranger FFM/llms.txt

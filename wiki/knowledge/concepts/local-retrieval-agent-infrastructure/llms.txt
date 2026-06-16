@@ -1,0 +1,5 @@
+# Local Retrieval-Augmented Agent Infrastructure
+
+Applied architecture lessons from Krill's dual-RTX 5090 local agent stack — hardware setup, retrieval pipeline (Qdrant + Ollama + MCP), agent workflow governance, and relevance to Jamie's PC build decisions.
+
+Source: Knowledge/concepts/local-retrieval-agent-infrastructure.md
