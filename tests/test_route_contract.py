@@ -302,6 +302,16 @@ class WikiRouteLinkTest(unittest.TestCase):
                         f"Broken wiki link from {html_file.relative_to(ROOT)}: {href} -> {target}",
                     )
 
+    def test_overview_sidebar_links_explicit_human_html_surfaces(self) -> None:
+        """Overview sidebar/cards link to explicit human HTML files, not opaque directory routes."""
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="wiki/knowledge/index.html"', html)
+        self.assertIn('href="wiki/knowledge/concepts/agent-wikis/index.html"', html)
+        self.assertIn('href="wiki/projects/eval-trace/index.html"', html)
+        self.assertIn('href="wiki/maps-of-content/index.html"', html)
+        self.assertNotIn('href="wiki/knowledge/concepts/agent-wikis/"', html)
+        self.assertNotIn('href="wiki/projects/eval-trace/"', html)
+
 
 # ---------------------------------------------------------------------------
 # Concept page CTA hygiene  (should FAIL — current pages expose all three)
