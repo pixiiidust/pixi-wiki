@@ -200,6 +200,42 @@ class ProjectBundleTest(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
+# Local llms.txt substance
+# ---------------------------------------------------------------------------
+
+class LocalLlmsSubstanceTest(unittest.TestCase):
+    """Adjacent /wiki/**/llms.txt files are agent contracts, not stubs."""
+
+    def test_all_wiki_llms_txt_files_are_substantive(self) -> None:
+        files = sorted((ROOT / "wiki").rglob("llms.txt"))
+        self.assertGreater(len(files), 0, "No /wiki/**/llms.txt files found")
+        for path in files:
+            with self.subTest(path=path.relative_to(ROOT)):
+                text = path.read_text(encoding="utf-8")
+                self.assertGreaterEqual(path.stat().st_size, 500)
+                self.assertIn("---", text[:10], "local llms.txt should contain source frontmatter")
+
+    def test_manifest_local_llms_match_raw_source_for_representative_nodes(self) -> None:
+        data = _load_index_json()
+        wanted = {
+            "Knowledge/concepts/agent-wikis.md",
+            "Knowledge/concepts/context-overfitting.md",
+            "Knowledge/llms.txt",
+            "Maps of Content/llms.txt",
+            "Projects/Eval Trace/llms.txt",
+        }
+        docs = [doc for doc in data.get("documents", []) if doc.get("source_path") in wanted]
+        self.assertEqual({doc.get("source_path") for doc in docs}, wanted)
+        for doc in docs:
+            with self.subTest(source=doc["source_path"]):
+                local_path = ROOT / doc["local_llms_txt_path"]
+                raw_path = ROOT / doc["raw_source_path"]
+                self.assertTrue(local_path.exists(), local_path)
+                self.assertTrue(raw_path.exists(), raw_path)
+                self.assertEqual(local_path.read_text(encoding="utf-8"), raw_path.read_text(encoding="utf-8"))
+
+
+# ---------------------------------------------------------------------------
 # MOC index route  (should PASS — /wiki/maps-of-content/ now exists)
 # ---------------------------------------------------------------------------
 

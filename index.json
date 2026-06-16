@@ -7,7 +7,7 @@
     "no_search_index": true
   },
   "category": "agents",
-  "concept_count": 16,
+  "concept_count": 17,
   "concepts": [
     {
       "agent_llms_txt": "/pixi-wiki/wiki/knowledge/concepts/agent-capability-route-pattern/llms.txt",
@@ -158,6 +158,36 @@
       "title": "Building Software Is Learning",
       "type": "concept",
       "updated": "2026-06-11"
+    },
+    {
+      "agent_llms_txt": "/pixi-wiki/wiki/knowledge/concepts/context-overfitting/llms.txt",
+      "agent_text_path": "agent/concepts/context-overfitting.txt",
+      "canonical_role": "knowledge-document",
+      "compatibility_paths": [
+        "concept-knowledge-concepts-context-overfitting.html",
+        "agent/concepts/context-overfitting.txt"
+      ],
+      "description": "Failure mode where an agent treats written memory, rules, project notes, or prior suggestions as hard constraints instead of weak priors that current intent and live evidence can override.",
+      "domain": "Knowledge",
+      "html_path": "concept-knowledge-concepts-context-overfitting.html",
+      "human_html_path": "wiki/knowledge/concepts/context-overfitting/index.html",
+      "human_url": "/pixi-wiki/wiki/knowledge/concepts/context-overfitting/",
+      "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/context-overfitting/",
+      "local_llms_txt_path": "wiki/knowledge/concepts/context-overfitting/llms.txt",
+      "raw_source": "/pixi-wiki/raw/Knowledge/concepts/context-overfitting.md",
+      "raw_source_path": "raw/Knowledge/concepts/context-overfitting.md",
+      "raw_text_path": "raw/Knowledge/concepts/context-overfitting.txt",
+      "slug": "concept-knowledge-concepts-context-overfitting",
+      "source_path": "Knowledge/concepts/context-overfitting.md",
+      "tags": [
+        "agent-systems",
+        "governance",
+        "workflow",
+        "ai"
+      ],
+      "title": "Context Overfitting",
+      "type": "concept",
+      "updated": "2026-06-15"
     },
     {
       "agent_llms_txt": "/pixi-wiki/wiki/knowledge/concepts/find-the-lock-problem-first/llms.txt",
@@ -453,7 +483,7 @@
       ],
       "title": "Self-Improving Agent Systems",
       "type": "concept",
-      "updated": "2026-06-13"
+      "updated": "2026-06-15"
     },
     {
       "agent_llms_txt": "/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/llms.txt",
@@ -487,7 +517,7 @@
     }
   ],
   "description": "Agent-readable knowledge packs and concepts for Pixiedust/Hermes workflows.",
-  "documentCount": 23,
+  "documentCount": 25,
   "documents": [
     {
       "agent_llms_txt": "/pixi-wiki/wiki/knowledge/llms.txt",
@@ -561,6 +591,31 @@
       "role": "project-entrypoint",
       "source_path": "Projects/Critical Ranger FFM/llms.txt",
       "title": "Critical Ranger FFM Pack",
+      "type": "knowledge-pack",
+      "updated": "2026-06-15"
+    },
+    {
+      "agent_llms_txt": "/pixi-wiki/wiki/projects/eval-trace/llms.txt",
+      "agent_text_path": "agent/packs/projects-eval-trace.txt",
+      "canonical_role": "project-entrypoint",
+      "collection": "entrypoints",
+      "compatibility_paths": [
+        "projects-eval-trace.html",
+        "agent/packs/projects-eval-trace.txt"
+      ],
+      "domain": "Projects",
+      "html_path": "projects-eval-trace.html",
+      "human_html_path": "wiki/projects/eval-trace/index.html",
+      "human_url": "/pixi-wiki/wiki/projects/eval-trace/",
+      "human_url_path": "/pixi-wiki/wiki/projects/eval-trace/",
+      "local_llms_txt_path": "wiki/projects/eval-trace/llms.txt",
+      "path": "Projects/Eval Trace/llms.txt",
+      "raw_path": "raw/Projects/Eval Trace/llms.txt",
+      "raw_source": "/pixi-wiki/raw/Projects/Eval Trace/llms.txt",
+      "raw_source_path": "raw/Projects/Eval Trace/llms.txt",
+      "role": "project-entrypoint",
+      "source_path": "Projects/Eval Trace/llms.txt",
+      "title": "Eval Trace Project Pack",
       "type": "knowledge-pack",
       "updated": "2026-06-15"
     },
@@ -793,6 +848,32 @@
       "title": "Building Software Is Learning",
       "type": "concept",
       "updated": "2026-06-11"
+    },
+    {
+      "agent_llms_txt": "/pixi-wiki/wiki/knowledge/concepts/context-overfitting/llms.txt",
+      "agent_text_path": "agent/concepts/context-overfitting.txt",
+      "canonical_role": "knowledge-document",
+      "collection": "concepts",
+      "compatibility_paths": [
+        "concept-knowledge-concepts-context-overfitting.html",
+        "agent/concepts/context-overfitting.txt"
+      ],
+      "domain": "Knowledge",
+      "html_path": "concept-knowledge-concepts-context-overfitting.html",
+      "human_html_path": "wiki/knowledge/concepts/context-overfitting/index.html",
+      "human_url": "/pixi-wiki/wiki/knowledge/concepts/context-overfitting/",
+      "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/context-overfitting/",
+      "local_llms_txt_path": "wiki/knowledge/concepts/context-overfitting/llms.txt",
+      "path": "Knowledge/concepts/context-overfitting.md",
+      "raw_path": "raw/Knowledge/concepts/context-overfitting.md",
+      "raw_source": "/pixi-wiki/raw/Knowledge/concepts/context-overfitting.md",
+      "raw_source_path": "raw/Knowledge/concepts/context-overfitting.md",
+      "raw_text_path": "raw/Knowledge/concepts/context-overfitting.txt",
+      "role": "knowledge-document",
+      "source_path": "Knowledge/concepts/context-overfitting.md",
+      "title": "Context Overfitting",
+      "type": "concept",
+      "updated": "2026-06-15"
     },
     {
       "agent_llms_txt": "/pixi-wiki/wiki/knowledge/concepts/find-the-lock-problem-first/llms.txt",
@@ -1052,7 +1133,7 @@
       "source_path": "Knowledge/concepts/self-improving-agent-systems.md",
       "title": "Self-Improving Agent Systems",
       "type": "concept",
-      "updated": "2026-06-13"
+      "updated": "2026-06-15"
     },
     {
       "agent_llms_txt": "/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/llms.txt",
@@ -1090,6 +1171,7 @@
           "Knowledge/concepts/ai-native-problem-framing-framework.md",
           "Knowledge/concepts/bounded-context-tree-pattern.md",
           "Knowledge/concepts/building-software-is-learning.md",
+          "Knowledge/concepts/context-overfitting.md",
           "Knowledge/concepts/find-the-lock-problem-first.md",
           "Knowledge/concepts/hermes-soul-md-wiring.md",
           "Knowledge/concepts/local-retrieval-agent-infrastructure.md",
@@ -1103,8 +1185,8 @@
           "Knowledge/concepts/verb-first-product-positioning.md"
         ]
       },
-      "concept_count": 16,
-      "document_count": 17,
+      "concept_count": 17,
+      "document_count": 18,
       "entrypoints": [
         "Knowledge/llms.txt"
       ],
@@ -1126,15 +1208,16 @@
     {
       "collections": {},
       "concept_count": 0,
-      "document_count": 4,
+      "document_count": 5,
       "entrypoints": [
         "Projects/Critical Ranger FFM/llms.txt",
+        "Projects/Eval Trace/llms.txt",
         "Projects/Hermes Mission Control/llms.txt",
         "Projects/Planned Program Intel/llms.txt",
         "Projects/llms.txt"
       ],
       "name": "Projects",
-      "pack_count": 4,
+      "pack_count": 5,
       "slug": "projects"
     },
     {
@@ -1167,7 +1250,7 @@
   "generated_by": "Projects/Hermes Mission Control/kpr-render-static-html.py",
   "html_base": "/pixi-wiki/",
   "lastUpdated": "2026-06-15",
-  "pack_count": 7,
+  "pack_count": 8,
   "packs": [
     {
       "agent_llms_txt": "/pixi-wiki/wiki/knowledge/llms.txt",
@@ -1247,6 +1330,11 @@
         {
           "label": "Runtime Memory Knowledge Routing",
           "path_or_url": "Knowledge/concepts/runtime-memory-knowledge-routing.md",
+          "role": "concept"
+        },
+        {
+          "label": "Context Overfitting",
+          "path_or_url": "Knowledge/concepts/context-overfitting.md",
           "role": "concept"
         },
         {
@@ -1435,6 +1523,72 @@
         }
       ],
       "title": "Critical Ranger FFM Pack"
+    },
+    {
+      "agent_llms_txt": "/pixi-wiki/wiki/projects/eval-trace/llms.txt",
+      "agent_text_path": "agent/packs/projects-eval-trace.txt",
+      "canonical_role": "project-entrypoint",
+      "compatibility_paths": [
+        "projects-eval-trace.html",
+        "agent/packs/projects-eval-trace.txt"
+      ],
+      "confidence": "medium",
+      "current_as": "2026-06-15",
+      "freshness": {
+        "policy": null,
+        "stale_after_days": null
+      },
+      "html_path": "projects-eval-trace.html",
+      "human_html_path": "wiki/projects/eval-trace/index.html",
+      "human_surface": [
+        {
+          "path_or_url": "Projects/Eval Trace/Index.md"
+        }
+      ],
+      "human_url": "/pixi-wiki/wiki/projects/eval-trace/",
+      "human_url_path": "/pixi-wiki/wiki/projects/eval-trace/",
+      "local_llms_txt_path": "wiki/projects/eval-trace/llms.txt",
+      "raw_source": "/pixi-wiki/raw/Projects/Eval Trace/llms.txt",
+      "raw_source_path": "raw/Projects/Eval Trace/llms.txt",
+      "scope": {
+        "covers": [
+          "Context-overfitting eval project routing",
+          "Local prototype artifacts under .hermes/context-overfit",
+          "Deterministic prechecks, LLM judge outputs, and repo-readiness gate"
+        ],
+        "not_covered": [
+          "Broad Hermes tracing plugin deployment",
+          "Memory pruning or profile/cron automation beyond explicit approvals",
+          "Public repo creation until Jamie approves the repo gate"
+        ]
+      },
+      "sections": [
+        "Agent Start Here",
+        "What This Pack Routes",
+        "What This Pack Does Not Route",
+        "Source-of-Truth Hierarchy",
+        "Canonical Sources",
+        "Current Narrative / Operating Posture",
+        "Do Not Do",
+        "Fallback Rules",
+        "Human Surface",
+        "Maintenance Notes"
+      ],
+      "slug": "projects-eval-trace",
+      "source_path": "Projects/Eval Trace/llms.txt",
+      "sources": [
+        {
+          "label": "Eval Trace Project Hub",
+          "path_or_url": "Projects/Eval Trace/Index.md",
+          "role": "synthesis"
+        },
+        {
+          "label": "Context Overfitting Concept",
+          "path_or_url": "Knowledge/concepts/context-overfitting.md",
+          "role": "concept"
+        }
+      ],
+      "title": "Eval Trace Project Pack"
     },
     {
       "agent_llms_txt": "/pixi-wiki/wiki/projects/hermes-mission-control/llms.txt",
@@ -1730,6 +1884,11 @@
           "label": "Root Pack",
           "path_or_url": "llms.txt",
           "role": "routing"
+        },
+        {
+          "label": "Eval Trace Pack",
+          "path_or_url": "Projects/Eval Trace/llms.txt",
+          "role": "project-pack"
         },
         {
           "label": "ObsidianVault issue tracker",

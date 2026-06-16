@@ -31,6 +31,9 @@ sources:
   - label: Root Pack
     path_or_url: llms.txt
     role: routing
+  - label: Eval Trace Pack
+    path_or_url: Projects/Eval Trace/llms.txt
+    role: project-pack
   - label: ObsidianVault issue tracker
     path_or_url: https://github.com/pixiiidust/ObsidianVault/issues
     role: coordination
@@ -91,7 +94,7 @@ Use this pack after the root `/llms.txt` when the task is project-related but be
 
 ## Current Narrative / Operating Posture
 
-The project domain is organized as bounded contexts. Active contexts include Critical Ranger FFM, Planned Program Intel, Hermes Mission Control, Pixoid Agent Capability Routes, and Zerg AI Democratization Roadmap. Parked/historical contexts remain useful as references but should not become default work without explicit reprioritization.
+The project domain is organized as bounded contexts. Active contexts include Critical Ranger FFM, Eval Trace, Hermes Mission Control, Pixoid Agent Capability Routes, and Zerg AI Democratization Roadmap. Planned Program Intel is done and remains a reference/proof project with optional portfolio packaging. Parked/historical contexts remain useful as references but should not become default work without explicit reprioritization.
 
 Knowledge Pack Routing is currently an architecture workstream under Hermes Mission Control, not a Planned Program Intel deliverable. Planned Program Intel was the first proof/project pack; it is not the default next project unless Jamie says so.
 
@@ -100,7 +103,8 @@ Knowledge Pack Routing is currently an architecture workstream under Hermes Miss
 | Project/domain | Status | Agent entrypoint |
 |---|---|---|
 | Hermes Mission Control | active agent-ops hub | `Projects/Hermes Mission Control/llms.txt` |
-| Planned Program Intel | active; build queue complete; first KPR proof | `Projects/Planned Program Intel/llms.txt` |
+| Eval Trace | active local prototype; context-overfit eval harness | `Projects/Eval Trace/llms.txt` |
+| Planned Program Intel | done; first KPR proof; optional portfolio packaging only if re-prioritized | `Projects/Planned Program Intel/llms.txt` |
 | Critical Ranger FFM | active research/build | `Projects/Critical Ranger FFM/llms.txt` |
 | Pixoid Agent Capability Routes | active/completed route governance reference | `Projects/Pixoid Agent Capability Routes/Index.md` |
 | Zerg AI Democratization Roadmap | active brainstorm | `Projects/Zerg AI Democratization Roadmap/Index.md` |

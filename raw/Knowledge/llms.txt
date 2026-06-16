@@ -34,6 +34,9 @@ sources:
   - label: Runtime Memory Knowledge Routing
     path_or_url: Knowledge/concepts/runtime-memory-knowledge-routing.md
     role: concept
+  - label: Context Overfitting
+    path_or_url: Knowledge/concepts/context-overfitting.md
+    role: concept
   - label: Knowledge Agent Instructions
     path_or_url: Knowledge/AGENTS.md
     role: operating-rule
@@ -100,6 +103,7 @@ Use this pack after the root `/llms.txt` when working with the Obsidian Knowledg
 | Log | `Knowledge/log.md` | maintenance log |
 | Agent instructions | `Knowledge/AGENTS.md` | operating rule |
 | Runtime Memory Knowledge Routing | `Knowledge/concepts/runtime-memory-knowledge-routing.md` | concept |
+| Context Overfitting | `Knowledge/concepts/context-overfitting.md` | concept |
 | RAG over Agent Wikis | `Knowledge/concepts/rag-over-agent-wikis.md` | concept |
 | Knowledge MOC | `Maps of Content/Knowledge MOC.md` | human navigation |
 
@@ -107,7 +111,7 @@ Use this pack after the root `/llms.txt` when working with the Obsidian Knowledg
 
 Obsidian Knowledge is Jamie's human-facing durable knowledge wiki for reusable concepts, entities, comparisons, and substantial queries. It mirrors some local Hermes knowledge concepts when useful, but it is not the same layer as `~/.hermes/knowledge/` and not a replacement for memory/Honcho.
 
-The `agent-wikis` concept preserves the broader pattern: maintained, scoped, source-backed knowledge surfaces for agents. Knowledge Pack Routing is the current Pixiedust implementation. `rag-over-agent-wikis` captures the retrieval layer: embeddings/search should run over compiled wiki pages first, with raw sources as evidence leaves rather than the primary corpus.
+The `agent-wikis` concept preserves the broader pattern: maintained, scoped, source-backed knowledge surfaces for agents. Knowledge Pack Routing is the current Pixiedust implementation. `context-overfitting` captures the agent-governance failure mode where written context becomes a hard constraint instead of a weak prior. `rag-over-agent-wikis` captures the retrieval layer: embeddings/search should run over compiled wiki pages first, with raw sources as evidence leaves rather than the primary corpus.
 
 ## Domain Map
 

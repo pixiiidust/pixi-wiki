@@ -30,6 +30,7 @@
 - [Agent Wikis](/pixi-wiki/wiki/knowledge/concepts/agent-wikis/) — agent: [wiki/knowledge/concepts/agent-wikis/llms.txt](/pixi-wiki/wiki/knowledge/concepts/agent-wikis/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/agent-wikis.md) — updated: 2026-06-15 — Agent-native knowledge surfaces that give agents maintained, scoped, source-backed maps before they act.
 - [Bounded Context Tree Pattern](/pixi-wiki/wiki/knowledge/concepts/bounded-context-tree-pattern/) — agent: [wiki/knowledge/concepts/bounded-context-tree-pattern/llms.txt](/pixi-wiki/wiki/knowledge/concepts/bounded-context-tree-pattern/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/bounded-context-tree-pattern.md) — updated: 2026-06-07
 - [Building Software Is Learning](/pixi-wiki/wiki/knowledge/concepts/building-software-is-learning/) — agent: [wiki/knowledge/concepts/building-software-is-learning/llms.txt](/pixi-wiki/wiki/knowledge/concepts/building-software-is-learning/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/building-software-is-learning.md) — updated: 2026-06-11
+- [Context Overfitting](/pixi-wiki/wiki/knowledge/concepts/context-overfitting/) — agent: [wiki/knowledge/concepts/context-overfitting/llms.txt](/pixi-wiki/wiki/knowledge/concepts/context-overfitting/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/context-overfitting.md) — updated: 2026-06-15 — Failure mode where an agent treats written memory, rules, project notes, or prior suggestions as hard constraints instead of weak priors that current intent and live evidence can override.
 - [Find the Lock: Problem-First Approach](/pixi-wiki/wiki/knowledge/concepts/find-the-lock-problem-first/) — agent: [wiki/knowledge/concepts/find-the-lock-problem-first/llms.txt](/pixi-wiki/wiki/knowledge/concepts/find-the-lock-problem-first/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/find-the-lock-problem-first.md) — updated: 2026-06-11
 - [Hermes SOUL.md Wiring](/pixi-wiki/wiki/knowledge/concepts/hermes-soul-md-wiring/) — agent: [wiki/knowledge/concepts/hermes-soul-md-wiring/llms.txt](/pixi-wiki/wiki/knowledge/concepts/hermes-soul-md-wiring/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/hermes-soul-md-wiring.md) — updated: 2026-06-12
 - [Local Retrieval-Augmented Agent Infrastructure](/pixi-wiki/wiki/knowledge/concepts/local-retrieval-agent-infrastructure/) — agent: [wiki/knowledge/concepts/local-retrieval-agent-infrastructure/llms.txt](/pixi-wiki/wiki/knowledge/concepts/local-retrieval-agent-infrastructure/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/local-retrieval-agent-infrastructure.md) — updated: 2026-06-15 — Applied architecture lessons from Krill's dual-RTX 5090 local agent stack — hardware setup, retrieval pipeline (Qdrant + Ollama + MCP), agent workflow governance, and relevance to Jamie's PC build decisions.
@@ -39,7 +40,7 @@
 - [Profile Memory Boundaries](/pixi-wiki/wiki/knowledge/concepts/profile-memory-boundaries/) — agent: [wiki/knowledge/concepts/profile-memory-boundaries/llms.txt](/pixi-wiki/wiki/knowledge/concepts/profile-memory-boundaries/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/profile-memory-boundaries.md) — updated: 2026-06-13 — Boundary model for routing durable knowledge between USER.md, Hermes memory, local knowledge, Obsidian/GitHub project truth, and skills.
 - [RAG over Agent Wikis](/pixi-wiki/wiki/knowledge/concepts/rag-over-agent-wikis/) — agent: [wiki/knowledge/concepts/rag-over-agent-wikis/llms.txt](/pixi-wiki/wiki/knowledge/concepts/rag-over-agent-wikis/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/rag-over-agent-wikis.md) — updated: 2026-06-15 — Foundation for using embeddings, semantic search, and retrieval-augmented generation over compiled agent wiki pages instead of raw source dumps.
 - [Runtime Memory Knowledge Routing](/pixi-wiki/wiki/knowledge/concepts/runtime-memory-knowledge-routing/) — agent: [wiki/knowledge/concepts/runtime-memory-knowledge-routing/llms.txt](/pixi-wiki/wiki/knowledge/concepts/runtime-memory-knowledge-routing/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/runtime-memory-knowledge-routing.md) — updated: 2026-06-15 — Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.
-- [Self-Improving Agent Systems](/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/) — agent: [wiki/knowledge/concepts/self-improving-agent-systems/llms.txt](/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/self-improving-agent-systems.md) — updated: 2026-06-13 — Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
+- [Self-Improving Agent Systems](/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/) — agent: [wiki/knowledge/concepts/self-improving-agent-systems/llms.txt](/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/self-improving-agent-systems.md) — updated: 2026-06-15 — Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
 - [Verb-First Product Positioning](/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/) — agent: [wiki/knowledge/concepts/verb-first-product-positioning/llms.txt](/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/verb-first-product-positioning.md) — updated: 2026-06-11
 
 ### Maps of Content
@@ -51,6 +52,7 @@
 
 - Domain route: [Projects llms.txt](/pixi-wiki/wiki/projects/llms.txt)
 - [Critical Ranger FFM Pack](/pixi-wiki/wiki/projects/critical-ranger-ffm/) — role: `project-entrypoint` — agent: [wiki/projects/critical-ranger-ffm/llms.txt](/pixi-wiki/wiki/projects/critical-ranger-ffm/llms.txt) — raw: [source](/pixi-wiki/raw/Projects/Critical Ranger FFM/llms.txt) — current: 2026-06-15
+- [Eval Trace Project Pack](/pixi-wiki/wiki/projects/eval-trace/) — role: `project-entrypoint` — agent: [wiki/projects/eval-trace/llms.txt](/pixi-wiki/wiki/projects/eval-trace/llms.txt) — raw: [source](/pixi-wiki/raw/Projects/Eval Trace/llms.txt) — current: 2026-06-15
 - [Hermes Mission Control Pack](/pixi-wiki/wiki/projects/hermes-mission-control/) — role: `project-entrypoint` — agent: [wiki/projects/hermes-mission-control/llms.txt](/pixi-wiki/wiki/projects/hermes-mission-control/llms.txt) — raw: [source](/pixi-wiki/raw/Projects/Hermes Mission Control/llms.txt) — current: 2026-06-15
 - [Planned Program Intel Pack](/pixi-wiki/wiki/projects/planned-program-intel/) — role: `project-entrypoint` — agent: [wiki/projects/planned-program-intel/llms.txt](/pixi-wiki/wiki/projects/planned-program-intel/llms.txt) — raw: [source](/pixi-wiki/raw/Projects/Planned Program Intel/llms.txt) — current: 2026-06-15
 - [Projects Domain Pack](/pixi-wiki/wiki/projects/) — role: `domain-entrypoint` — agent: [wiki/projects/llms.txt](/pixi-wiki/wiki/projects/llms.txt) — raw: [source](/pixi-wiki/raw/Projects/llms.txt) — current: 2026-06-15
@@ -108,6 +110,9 @@ sources:
     role: maintenance-log
   - label: Runtime Memory Knowledge Routing
     path_or_url: Knowledge/concepts/runtime-memory-knowledge-routing.md
+    role: concept
+  - label: Context Overfitting
+    path_or_url: Knowledge/concepts/context-overfitting.md
     role: concept
   - label: Knowledge Agent Instructions
     path_or_url: Knowledge/AGENTS.md
@@ -175,6 +180,7 @@ Use this pack after the root `/llms.txt` when working with the Obsidian Knowledg
 | Log | `Knowledge/log.md` | maintenance log |
 | Agent instructions | `Knowledge/AGENTS.md` | operating rule |
 | Runtime Memory Knowledge Routing | `Knowledge/concepts/runtime-memory-knowledge-routing.md` | concept |
+| Context Overfitting | `Knowledge/concepts/context-overfitting.md` | concept |
 | RAG over Agent Wikis | `Knowledge/concepts/rag-over-agent-wikis.md` | concept |
 | Knowledge MOC | `Maps of Content/Knowledge MOC.md` | human navigation |
 
@@ -182,7 +188,7 @@ Use this pack after the root `/llms.txt` when working with the Obsidian Knowledg
 
 Obsidian Knowledge is Jamie's human-facing durable knowledge wiki for reusable concepts, entities, comparisons, and substantial queries. It mirrors some local Hermes knowledge concepts when useful, but it is not the same layer as `~/.hermes/knowledge/` and not a replacement for memory/Honcho.
 
-The `agent-wikis` concept preserves the broader pattern: maintained, scoped, source-backed knowledge surfaces for agents. Knowledge Pack Routing is the current Pixiedust implementation. `rag-over-agent-wikis` captures the retrieval layer: embeddings/search should run over compiled wiki pages first, with raw sources as evidence leaves rather than the primary corpus.
+The `agent-wikis` concept preserves the broader pattern: maintained, scoped, source-backed knowledge surfaces for agents. Knowledge Pack Routing is the current Pixiedust implementation. `context-overfitting` captures the agent-governance failure mode where written context becomes a hard constraint instead of a weak prior. `rag-over-agent-wikis` captures the retrieval layer: embeddings/search should run over compiled wiki pages first, with raw sources as evidence leaves rather than the primary corpus.
 
 ## Domain Map
 
@@ -477,6 +483,125 @@ Next gate: issue #54 action contract fixtures — deterministic zone indexing, n
 Update when issues #54-#59 close, when a PRD changes, when main roadmap pivots, or when Jamie approves a HITL local run. Confidence is medium until post-#54 implementation facts are refreshed.
 
 
+<!-- ===== Projects/Eval Trace/llms.txt ===== -->
+
+---
+title: "Eval Trace Project Pack"
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: medium
+scope:
+  covers:
+    - Context-overfitting eval project routing
+    - Local prototype artifacts under .hermes/context-overfit
+    - Deterministic prechecks, LLM judge outputs, and repo-readiness gate
+  not_covered:
+    - Broad Hermes tracing plugin deployment
+    - Memory pruning or profile/cron automation beyond explicit approvals
+    - Public repo creation until Jamie approves the repo gate
+freshness:
+  policy: on_change
+  stale_after_days: 30
+owners:
+  routing: Pixoid
+  maintenance: Quill
+  implementation_facts: Tinker optional
+sources:
+  - label: Eval Trace Project Hub
+    path_or_url: Projects/Eval Trace/Index.md
+    role: synthesis
+  - label: Context Overfitting Concept
+    path_or_url: Knowledge/concepts/context-overfitting.md
+    role: concept
+human_surface:
+  - path_or_url: Projects/Eval Trace/Index.md
+fallback_rules:
+  - If the local harness state matters, inspect .hermes/context-overfit live before reporting.
+  - If project status/deprecated repo truth matters, read .hermes/knowledge/registry/project-status.json first.
+  - If creating eval-trace repo is requested, verify the repo-readiness gate in the project hub first.
+v_next:
+  - sequence_level_cron_checks
+  - optional_eval_trace_repo
+---
+
+# Eval Trace Project Pack — Agent Entrypoint
+
+## Agent Start Here
+
+Use this pack for context-overfitting eval work, LLM judge report follow-ups, stale project context checks, or future `eval-trace` repo decisions.
+
+## What This Pack Routes
+
+- Context-overfitting eval work.
+- Local harness inspection under `.hermes/context-overfit/`.
+- Deterministic precheck and LLM judge artifact review.
+- Stale project-status checks, especially deprecated/replaced/done repo confusion.
+- The repo-readiness decision for possible `pixiiidust/eval-trace`.
+
+## What This Pack Does Not Route
+
+- Broad Hermes tracing plugin deployment.
+- Langfuse, NeMo Relay, MCP, RAG, or telemetry infrastructure by default.
+- Memory pruning, profile mutation, gateway mutation, or cron rewrites from weak signals.
+- Public repo creation before the local harness proves value and Jamie approves.
+
+## Source-of-Truth Hierarchy
+
+1. `.hermes/knowledge/registry/project-status.json` — done/deprecated/replaced project truth.
+2. `.hermes/context-overfit/` — local prototype code, tests, and run outputs.
+3. `Projects/Eval Trace/Index.md` — human project hub.
+4. `Knowledge/concepts/context-overfitting.md` — reusable concept and rubric.
+5. Session exports/judge reports — evidence, not canonical truth alone.
+
+## Canonical Sources
+
+| Label | Path/URL | Role |
+|---|---|---|
+| Eval Trace project hub | `Projects/Eval Trace/Index.md` | synthesis |
+| Context-overfitting concept | `Knowledge/concepts/context-overfitting.md` | concept |
+| Local harness | `.hermes/context-overfit/` | prototype |
+| Project status registry | `.hermes/knowledge/registry/project-status.json` | machine-readable truth |
+| Hermes Mission Control | `Projects/Hermes Mission Control/Index.md` | agent-ops context |
+
+## Current Narrative / Operating Posture
+
+Eval Trace is a local prototype, not a public repo yet. It has already caught one real stale-context class: old `planned-program-intelligence` issues must not drive current Planned recommendations because `planned-program-intel` replaced it and is done unless Jamie explicitly reopens it.
+
+The core verdict contract is:
+
+```text
+Context overfit? YES / NO / UNSURE
+```
+
+Default to `UNSURE` when the trace is incomplete, safety/auth/data-loss constraints are involved, or the rule may be valid but scoped poorly.
+
+## Do Not Do
+
+- Do not create `pixiiidust/eval-trace` until the repo-readiness gate passes.
+- Do not treat no deterministic signal as `NO`; default to `UNSURE`.
+- Do not mutate memory, profiles, tracing plugins, or cron behavior from weak signals.
+- Do not use old `planned-program-intelligence` issues as current Planned build evidence.
+
+## Fallback Rules
+
+1. If harness files may have changed, inspect `.hermes/context-overfit/` live.
+2. If project status matters, read `.hermes/knowledge/registry/project-status.json` before reasoning from memory.
+3. If a judge verdict conflicts with live project status, live project status plus current user intent wins.
+4. If creating public infrastructure is proposed, stop and ask Jamie.
+
+## Human Surface
+
+- `Projects/Eval Trace/Index.md`
+- `Knowledge/concepts/context-overfitting.md`
+- `Projects/Hermes Mission Control/Index.md`
+- `Project Board.md`
+
+## Maintenance Notes
+
+Update this pack after sequence-level cron checks, a new real LLM judge run, a change to the project-status registry contract, or a repo/no-repo decision. Keep it evaluation-first and infrastructure-light.
+
+
 <!-- ===== Projects/Hermes Mission Control/llms.txt ===== -->
 
 ---
@@ -637,7 +762,7 @@ Update after cron schedule changes, route matrix changes, profile/gateway change
 ---
 title: "Planned Program Intel Pack"
 type: knowledge-pack
-status: active
+status: done
 current_as: 2026-06-15
 confidence: high
 scope:
@@ -694,11 +819,11 @@ v_next:
   - app_build_only_if_explicitly_reopened
 ---
 
-# Planned Program Intel Pack — Active Portfolio Project
+# Planned Program Intel Pack — Done Portfolio Project
 
 ## Agent Start Here
 
-This pack routes the active Planned portfolio/application project. Active repo: `pixiiidust/planned-program-intel`. Historical predecessor: `pixiiidust/planned-program-intelligence`. This pack is KPR V1's first proof-of-consumption project pack, not the primary system goal. Current Planned work, if Jamie re-prioritizes it, is packaging the completed demo into deck, Loom, and application materials — not continuing app build work.
+This pack routes the completed Planned portfolio/application project if Jamie re-prioritizes packaging work. Active repo: `pixiiidust/planned-program-intel`. Historical predecessor: `pixiiidust/planned-program-intelligence`. This pack is KPR V1's first proof-of-consumption project pack, not the primary system goal. Current Planned work, only if Jamie re-prioritizes it, is packaging the completed demo into deck, Loom, and application materials — not continuing app build work.
 
 ## What This Pack Routes
 
@@ -813,6 +938,9 @@ sources:
   - label: Root Pack
     path_or_url: llms.txt
     role: routing
+  - label: Eval Trace Pack
+    path_or_url: Projects/Eval Trace/llms.txt
+    role: project-pack
   - label: ObsidianVault issue tracker
     path_or_url: https://github.com/pixiiidust/ObsidianVault/issues
     role: coordination
@@ -873,7 +1001,7 @@ Use this pack after the root `/llms.txt` when the task is project-related but be
 
 ## Current Narrative / Operating Posture
 
-The project domain is organized as bounded contexts. Active contexts include Critical Ranger FFM, Planned Program Intel, Hermes Mission Control, Pixoid Agent Capability Routes, and Zerg AI Democratization Roadmap. Parked/historical contexts remain useful as references but should not become default work without explicit reprioritization.
+The project domain is organized as bounded contexts. Active contexts include Critical Ranger FFM, Eval Trace, Hermes Mission Control, Pixoid Agent Capability Routes, and Zerg AI Democratization Roadmap. Planned Program Intel is done and remains a reference/proof project with optional portfolio packaging. Parked/historical contexts remain useful as references but should not become default work without explicit reprioritization.
 
 Knowledge Pack Routing is currently an architecture workstream under Hermes Mission Control, not a Planned Program Intel deliverable. Planned Program Intel was the first proof/project pack; it is not the default next project unless Jamie says so.
 
@@ -882,7 +1010,8 @@ Knowledge Pack Routing is currently an architecture workstream under Hermes Miss
 | Project/domain | Status | Agent entrypoint |
 |---|---|---|
 | Hermes Mission Control | active agent-ops hub | `Projects/Hermes Mission Control/llms.txt` |
-| Planned Program Intel | active; build queue complete; first KPR proof | `Projects/Planned Program Intel/llms.txt` |
+| Eval Trace | active local prototype; context-overfit eval harness | `Projects/Eval Trace/llms.txt` |
+| Planned Program Intel | done; first KPR proof; optional portfolio packaging only if re-prioritized | `Projects/Planned Program Intel/llms.txt` |
 | Critical Ranger FFM | active research/build | `Projects/Critical Ranger FFM/llms.txt` |
 | Pixoid Agent Capability Routes | active/completed route governance reference | `Projects/Pixoid Agent Capability Routes/Index.md` |
 | Zerg AI Democratization Roadmap | active brainstorm | `Projects/Zerg AI Democratization Roadmap/Index.md` |
@@ -1033,13 +1162,14 @@ Before project work, load this file to choose the right source. Then load the re
 
 ## Current Narrative / Operating Posture
 
-Knowledge Pack Routing V1, stack-level integration, and integration QA are complete. Planned Program Intel is the first proof/project pack, not the main goal. KPR V2 parent #74 is closed: #76 freshness report is closed, #75 static HTML human surface is implemented as repo-local derived output under `Generated/kpr-static-html/`, #77 vault-wide entrypoint mesh is closed, and #86 runtime memory/knowledge routing smoke is closed. Deferred V2+ follow-ups #88–#91 track `index.json`, automated freshness delivery, link-rot/source checks, and MCP/search/RAG/confidence calibration; do not implement them until explicitly routed.
+Knowledge Pack Routing V1, stack-level integration, and integration QA are complete. Planned Program Intel is the first proof/project pack and is done unless explicitly reopened. Eval Trace is the active local prototype for context-overfitting evaluation; keep it local until sequence-level checks prove repo value. KPR V2 parent #74 is closed: #76 freshness report is closed, #75 static HTML human surface is implemented as repo-local derived output under `Generated/kpr-static-html/`, #77 vault-wide entrypoint mesh is closed, and #86 runtime memory/knowledge routing smoke is closed. Deferred V2+ follow-ups #88–#91 track `index.json`, automated freshness delivery, link-rot/source checks, and MCP/search/RAG/confidence calibration; do not implement them until explicitly routed.
 
 | Project | Status | Next gate | Pack |
 |---|---|---|---|
 | KPR V2 Planning | #74/#75/#76 closed; public derived wiki deployed at https://pixiiidust.github.io/pixi-wiki/; #91 ledger design path closed | Maintain only on source-boundary changes; future ledger implementation requires a new thin issue | `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md` |
 | Vault-wide Entry Mesh | #77 closed; #79–#83 complete | Maintain mesh only on source-boundary changes | `https://github.com/pixiiidust/ObsidianVault/issues/77` |
-| Planned Program Intel | Active; build queue complete; first KPR proof | Optional deck/Loom packaging only if re-prioritized | `Projects/Planned Program Intel/llms.txt` |
+| Eval Trace | Active local prototype; context-overfit eval harness | Sequence-level cron checks, then repo/no-repo gate | `Projects/Eval Trace/llms.txt` |
+| Planned Program Intel | Done; build queue complete; first KPR proof | Optional deck/Loom packaging only if re-prioritized | `Projects/Planned Program Intel/llms.txt` |
 | Hermes Mission Control | Active agent-ops hub | Maintain current KPR surfaces only when source boundaries change | `Projects/Hermes Mission Control/llms.txt` |
 | Critical Ranger FFM | Active research/build | Zone-control action contract fixtures | `Projects/Critical Ranger FFM/llms.txt` |
 | Planned.com Demo | Historical | Reference only | `Projects/Planned/Index.md` |
@@ -1049,7 +1179,7 @@ Knowledge Pack Routing V1, stack-level integration, and integration QA are compl
 - Do not treat MOCs as agent retrieval contracts; they are human navigation.
 - Do not treat knowledge packs as canonical project truth.
 - Do not use session search as the first source for current project state.
-- Do not conflate `planned-program-intel` (active) with `planned-program-intelligence` (historical).
+- Do not conflate `planned-program-intel` (done replacement project) with `planned-program-intelligence` (deprecated/historical).
 - Do not create runtime automation, MCP, HTML publishing, or freshness cron as part of V1.
 
 ## Fallback Rules
@@ -1553,6 +1683,115 @@ Use these before starting or continuing a build:
 - [[matt-pocock-sdlc-rhythm]]
 - [[find-the-lock-problem-first]]
 - [[verb-first-product-positioning]]
+- [[agent-capability-route-pattern]]
+
+
+<!-- ===== Knowledge/concepts/context-overfitting.md ===== -->
+
+---
+title: Context Overfitting
+created: 2026-06-15
+updated: 2026-06-15
+type: concept
+description: Failure mode where an agent treats written memory, rules, project notes, or prior suggestions as hard constraints instead of weak priors that current intent and live evidence can override.
+status: active
+domain: agent-systems
+tags: [agent-systems, governance, workflow, ai]
+sources: [discord-thread, local-hermes-knowledge, local-hermes-context-overfit]
+confidence: high
+---
+
+# Context Overfitting
+
+## Definition
+
+Context overfitting is when an agent over-weights written context — memory, skills, dossiers, project notes, cron prompts, or prior suggestions — and treats it as a hard constraint even when current user intent, live evidence, or scope boundaries should override it.
+
+The written rule may still be true in some cases. The failure is the **weighting and scope**, not necessarily the content.
+
+## Short test
+
+```text
+Context overfit? YES / NO / UNSURE
+```
+
+- **YES** — written context or stale project truth overrode current user intent, live evidence, or scope boundaries.
+- **NO** — context was used as a weak prior and the agent stayed steerable.
+- **UNSURE** — evidence is insufficient or Jamie needs to judge the suspect rule.
+
+## Why Jamie named it
+
+Jamie flagged that self-improvement and crew-evolution loops can turn bad or merely local suggestions into future hard constraints. This makes each project unsteerable in its own way: a rule written down to help one workflow starts behaving like an invariant everywhere.
+
+## Common signs
+
+- Agent refuses a reasonable current correction because a previous rule says otherwise.
+- Project-local guidance leaks into a different project.
+- Stale repo or issue state drives current recommendations.
+- A cron repeats the same recommendation after live state changed.
+- The agent treats a dossier note, memory, or skill as authority rather than a hypothesis.
+- A safety/auth/data-loss rule is involved and the right answer is not obvious; this should normally be `UNSURE`, not automatic `YES`.
+
+## Confirmed local example
+
+Planned repo state created a clean stale-context test case:
+
+- `planned-program-intelligence` is deprecated.
+- `planned-program-intel` replaced it and is done unless Jamie explicitly reopens it.
+- A crew output that uses old `planned-program-intelligence` open issues as current build/code evidence is **Context overfit? YES**.
+
+The durable machine-readable status lives outside the chat in:
+
+```text
+.hermes/knowledge/registry/project-status.json
+```
+
+## Evaluation pattern
+
+Use trace-first, judge-second:
+
+1. Export or collect session traces.
+2. Segment by user turn, not whole sessions.
+3. Build compact trace packets.
+4. Run deterministic prechecks first.
+5. Send only `UNSURE` or review-worthy packets to an LLM judge.
+6. Output one binary verdict with suspect source, evidence, and action.
+
+The current local project is [[Projects/Eval Trace/Index|Eval Trace]].
+
+## Actions by verdict
+
+| Verdict | Meaning | Action |
+|---|---|---|
+| YES | Context acted like a hard constraint incorrectly | demote, scope, patch prompt/skill, or update project status truth |
+| NO | Agent stayed steerable | keep |
+| UNSURE | Rule may be valid but scope/weight is unclear | ask Jamie or inspect sequence-level evidence |
+
+## Source layers to check
+
+1. Current user instruction.
+2. Live GitHub/repo/vault state.
+3. Project status registry for done/deprecated/replaced truth.
+4. Project hub and PRD/ADR truth.
+5. Agent dossier / skill / cron prompt.
+6. Memory/Honcho only as compact stable context, not full project state.
+
+## Relation to self-improvement
+
+Context-overfitting QA is a guardrail on [[self-improving-agent-systems]]. The promotion ladder should not only ask whether a suggestion is useful; it should also ask:
+
+- What is the counterexample?
+- Is this project-local or crew-wide?
+- Can Jamie steer the agent away from it later?
+- Can it stay in a project hub or dossier instead of memory/routing?
+- What demotes or expires it?
+
+## Related pages
+
+- [[Projects/Eval Trace/Index]]
+- [[self-improving-agent-systems]]
+- [[runtime-memory-knowledge-routing]]
+- [[profile-memory-boundaries]]
 - [[agent-capability-route-pattern]]
 
 
@@ -2265,7 +2504,7 @@ A file entrypoint for memory contents would encourage agents to treat memory as 
 ---
 title: Self-Improving Agent Systems
 created: 2026-06-12
-updated: 2026-06-13
+updated: 2026-06-15
 type: concept
 description: Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
 status: active
@@ -2367,6 +2606,18 @@ Pixoid's daily and weekly evolution reviews are a bounded route, not open-ended 
 | **Stop conditions** | Stop before risky actions, unclear evidence, conflicting source-of-truth state, or changes that would affect another profile's runtime behavior. |
 
 This route mirrors [[agent-capability-route-pattern]] but uses operating-context improvement as the artifact instead of repo code.
+
+## Context-overfit guard
+
+Crew evolution must not convert every suggestion into a hard rule. Before promoting a lesson, test it against [[context-overfitting]]:
+
+- What is the counterexample?
+- Is the lesson project-local, role-local, or crew-wide?
+- What current user instruction or live evidence would override it?
+- Does it need expiry/demotion rather than memory?
+- Could the same note make another project less steerable?
+
+Prefer project hubs, dossiers, and explicit status registries over always-injected memory when a lesson is scoped or reversible.
 
 ## Applications to Jamie's crew
 

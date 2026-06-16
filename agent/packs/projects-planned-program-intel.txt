@@ -1,7 +1,7 @@
 ---
 title: "Planned Program Intel Pack"
 type: knowledge-pack
-status: active
+status: done
 current_as: 2026-06-15
 confidence: high
 scope:
@@ -58,11 +58,11 @@ v_next:
   - app_build_only_if_explicitly_reopened
 ---
 
-# Planned Program Intel Pack — Active Portfolio Project
+# Planned Program Intel Pack — Done Portfolio Project
 
 ## Agent Start Here
 
-This pack routes the active Planned portfolio/application project. Active repo: `pixiiidust/planned-program-intel`. Historical predecessor: `pixiiidust/planned-program-intelligence`. This pack is KPR V1's first proof-of-consumption project pack, not the primary system goal. Current Planned work, if Jamie re-prioritizes it, is packaging the completed demo into deck, Loom, and application materials — not continuing app build work.
+This pack routes the completed Planned portfolio/application project if Jamie re-prioritizes packaging work. Active repo: `pixiiidust/planned-program-intel`. Historical predecessor: `pixiiidust/planned-program-intelligence`. This pack is KPR V1's first proof-of-consumption project pack, not the primary system goal. Current Planned work, only if Jamie re-prioritizes it, is packaging the completed demo into deck, Loom, and application materials — not continuing app build work.
 
 ## What This Pack Routes
 

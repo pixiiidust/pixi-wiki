@@ -1,7 +1,7 @@
 ---
 title: Self-Improving Agent Systems
 created: 2026-06-12
-updated: 2026-06-13
+updated: 2026-06-15
 type: concept
 description: Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
 status: active
@@ -103,6 +103,18 @@ Pixoid's daily and weekly evolution reviews are a bounded route, not open-ended 
 | **Stop conditions** | Stop before risky actions, unclear evidence, conflicting source-of-truth state, or changes that would affect another profile's runtime behavior. |
 
 This route mirrors [[agent-capability-route-pattern]] but uses operating-context improvement as the artifact instead of repo code.
+
+## Context-overfit guard
+
+Crew evolution must not convert every suggestion into a hard rule. Before promoting a lesson, test it against [[context-overfitting]]:
+
+- What is the counterexample?
+- Is the lesson project-local, role-local, or crew-wide?
+- What current user instruction or live evidence would override it?
+- Does it need expiry/demotion rather than memory?
+- Could the same note make another project less steerable?
+
+Prefer project hubs, dossiers, and explicit status registries over always-injected memory when a lesson is scoped or reversible.
 
 ## Applications to Jamie's crew
 

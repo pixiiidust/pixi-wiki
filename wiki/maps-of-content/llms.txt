@@ -1,5 +1,122 @@
-# Maps of Content
+---
+title: "Maps of Content Domain Pack"
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: high
+scope:
+  covers:
+    - MOC domain routing and maintenance boundaries
+    - Distinction between human navigation surfaces and agent retrieval contracts
+    - Which MOCs route to project, knowledge, agent-ops, tag, and maintenance surfaces
+  not_covered:
+    - Canonical project truth
+    - Full Knowledge wiki content
+    - Template content or note generation rules
+    - Runtime automation or static HTML publishing
+freshness:
+  policy: on_change
+  stale_after_days: 30
+owners:
+  routing: Pixoid
+  maintenance: Quill
+sources:
+  - label: Top-level MOC
+    path_or_url: Maps of Content/Maps of Content.md
+    role: human-navigation
+  - label: Projects MOC
+    path_or_url: Maps of Content/Projects MOC.md
+    role: project-navigation
+  - label: Knowledge MOC
+    path_or_url: Maps of Content/Knowledge MOC.md
+    role: knowledge-navigation
+  - label: Agent Operations MOC
+    path_or_url: Maps of Content/Agent Operations MOC.md
+    role: agent-ops-navigation
+  - label: MOC Maintenance Process
+    path_or_url: Maps of Content/MOC Maintenance Process.md
+    role: maintenance
+human_surface:
+  - path_or_url: Maps of Content/Maps of Content.md
+  - path_or_url: Maps of Content/Projects MOC.md
+  - path_or_url: Maps of Content/Knowledge MOC.md
+fallback_rules:
+  - If a task needs canonical project truth, route to `Projects/llms.txt` and GitHub/project hubs.
+  - If a task needs reusable concepts, route to `Knowledge/llms.txt` and local Hermes knowledge.
+  - If a task needs root vault orientation, route to `llms.txt`.
+  - If a template is needed, use `Templates/README.md`; no Templates pack exists yet.
+v_next:
+  - static_html
+  - automated_freshness_check
+---
 
-Map room and navigation cortex — traverse the wiki by topic, tag, and relationship.
+# Maps of Content Domain Pack — Agent Entrypoint
 
-Source: Maps of Content/llms.txt
+## Agent Start Here
+
+Use this pack when working on MOCs themselves or when deciding whether a human navigation surface needs maintenance. MOCs are human navigation surfaces. `llms.txt` files are agent retrieval contracts. Do not collapse one into the other.
+
+## What This Pack Routes
+
+- Which MOC to inspect for vault navigation.
+- How agents should maintain MOCs without treating them as canonical truth.
+- Boundaries between MOCs, root/project/knowledge packs, project hubs, and GitHub.
+- The current decision that `Templates/llms.txt` is deferred unless template-routing rules become distinct enough to justify it.
+
+## What This Pack Does Not Route
+
+- Current project implementation state.
+- Full Knowledge wiki content.
+- Template body content.
+- Asset/evidence handling under `Attachments/`.
+- Runtime automation, cron, MCP, RAG, crawler, search, vector DB, or public hosting.
+
+## Source-of-Truth Hierarchy
+
+1. **Canonical domain sources** — GitHub/project hubs/Knowledge schema/raw sources, depending on the topic.
+2. **Domain packs** — root, Projects, Knowledge, and project-specific `llms.txt` files.
+3. **MOCs** — human navigation and cross-link surfaces.
+4. **This pack** — routing truth for MOC maintenance boundaries.
+
+## Canonical Sources
+
+| Label | Path/URL | Role |
+|---|---|---|
+| Top-level MOC | `Maps of Content/Maps of Content.md` | human navigation |
+| Projects MOC | `Maps of Content/Projects MOC.md` | project navigation |
+| Knowledge MOC | `Maps of Content/Knowledge MOC.md` | knowledge navigation |
+| Agent Operations MOC | `Maps of Content/Agent Operations MOC.md` | agent-ops navigation |
+| MOC Maintenance Process | `Maps of Content/MOC Maintenance Process.md` | maintenance |
+| Tag Index | `Maps of Content/Tag Index.md` | tag navigation |
+
+## Current Narrative / Operating Posture
+
+The vault now has a small agent entrypoint mesh: root, Projects, Knowledge, project-specific packs, and this MOC domain pack. MOCs remain the human map layer. Agents should use MOCs to orient and discover, then verify against canonical domain sources before acting.
+
+Templates currently have a compact `Templates/README.md` and do not need a separate `Templates/llms.txt`. Create one later only if template selection/maintenance becomes a recurring agent routing problem.
+
+## Do Not Do
+
+- Do not treat MOC text as proof of current project state.
+- Do not duplicate full project or Knowledge indexes inside this pack.
+- Do not create one pack per folder by default.
+- Do not create `Templates/llms.txt` just because the folder exists.
+- Do not perform broad vault reorganization from this pack.
+
+## Fallback Rules
+
+1. Need a project: root pack → Projects pack → project-specific pack or project `Index.md` → GitHub.
+2. Need a reusable concept: root pack → Knowledge pack → Knowledge index/schema → local Hermes knowledge if agent-operational.
+3. Need human navigation maintenance: this pack → relevant MOC → canonical domain source.
+4. Need a template: use `Templates/README.md`; stop and create a Templates pack only if distinct routing rules are necessary.
+
+## Human Surface
+
+- `Maps of Content/Maps of Content.md`
+- `Maps of Content/Projects MOC.md`
+- `Maps of Content/Knowledge MOC.md`
+- `Maps of Content/Agent Operations MOC.md`
+
+## Maintenance Notes
+
+Update this pack when MOC structure changes, when a new domain MOC becomes central to routing, or when Templates/Attachments/Daily Notes receive their own pack decision. Keep this as a routing surface, not a duplicate vault index.

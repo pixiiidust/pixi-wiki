@@ -1,0 +1,115 @@
+---
+title: "Eval Trace Project Pack"
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: medium
+scope:
+  covers:
+    - Context-overfitting eval project routing
+    - Local prototype artifacts under .hermes/context-overfit
+    - Deterministic prechecks, LLM judge outputs, and repo-readiness gate
+  not_covered:
+    - Broad Hermes tracing plugin deployment
+    - Memory pruning or profile/cron automation beyond explicit approvals
+    - Public repo creation until Jamie approves the repo gate
+freshness:
+  policy: on_change
+  stale_after_days: 30
+owners:
+  routing: Pixoid
+  maintenance: Quill
+  implementation_facts: Tinker optional
+sources:
+  - label: Eval Trace Project Hub
+    path_or_url: Projects/Eval Trace/Index.md
+    role: synthesis
+  - label: Context Overfitting Concept
+    path_or_url: Knowledge/concepts/context-overfitting.md
+    role: concept
+human_surface:
+  - path_or_url: Projects/Eval Trace/Index.md
+fallback_rules:
+  - If the local harness state matters, inspect .hermes/context-overfit live before reporting.
+  - If project status/deprecated repo truth matters, read .hermes/knowledge/registry/project-status.json first.
+  - If creating eval-trace repo is requested, verify the repo-readiness gate in the project hub first.
+v_next:
+  - sequence_level_cron_checks
+  - optional_eval_trace_repo
+---
+
+# Eval Trace Project Pack — Agent Entrypoint
+
+## Agent Start Here
+
+Use this pack for context-overfitting eval work, LLM judge report follow-ups, stale project context checks, or future `eval-trace` repo decisions.
+
+## What This Pack Routes
+
+- Context-overfitting eval work.
+- Local harness inspection under `.hermes/context-overfit/`.
+- Deterministic precheck and LLM judge artifact review.
+- Stale project-status checks, especially deprecated/replaced/done repo confusion.
+- The repo-readiness decision for possible `pixiiidust/eval-trace`.
+
+## What This Pack Does Not Route
+
+- Broad Hermes tracing plugin deployment.
+- Langfuse, NeMo Relay, MCP, RAG, or telemetry infrastructure by default.
+- Memory pruning, profile mutation, gateway mutation, or cron rewrites from weak signals.
+- Public repo creation before the local harness proves value and Jamie approves.
+
+## Source-of-Truth Hierarchy
+
+1. `.hermes/knowledge/registry/project-status.json` — done/deprecated/replaced project truth.
+2. `.hermes/context-overfit/` — local prototype code, tests, and run outputs.
+3. `Projects/Eval Trace/Index.md` — human project hub.
+4. `Knowledge/concepts/context-overfitting.md` — reusable concept and rubric.
+5. Session exports/judge reports — evidence, not canonical truth alone.
+
+## Canonical Sources
+
+| Label | Path/URL | Role |
+|---|---|---|
+| Eval Trace project hub | `Projects/Eval Trace/Index.md` | synthesis |
+| Context-overfitting concept | `Knowledge/concepts/context-overfitting.md` | concept |
+| Local harness | `.hermes/context-overfit/` | prototype |
+| Project status registry | `.hermes/knowledge/registry/project-status.json` | machine-readable truth |
+| Hermes Mission Control | `Projects/Hermes Mission Control/Index.md` | agent-ops context |
+
+## Current Narrative / Operating Posture
+
+Eval Trace is a local prototype, not a public repo yet. It has already caught one real stale-context class: old `planned-program-intelligence` issues must not drive current Planned recommendations because `planned-program-intel` replaced it and is done unless Jamie explicitly reopens it.
+
+The core verdict contract is:
+
+```text
+Context overfit? YES / NO / UNSURE
+```
+
+Default to `UNSURE` when the trace is incomplete, safety/auth/data-loss constraints are involved, or the rule may be valid but scoped poorly.
+
+## Do Not Do
+
+- Do not create `pixiiidust/eval-trace` until the repo-readiness gate passes.
+- Do not treat no deterministic signal as `NO`; default to `UNSURE`.
+- Do not mutate memory, profiles, tracing plugins, or cron behavior from weak signals.
+- Do not use old `planned-program-intelligence` issues as current Planned build evidence.
+
+## Fallback Rules
+
+1. If harness files may have changed, inspect `.hermes/context-overfit/` live.
+2. If project status matters, read `.hermes/knowledge/registry/project-status.json` before reasoning from memory.
+3. If a judge verdict conflicts with live project status, live project status plus current user intent wins.
+4. If creating public infrastructure is proposed, stop and ask Jamie.
+
+## Human Surface
+
+- `Projects/Eval Trace/Index.md`
+- `Knowledge/concepts/context-overfitting.md`
+- `Projects/Hermes Mission Control/Index.md`
+- `Project Board.md`
+
+## Maintenance Notes
+
+Update this pack after sequence-level cron checks, a new real LLM judge run, a change to the project-status registry contract, or a repo/no-repo decision. Keep it evaluation-first and infrastructure-light.

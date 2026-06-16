@@ -109,13 +109,14 @@ Before project work, load this file to choose the right source. Then load the re
 
 ## Current Narrative / Operating Posture
 
-Knowledge Pack Routing V1, stack-level integration, and integration QA are complete. Planned Program Intel is the first proof/project pack, not the main goal. KPR V2 parent #74 is closed: #76 freshness report is closed, #75 static HTML human surface is implemented as repo-local derived output under `Generated/kpr-static-html/`, #77 vault-wide entrypoint mesh is closed, and #86 runtime memory/knowledge routing smoke is closed. Deferred V2+ follow-ups #88–#91 track `index.json`, automated freshness delivery, link-rot/source checks, and MCP/search/RAG/confidence calibration; do not implement them until explicitly routed.
+Knowledge Pack Routing V1, stack-level integration, and integration QA are complete. Planned Program Intel is the first proof/project pack and is done unless explicitly reopened. Eval Trace is the active local prototype for context-overfitting evaluation; keep it local until sequence-level checks prove repo value. KPR V2 parent #74 is closed: #76 freshness report is closed, #75 static HTML human surface is implemented as repo-local derived output under `Generated/kpr-static-html/`, #77 vault-wide entrypoint mesh is closed, and #86 runtime memory/knowledge routing smoke is closed. Deferred V2+ follow-ups #88–#91 track `index.json`, automated freshness delivery, link-rot/source checks, and MCP/search/RAG/confidence calibration; do not implement them until explicitly routed.
 
 | Project | Status | Next gate | Pack |
 |---|---|---|---|
 | KPR V2 Planning | #74/#75/#76 closed; public derived wiki deployed at https://pixiiidust.github.io/pixi-wiki/; #91 ledger design path closed | Maintain only on source-boundary changes; future ledger implementation requires a new thin issue | `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md` |
 | Vault-wide Entry Mesh | #77 closed; #79–#83 complete | Maintain mesh only on source-boundary changes | `https://github.com/pixiiidust/ObsidianVault/issues/77` |
-| Planned Program Intel | Active; build queue complete; first KPR proof | Optional deck/Loom packaging only if re-prioritized | `Projects/Planned Program Intel/llms.txt` |
+| Eval Trace | Active local prototype; context-overfit eval harness | Sequence-level cron checks, then repo/no-repo gate | `Projects/Eval Trace/llms.txt` |
+| Planned Program Intel | Done; build queue complete; first KPR proof | Optional deck/Loom packaging only if re-prioritized | `Projects/Planned Program Intel/llms.txt` |
 | Hermes Mission Control | Active agent-ops hub | Maintain current KPR surfaces only when source boundaries change | `Projects/Hermes Mission Control/llms.txt` |
 | Critical Ranger FFM | Active research/build | Zone-control action contract fixtures | `Projects/Critical Ranger FFM/llms.txt` |
 | Planned.com Demo | Historical | Reference only | `Projects/Planned/Index.md` |
@@ -125,7 +126,7 @@ Knowledge Pack Routing V1, stack-level integration, and integration QA are compl
 - Do not treat MOCs as agent retrieval contracts; they are human navigation.
 - Do not treat knowledge packs as canonical project truth.
 - Do not use session search as the first source for current project state.
-- Do not conflate `planned-program-intel` (active) with `planned-program-intelligence` (historical).
+- Do not conflate `planned-program-intel` (done replacement project) with `planned-program-intelligence` (deprecated/historical).
 - Do not create runtime automation, MCP, HTML publishing, or freshness cron as part of V1.
 
 ## Fallback Rules

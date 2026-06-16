@@ -1,5 +1,124 @@
-# Critical Ranger FFM Pack
+---
+title: "Critical Ranger FFM Pack"
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: medium
+scope:
+  covers:
+    - Zone-control RL MVP as active roadmap
+    - Parked switch-point/single-cell efficacy work as diagnostic/prototype infrastructure
+    - Active issue tree and next executable slice
+    - Evidence gates and non-claim guardrails
+  not_covered:
+    - Real wildfire validity or policy recommendations
+    - Publication-grade science claims
+    - GPU/Puffer/render runs on VPS
+    - Local WSL HITL commands without Jamie approval
+freshness:
+  policy: on_change
+  stale_after_days: 14
+owners:
+  routing: Pixoid
+  maintenance: Quill
+  source_inventory: Boba
+  implementation_facts: Tinker
+sources:
+  - label: Critical Ranger FFM Index
+    path_or_url: Projects/Critical Ranger FFM/Index.md
+    role: synthesis
+  - label: Project repo
+    path_or_url: https://github.com/pixiiidust/critical-ranger-ffm
+    role: implementation
+  - label: Zone-control PRD
+    path_or_url: https://github.com/pixiiidust/critical-ranger-ffm/blob/main/docs/PRD-zone-control-rl-mvp.md
+    role: requirement
+  - label: Pivot tracker
+    path_or_url: https://github.com/pixiiidust/critical-ranger-ffm/issues/53
+    role: coordination
+  - label: Next slice
+    path_or_url: https://github.com/pixiiidust/critical-ranger-ffm/issues/54
+    role: implementation
+human_surface:
+  - path_or_url: Projects/Critical Ranger FFM/Index.md
+  - path_or_url: Project Board.md
+fallback_rules:
+  - If stale, verify live issue/PRD/repo state before acting.
+  - If asked about old switch-point efficacy, route to parked diagnostics and do not treat as current proof.
+  - If asked for real wildfire/policy claims, refuse as out of scope.
+v_next:
+  - static_html
+  - automated_freshness_check
+---
 
-Project pack bundle.
+# Critical Ranger FFM Pack — Zone-Control RL MVP
 
-Source: Projects/Critical Ranger FFM/llms.txt
+## Agent Start Here
+
+Use this pack before Critical Ranger work. Active roadmap: zone-control RL MVP. Parked path: switch-point/single-cell efficacy, preserved only as diagnostic/prototype infrastructure. Next executable slice is the zone-control action contract fixtures issue.
+
+## What This Pack Routes
+
+- Current zone-control RL MVP roadmap.
+- Parked/superseded switch-point efficacy work.
+- Active repo, PRD, parent tracker, and next issue.
+- Evidence gates, non-claims, and anti-cheat constraints.
+- VPS vs local WSL execution guardrails.
+
+## What This Pack Does Not Route
+
+- Real wildfire validity.
+- Policy or operational wildfire recommendations.
+- GPU/Puffer/training/render commands on VPS.
+- Local WSL gates without Jamie approving exact commands.
+- Old switch-point path as final science proof.
+
+## Source-of-Truth Hierarchy
+
+1. **GitHub issues/PRs** — coordination truth.
+2. **Zone-control PRD** — requirements truth.
+3. **Repo code/tests** — implementation truth.
+4. **Obsidian project Index** — durable synthesis.
+5. **This pack** — routing truth.
+
+## Canonical Sources
+
+| Label | Path/URL | Role |
+|---|---|---|
+| Project hub | `Projects/Critical Ranger FFM/Index.md` | synthesis |
+| Repo | `https://github.com/pixiiidust/critical-ranger-ffm` | implementation |
+| Zone-control PRD | `https://github.com/pixiiidust/critical-ranger-ffm/blob/main/docs/PRD-zone-control-rl-mvp.md` | requirement |
+| Parent tracker | `https://github.com/pixiiidust/critical-ranger-ffm/issues/53` | coordination |
+| Next issue | `https://github.com/pixiiidust/critical-ranger-ffm/issues/54` | implementation |
+
+## Current Narrative / Operating Posture
+
+The main roadmap is zone-control RL MVP: test whether an RL agent can reduce mega-fires in a toy forest-fire model better than honest baselines without clearing the forest or over-spending interventions. The prior single-cell switch-point efficacy work is parked as diagnostic/prototype infrastructure.
+
+Next gate: issue #54 action contract fixtures — deterministic zone indexing, no-op, one-zone thinning, and decision interval semantics. Do not jump to training or rendering.
+
+## Do Not Do
+
+- Do not run GPU/Puffer/training/render/raylib/c_render work on the VPS.
+- Do not run local WSL HITL commands without Jamie approving the exact command.
+- Do not claim final efficacy, SOC-control, publication-grade science, policy value, or real-wildfire validity.
+- Do not delete parked switch-point artifacts.
+- Do not implement from parent tracker alone; follow child issue scope.
+- Do not overwrite README.md or docs/PRD.md without explicit instruction.
+
+## Fallback Rules
+
+1. If stale (>14 days), re-verify issue #53, issue #54, current PRD, and repo state.
+2. If question touches old efficacy path, route to parked diagnostics and label it parked.
+3. If question asks for real-world wildfire claims, refuse as out of scope.
+4. If no match, fall back to Project Board then Projects MOC.
+
+## Human Surface
+
+- `Projects/Critical Ranger FFM/Index.md`
+- `Project Board.md`
+- `Maps of Content/Projects MOC.md`
+
+## Maintenance Notes
+
+Update when issues #54-#59 close, when a PRD changes, when main roadmap pivots, or when Jamie approves a HITL local run. Confidence is medium until post-#54 implementation facts are refreshed.
