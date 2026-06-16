@@ -30,3 +30,13 @@ namespace: agent-workflows
 - Updated namespace index.
 - Source pages remain in `Knowledge/` and `Projects/`.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Add KPR and clean publishing gate content
+
+- Promoted `agent-workflows` from scaffold to active namespace overview.
+- Added concept pages for `knowledge-pack-routing`, `agent-entrypoint-mesh`, and `static-retrieval-evals`.
+- Added synthesis `wiki/syntheses/markdown-first-agent-memory.md`.
+- Expanded `Hermes Mission Control` as a compiled entity page with crew role boundaries and source routing.
+- Updated namespace index and source roots.
+- Final public publish remains gated by the clean `pixi-wiki` rebuild.
+- No Daily Notes were copied or compiled.

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent Entrypoint Mesh</title>
+<style>body{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}a{color:#8bd3ff}code,pre{background:#111a2e;border-radius:6px}pre{padding:12px;overflow:auto}.meta{color:#9fb3c8;font-size:.9rem}nav{margin-bottom:20px}</style>
+</head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
+<h1>Agent Entrypoint Mesh</h1>
+<p>An **agent entrypoint mesh** is a set of small, typed starting points that route an agent to the right truth surface for the job.</p>
+<p>The point is not to make one universal file. The point is to make the first hop cheap, explicit, and hard to confuse.</p>
+<h2>Mesh shape</h2>
+<p>A healthy mesh usually has:</p>
+<ul>
+<li>a root agent registry such as <code>llms.txt</code>;</li>
+<li>namespace or domain-level packs;</li>
+<li>project/entity packs for concrete work;</li>
+<li>machine registry metadata such as <code>index.json</code>;</li>
+<li>raw provenance mirrors for source inspection;</li>
+<li>issue tracker links for execution truth.</li>
+</ul>
+<h2>Why mesh beats dump</h2>
+<p>A raw dump asks the model to infer structure from volume. A mesh gives it structure first: scope, not-covered boundaries, source paths, freshness, and fallback behavior.</p>
+<h2>Pixoid rule</h2>
+<p>Pixoid should treat entrypoints as routing contracts, not as replacement truth. If a pack points to a GitHub issue, PRD, or source note, the agent verifies the live source before claiming current state.</p>
+<h2>Related pages</h2>
+<ul>
+<li>knowledge-pack-routing</li>
+<li>static-retrieval-evals</li>
+<li>runtime-memory-knowledge-routing</li>
+</ul>
+</body></html>

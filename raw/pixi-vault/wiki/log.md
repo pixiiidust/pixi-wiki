@@ -24,3 +24,9 @@ namespace: pixi-vault
 - Updated namespace README and index from scaffold to compiled status.
 - Sources are the PRD and Namespace Wiki Compiler Map.
 - Scratch chronology was not copied or compiled.
+
+## 2026-06-16 update | Align publishing model with clean rebuild
+
+- Replaced legacy-shim language with clean rebuild policy for `pixi-wiki`.
+- Added cross-namespace links to Agent Workflows, Eval Trace, and Local AI Infrastructure.
+- No Daily Notes were copied or compiled.

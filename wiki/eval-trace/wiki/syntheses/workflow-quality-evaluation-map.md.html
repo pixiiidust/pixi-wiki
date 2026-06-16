@@ -1,7 +1,28 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Workflow Quality Evaluation Map</title><link rel="stylesheet" href="/pixi-wiki/agent/styles.css">
+<title>Workflow Quality Evaluation Map</title>
 <style>body{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}a{color:#8bd3ff}code,pre{background:#111a2e;border-radius:6px}pre{padding:12px;overflow:auto}.meta{color:#9fb3c8;font-size:.9rem}nav{margin-bottom:20px}</style>
 </head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
-<h1>Workflow Quality Evaluation Map</h1><p>Workflow quality evaluation asks whether an agent&#x27;s output followed the right source-of-truth hierarchy, adapted to current user intent, and produced verified artifacts instead of plausible process talk.</p><h2>Evaluation surfaces</h2><p>| Surface | Quality question | Evidence |</p><p>|---|---|---|</p><p>| Source routing | Did the agent use the correct truth layer? | GitHub issue/PR state, Obsidian project hubs, Knowledge pages, Wiki Compiler Maps |</p><p>| Context adaptation | Did the agent update from latest user intent and live checks? | Current message, live git/GitHub/tool output |</p><p>| Artifact progress | Did it produce a working artifact? | Committed files, tests, generated output, live URL checks |</p><p>| Review discipline | Did Pixoid verify before closing? | Test logs, API checks, issue comments, clean status |</p><p>| Safety boundary | Did it stop before risky actions? | Explicit approvals for deletes, deploys, secrets, broad rewrites |</p><h2>Evidence gates</h2><p>1. **Pre-flight gate:** inspect live repo/tracker/source state before editing.</p><p>2. **Revision gate:** if checks fail, fix and rerun focused verification.</p><p>3. **Escalation gate:** ask Jamie before destructive or ambiguous ownership changes.</p><p>4. **Closure gate:** close issues only after pushed commits, tests, and live/remote verification.</p><h2>Context-overfit signal</h2><p>A strong context-overfit signal appears when the agent follows a written prior that should have been overridden by a newer user instruction, current project status, or live tool output. The evaluation target is not whether context was used; it is whether context was treated as stronger than the right source of truth.</p><h2>Cross-namespace links</h2><ul><li>Pixoid Crew Operating Model — operational source hierarchy.</li><li>Context Overfitting — primary failure-mode concept.</li></ul>
+<h1>Workflow Quality Evaluation Map</h1>
+<p>Workflow quality evaluation asks whether an agent&#x27;s output followed the right source-of-truth hierarchy, adapted to current user intent, and produced verified artifacts instead of plausible process talk.</p>
+<h2>Evaluation surfaces</h2>
+<p>| Surface | Quality question | Evidence |</p>
+<p>|---|---|---|</p>
+<p>| Source routing | Did the agent use the correct truth layer? | GitHub issue/PR state, Obsidian project hubs, Knowledge pages, Wiki Compiler Maps |</p>
+<p>| Context adaptation | Did the agent update from latest user intent and live checks? | Current message, live git/GitHub/tool output |</p>
+<p>| Artifact progress | Did it produce a working artifact? | Committed files, tests, generated output, live URL checks |</p>
+<p>| Review discipline | Did Pixoid verify before closing? | Test logs, API checks, issue comments, clean status |</p>
+<p>| Safety boundary | Did it stop before risky actions? | Explicit approvals for deletes, deploys, secrets, broad rewrites |</p>
+<h2>Evidence gates</h2>
+<p>1. **Pre-flight gate:** inspect live repo/tracker/source state before editing.</p>
+<p>2. **Revision gate:** if checks fail, fix and rerun focused verification.</p>
+<p>3. **Escalation gate:** ask Jamie before destructive or ambiguous ownership changes.</p>
+<p>4. **Closure gate:** close issues only after pushed commits, tests, and live/remote verification.</p>
+<h2>Context-overfit signal</h2>
+<p>A strong context-overfit signal appears when the agent follows a written prior that should have been overridden by a newer user instruction, current project status, or live tool output. The evaluation target is not whether context was used; it is whether context was treated as stronger than the right source of truth.</p>
+<h2>Cross-namespace links</h2>
+<ul>
+<li>Pixoid Crew Operating Model — operational source hierarchy.</li>
+<li>Context Overfitting — primary failure-mode concept.</li>
+</ul>
 </body></html>

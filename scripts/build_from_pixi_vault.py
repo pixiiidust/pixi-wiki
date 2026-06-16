@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Build AgentWikis-style namespace output from pixi-vault.
+"""Build a clean AgentWikis-style public mirror from pixi-vault namespaces.
 
-This generator is intentionally conservative: it adds the new namespace registry
-surface while preserving the legacy pixi-wiki contract (`concepts`, `documents`,
-flat root compatibility shims, and existing domain routes). Source truth lives in
-`pixi-vault/wikis/<slug>/`; this repo is the public generated mirror.
+Source truth lives in `pixi-vault/wikis/<slug>/`. This repo is derived output:
+root registry files, raw Markdown mirrors, and rendered HTML namespace pages.
+Legacy flat root pages are intentionally not generated.
 """
 
 from __future__ import annotations
@@ -28,12 +27,13 @@ DEFAULT_SEED_SLUGS = [
     "curated-tuning-datasets",
     "local-ai-infrastructure",
 ]
-NAMESPACE_LLM_MARKER = "---\n\n# Pixi Wiki Namespace Registry"
-NAMESPACE_FULL_MARKER = "<!-- ===== AgentWikis namespace registry skeleton ===== -->"
+GENERATED_ROOT_FILES = ["index.html", "index.json", "llms.txt", "llms-full.txt"]
+LEGACY_ROOT_PATTERNS = ["concept-*.html", "projects-*.html", "knowledge.html", "projects.html", "maps-of-content.html", "root.html"]
+GENERATED_DIRS = ["raw", "wiki", "agent", "legacy"]
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
-    """Parse simple YAML-ish frontmatter used by pixi-vault namespace pages."""
+    """Parse the simple YAML-ish frontmatter used by namespace pages."""
     if not text.startswith("---\n"):
         return {}, text
     end = text.find("\n---\n", 4)
@@ -156,30 +156,32 @@ def markdown_to_html(markdown: str, title: str) -> str:
             close_ul()
             out.append(f"<p>{inline_markdown(stripped.strip())}</p>")
     close_ul()
+    body = "\n".join(out)
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{html.escape(title)}</title><link rel="stylesheet" href="/pixi-wiki/agent/styles.css">
+<title>{html.escape(title)}</title>
 <style>body{{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}}a{{color:#8bd3ff}}code,pre{{background:#111a2e;border-radius:6px}}pre{{padding:12px;overflow:auto}}.meta{{color:#9fb3c8;font-size:.9rem}}nav{{margin-bottom:20px}}</style>
 </head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
-{''.join(out)}
+{body}
 </body></html>"""
 
 
-def strip_existing_namespace_section(text: str, marker: str) -> str:
-    if marker in text:
-        return text.split(marker, 1)[0].rstrip()
-    return text.rstrip()
+def clean_generated_output(output_root: Path) -> None:
+    for name in GENERATED_DIRS:
+        path = output_root / name
+        if path.exists():
+            shutil.rmtree(path)
+    for name in GENERATED_ROOT_FILES:
+        path = output_root / name
+        if path.exists():
+            path.unlink()
+    for pattern in LEGACY_ROOT_PATTERNS:
+        for path in output_root.glob(pattern):
+            if path.is_file():
+                path.unlink()
 
 
-def remove_namespace_outputs(output_root: Path, slugs: list[str]) -> None:
-    for slug in slugs:
-        for base in [output_root / "raw", output_root / "wiki"]:
-            target = base / slug
-            if target.exists():
-                shutil.rmtree(target)
-
-
-def collect_namespace(source_dir: Path, output_root: Path, slug: str) -> tuple[dict[str, Any], list[tuple[str, str, str, str]]]:
+def collect_namespace(source_dir: Path, output_root: Path, slug: str) -> tuple[dict[str, Any], list[tuple[str, str, str, str]], list[tuple[str, str]]]:
     namespace_dir = source_dir / slug
     readme_path = namespace_dir / "README.md"
     readme = readme_path.read_text(encoding="utf-8")
@@ -192,11 +194,13 @@ def collect_namespace(source_dir: Path, output_root: Path, slug: str) -> tuple[d
     not_covered = extract_section(readme, "### Not Covered", "### Current As")
 
     links: list[tuple[str, str, str, str]] = []
+    full_sections: list[tuple[str, str]] = []
     md_files = sorted(namespace_dir.rglob("*.md"))
     for source_file in md_files:
         rel = source_file.relative_to(namespace_dir)
+        rel_posix = rel.as_posix()
         raw_output = output_root / "raw" / slug / rel
-        html_output = output_root / "wiki" / slug / (rel.as_posix() + ".html")
+        html_output = output_root / "wiki" / slug / (rel_posix + ".html")
         raw_output.parent.mkdir(parents=True, exist_ok=True)
         html_output.parent.mkdir(parents=True, exist_ok=True)
         text = source_file.read_text(encoding="utf-8")
@@ -204,7 +208,10 @@ def collect_namespace(source_dir: Path, output_root: Path, slug: str) -> tuple[d
         page_fm, body = parse_frontmatter(text)
         page_title = page_fm.get("title") or first_heading(text) or rel.name
         html_output.write_text(markdown_to_html(body if page_fm else text, page_title), encoding="utf-8")
-        links.append((page_title, rel.as_posix(), f"/raw/{slug}/{rel.as_posix()}", f"/wiki/{slug}/{rel.as_posix()}.html"))
+        raw_url = f"/raw/{slug}/{rel_posix}"
+        html_url = f"/wiki/{slug}/{rel_posix}.html"
+        links.append((page_title, rel_posix, raw_url, html_url))
+        full_sections.append((f"{slug}/{rel_posix}", text))
 
     wiki_record = {
         "slug": slug,
@@ -218,8 +225,12 @@ def collect_namespace(source_dir: Path, output_root: Path, slug: str) -> tuple[d
         "llms_txt": "/llms.txt",
         "raw_base": f"/raw/{slug}/",
         "html_base": f"/wiki/{slug}/",
+        "documents": [
+            {"title": title, "path": rel, "raw": raw_url, "html": html_url}
+            for title, rel, raw_url, html_url in links
+        ],
     }
-    return wiki_record, links
+    return wiki_record, links, full_sections
 
 
 def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
@@ -229,67 +240,61 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     if missing:
         raise SystemExit(f"Missing namespace source dirs: {', '.join(missing)}")
 
-    remove_namespace_outputs(output_root, slugs)
-
-    legacy_index = json.loads((output_root / "index.json").read_text(encoding="utf-8"))
-    legacy_llms = strip_existing_namespace_section((output_root / "llms.txt").read_text(encoding="utf-8"), NAMESPACE_LLM_MARKER)
-    legacy_full = strip_existing_namespace_section((output_root / "llms-full.txt").read_text(encoding="utf-8"), NAMESPACE_FULL_MARKER)
+    clean_generated_output(output_root)
 
     wikis: list[dict[str, Any]] = []
-    full_sections: list[tuple[str, str]] = []
-    namespace_llms = [
-        "> AgentWikis-style registry generated from pixi-vault compiled namespaces.\n\n",
+    all_full_sections: list[tuple[str, str]] = []
+    llms_parts = [
+        "# Pixi Wiki Namespace Registry\n\n",
+        "> Clean AgentWikis-style registry generated from pixi-vault compiled namespaces.\n\n",
         "> Raw Markdown: `/raw/<slug>/<path>`. Human HTML: `/wiki/<slug>/<path>.html`.\n\n",
     ]
-    for slug in slugs:
-        wiki_record, links = collect_namespace(source_dir, output_root, slug)
-        wikis.append(wiki_record)
-        namespace_llms.append(f"## {wiki_record['title']}\n\n")
-        namespace_llms.append(f"> {wiki_record['description']}\n")
-        namespace_llms.append(f"> Current as of: {wiki_record['lastUpdated']}\n\n")
-        for title, rel, raw_url, html_url in links:
-            namespace_llms.append(f"- [{title}]({raw_url}) ([html]({html_url}))\n")
-            full_sections.append((f"{slug}/{rel}", (source_dir / slug / rel).read_text(encoding="utf-8")))
-        namespace_llms.append("\n")
+    index_cards: list[str] = []
 
-    legacy_index["wikis"] = wikis
-    legacy_index["comingSoon"] = []
-    legacy_index["namespace_registry"] = {
-        "schema_version": "pixi-agentwikis-registry-v0",
-        "source_repo": "pixiiidust/pixi-vault",
+    for slug in slugs:
+        wiki_record, links, full_sections = collect_namespace(source_dir, output_root, slug)
+        wikis.append(wiki_record)
+        all_full_sections.extend(full_sections)
+        llms_parts.append(f"## {wiki_record['title']}\n\n")
+        llms_parts.append(f"> {wiki_record['description']}\n")
+        llms_parts.append(f"> Current as of: {wiki_record['lastUpdated']}\n\n")
+        for title, _rel, raw_url, html_url in links:
+            llms_parts.append(f"- [{title}]({raw_url}) ([html]({html_url}))\n")
+        llms_parts.append("\n")
+        index_cards.append(
+            f'<article class="card"><h2><a href="/pixi-wiki/wiki/{slug}/README.md.html">{html.escape(wiki_record["title"])}</a></h2>'
+            f'<p>{html.escape(wiki_record["description"])}</p><p class="meta">{wiki_record["documentCount"]} documents · '
+            f'<a href="/pixi-wiki/raw/{slug}/README.md">raw</a></p></article>'
+        )
+
+    registry = {
+        "name": "Pixi Wiki",
+        "description": "Clean AgentWikis-style registry generated from pixi-vault namespaces.",
+        "schema_version": "pixi-agentwikis-registry-v1",
+        "source_repo": "pixiiidust/ObsidianVault",
         "source_path": "wikis/<slug>/",
         "raw_pattern": "/raw/<slug>/<path>",
         "html_pattern": "/wiki/<slug>/<path>.html",
-        "legacy_root_flat_pages": "temporary-shims",
+        "legacy_root_flat_pages": "removed",
+        "wikis": wikis,
+        "comingSoon": [],
     }
-    (output_root / "index.json").write_text(json.dumps(legacy_index, indent=2), encoding="utf-8")
-    llms_text = legacy_llms + "\n\n" + NAMESPACE_LLM_MARKER + "\n\n" + "".join(namespace_llms)
-    (output_root / "llms.txt").write_text(llms_text.rstrip() + "\n", encoding="utf-8")
-    full_body = "\n\n".join(f"<!-- ===== {name} ===== -->\n\n{text}" for name, text in full_sections)
-    full_text = legacy_full + "\n\n" + NAMESPACE_FULL_MARKER + "\n\n" + full_body
-    (output_root / "llms-full.txt").write_text(full_text.rstrip() + "\n", encoding="utf-8")
+    (output_root / "index.json").write_text(json.dumps(registry, indent=2) + "\n", encoding="utf-8")
+    (output_root / "llms.txt").write_text("".join(llms_parts).rstrip() + "\n", encoding="utf-8")
+    full_body = "\n\n".join(f"<!-- ===== {name} ===== -->\n\n{text}" for name, text in all_full_sections)
+    (output_root / "llms-full.txt").write_text(full_body.rstrip() + "\n", encoding="utf-8")
 
-    index_html = (output_root / "index.html").read_text(encoding="utf-8")
-    namespace_section = """<section class="card" id="agentwikis-namespace-registry">
-  <h2>AgentWikis Namespace Registry</h2>
-  <p>New canonical namespace skeleton generated from <code>pixi-vault/wikis/&lt;slug&gt;</code>. Legacy root flat pages remain temporary shims during the migration grace period.</p>
-  <ul>
-"""
-    for wiki in wikis:
-        namespace_section += f'    <li><a href="/pixi-wiki/wiki/{wiki["slug"]}/README.md.html">{html.escape(wiki["title"])}</a> <span class="meta">({wiki["documentCount"]} docs)</span></li>\n'
-    namespace_section += "  </ul>\n</section>\n"
-    if 'id="agentwikis-namespace-registry"' in index_html:
-        index_html = re.sub(r'<section class="card" id="agentwikis-namespace-registry">.*?</section>\n?', namespace_section, index_html, flags=re.DOTALL)
-    elif "</main>" in index_html:
-        index_html = index_html.replace("</main>", namespace_section + "\n</main>")
-    else:
-        index_html += "\n" + namespace_section
+    index_html = f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pixi Wiki</title>
+<style>body{{font-family:Inter,system-ui,sans-serif;max-width:1120px;margin:32px auto;padding:0 20px;background:#0b1020;color:#e5edf7;line-height:1.6}}a{{color:#8bd3ff}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}}.card{{border:1px solid #24324f;border-radius:14px;padding:18px;background:#111a2e}}.meta{{color:#9fb3c8;font-size:.9rem}}</style>
+</head><body>
+<header><h1>Pixi Wiki</h1><p>Clean namespace registry generated from <code>pixi-vault/wikis/&lt;slug&gt;</code>.</p><p><a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/llms-full.txt">llms-full.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></p></header>
+<main class="grid">
+{''.join(index_cards)}
+</main>
+</body></html>"""
     (output_root / "index.html").write_text(index_html, encoding="utf-8")
-
-    styles = output_root / "agent" / "styles.css"
-    styles.parent.mkdir(parents=True, exist_ok=True)
-    if not styles.exists():
-        styles.write_text("body{font-family:Inter,system-ui,sans-serif;}\n", encoding="utf-8")
 
 
 def main() -> None:

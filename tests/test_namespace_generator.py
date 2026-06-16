@@ -21,7 +21,6 @@ def write_fixture_source(base: Path) -> Path:
     source = base / "source" / "wikis"
     ns = source / "sample-namespace"
     (ns / "wiki" / "concepts").mkdir(parents=True)
-    (ns / "raw").mkdir(parents=True)
     (ns / "README.md").write_text(
         """---
 title: Sample Namespace
@@ -103,64 +102,75 @@ This fixture proves raw Markdown and HTML are generated.
     return source
 
 
-def write_legacy_output(base: Path) -> Path:
+def write_messy_output(base: Path) -> Path:
     output = base / "output"
     (output / "agent").mkdir(parents=True)
-    (output / "index.json").write_text(
-        json.dumps(
-            {
-                "name": "Legacy Pixi Wiki",
-                "concepts": [{"slug": "legacy-concept"}],
-                "documents": [{"path": "legacy-doc"}],
-                "packs": [{"slug": "projects-legacy"}],
-            },
-            indent=2,
-        ),
-        encoding="utf-8",
-    )
-    (output / "llms.txt").write_text("# Legacy llms\n\nLegacy content stays.\n", encoding="utf-8")
-    (output / "llms-full.txt").write_text("# Legacy full\n\nLegacy full stays.\n", encoding="utf-8")
-    (output / "index.html").write_text(
-        "<!doctype html><main><section class=\"card\"><h1>Legacy</h1></section></main>",
-        encoding="utf-8",
-    )
-    (output / "agent" / "styles.css").write_text("body{}\n", encoding="utf-8")
+    (output / "raw" / "Knowledge").mkdir(parents=True)
+    (output / "wiki" / "knowledge").mkdir(parents=True)
+    (output / "legacy").mkdir(parents=True)
+    (output / "index.json").write_text('{"name":"legacy","concepts":[{"slug":"old"}]}', encoding="utf-8")
+    (output / "llms.txt").write_text("# Legacy llms\n", encoding="utf-8")
+    (output / "llms-full.txt").write_text("# Legacy full\n", encoding="utf-8")
+    (output / "index.html").write_text("<main>Legacy</main>", encoding="utf-8")
+    (output / "concept-old.html").write_text("old root clutter", encoding="utf-8")
+    (output / "projects-old.html").write_text("old root clutter", encoding="utf-8")
+    (output / "knowledge.html").write_text("old root clutter", encoding="utf-8")
+    (output / "agent" / "llms.txt").write_text("old agent layer", encoding="utf-8")
+    (output / "raw" / "Knowledge" / "old.md").write_text("old raw layer", encoding="utf-8")
+    (output / "wiki" / "knowledge" / "index.html").write_text("old wiki layer", encoding="utf-8")
     return output
 
 
-def test_generator_preserves_legacy_and_adds_namespace_registry(tmp_path: Path) -> None:
+def test_generator_rebuilds_clean_namespace_registry(tmp_path: Path) -> None:
     generator = load_generator()
     source = write_fixture_source(tmp_path)
-    output = write_legacy_output(tmp_path)
+    output = write_messy_output(tmp_path)
 
     generator.build(source, output, ["sample-namespace"])
 
     data = json.loads((output / "index.json").read_text(encoding="utf-8"))
-    assert data["concepts"] == [{"slug": "legacy-concept"}]
-    assert data["documents"] == [{"path": "legacy-doc"}]
-    assert data["packs"] == [{"slug": "projects-legacy"}]
+    assert data["schema_version"] == "pixi-agentwikis-registry-v1"
+    assert "concepts" not in data
+    assert "packs" not in data
+    assert data["legacy_root_flat_pages"] == "removed"
     assert data["wikis"][0]["slug"] == "sample-namespace"
-    assert data["namespace_registry"]["source_path"] == "wikis/<slug>/"
+    assert data["wikis"][0]["documentCount"] == 5
 
-    assert (output / "raw" / "sample-namespace" / "wiki" / "concepts" / "test-concept.md").exists()
+    raw_path = output / "raw" / "sample-namespace" / "wiki" / "concepts" / "test-concept.md"
     html_path = output / "wiki" / "sample-namespace" / "wiki" / "concepts" / "test-concept.md.html"
+    assert raw_path.exists()
     assert html_path.exists()
     assert "Test Concept" in html_path.read_text(encoding="utf-8")
 
 
-def test_generator_is_idempotent_for_namespace_sections(tmp_path: Path) -> None:
+def test_generator_removes_legacy_root_and_old_layers(tmp_path: Path) -> None:
     generator = load_generator()
     source = write_fixture_source(tmp_path)
-    output = write_legacy_output(tmp_path)
+    output = write_messy_output(tmp_path)
 
     generator.build(source, output, ["sample-namespace"])
+
+    for name in ["concept-old.html", "projects-old.html", "knowledge.html"]:
+        assert not (output / name).exists(), name
+    for name in ["agent", "legacy"]:
+        assert not (output / name).exists(), name
+    assert not (output / "raw" / "Knowledge").exists()
+    assert not (output / "wiki" / "knowledge").exists()
+
+    root_html = sorted(path.name for path in output.glob("*.html"))
+    assert root_html == ["index.html"]
+
+
+def test_generator_is_idempotent_for_clean_output(tmp_path: Path) -> None:
+    generator = load_generator()
+    source = write_fixture_source(tmp_path)
+    output = write_messy_output(tmp_path)
+
     generator.build(source, output, ["sample-namespace"])
+    first = (output / "llms.txt").read_text(encoding="utf-8")
+    generator.build(source, output, ["sample-namespace"])
+    second = (output / "llms.txt").read_text(encoding="utf-8")
 
-    llms = (output / "llms.txt").read_text(encoding="utf-8")
-    llms_full = (output / "llms-full.txt").read_text(encoding="utf-8")
-    index_html = (output / "index.html").read_text(encoding="utf-8")
-
-    assert llms.count("# Pixi Wiki Namespace Registry") == 1
-    assert llms_full.count("AgentWikis namespace registry skeleton") == 1
-    assert index_html.count('id="agentwikis-namespace-registry"') == 1
-    assert llms.count("## Sample Namespace") == 1
+    assert first == second
+    assert second.count("# Pixi Wiki Namespace Registry") == 1
+    assert second.count("## Sample Namespace") == 1

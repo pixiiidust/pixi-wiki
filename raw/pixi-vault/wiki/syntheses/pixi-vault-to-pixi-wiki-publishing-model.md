@@ -51,15 +51,17 @@ pixi-wiki/
 6. Push both repos as needed.
 7. Verify live GitHub Pages URLs with HTTP 200 checks.
 
-## Legacy shims
+## Clean rebuild policy
 
-Old root flat pages in `pixi-wiki` are temporary compatibility shims. They protect old links, but they are not canonical. New canonical routes live under `/raw/<slug>/...` and `/wiki/<slug>/...`.
+Old root flat pages in `pixi-wiki` are removed from the canonical public contract. The clean mirror should have only root registry files plus `/raw/<slug>/...` and `/wiki/<slug>/...` namespace trees.
+
+No old `concept-*.html`, `projects-*.html`, `knowledge.html`, `projects.html`, `maps-of-content.html`, `root.html`, `agent/`, or `legacy/` surface should reappear without a deliberate compatibility policy and regression coverage.
 
 ## Cross-namespace relationships
 
-- `agent-workflows` documents crew workflows affected by source-truth boundaries.
-- `eval-trace` evaluates whether agents overfit stale context or skip live verification.
-- `local-ai-infrastructure` will matter when RAG or local models consume compiled wiki pages.
+- [Agent Workflows](../../../agent-workflows/README.md) documents crew workflows affected by source-truth boundaries, Knowledge Pack Routing, and markdown-first agent memory.
+- [Eval Trace](../../../eval-trace/README.md) evaluates whether agents overfit stale context or skip live verification.
+- [Local AI Infrastructure](../../../local-ai-infrastructure/README.md) will matter when RAG or local models consume compiled wiki pages.
 
 ## Source
 

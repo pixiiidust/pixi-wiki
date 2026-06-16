@@ -1,153 +1,6 @@
-# Pixiedust Knowledge Wiki
-
-> Whole-wiki routing overview for humans and agents. This file is a map to canonical truth, not the truth itself.
-
-## Agent Start Here
-
-- [Human overview](/pixi-wiki/) — front door for the public wiki.
-- [Knowledge domain llms.txt](/pixi-wiki/wiki/knowledge/llms.txt) — routes to durable concepts.
-- [Projects domain llms.txt](/pixi-wiki/wiki/projects/llms.txt) — routes to project packs and live-check expectations.
-- [Maps of Content llms.txt](/pixi-wiki/wiki/maps-of-content/llms.txt) — map room/navigation cortex.
-- [Machine registry](/pixi-wiki/index.json) — structured human/agent/raw/source route seams.
-- [Full corpus](/pixi-wiki/llms-full.txt) — compatibility full-text bundle.
-
-## Roles
-
-- Overview is the front door: use it to understand the whole public wiki.
-- Maps of Content are the internal map room/navigation cortex: use them for traversal, not as content dumps.
-- Knowledge concepts are durable synthesis nodes; verify project/runtime facts elsewhere.
-- Project packs route to active project truth, but GitHub issues, PRDs, project hubs, and live tools remain canonical for current status.
-- Raw mirrors are provenance/debug paths, not primary human navigation.
-
-## Domains
-
-### Maps of Content
-
-- Domain route: [Maps of Content llms.txt](/pixi-wiki/wiki/maps-of-content/llms.txt)
-- [Maps of Content Domain Pack](/pixi-wiki/wiki/maps-of-content/) — role: `domain-entrypoint` — agent: [wiki/maps-of-content/llms.txt](/pixi-wiki/wiki/maps-of-content/llms.txt) — raw: [source](/pixi-wiki/raw/Maps of Content/llms.txt) — current: 2026-06-15
-
-### Knowledge
-
-- Domain route: [Knowledge llms.txt](/pixi-wiki/wiki/knowledge/llms.txt)
-- [Knowledge Domain Pack](/pixi-wiki/wiki/knowledge/) — role: `domain-entrypoint` — agent: [wiki/knowledge/llms.txt](/pixi-wiki/wiki/knowledge/llms.txt) — raw: [source](/pixi-wiki/raw/Knowledge/llms.txt) — current: 2026-06-15
-- [AI-Native Problem Framing Framework](/pixi-wiki/wiki/knowledge/concepts/ai-native-problem-framing-framework/) — agent: [wiki/knowledge/concepts/ai-native-problem-framing-framework/llms.txt](/pixi-wiki/wiki/knowledge/concepts/ai-native-problem-framing-framework/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/ai-native-problem-framing-framework.md) — updated: 2026-06-11
-- [Agent Capability Route Pattern](/pixi-wiki/wiki/knowledge/concepts/agent-capability-route-pattern/) — agent: [wiki/knowledge/concepts/agent-capability-route-pattern/llms.txt](/pixi-wiki/wiki/knowledge/concepts/agent-capability-route-pattern/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/agent-capability-route-pattern.md) — updated: 2026-06-13
-- [Agent Wikis](/pixi-wiki/wiki/knowledge/concepts/agent-wikis/) — agent: [wiki/knowledge/concepts/agent-wikis/llms.txt](/pixi-wiki/wiki/knowledge/concepts/agent-wikis/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/agent-wikis.md) — updated: 2026-06-15 — Agent-native knowledge surfaces that give agents maintained, scoped, source-backed maps before they act.
-- [Bounded Context Tree Pattern](/pixi-wiki/wiki/knowledge/concepts/bounded-context-tree-pattern/) — agent: [wiki/knowledge/concepts/bounded-context-tree-pattern/llms.txt](/pixi-wiki/wiki/knowledge/concepts/bounded-context-tree-pattern/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/bounded-context-tree-pattern.md) — updated: 2026-06-07
-- [Building Software Is Learning](/pixi-wiki/wiki/knowledge/concepts/building-software-is-learning/) — agent: [wiki/knowledge/concepts/building-software-is-learning/llms.txt](/pixi-wiki/wiki/knowledge/concepts/building-software-is-learning/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/building-software-is-learning.md) — updated: 2026-06-11
-- [Context Overfitting](/pixi-wiki/wiki/knowledge/concepts/context-overfitting/) — agent: [wiki/knowledge/concepts/context-overfitting/llms.txt](/pixi-wiki/wiki/knowledge/concepts/context-overfitting/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/context-overfitting.md) — updated: 2026-06-15 — Failure mode where an agent treats written memory, rules, project notes, or prior suggestions as hard constraints instead of weak priors that current intent and live evidence can override.
-- [Find the Lock: Problem-First Approach](/pixi-wiki/wiki/knowledge/concepts/find-the-lock-problem-first/) — agent: [wiki/knowledge/concepts/find-the-lock-problem-first/llms.txt](/pixi-wiki/wiki/knowledge/concepts/find-the-lock-problem-first/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/find-the-lock-problem-first.md) — updated: 2026-06-11
-- [Hermes SOUL.md Wiring](/pixi-wiki/wiki/knowledge/concepts/hermes-soul-md-wiring/) — agent: [wiki/knowledge/concepts/hermes-soul-md-wiring/llms.txt](/pixi-wiki/wiki/knowledge/concepts/hermes-soul-md-wiring/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/hermes-soul-md-wiring.md) — updated: 2026-06-12
-- [Local Retrieval-Augmented Agent Infrastructure](/pixi-wiki/wiki/knowledge/concepts/local-retrieval-agent-infrastructure/) — agent: [wiki/knowledge/concepts/local-retrieval-agent-infrastructure/llms.txt](/pixi-wiki/wiki/knowledge/concepts/local-retrieval-agent-infrastructure/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/local-retrieval-agent-infrastructure.md) — updated: 2026-06-15 — Applied architecture lessons from Krill's dual-RTX 5090 local agent stack — hardware setup, retrieval pipeline (Qdrant + Ollama + MCP), agent workflow governance, and relevance to Jamie's PC build decisions.
-- [MOC Knowledge Cortex](/pixi-wiki/wiki/knowledge/concepts/moc-knowledge-cortex/) — agent: [wiki/knowledge/concepts/moc-knowledge-cortex/llms.txt](/pixi-wiki/wiki/knowledge/concepts/moc-knowledge-cortex/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/moc-knowledge-cortex.md) — updated: 2026-06-13 — Model of the MOC layer as the routing brain of the vault, keeping durable notes reachable through clear domain branches.
-- [Matt Pocock SDLC Rhythm](/pixi-wiki/wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/) — agent: [wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/llms.txt](/pixi-wiki/wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md) — updated: 2026-06-07
-- [Peer Profiles vs Child Processes](/pixi-wiki/wiki/knowledge/concepts/peer-profiles-vs-child-processes/) — agent: [wiki/knowledge/concepts/peer-profiles-vs-child-processes/llms.txt](/pixi-wiki/wiki/knowledge/concepts/peer-profiles-vs-child-processes/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/peer-profiles-vs-child-processes.md) — updated: 2026-06-13 — Architecture decision for when Jamie's crew agents run as peer Hermes profiles versus child/subagent processes.
-- [Profile Memory Boundaries](/pixi-wiki/wiki/knowledge/concepts/profile-memory-boundaries/) — agent: [wiki/knowledge/concepts/profile-memory-boundaries/llms.txt](/pixi-wiki/wiki/knowledge/concepts/profile-memory-boundaries/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/profile-memory-boundaries.md) — updated: 2026-06-13 — Boundary model for routing durable knowledge between USER.md, Hermes memory, local knowledge, Obsidian/GitHub project truth, and skills.
-- [RAG over Agent Wikis](/pixi-wiki/wiki/knowledge/concepts/rag-over-agent-wikis/) — agent: [wiki/knowledge/concepts/rag-over-agent-wikis/llms.txt](/pixi-wiki/wiki/knowledge/concepts/rag-over-agent-wikis/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/rag-over-agent-wikis.md) — updated: 2026-06-15 — Foundation for using embeddings, semantic search, and retrieval-augmented generation over compiled agent wiki pages instead of raw source dumps.
-- [Runtime Memory Knowledge Routing](/pixi-wiki/wiki/knowledge/concepts/runtime-memory-knowledge-routing/) — agent: [wiki/knowledge/concepts/runtime-memory-knowledge-routing/llms.txt](/pixi-wiki/wiki/knowledge/concepts/runtime-memory-knowledge-routing/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/runtime-memory-knowledge-routing.md) — updated: 2026-06-15 — Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.
-- [Self-Improving Agent Systems](/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/) — agent: [wiki/knowledge/concepts/self-improving-agent-systems/llms.txt](/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/self-improving-agent-systems.md) — updated: 2026-06-15 — Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
-- [Verb-First Product Positioning](/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/) — agent: [wiki/knowledge/concepts/verb-first-product-positioning/llms.txt](/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/verb-first-product-positioning.md) — updated: 2026-06-11
-
-### Projects
-
-- Domain route: [Projects llms.txt](/pixi-wiki/wiki/projects/llms.txt)
-- [Critical Ranger FFM Pack](/pixi-wiki/wiki/projects/critical-ranger-ffm/) — role: `project-entrypoint` — agent: [wiki/projects/critical-ranger-ffm/llms.txt](/pixi-wiki/wiki/projects/critical-ranger-ffm/llms.txt) — raw: [source](/pixi-wiki/raw/Projects/Critical Ranger FFM/llms.txt) — current: 2026-06-15
-- [Eval Trace Project Pack](/pixi-wiki/wiki/projects/eval-trace/) — role: `project-entrypoint` — agent: [wiki/projects/eval-trace/llms.txt](/pixi-wiki/wiki/projects/eval-trace/llms.txt) — raw: [source](/pixi-wiki/raw/Projects/Eval Trace/llms.txt) — current: 2026-06-15
-- [Hermes Mission Control Pack](/pixi-wiki/wiki/projects/hermes-mission-control/) — role: `project-entrypoint` — agent: [wiki/projects/hermes-mission-control/llms.txt](/pixi-wiki/wiki/projects/hermes-mission-control/llms.txt) — raw: [source](/pixi-wiki/raw/Projects/Hermes Mission Control/llms.txt) — current: 2026-06-15
-- [Planned Program Intel Pack](/pixi-wiki/wiki/projects/planned-program-intel/) — role: `project-entrypoint` — agent: [wiki/projects/planned-program-intel/llms.txt](/pixi-wiki/wiki/projects/planned-program-intel/llms.txt) — raw: [source](/pixi-wiki/raw/Projects/Planned Program Intel/llms.txt) — current: 2026-06-15
-- [Projects Domain Pack](/pixi-wiki/wiki/projects/) — role: `domain-entrypoint` — agent: [wiki/projects/llms.txt](/pixi-wiki/wiki/projects/llms.txt) — raw: [source](/pixi-wiki/raw/Projects/llms.txt) — current: 2026-06-15
-
-### Vault Root
-
-- Domain route: [Vault Root llms.txt](/pixi-wiki/llms.txt)
-- [ObsidianVault Root Pack](/pixi-wiki/) — role: `root-entrypoint` — agent: [llms.txt](/pixi-wiki/llms.txt) — raw: [source](/pixi-wiki/raw/llms.txt) — current: 2026-06-15
-
-## Do Not Do
-
-- Do not treat `llms.txt` files as replacements for PRDs, GitHub issues, project hubs, source notes, or live verification.
-- Do not prefer raw Markdown mirrors as the primary human route.
-- Do not use transitional `agent/` aliases as the canonical per-document model; prefer adjacent `/wiki/.../llms.txt` contracts.
-
-## Compatibility
-
-Root is for entrypoints only. Old flat HTML URLs are tiny compatibility shims that point to canonical `/wiki/**` pages; `agent/**` and `raw/**` remain separate machine/provenance surfaces.
-
----
-
-# Pixi Wiki
-> AgentWikis-style registry generated from pixi-vault compiled namespaces.
-> Raw Markdown: /raw/<slug>/<path>. Human HTML: /wiki/<slug>/<path>.
-
-## Pixi Vault
-
-> Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.
-> Current as of: 2026-06-16
-- [Pixi Vault Namespace Instructions](/raw/pixi-vault/CLAUDE.md)
-- [Pixi Vault](/raw/pixi-vault/README.md)
-- [Pixi Vault — Master Index](/raw/pixi-vault/wiki/index.md)
-- [Pixi Vault — Activity Log](/raw/pixi-vault/wiki/log.md)
-
-## Agent Workflows
-
-> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, self-improving agent systems, and workflow reliability practices.
-> Current as of: 2026-06-16
-- [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md)
-- [Agent Workflows](/raw/agent-workflows/README.md)
-- [Hermes Mission Control](/raw/agent-workflows/wiki/entities/hermes-mission-control.md)
-- [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md)
-- [Agent Workflows — Activity Log](/raw/agent-workflows/wiki/log.md)
-
-## Eval Trace
-
-> Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.
-> Current as of: 2026-06-16
-- [Eval Trace Namespace Instructions](/raw/eval-trace/CLAUDE.md)
-- [Eval Trace](/raw/eval-trace/README.md)
-- [Context Overfitting](/raw/eval-trace/wiki/concepts/context-overfitting.md)
-- [Eval Trace — Master Index](/raw/eval-trace/wiki/index.md)
-- [Eval Trace — Activity Log](/raw/eval-trace/wiki/log.md)
-
-## AI-Native Product Surfaces
-
-> AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
-> Current as of: 2026-06-16
-- [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md)
-- [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md)
-- [AI-Native Product Surfaces — Master Index](/raw/ai-native-product-surfaces/wiki/index.md)
-- [AI-Native Product Surfaces — Activity Log](/raw/ai-native-product-surfaces/wiki/log.md)
-
-## RL Sim Labs
-
-> PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.
-> Current as of: 2026-06-16
-- [RL Sim Labs Namespace Instructions](/raw/rl-sim-labs/CLAUDE.md)
-- [RL Sim Labs](/raw/rl-sim-labs/README.md)
-- [RL Sim Labs — Master Index](/raw/rl-sim-labs/wiki/index.md)
-- [RL Sim Labs — Activity Log](/raw/rl-sim-labs/wiki/log.md)
-
-## Curated Tuning Datasets
-
-> Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
-> Current as of: 2026-06-16
-- [Curated Tuning Datasets Namespace Instructions](/raw/curated-tuning-datasets/CLAUDE.md)
-- [Curated Tuning Datasets](/raw/curated-tuning-datasets/README.md)
-- [Curated Tuning Datasets — Master Index](/raw/curated-tuning-datasets/wiki/index.md)
-- [Curated Tuning Datasets — Activity Log](/raw/curated-tuning-datasets/wiki/log.md)
-
-## Local AI Infrastructure
-
-> Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.
-> Current as of: 2026-06-16
-- [Local AI Infrastructure Namespace Instructions](/raw/local-ai-infrastructure/CLAUDE.md)
-- [Local AI Infrastructure](/raw/local-ai-infrastructure/README.md)
-- [Local AI Infrastructure — Master Index](/raw/local-ai-infrastructure/wiki/index.md)
-- [Local AI Infrastructure — Activity Log](/raw/local-ai-infrastructure/wiki/log.md)
-
----
-
 # Pixi Wiki Namespace Registry
 
-> AgentWikis-style registry generated from pixi-vault compiled namespaces.
+> Clean AgentWikis-style registry generated from pixi-vault compiled namespaces.
 
 > Raw Markdown: `/raw/<slug>/<path>`. Human HTML: `/wiki/<slug>/<path>.html`.
 
@@ -165,18 +18,22 @@ Root is for entrypoints only. Old flat HTML URLs are tiny compatibility shims th
 
 ## Agent Workflows
 
-> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, self-improving agent systems, and workflow reliability practices.
+> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practi
 > Current as of: 2026-06-16
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
 - [Agent Workflows](/raw/agent-workflows/README.md) ([html](/wiki/agent-workflows/README.md.html))
+- [Agent Entrypoint Mesh](/raw/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md.html))
+- [Knowledge Pack Routing](/raw/agent-workflows/wiki/concepts/knowledge-pack-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html))
 - [Peer Profiles vs Child Processes](/raw/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md) ([html](/wiki/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md.html))
 - [Profile Memory Boundaries](/raw/agent-workflows/wiki/concepts/profile-memory-boundaries.md) ([html](/wiki/agent-workflows/wiki/concepts/profile-memory-boundaries.md.html))
 - [Runtime Memory Knowledge Routing](/raw/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md.html))
 - [Self-Improving Agent Systems](/raw/agent-workflows/wiki/concepts/self-improving-agent-systems.md) ([html](/wiki/agent-workflows/wiki/concepts/self-improving-agent-systems.md.html))
+- [Static Retrieval Evals](/raw/agent-workflows/wiki/concepts/static-retrieval-evals.md) ([html](/wiki/agent-workflows/wiki/concepts/static-retrieval-evals.md.html))
 - [Hermes Mission Control](/raw/agent-workflows/wiki/entities/hermes-mission-control.md) ([html](/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html))
 - [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md) ([html](/wiki/agent-workflows/wiki/index.md.html))
 - [Agent Workflows — Activity Log](/raw/agent-workflows/wiki/log.md) ([html](/wiki/agent-workflows/wiki/log.md.html))
+- [Markdown-First Agent Memory](/raw/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md) ([html](/wiki/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md.html))
 - [Pixoid Crew Operating Model](/raw/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md) ([html](/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html))
 
 ## Eval Trace

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Static Retrieval Evals</title>
+<style>body{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}a{color:#8bd3ff}code,pre{background:#111a2e;border-radius:6px}pre{padding:12px;overflow:auto}.meta{color:#9fb3c8;font-size:.9rem}nav{margin-bottom:20px}</style>
+</head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
+<h1>Static Retrieval Evals</h1>
+<p>**Static retrieval evals** are small question sets that test whether the current markdown/wiki routing surface answers important agent questions before heavier retrieval infrastructure is justified.</p>
+<p>They are a build/no-build gate.</p>
+<h2>What they test</h2>
+<p>A good static retrieval eval asks questions that reveal routing failures:</p>
+<ul>
+<li>Does the agent find the active repo or project?</li>
+<li>Does it distinguish canonical source truth from derived output?</li>
+<li>Does it understand what the pack does not cover?</li>
+<li>Does it preserve provenance and source boundaries?</li>
+<li>Does it avoid leaking secrets or relying on scratch notes?</li>
+<li>Does it know when to escalate to live tools or GitHub?</li>
+</ul>
+<h2>Gate behavior</h2>
+<p>If the static eval passes, do not build search/RAG/MCP just because it feels sophisticated. Improve the markdown route only when the eval exposes a concrete failure.</p>
+<p>If the eval fails, fix the cheapest layer first: source wording, index coverage, scope boundaries, crosslinks, or freshness metadata. Only then consider infrastructure.</p>
+<h2>Related pages</h2>
+<ul>
+<li>knowledge-pack-routing</li>
+<li>agent-entrypoint-mesh</li>
+<li><a href="../../../eval-trace/wiki/concepts/context-overfitting.md">Context Overfitting</a></li>
+</ul>
+</body></html>

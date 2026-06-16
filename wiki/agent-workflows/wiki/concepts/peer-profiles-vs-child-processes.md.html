@@ -1,7 +1,24 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Peer Profiles vs Child Processes</title><link rel="stylesheet" href="/pixi-wiki/agent/styles.css">
+<title>Peer Profiles vs Child Processes</title>
 <style>body{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}a{color:#8bd3ff}code,pre{background:#111a2e;border-radius:6px}pre{padding:12px;overflow:auto}.meta{color:#9fb3c8;font-size:.9rem}nav{margin-bottom:20px}</style>
 </head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
-<h1>Peer Profiles vs Child Processes</h1><p>Jamie&#x27;s named crew agents are **peer Hermes profiles by default**, not Pixoid-owned child processes.</p><h2>Decision</h2><ul><li>Pixoid/default is the human-facing control plane, orchestrator, reviewer, and reporting surface.</li><li>Tinker is the builder profile for bounded repo work.</li><li>Quill is the scribe/vault profile for bounded source-of-truth updates.</li><li>Boba is the explorer/research profile for public-web and source checks.</li></ul><p>Pixoid may use <code>delegate_task</code> for local analysis or to simulate a viewpoint, but that is not proof that a named peer profile executed work.</p><h2>When child execution is acceptable</h2><p>Use child/subagent execution for local analysis, review, or drafting when Pixoid will verify the result and no external side effect needs to be attributed to a named peer profile.</p><h2>When a real peer route is required</h2><p>Use a real peer route when issue or route contracts require requested/actual profile evidence, profile-specific tools, profile memory, delivery identity, or auditable worker execution.</p><h2>Circuit breaker</h2><p>Unapproved route recursion is forbidden. Pause if routes attempt direct worker-to-worker triggering, A→B→A loops, profile-wide autonomy, or dynamic supervisors without an approved deployment slice.</p><h2>Source</h2><p>Compiled from <code>Knowledge/concepts/peer-profiles-vs-child-processes.md</code>.</p>
+<h1>Peer Profiles vs Child Processes</h1>
+<p>Jamie&#x27;s named crew agents are **peer Hermes profiles by default**, not Pixoid-owned child processes.</p>
+<h2>Decision</h2>
+<ul>
+<li>Pixoid/default is the human-facing control plane, orchestrator, reviewer, and reporting surface.</li>
+<li>Tinker is the builder profile for bounded repo work.</li>
+<li>Quill is the scribe/vault profile for bounded source-of-truth updates.</li>
+<li>Boba is the explorer/research profile for public-web and source checks.</li>
+</ul>
+<p>Pixoid may use <code>delegate_task</code> for local analysis or to simulate a viewpoint, but that is not proof that a named peer profile executed work.</p>
+<h2>When child execution is acceptable</h2>
+<p>Use child/subagent execution for local analysis, review, or drafting when Pixoid will verify the result and no external side effect needs to be attributed to a named peer profile.</p>
+<h2>When a real peer route is required</h2>
+<p>Use a real peer route when issue or route contracts require requested/actual profile evidence, profile-specific tools, profile memory, delivery identity, or auditable worker execution.</p>
+<h2>Circuit breaker</h2>
+<p>Unapproved route recursion is forbidden. Pause if routes attempt direct worker-to-worker triggering, A→B→A loops, profile-wide autonomy, or dynamic supervisors without an approved deployment slice.</p>
+<h2>Source</h2>
+<p>Compiled from <code>Knowledge/concepts/peer-profiles-vs-child-processes.md</code>.</p>
 </body></html>

@@ -1,7 +1,26 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Runtime Memory Knowledge Routing</title><link rel="stylesheet" href="/pixi-wiki/agent/styles.css">
+<title>Runtime Memory Knowledge Routing</title>
 <style>body{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}a{color:#8bd3ff}code,pre{background:#111a2e;border-radius:6px}pre{padding:12px;overflow:auto}.meta{color:#9fb3c8;font-size:.9rem}nav{margin-bottom:20px}</style>
 </head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
-<h1>Runtime Memory Knowledge Routing</h1><p>**Runtime memory knowledge routing** is the live decision rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search while doing work.</p><h2>Layer model</h2><ul><li>Injected memory and user profile are hints, not proof.</li><li>Honcho provides recalled peer context and synthesis.</li><li>Local Hermes knowledge carries reusable agent-operational concepts.</li><li>Obsidian Knowledge carries human-facing durable concepts and source-backed synthesis.</li><li>Projects and GitHub carry current project truth.</li><li>Skills carry procedures.</li><li>Session search recovers prior conversation context, but is never canonical alone.</li></ul><h2>Operating pattern</h2><p>1. Start with injected memory as routing context.</p><p>2. Load relevant knowledge/wiki packs when the task touches a durable domain.</p><p>3. Verify live project/runtime state before acting on current facts.</p><p>4. Promote durable learning to the narrowest correct layer after the work.</p><p>5. Never save raw outputs, issue progress, PR numbers, or command logs to memory.</p><h2>Source</h2><p>Compiled from <code>Knowledge/concepts/runtime-memory-knowledge-routing.md</code>.</p>
+<h1>Runtime Memory Knowledge Routing</h1>
+<p>**Runtime memory knowledge routing** is the live decision rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search while doing work.</p>
+<h2>Layer model</h2>
+<ul>
+<li>Injected memory and user profile are hints, not proof.</li>
+<li>Honcho provides recalled peer context and synthesis.</li>
+<li>Local Hermes knowledge carries reusable agent-operational concepts.</li>
+<li>Obsidian Knowledge carries human-facing durable concepts and source-backed synthesis.</li>
+<li>Projects and GitHub carry current project truth.</li>
+<li>Skills carry procedures.</li>
+<li>Session search recovers prior conversation context, but is never canonical alone.</li>
+</ul>
+<h2>Operating pattern</h2>
+<p>1. Start with injected memory as routing context.</p>
+<p>2. Load relevant knowledge/wiki packs when the task touches a durable domain.</p>
+<p>3. Verify live project/runtime state before acting on current facts.</p>
+<p>4. Promote durable learning to the narrowest correct layer after the work.</p>
+<p>5. Never save raw outputs, issue progress, PR numbers, or command logs to memory.</p>
+<h2>Source</h2>
+<p>Compiled from <code>Knowledge/concepts/runtime-memory-knowledge-routing.md</code>.</p>
 </body></html>

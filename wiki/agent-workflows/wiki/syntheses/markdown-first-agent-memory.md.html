@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Markdown-First Agent Memory</title>
+<style>body{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}a{color:#8bd3ff}code,pre{background:#111a2e;border-radius:6px}pre{padding:12px;overflow:auto}.meta{color:#9fb3c8;font-size:.9rem}nav{margin-bottom:20px}</style>
+</head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
+<h1>Markdown-First Agent Memory</h1>
+<p>Markdown-first agent memory is the rule that durable operational knowledge should live in source-controlled notes, packs, issues, and skills before it becomes infrastructure.</p>
+<p>The memory layer should help the agent route itself. It should not become a hidden second database of project truth.</p>
+<h2>Layer model</h2>
+<ul>
+<li>**Injected memory:** compact stable hints, preferences, and environment facts.</li>
+<li>**Knowledge / wiki pages:** durable concepts and synthesis.</li>
+<li>**Project notes:** concrete project state and decisions.</li>
+<li>**GitHub issues:** execution truth and active coordination.</li>
+<li>**Skills:** reusable procedures.</li>
+<li>**Live tools:** current system state and verification.</li>
+</ul>
+<p>Markdown-first means the agent can inspect and cite the source. When the source is too volatile, the agent should use live tools instead of freezing it into memory.</p>
+<h2>Why this matters</h2>
+<p>Hidden memory is convenient but hard to audit. Markdown and issues are slower but visible, reviewable, and versioned. For Jamie&#x27;s crew, that makes them better default truth surfaces.</p>
+<h2>Failure mode</h2>
+<p>The danger is treating written context as commandment. Packs and notes are routing aids. They must be overridden by current GitHub state, live filesystem state, tests, and Jamie&#x27;s latest instruction.</p>
+<h2>Related pages</h2>
+<ul>
+<li>Knowledge Pack Routing</li>
+<li>Agent Entrypoint Mesh</li>
+<li>Profile Memory Boundaries</li>
+<li>Runtime Memory Knowledge Routing</li>
+</ul>
+</body></html>

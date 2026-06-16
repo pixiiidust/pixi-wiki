@@ -1,7 +1,28 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Wiki Compiler Map and Source Classes</title><link rel="stylesheet" href="/pixi-wiki/agent/styles.css">
+<title>Wiki Compiler Map and Source Classes</title>
 <style>body{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}a{color:#8bd3ff}code,pre{background:#111a2e;border-radius:6px}pre{padding:12px;overflow:auto}.meta{color:#9fb3c8;font-size:.9rem}nav{margin-bottom:20px}</style>
 </head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
-<h1>Wiki Compiler Map and Source Classes</h1><p>A **Wiki Compiler Map** is an internal routing artifact that maps authoring-source notes into compiled AgentWikis namespaces. It replaces the old MOC mental model when the job is source-to-namespace routing.</p><h2>Why this exists</h2><p>The vault has many useful authoring surfaces: <code>Knowledge/</code>, <code>Projects/</code>, scratch chronology, generated reports, and project artifacts. Future agents need a durable contract for deciding which of those are canonical enough to compile into public/agent-facing wiki pages.</p><h2>Source classes</h2><h3>Canonical</h3><p>Canonical sources can directly feed compiled namespace pages after normal review. Examples include <code>Knowledge/concepts/*.md</code>, <code>Projects/&lt;Project&gt;/Index.md</code>, PRDs, ADRs, source inventories, verified project reports, and committed repo artifacts with stable paths.</p><h3>Supporting</h3><p>Supporting sources guide routing and maintenance. Examples include Wiki Compiler Maps, taxonomy maps, verified generated reports, lint reports, and issue tracker parent/child tables. They are not usually public wiki content unless rewritten deliberately.</p><h3>Scratch</h3><p>Scratch sources are volatile capture. They can help agents find context, but they do not compile directly unless Jamie/Pixoid promotes or verifies the relevant material against canonical sources.</p><h2>Namespace routing rules</h2><ul><li>Use one primary namespace for each compiled page.</li><li>Use crosslinks for secondary relevance.</li><li>Duplicate only when a source is rewritten for a genuinely different namespace-specific purpose.</li><li>Promote projects or concepts to standalone namespaces only through an explicit decision.</li></ul><h2>Promotion rule</h2><p>A source cluster can become a namespace when it has at least two of five signals: independent audience, multiple document types, raw source corpus, ongoing update lifecycle, or clear covers/not-covered scope.</p><h2>Source</h2><p>Compiled from <code>Wiki Compiler Maps/Namespace Wiki Compiler Map.md</code> and <code>Projects/Hermes Mission Control/PRD - Pixi Vault Namespace Compiler.md</code>.</p>
+<h1>Wiki Compiler Map and Source Classes</h1>
+<p>A **Wiki Compiler Map** is an internal routing artifact that maps authoring-source notes into compiled AgentWikis namespaces. It replaces the old MOC mental model when the job is source-to-namespace routing.</p>
+<h2>Why this exists</h2>
+<p>The vault has many useful authoring surfaces: <code>Knowledge/</code>, <code>Projects/</code>, scratch chronology, generated reports, and project artifacts. Future agents need a durable contract for deciding which of those are canonical enough to compile into public/agent-facing wiki pages.</p>
+<h2>Source classes</h2>
+<h3>Canonical</h3>
+<p>Canonical sources can directly feed compiled namespace pages after normal review. Examples include <code>Knowledge/concepts/*.md</code>, <code>Projects/&lt;Project&gt;/Index.md</code>, PRDs, ADRs, source inventories, verified project reports, and committed repo artifacts with stable paths.</p>
+<h3>Supporting</h3>
+<p>Supporting sources guide routing and maintenance. Examples include Wiki Compiler Maps, taxonomy maps, verified generated reports, lint reports, and issue tracker parent/child tables. They are not usually public wiki content unless rewritten deliberately.</p>
+<h3>Scratch</h3>
+<p>Scratch sources are volatile capture. They can help agents find context, but they do not compile directly unless Jamie/Pixoid promotes or verifies the relevant material against canonical sources.</p>
+<h2>Namespace routing rules</h2>
+<ul>
+<li>Use one primary namespace for each compiled page.</li>
+<li>Use crosslinks for secondary relevance.</li>
+<li>Duplicate only when a source is rewritten for a genuinely different namespace-specific purpose.</li>
+<li>Promote projects or concepts to standalone namespaces only through an explicit decision.</li>
+</ul>
+<h2>Promotion rule</h2>
+<p>A source cluster can become a namespace when it has at least two of five signals: independent audience, multiple document types, raw source corpus, ongoing update lifecycle, or clear covers/not-covered scope.</p>
+<h2>Source</h2>
+<p>Compiled from <code>Wiki Compiler Maps/Namespace Wiki Compiler Map.md</code> and <code>Projects/Hermes Mission Control/PRD - Pixi Vault Namespace Compiler.md</code>.</p>
 </body></html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Knowledge Pack Routing</title>
+<style>body{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}a{color:#8bd3ff}code,pre{background:#111a2e;border-radius:6px}pre{padding:12px;overflow:auto}.meta{color:#9fb3c8;font-size:.9rem}nav{margin-bottom:20px}</style>
+</head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
+<h1>Knowledge Pack Routing</h1>
+<p>**Knowledge Pack Routing** is Jamie&#x27;s markdown-first pattern for telling agents where durable truth lives before they start work.</p>
+<p>It does not try to put every fact into one file. A pack is a map to truth: it states scope, freshness, source paths, fallback rules, and ownership so the agent can route itself to GitHub issues, Obsidian notes, skills, session search, or live tools.</p>
+<h2>Why it exists</h2>
+<p>Without routing, agents waste context on archaeology, treat stale notes as current, or build infrastructure before proving retrieval failure. KPR makes the first step explicit: load the right compact contract, then follow canonical source links.</p>
+<h2>Operating rule</h2>
+<p>A useful pack answers five questions quickly:</p>
+<ul>
+<li>What does this pack cover?</li>
+<li>What does it explicitly not cover?</li>
+<li>How fresh is it?</li>
+<li>Where are the canonical source paths?</li>
+<li>What should the agent do if the answer is missing, stale, or out of scope?</li>
+</ul>
+<h2>Product judgment</h2>
+<p>KPR deliberately keeps MCP/RAG/search deferred until a concrete eval shows markdown routing cannot answer important questions. That turns retrieval infrastructure into a response to evidence, not a default reflex.</p>
+<h2>Related pages</h2>
+<ul>
+<li>agent-entrypoint-mesh</li>
+<li>static-retrieval-evals</li>
+<li>runtime-memory-knowledge-routing</li>
+<li>Hermes Mission Control</li>
+</ul>
+</body></html>

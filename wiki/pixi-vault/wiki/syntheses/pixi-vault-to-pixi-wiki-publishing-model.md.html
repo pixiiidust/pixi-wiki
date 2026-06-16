@@ -1,16 +1,42 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pixi Vault to Pixi Wiki Publishing Model</title><link rel="stylesheet" href="/pixi-wiki/agent/styles.css">
+<title>Pixi Vault to Pixi Wiki Publishing Model</title>
 <style>body{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}a{color:#8bd3ff}code,pre{background:#111a2e;border-radius:6px}pre{padding:12px;overflow:auto}.meta{color:#9fb3c8;font-size:.9rem}nav{margin-bottom:20px}</style>
 </head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
-<h1>Pixi Vault to Pixi Wiki Publishing Model</h1><p><code>pixi-vault</code> is the private source repository. <code>pixi-wiki</code> is the public generated mirror. The boundary is intentional: authoring truth and public output are separate artifacts.</p><h2>Source side</h2><pre><code>pixi-vault/
+<h1>Pixi Vault to Pixi Wiki Publishing Model</h1>
+<p><code>pixi-vault</code> is the private source repository. <code>pixi-wiki</code> is the public generated mirror. The boundary is intentional: authoring truth and public output are separate artifacts.</p>
+<h2>Source side</h2>
+<pre><code>pixi-vault/
 ├── Knowledge/              # reusable concept authoring
 ├── Projects/               # project/application source truth
 ├── Wiki Compiler Maps/     # routing contracts
-└── wikis/&lt;slug&gt;/           # compiled namespace source</code></pre><p>The <code>wikis/&lt;slug&gt;/</code> layer is compiled/curated source inside the vault. It is reviewable in Git and Obsidian, but agents should edit <code>Knowledge/</code>, <code>Projects/</code>, or Wiki Compiler Maps first unless intentionally patching compiled output.</p><h2>Public side</h2><pre><code>pixi-wiki/
+└── wikis/&lt;slug&gt;/           # compiled namespace source</code></pre>
+<p>The <code>wikis/&lt;slug&gt;/</code> layer is compiled/curated source inside the vault. It is reviewable in Git and Obsidian, but agents should edit <code>Knowledge/</code>, <code>Projects/</code>, or Wiki Compiler Maps first unless intentionally patching compiled output.</p>
+<h2>Public side</h2>
+<pre><code>pixi-wiki/
 ├── llms.txt
 ├── llms-full.txt
 ├── index.json
 ├── raw/&lt;slug&gt;/...
-└── wiki/&lt;slug&gt;/...</code></pre><p><code>llms.txt</code> is the compact agent registry. <code>llms-full.txt</code> is the full concatenated corpus. <code>index.json</code> is the machine-readable registry. <code>raw/&lt;slug&gt;/</code> preserves Markdown, and <code>wiki/&lt;slug&gt;/</code> exposes human-readable HTML.</p><h2>Publication workflow</h2><p>1. Update canonical source in <code>Knowledge/</code>, <code>Projects/</code>, or Wiki Compiler Maps.</p><p>2. Compile/curate into <code>wikis/&lt;slug&gt;/</code>.</p><p>3. Run namespace linting against <code>pixi-vault/wikis</code>.</p><p>4. Run the <code>pixi-wiki</code> generator.</p><p>5. Run public-output tests.</p><p>6. Push both repos as needed.</p><p>7. Verify live GitHub Pages URLs with HTTP 200 checks.</p><h2>Legacy shims</h2><p>Old root flat pages in <code>pixi-wiki</code> are temporary compatibility shims. They protect old links, but they are not canonical. New canonical routes live under <code>/raw/&lt;slug&gt;/...</code> and <code>/wiki/&lt;slug&gt;/...</code>.</p><h2>Cross-namespace relationships</h2><ul><li><code>agent-workflows</code> documents crew workflows affected by source-truth boundaries.</li><li><code>eval-trace</code> evaluates whether agents overfit stale context or skip live verification.</li><li><code>local-ai-infrastructure</code> will matter when RAG or local models consume compiled wiki pages.</li></ul><h2>Source</h2><p>Compiled from <code>Projects/Hermes Mission Control/PRD - Pixi Vault Namespace Compiler.md</code> and <code>Wiki Compiler Maps/Namespace Wiki Compiler Map.md</code>.</p>
+└── wiki/&lt;slug&gt;/...</code></pre>
+<p><code>llms.txt</code> is the compact agent registry. <code>llms-full.txt</code> is the full concatenated corpus. <code>index.json</code> is the machine-readable registry. <code>raw/&lt;slug&gt;/</code> preserves Markdown, and <code>wiki/&lt;slug&gt;/</code> exposes human-readable HTML.</p>
+<h2>Publication workflow</h2>
+<p>1. Update canonical source in <code>Knowledge/</code>, <code>Projects/</code>, or Wiki Compiler Maps.</p>
+<p>2. Compile/curate into <code>wikis/&lt;slug&gt;/</code>.</p>
+<p>3. Run namespace linting against <code>pixi-vault/wikis</code>.</p>
+<p>4. Run the <code>pixi-wiki</code> generator.</p>
+<p>5. Run public-output tests.</p>
+<p>6. Push both repos as needed.</p>
+<p>7. Verify live GitHub Pages URLs with HTTP 200 checks.</p>
+<h2>Clean rebuild policy</h2>
+<p>Old root flat pages in <code>pixi-wiki</code> are removed from the canonical public contract. The clean mirror should have only root registry files plus <code>/raw/&lt;slug&gt;/...</code> and <code>/wiki/&lt;slug&gt;/...</code> namespace trees.</p>
+<p>No old <code>concept-*.html</code>, <code>projects-*.html</code>, <code>knowledge.html</code>, <code>projects.html</code>, <code>maps-of-content.html</code>, <code>root.html</code>, <code>agent/</code>, or <code>legacy/</code> surface should reappear without a deliberate compatibility policy and regression coverage.</p>
+<h2>Cross-namespace relationships</h2>
+<ul>
+<li><a href="../../../agent-workflows/README.md">Agent Workflows</a> documents crew workflows affected by source-truth boundaries, Knowledge Pack Routing, and markdown-first agent memory.</li>
+<li><a href="../../../eval-trace/README.md">Eval Trace</a> evaluates whether agents overfit stale context or skip live verification.</li>
+<li><a href="../../../local-ai-infrastructure/README.md">Local AI Infrastructure</a> will matter when RAG or local models consume compiled wiki pages.</li>
+</ul>
+<h2>Source</h2>
+<p>Compiled from <code>Projects/Hermes Mission Control/PRD - Pixi Vault Namespace Compiler.md</code> and <code>Wiki Compiler Maps/Namespace Wiki Compiler Map.md</code>.</p>
 </body></html>

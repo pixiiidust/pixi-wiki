@@ -1,7 +1,23 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Eval Trace</title><link rel="stylesheet" href="/pixi-wiki/agent/styles.css">
+<title>Eval Trace</title>
 <style>body{font-family:Inter,system-ui,sans-serif;max-width:980px;margin:32px auto;padding:0 20px;line-height:1.6;background:#0b1020;color:#e5edf7}a{color:#8bd3ff}code,pre{background:#111a2e;border-radius:6px}pre{padding:12px;overflow:auto}.meta{color:#9fb3c8;font-size:.9rem}nav{margin-bottom:20px}</style>
 </head><body><nav><a href="/pixi-wiki/">Pixi Wiki</a> · <a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></nav>
-<h1>Eval Trace</h1><p>**Eval Trace** is Jamie&#x27;s local prototype for evaluating agent-workflow quality, especially context overfitting. It builds trace packets, runs deterministic prechecks, and can hand ambiguous cases to an LLM judge.</p><h2>Current artifact</h2><pre><code>.hermes/context-overfit/</code></pre><p>Current status: local prototype. It is not yet a public GitHub repo. The repo decision is deferred until the harness proves review-load reduction on real workflow traces.</p><h2>Current capabilities</h2><ul><li>Builds segmented trace packets from Hermes session exports.</li><li>Runs deterministic prechecks before any LLM judge.</li><li>Emits compact <code>judge_packets.jsonl</code> for reviewable <code>UNSURE</code> cases.</li><li>Supports real LLM judge passes when Jamie asks Pixoid to judge.</li><li>Reads <code>.hermes/knowledge/registry/project-status.json</code> for done/deprecated/replaced project status.</li></ul><h2>Next gate</h2><p>Before a standalone <code>pixiiidust/eval-trace</code> repo exists, prove value on real workflow traces: add sequence-level cron checks, run on recent crew outputs, and show a confirmed real <code>YES</code> or useful <code>UNSURE</code> clustering.</p><h2>Source</h2><p>Compiled from <code>Projects/Eval Trace/Index.md</code>.</p>
+<h1>Eval Trace</h1>
+<p>**Eval Trace** is Jamie&#x27;s local prototype for evaluating agent-workflow quality, especially context overfitting. It builds trace packets, runs deterministic prechecks, and can hand ambiguous cases to an LLM judge.</p>
+<h2>Current artifact</h2>
+<pre><code>.hermes/context-overfit/</code></pre>
+<p>Current status: local prototype. It is not yet a public GitHub repo. The repo decision is deferred until the harness proves review-load reduction on real workflow traces.</p>
+<h2>Current capabilities</h2>
+<ul>
+<li>Builds segmented trace packets from Hermes session exports.</li>
+<li>Runs deterministic prechecks before any LLM judge.</li>
+<li>Emits compact <code>judge_packets.jsonl</code> for reviewable <code>UNSURE</code> cases.</li>
+<li>Supports real LLM judge passes when Jamie asks Pixoid to judge.</li>
+<li>Reads <code>.hermes/knowledge/registry/project-status.json</code> for done/deprecated/replaced project status.</li>
+</ul>
+<h2>Next gate</h2>
+<p>Before a standalone <code>pixiiidust/eval-trace</code> repo exists, prove value on real workflow traces: add sequence-level cron checks, run on recent crew outputs, and show a confirmed real <code>YES</code> or useful <code>UNSURE</code> clustering.</p>
+<h2>Source</h2>
+<p>Compiled from <code>Projects/Eval Trace/Index.md</code>.</p>
 </body></html>
