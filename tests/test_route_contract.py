@@ -334,15 +334,26 @@ class WikiRouteLinkTest(unittest.TestCase):
                         f"Broken wiki link from {html_file.relative_to(ROOT)}: {href} -> {target}",
                     )
 
-    def test_overview_sidebar_links_explicit_human_html_surfaces(self) -> None:
-        """Overview sidebar/cards link to explicit human HTML files, not opaque directory routes."""
-        html = (ROOT / "index.html").read_text(encoding="utf-8")
+    def test_overview_is_short_front_door_not_full_catalog(self) -> None:
+        """Overview links only to the main doors; MOCs/domain pages own deep catalog traversal."""
+        page_html = (ROOT / "index.html").read_text(encoding="utf-8")
+        match = re.search(r'<article class="article">(.*?)</article>', page_html, re.DOTALL)
+        self.assertIsNotNone(match)
+        assert match is not None
+        html = match.group(1)
+        self.assertIn("What this site is", html)
+        self.assertIn("Start here", html)
+        self.assertIn("Public vs source/provenance", html)
+        self.assertIn("short overview", html)
         self.assertIn('href="wiki/knowledge/index.html"', html)
-        self.assertIn('href="wiki/knowledge/concepts/agent-wikis/index.html"', html)
-        self.assertIn('href="wiki/projects/eval-trace/index.html"', html)
+        self.assertIn('href="wiki/projects/index.html"', html)
         self.assertIn('href="wiki/maps-of-content/index.html"', html)
-        self.assertNotIn('href="wiki/knowledge/concepts/agent-wikis/"', html)
-        self.assertNotIn('href="wiki/projects/eval-trace/"', html)
+        self.assertIn('href="wiki/maps-of-content/llms.txt"', html)
+        self.assertNotIn('href="wiki/knowledge/concepts/agent-wikis/index.html"', html)
+        self.assertNotIn('href="wiki/projects/eval-trace/index.html"', html)
+        self.assertNotIn("Knowledge concepts</h2>", html)
+        self.assertNotIn("Project packs</h2>", html)
+        self.assertNotIn("Vault Root</h2>", html)
 
     def test_canonical_concept_page_renders_full_human_markdown_surface(self) -> None:
         """Canonical concept HTML should be the rich rendered Markdown page, not a tiny bundle stub."""
@@ -372,7 +383,10 @@ class WikiRouteLinkTest(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertIn("Agent access", html)
                 self.assertIn(">llms.txt<", html)
-                self.assertIn("view as markdown", html)
+                if path == "index.html":
+                    self.assertIn("view root source", html)
+                else:
+                    self.assertIn("view as markdown", html)
                 self.assertNotIn(">agent pack<", html)
                 for token in tokens:
                     self.assertIn(token, html)
