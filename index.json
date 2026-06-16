@@ -2079,5 +2079,149 @@
     "knowledge-management",
     "workflow"
   ],
-  "title": "Pixiedust Knowledge Wiki"
+  "title": "Pixiedust Knowledge Wiki",
+  "wikis": [
+    {
+      "slug": "pixi-vault",
+      "title": "Pixi Vault",
+      "description": "Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.",
+      "tags": [
+        "knowledge-systems"
+      ],
+      "category": "knowledge-systems",
+      "scope": {
+        "covers": "Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.",
+        "notCovered": "General agent workflow behavior unless it changes vault/compiler architecture; project-specific implementation details unless they affect the namespace compiler.",
+        "currentAs": "2026-06-16"
+      },
+      "lastUpdated": "2026-06-16",
+      "documentCount": 4,
+      "llms_txt": "/llms.txt",
+      "raw_base": "/raw/pixi-vault/",
+      "html_base": "/wiki/pixi-vault/"
+    },
+    {
+      "slug": "agent-workflows",
+      "title": "Agent Workflows",
+      "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, self-improving agent systems, and workflow reliability practices.",
+      "tags": [
+        "agents"
+      ],
+      "category": "agents",
+      "scope": {
+        "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, self-improving agent systems, and workflow reliability practices.",
+        "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution.",
+        "currentAs": "2026-06-16"
+      },
+      "lastUpdated": "2026-06-16",
+      "documentCount": 5,
+      "llms_txt": "/llms.txt",
+      "raw_base": "/raw/agent-workflows/",
+      "html_base": "/wiki/agent-workflows/"
+    },
+    {
+      "slug": "eval-trace",
+      "title": "Eval Trace",
+      "description": "Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.",
+      "tags": [
+        "evaluation"
+      ],
+      "category": "evaluation",
+      "scope": {
+        "covers": "Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.",
+        "notCovered": "General observability unrelated to workflow quality; product analytics unless used as an evaluation surface.",
+        "currentAs": "2026-06-16"
+      },
+      "lastUpdated": "2026-06-16",
+      "documentCount": 5,
+      "llms_txt": "/llms.txt",
+      "raw_base": "/raw/eval-trace/",
+      "html_base": "/wiki/eval-trace/"
+    },
+    {
+      "slug": "ai-native-product-surfaces",
+      "title": "AI-Native Product Surfaces",
+      "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.",
+      "tags": [
+        "product"
+      ],
+      "category": "product",
+      "scope": {
+        "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.",
+        "notCovered": "Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.",
+        "currentAs": "2026-06-16"
+      },
+      "lastUpdated": "2026-06-16",
+      "documentCount": 4,
+      "llms_txt": "/llms.txt",
+      "raw_base": "/raw/ai-native-product-surfaces/",
+      "html_base": "/wiki/ai-native-product-surfaces/"
+    },
+    {
+      "slug": "rl-sim-labs",
+      "title": "RL Sim Labs",
+      "description": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.",
+      "tags": [
+        "rl-simulation"
+      ],
+      "category": "rl-simulation",
+      "scope": {
+        "covers": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.",
+        "notCovered": "General local GPU setup unless required by RL experiment execution; unrelated game projects without RL/simulation learning goals.",
+        "currentAs": "2026-06-16"
+      },
+      "lastUpdated": "2026-06-16",
+      "documentCount": 4,
+      "llms_txt": "/llms.txt",
+      "raw_base": "/raw/rl-sim-labs/",
+      "html_base": "/wiki/rl-sim-labs/"
+    },
+    {
+      "slug": "curated-tuning-datasets",
+      "title": "Curated Tuning Datasets",
+      "description": "Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.",
+      "tags": [
+        "data-curation"
+      ],
+      "category": "data-curation",
+      "scope": {
+        "covers": "Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.",
+        "notCovered": "Training methods themselves except where they impose dataset-readiness requirements; copyright-risk decisions without provenance evidence.",
+        "currentAs": "2026-06-16"
+      },
+      "lastUpdated": "2026-06-16",
+      "documentCount": 4,
+      "llms_txt": "/llms.txt",
+      "raw_base": "/raw/curated-tuning-datasets/",
+      "html_base": "/wiki/curated-tuning-datasets/"
+    },
+    {
+      "slug": "local-ai-infrastructure",
+      "title": "Local AI Infrastructure",
+      "description": "Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.",
+      "tags": [
+        "infrastructure"
+      ],
+      "category": "infrastructure",
+      "scope": {
+        "covers": "Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.",
+        "notCovered": "Cloud-only infrastructure unless it affects local-first migration; product UX unless tied to local model constraints.",
+        "currentAs": "2026-06-16"
+      },
+      "lastUpdated": "2026-06-16",
+      "documentCount": 4,
+      "llms_txt": "/llms.txt",
+      "raw_base": "/raw/local-ai-infrastructure/",
+      "html_base": "/wiki/local-ai-infrastructure/"
+    }
+  ],
+  "comingSoon": [],
+  "namespace_registry": {
+    "schema_version": "pixi-agentwikis-registry-v0",
+    "source_repo": "pixiiidust/pixi-vault",
+    "source_path": "wikis/<slug>/",
+    "raw_pattern": "/raw/<slug>/<path>",
+    "html_pattern": "/wiki/<slug>/<path>.html",
+    "legacy_root_flat_pages": "temporary-shims"
+  }
 }

@@ -2775,3 +2775,1055 @@ This layered architecture — vault (durable human truth) → Hermes knowledge (
 - [[ai-native-problem-framing-framework]]
 - [[matt-pocock-sdlc-rhythm]]
 - [[profile-memory-boundaries]]
+
+<!-- ===== AgentWikis namespace registry skeleton ===== -->
+
+# Pixi Wiki — full corpus
+
+<!-- ===== pixi-vault/CLAUDE.md ===== -->
+
+# Pixi Vault Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/pixi-vault/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== pixi-vault/README.md ===== -->
+
+---
+title: Pixi Vault
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: knowledge-systems
+namespace: pixi-vault
+confidence: medium
+---
+
+# Pixi Vault
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.
+
+### Not Covered
+
+General agent workflow behavior unless it changes vault/compiler architecture; project-specific implementation details unless they affect the namespace compiler.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `Projects/Hermes Mission Control/PRD - Pixi Vault Namespace Compiler.md`
+- `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`
+
+## Crosslinks
+
+- [[../agent-workflows/README|agent-workflows]]
+- [[../local-ai-infrastructure/README|local-ai-infrastructure]]
+- [[../eval-trace/README|eval-trace]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/pixi-vault/README.md
+/raw/pixi-vault/wiki/index.md
+/wiki/pixi-vault/README.md
+/wiki/pixi-vault/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== pixi-vault/wiki/index.md ===== -->
+
+---
+title: Pixi Vault — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: scaffold
+namespace: pixi-vault
+---
+
+# Pixi Vault — Master Index
+
+> Scaffold index for `pixi-vault`. Add compiled pages here as they are created.
+
+## Concepts
+
+<!-- Add compiled concepts alphabetically. -->
+
+## Entities
+
+<!-- Add compiled entities alphabetically. -->
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+<!-- Add compiled syntheses alphabetically. -->
+
+## Source Roots
+
+- `Projects/Hermes Mission Control/PRD - Pixi Vault Namespace Compiler.md`
+- `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`
+
+
+<!-- ===== pixi-vault/wiki/log.md ===== -->
+
+---
+title: Pixi Vault — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: scaffold
+namespace: pixi-vault
+---
+
+# Pixi Vault — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== agent-workflows/CLAUDE.md ===== -->
+
+# Agent Workflows Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, self-improving agent systems, and workflow reliability practices.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== agent-workflows/README.md ===== -->
+
+---
+title: Agent Workflows
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: agents
+namespace: agent-workflows
+confidence: medium
+---
+
+# Agent Workflows
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, self-improving agent systems, and workflow reliability practices.
+
+### Not Covered
+
+Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `Projects/Hermes Mission Control/Index.md`
+- `Knowledge/concepts/self-improving-agent-systems.md`
+- `Knowledge/concepts/profile-memory-boundaries.md`
+- `Knowledge/concepts/runtime-memory-knowledge-routing.md`
+
+## Crosslinks
+
+- [[../pixi-vault/README|pixi-vault]]
+- [[../eval-trace/README|eval-trace]]
+- [[../local-ai-infrastructure/README|local-ai-infrastructure]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/agent-workflows/README.md
+/raw/agent-workflows/wiki/index.md
+/wiki/agent-workflows/README.md
+/wiki/agent-workflows/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== agent-workflows/wiki/entities/hermes-mission-control.md ===== -->
+
+---
+title: Hermes Mission Control
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: pilot
+namespace: agent-workflows
+tags: [agent-workflows, hermes, pixoid, route-governance]
+sources:
+  - Projects/Hermes Mission Control/Index.md
+confidence: medium
+---
+
+# Hermes Mission Control
+
+**Hermes Mission Control** is Jamie's agent-ops coordination hub for the Pixoid crew: Pixoid, Quill, Tinker, and Boba. Its primary namespace is `agent-workflows` because the durable concepts are route governance, persona boundaries, delivery routing, cron interpretation, and issue-driven execution.
+
+## What it controls
+
+- Crew role boundaries and operating surfaces.
+- GitHub issue/PR coordination as durable work truth.
+- Obsidian/Git as knowledge and project truth.
+- Discord as notification surface, not durable truth.
+- Cron output as context, not canonical project state.
+
+## Routing significance
+
+Hermes Mission Control is not primarily a public wiki architecture artifact. It feeds `pixi-vault` when compiler/publication rules are affected, and it feeds `eval-trace` when route quality or workflow evidence needs evaluation.
+
+## Cross-namespace links
+
+- `pixi-vault` — for source/output repo boundaries and namespace compiler rules.
+- `eval-trace` — for route-quality checks and failure-mode evaluation, including [[../../../eval-trace/wiki/concepts/context-overfitting|context overfitting]].
+
+## Source
+
+Compiled from `Projects/Hermes Mission Control/Index.md`.
+
+
+<!-- ===== agent-workflows/wiki/index.md ===== -->
+
+---
+title: Agent Workflows — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: pilot
+namespace: agent-workflows
+---
+
+# Agent Workflows — Master Index
+
+> Pilot index for `agent-workflows`.
+
+## Concepts
+
+- Cross-namespace concept: [[../../eval-trace/wiki/concepts/context-overfitting|Context Overfitting]] — Eval Trace primary page for a workflow reliability failure mode.
+
+## Entities
+
+- [[entities/hermes-mission-control|Hermes Mission Control]] — Agent-ops coordination hub for Pixoid crew route governance, delivery boundaries, and durable work truth.
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+<!-- Add compiled syntheses alphabetically. -->
+
+## Source Roots
+
+- `Projects/Hermes Mission Control/Index.md`
+- `Knowledge/concepts/self-improving-agent-systems.md`
+- `Knowledge/concepts/profile-memory-boundaries.md`
+- `Knowledge/concepts/runtime-memory-knowledge-routing.md`
+
+
+<!-- ===== agent-workflows/wiki/log.md ===== -->
+
+---
+title: Agent Workflows — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: pilot
+namespace: agent-workflows
+---
+
+# Agent Workflows — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Pilot compiled namespace page
+
+- Added pilot entity `wiki/entities/hermes-mission-control.md` and crosslink to Eval Trace context-overfitting concept.
+- Source pages remained in `Knowledge/` and `Projects/`.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== eval-trace/CLAUDE.md ===== -->
+
+# Eval Trace Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/eval-trace/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== eval-trace/README.md ===== -->
+
+---
+title: Eval Trace
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: evaluation
+namespace: eval-trace
+confidence: medium
+---
+
+# Eval Trace
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.
+
+### Not Covered
+
+General observability unrelated to workflow quality; product analytics unless used as an evaluation surface.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `Projects/Eval Trace/Index.md`
+- `Knowledge/concepts/context-overfitting.md`
+
+## Crosslinks
+
+- [[../agent-workflows/README|agent-workflows]]
+- [[../pixi-vault/README|pixi-vault]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/eval-trace/README.md
+/raw/eval-trace/wiki/index.md
+/wiki/eval-trace/README.md
+/wiki/eval-trace/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== eval-trace/wiki/concepts/context-overfitting.md ===== -->
+
+---
+title: Context Overfitting
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: pilot
+namespace: eval-trace
+tags: [eval-trace, agent-workflows, reliability, context-management]
+sources:
+  - Knowledge/concepts/context-overfitting.md
+confidence: medium
+---
+
+# Context Overfitting
+
+**Context overfitting** is an agent workflow failure mode where the agent optimizes for the immediate conversation, handoff, or prompt context instead of the durable source of truth. Its primary namespace is `eval-trace` because it is best treated as a quality/evaluation failure mode.
+
+## Why it matters
+
+Context overfitting can make an agent:
+
+- follow stale chat summaries over live repo or issue state;
+- treat scratch notes as canonical truth;
+- continue an old plan after the latest user message changed direction;
+- duplicate work because it did not inspect current files or tracker state.
+
+## Evaluation read-out
+
+A workflow is healthier when agents verify current truth before acting:
+
+- live GitHub issue/PR state for coordination;
+- current git status and diffs for repo work;
+- canonical `Knowledge/`, `Projects/`, and Wiki Compiler Map files for vault work;
+- scratch Daily Notes only as context hints.
+
+## Cross-namespace links
+
+- `agent-workflows` — context overfitting affects route execution in [[../../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]].
+- `pixi-vault` — source classes and compiler routing reduce context-overfit risk.
+
+## Source
+
+Compiled from `Knowledge/concepts/context-overfitting.md`.
+
+
+<!-- ===== eval-trace/wiki/index.md ===== -->
+
+---
+title: Eval Trace — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: pilot
+namespace: eval-trace
+---
+
+# Eval Trace — Master Index
+
+> Pilot index for `eval-trace`.
+
+## Concepts
+
+- [[concepts/context-overfitting|Context Overfitting]] — Agent workflow failure mode where local context overwhelms durable source-of-truth checks.
+
+## Entities
+
+- Cross-namespace entity: [[../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]] — Agent Workflows primary page for route governance and crew operating surfaces.
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+<!-- Add compiled syntheses alphabetically. -->
+
+## Source Roots
+
+- `Projects/Eval Trace/Index.md`
+- `Knowledge/concepts/context-overfitting.md`
+
+
+<!-- ===== eval-trace/wiki/log.md ===== -->
+
+---
+title: Eval Trace — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: pilot
+namespace: eval-trace
+---
+
+# Eval Trace — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Pilot compiled namespace page
+
+- Added pilot concept `wiki/concepts/context-overfitting.md` and crosslink to Agent Workflows Hermes Mission Control entity.
+- Source pages remained in `Knowledge/` and `Projects/`.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== ai-native-product-surfaces/CLAUDE.md ===== -->
+
+# AI-Native Product Surfaces Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-surfaces/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== ai-native-product-surfaces/README.md ===== -->
+
+---
+title: AI-Native Product Surfaces
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: product
+namespace: ai-native-product-surfaces
+confidence: medium
+---
+
+# AI-Native Product Surfaces
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
+
+### Not Covered
+
+Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `Projects/Planned Program Intel/Index.md`
+- `Projects/Planned/PRD.md`
+- `Projects/myAbode/Index.md`
+- `Knowledge/concepts/ai-native-problem-framing-framework.md`
+- `Knowledge/concepts/verb-first-product-positioning.md`
+- `Knowledge/concepts/find-the-lock-problem-first.md`
+
+## Crosslinks
+
+- [[../agent-workflows/README|agent-workflows]]
+- [[../eval-trace/README|eval-trace]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/ai-native-product-surfaces/README.md
+/raw/ai-native-product-surfaces/wiki/index.md
+/wiki/ai-native-product-surfaces/README.md
+/wiki/ai-native-product-surfaces/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== ai-native-product-surfaces/wiki/index.md ===== -->
+
+---
+title: AI-Native Product Surfaces — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: scaffold
+namespace: ai-native-product-surfaces
+---
+
+# AI-Native Product Surfaces — Master Index
+
+> Scaffold index for `ai-native-product-surfaces`. Add compiled pages here as they are created.
+
+## Concepts
+
+<!-- Add compiled concepts alphabetically. -->
+
+## Entities
+
+<!-- Add compiled entities alphabetically. -->
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+<!-- Add compiled syntheses alphabetically. -->
+
+## Source Roots
+
+- `Projects/Planned Program Intel/Index.md`
+- `Projects/Planned/PRD.md`
+- `Projects/myAbode/Index.md`
+- `Knowledge/concepts/ai-native-problem-framing-framework.md`
+- `Knowledge/concepts/verb-first-product-positioning.md`
+- `Knowledge/concepts/find-the-lock-problem-first.md`
+
+
+<!-- ===== ai-native-product-surfaces/wiki/log.md ===== -->
+
+---
+title: AI-Native Product Surfaces — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: scaffold
+namespace: ai-native-product-surfaces
+---
+
+# AI-Native Product Surfaces — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== rl-sim-labs/CLAUDE.md ===== -->
+
+# RL Sim Labs Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/rl-sim-labs/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== rl-sim-labs/README.md ===== -->
+
+---
+title: RL Sim Labs
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: rl-simulation
+namespace: rl-sim-labs
+confidence: medium
+---
+
+# RL Sim Labs
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.
+
+### Not Covered
+
+General local GPU setup unless required by RL experiment execution; unrelated game projects without RL/simulation learning goals.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `Projects/Critical Ranger FFM/Index.md`
+
+## Crosslinks
+
+- [[../eval-trace/README|eval-trace]]
+- [[../local-ai-infrastructure/README|local-ai-infrastructure]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/rl-sim-labs/README.md
+/raw/rl-sim-labs/wiki/index.md
+/wiki/rl-sim-labs/README.md
+/wiki/rl-sim-labs/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== rl-sim-labs/wiki/index.md ===== -->
+
+---
+title: RL Sim Labs — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: scaffold
+namespace: rl-sim-labs
+---
+
+# RL Sim Labs — Master Index
+
+> Scaffold index for `rl-sim-labs`. Add compiled pages here as they are created.
+
+## Concepts
+
+<!-- Add compiled concepts alphabetically. -->
+
+## Entities
+
+<!-- Add compiled entities alphabetically. -->
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+<!-- Add compiled syntheses alphabetically. -->
+
+## Source Roots
+
+- `Projects/Critical Ranger FFM/Index.md`
+
+
+<!-- ===== rl-sim-labs/wiki/log.md ===== -->
+
+---
+title: RL Sim Labs — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: scaffold
+namespace: rl-sim-labs
+---
+
+# RL Sim Labs — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== curated-tuning-datasets/CLAUDE.md ===== -->
+
+# Curated Tuning Datasets Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/curated-tuning-datasets/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== curated-tuning-datasets/README.md ===== -->
+
+---
+title: Curated Tuning Datasets
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: data-curation
+namespace: curated-tuning-datasets
+confidence: medium
+---
+
+# Curated Tuning Datasets
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
+
+### Not Covered
+
+Training methods themselves except where they impose dataset-readiness requirements; copyright-risk decisions without provenance evidence.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `source pending: LKY archive source inventory/project hub not yet present in this vault`
+
+## Crosslinks
+
+- [[../local-ai-infrastructure/README|local-ai-infrastructure]]
+- [[../eval-trace/README|eval-trace]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/curated-tuning-datasets/README.md
+/raw/curated-tuning-datasets/wiki/index.md
+/wiki/curated-tuning-datasets/README.md
+/wiki/curated-tuning-datasets/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== curated-tuning-datasets/wiki/index.md ===== -->
+
+---
+title: Curated Tuning Datasets — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: scaffold
+namespace: curated-tuning-datasets
+---
+
+# Curated Tuning Datasets — Master Index
+
+> Scaffold index for `curated-tuning-datasets`. Add compiled pages here as they are created.
+
+## Concepts
+
+<!-- Add compiled concepts alphabetically. -->
+
+## Entities
+
+<!-- Add compiled entities alphabetically. -->
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+<!-- Add compiled syntheses alphabetically. -->
+
+## Source Roots
+
+- `source pending: LKY archive source inventory/project hub not yet present in this vault`
+
+
+<!-- ===== curated-tuning-datasets/wiki/log.md ===== -->
+
+---
+title: Curated Tuning Datasets — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: scaffold
+namespace: curated-tuning-datasets
+---
+
+# Curated Tuning Datasets — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== local-ai-infrastructure/CLAUDE.md ===== -->
+
+# Local AI Infrastructure Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/local-ai-infrastructure/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== local-ai-infrastructure/README.md ===== -->
+
+---
+title: Local AI Infrastructure
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: infrastructure
+namespace: local-ai-infrastructure
+confidence: medium
+---
+
+# Local AI Infrastructure
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.
+
+### Not Covered
+
+Cloud-only infrastructure unless it affects local-first migration; product UX unless tied to local model constraints.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
+- `Knowledge/concepts/rag-over-agent-wikis.md`
+
+## Crosslinks
+
+- [[../pixi-vault/README|pixi-vault]]
+- [[../curated-tuning-datasets/README|curated-tuning-datasets]]
+- [[../rl-sim-labs/README|rl-sim-labs]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/local-ai-infrastructure/README.md
+/raw/local-ai-infrastructure/wiki/index.md
+/wiki/local-ai-infrastructure/README.md
+/wiki/local-ai-infrastructure/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== local-ai-infrastructure/wiki/index.md ===== -->
+
+---
+title: Local AI Infrastructure — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: scaffold
+namespace: local-ai-infrastructure
+---
+
+# Local AI Infrastructure — Master Index
+
+> Scaffold index for `local-ai-infrastructure`. Add compiled pages here as they are created.
+
+## Concepts
+
+<!-- Add compiled concepts alphabetically. -->
+
+## Entities
+
+<!-- Add compiled entities alphabetically. -->
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+<!-- Add compiled syntheses alphabetically. -->
+
+## Source Roots
+
+- `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
+- `Knowledge/concepts/rag-over-agent-wikis.md`
+
+
+<!-- ===== local-ai-infrastructure/wiki/log.md ===== -->
+
+---
+title: Local AI Infrastructure — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: scaffold
+namespace: local-ai-infrastructure
+---
+
+# Local AI Infrastructure — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
