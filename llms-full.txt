@@ -70,7 +70,7 @@
 
 ## Compatibility
 
-Root files, old flat HTML pages, `agent/**`, and `raw/**` remain published for compatibility until Jamie explicitly approves cleanup.
+Root is for entrypoints only. Old flat HTML URLs are tiny compatibility shims that point to canonical `/wiki/**` pages; `agent/**` and `raw/**` remain separate machine/provenance surfaces.
 
 
 <!-- ===== Knowledge/llms.txt ===== -->
@@ -287,13 +287,13 @@ v_next:
 
 ## Agent Start Here
 
-Use this pack when working on MOCs themselves or when deciding whether a human navigation surface needs maintenance. MOCs are human navigation surfaces. `llms.txt` files are agent retrieval contracts. Do not collapse one into the other.
+Use this pack when working on MOCs themselves or when deciding how an agent should traverse the wiki. MOCs are semantic navigation and schema-map surfaces: they show domains, branches, relationships, and likely routes. Adjacent `llms.txt` files are agent retrieval contracts for loading node context. Do not collapse one into the other.
 
 ## What This Pack Routes
 
-- Which MOC to inspect for vault navigation.
-- How agents should maintain MOCs without treating them as canonical truth.
-- Boundaries between MOCs, root/project/knowledge packs, project hubs, and GitHub.
+- Which MOC to inspect for vault navigation and agent route planning.
+- How agents should use MOCs as schema maps without treating them as canonical truth.
+- Boundaries between MOCs, adjacent node `llms.txt` contracts, root/project/knowledge packs, project hubs, and GitHub.
 - The current decision that `Templates/llms.txt` is deferred unless template-routing rules become distinct enough to justify it.
 
 ## What This Pack Does Not Route

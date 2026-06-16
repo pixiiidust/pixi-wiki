@@ -70,4 +70,4 @@
 
 ## Compatibility
 
-Root files, old flat HTML pages, `agent/**`, and `raw/**` remain published for compatibility until Jamie explicitly approves cleanup.
+Root is for entrypoints only. Old flat HTML URLs are tiny compatibility shims that point to canonical `/wiki/**` pages; `agent/**` and `raw/**` remain separate machine/provenance surfaces.

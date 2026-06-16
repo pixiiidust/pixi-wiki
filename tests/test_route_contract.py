@@ -50,13 +50,26 @@ class RootCompatibilityTest(unittest.TestCase):
             with self.subTest(file=name):
                 self.assertTrue((ROOT / name).exists(), f"Missing root file: {name}")
 
-    def test_old_concept_html_pages_exist(self) -> None:
-        """Legacy flat concept HTML pages still present for compatibility."""
+    def test_old_concept_html_pages_are_compatibility_shims(self) -> None:
+        """Legacy flat concept HTML pages remain as tiny compatibility shims."""
         data = _load_index_json()
         for concept in data.get("concepts", []):
-            html_path = concept.get("html_path", "")
-            with self.subTest(html=html_path):
-                self.assertTrue((ROOT / html_path).exists(), f"Missing: {html_path}")
+            legacy_path = concept.get("legacy_html_path", "")
+            with self.subTest(html=legacy_path):
+                self.assertTrue((ROOT / legacy_path).exists(), f"Missing: {legacy_path}")
+                html = (ROOT / legacy_path).read_text(encoding="utf-8")
+                self.assertIn("compatibility-shim", html)
+                self.assertIn(concept.get("human_url", "NOPE"), html)
+
+    def test_no_full_concept_or_project_pages_live_at_root(self) -> None:
+        """Root flat pages are allowed only as compatibility shims, never full canonical pages."""
+        for html_file in ROOT.glob("*.html"):
+            if html_file.name == "index.html":
+                continue
+            html = html_file.read_text(encoding="utf-8")
+            with self.subTest(page=html_file.name):
+                self.assertIn("compatibility-shim", html)
+                self.assertIn('rel="canonical"', html)
 
     def test_raw_mirrors_exist(self) -> None:
         """raw/ directory and its contents are present."""

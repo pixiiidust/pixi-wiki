@@ -14,15 +14,16 @@
       "agent_text_path": "agent/concepts/agent-capability-route-pattern.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-agent-capability-route-pattern.html",
-        "agent/concepts/agent-capability-route-pattern.txt"
+        "concept-knowledge-concepts-agent-capability-route-pattern.html"
       ],
       "description": null,
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-agent-capability-route-pattern.html",
+      "html_path": "wiki/knowledge/concepts/agent-capability-route-pattern/index.html",
       "human_html_path": "wiki/knowledge/concepts/agent-capability-route-pattern/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/agent-capability-route-pattern/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/agent-capability-route-pattern/",
+      "legacy_html_path": "concept-knowledge-concepts-agent-capability-route-pattern.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-agent-capability-route-pattern.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/agent-capability-route-pattern/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/agent-capability-route-pattern.md",
       "raw_source_path": "raw/Knowledge/concepts/agent-capability-route-pattern.md",
@@ -44,15 +45,16 @@
       "agent_text_path": "agent/concepts/agent-wikis.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-agent-wikis.html",
-        "agent/concepts/agent-wikis.txt"
+        "concept-knowledge-concepts-agent-wikis.html"
       ],
       "description": "Agent-native knowledge surfaces that give agents maintained, scoped, source-backed maps before they act.",
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-agent-wikis.html",
+      "html_path": "wiki/knowledge/concepts/agent-wikis/index.html",
       "human_html_path": "wiki/knowledge/concepts/agent-wikis/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/agent-wikis/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/agent-wikis/",
+      "legacy_html_path": "concept-knowledge-concepts-agent-wikis.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-agent-wikis.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/agent-wikis/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/agent-wikis.md",
       "raw_source_path": "raw/Knowledge/concepts/agent-wikis.md",
@@ -74,15 +76,16 @@
       "agent_text_path": "agent/concepts/ai-native-problem-framing-framework.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-ai-native-problem-framing-framework.html",
-        "agent/concepts/ai-native-problem-framing-framework.txt"
+        "concept-knowledge-concepts-ai-native-problem-framing-framework.html"
       ],
       "description": null,
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-ai-native-problem-framing-framework.html",
+      "html_path": "wiki/knowledge/concepts/ai-native-problem-framing-framework/index.html",
       "human_html_path": "wiki/knowledge/concepts/ai-native-problem-framing-framework/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/ai-native-problem-framing-framework/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/ai-native-problem-framing-framework/",
+      "legacy_html_path": "concept-knowledge-concepts-ai-native-problem-framing-framework.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-ai-native-problem-framing-framework.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/ai-native-problem-framing-framework/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/ai-native-problem-framing-framework.md",
       "raw_source_path": "raw/Knowledge/concepts/ai-native-problem-framing-framework.md",
@@ -105,15 +108,16 @@
       "agent_text_path": "agent/concepts/bounded-context-tree-pattern.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-bounded-context-tree-pattern.html",
-        "agent/concepts/bounded-context-tree-pattern.txt"
+        "concept-knowledge-concepts-bounded-context-tree-pattern.html"
       ],
       "description": null,
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-bounded-context-tree-pattern.html",
+      "html_path": "wiki/knowledge/concepts/bounded-context-tree-pattern/index.html",
       "human_html_path": "wiki/knowledge/concepts/bounded-context-tree-pattern/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/bounded-context-tree-pattern/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/bounded-context-tree-pattern/",
+      "legacy_html_path": "concept-knowledge-concepts-bounded-context-tree-pattern.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-bounded-context-tree-pattern.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/bounded-context-tree-pattern/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/bounded-context-tree-pattern.md",
       "raw_source_path": "raw/Knowledge/concepts/bounded-context-tree-pattern.md",
@@ -134,15 +138,16 @@
       "agent_text_path": "agent/concepts/building-software-is-learning.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-building-software-is-learning.html",
-        "agent/concepts/building-software-is-learning.txt"
+        "concept-knowledge-concepts-building-software-is-learning.html"
       ],
       "description": null,
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-building-software-is-learning.html",
+      "html_path": "wiki/knowledge/concepts/building-software-is-learning/index.html",
       "human_html_path": "wiki/knowledge/concepts/building-software-is-learning/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/building-software-is-learning/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/building-software-is-learning/",
+      "legacy_html_path": "concept-knowledge-concepts-building-software-is-learning.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-building-software-is-learning.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/building-software-is-learning/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/building-software-is-learning.md",
       "raw_source_path": "raw/Knowledge/concepts/building-software-is-learning.md",
@@ -164,15 +169,16 @@
       "agent_text_path": "agent/concepts/context-overfitting.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-context-overfitting.html",
-        "agent/concepts/context-overfitting.txt"
+        "concept-knowledge-concepts-context-overfitting.html"
       ],
       "description": "Failure mode where an agent treats written memory, rules, project notes, or prior suggestions as hard constraints instead of weak priors that current intent and live evidence can override.",
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-context-overfitting.html",
+      "html_path": "wiki/knowledge/concepts/context-overfitting/index.html",
       "human_html_path": "wiki/knowledge/concepts/context-overfitting/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/context-overfitting/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/context-overfitting/",
+      "legacy_html_path": "concept-knowledge-concepts-context-overfitting.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-context-overfitting.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/context-overfitting/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/context-overfitting.md",
       "raw_source_path": "raw/Knowledge/concepts/context-overfitting.md",
@@ -194,15 +200,16 @@
       "agent_text_path": "agent/concepts/find-the-lock-problem-first.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-find-the-lock-problem-first.html",
-        "agent/concepts/find-the-lock-problem-first.txt"
+        "concept-knowledge-concepts-find-the-lock-problem-first.html"
       ],
       "description": null,
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-find-the-lock-problem-first.html",
+      "html_path": "wiki/knowledge/concepts/find-the-lock-problem-first/index.html",
       "human_html_path": "wiki/knowledge/concepts/find-the-lock-problem-first/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/find-the-lock-problem-first/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/find-the-lock-problem-first/",
+      "legacy_html_path": "concept-knowledge-concepts-find-the-lock-problem-first.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-find-the-lock-problem-first.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/find-the-lock-problem-first/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/find-the-lock-problem-first.md",
       "raw_source_path": "raw/Knowledge/concepts/find-the-lock-problem-first.md",
@@ -224,15 +231,16 @@
       "agent_text_path": "agent/concepts/hermes-soul-md-wiring.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-hermes-soul-md-wiring.html",
-        "agent/concepts/hermes-soul-md-wiring.txt"
+        "concept-knowledge-concepts-hermes-soul-md-wiring.html"
       ],
       "description": null,
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-hermes-soul-md-wiring.html",
+      "html_path": "wiki/knowledge/concepts/hermes-soul-md-wiring/index.html",
       "human_html_path": "wiki/knowledge/concepts/hermes-soul-md-wiring/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/hermes-soul-md-wiring/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/hermes-soul-md-wiring/",
+      "legacy_html_path": "concept-knowledge-concepts-hermes-soul-md-wiring.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-hermes-soul-md-wiring.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/hermes-soul-md-wiring/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/hermes-soul-md-wiring.md",
       "raw_source_path": "raw/Knowledge/concepts/hermes-soul-md-wiring.md",
@@ -253,15 +261,16 @@
       "agent_text_path": "agent/concepts/local-retrieval-agent-infrastructure.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-local-retrieval-agent-infrastructure.html",
-        "agent/concepts/local-retrieval-agent-infrastructure.txt"
+        "concept-knowledge-concepts-local-retrieval-agent-infrastructure.html"
       ],
       "description": "Applied architecture lessons from Krill's dual-RTX 5090 local agent stack \u2014 hardware setup, retrieval pipeline (Qdrant + Ollama + MCP), agent workflow governance, and relevance to Jamie's PC build decisions.",
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-local-retrieval-agent-infrastructure.html",
+      "html_path": "wiki/knowledge/concepts/local-retrieval-agent-infrastructure/index.html",
       "human_html_path": "wiki/knowledge/concepts/local-retrieval-agent-infrastructure/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/local-retrieval-agent-infrastructure/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/local-retrieval-agent-infrastructure/",
+      "legacy_html_path": "concept-knowledge-concepts-local-retrieval-agent-infrastructure.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-local-retrieval-agent-infrastructure.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/local-retrieval-agent-infrastructure/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/local-retrieval-agent-infrastructure.md",
       "raw_source_path": "raw/Knowledge/concepts/local-retrieval-agent-infrastructure.md",
@@ -283,15 +292,16 @@
       "agent_text_path": "agent/concepts/matt-pocock-sdlc-rhythm.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
-        "agent/concepts/matt-pocock-sdlc-rhythm.txt"
+        "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html"
       ],
       "description": null,
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
+      "html_path": "wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/index.html",
       "human_html_path": "wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/",
+      "legacy_html_path": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
       "raw_source_path": "raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
@@ -313,15 +323,16 @@
       "agent_text_path": "agent/concepts/moc-knowledge-cortex.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-moc-knowledge-cortex.html",
-        "agent/concepts/moc-knowledge-cortex.txt"
+        "concept-knowledge-concepts-moc-knowledge-cortex.html"
       ],
       "description": "Model of the MOC layer as the routing brain of the vault, keeping durable notes reachable through clear domain branches.",
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-moc-knowledge-cortex.html",
+      "html_path": "wiki/knowledge/concepts/moc-knowledge-cortex/index.html",
       "human_html_path": "wiki/knowledge/concepts/moc-knowledge-cortex/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/moc-knowledge-cortex/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/moc-knowledge-cortex/",
+      "legacy_html_path": "concept-knowledge-concepts-moc-knowledge-cortex.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-moc-knowledge-cortex.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/moc-knowledge-cortex/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/moc-knowledge-cortex.md",
       "raw_source_path": "raw/Knowledge/concepts/moc-knowledge-cortex.md",
@@ -342,15 +353,16 @@
       "agent_text_path": "agent/concepts/peer-profiles-vs-child-processes.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
-        "agent/concepts/peer-profiles-vs-child-processes.txt"
+        "concept-knowledge-concepts-peer-profiles-vs-child-processes.html"
       ],
       "description": "Architecture decision for when Jamie's crew agents run as peer Hermes profiles versus child/subagent processes.",
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
+      "html_path": "wiki/knowledge/concepts/peer-profiles-vs-child-processes/index.html",
       "human_html_path": "wiki/knowledge/concepts/peer-profiles-vs-child-processes/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/peer-profiles-vs-child-processes/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/peer-profiles-vs-child-processes/",
+      "legacy_html_path": "concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/peer-profiles-vs-child-processes/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/peer-profiles-vs-child-processes.md",
       "raw_source_path": "raw/Knowledge/concepts/peer-profiles-vs-child-processes.md",
@@ -371,15 +383,16 @@
       "agent_text_path": "agent/concepts/profile-memory-boundaries.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-profile-memory-boundaries.html",
-        "agent/concepts/profile-memory-boundaries.txt"
+        "concept-knowledge-concepts-profile-memory-boundaries.html"
       ],
       "description": "Boundary model for routing durable knowledge between USER.md, Hermes memory, local knowledge, Obsidian/GitHub project truth, and skills.",
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-profile-memory-boundaries.html",
+      "html_path": "wiki/knowledge/concepts/profile-memory-boundaries/index.html",
       "human_html_path": "wiki/knowledge/concepts/profile-memory-boundaries/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/profile-memory-boundaries/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/profile-memory-boundaries/",
+      "legacy_html_path": "concept-knowledge-concepts-profile-memory-boundaries.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-profile-memory-boundaries.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/profile-memory-boundaries/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/profile-memory-boundaries.md",
       "raw_source_path": "raw/Knowledge/concepts/profile-memory-boundaries.md",
@@ -400,15 +413,16 @@
       "agent_text_path": "agent/concepts/rag-over-agent-wikis.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-rag-over-agent-wikis.html",
-        "agent/concepts/rag-over-agent-wikis.txt"
+        "concept-knowledge-concepts-rag-over-agent-wikis.html"
       ],
       "description": "Foundation for using embeddings, semantic search, and retrieval-augmented generation over compiled agent wiki pages instead of raw source dumps.",
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-rag-over-agent-wikis.html",
+      "html_path": "wiki/knowledge/concepts/rag-over-agent-wikis/index.html",
       "human_html_path": "wiki/knowledge/concepts/rag-over-agent-wikis/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/rag-over-agent-wikis/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/rag-over-agent-wikis/",
+      "legacy_html_path": "concept-knowledge-concepts-rag-over-agent-wikis.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-rag-over-agent-wikis.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/rag-over-agent-wikis/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/rag-over-agent-wikis.md",
       "raw_source_path": "raw/Knowledge/concepts/rag-over-agent-wikis.md",
@@ -431,15 +445,16 @@
       "agent_text_path": "agent/concepts/runtime-memory-knowledge-routing.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
-        "agent/concepts/runtime-memory-knowledge-routing.txt"
+        "concept-knowledge-concepts-runtime-memory-knowledge-routing.html"
       ],
       "description": "Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.",
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
+      "html_path": "wiki/knowledge/concepts/runtime-memory-knowledge-routing/index.html",
       "human_html_path": "wiki/knowledge/concepts/runtime-memory-knowledge-routing/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/runtime-memory-knowledge-routing/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/runtime-memory-knowledge-routing/",
+      "legacy_html_path": "concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/runtime-memory-knowledge-routing/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/runtime-memory-knowledge-routing.md",
       "raw_source_path": "raw/Knowledge/concepts/runtime-memory-knowledge-routing.md",
@@ -461,15 +476,16 @@
       "agent_text_path": "agent/concepts/self-improving-agent-systems.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-self-improving-agent-systems.html",
-        "agent/concepts/self-improving-agent-systems.txt"
+        "concept-knowledge-concepts-self-improving-agent-systems.html"
       ],
       "description": "Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.",
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-self-improving-agent-systems.html",
+      "html_path": "wiki/knowledge/concepts/self-improving-agent-systems/index.html",
       "human_html_path": "wiki/knowledge/concepts/self-improving-agent-systems/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/",
+      "legacy_html_path": "concept-knowledge-concepts-self-improving-agent-systems.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-self-improving-agent-systems.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/self-improving-agent-systems/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/self-improving-agent-systems.md",
       "raw_source_path": "raw/Knowledge/concepts/self-improving-agent-systems.md",
@@ -490,15 +506,16 @@
       "agent_text_path": "agent/concepts/verb-first-product-positioning.txt",
       "canonical_role": "knowledge-document",
       "compatibility_paths": [
-        "concept-knowledge-concepts-verb-first-product-positioning.html",
-        "agent/concepts/verb-first-product-positioning.txt"
+        "concept-knowledge-concepts-verb-first-product-positioning.html"
       ],
       "description": null,
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-verb-first-product-positioning.html",
+      "html_path": "wiki/knowledge/concepts/verb-first-product-positioning/index.html",
       "human_html_path": "wiki/knowledge/concepts/verb-first-product-positioning/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/",
+      "legacy_html_path": "concept-knowledge-concepts-verb-first-product-positioning.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-verb-first-product-positioning.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/verb-first-product-positioning/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/concepts/verb-first-product-positioning.md",
       "raw_source_path": "raw/Knowledge/concepts/verb-first-product-positioning.md",
@@ -525,14 +542,15 @@
       "canonical_role": "domain-entrypoint",
       "collection": "entrypoints",
       "compatibility_paths": [
-        "knowledge.html",
-        "agent/packs/knowledge.txt"
+        "knowledge.html"
       ],
       "domain": "Knowledge",
-      "html_path": "knowledge.html",
+      "html_path": "wiki/knowledge/index.html",
       "human_html_path": "wiki/knowledge/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/",
+      "legacy_html_path": "knowledge.html",
+      "legacy_url": "/pixi-wiki/knowledge.html",
       "local_llms_txt_path": "wiki/knowledge/llms.txt",
       "path": "Knowledge/llms.txt",
       "raw_path": "raw/Knowledge/llms.txt",
@@ -550,14 +568,15 @@
       "canonical_role": "domain-entrypoint",
       "collection": "entrypoints",
       "compatibility_paths": [
-        "maps-of-content.html",
-        "agent/packs/maps-of-content.txt"
+        "maps-of-content.html"
       ],
       "domain": "Maps of Content",
-      "html_path": "maps-of-content.html",
+      "html_path": "wiki/maps-of-content/index.html",
       "human_html_path": "wiki/maps-of-content/index.html",
       "human_url": "/pixi-wiki/wiki/maps-of-content/",
       "human_url_path": "/pixi-wiki/wiki/maps-of-content/",
+      "legacy_html_path": "maps-of-content.html",
+      "legacy_url": "/pixi-wiki/maps-of-content.html",
       "local_llms_txt_path": "wiki/maps-of-content/llms.txt",
       "path": "Maps of Content/llms.txt",
       "raw_path": "raw/Maps of Content/llms.txt",
@@ -575,14 +594,15 @@
       "canonical_role": "project-entrypoint",
       "collection": "entrypoints",
       "compatibility_paths": [
-        "projects-critical-ranger-ffm.html",
-        "agent/packs/projects-critical-ranger-ffm.txt"
+        "projects-critical-ranger-ffm.html"
       ],
       "domain": "Projects",
-      "html_path": "projects-critical-ranger-ffm.html",
+      "html_path": "wiki/projects/critical-ranger-ffm/index.html",
       "human_html_path": "wiki/projects/critical-ranger-ffm/index.html",
       "human_url": "/pixi-wiki/wiki/projects/critical-ranger-ffm/",
       "human_url_path": "/pixi-wiki/wiki/projects/critical-ranger-ffm/",
+      "legacy_html_path": "projects-critical-ranger-ffm.html",
+      "legacy_url": "/pixi-wiki/projects-critical-ranger-ffm.html",
       "local_llms_txt_path": "wiki/projects/critical-ranger-ffm/llms.txt",
       "path": "Projects/Critical Ranger FFM/llms.txt",
       "raw_path": "raw/Projects/Critical Ranger FFM/llms.txt",
@@ -600,14 +620,15 @@
       "canonical_role": "project-entrypoint",
       "collection": "entrypoints",
       "compatibility_paths": [
-        "projects-eval-trace.html",
-        "agent/packs/projects-eval-trace.txt"
+        "projects-eval-trace.html"
       ],
       "domain": "Projects",
-      "html_path": "projects-eval-trace.html",
+      "html_path": "wiki/projects/eval-trace/index.html",
       "human_html_path": "wiki/projects/eval-trace/index.html",
       "human_url": "/pixi-wiki/wiki/projects/eval-trace/",
       "human_url_path": "/pixi-wiki/wiki/projects/eval-trace/",
+      "legacy_html_path": "projects-eval-trace.html",
+      "legacy_url": "/pixi-wiki/projects-eval-trace.html",
       "local_llms_txt_path": "wiki/projects/eval-trace/llms.txt",
       "path": "Projects/Eval Trace/llms.txt",
       "raw_path": "raw/Projects/Eval Trace/llms.txt",
@@ -625,14 +646,15 @@
       "canonical_role": "project-entrypoint",
       "collection": "entrypoints",
       "compatibility_paths": [
-        "projects-hermes-mission-control.html",
-        "agent/packs/projects-hermes-mission-control.txt"
+        "projects-hermes-mission-control.html"
       ],
       "domain": "Projects",
-      "html_path": "projects-hermes-mission-control.html",
+      "html_path": "wiki/projects/hermes-mission-control/index.html",
       "human_html_path": "wiki/projects/hermes-mission-control/index.html",
       "human_url": "/pixi-wiki/wiki/projects/hermes-mission-control/",
       "human_url_path": "/pixi-wiki/wiki/projects/hermes-mission-control/",
+      "legacy_html_path": "projects-hermes-mission-control.html",
+      "legacy_url": "/pixi-wiki/projects-hermes-mission-control.html",
       "local_llms_txt_path": "wiki/projects/hermes-mission-control/llms.txt",
       "path": "Projects/Hermes Mission Control/llms.txt",
       "raw_path": "raw/Projects/Hermes Mission Control/llms.txt",
@@ -650,14 +672,15 @@
       "canonical_role": "project-entrypoint",
       "collection": "entrypoints",
       "compatibility_paths": [
-        "projects-planned-program-intel.html",
-        "agent/packs/projects-planned-program-intel.txt"
+        "projects-planned-program-intel.html"
       ],
       "domain": "Projects",
-      "html_path": "projects-planned-program-intel.html",
+      "html_path": "wiki/projects/planned-program-intel/index.html",
       "human_html_path": "wiki/projects/planned-program-intel/index.html",
       "human_url": "/pixi-wiki/wiki/projects/planned-program-intel/",
       "human_url_path": "/pixi-wiki/wiki/projects/planned-program-intel/",
+      "legacy_html_path": "projects-planned-program-intel.html",
+      "legacy_url": "/pixi-wiki/projects-planned-program-intel.html",
       "local_llms_txt_path": "wiki/projects/planned-program-intel/llms.txt",
       "path": "Projects/Planned Program Intel/llms.txt",
       "raw_path": "raw/Projects/Planned Program Intel/llms.txt",
@@ -675,14 +698,15 @@
       "canonical_role": "domain-entrypoint",
       "collection": "entrypoints",
       "compatibility_paths": [
-        "projects.html",
-        "agent/packs/projects.txt"
+        "projects.html"
       ],
       "domain": "Projects",
-      "html_path": "projects.html",
+      "html_path": "wiki/projects/index.html",
       "human_html_path": "wiki/projects/index.html",
       "human_url": "/pixi-wiki/wiki/projects/",
       "human_url_path": "/pixi-wiki/wiki/projects/",
+      "legacy_html_path": "projects.html",
+      "legacy_url": "/pixi-wiki/projects.html",
       "local_llms_txt_path": "wiki/projects/llms.txt",
       "path": "Projects/llms.txt",
       "raw_path": "raw/Projects/llms.txt",
@@ -700,14 +724,15 @@
       "canonical_role": "root-entrypoint",
       "collection": "entrypoints",
       "compatibility_paths": [
-        "root.html",
-        "agent/packs/root.txt"
+        "root.html"
       ],
       "domain": "Vault Root",
-      "html_path": "root.html",
+      "html_path": "index.html",
       "human_html_path": "index.html",
       "human_url": "/pixi-wiki/",
       "human_url_path": "/pixi-wiki/",
+      "legacy_html_path": "root.html",
+      "legacy_url": "/pixi-wiki/root.html",
       "local_llms_txt_path": "llms.txt",
       "path": "llms.txt",
       "raw_path": "raw/llms.txt",
@@ -725,14 +750,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-agent-capability-route-pattern.html",
-        "agent/concepts/agent-capability-route-pattern.txt"
+        "concept-knowledge-concepts-agent-capability-route-pattern.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-agent-capability-route-pattern.html",
+      "html_path": "wiki/knowledge/concepts/agent-capability-route-pattern/index.html",
       "human_html_path": "wiki/knowledge/concepts/agent-capability-route-pattern/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/agent-capability-route-pattern/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/agent-capability-route-pattern/",
+      "legacy_html_path": "concept-knowledge-concepts-agent-capability-route-pattern.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-agent-capability-route-pattern.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/agent-capability-route-pattern/llms.txt",
       "path": "Knowledge/concepts/agent-capability-route-pattern.md",
       "raw_path": "raw/Knowledge/concepts/agent-capability-route-pattern.md",
@@ -751,14 +777,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-agent-wikis.html",
-        "agent/concepts/agent-wikis.txt"
+        "concept-knowledge-concepts-agent-wikis.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-agent-wikis.html",
+      "html_path": "wiki/knowledge/concepts/agent-wikis/index.html",
       "human_html_path": "wiki/knowledge/concepts/agent-wikis/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/agent-wikis/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/agent-wikis/",
+      "legacy_html_path": "concept-knowledge-concepts-agent-wikis.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-agent-wikis.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/agent-wikis/llms.txt",
       "path": "Knowledge/concepts/agent-wikis.md",
       "raw_path": "raw/Knowledge/concepts/agent-wikis.md",
@@ -777,14 +804,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-ai-native-problem-framing-framework.html",
-        "agent/concepts/ai-native-problem-framing-framework.txt"
+        "concept-knowledge-concepts-ai-native-problem-framing-framework.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-ai-native-problem-framing-framework.html",
+      "html_path": "wiki/knowledge/concepts/ai-native-problem-framing-framework/index.html",
       "human_html_path": "wiki/knowledge/concepts/ai-native-problem-framing-framework/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/ai-native-problem-framing-framework/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/ai-native-problem-framing-framework/",
+      "legacy_html_path": "concept-knowledge-concepts-ai-native-problem-framing-framework.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-ai-native-problem-framing-framework.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/ai-native-problem-framing-framework/llms.txt",
       "path": "Knowledge/concepts/ai-native-problem-framing-framework.md",
       "raw_path": "raw/Knowledge/concepts/ai-native-problem-framing-framework.md",
@@ -803,14 +831,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-bounded-context-tree-pattern.html",
-        "agent/concepts/bounded-context-tree-pattern.txt"
+        "concept-knowledge-concepts-bounded-context-tree-pattern.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-bounded-context-tree-pattern.html",
+      "html_path": "wiki/knowledge/concepts/bounded-context-tree-pattern/index.html",
       "human_html_path": "wiki/knowledge/concepts/bounded-context-tree-pattern/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/bounded-context-tree-pattern/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/bounded-context-tree-pattern/",
+      "legacy_html_path": "concept-knowledge-concepts-bounded-context-tree-pattern.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-bounded-context-tree-pattern.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/bounded-context-tree-pattern/llms.txt",
       "path": "Knowledge/concepts/bounded-context-tree-pattern.md",
       "raw_path": "raw/Knowledge/concepts/bounded-context-tree-pattern.md",
@@ -829,14 +858,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-building-software-is-learning.html",
-        "agent/concepts/building-software-is-learning.txt"
+        "concept-knowledge-concepts-building-software-is-learning.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-building-software-is-learning.html",
+      "html_path": "wiki/knowledge/concepts/building-software-is-learning/index.html",
       "human_html_path": "wiki/knowledge/concepts/building-software-is-learning/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/building-software-is-learning/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/building-software-is-learning/",
+      "legacy_html_path": "concept-knowledge-concepts-building-software-is-learning.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-building-software-is-learning.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/building-software-is-learning/llms.txt",
       "path": "Knowledge/concepts/building-software-is-learning.md",
       "raw_path": "raw/Knowledge/concepts/building-software-is-learning.md",
@@ -855,14 +885,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-context-overfitting.html",
-        "agent/concepts/context-overfitting.txt"
+        "concept-knowledge-concepts-context-overfitting.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-context-overfitting.html",
+      "html_path": "wiki/knowledge/concepts/context-overfitting/index.html",
       "human_html_path": "wiki/knowledge/concepts/context-overfitting/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/context-overfitting/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/context-overfitting/",
+      "legacy_html_path": "concept-knowledge-concepts-context-overfitting.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-context-overfitting.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/context-overfitting/llms.txt",
       "path": "Knowledge/concepts/context-overfitting.md",
       "raw_path": "raw/Knowledge/concepts/context-overfitting.md",
@@ -881,14 +912,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-find-the-lock-problem-first.html",
-        "agent/concepts/find-the-lock-problem-first.txt"
+        "concept-knowledge-concepts-find-the-lock-problem-first.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-find-the-lock-problem-first.html",
+      "html_path": "wiki/knowledge/concepts/find-the-lock-problem-first/index.html",
       "human_html_path": "wiki/knowledge/concepts/find-the-lock-problem-first/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/find-the-lock-problem-first/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/find-the-lock-problem-first/",
+      "legacy_html_path": "concept-knowledge-concepts-find-the-lock-problem-first.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-find-the-lock-problem-first.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/find-the-lock-problem-first/llms.txt",
       "path": "Knowledge/concepts/find-the-lock-problem-first.md",
       "raw_path": "raw/Knowledge/concepts/find-the-lock-problem-first.md",
@@ -907,14 +939,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-hermes-soul-md-wiring.html",
-        "agent/concepts/hermes-soul-md-wiring.txt"
+        "concept-knowledge-concepts-hermes-soul-md-wiring.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-hermes-soul-md-wiring.html",
+      "html_path": "wiki/knowledge/concepts/hermes-soul-md-wiring/index.html",
       "human_html_path": "wiki/knowledge/concepts/hermes-soul-md-wiring/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/hermes-soul-md-wiring/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/hermes-soul-md-wiring/",
+      "legacy_html_path": "concept-knowledge-concepts-hermes-soul-md-wiring.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-hermes-soul-md-wiring.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/hermes-soul-md-wiring/llms.txt",
       "path": "Knowledge/concepts/hermes-soul-md-wiring.md",
       "raw_path": "raw/Knowledge/concepts/hermes-soul-md-wiring.md",
@@ -933,14 +966,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-local-retrieval-agent-infrastructure.html",
-        "agent/concepts/local-retrieval-agent-infrastructure.txt"
+        "concept-knowledge-concepts-local-retrieval-agent-infrastructure.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-local-retrieval-agent-infrastructure.html",
+      "html_path": "wiki/knowledge/concepts/local-retrieval-agent-infrastructure/index.html",
       "human_html_path": "wiki/knowledge/concepts/local-retrieval-agent-infrastructure/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/local-retrieval-agent-infrastructure/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/local-retrieval-agent-infrastructure/",
+      "legacy_html_path": "concept-knowledge-concepts-local-retrieval-agent-infrastructure.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-local-retrieval-agent-infrastructure.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/local-retrieval-agent-infrastructure/llms.txt",
       "path": "Knowledge/concepts/local-retrieval-agent-infrastructure.md",
       "raw_path": "raw/Knowledge/concepts/local-retrieval-agent-infrastructure.md",
@@ -959,14 +993,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
-        "agent/concepts/matt-pocock-sdlc-rhythm.txt"
+        "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
+      "html_path": "wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/index.html",
       "human_html_path": "wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/",
+      "legacy_html_path": "concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-matt-pocock-sdlc-rhythm.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/llms.txt",
       "path": "Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
       "raw_path": "raw/Knowledge/concepts/matt-pocock-sdlc-rhythm.md",
@@ -985,14 +1020,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-moc-knowledge-cortex.html",
-        "agent/concepts/moc-knowledge-cortex.txt"
+        "concept-knowledge-concepts-moc-knowledge-cortex.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-moc-knowledge-cortex.html",
+      "html_path": "wiki/knowledge/concepts/moc-knowledge-cortex/index.html",
       "human_html_path": "wiki/knowledge/concepts/moc-knowledge-cortex/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/moc-knowledge-cortex/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/moc-knowledge-cortex/",
+      "legacy_html_path": "concept-knowledge-concepts-moc-knowledge-cortex.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-moc-knowledge-cortex.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/moc-knowledge-cortex/llms.txt",
       "path": "Knowledge/concepts/moc-knowledge-cortex.md",
       "raw_path": "raw/Knowledge/concepts/moc-knowledge-cortex.md",
@@ -1011,14 +1047,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
-        "agent/concepts/peer-profiles-vs-child-processes.txt"
+        "concept-knowledge-concepts-peer-profiles-vs-child-processes.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
+      "html_path": "wiki/knowledge/concepts/peer-profiles-vs-child-processes/index.html",
       "human_html_path": "wiki/knowledge/concepts/peer-profiles-vs-child-processes/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/peer-profiles-vs-child-processes/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/peer-profiles-vs-child-processes/",
+      "legacy_html_path": "concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-peer-profiles-vs-child-processes.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/peer-profiles-vs-child-processes/llms.txt",
       "path": "Knowledge/concepts/peer-profiles-vs-child-processes.md",
       "raw_path": "raw/Knowledge/concepts/peer-profiles-vs-child-processes.md",
@@ -1037,14 +1074,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-profile-memory-boundaries.html",
-        "agent/concepts/profile-memory-boundaries.txt"
+        "concept-knowledge-concepts-profile-memory-boundaries.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-profile-memory-boundaries.html",
+      "html_path": "wiki/knowledge/concepts/profile-memory-boundaries/index.html",
       "human_html_path": "wiki/knowledge/concepts/profile-memory-boundaries/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/profile-memory-boundaries/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/profile-memory-boundaries/",
+      "legacy_html_path": "concept-knowledge-concepts-profile-memory-boundaries.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-profile-memory-boundaries.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/profile-memory-boundaries/llms.txt",
       "path": "Knowledge/concepts/profile-memory-boundaries.md",
       "raw_path": "raw/Knowledge/concepts/profile-memory-boundaries.md",
@@ -1063,14 +1101,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-rag-over-agent-wikis.html",
-        "agent/concepts/rag-over-agent-wikis.txt"
+        "concept-knowledge-concepts-rag-over-agent-wikis.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-rag-over-agent-wikis.html",
+      "html_path": "wiki/knowledge/concepts/rag-over-agent-wikis/index.html",
       "human_html_path": "wiki/knowledge/concepts/rag-over-agent-wikis/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/rag-over-agent-wikis/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/rag-over-agent-wikis/",
+      "legacy_html_path": "concept-knowledge-concepts-rag-over-agent-wikis.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-rag-over-agent-wikis.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/rag-over-agent-wikis/llms.txt",
       "path": "Knowledge/concepts/rag-over-agent-wikis.md",
       "raw_path": "raw/Knowledge/concepts/rag-over-agent-wikis.md",
@@ -1089,14 +1128,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
-        "agent/concepts/runtime-memory-knowledge-routing.txt"
+        "concept-knowledge-concepts-runtime-memory-knowledge-routing.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
+      "html_path": "wiki/knowledge/concepts/runtime-memory-knowledge-routing/index.html",
       "human_html_path": "wiki/knowledge/concepts/runtime-memory-knowledge-routing/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/runtime-memory-knowledge-routing/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/runtime-memory-knowledge-routing/",
+      "legacy_html_path": "concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-runtime-memory-knowledge-routing.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/runtime-memory-knowledge-routing/llms.txt",
       "path": "Knowledge/concepts/runtime-memory-knowledge-routing.md",
       "raw_path": "raw/Knowledge/concepts/runtime-memory-knowledge-routing.md",
@@ -1115,14 +1155,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-self-improving-agent-systems.html",
-        "agent/concepts/self-improving-agent-systems.txt"
+        "concept-knowledge-concepts-self-improving-agent-systems.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-self-improving-agent-systems.html",
+      "html_path": "wiki/knowledge/concepts/self-improving-agent-systems/index.html",
       "human_html_path": "wiki/knowledge/concepts/self-improving-agent-systems/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/",
+      "legacy_html_path": "concept-knowledge-concepts-self-improving-agent-systems.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-self-improving-agent-systems.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/self-improving-agent-systems/llms.txt",
       "path": "Knowledge/concepts/self-improving-agent-systems.md",
       "raw_path": "raw/Knowledge/concepts/self-improving-agent-systems.md",
@@ -1141,14 +1182,15 @@
       "canonical_role": "knowledge-document",
       "collection": "concepts",
       "compatibility_paths": [
-        "concept-knowledge-concepts-verb-first-product-positioning.html",
-        "agent/concepts/verb-first-product-positioning.txt"
+        "concept-knowledge-concepts-verb-first-product-positioning.html"
       ],
       "domain": "Knowledge",
-      "html_path": "concept-knowledge-concepts-verb-first-product-positioning.html",
+      "html_path": "wiki/knowledge/concepts/verb-first-product-positioning/index.html",
       "human_html_path": "wiki/knowledge/concepts/verb-first-product-positioning/index.html",
       "human_url": "/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/",
+      "legacy_html_path": "concept-knowledge-concepts-verb-first-product-positioning.html",
+      "legacy_url": "/pixi-wiki/concept-knowledge-concepts-verb-first-product-positioning.html",
       "local_llms_txt_path": "wiki/knowledge/concepts/verb-first-product-positioning/llms.txt",
       "path": "Knowledge/concepts/verb-first-product-positioning.md",
       "raw_path": "raw/Knowledge/concepts/verb-first-product-positioning.md",
@@ -1257,8 +1299,7 @@
       "agent_text_path": "agent/packs/knowledge.txt",
       "canonical_role": "domain-entrypoint",
       "compatibility_paths": [
-        "knowledge.html",
-        "agent/packs/knowledge.txt"
+        "knowledge.html"
       ],
       "confidence": "high",
       "current_as": "2026-06-15",
@@ -1266,7 +1307,7 @@
         "policy": null,
         "stale_after_days": null
       },
-      "html_path": "knowledge.html",
+      "html_path": "wiki/knowledge/index.html",
       "human_html_path": "wiki/knowledge/index.html",
       "human_surface": [
         {
@@ -1281,6 +1322,8 @@
       ],
       "human_url": "/pixi-wiki/wiki/knowledge/",
       "human_url_path": "/pixi-wiki/wiki/knowledge/",
+      "legacy_html_path": "knowledge.html",
+      "legacy_url": "/pixi-wiki/knowledge.html",
       "local_llms_txt_path": "wiki/knowledge/llms.txt",
       "raw_source": "/pixi-wiki/raw/Knowledge/llms.txt",
       "raw_source_path": "raw/Knowledge/llms.txt",
@@ -1355,8 +1398,7 @@
       "agent_text_path": "agent/packs/maps-of-content.txt",
       "canonical_role": "domain-entrypoint",
       "compatibility_paths": [
-        "maps-of-content.html",
-        "agent/packs/maps-of-content.txt"
+        "maps-of-content.html"
       ],
       "confidence": "high",
       "current_as": "2026-06-15",
@@ -1364,7 +1406,7 @@
         "policy": null,
         "stale_after_days": null
       },
-      "html_path": "maps-of-content.html",
+      "html_path": "wiki/maps-of-content/index.html",
       "human_html_path": "wiki/maps-of-content/index.html",
       "human_surface": [
         {
@@ -1379,6 +1421,8 @@
       ],
       "human_url": "/pixi-wiki/wiki/maps-of-content/",
       "human_url_path": "/pixi-wiki/wiki/maps-of-content/",
+      "legacy_html_path": "maps-of-content.html",
+      "legacy_url": "/pixi-wiki/maps-of-content.html",
       "local_llms_txt_path": "wiki/maps-of-content/llms.txt",
       "raw_source": "/pixi-wiki/raw/Maps of Content/llms.txt",
       "raw_source_path": "raw/Maps of Content/llms.txt",
@@ -1443,8 +1487,7 @@
       "agent_text_path": "agent/packs/projects-critical-ranger-ffm.txt",
       "canonical_role": "project-entrypoint",
       "compatibility_paths": [
-        "projects-critical-ranger-ffm.html",
-        "agent/packs/projects-critical-ranger-ffm.txt"
+        "projects-critical-ranger-ffm.html"
       ],
       "confidence": "medium",
       "current_as": "2026-06-15",
@@ -1452,7 +1495,7 @@
         "policy": null,
         "stale_after_days": null
       },
-      "html_path": "projects-critical-ranger-ffm.html",
+      "html_path": "wiki/projects/critical-ranger-ffm/index.html",
       "human_html_path": "wiki/projects/critical-ranger-ffm/index.html",
       "human_surface": [
         {
@@ -1464,6 +1507,8 @@
       ],
       "human_url": "/pixi-wiki/wiki/projects/critical-ranger-ffm/",
       "human_url_path": "/pixi-wiki/wiki/projects/critical-ranger-ffm/",
+      "legacy_html_path": "projects-critical-ranger-ffm.html",
+      "legacy_url": "/pixi-wiki/projects-critical-ranger-ffm.html",
       "local_llms_txt_path": "wiki/projects/critical-ranger-ffm/llms.txt",
       "raw_source": "/pixi-wiki/raw/Projects/Critical Ranger FFM/llms.txt",
       "raw_source_path": "raw/Projects/Critical Ranger FFM/llms.txt",
@@ -1529,8 +1574,7 @@
       "agent_text_path": "agent/packs/projects-eval-trace.txt",
       "canonical_role": "project-entrypoint",
       "compatibility_paths": [
-        "projects-eval-trace.html",
-        "agent/packs/projects-eval-trace.txt"
+        "projects-eval-trace.html"
       ],
       "confidence": "medium",
       "current_as": "2026-06-15",
@@ -1538,7 +1582,7 @@
         "policy": null,
         "stale_after_days": null
       },
-      "html_path": "projects-eval-trace.html",
+      "html_path": "wiki/projects/eval-trace/index.html",
       "human_html_path": "wiki/projects/eval-trace/index.html",
       "human_surface": [
         {
@@ -1547,6 +1591,8 @@
       ],
       "human_url": "/pixi-wiki/wiki/projects/eval-trace/",
       "human_url_path": "/pixi-wiki/wiki/projects/eval-trace/",
+      "legacy_html_path": "projects-eval-trace.html",
+      "legacy_url": "/pixi-wiki/projects-eval-trace.html",
       "local_llms_txt_path": "wiki/projects/eval-trace/llms.txt",
       "raw_source": "/pixi-wiki/raw/Projects/Eval Trace/llms.txt",
       "raw_source_path": "raw/Projects/Eval Trace/llms.txt",
@@ -1595,8 +1641,7 @@
       "agent_text_path": "agent/packs/projects-hermes-mission-control.txt",
       "canonical_role": "project-entrypoint",
       "compatibility_paths": [
-        "projects-hermes-mission-control.html",
-        "agent/packs/projects-hermes-mission-control.txt"
+        "projects-hermes-mission-control.html"
       ],
       "confidence": "high",
       "current_as": "2026-06-15",
@@ -1604,7 +1649,7 @@
         "policy": null,
         "stale_after_days": null
       },
-      "html_path": "projects-hermes-mission-control.html",
+      "html_path": "wiki/projects/hermes-mission-control/index.html",
       "human_html_path": "wiki/projects/hermes-mission-control/index.html",
       "human_surface": [
         {
@@ -1619,6 +1664,8 @@
       ],
       "human_url": "/pixi-wiki/wiki/projects/hermes-mission-control/",
       "human_url_path": "/pixi-wiki/wiki/projects/hermes-mission-control/",
+      "legacy_html_path": "projects-hermes-mission-control.html",
+      "legacy_url": "/pixi-wiki/projects-hermes-mission-control.html",
       "local_llms_txt_path": "wiki/projects/hermes-mission-control/llms.txt",
       "raw_source": "/pixi-wiki/raw/Projects/Hermes Mission Control/llms.txt",
       "raw_source_path": "raw/Projects/Hermes Mission Control/llms.txt",
@@ -1720,8 +1767,7 @@
       "agent_text_path": "agent/packs/projects-planned-program-intel.txt",
       "canonical_role": "project-entrypoint",
       "compatibility_paths": [
-        "projects-planned-program-intel.html",
-        "agent/packs/projects-planned-program-intel.txt"
+        "projects-planned-program-intel.html"
       ],
       "confidence": "high",
       "current_as": "2026-06-15",
@@ -1729,7 +1775,7 @@
         "policy": null,
         "stale_after_days": null
       },
-      "html_path": "projects-planned-program-intel.html",
+      "html_path": "wiki/projects/planned-program-intel/index.html",
       "human_html_path": "wiki/projects/planned-program-intel/index.html",
       "human_surface": [
         {
@@ -1744,6 +1790,8 @@
       ],
       "human_url": "/pixi-wiki/wiki/projects/planned-program-intel/",
       "human_url_path": "/pixi-wiki/wiki/projects/planned-program-intel/",
+      "legacy_html_path": "projects-planned-program-intel.html",
+      "legacy_url": "/pixi-wiki/projects-planned-program-intel.html",
       "local_llms_txt_path": "wiki/projects/planned-program-intel/llms.txt",
       "raw_source": "/pixi-wiki/raw/Projects/Planned Program Intel/llms.txt",
       "raw_source_path": "raw/Projects/Planned Program Intel/llms.txt",
@@ -1819,8 +1867,7 @@
       "agent_text_path": "agent/packs/projects.txt",
       "canonical_role": "domain-entrypoint",
       "compatibility_paths": [
-        "projects.html",
-        "agent/packs/projects.txt"
+        "projects.html"
       ],
       "confidence": "high",
       "current_as": "2026-06-15",
@@ -1828,7 +1875,7 @@
         "policy": null,
         "stale_after_days": null
       },
-      "html_path": "projects.html",
+      "html_path": "wiki/projects/index.html",
       "human_html_path": "wiki/projects/index.html",
       "human_surface": [
         {
@@ -1840,6 +1887,8 @@
       ],
       "human_url": "/pixi-wiki/wiki/projects/",
       "human_url_path": "/pixi-wiki/wiki/projects/",
+      "legacy_html_path": "projects.html",
+      "legacy_url": "/pixi-wiki/projects.html",
       "local_llms_txt_path": "wiki/projects/llms.txt",
       "raw_source": "/pixi-wiki/raw/Projects/llms.txt",
       "raw_source_path": "raw/Projects/llms.txt",
@@ -1903,8 +1952,7 @@
       "agent_text_path": "agent/packs/root.txt",
       "canonical_role": "root-entrypoint",
       "compatibility_paths": [
-        "root.html",
-        "agent/packs/root.txt"
+        "root.html"
       ],
       "confidence": "high",
       "current_as": "2026-06-15",
@@ -1912,7 +1960,7 @@
         "policy": null,
         "stale_after_days": null
       },
-      "html_path": "root.html",
+      "html_path": "index.html",
       "human_html_path": "index.html",
       "human_surface": [
         {
@@ -1927,6 +1975,8 @@
       ],
       "human_url": "/pixi-wiki/",
       "human_url_path": "/pixi-wiki/",
+      "legacy_html_path": "root.html",
+      "legacy_url": "/pixi-wiki/root.html",
       "local_llms_txt_path": "llms.txt",
       "raw_source": "/pixi-wiki/raw/llms.txt",
       "raw_source_path": "raw/llms.txt",

@@ -23,22 +23,32 @@ class AgentTextEntrypointsTest(unittest.TestCase):
                     (ROOT / "raw" / concept["source_path"]).read_text(encoding="utf-8"),
                 )
 
-    def test_agent_callouts_link_to_local_llms_and_markdown_provenance(self) -> None:
+    def test_canonical_concept_pages_link_to_local_llms_and_markdown_provenance(self) -> None:
         data = json.loads((ROOT / "index.json").read_text(encoding="utf-8"))
         for concept in data["concepts"]:
-            html = (ROOT / concept["html_path"]).read_text(encoding="utf-8")
+            html_path = concept["human_html_path"]
+            html = (ROOT / html_path).read_text(encoding="utf-8")
             with self.subTest(concept=concept["title"]):
-                agent_callout = re.search(r'<section class="agent-callout">.*?</section>', html, re.S)
-                self.assertIsNotNone(agent_callout)
-                assert agent_callout is not None
-                callout_html = agent_callout.group(0)
-                self.assertIn(f'href="{concept["local_llms_txt_path"]}"', callout_html)
-                self.assertIn(f'href="{concept["raw_source_path"]}"', callout_html)
-                self.assertIn("local llms.txt", callout_html)
-                self.assertIn("view as markdown", callout_html)
-                self.assertNotIn("Agent alias", callout_html)
-                self.assertNotIn("Agent text", callout_html)
-                self.assertNotIn("Markdown source", callout_html)
+                self.assertEqual(concept["html_path"], html_path)
+                self.assertTrue(html_path.startswith("wiki/knowledge/concepts/"))
+                self.assertIn('href="llms.txt"', html)
+                self.assertIn("local llms.txt", html)
+                self.assertIn("view as markdown", html)
+                self.assertIn("raw/" + concept["source_path"], html)
+                self.assertNotIn("Agent alias", html)
+                self.assertNotIn("Agent text", html)
+                self.assertNotIn("Markdown source", html)
+
+    def test_root_flat_concept_pages_are_compatibility_shims(self) -> None:
+        data = json.loads((ROOT / "index.json").read_text(encoding="utf-8"))
+        for concept in data["concepts"]:
+            legacy_path = concept["legacy_html_path"]
+            html = (ROOT / legacy_path).read_text(encoding="utf-8")
+            with self.subTest(concept=concept["title"]):
+                self.assertIn("compatibility-shim", html)
+                self.assertIn('rel="canonical"', html)
+                self.assertIn(concept["human_url"], html)
+                self.assertIn("root-level page is retained only so old links keep working", html)
 
     def test_agent_layer_files_exist(self) -> None:
         for name in ["llms.txt", "llms-full.txt", "index.json"]:
