@@ -3,7 +3,7 @@ title: Pixi Vault
 created: 2026-06-16
 updated: 2026-06-16
 type: namespace-overview
-status: scaffold
+status: compiled
 category: knowledge-systems
 namespace: pixi-vault
 confidence: medium
@@ -25,7 +25,7 @@ General agent workflow behavior unless it changes vault/compiler architecture; p
 
 ### Current As
 
-2026-06-16 — scaffold only. Content has not yet been fully compiled.
+2026-06-16 — content pack v1 compiled with Wiki Compiler Map/source-class and publishing-model pages.
 
 ## Canonical Source Roots
 

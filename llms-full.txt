@@ -2801,7 +2801,7 @@ title: Pixi Vault
 created: 2026-06-16
 updated: 2026-06-16
 type: namespace-overview
-status: scaffold
+status: compiled
 category: knowledge-systems
 namespace: pixi-vault
 confidence: medium
@@ -2823,7 +2823,7 @@ General agent workflow behavior unless it changes vault/compiler architecture; p
 
 ### Current As
 
-2026-06-16 — scaffold only. Content has not yet been fully compiled.
+2026-06-16 — content pack v1 compiled with Wiki Compiler Map/source-class and publishing-model pages.
 
 ## Canonical Source Roots
 
@@ -2854,6 +2854,60 @@ When published to `pixi-wiki`, this namespace should expose:
 - Do not compile Daily Notes directly unless promoted or verified.
 
 
+<!-- ===== pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md ===== -->
+
+---
+title: Wiki Compiler Map and Source Classes
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: pixi-vault
+tags: [pixi-vault, wiki-compiler-map, source-of-truth, namespace-routing]
+sources:
+  - Wiki Compiler Maps/Namespace Wiki Compiler Map.md
+  - Projects/Hermes Mission Control/PRD - Pixi Vault Namespace Compiler.md
+confidence: high
+---
+
+# Wiki Compiler Map and Source Classes
+
+A **Wiki Compiler Map** is an internal routing artifact that maps authoring-source notes into compiled AgentWikis namespaces. It replaces the old MOC mental model when the job is source-to-namespace routing.
+
+## Why this exists
+
+The vault has many useful authoring surfaces: `Knowledge/`, `Projects/`, scratch chronology, generated reports, and project artifacts. Future agents need a durable contract for deciding which of those are canonical enough to compile into public/agent-facing wiki pages.
+
+## Source classes
+
+### Canonical
+
+Canonical sources can directly feed compiled namespace pages after normal review. Examples include `Knowledge/concepts/*.md`, `Projects/<Project>/Index.md`, PRDs, ADRs, source inventories, verified project reports, and committed repo artifacts with stable paths.
+
+### Supporting
+
+Supporting sources guide routing and maintenance. Examples include Wiki Compiler Maps, taxonomy maps, verified generated reports, lint reports, and issue tracker parent/child tables. They are not usually public wiki content unless rewritten deliberately.
+
+### Scratch
+
+Scratch sources are volatile capture. They can help agents find context, but they do not compile directly unless Jamie/Pixoid promotes or verifies the relevant material against canonical sources.
+
+## Namespace routing rules
+
+- Use one primary namespace for each compiled page.
+- Use crosslinks for secondary relevance.
+- Duplicate only when a source is rewritten for a genuinely different namespace-specific purpose.
+- Promote projects or concepts to standalone namespaces only through an explicit decision.
+
+## Promotion rule
+
+A source cluster can become a namespace when it has at least two of five signals: independent audience, multiple document types, raw source corpus, ongoing update lifecycle, or clear covers/not-covered scope.
+
+## Source
+
+Compiled from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` and `Projects/Hermes Mission Control/PRD - Pixi Vault Namespace Compiler.md`.
+
+
 <!-- ===== pixi-vault/wiki/index.md ===== -->
 
 ---
@@ -2861,17 +2915,17 @@ title: Pixi Vault — Master Index
 created: 2026-06-16
 updated: 2026-06-16
 type: index
-status: scaffold
+status: compiled
 namespace: pixi-vault
 ---
 
 # Pixi Vault — Master Index
 
-> Scaffold index for `pixi-vault`. Add compiled pages here as they are created.
+> Compiled index for `pixi-vault`, the private source vault and namespace compiler system.
 
 ## Concepts
 
-<!-- Add compiled concepts alphabetically. -->
+- [[concepts/wiki-compiler-map-and-source-classes|Wiki Compiler Map and Source Classes]] — Routing contract, source classes, primary namespace rule, and namespace promotion rule.
 
 ## Entities
 
@@ -2883,7 +2937,7 @@ namespace: pixi-vault
 
 ## Syntheses
 
-<!-- Add compiled syntheses alphabetically. -->
+- [[syntheses/pixi-vault-to-pixi-wiki-publishing-model|Pixi Vault to Pixi Wiki Publishing Model]] — Source/output repo boundary and publish workflow from vault to public AgentWikis mirror.
 
 ## Source Roots
 
@@ -2898,7 +2952,7 @@ title: Pixi Vault — Activity Log
 created: 2026-06-16
 updated: 2026-06-16
 type: log
-status: scaffold
+status: compiled
 namespace: pixi-vault
 ---
 
@@ -2911,6 +2965,84 @@ namespace: pixi-vault
 - Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
 - Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Compile pixi-vault content pack v1
+
+- Added concept `wiki/concepts/wiki-compiler-map-and-source-classes.md`.
+- Added synthesis `wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md`.
+- Updated namespace README and index from scaffold to compiled status.
+- Sources are the PRD and Namespace Wiki Compiler Map.
+- Scratch chronology was not copied or compiled.
+
+
+<!-- ===== pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md ===== -->
+
+---
+title: Pixi Vault to Pixi Wiki Publishing Model
+created: 2026-06-16
+updated: 2026-06-16
+type: synthesis
+status: compiled
+namespace: pixi-vault
+tags: [pixi-vault, pixi-wiki, publishing, agentwikis]
+sources:
+  - Projects/Hermes Mission Control/PRD - Pixi Vault Namespace Compiler.md
+  - Wiki Compiler Maps/Namespace Wiki Compiler Map.md
+confidence: high
+---
+
+# Pixi Vault to Pixi Wiki Publishing Model
+
+`pixi-vault` is the private source repository. `pixi-wiki` is the public generated mirror. The boundary is intentional: authoring truth and public output are separate artifacts.
+
+## Source side
+
+```text
+pixi-vault/
+├── Knowledge/              # reusable concept authoring
+├── Projects/               # project/application source truth
+├── Wiki Compiler Maps/     # routing contracts
+└── wikis/<slug>/           # compiled namespace source
+```
+
+The `wikis/<slug>/` layer is compiled/curated source inside the vault. It is reviewable in Git and Obsidian, but agents should edit `Knowledge/`, `Projects/`, or Wiki Compiler Maps first unless intentionally patching compiled output.
+
+## Public side
+
+```text
+pixi-wiki/
+├── llms.txt
+├── llms-full.txt
+├── index.json
+├── raw/<slug>/...
+└── wiki/<slug>/...
+```
+
+`llms.txt` is the compact agent registry. `llms-full.txt` is the full concatenated corpus. `index.json` is the machine-readable registry. `raw/<slug>/` preserves Markdown, and `wiki/<slug>/` exposes human-readable HTML.
+
+## Publication workflow
+
+1. Update canonical source in `Knowledge/`, `Projects/`, or Wiki Compiler Maps.
+2. Compile/curate into `wikis/<slug>/`.
+3. Run namespace linting against `pixi-vault/wikis`.
+4. Run the `pixi-wiki` generator.
+5. Run public-output tests.
+6. Push both repos as needed.
+7. Verify live GitHub Pages URLs with HTTP 200 checks.
+
+## Legacy shims
+
+Old root flat pages in `pixi-wiki` are temporary compatibility shims. They protect old links, but they are not canonical. New canonical routes live under `/raw/<slug>/...` and `/wiki/<slug>/...`.
+
+## Cross-namespace relationships
+
+- `agent-workflows` documents crew workflows affected by source-truth boundaries.
+- `eval-trace` evaluates whether agents overfit stale context or skip live verification.
+- `local-ai-infrastructure` will matter when RAG or local models consume compiled wiki pages.
+
+## Source
+
+Compiled from `Projects/Hermes Mission Control/PRD - Pixi Vault Namespace Compiler.md` and `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
 
 
 <!-- ===== agent-workflows/CLAUDE.md ===== -->

@@ -158,8 +158,10 @@ Root is for entrypoints only. Old flat HTML URLs are tiny compatibility shims th
 
 - [Pixi Vault Namespace Instructions](/raw/pixi-vault/CLAUDE.md) ([html](/wiki/pixi-vault/CLAUDE.md.html))
 - [Pixi Vault](/raw/pixi-vault/README.md) ([html](/wiki/pixi-vault/README.md.html))
+- [Wiki Compiler Map and Source Classes](/raw/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md) ([html](/wiki/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md.html))
 - [Pixi Vault — Master Index](/raw/pixi-vault/wiki/index.md) ([html](/wiki/pixi-vault/wiki/index.md.html))
 - [Pixi Vault — Activity Log](/raw/pixi-vault/wiki/log.md) ([html](/wiki/pixi-vault/wiki/log.md.html))
+- [Pixi Vault to Pixi Wiki Publishing Model](/raw/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md) ([html](/wiki/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md.html))
 
 ## Agent Workflows
 
