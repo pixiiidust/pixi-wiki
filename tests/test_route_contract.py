@@ -107,6 +107,16 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 self.assertTrue((ROOT / "wiki" / slug / "llms-full.txt").is_file())
                 self.assertTrue((ROOT / "wiki" / slug / "index.json").is_file())
 
+    def test_light_theme_is_default_with_dark_toggle(self) -> None:
+        for path in [ROOT / "index.html", ROOT / "wiki" / "agent-workflows" / "README.md.html"]:
+            html = path.read_text(encoding="utf-8")
+            with self.subTest(path=path):
+                self.assertIn('data-theme="light"', html)
+                self.assertIn('data-theme-toggle', html)
+                self.assertIn('☾ Dark', html)
+                self.assertIn('[data-theme=dark]', html)
+                self.assertIn('localStorage.getItem', html)
+
 
 if __name__ == "__main__":
     unittest.main()
