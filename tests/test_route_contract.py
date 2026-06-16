@@ -349,11 +349,33 @@ class WikiRouteLinkTest(unittest.TestCase):
         self.assertIn('href="wiki/projects/index.html"', html)
         self.assertIn('href="wiki/maps-of-content/index.html"', html)
         self.assertIn('href="wiki/maps-of-content/llms.txt"', html)
+        grid_match = re.search(r'<div class="pack-grid">(.*?)</div>', html, re.DOTALL)
+        self.assertIsNotNone(grid_match)
+        assert grid_match is not None
+        grid = grid_match.group(1)
+        self.assertLess(grid.find("Maps of Content"), grid.find("Knowledge"))
+        self.assertLess(grid.find("Knowledge"), grid.find("Projects"))
+        self.assertLess(grid.find("Projects"), grid.find("For Agents"))
         self.assertNotIn('href="wiki/knowledge/concepts/agent-wikis/index.html"', html)
         self.assertNotIn('href="wiki/projects/eval-trace/index.html"', html)
         self.assertNotIn("Knowledge concepts</h2>", html)
         self.assertNotIn("Project packs</h2>", html)
         self.assertNotIn("Vault Root</h2>", html)
+
+    def test_overview_sidebar_orders_moc_before_content_domains(self) -> None:
+        """Sidebar domain order matches the retrieval model: maps before content."""
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        moc = html.find('side-label">Maps of Content')
+        knowledge = html.find('side-label">Knowledge')
+        projects = html.find('side-label">Projects')
+        vault = html.find('side-label">Vault Root')
+        self.assertGreaterEqual(moc, 0)
+        self.assertGreaterEqual(knowledge, 0)
+        self.assertGreaterEqual(projects, 0)
+        self.assertGreaterEqual(vault, 0)
+        self.assertLess(moc, knowledge)
+        self.assertLess(knowledge, projects)
+        self.assertLess(projects, vault)
 
     def test_canonical_concept_page_renders_full_human_markdown_surface(self) -> None:
         """Canonical concept HTML should be the rich rendered Markdown page, not a tiny bundle stub."""

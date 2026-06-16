@@ -21,6 +21,11 @@
 
 ## Domains
 
+### Maps of Content
+
+- Domain route: [Maps of Content llms.txt](/pixi-wiki/wiki/maps-of-content/llms.txt)
+- [Maps of Content Domain Pack](/pixi-wiki/wiki/maps-of-content/) — role: `domain-entrypoint` — agent: [wiki/maps-of-content/llms.txt](/pixi-wiki/wiki/maps-of-content/llms.txt) — raw: [source](/pixi-wiki/raw/Maps of Content/llms.txt) — current: 2026-06-15
+
 ### Knowledge
 
 - Domain route: [Knowledge llms.txt](/pixi-wiki/wiki/knowledge/llms.txt)
@@ -42,11 +47,6 @@
 - [Runtime Memory Knowledge Routing](/pixi-wiki/wiki/knowledge/concepts/runtime-memory-knowledge-routing/) — agent: [wiki/knowledge/concepts/runtime-memory-knowledge-routing/llms.txt](/pixi-wiki/wiki/knowledge/concepts/runtime-memory-knowledge-routing/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/runtime-memory-knowledge-routing.md) — updated: 2026-06-15 — Runtime rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search without turning memory into a wiki dump.
 - [Self-Improving Agent Systems](/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/) — agent: [wiki/knowledge/concepts/self-improving-agent-systems/llms.txt](/pixi-wiki/wiki/knowledge/concepts/self-improving-agent-systems/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/self-improving-agent-systems.md) — updated: 2026-06-15 — Model for agent systems that improve through verified durable state, evidence grades, promotion ladders, and future-run retrieval rather than weight updates.
 - [Verb-First Product Positioning](/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/) — agent: [wiki/knowledge/concepts/verb-first-product-positioning/llms.txt](/pixi-wiki/wiki/knowledge/concepts/verb-first-product-positioning/llms.txt) — raw: [markdown](/pixi-wiki/raw/Knowledge/concepts/verb-first-product-positioning.md) — updated: 2026-06-11
-
-### Maps of Content
-
-- Domain route: [Maps of Content llms.txt](/pixi-wiki/wiki/maps-of-content/llms.txt)
-- [Maps of Content Domain Pack](/pixi-wiki/wiki/maps-of-content/) — role: `domain-entrypoint` — agent: [wiki/maps-of-content/llms.txt](/pixi-wiki/wiki/maps-of-content/llms.txt) — raw: [source](/pixi-wiki/raw/Maps of Content/llms.txt) — current: 2026-06-15
 
 ### Projects
 
