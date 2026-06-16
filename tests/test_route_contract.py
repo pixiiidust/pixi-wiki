@@ -225,6 +225,17 @@ class MOCIndexRouteTest(unittest.TestCase):
 class WikiRouteLinkTest(unittest.TestCase):
     """Assert generated /wiki/ HTML links resolve within the static output."""
 
+    def test_wiki_concept_page_exposes_clean_agent_and_provenance_links(self) -> None:
+        page = ROOT / "wiki" / "knowledge" / "concepts" / "agent-wikis" / "index.html"
+        html = page.read_text(encoding="utf-8")
+        self.assertIn('href="llms.txt"', html)
+        self.assertIn("local llms.txt", html)
+        self.assertIn("view as markdown", html)
+        self.assertIn('href="../../../../raw/Knowledge/concepts/agent-wikis.md"', html)
+        self.assertNotIn("Agent alias", html)
+        self.assertNotIn("Agent text", html)
+        self.assertNotIn("Markdown source", html)
+
     def test_wiki_html_internal_links_resolve(self) -> None:
         wiki_dir = ROOT / "wiki"
         self.assertTrue(wiki_dir.is_dir(), "wiki/ directory missing")
