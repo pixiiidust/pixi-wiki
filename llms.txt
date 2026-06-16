@@ -142,3 +142,85 @@ Root is for entrypoints only. Old flat HTML URLs are tiny compatibility shims th
 - [Local AI Infrastructure](/raw/local-ai-infrastructure/README.md)
 - [Local AI Infrastructure — Master Index](/raw/local-ai-infrastructure/wiki/index.md)
 - [Local AI Infrastructure — Activity Log](/raw/local-ai-infrastructure/wiki/log.md)
+
+---
+
+# Pixi Wiki Namespace Registry
+
+# Pixi Wiki Namespace Registry
+
+> AgentWikis-style registry generated from pixi-vault compiled namespaces.
+
+> Raw Markdown: `/raw/<slug>/<path>`. Human HTML: `/wiki/<slug>/<path>.html`.
+
+## Pixi Vault
+
+> Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.
+> Current as of: 2026-06-16
+
+- [Pixi Vault Namespace Instructions](/raw/pixi-vault/CLAUDE.md) ([html](/wiki/pixi-vault/CLAUDE.md.html))
+- [Pixi Vault](/raw/pixi-vault/README.md) ([html](/wiki/pixi-vault/README.md.html))
+- [Pixi Vault — Master Index](/raw/pixi-vault/wiki/index.md) ([html](/wiki/pixi-vault/wiki/index.md.html))
+- [Pixi Vault — Activity Log](/raw/pixi-vault/wiki/log.md) ([html](/wiki/pixi-vault/wiki/log.md.html))
+
+## Agent Workflows
+
+> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, self-improving agent systems, and workflow reliability practices.
+> Current as of: 2026-06-16
+
+- [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
+- [Agent Workflows](/raw/agent-workflows/README.md) ([html](/wiki/agent-workflows/README.md.html))
+- [Hermes Mission Control](/raw/agent-workflows/wiki/entities/hermes-mission-control.md) ([html](/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html))
+- [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md) ([html](/wiki/agent-workflows/wiki/index.md.html))
+- [Agent Workflows — Activity Log](/raw/agent-workflows/wiki/log.md) ([html](/wiki/agent-workflows/wiki/log.md.html))
+
+## Eval Trace
+
+> Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.
+> Current as of: 2026-06-16
+
+- [Eval Trace Namespace Instructions](/raw/eval-trace/CLAUDE.md) ([html](/wiki/eval-trace/CLAUDE.md.html))
+- [Eval Trace](/raw/eval-trace/README.md) ([html](/wiki/eval-trace/README.md.html))
+- [Context Overfitting](/raw/eval-trace/wiki/concepts/context-overfitting.md) ([html](/wiki/eval-trace/wiki/concepts/context-overfitting.md.html))
+- [Eval Trace — Master Index](/raw/eval-trace/wiki/index.md) ([html](/wiki/eval-trace/wiki/index.md.html))
+- [Eval Trace — Activity Log](/raw/eval-trace/wiki/log.md) ([html](/wiki/eval-trace/wiki/log.md.html))
+
+## AI-Native Product Surfaces
+
+> AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
+> Current as of: 2026-06-16
+
+- [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
+- [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
+- [AI-Native Product Surfaces — Master Index](/raw/ai-native-product-surfaces/wiki/index.md) ([html](/wiki/ai-native-product-surfaces/wiki/index.md.html))
+- [AI-Native Product Surfaces — Activity Log](/raw/ai-native-product-surfaces/wiki/log.md) ([html](/wiki/ai-native-product-surfaces/wiki/log.md.html))
+
+## RL Sim Labs
+
+> PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.
+> Current as of: 2026-06-16
+
+- [RL Sim Labs Namespace Instructions](/raw/rl-sim-labs/CLAUDE.md) ([html](/wiki/rl-sim-labs/CLAUDE.md.html))
+- [RL Sim Labs](/raw/rl-sim-labs/README.md) ([html](/wiki/rl-sim-labs/README.md.html))
+- [RL Sim Labs — Master Index](/raw/rl-sim-labs/wiki/index.md) ([html](/wiki/rl-sim-labs/wiki/index.md.html))
+- [RL Sim Labs — Activity Log](/raw/rl-sim-labs/wiki/log.md) ([html](/wiki/rl-sim-labs/wiki/log.md.html))
+
+## Curated Tuning Datasets
+
+> Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
+> Current as of: 2026-06-16
+
+- [Curated Tuning Datasets Namespace Instructions](/raw/curated-tuning-datasets/CLAUDE.md) ([html](/wiki/curated-tuning-datasets/CLAUDE.md.html))
+- [Curated Tuning Datasets](/raw/curated-tuning-datasets/README.md) ([html](/wiki/curated-tuning-datasets/README.md.html))
+- [Curated Tuning Datasets — Master Index](/raw/curated-tuning-datasets/wiki/index.md) ([html](/wiki/curated-tuning-datasets/wiki/index.md.html))
+- [Curated Tuning Datasets — Activity Log](/raw/curated-tuning-datasets/wiki/log.md) ([html](/wiki/curated-tuning-datasets/wiki/log.md.html))
+
+## Local AI Infrastructure
+
+> Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.
+> Current as of: 2026-06-16
+
+- [Local AI Infrastructure Namespace Instructions](/raw/local-ai-infrastructure/CLAUDE.md) ([html](/wiki/local-ai-infrastructure/CLAUDE.md.html))
+- [Local AI Infrastructure](/raw/local-ai-infrastructure/README.md) ([html](/wiki/local-ai-infrastructure/README.md.html))
+- [Local AI Infrastructure — Master Index](/raw/local-ai-infrastructure/wiki/index.md) ([html](/wiki/local-ai-infrastructure/wiki/index.md.html))
+- [Local AI Infrastructure — Activity Log](/raw/local-ai-infrastructure/wiki/log.md) ([html](/wiki/local-ai-infrastructure/wiki/log.md.html))

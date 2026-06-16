@@ -2778,8 +2778,6 @@ This layered architecture — vault (durable human truth) → Hermes knowledge (
 
 <!-- ===== AgentWikis namespace registry skeleton ===== -->
 
-# Pixi Wiki — full corpus
-
 <!-- ===== pixi-vault/CLAUDE.md ===== -->
 
 # Pixi Vault Namespace Instructions
