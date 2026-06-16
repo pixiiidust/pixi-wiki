@@ -1,0 +1,147 @@
+---
+title: "ObsidianVault Root Pack"
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: high
+scope:
+  covers:
+    - Vault-level navigation and agent retrieval routing
+    - Active/parked/historical project context switching
+    - Source-of-truth hierarchy across GitHub, PRDs, Obsidian, Hermes knowledge, skills, memory, sessions, and web
+    - Current KPR V2 and vault-wide entrypoint planning gates
+  not_covered:
+    - Individual project build details
+    - Hermes profile/gateway runtime configuration
+    - Session-specific memory or conversation state
+freshness:
+  policy: on_change
+  stale_after_days: 60
+owners:
+  routing: Pixoid
+  maintenance: Quill
+sources:
+  - label: Home
+    path_or_url: Home.md
+    role: synthesis
+  - label: Projects Domain Pack
+    path_or_url: Projects/llms.txt
+    role: routing
+  - label: Projects MOC
+    path_or_url: Maps of Content/Projects MOC.md
+    role: synthesis
+  - label: Knowledge Domain Pack
+    path_or_url: Knowledge/llms.txt
+    role: routing
+  - label: Knowledge MOC
+    path_or_url: Maps of Content/Knowledge MOC.md
+    role: synthesis
+  - label: MOC Domain Pack
+    path_or_url: Maps of Content/llms.txt
+    role: routing
+  - label: Project Board
+    path_or_url: Project Board.md
+    role: coordination
+  - label: Knowledge Pack Contract V1
+    path_or_url: Projects/Hermes Mission Control/Knowledge Pack Contract V1.md
+    role: architecture
+  - label: KPR V2 tracker
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/74
+    role: coordination
+  - label: Vault-wide entrypoint mesh design
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues/77
+    role: coordination
+human_surface:
+  - path_or_url: Home.md
+  - path_or_url: Maps of Content/Projects MOC.md
+  - path_or_url: Maps of Content/Knowledge MOC.md
+fallback_rules:
+  - If a project has no knowledge pack, fall back to its Projects/<Name>/Index.md.
+  - If no project index exists, fall back to Projects MOC and Project Board.
+  - If stale, use for orientation only and verify live GitHub/vault state before acting.
+v_next:
+  - static_html
+  - automated_freshness_check
+---
+
+# ObsidianVault Root Pack — Agent Entrypoint
+
+## Agent Start Here
+
+Before project work, load this file to choose the right source. Then load the relevant project knowledge pack or project `Index.md`. This file is routing truth, not canonical truth.
+
+## What This Pack Routes
+
+- Vault-wide source-of-truth hierarchy.
+- Active project priority and next entrypoint.
+- Where to find project hubs, MOCs, and Knowledge wiki surfaces.
+- The distinction between human navigation (MOCs/indexes) and agent retrieval contracts (`llms.txt`).
+- Crew roles: Pixoid routes/reviews; Quill maintains packs; Boba contributes sources; Tinker contributes implementation facts.
+
+## What This Pack Does Not Route
+
+- Detailed project issue trees or implementation instructions.
+- Live Hermes gateway/profile/cron mutation.
+- Personal secrets or credentials.
+- External web research except as fallback.
+
+## Source-of-Truth Hierarchy
+
+1. **GitHub issues/PRs** — coordination truth.
+2. **PRDs/ADRs** — requirements and architecture truth.
+3. **Obsidian project notes** — human synthesis and durable project context.
+4. **Hermes local knowledge** — reusable concepts and agent-operational facts.
+5. **Skills** — procedural truth.
+6. **Memory / USER** — stable Jamie/environment preferences only.
+7. **Session search** — conversation archaeology, never canonical alone.
+8. **Web / public Agent Wikis** — external/current fallback.
+9. **Knowledge packs** — routing truth: maps to the right source above.
+
+## Canonical Sources
+
+| Label | Path/URL | Role |
+|---|---|---|
+| Projects MOC | `Maps of Content/Projects MOC.md` | synthesis |
+| Knowledge MOC | `Maps of Content/Knowledge MOC.md` | synthesis |
+| Agent Operations MOC | `Maps of Content/Agent Operations MOC.md` | synthesis |
+| Project Board | `Project Board.md` | coordination |
+| Contract | `Projects/Hermes Mission Control/Knowledge Pack Contract V1.md` | architecture |
+
+## Current Narrative / Operating Posture
+
+Knowledge Pack Routing V1, stack-level integration, and integration QA are complete. Planned Program Intel is the first proof/project pack, not the main goal. KPR V2 parent #74 is closed: #76 freshness report is closed, #75 static HTML human surface is implemented as repo-local derived output under `Generated/kpr-static-html/`, #77 vault-wide entrypoint mesh is closed, and #86 runtime memory/knowledge routing smoke is closed. Deferred V2+ follow-ups #88–#91 track `index.json`, automated freshness delivery, link-rot/source checks, and MCP/search/RAG/confidence calibration; do not implement them until explicitly routed.
+
+| Project | Status | Next gate | Pack |
+|---|---|---|---|
+| KPR V2 Planning | #74/#75/#76 closed; public derived wiki deployed at https://pixiiidust.github.io/pixi-wiki/; #91 ledger design path closed | Maintain only on source-boundary changes; future ledger implementation requires a new thin issue | `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md` |
+| Vault-wide Entry Mesh | #77 closed; #79–#83 complete | Maintain mesh only on source-boundary changes | `https://github.com/pixiiidust/ObsidianVault/issues/77` |
+| Planned Program Intel | Active; build queue complete; first KPR proof | Optional deck/Loom packaging only if re-prioritized | `Projects/Planned Program Intel/llms.txt` |
+| Hermes Mission Control | Active agent-ops hub | Maintain current KPR surfaces only when source boundaries change | `Projects/Hermes Mission Control/llms.txt` |
+| Critical Ranger FFM | Active research/build | Zone-control action contract fixtures | `Projects/Critical Ranger FFM/llms.txt` |
+| Planned.com Demo | Historical | Reference only | `Projects/Planned/Index.md` |
+
+## Do Not Do
+
+- Do not treat MOCs as agent retrieval contracts; they are human navigation.
+- Do not treat knowledge packs as canonical project truth.
+- Do not use session search as the first source for current project state.
+- Do not conflate `planned-program-intel` (active) with `planned-program-intelligence` (historical).
+- Do not create runtime automation, MCP, HTML publishing, or freshness cron as part of V1.
+
+## Fallback Rules
+
+1. Pack exists and is current: load pack, then canonical sources listed in it.
+2. Pack exists but is stale: use pack for orientation only; verify source truth live.
+3. Pack missing: use project `Index.md`, then Projects MOC, then Project Board.
+4. Question is out of scope: skip the pack and route to the stated fallback.
+
+## Human Surface
+
+- `Home.md`
+- `Maps of Content/Projects MOC.md`
+- `Maps of Content/Knowledge MOC.md`
+- `Project Board.md`
+
+## Maintenance Notes
+
+Update this root pack when a project changes active/parked/historical status, when a new project pack is added, or when the source-of-truth hierarchy changes. V2 should render this as static HTML and automate stale-pack checks.

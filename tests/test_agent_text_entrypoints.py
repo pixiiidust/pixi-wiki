@@ -36,6 +36,44 @@ class AgentTextEntrypointsTest(unittest.TestCase):
                 self.assertNotIn("Markdown source:", callout_html)
                 self.assertIn("Agent text", callout_html)
 
+
+    def test_agent_layer_files_exist(self) -> None:
+        for name in ["llms.txt", "llms-full.txt", "index.json"]:
+            with self.subTest(file=name):
+                self.assertTrue((ROOT / "agent" / name).exists())
+
+    def test_agent_index_exposes_clean_entrypoints(self) -> None:
+        data = json.loads((ROOT / "agent" / "index.json").read_text(encoding="utf-8"))
+        entrypoints = data["entrypoints"]
+        self.assertEqual(entrypoints["agent_llms_txt"], "agent/llms.txt")
+        self.assertEqual(entrypoints["agent_json_index"], "agent/index.json")
+        self.assertEqual(entrypoints["agent_concepts_base"], "agent/concepts/")
+        self.assertEqual(entrypoints["agent_packs_base"], "agent/packs/")
+        for concept in data["concepts"]:
+            with self.subTest(concept=concept["title"]):
+                self.assertIn("agent_text_path", concept)
+                self.assertIn("raw_source_path", concept)
+                self.assertTrue(concept["agent_text_path"].startswith("agent/concepts/"))
+                self.assertTrue((ROOT / concept["agent_text_path"]).exists(), concept["agent_text_path"])
+                self.assertEqual(
+                    (ROOT / concept["agent_text_path"]).read_text(encoding="utf-8"),
+                    (ROOT / concept["raw_text_path"]).read_text(encoding="utf-8"),
+                )
+
+    def test_agent_pack_aliases_exist(self) -> None:
+        data = json.loads((ROOT / "agent" / "index.json").read_text(encoding="utf-8"))
+        for pack in data["packs"]:
+            with self.subTest(pack=pack["title"]):
+                self.assertIn("agent_text_path", pack)
+                self.assertIn("raw_source_path", pack)
+                self.assertTrue(pack["agent_text_path"].startswith("agent/packs/"))
+                self.assertTrue((ROOT / pack["agent_text_path"]).exists(), pack["agent_text_path"])
+
+    def test_root_compatibility_files_still_exist(self) -> None:
+        for name in ["llms.txt", "llms-full.txt", "index.json", "index.html"]:
+            with self.subTest(file=name):
+                self.assertTrue((ROOT / name).exists())
+
     def test_llms_txt_raw_entries_are_clickable_txt_links(self) -> None:
         for name in ["llms.txt", "llms-full.txt"]:
             with self.subTest(file=name):

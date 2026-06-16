@@ -1,0 +1,138 @@
+---
+title: "Projects Domain Pack"
+type: knowledge-pack
+status: active
+current_as: 2026-06-15
+confidence: high
+scope:
+  covers:
+    - Project-domain routing across active, parked, historical, and personal/infrastructure contexts
+    - Project pack coverage and fallback behavior
+    - Source-of-truth hierarchy for project state
+  not_covered:
+    - Full project implementation details
+    - Repo code truth beyond links to GitHub/project hubs
+    - Session-specific task state
+freshness:
+  policy: on_change
+  stale_after_days: 30
+owners:
+  routing: Pixoid
+  maintenance: Quill
+  implementation_facts: Tinker optional
+  source_inventory: Boba optional
+sources:
+  - label: Projects MOC
+    path_or_url: Maps of Content/Projects MOC.md
+    role: synthesis
+  - label: Project Board
+    path_or_url: Project Board.md
+    role: coordination
+  - label: Root Pack
+    path_or_url: llms.txt
+    role: routing
+  - label: ObsidianVault issue tracker
+    path_or_url: https://github.com/pixiiidust/ObsidianVault/issues
+    role: coordination
+human_surface:
+  - path_or_url: Maps of Content/Projects MOC.md
+  - path_or_url: Project Board.md
+fallback_rules:
+  - If a project has its own `llms.txt`, load it before touching project work.
+  - If no project pack exists, load the project `Index.md`.
+  - If no project index exists, use Projects MOC, Project Board, then GitHub/session/web fallback.
+  - If a project is parked or historical, do not route implementation unless Jamie explicitly reopens it.
+v_next:
+  - static_html
+  - automated_freshness_check
+---
+
+# Projects Domain Pack — Agent Entrypoint
+
+## Agent Start Here
+
+Use this pack after the root `/llms.txt` when the task is project-related but before choosing a specific project hub. This pack routes agents through Jamie's project bounded contexts. It is routing truth, not canonical truth.
+
+## What This Pack Routes
+
+- Active project contexts.
+- Parked and historical project contexts.
+- Project-specific knowledge-pack coverage.
+- Which project surfaces are canonical for current state.
+- Proof-project drift guardrails.
+
+## What This Pack Does Not Route
+
+- Detailed code implementation steps.
+- Live repo branch/PR truth without GitHub verification.
+- Runtime Hermes profile/gateway/cron mutations.
+- Personal secrets, credentials, or private env details.
+
+## Source-of-Truth Hierarchy
+
+1. **GitHub issues/PRs** — coordination and implementation truth.
+2. **Project PRDs/ADRs** — requirements and architecture truth.
+3. **Project `Index.md` notes** — durable project synthesis and boundaries.
+4. **Project-specific `llms.txt` packs** — routing truth for projects that have them.
+5. **Project Board** — current queue and milestone navigation.
+6. **Projects MOC** — human project map.
+7. **Skills** — procedures.
+8. **Session search/web** — fallback/archaeology only.
+9. **This pack** — project-domain routing truth.
+
+## Canonical Sources
+
+| Label | Path/URL | Role |
+|---|---|---|
+| Projects MOC | `Maps of Content/Projects MOC.md` | synthesis |
+| Project Board | `Project Board.md` | coordination |
+| Root Pack | `llms.txt` | routing |
+| ObsidianVault tracker | `https://github.com/pixiiidust/ObsidianVault/issues` | coordination |
+
+## Current Narrative / Operating Posture
+
+The project domain is organized as bounded contexts. Active contexts include Critical Ranger FFM, Planned Program Intel, Hermes Mission Control, Pixoid Agent Capability Routes, and Zerg AI Democratization Roadmap. Parked/historical contexts remain useful as references but should not become default work without explicit reprioritization.
+
+Knowledge Pack Routing is currently an architecture workstream under Hermes Mission Control, not a Planned Program Intel deliverable. Planned Program Intel was the first proof/project pack; it is not the default next project unless Jamie says so.
+
+## Project Pack Coverage
+
+| Project/domain | Status | Agent entrypoint |
+|---|---|---|
+| Hermes Mission Control | active agent-ops hub | `Projects/Hermes Mission Control/llms.txt` |
+| Planned Program Intel | active; build queue complete; first KPR proof | `Projects/Planned Program Intel/llms.txt` |
+| Critical Ranger FFM | active research/build | `Projects/Critical Ranger FFM/llms.txt` |
+| Pixoid Agent Capability Routes | active/completed route governance reference | `Projects/Pixoid Agent Capability Routes/Index.md` |
+| Zerg AI Democratization Roadmap | active brainstorm | `Projects/Zerg AI Democratization Roadmap/Index.md` |
+| Planned.com Demo | historical | `Projects/Planned/Index.md` |
+| myAbode | parked | `Projects/myAbode/Index.md` |
+| LeJEPA | concluded/historical | `Projects/LeJEPA/Index.md` |
+| EdenOS | parked | `Projects/EdenOS/Index.md` |
+| Personal/Pixoid Setup | infrastructure/operator context | `Projects/Personal/Pixoid Setup.md` |
+| New PC Build Architecture | backlog | `Projects/New PC Build Architecture/Index.md` |
+
+## Do Not Do
+
+- Do not treat the most visible proof project as the default system goal.
+- Do not implement parked/historical projects without explicit reopening.
+- Do not trust project status from this pack without checking the listed canonical sources.
+- Do not create a project-specific pack unless the project has distinct routing/freshness/ownership needs.
+- Do not create runtime automation from this pack.
+
+## Fallback Rules
+
+1. Project has `llms.txt`: load it, then its canonical sources.
+2. Project has no `llms.txt`: load `Projects/<Project>/Index.md`.
+3. Project has no index: use Projects MOC and Project Board.
+4. Current implementation state matters: verify GitHub issues/PRs and repo state live.
+5. Project is parked/historical: stop unless Jamie explicitly reopens it.
+
+## Human Surface
+
+- `Maps of Content/Projects MOC.md`
+- `Project Board.md`
+- project `Index.md` notes
+
+## Maintenance Notes
+
+Update this pack when a project changes active/parked/historical status, when a new project pack is created, or when the default project routing queue changes. Keep project details in project hubs; this pack should stay a routing map.
