@@ -147,8 +147,6 @@ Root is for entrypoints only. Old flat HTML URLs are tiny compatibility shims th
 
 # Pixi Wiki Namespace Registry
 
-# Pixi Wiki Namespace Registry
-
 > AgentWikis-style registry generated from pixi-vault compiled namespaces.
 
 > Raw Markdown: `/raw/<slug>/<path>`. Human HTML: `/wiki/<slug>/<path>.html`.

@@ -238,7 +238,6 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     wikis: list[dict[str, Any]] = []
     full_sections: list[tuple[str, str]] = []
     namespace_llms = [
-        "# Pixi Wiki Namespace Registry\n\n",
         "> AgentWikis-style registry generated from pixi-vault compiled namespaces.\n\n",
         "> Raw Markdown: `/raw/<slug>/<path>`. Human HTML: `/wiki/<slug>/<path>.html`.\n\n",
     ]
