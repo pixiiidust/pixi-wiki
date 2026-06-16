@@ -86,14 +86,14 @@
       "path": "wiki/index.md",
       "raw": "/raw/agent-workflows/wiki/index.md",
       "html": "/wiki/agent-workflows/wiki/index.md.html",
-      "category": "wiki"
+      "category": "other"
     },
     {
       "title": "Agent Workflows \u2014 Activity Log",
       "path": "wiki/log.md",
       "raw": "/raw/agent-workflows/wiki/log.md",
       "html": "/wiki/agent-workflows/wiki/log.md.html",
-      "category": "other"
+      "category": "wiki"
     },
     {
       "title": "Markdown-First Agent Memory",

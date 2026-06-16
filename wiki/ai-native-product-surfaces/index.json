@@ -51,14 +51,14 @@
       "path": "wiki/index.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html",
-      "category": "wiki"
+      "category": "other"
     },
     {
       "title": "AI-Native Product Surfaces \u2014 Activity Log",
       "path": "wiki/log.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html",
-      "category": "other"
+      "category": "wiki"
     }
   ]
 }

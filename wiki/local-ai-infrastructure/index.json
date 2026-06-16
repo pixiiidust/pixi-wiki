@@ -44,14 +44,14 @@
       "path": "wiki/index.md",
       "raw": "/raw/local-ai-infrastructure/wiki/index.md",
       "html": "/wiki/local-ai-infrastructure/wiki/index.md.html",
-      "category": "wiki"
+      "category": "other"
     },
     {
       "title": "Local AI Infrastructure \u2014 Activity Log",
       "path": "wiki/log.md",
       "raw": "/raw/local-ai-infrastructure/wiki/log.md",
       "html": "/wiki/local-ai-infrastructure/wiki/log.md.html",
-      "category": "other"
+      "category": "wiki"
     }
   ]
 }

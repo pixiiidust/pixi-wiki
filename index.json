@@ -63,14 +63,14 @@
           "path": "wiki/index.md",
           "raw": "/raw/pixi-vault/wiki/index.md",
           "html": "/wiki/pixi-vault/wiki/index.md.html",
-          "category": "wiki"
+          "category": "other"
         },
         {
           "title": "Pixi Vault \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/pixi-vault/wiki/log.md",
           "html": "/wiki/pixi-vault/wiki/log.md.html",
-          "category": "other"
+          "category": "wiki"
         },
         {
           "title": "Pixi Vault to Pixi Wiki Publishing Model",
@@ -184,14 +184,14 @@
           "path": "wiki/index.md",
           "raw": "/raw/agent-workflows/wiki/index.md",
           "html": "/wiki/agent-workflows/wiki/index.md.html",
-          "category": "wiki"
+          "category": "other"
         },
         {
           "title": "Agent Workflows \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/agent-workflows/wiki/log.md",
           "html": "/wiki/agent-workflows/wiki/log.md.html",
-          "category": "other"
+          "category": "wiki"
         },
         {
           "title": "Markdown-First Agent Memory",
@@ -270,14 +270,14 @@
           "path": "wiki/index.md",
           "raw": "/raw/eval-trace/wiki/index.md",
           "html": "/wiki/eval-trace/wiki/index.md.html",
-          "category": "wiki"
+          "category": "other"
         },
         {
           "title": "Eval Trace \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/eval-trace/wiki/log.md",
           "html": "/wiki/eval-trace/wiki/log.md.html",
-          "category": "other"
+          "category": "wiki"
         },
         {
           "title": "Workflow Quality Evaluation Map",
@@ -356,14 +356,14 @@
           "path": "wiki/index.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html",
-          "category": "wiki"
+          "category": "other"
         },
         {
           "title": "AI-Native Product Surfaces \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html",
-          "category": "other"
+          "category": "wiki"
         }
       ]
     },
@@ -421,14 +421,14 @@
           "path": "wiki/index.md",
           "raw": "/raw/rl-sim-labs/wiki/index.md",
           "html": "/wiki/rl-sim-labs/wiki/index.md.html",
-          "category": "wiki"
+          "category": "other"
         },
         {
           "title": "RL Sim Labs \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/rl-sim-labs/wiki/log.md",
           "html": "/wiki/rl-sim-labs/wiki/log.md.html",
-          "category": "other"
+          "category": "wiki"
         }
       ]
     },
@@ -486,14 +486,14 @@
           "path": "wiki/index.md",
           "raw": "/raw/curated-tuning-datasets/wiki/index.md",
           "html": "/wiki/curated-tuning-datasets/wiki/index.md.html",
-          "category": "wiki"
+          "category": "other"
         },
         {
           "title": "Curated Tuning Datasets \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/curated-tuning-datasets/wiki/log.md",
           "html": "/wiki/curated-tuning-datasets/wiki/log.md.html",
-          "category": "other"
+          "category": "wiki"
         },
         {
           "title": "LKY Dataset Readiness Map",
@@ -565,14 +565,14 @@
           "path": "wiki/index.md",
           "raw": "/raw/local-ai-infrastructure/wiki/index.md",
           "html": "/wiki/local-ai-infrastructure/wiki/index.md.html",
-          "category": "wiki"
+          "category": "other"
         },
         {
           "title": "Local AI Infrastructure \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/local-ai-infrastructure/wiki/log.md",
           "html": "/wiki/local-ai-infrastructure/wiki/log.md.html",
-          "category": "other"
+          "category": "wiki"
         }
       ]
     }

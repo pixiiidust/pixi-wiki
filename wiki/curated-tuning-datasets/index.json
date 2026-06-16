@@ -37,14 +37,14 @@
       "path": "wiki/index.md",
       "raw": "/raw/curated-tuning-datasets/wiki/index.md",
       "html": "/wiki/curated-tuning-datasets/wiki/index.md.html",
-      "category": "wiki"
+      "category": "other"
     },
     {
       "title": "Curated Tuning Datasets \u2014 Activity Log",
       "path": "wiki/log.md",
       "raw": "/raw/curated-tuning-datasets/wiki/log.md",
       "html": "/wiki/curated-tuning-datasets/wiki/log.md.html",
-      "category": "other"
+      "category": "wiki"
     },
     {
       "title": "LKY Dataset Readiness Map",

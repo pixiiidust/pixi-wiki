@@ -37,14 +37,14 @@
       "path": "wiki/index.md",
       "raw": "/raw/pixi-vault/wiki/index.md",
       "html": "/wiki/pixi-vault/wiki/index.md.html",
-      "category": "wiki"
+      "category": "other"
     },
     {
       "title": "Pixi Vault \u2014 Activity Log",
       "path": "wiki/log.md",
       "raw": "/raw/pixi-vault/wiki/log.md",
       "html": "/wiki/pixi-vault/wiki/log.md.html",
-      "category": "other"
+      "category": "wiki"
     },
     {
       "title": "Pixi Vault to Pixi Wiki Publishing Model",

@@ -37,14 +37,14 @@
       "path": "wiki/index.md",
       "raw": "/raw/rl-sim-labs/wiki/index.md",
       "html": "/wiki/rl-sim-labs/wiki/index.md.html",
-      "category": "wiki"
+      "category": "other"
     },
     {
       "title": "RL Sim Labs \u2014 Activity Log",
       "path": "wiki/log.md",
       "raw": "/raw/rl-sim-labs/wiki/log.md",
       "html": "/wiki/rl-sim-labs/wiki/log.md.html",
-      "category": "other"
+      "category": "wiki"
     }
   ]
 }

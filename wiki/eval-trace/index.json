@@ -44,14 +44,14 @@
       "path": "wiki/index.md",
       "raw": "/raw/eval-trace/wiki/index.md",
       "html": "/wiki/eval-trace/wiki/index.md.html",
-      "category": "wiki"
+      "category": "other"
     },
     {
       "title": "Eval Trace \u2014 Activity Log",
       "path": "wiki/log.md",
       "raw": "/raw/eval-trace/wiki/log.md",
       "html": "/wiki/eval-trace/wiki/log.md.html",
-      "category": "other"
+      "category": "wiki"
     },
     {
       "title": "Workflow Quality Evaluation Map",
