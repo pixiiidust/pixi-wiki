@@ -3,7 +3,7 @@ title: Eval Trace — Activity Log
 created: 2026-06-16
 updated: 2026-06-16
 type: log
-status: pilot
+status: compiled
 namespace: eval-trace
 ---
 
@@ -21,4 +21,13 @@ namespace: eval-trace
 
 - Added pilot concept `wiki/concepts/context-overfitting.md` and crosslink to Agent Workflows Hermes Mission Control entity.
 - Source pages remained in `Knowledge/` and `Projects/`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Compile eval-trace content pack v1
+
+- Expanded `wiki/concepts/context-overfitting.md`.
+- Added entity `wiki/entities/eval-trace.md`.
+- Added synthesis `wiki/syntheses/workflow-quality-evaluation-map.md`.
+- Updated namespace index.
+- Source pages remain in `Knowledge/` and `Projects/`.
 - No Daily Notes were copied or compiled.

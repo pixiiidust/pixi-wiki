@@ -17,7 +17,7 @@ namespace: curated-tuning-datasets
 
 ## Entities
 
-<!-- Add compiled entities alphabetically. -->
+- [[entities/lky-archive|LKY Archive]] — Proposed curated-source inventory for Lee Kuan Yew material, with provenance and dataset-readiness boundaries.
 
 ## Summaries
 
@@ -29,4 +29,5 @@ namespace: curated-tuning-datasets
 
 ## Source Roots
 
-- `source pending: LKY archive source inventory/project hub not yet present in this vault`
+- `Projects/LKY Archive/Index.md`
+- `Projects/LKY Archive/Source Inventory.md`

@@ -3,41 +3,49 @@ title: Context Overfitting
 created: 2026-06-16
 updated: 2026-06-16
 type: concept
-status: pilot
+status: compiled
 namespace: eval-trace
 tags: [eval-trace, agent-workflows, reliability, context-management]
 sources:
   - Knowledge/concepts/context-overfitting.md
-confidence: medium
+  - Projects/Eval Trace/Index.md
+confidence: high
 ---
 
 # Context Overfitting
 
-**Context overfitting** is an agent workflow failure mode where the agent optimizes for the immediate conversation, handoff, or prompt context instead of the durable source of truth. Its primary namespace is `eval-trace` because it is best treated as a quality/evaluation failure mode.
+**Context overfitting** is an agent workflow failure mode where an agent treats written context, memory, old summaries, project notes, or prompt rules as hard constraints even when current user intent, live evidence, or project state should override them.
 
-## Why it matters
+## Failure shape
 
-Context overfitting can make an agent:
+An agent is context-overfit when it:
 
-- follow stale chat summaries over live repo or issue state;
-- treat scratch notes as canonical truth;
-- continue an old plan after the latest user message changed direction;
-- duplicate work because it did not inspect current files or tracker state.
+- follows stale session summaries instead of the latest user instruction;
+- recommends work from deprecated projects after live status changed;
+- treats memory/profile text as proof instead of a routing hint;
+- treats scratch notes as canonical source truth;
+- continues a previous plan after the user changed scope.
 
-## Evaluation read-out
+## Evaluation verdict
 
-A workflow is healthier when agents verify current truth before acting:
+```text
+Context overfit? YES / NO / UNSURE
+```
 
-- live GitHub issue/PR state for coordination;
-- current git status and diffs for repo work;
-- canonical `Knowledge/`, `Projects/`, and Wiki Compiler Map files for vault work;
-- scratch Daily Notes only as context hints.
+- **YES** — stale or overly rigid context controlled behavior despite stronger current evidence.
+- **NO** — context was used as a weak prior and updated by current intent/live evidence.
+- **UNSURE** — evidence is insufficient; surface one concrete suspect rule for review.
+
+## Deterministic prechecks
+
+Eval Trace currently uses prechecks such as correction override, fresh-state-without-tools, scope boundary, counterexample gap, stale project context, and safety/data-loss escalation. Safety/auth/data-loss cases should become `UNSURE`, not automatic failures.
 
 ## Cross-namespace links
 
-- `agent-workflows` — context overfitting affects route execution in [[../../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]].
-- `pixi-vault` — source classes and compiler routing reduce context-overfit risk.
+- [[../../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]] — route governance surface where context-overfit failures show up.
+- [[../../../agent-workflows/wiki/syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — source-of-truth boundaries reduce context overfitting.
+- `pixi-vault` — source classes and Wiki Compiler Maps separate scratch from canonical truth.
 
 ## Source
 
-Compiled from `Knowledge/concepts/context-overfitting.md`.
+Compiled from `Knowledge/concepts/context-overfitting.md` and `Projects/Eval Trace/Index.md`.

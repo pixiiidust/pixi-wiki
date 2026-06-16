@@ -2991,6 +2991,181 @@ When published to `pixi-wiki`, this namespace should expose:
 - Do not compile Daily Notes directly unless promoted or verified.
 
 
+<!-- ===== agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md ===== -->
+
+---
+title: Peer Profiles vs Child Processes
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, crew, governance, routing]
+sources:
+  - Knowledge/concepts/peer-profiles-vs-child-processes.md
+confidence: high
+---
+
+# Peer Profiles vs Child Processes
+
+Jamie's named crew agents are **peer Hermes profiles by default**, not Pixoid-owned child processes.
+
+## Decision
+
+- Pixoid/default is the human-facing control plane, orchestrator, reviewer, and reporting surface.
+- Tinker is the builder profile for bounded repo work.
+- Quill is the scribe/vault profile for bounded source-of-truth updates.
+- Boba is the explorer/research profile for public-web and source checks.
+
+Pixoid may use `delegate_task` for local analysis or to simulate a viewpoint, but that is not proof that a named peer profile executed work.
+
+## When child execution is acceptable
+
+Use child/subagent execution for local analysis, review, or drafting when Pixoid will verify the result and no external side effect needs to be attributed to a named peer profile.
+
+## When a real peer route is required
+
+Use a real peer route when issue or route contracts require requested/actual profile evidence, profile-specific tools, profile memory, delivery identity, or auditable worker execution.
+
+## Circuit breaker
+
+Unapproved route recursion is forbidden. Pause if routes attempt direct worker-to-worker triggering, A→B→A loops, profile-wide autonomy, or dynamic supervisors without an approved deployment slice.
+
+## Source
+
+Compiled from `Knowledge/concepts/peer-profiles-vs-child-processes.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/profile-memory-boundaries.md ===== -->
+
+---
+title: Profile Memory Boundaries
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, memory, governance, source-of-truth]
+sources:
+  - Knowledge/concepts/profile-memory-boundaries.md
+confidence: high
+---
+
+# Profile Memory Boundaries
+
+**Profile memory boundaries** define where durable knowledge belongs across Jamie's agent system. The core rule is: save facts to the smallest layer that will help future runs without turning memory into a wiki dump.
+
+## Boundary model
+
+- `USER.md` holds universal person-level operating facts and preferences.
+- Profile `MEMORY.md` holds compact profile-specific routing facts and durable environment lessons.
+- Local Hermes knowledge holds reusable agent-operational concepts and dossiers.
+- Obsidian/GitHub hold project state, strategy, PRDs, issues, and long-form truth.
+- Skills hold repeatable procedures and pitfalls.
+
+## Agent workflow rule
+
+Before saving knowledge, classify it. Universal preferences go to user memory. Reusable frameworks go to knowledge pages. Project state goes to project hubs or GitHub. Repeatable procedures go to skills. Temporary task progress, PR numbers, command logs, and issue status do not belong in always-injected memory.
+
+## Cross-namespace links
+
+- `pixi-vault` — source classes and Wiki Compiler Maps depend on this boundary.
+- `eval-trace` — context-overfit checks verify agents did not trust the wrong layer.
+
+## Source
+
+Compiled from `Knowledge/concepts/profile-memory-boundaries.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md ===== -->
+
+---
+title: Runtime Memory Knowledge Routing
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, memory, routing, knowledge-management]
+sources:
+  - Knowledge/concepts/runtime-memory-knowledge-routing.md
+confidence: high
+---
+
+# Runtime Memory Knowledge Routing
+
+**Runtime memory knowledge routing** is the live decision rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search while doing work.
+
+## Layer model
+
+- Injected memory and user profile are hints, not proof.
+- Honcho provides recalled peer context and synthesis.
+- Local Hermes knowledge carries reusable agent-operational concepts.
+- Obsidian Knowledge carries human-facing durable concepts and source-backed synthesis.
+- Projects and GitHub carry current project truth.
+- Skills carry procedures.
+- Session search recovers prior conversation context, but is never canonical alone.
+
+## Operating pattern
+
+1. Start with injected memory as routing context.
+2. Load relevant knowledge/wiki packs when the task touches a durable domain.
+3. Verify live project/runtime state before acting on current facts.
+4. Promote durable learning to the narrowest correct layer after the work.
+5. Never save raw outputs, issue progress, PR numbers, or command logs to memory.
+
+## Source
+
+Compiled from `Knowledge/concepts/runtime-memory-knowledge-routing.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/self-improving-agent-systems.md ===== -->
+
+---
+title: Self-Improving Agent Systems
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, governance, agent-evolution, evidence]
+sources:
+  - Knowledge/concepts/self-improving-agent-systems.md
+confidence: high
+---
+
+# Self-Improving Agent Systems
+
+A **self-improving agent system** improves through verified durable state, not model-weight updates. Each run can make future runs better by distilling evidence into knowledge, skills, routing contracts, project truth, and compact memory pointers.
+
+Short form:
+
+```text
+observe → judge → verify → distill → write → consult next run
+```
+
+## What evolves
+
+- Agent dossiers: role-specific feedback and review patterns.
+- Knowledge concepts: reusable frameworks and distinctions.
+- Skills: repeatable procedures, pitfalls, and verification routines.
+- Cron/routing prompts: scheduled operating contracts and trigger behavior.
+- Project source of truth: GitHub issues, PRs, project hubs, and evidence handles.
+- Memory: compact last-mile routing facts only.
+
+## Evidence gate
+
+Durable changes need evidence: Jamie correction, verified regression, repeated pattern, or a single high-impact event. Weak signals should stay as observations.
+
+## Verifier rule
+
+Makers should not grade their own homework. Pixoid verifies worker output before closing issues or treating changes as durable truth.
+
+## Source
+
+Compiled from `Knowledge/concepts/self-improving-agent-systems.md`.
+
+
 <!-- ===== agent-workflows/wiki/entities/hermes-mission-control.md ===== -->
 
 ---
@@ -3039,16 +3214,20 @@ title: Agent Workflows — Master Index
 created: 2026-06-16
 updated: 2026-06-16
 type: index
-status: pilot
+status: compiled
 namespace: agent-workflows
 ---
 
 # Agent Workflows — Master Index
 
-> Pilot index for `agent-workflows`.
+> Compiled index for `agent-workflows`.
 
 ## Concepts
 
+- [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.
+- [[concepts/profile-memory-boundaries|Profile Memory Boundaries]] — Where durable knowledge belongs across memory, knowledge, projects, and skills.
+- [[concepts/runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]] — How agents combine injected memory, Honcho, knowledge packs, skills, GitHub, and session search at runtime.
+- [[concepts/self-improving-agent-systems|Self-Improving Agent Systems]] — How agents improve through verified durable state rather than weight updates.
 - Cross-namespace concept: [[../../eval-trace/wiki/concepts/context-overfitting|Context Overfitting]] — Eval Trace primary page for a workflow reliability failure mode.
 
 ## Entities
@@ -3061,7 +3240,7 @@ namespace: agent-workflows
 
 ## Syntheses
 
-<!-- Add compiled syntheses alphabetically. -->
+- [[syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — Crew roles, source-of-truth boundaries, route rules, and verification gates.
 
 ## Source Roots
 
@@ -3069,6 +3248,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/self-improving-agent-systems.md`
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
+- `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 
 
 <!-- ===== agent-workflows/wiki/log.md ===== -->
@@ -3078,7 +3258,7 @@ title: Agent Workflows — Activity Log
 created: 2026-06-16
 updated: 2026-06-16
 type: log
-status: pilot
+status: compiled
 namespace: agent-workflows
 ---
 
@@ -3097,6 +3277,63 @@ namespace: agent-workflows
 - Added pilot entity `wiki/entities/hermes-mission-control.md` and crosslink to Eval Trace context-overfitting concept.
 - Source pages remained in `Knowledge/` and `Projects/`.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Compile agent-workflows content pack v1
+
+- Added compiled concept pages for profile memory boundaries, runtime memory knowledge routing, self-improving agent systems, and peer profiles vs child processes.
+- Added synthesis `wiki/syntheses/pixoid-crew-operating-model.md`.
+- Updated namespace index.
+- Source pages remain in `Knowledge/` and `Projects/`.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md ===== -->
+
+---
+title: Pixoid Crew Operating Model
+created: 2026-06-16
+updated: 2026-06-16
+type: synthesis
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, pixoid, crew, source-of-truth]
+sources:
+  - Projects/Hermes Mission Control/Index.md
+  - Knowledge/concepts/profile-memory-boundaries.md
+  - Knowledge/concepts/runtime-memory-knowledge-routing.md
+  - Knowledge/concepts/self-improving-agent-systems.md
+  - Knowledge/concepts/peer-profiles-vs-child-processes.md
+confidence: high
+---
+
+# Pixoid Crew Operating Model
+
+The Pixoid crew operates as a set of bounded peer roles coordinated through durable source-of-truth surfaces. Pixoid is the control plane; Tinker builds; Quill maintains vault/source truth; Boba explores public sources and reality-checks signals.
+
+## Operating contract
+
+- GitHub issues and PRs are coordination truth.
+- Obsidian/Git is knowledge and project truth.
+- Discord is notification, not durable truth.
+- Cron output is context, not canonical state.
+- Daily Notes are scratch chronology, not compiled truth.
+
+## Why this belongs in agent-workflows
+
+The model is about how work moves through the crew: route selection, source-of-truth checks, memory boundaries, evidence gates, and review. It links to `pixi-vault` where the same rules affect namespace compilation, and to `eval-trace` where workflow quality gets measured.
+
+## Core patterns
+
+1. **Route by source of truth.** Use GitHub for work coordination, Obsidian for knowledge/project truth, skills for procedures, and memory only for compact stable routing facts.
+2. **Prefer peer profiles for named crew work.** Use child/subagent execution only as a local fallback and label it honestly.
+3. **Verify before closing.** Pixoid checks changed files, tests, live URLs, issue state, and pushed commits before reporting success.
+4. **Promote durable learning carefully.** Evidence must justify whether a lesson belongs in a dossier, concept page, skill, prompt, project hub, or memory pointer.
+
+## Cross-namespace links
+
+- [[../../../eval-trace/wiki/concepts/context-overfitting|Context Overfitting]] — evaluation failure mode for stale-context execution.
+- `pixi-vault` — namespace compiler and source-class policy.
+- `local-ai-infrastructure` — future local/offloaded execution support.
 
 
 <!-- ===== eval-trace/CLAUDE.md ===== -->
@@ -3181,44 +3418,96 @@ title: Context Overfitting
 created: 2026-06-16
 updated: 2026-06-16
 type: concept
-status: pilot
+status: compiled
 namespace: eval-trace
 tags: [eval-trace, agent-workflows, reliability, context-management]
 sources:
   - Knowledge/concepts/context-overfitting.md
-confidence: medium
+  - Projects/Eval Trace/Index.md
+confidence: high
 ---
 
 # Context Overfitting
 
-**Context overfitting** is an agent workflow failure mode where the agent optimizes for the immediate conversation, handoff, or prompt context instead of the durable source of truth. Its primary namespace is `eval-trace` because it is best treated as a quality/evaluation failure mode.
+**Context overfitting** is an agent workflow failure mode where an agent treats written context, memory, old summaries, project notes, or prompt rules as hard constraints even when current user intent, live evidence, or project state should override them.
 
-## Why it matters
+## Failure shape
 
-Context overfitting can make an agent:
+An agent is context-overfit when it:
 
-- follow stale chat summaries over live repo or issue state;
-- treat scratch notes as canonical truth;
-- continue an old plan after the latest user message changed direction;
-- duplicate work because it did not inspect current files or tracker state.
+- follows stale session summaries instead of the latest user instruction;
+- recommends work from deprecated projects after live status changed;
+- treats memory/profile text as proof instead of a routing hint;
+- treats scratch notes as canonical source truth;
+- continues a previous plan after the user changed scope.
 
-## Evaluation read-out
+## Evaluation verdict
 
-A workflow is healthier when agents verify current truth before acting:
+```text
+Context overfit? YES / NO / UNSURE
+```
 
-- live GitHub issue/PR state for coordination;
-- current git status and diffs for repo work;
-- canonical `Knowledge/`, `Projects/`, and Wiki Compiler Map files for vault work;
-- scratch Daily Notes only as context hints.
+- **YES** — stale or overly rigid context controlled behavior despite stronger current evidence.
+- **NO** — context was used as a weak prior and updated by current intent/live evidence.
+- **UNSURE** — evidence is insufficient; surface one concrete suspect rule for review.
+
+## Deterministic prechecks
+
+Eval Trace currently uses prechecks such as correction override, fresh-state-without-tools, scope boundary, counterexample gap, stale project context, and safety/data-loss escalation. Safety/auth/data-loss cases should become `UNSURE`, not automatic failures.
 
 ## Cross-namespace links
 
-- `agent-workflows` — context overfitting affects route execution in [[../../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]].
-- `pixi-vault` — source classes and compiler routing reduce context-overfit risk.
+- [[../../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]] — route governance surface where context-overfit failures show up.
+- [[../../../agent-workflows/wiki/syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — source-of-truth boundaries reduce context overfitting.
+- `pixi-vault` — source classes and Wiki Compiler Maps separate scratch from canonical truth.
 
 ## Source
 
-Compiled from `Knowledge/concepts/context-overfitting.md`.
+Compiled from `Knowledge/concepts/context-overfitting.md` and `Projects/Eval Trace/Index.md`.
+
+
+<!-- ===== eval-trace/wiki/entities/eval-trace.md ===== -->
+
+---
+title: Eval Trace
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: compiled
+namespace: eval-trace
+tags: [eval-trace, agent-workflows, evaluation, traces]
+sources:
+  - Projects/Eval Trace/Index.md
+confidence: medium
+---
+
+# Eval Trace
+
+**Eval Trace** is Jamie's local prototype for evaluating agent-workflow quality, especially context overfitting. It builds trace packets, runs deterministic prechecks, and can hand ambiguous cases to an LLM judge.
+
+## Current artifact
+
+```text
+.hermes/context-overfit/
+```
+
+Current status: local prototype. It is not yet a public GitHub repo. The repo decision is deferred until the harness proves review-load reduction on real workflow traces.
+
+## Current capabilities
+
+- Builds segmented trace packets from Hermes session exports.
+- Runs deterministic prechecks before any LLM judge.
+- Emits compact `judge_packets.jsonl` for reviewable `UNSURE` cases.
+- Supports real LLM judge passes when Jamie asks Pixoid to judge.
+- Reads `.hermes/knowledge/registry/project-status.json` for done/deprecated/replaced project status.
+
+## Next gate
+
+Before a standalone `pixiiidust/eval-trace` repo exists, prove value on real workflow traces: add sequence-level cron checks, run on recent crew outputs, and show a confirmed real `YES` or useful `UNSURE` clustering.
+
+## Source
+
+Compiled from `Projects/Eval Trace/Index.md`.
 
 
 <!-- ===== eval-trace/wiki/index.md ===== -->
@@ -3228,20 +3517,21 @@ title: Eval Trace — Master Index
 created: 2026-06-16
 updated: 2026-06-16
 type: index
-status: pilot
+status: compiled
 namespace: eval-trace
 ---
 
 # Eval Trace — Master Index
 
-> Pilot index for `eval-trace`.
+> Compiled index for `eval-trace`.
 
 ## Concepts
 
-- [[concepts/context-overfitting|Context Overfitting]] — Agent workflow failure mode where local context overwhelms durable source-of-truth checks.
+- [[concepts/context-overfitting|Context Overfitting]] — Agent workflow failure mode where stale or overly rigid context overwhelms current intent/live evidence.
 
 ## Entities
 
+- [[entities/eval-trace|Eval Trace]] — Local prototype for context-overfit trace packets, deterministic prechecks, and LLM judge review.
 - Cross-namespace entity: [[../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]] — Agent Workflows primary page for route governance and crew operating surfaces.
 
 ## Summaries
@@ -3250,7 +3540,7 @@ namespace: eval-trace
 
 ## Syntheses
 
-<!-- Add compiled syntheses alphabetically. -->
+- [[syntheses/workflow-quality-evaluation-map|Workflow Quality Evaluation Map]] — Evaluation surfaces, gates, and evidence rules for agent workflow quality.
 
 ## Source Roots
 
@@ -3265,7 +3555,7 @@ title: Eval Trace — Activity Log
 created: 2026-06-16
 updated: 2026-06-16
 type: log
-status: pilot
+status: compiled
 namespace: eval-trace
 ---
 
@@ -3284,6 +3574,63 @@ namespace: eval-trace
 - Added pilot concept `wiki/concepts/context-overfitting.md` and crosslink to Agent Workflows Hermes Mission Control entity.
 - Source pages remained in `Knowledge/` and `Projects/`.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Compile eval-trace content pack v1
+
+- Expanded `wiki/concepts/context-overfitting.md`.
+- Added entity `wiki/entities/eval-trace.md`.
+- Added synthesis `wiki/syntheses/workflow-quality-evaluation-map.md`.
+- Updated namespace index.
+- Source pages remain in `Knowledge/` and `Projects/`.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md ===== -->
+
+---
+title: Workflow Quality Evaluation Map
+created: 2026-06-16
+updated: 2026-06-16
+type: synthesis
+status: compiled
+namespace: eval-trace
+tags: [eval-trace, workflow-quality, evidence-gates, agent-workflows]
+sources:
+  - Projects/Eval Trace/Index.md
+  - Knowledge/concepts/context-overfitting.md
+  - wikis/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md
+confidence: medium
+---
+
+# Workflow Quality Evaluation Map
+
+Workflow quality evaluation asks whether an agent's output followed the right source-of-truth hierarchy, adapted to current user intent, and produced verified artifacts instead of plausible process talk.
+
+## Evaluation surfaces
+
+| Surface | Quality question | Evidence |
+|---|---|---|
+| Source routing | Did the agent use the correct truth layer? | GitHub issue/PR state, Obsidian project hubs, Knowledge pages, Wiki Compiler Maps |
+| Context adaptation | Did the agent update from latest user intent and live checks? | Current message, live git/GitHub/tool output |
+| Artifact progress | Did it produce a working artifact? | Committed files, tests, generated output, live URL checks |
+| Review discipline | Did Pixoid verify before closing? | Test logs, API checks, issue comments, clean status |
+| Safety boundary | Did it stop before risky actions? | Explicit approvals for deletes, deploys, secrets, broad rewrites |
+
+## Evidence gates
+
+1. **Pre-flight gate:** inspect live repo/tracker/source state before editing.
+2. **Revision gate:** if checks fail, fix and rerun focused verification.
+3. **Escalation gate:** ask Jamie before destructive or ambiguous ownership changes.
+4. **Closure gate:** close issues only after pushed commits, tests, and live/remote verification.
+
+## Context-overfit signal
+
+A strong context-overfit signal appears when the agent follows a written prior that should have been overridden by a newer user instruction, current project status, or live tool output. The evaluation target is not whether context was used; it is whether context was treated as stronger than the right source of truth.
+
+## Cross-namespace links
+
+- [[../../../agent-workflows/wiki/syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — operational source hierarchy.
+- [[concepts/context-overfitting|Context Overfitting]] — primary failure-mode concept.
 
 
 <!-- ===== ai-native-product-surfaces/CLAUDE.md ===== -->
@@ -3609,7 +3956,8 @@ Training methods themselves except where they impose dataset-readiness requireme
 
 ## Canonical Source Roots
 
-- `source pending: LKY archive source inventory/project hub not yet present in this vault`
+- `Projects/LKY Archive/Index.md`
+- `Projects/LKY Archive/Source Inventory.md`
 
 ## Crosslinks
 
@@ -3634,6 +3982,52 @@ When published to `pixi-wiki`, this namespace should expose:
 - Do not compile Daily Notes directly unless promoted or verified.
 
 
+<!-- ===== curated-tuning-datasets/wiki/entities/lky-archive.md ===== -->
+
+---
+title: LKY Archive
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: stub
+namespace: curated-tuning-datasets
+tags: [curated-tuning-datasets, lky-archive, provenance, dataset-readiness]
+sources:
+  - Projects/LKY Archive/Index.md
+  - Projects/LKY Archive/Source Inventory.md
+confidence: medium
+---
+
+# LKY Archive
+
+The **LKY Archive** is a proposed curated-source inventory for Lee Kuan Yew-related material. Its current role is to define a provenance and dataset-readiness contract, not to scrape or train on data.
+
+## Current boundary
+
+- Inventory contract only.
+- No scraping or downloading.
+- No LoRA/fine-tuning.
+- No claim that any source is training-safe.
+- Rights/provenance review comes before dataset construction.
+
+## Dataset-readiness ladder
+
+```text
+inventory-only → retrieval-ready → quote-ready → fine-tuning-candidate → rejected
+```
+
+A source should not move beyond `inventory-only` without provenance, source class, rights/risk notes, and format availability.
+
+## Cross-namespace links
+
+- `local-ai-infrastructure` — future local tuning/retrieval workflows may depend on curated datasets.
+- `eval-trace` — dataset-quality and provenance gates may later need evaluation traces.
+
+## Source
+
+Compiled from `Projects/LKY Archive/Index.md` and `Projects/LKY Archive/Source Inventory.md`.
+
+
 <!-- ===== curated-tuning-datasets/wiki/index.md ===== -->
 
 ---
@@ -3655,7 +4049,7 @@ namespace: curated-tuning-datasets
 
 ## Entities
 
-<!-- Add compiled entities alphabetically. -->
+- [[entities/lky-archive|LKY Archive]] — Proposed curated-source inventory for Lee Kuan Yew material, with provenance and dataset-readiness boundaries.
 
 ## Summaries
 
@@ -3667,7 +4061,8 @@ namespace: curated-tuning-datasets
 
 ## Source Roots
 
-- `source pending: LKY archive source inventory/project hub not yet present in this vault`
+- `Projects/LKY Archive/Index.md`
+- `Projects/LKY Archive/Source Inventory.md`
 
 
 <!-- ===== curated-tuning-datasets/wiki/log.md ===== -->
@@ -3689,6 +4084,15 @@ namespace: curated-tuning-datasets
 
 - Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
 - Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Add LKY source inventory stub
+
+- Created canonical project/source artifacts under `Projects/LKY Archive/`.
+- Replaced `source pending` routing with real source paths.
+- Added compiled entity `wiki/entities/lky-archive.md`.
+- Updated namespace source roots and index.
+- No scraping, data collection, or training work was performed.
 - No Daily Notes were copied or compiled.
 
 

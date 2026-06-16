@@ -29,7 +29,8 @@ Training methods themselves except where they impose dataset-readiness requireme
 
 ## Canonical Source Roots
 
-- `source pending: LKY archive source inventory/project hub not yet present in this vault`
+- `Projects/LKY Archive/Index.md`
+- `Projects/LKY Archive/Source Inventory.md`
 
 ## Crosslinks
 

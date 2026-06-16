@@ -170,9 +170,14 @@ Root is for entrypoints only. Old flat HTML URLs are tiny compatibility shims th
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
 - [Agent Workflows](/raw/agent-workflows/README.md) ([html](/wiki/agent-workflows/README.md.html))
+- [Peer Profiles vs Child Processes](/raw/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md) ([html](/wiki/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md.html))
+- [Profile Memory Boundaries](/raw/agent-workflows/wiki/concepts/profile-memory-boundaries.md) ([html](/wiki/agent-workflows/wiki/concepts/profile-memory-boundaries.md.html))
+- [Runtime Memory Knowledge Routing](/raw/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md.html))
+- [Self-Improving Agent Systems](/raw/agent-workflows/wiki/concepts/self-improving-agent-systems.md) ([html](/wiki/agent-workflows/wiki/concepts/self-improving-agent-systems.md.html))
 - [Hermes Mission Control](/raw/agent-workflows/wiki/entities/hermes-mission-control.md) ([html](/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html))
 - [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md) ([html](/wiki/agent-workflows/wiki/index.md.html))
 - [Agent Workflows — Activity Log](/raw/agent-workflows/wiki/log.md) ([html](/wiki/agent-workflows/wiki/log.md.html))
+- [Pixoid Crew Operating Model](/raw/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md) ([html](/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html))
 
 ## Eval Trace
 
@@ -182,8 +187,10 @@ Root is for entrypoints only. Old flat HTML URLs are tiny compatibility shims th
 - [Eval Trace Namespace Instructions](/raw/eval-trace/CLAUDE.md) ([html](/wiki/eval-trace/CLAUDE.md.html))
 - [Eval Trace](/raw/eval-trace/README.md) ([html](/wiki/eval-trace/README.md.html))
 - [Context Overfitting](/raw/eval-trace/wiki/concepts/context-overfitting.md) ([html](/wiki/eval-trace/wiki/concepts/context-overfitting.md.html))
+- [Eval Trace](/raw/eval-trace/wiki/entities/eval-trace.md) ([html](/wiki/eval-trace/wiki/entities/eval-trace.md.html))
 - [Eval Trace — Master Index](/raw/eval-trace/wiki/index.md) ([html](/wiki/eval-trace/wiki/index.md.html))
 - [Eval Trace — Activity Log](/raw/eval-trace/wiki/log.md) ([html](/wiki/eval-trace/wiki/log.md.html))
+- [Workflow Quality Evaluation Map](/raw/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md) ([html](/wiki/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md.html))
 
 ## AI-Native Product Surfaces
 
@@ -212,6 +219,7 @@ Root is for entrypoints only. Old flat HTML URLs are tiny compatibility shims th
 
 - [Curated Tuning Datasets Namespace Instructions](/raw/curated-tuning-datasets/CLAUDE.md) ([html](/wiki/curated-tuning-datasets/CLAUDE.md.html))
 - [Curated Tuning Datasets](/raw/curated-tuning-datasets/README.md) ([html](/wiki/curated-tuning-datasets/README.md.html))
+- [LKY Archive](/raw/curated-tuning-datasets/wiki/entities/lky-archive.md) ([html](/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html))
 - [Curated Tuning Datasets — Master Index](/raw/curated-tuning-datasets/wiki/index.md) ([html](/wiki/curated-tuning-datasets/wiki/index.md.html))
 - [Curated Tuning Datasets — Activity Log](/raw/curated-tuning-datasets/wiki/log.md) ([html](/wiki/curated-tuning-datasets/wiki/log.md.html))
 

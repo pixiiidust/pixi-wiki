@@ -2114,7 +2114,7 @@
         "currentAs": "2026-06-16"
       },
       "lastUpdated": "2026-06-16",
-      "documentCount": 5,
+      "documentCount": 10,
       "llms_txt": "/llms.txt",
       "raw_base": "/raw/agent-workflows/",
       "html_base": "/wiki/agent-workflows/"
@@ -2133,7 +2133,7 @@
         "currentAs": "2026-06-16"
       },
       "lastUpdated": "2026-06-16",
-      "documentCount": 5,
+      "documentCount": 7,
       "llms_txt": "/llms.txt",
       "raw_base": "/raw/eval-trace/",
       "html_base": "/wiki/eval-trace/"
@@ -2190,7 +2190,7 @@
         "currentAs": "2026-06-16"
       },
       "lastUpdated": "2026-06-16",
-      "documentCount": 4,
+      "documentCount": 5,
       "llms_txt": "/llms.txt",
       "raw_base": "/raw/curated-tuning-datasets/",
       "html_base": "/wiki/curated-tuning-datasets/"
