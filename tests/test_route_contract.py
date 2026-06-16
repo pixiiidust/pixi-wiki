@@ -333,6 +333,25 @@ class WikiRouteLinkTest(unittest.TestCase):
         self.assertIn('Why this matters to Jamie', html)
         self.assertNotIn('This is a concept bundle in the Knowledge domain', html)
 
+    def test_domain_project_moc_and_root_pages_share_agent_provenance_pattern(self) -> None:
+        """Canonical human pages expose the same llms.txt + markdown provenance pattern."""
+        expectations = {
+            "index.html": ["href=\"llms.txt\"", "href=\"raw/llms.txt\""],
+            "wiki/knowledge/index.html": ["Knowledge concepts", "href=\"wiki/knowledge/llms.txt\"", "href=\"raw/Knowledge/llms.txt\""],
+            "wiki/projects/index.html": ["Project packs", "href=\"wiki/projects/llms.txt\"", "href=\"raw/Projects/llms.txt\""],
+            "wiki/maps-of-content/index.html": ["Map room entrypoints", "href=\"wiki/maps-of-content/llms.txt\"", "href=\"raw/Maps of Content/llms.txt\""],
+            "wiki/projects/eval-trace/index.html": ["href=\"wiki/projects/eval-trace/llms.txt\"", "href=\"raw/Projects/Eval Trace/llms.txt\""],
+        }
+        for path, tokens in expectations.items():
+            html = (ROOT / path).read_text(encoding="utf-8")
+            with self.subTest(path=path):
+                self.assertIn("Agent access", html)
+                self.assertIn(">llms.txt<", html)
+                self.assertIn("view as markdown", html)
+                self.assertNotIn(">agent pack<", html)
+                for token in tokens:
+                    self.assertIn(token, html)
+
 
 # ---------------------------------------------------------------------------
 # Concept page CTA hygiene  (should FAIL — current pages expose all three)
