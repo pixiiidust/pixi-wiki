@@ -277,10 +277,11 @@ class WikiRouteLinkTest(unittest.TestCase):
     def test_wiki_concept_page_exposes_clean_agent_and_provenance_links(self) -> None:
         page = ROOT / "wiki" / "knowledge" / "concepts" / "agent-wikis" / "index.html"
         html = page.read_text(encoding="utf-8")
-        self.assertIn('href="llms.txt"', html)
+        self.assertIn('<base href="/pixi-wiki/">', html)
+        self.assertIn('href="wiki/knowledge/concepts/agent-wikis/llms.txt"', html)
         self.assertIn("local llms.txt", html)
         self.assertIn("view as markdown", html)
-        self.assertIn('href="../../../../raw/Knowledge/concepts/agent-wikis.md"', html)
+        self.assertIn('href="raw/Knowledge/concepts/agent-wikis.md"', html)
         self.assertNotIn("Agent alias", html)
         self.assertNotIn("Agent text", html)
         self.assertNotIn("Markdown source", html)
@@ -293,8 +294,14 @@ class WikiRouteLinkTest(unittest.TestCase):
             for href in re.findall(r'href="([^"]+)"', html):
                 if href.startswith(("http://", "https://", "#", "mailto:")):
                     continue
-                target = (html_file.parent / unquote(href)).resolve()
-                if href.endswith("/"):
+                if href.startswith("/pixi-wiki/"):
+                    rel = href.removeprefix("/pixi-wiki/")
+                    target = (ROOT / unquote(rel or "index.html")).resolve()
+                elif href.startswith(("wiki/", "agent/", "raw/")) or href.endswith(".html") or href in {"index.html", "root.html", "index.json", "llms.txt", "llms-full.txt"}:
+                    target = (ROOT / unquote(href)).resolve()
+                else:
+                    target = (html_file.parent / unquote(href)).resolve()
+                if href.endswith("/") and not target.name == "index.html":
                     target = target / "index.html"
                 with self.subTest(page=html_file.relative_to(ROOT), href=href):
                     self.assertTrue(
@@ -311,6 +318,20 @@ class WikiRouteLinkTest(unittest.TestCase):
         self.assertIn('href="wiki/maps-of-content/index.html"', html)
         self.assertNotIn('href="wiki/knowledge/concepts/agent-wikis/"', html)
         self.assertNotIn('href="wiki/projects/eval-trace/"', html)
+
+    def test_canonical_concept_page_renders_full_human_markdown_surface(self) -> None:
+        """Canonical concept HTML should be the rich rendered Markdown page, not a tiny bundle stub."""
+        page = ROOT / "wiki" / "knowledge" / "concepts" / "ai-native-problem-framing-framework" / "index.html"
+        html = page.read_text(encoding="utf-8")
+        self.assertGreater(page.stat().st_size, 15_000)
+        self.assertIn('<base href="/pixi-wiki/">', html)
+        self.assertIn('class="topbar"', html)
+        self.assertIn('class="sidebar"', html)
+        self.assertIn('Core frame', html)
+        self.assertIn('Check against known success cases', html)
+        self.assertIn('Decompose the hard problem', html)
+        self.assertIn('Why this matters to Jamie', html)
+        self.assertNotIn('This is a concept bundle in the Knowledge domain', html)
 
 
 # ---------------------------------------------------------------------------

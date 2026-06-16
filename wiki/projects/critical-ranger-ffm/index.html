@@ -3,22 +3,289 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Critical Ranger FFM Pack — Pixiedust Wiki</title>
+<base href="/pixi-wiki/">
+<title>Critical Ranger FFM Pack</title>
+<link rel="alternate" type="text/markdown" href="raw/Projects/Critical Ranger FFM/llms.txt">
 <style>
-body { font-family: system-ui, sans-serif; max-width: 720px; margin: 3rem auto; padding: 0 1rem; line-height: 1.6; }
-h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-.subtitle { color: #64748b; margin-top: 0; }
-a { color: #2563eb; }
-.meta { color: #64748b; font-size: 0.9rem; }
+:root {
+  color-scheme: light dark;
+  --bg: #f8fafc;
+  --page-top: #ffffff;
+  --surface: #ffffff;
+  --surface-rgb: 255,255,255;
+  --surface-soft: #f1f5f9;
+  --text: #172033;
+  --muted: #64748b;
+  --subtle: #94a3b8;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --accent: #d97706;
+  --accent-soft: #fff7ed;
+  --agent: #2563eb;
+  --agent-soft: #eff6ff;
+  --agent-border: #bfdbfe;
+  --code-text: #9a3412;
+  --code-bg: #f8fafc;
+  --nav-text: #475569;
+  --scope-text: #334155;
+  --agent-text: #1e3a8a;
+  --agent-strong: #1d4ed8;
+  --green: #15803d;
+  --green-soft: #f0fdf4;
+  --warn: #b45309;
+  --warn-soft: #fffbeb;
+  --shadow: 0 18px 48px rgba(15, 23, 42, .08);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f172a; --page-top: #111827; --surface: #111827; --surface-rgb: 17,24,39; --surface-soft: #1f2937;
+    --text: #e5edf8; --muted: #94a3b8; --subtle: #64748b; --border: #273449; --border-strong: #475569;
+    --accent: #f59e0b; --accent-soft: #2a2113; --agent: #60a5fa; --agent-soft: #12213a; --agent-border: #2563eb;
+    --code-text: #fbbf24; --code-bg: #0b1220; --nav-text: #cbd5e1; --scope-text: #cbd5e1; --agent-text: #bfdbfe; --agent-strong: #93c5fd;
+    --green: #4ade80; --green-soft: #102416; --warn: #fbbf24; --warn-soft: #2a2113; --shadow: 0 20px 60px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f172a; --page-top: #111827; --surface: #111827; --surface-rgb: 17,24,39; --surface-soft: #1f2937;
+  --text: #e5edf8; --muted: #94a3b8; --subtle: #64748b; --border: #273449; --border-strong: #475569;
+  --accent: #f59e0b; --accent-soft: #2a2113; --agent: #60a5fa; --agent-soft: #12213a; --agent-border: #2563eb;
+  --code-text: #fbbf24; --code-bg: #0b1220; --nav-text: #cbd5e1; --scope-text: #cbd5e1; --agent-text: #bfdbfe; --agent-strong: #93c5fd;
+  --green: #4ade80; --green-soft: #102416; --warn: #fbbf24; --warn-soft: #2a2113; --shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, var(--page-top) 0, var(--bg) 320px);
+  color: var(--text);
+  line-height: 1.65;
+}
+a { color: var(--agent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wiki-link { font-weight: 650; }
+.wiki-link.unresolved { color: var(--muted); border-bottom: 1px dashed var(--border-strong); cursor: help; }
+code {
+  color: var(--code-text);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1px 5px;
+  font-family: "SF Mono", "JetBrains Mono", Consolas, monospace;
+  font-size: .88em;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+  padding: 0 24px;
+  background: rgba(var(--surface-rgb),.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 750; letter-spacing: -.02em; color: var(--text); }
+.brand-mark { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; background: var(--accent); color: #fff; font-size: 13px; }
+.toplinks { display: flex; align-items: center; gap: 18px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.toplinks a { color: var(--muted); }
+.theme-toggle { cursor: pointer; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--muted); padding: 6px 10px; font: inherit; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.theme-toggle:hover { color: var(--text); border-color: var(--accent); }
+.layout { display: grid; grid-template-columns: 286px minmax(0, 1fr); gap: 42px; max-width: 1240px; margin: 0 auto; padding: 28px 24px 70px; }
+.sidebar { position: sticky; top: 76px; align-self: start; max-height: calc(100vh - 92px); overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: rgba(var(--surface-rgb),.76); box-shadow: 0 1px 2px rgba(15,23,42,.03); }
+.sidebar::-webkit-scrollbar { width: 10px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border-strong); border: 3px solid transparent; border-radius: 999px; background-clip: content-box; }
+.sidebar-title { margin: 0; font-size: 16px; font-weight: 760; }
+.doc-count { margin: 2px 0 16px; color: var(--muted); font-size: 13px; }
+.nav-section { margin: 10px 0; border-top: 1px solid var(--border); padding-top: 10px; }
+.nav-section:first-of-type { border-top: 0; padding-top: 0; }
+.nav-section summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; list-style: none; user-select: none; color: var(--subtle); font-size: 11px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.nav-section summary::-webkit-details-marker { display: none; }
+.nav-section summary::before { content: "▸"; color: var(--accent); font-size: 11px; transition: transform .16s ease; }
+.nav-section[open] summary::before { transform: rotate(90deg); }
+.nav-section summary:hover { color: var(--text); }
+.nav-count { margin-left: auto; color: var(--muted); font-size: 11px; letter-spacing: 0; text-transform: none; }
+.side-label { margin: 0; }
+.sub-label { margin: 10px 0 6px; color: var(--muted); font-size: 11px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.section-kicker { margin: -4px 0 16px; color: var(--muted); font-size: 14px; }
+.nav-list { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.nav-list a { display: block; padding: 8px 10px; border-left: 3px solid transparent; border-radius: 9px; color: var(--nav-text); font-size: 13px; line-height: 1.25; }
+.nav-list a.active { border-left-color: var(--accent); color: var(--text); background: var(--accent-soft); font-weight: 700; }
+.nav-section-body { padding-top: 8px; }
+.article { min-width: 0; max-width: 880px; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 18px; color: var(--muted); font-size: 13px; }
+.breadcrumbs span::after { content: "/"; margin-left: 8px; color: var(--border-strong); }
+.breadcrumbs span:last-child::after { content: ""; }
+.hero { padding: 4px 0 22px; border-bottom: 1px solid var(--border); }
+.hero h1 { margin: 0 0 12px; font-size: clamp(1.65rem, 3.4vw, 2.6rem); line-height: 1.08; letter-spacing: -.025em; font-weight: 830; text-transform: uppercase; }
+.subtitle { max-width: 760px; margin: 0; color: var(--muted); font-size: 17px; }
+.meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: 12px; font-weight: 700; }
+.badge strong { color: var(--accent); }
+.scope-panel { display: grid; gap: 0; margin: 24px 0; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); overflow: hidden; box-shadow: var(--shadow); }
+.scope-row { display: grid; grid-template-columns: 160px 1fr; gap: 18px; padding: 16px 18px; border-top: 1px solid var(--border); }
+.scope-row:first-child { border-top: 0; }
+.scope-label { font-size: 11px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.scope-label.covers { color: var(--green); }
+.scope-label.not-covered { color: var(--warn); }
+.scope-label.current { color: var(--agent); }
+.scope-value { margin: 0; color: var(--scope-text); }
+.scope-value ul { margin: 0; padding-left: 18px; }
+.agent-callout { margin: 22px 0 8px; padding: 16px 18px; border: 1px solid var(--agent-border); border-radius: 16px; background: var(--agent-soft); color: var(--agent-text); }
+.agent-callout strong { color: var(--agent-strong); }
+.agent-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.agent-links a, .agent-links span { display: inline-block; padding: 5px 9px; border: 1px solid var(--agent-border); border-radius: 999px; background: var(--surface); font-family: "SF Mono", Consolas, monospace; font-size: 12px; }
+.toc { margin: 24px 0; padding: 14px 18px; border: 1px solid var(--border); border-radius: 16px; background: rgba(var(--surface-rgb),.68); }
+.toc-title { margin: 0 0 8px; color: var(--muted); font-size: 11px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.toc ul { columns: 2; margin: 0; padding-left: 18px; }
+.wiki-section { padding: 26px 0; border-top: 1px solid var(--border); }
+.wiki-section h2 { margin: 0 0 12px; font-size: 22px; letter-spacing: -.02em; }
+.wiki-section h2::before { content: "// "; color: var(--accent); font-weight: 850; }
+.wiki-section h3 { margin: 18px 0 8px; font-size: 17px; }
+.wiki-section h4 { margin: 14px 0 6px; font-size: 15px; color: var(--muted); }
+.section-body p { margin: 10px 0; }
+.section-body ul, .section-body ol { padding-left: 22px; }
+.section-body li { margin: 6px 0; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; background: var(--surface); }
+th, td { border: 1px solid var(--border); padding: 10px 12px; vertical-align: top; }
+th { background: var(--surface-soft); text-align: left; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.pack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 14px; margin-top: 12px; }
+.pack-card { display: block; padding: 17px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); color: var(--text); box-shadow: 0 1px 2px rgba(15,23,42,.04); transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease; }
+.pack-card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow); text-decoration: none; }
+.pack-card h3 { margin: 0 0 5px; font-size: 16px; line-height: 1.25; }
+.pack-path { display: block; color: var(--muted); font-family: "SF Mono", Consolas, monospace; font-size: 12px; }
+.next-card { display: flex; justify-content: space-between; gap: 18px; margin: 34px 0 0; padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); }
+.footer { margin-top: 40px; padding: 22px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; padding: 18px 16px 54px; }
+  .sidebar { position: static; max-height: none; overflow: visible; }
+  .toplinks { display: flex; gap: 8px; }
+  .toplinks a { display: none; }
+  .scope-row { grid-template-columns: 1fr; gap: 6px; }
+  .toc ul { columns: 1; }
+}
 </style>
 </head>
 <body>
-<h1>Critical Ranger FFM Pack</h1>
-<p class="subtitle">Project pack bundle.</p>
-<p class="meta">Source: <code>Projects/Critical Ranger FFM/llms.txt</code></p>
-<hr>
-<p>This is a project pack bundle in the Projects domain. See the <a href="llms.txt">local llms.txt</a> for agent context.</p>
-<hr>
-<footer><p>Generated from <code>Projects/Critical Ranger FFM/llms.txt</code>. Markdown remains source truth.</p></footer>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">✦</span><span>Pixiedust Wiki</span></a>
+  <nav class="toplinks" aria-label="Primary">
+    <a href="index.html">Wikis</a>
+    <a href="root.html">Root Pack</a>
+    <a href="#for-agents">For Agents</a>
+    <a href="https://github.com/pixiiidust/pixi-wiki/tree/main/raw">Source</a>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" data-theme-toggle>☾ Dark</button>
+  </nav>
+</header>
+<div class="layout">
+
+<aside class="sidebar" aria-label="Wiki contents">
+  <h2 class="sidebar-title">KPR Wiki</h2>
+  <p class="doc-count">8 packs · 17 concepts</p>
+  <details class="nav-section">
+    <summary><span class="side-label">Overview</span><span class="nav-count">1</span></summary>
+    <div class="nav-section-body"><ul class="nav-list"><li><a href="index.html">⌂ Wiki overview</a></li></ul></div>
+  </details>
+  <details class="nav-section"><summary><span class="side-label">Knowledge</span><span class="nav-count">18</span></summary><div class="nav-section-body"><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a href="wiki/knowledge/index.html">📄 Start here: Knowledge Domain Pack</a></li></ul><p class="sub-label">Concepts</p><ul class="nav-list"><li><a href="wiki/knowledge/concepts/ai-native-problem-framing-framework/index.html">◇ AI-Native Problem Framing Framework</a></li><li><a href="wiki/knowledge/concepts/agent-capability-route-pattern/index.html">◇ Agent Capability Route Pattern</a></li><li><a href="wiki/knowledge/concepts/agent-wikis/index.html">◇ Agent Wikis</a></li><li><a href="wiki/knowledge/concepts/bounded-context-tree-pattern/index.html">◇ Bounded Context Tree Pattern</a></li><li><a href="wiki/knowledge/concepts/building-software-is-learning/index.html">◇ Building Software Is Learning</a></li><li><a href="wiki/knowledge/concepts/context-overfitting/index.html">◇ Context Overfitting</a></li><li><a href="wiki/knowledge/concepts/find-the-lock-problem-first/index.html">◇ Find the Lock: Problem-First Approach</a></li><li><a href="wiki/knowledge/concepts/hermes-soul-md-wiring/index.html">◇ Hermes SOUL.md Wiring</a></li><li><a href="wiki/knowledge/concepts/local-retrieval-agent-infrastructure/index.html">◇ Local Retrieval-Augmented Agent Infrastructure</a></li><li><a href="wiki/knowledge/concepts/moc-knowledge-cortex/index.html">◇ MOC Knowledge Cortex</a></li><li><a href="wiki/knowledge/concepts/matt-pocock-sdlc-rhythm/index.html">◇ Matt Pocock SDLC Rhythm</a></li><li><a href="wiki/knowledge/concepts/peer-profiles-vs-child-processes/index.html">◇ Peer Profiles vs Child Processes</a></li><li><a href="wiki/knowledge/concepts/profile-memory-boundaries/index.html">◇ Profile Memory Boundaries</a></li><li><a href="wiki/knowledge/concepts/rag-over-agent-wikis/index.html">◇ RAG over Agent Wikis</a></li><li><a href="wiki/knowledge/concepts/runtime-memory-knowledge-routing/index.html">◇ Runtime Memory Knowledge Routing</a></li><li><a href="wiki/knowledge/concepts/self-improving-agent-systems/index.html">◇ Self-Improving Agent Systems</a></li><li><a href="wiki/knowledge/concepts/verb-first-product-positioning/index.html">◇ Verb-First Product Positioning</a></li></ul></div></details><details class="nav-section"><summary><span class="side-label">Maps of Content</span><span class="nav-count">1</span></summary><div class="nav-section-body"><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a href="wiki/maps-of-content/index.html">📄 Start here: Maps of Content Domain Pack</a></li></ul></div></details><details class="nav-section" open><summary><span class="side-label">Projects</span><span class="nav-count">5</span></summary><div class="nav-section-body"><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a class="active" href="wiki/projects/critical-ranger-ffm/index.html">📄 Start here: Critical Ranger FFM Pack</a></li><li><a href="wiki/projects/eval-trace/index.html">📄 Start here: Eval Trace Project Pack</a></li><li><a href="wiki/projects/hermes-mission-control/index.html">📄 Start here: Hermes Mission Control Pack</a></li><li><a href="wiki/projects/planned-program-intel/index.html">📄 Start here: Planned Program Intel Pack</a></li><li><a href="wiki/projects/index.html">📄 Start here: Projects Domain Pack</a></li></ul></div></details><details class="nav-section"><summary><span class="side-label">Vault Root</span><span class="nav-count">1</span></summary><div class="nav-section-body"><p class="sub-label">Entrypoints</p><ul class="nav-list"><li><a href="index.html">📄 Start here: ObsidianVault Root Pack</a></li></ul></div></details>
+  <details class="nav-section" id="for-agents">
+    <summary><span class="side-label">For agents</span><span class="nav-count">6</span></summary>
+    <div class="nav-section-body"><ul class="nav-list">
+      <li><a href="agent/llms.txt">agent/llms.txt</a></li>
+      <li><a href="agent/index.json">agent/index.json</a></li>
+      <li><a href="agent/llms-full.txt">agent/llms-full.txt</a></li>
+      <li><a href="llms.txt">root llms.txt</a></li>
+      <li><a href="index.json">root index.json</a></li>
+      <li><a href="raw/llms.txt">root raw llms.txt</a></li>
+    </ul></div>
+  </details>
+</aside>
+
+  <article class="article">
+
+<nav class="breadcrumbs" aria-label="Breadcrumb"><span><a href="index.html">wikis</a></span><span>KPR</span><span>Projects/Critical Ranger FFM/llms.txt</span></nav>
+<section class="hero">
+  <div class="meta-row"><span class="badge">updated: <strong>2026-06-15</strong></span><span class="badge">derived HTML</span><span class="badge">source: Projects/Critical Ranger FFM/llms.txt</span></div>
+  <h1>Critical Ranger FFM Pack</h1>
+  <p class="subtitle">Human-readable view of a Knowledge Pack Routing contract. Markdown <code>llms.txt</code> remains source/routing truth.</p>
+</section>
+
+<section class="scope-panel" aria-label="Scope metadata">
+  <div class="scope-row"><div class="scope-label covers">Covers</div><div><ul class="scope-value"><li>Zone-control RL MVP as active roadmap</li><li>Parked switch-point/single-cell efficacy work as diagnostic/prototype infrastructure</li><li>Active issue tree and next executable slice</li><li>Evidence gates and non-claim guardrails</li></ul></div></div>
+  <div class="scope-row"><div class="scope-label not-covered">Not covered</div><div><ul class="scope-value"><li>Real wildfire validity or policy recommendations</li><li>Publication-grade science claims</li><li>GPU/Puffer/render runs on VPS</li><li>Local WSL HITL commands without Jamie approval</li></ul></div></div>
+  <div class="scope-row"><div class="scope-label current">Current as of</div><p class="scope-value">2026-06-15 · confidence medium</p></div>
+</section>
+
+<section class="agent-callout"><strong>🤖 Agent access:</strong> load the agent pack alias or source pack <code>Projects/Critical Ranger FFM/llms.txt</code>, then follow its canonical sources. Public page paths are display surfaces only.<div class="agent-links"><a href="agent/packs/projects-critical-ranger-ffm.txt">agent pack</a><a href="raw/Projects/Critical Ranger FFM/llms.txt">raw llms.txt</a><a href="index.html">wiki index</a><a href="agent/index.json">agent/index.json</a></div></section>
+<nav class="toc" aria-label="Page sections"><p class="toc-title">// Contents</p><ul><li><a href="#section-0">Agent Start Here</a></li><li><a href="#section-1">What This Pack Routes</a></li><li><a href="#section-2">What This Pack Does Not Route</a></li><li><a href="#section-3">Source-of-Truth Hierarchy</a></li><li><a href="#section-4">Canonical Sources</a></li><li><a href="#section-5">Current Narrative / Operating Posture</a></li><li><a href="#section-6">Do Not Do</a></li><li><a href="#section-7">Fallback Rules</a></li><li><a href="#section-8">Human Surface</a></li><li><a href="#section-9">Maintenance Notes</a></li></ul></nav>
+<section class="wiki-section" id="section-0"><h2>Agent Start Here</h2><div class="section-body"><p>Use this pack before Critical Ranger work. Active roadmap: zone-control RL MVP. Parked path: switch-point/single-cell efficacy, preserved only as diagnostic/prototype infrastructure. Next executable slice is the zone-control action contract fixtures issue.</p></div></section><section class="wiki-section" id="section-1"><h2>What This Pack Routes</h2><div class="section-body"><ul>
+<li>Current zone-control RL MVP roadmap.</li>
+<li>Parked/superseded switch-point efficacy work.</li>
+<li>Active repo, PRD, parent tracker, and next issue.</li>
+<li>Evidence gates, non-claims, and anti-cheat constraints.</li>
+<li>VPS vs local WSL execution guardrails.</li>
+</ul></div></section><section class="wiki-section" id="section-2"><h2>What This Pack Does Not Route</h2><div class="section-body"><ul>
+<li>Real wildfire validity.</li>
+<li>Policy or operational wildfire recommendations.</li>
+<li>GPU/Puffer/training/render commands on VPS.</li>
+<li>Local WSL gates without Jamie approving exact commands.</li>
+<li>Old switch-point path as final science proof.</li>
+</ul></div></section><section class="wiki-section" id="section-3"><h2>Source-of-Truth Hierarchy</h2><div class="section-body"><ol>
+<li><strong>GitHub issues/PRs</strong> — coordination truth.</li>
+<li><strong>Zone-control PRD</strong> — requirements truth.</li>
+<li><strong>Repo code/tests</strong> — implementation truth.</li>
+<li><strong>Obsidian project Index</strong> — durable synthesis.</li>
+<li><strong>This pack</strong> — routing truth.</li>
+</ol></div></section><section class="wiki-section" id="section-4"><h2>Canonical Sources</h2><div class="section-body"><table><tbody>
+<tr><th>Label</th><th>Path/URL</th><th>Role</th></tr>
+<tr><td>Project hub</td><td><code>Projects/Critical Ranger FFM/Index.md</code></td><td>synthesis</td></tr>
+<tr><td>Repo</td><td><code>https://github.com/pixiiidust/critical-ranger-ffm</code></td><td>implementation</td></tr>
+<tr><td>Zone-control PRD</td><td><code>https://github.com/pixiiidust/critical-ranger-ffm/blob/main/docs/PRD-zone-control-rl-mvp.md</code></td><td>requirement</td></tr>
+<tr><td>Parent tracker</td><td><code>https://github.com/pixiiidust/critical-ranger-ffm/issues/53</code></td><td>coordination</td></tr>
+<tr><td>Next issue</td><td><code>https://github.com/pixiiidust/critical-ranger-ffm/issues/54</code></td><td>implementation</td></tr>
+</tbody></table></div></section><section class="wiki-section" id="section-5"><h2>Current Narrative / Operating Posture</h2><div class="section-body"><p>The main roadmap is zone-control RL MVP: test whether an RL agent can reduce mega-fires in a toy forest-fire model better than honest baselines without clearing the forest or over-spending interventions. The prior single-cell switch-point efficacy work is parked as diagnostic/prototype infrastructure.</p>
+<p>Next gate: issue #54 action contract fixtures — deterministic zone indexing, no-op, one-zone thinning, and decision interval semantics. Do not jump to training or rendering.</p></div></section><section class="wiki-section" id="section-6"><h2>Do Not Do</h2><div class="section-body"><ul>
+<li>Do not run GPU/Puffer/training/render/raylib/c_render work on the VPS.</li>
+<li>Do not run local WSL HITL commands without Jamie approving the exact command.</li>
+<li>Do not claim final efficacy, SOC-control, publication-grade science, policy value, or real-wildfire validity.</li>
+<li>Do not delete parked switch-point artifacts.</li>
+<li>Do not implement from parent tracker alone; follow child issue scope.</li>
+<li>Do not overwrite README.md or docs/PRD.md without explicit instruction.</li>
+</ul></div></section><section class="wiki-section" id="section-7"><h2>Fallback Rules</h2><div class="section-body"><ol>
+<li>If stale (&gt;14 days), re-verify issue #53, issue #54, current PRD, and repo state.</li>
+<li>If question touches old efficacy path, route to parked diagnostics and label it parked.</li>
+<li>If question asks for real-world wildfire claims, refuse as out of scope.</li>
+<li>If no match, fall back to Project Board then Projects MOC.</li>
+</ol></div></section><section class="wiki-section" id="section-8"><h2>Human Surface</h2><div class="section-body"><ul>
+<li><code>Projects/Critical Ranger FFM/Index.md</code></li>
+<li><code>Project Board.md</code></li>
+<li><code>Maps of Content/Projects MOC.md</code></li>
+</ul></div></section><section class="wiki-section" id="section-9"><h2>Maintenance Notes</h2><div class="section-body"><p>Update when issues #54-#59 close, when a PRD changes, when main roadmap pivots, or when Jamie approves a HITL local run. Confidence is medium until post-#54 implementation facts are refreshed.</p></div></section>
+<div class="next-card"><span>Generated from <code>Projects/Critical Ranger FFM/llms.txt</code></span><a href="index.html">Back to wiki index →</a></div>
+<footer class="footer">Plain semantic HTML. No JavaScript is required to read this page. Do not edit generated HTML as source truth.</footer>
+
+  </article>
+</div>
+<script>
+(() => {
+  const root = document.documentElement;
+  const button = document.querySelector('[data-theme-toggle]');
+  const stored = localStorage.getItem('pixiedust-wiki-theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const setTheme = (theme) => {
+    root.dataset.theme = theme;
+    if (button) button.textContent = theme === 'dark' ? '☼ Light' : '☾ Dark';
+  };
+  setTheme(stored || (prefersDark ? 'dark' : 'light'));
+  if (button) {
+    button.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('pixiedust-wiki-theme', next);
+      setTheme(next);
+    });
+  }
+})();
+</script>
 </body>
 </html>
