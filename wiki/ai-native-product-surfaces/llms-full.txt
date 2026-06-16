@@ -1,0 +1,141 @@
+<!-- ===== ai-native-product-surfaces/CLAUDE.md ===== -->
+
+# AI-Native Product Surfaces Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-surfaces/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== ai-native-product-surfaces/README.md ===== -->
+
+---
+title: AI-Native Product Surfaces
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: product
+namespace: ai-native-product-surfaces
+confidence: medium
+---
+
+# AI-Native Product Surfaces
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
+
+### Not Covered
+
+Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `Projects/Planned Program Intel/Index.md`
+- `Projects/Planned/PRD.md`
+- `Projects/myAbode/Index.md`
+- `Knowledge/concepts/ai-native-problem-framing-framework.md`
+- `Knowledge/concepts/verb-first-product-positioning.md`
+- `Knowledge/concepts/find-the-lock-problem-first.md`
+
+## Crosslinks
+
+- [[../agent-workflows/README|agent-workflows]]
+- [[../eval-trace/README|eval-trace]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/ai-native-product-surfaces/README.md
+/raw/ai-native-product-surfaces/wiki/index.md
+/wiki/ai-native-product-surfaces/README.md
+/wiki/ai-native-product-surfaces/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== ai-native-product-surfaces/wiki/index.md ===== -->
+
+---
+title: AI-Native Product Surfaces — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: scaffold
+namespace: ai-native-product-surfaces
+---
+
+# AI-Native Product Surfaces — Master Index
+
+> Scaffold index for `ai-native-product-surfaces`. Add compiled pages here as they are created.
+
+## Concepts
+
+<!-- Add compiled concepts alphabetically. -->
+
+## Entities
+
+<!-- Add compiled entities alphabetically. -->
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+<!-- Add compiled syntheses alphabetically. -->
+
+## Source Roots
+
+- `Projects/Planned Program Intel/Index.md`
+- `Projects/Planned/PRD.md`
+- `Projects/myAbode/Index.md`
+- `Knowledge/concepts/ai-native-problem-framing-framework.md`
+- `Knowledge/concepts/verb-first-product-positioning.md`
+- `Knowledge/concepts/find-the-lock-problem-first.md`
+
+
+<!-- ===== ai-native-product-surfaces/wiki/log.md ===== -->
+
+---
+title: AI-Native Product Surfaces — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: scaffold
+namespace: ai-native-product-surfaces
+---
+
+# AI-Native Product Surfaces — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+

@@ -1,0 +1,134 @@
+<!-- ===== local-ai-infrastructure/CLAUDE.md ===== -->
+
+# Local AI Infrastructure Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/local-ai-infrastructure/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== local-ai-infrastructure/README.md ===== -->
+
+---
+title: Local AI Infrastructure
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: infrastructure
+namespace: local-ai-infrastructure
+confidence: medium
+---
+
+# Local AI Infrastructure
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.
+
+### Not Covered
+
+Cloud-only infrastructure unless it affects local-first migration; product UX unless tied to local model constraints.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
+- `Knowledge/concepts/rag-over-agent-wikis.md`
+
+## Crosslinks
+
+- [[../pixi-vault/README|pixi-vault]]
+- [[../curated-tuning-datasets/README|curated-tuning-datasets]]
+- [[../rl-sim-labs/README|rl-sim-labs]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/local-ai-infrastructure/README.md
+/raw/local-ai-infrastructure/wiki/index.md
+/wiki/local-ai-infrastructure/README.md
+/wiki/local-ai-infrastructure/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== local-ai-infrastructure/wiki/index.md ===== -->
+
+---
+title: Local AI Infrastructure — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: scaffold
+namespace: local-ai-infrastructure
+---
+
+# Local AI Infrastructure — Master Index
+
+> Scaffold index for `local-ai-infrastructure`. Add compiled pages here as they are created.
+
+## Concepts
+
+<!-- Add compiled concepts alphabetically. -->
+
+## Entities
+
+<!-- Add compiled entities alphabetically. -->
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+<!-- Add compiled syntheses alphabetically. -->
+
+## Source Roots
+
+- `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
+- `Knowledge/concepts/rag-over-agent-wikis.md`
+
+
+<!-- ===== local-ai-infrastructure/wiki/log.md ===== -->
+
+---
+title: Local AI Infrastructure — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: scaffold
+namespace: local-ai-infrastructure
+---
+
+# Local AI Infrastructure — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+

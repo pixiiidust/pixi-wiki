@@ -1,0 +1,43 @@
+{
+  "slug": "local-ai-infrastructure",
+  "title": "Local AI Infrastructure",
+  "description": "Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.",
+  "documentCount": 4,
+  "counts": {
+    "wiki": 1,
+    "concepts": 0,
+    "entities": 0,
+    "summaries": 0,
+    "syntheses": 0
+  },
+  "documents": [
+    {
+      "title": "Local AI Infrastructure Namespace Instructions",
+      "path": "CLAUDE.md",
+      "raw": "/raw/local-ai-infrastructure/CLAUDE.md",
+      "html": "/wiki/local-ai-infrastructure/CLAUDE.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Local AI Infrastructure",
+      "path": "README.md",
+      "raw": "/raw/local-ai-infrastructure/README.md",
+      "html": "/wiki/local-ai-infrastructure/README.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Local AI Infrastructure \u2014 Master Index",
+      "path": "wiki/index.md",
+      "raw": "/raw/local-ai-infrastructure/wiki/index.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/index.md.html",
+      "category": "wiki"
+    },
+    {
+      "title": "Local AI Infrastructure \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "raw": "/raw/local-ai-infrastructure/wiki/log.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/log.md.html",
+      "category": "other"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Eval Trace Knowledge Base
+
+> Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.
+
+- [Eval Trace Namespace Instructions](/raw/eval-trace/CLAUDE.md) ([html](/wiki/eval-trace/CLAUDE.md.html))
+- [Eval Trace](/raw/eval-trace/README.md) ([html](/wiki/eval-trace/README.md.html))
+- [Context Overfitting](/raw/eval-trace/wiki/concepts/context-overfitting.md) ([html](/wiki/eval-trace/wiki/concepts/context-overfitting.md.html))
+- [Eval Trace](/raw/eval-trace/wiki/entities/eval-trace.md) ([html](/wiki/eval-trace/wiki/entities/eval-trace.md.html))
+- [Eval Trace — Master Index](/raw/eval-trace/wiki/index.md) ([html](/wiki/eval-trace/wiki/index.md.html))
+- [Eval Trace — Activity Log](/raw/eval-trace/wiki/log.md) ([html](/wiki/eval-trace/wiki/log.md.html))
+- [Workflow Quality Evaluation Map](/raw/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md) ([html](/wiki/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md.html))

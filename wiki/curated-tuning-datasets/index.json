@@ -1,0 +1,50 @@
+{
+  "slug": "curated-tuning-datasets",
+  "title": "Curated Tuning Datasets",
+  "description": "Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.",
+  "documentCount": 5,
+  "counts": {
+    "wiki": 1,
+    "concepts": 0,
+    "entities": 1,
+    "summaries": 0,
+    "syntheses": 0
+  },
+  "documents": [
+    {
+      "title": "Curated Tuning Datasets Namespace Instructions",
+      "path": "CLAUDE.md",
+      "raw": "/raw/curated-tuning-datasets/CLAUDE.md",
+      "html": "/wiki/curated-tuning-datasets/CLAUDE.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Curated Tuning Datasets",
+      "path": "README.md",
+      "raw": "/raw/curated-tuning-datasets/README.md",
+      "html": "/wiki/curated-tuning-datasets/README.md.html",
+      "category": "other"
+    },
+    {
+      "title": "LKY Archive",
+      "path": "wiki/entities/lky-archive.md",
+      "raw": "/raw/curated-tuning-datasets/wiki/entities/lky-archive.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html",
+      "category": "entities"
+    },
+    {
+      "title": "Curated Tuning Datasets \u2014 Master Index",
+      "path": "wiki/index.md",
+      "raw": "/raw/curated-tuning-datasets/wiki/index.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/index.md.html",
+      "category": "wiki"
+    },
+    {
+      "title": "Curated Tuning Datasets \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "raw": "/raw/curated-tuning-datasets/wiki/log.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/log.md.html",
+      "category": "other"
+    }
+  ]
+}

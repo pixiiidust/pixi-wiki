@@ -1,0 +1,665 @@
+<!-- ===== agent-workflows/CLAUDE.md ===== -->
+
+# Agent Workflows Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, self-improving agent systems, and workflow reliability practices.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== agent-workflows/README.md ===== -->
+
+---
+title: Agent Workflows
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: active
+category: agents
+namespace: agent-workflows
+confidence: medium
+---
+
+# Agent Workflows
+
+> Operational namespace for Jamie's Pixoid crew workflows: route governance, durable context, agent entrypoints, verification gates, and markdown-first agent memory.
+
+## Scope
+
+### Covers
+
+Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.
+
+### Not Covered
+
+Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.
+
+### Current As
+
+2026-06-16 — first compiled content pack for agent-workflows.
+
+## Canonical Source Roots
+
+- `Projects/Hermes Mission Control/Index.md`
+- `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing.md`
+- `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md`
+- `Projects/Hermes Mission Control/Knowledge Pack Contract V1.md`
+- `Projects/Hermes Mission Control/KPR Static Retrieval Eval - 2026-06-15.md`
+- `Projects/Hermes Mission Control/kpr-pixoid-routing-rule.md`
+- `Knowledge/concepts/self-improving-agent-systems.md`
+- `Knowledge/concepts/profile-memory-boundaries.md`
+- `Knowledge/concepts/runtime-memory-knowledge-routing.md`
+- `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+
+## Routing Rules
+
+- Primary namespace: `agent-workflows` for crew operating model, KPR, entrypoint meshes, and route/eval workflow practices.
+- Also relevant to `pixi-vault` when namespace compiler or publishing boundaries change.
+- Also relevant to `eval-trace` when workflow quality, route failure modes, or static eval gates are being evaluated.
+- Use primary namespace plus crosslinks. Do not duplicate pages across namespaces unless the page is rewritten for a different user job.
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/agent-workflows/README.md
+/raw/agent-workflows/wiki/index.md
+/wiki/agent-workflows/README.md.html
+/wiki/agent-workflows/wiki/index.md.html
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== agent-workflows/wiki/concepts/agent-entrypoint-mesh.md ===== -->
+
+---
+title: Agent Entrypoint Mesh
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, entrypoints, routing, llms-txt]
+sources:
+  - Projects/Hermes Mission Control/kpr-pixoid-routing-rule.md
+  - Projects/Hermes Mission Control/Knowledge Pack Contract V1.md
+  - Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md
+confidence: medium
+---
+
+# Agent Entrypoint Mesh
+
+An **agent entrypoint mesh** is a set of small, typed starting points that route an agent to the right truth surface for the job.
+
+The point is not to make one universal file. The point is to make the first hop cheap, explicit, and hard to confuse.
+
+## Mesh shape
+
+A healthy mesh usually has:
+
+- a root agent registry such as `llms.txt`;
+- namespace or domain-level packs;
+- project/entity packs for concrete work;
+- machine registry metadata such as `index.json`;
+- raw provenance mirrors for source inspection;
+- issue tracker links for execution truth.
+
+## Why mesh beats dump
+
+A raw dump asks the model to infer structure from volume. A mesh gives it structure first: scope, not-covered boundaries, source paths, freshness, and fallback behavior.
+
+## Pixoid rule
+
+Pixoid should treat entrypoints as routing contracts, not as replacement truth. If a pack points to a GitHub issue, PRD, or source note, the agent verifies the live source before claiming current state.
+
+## Related pages
+
+- [[knowledge-pack-routing]]
+- [[static-retrieval-evals]]
+- [[runtime-memory-knowledge-routing]]
+
+
+<!-- ===== agent-workflows/wiki/concepts/knowledge-pack-routing.md ===== -->
+
+---
+title: Knowledge Pack Routing
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, knowledge-routing, llms-txt, kpr]
+sources:
+  - Projects/Hermes Mission Control/PRD - Knowledge Pack Routing.md
+  - Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md
+  - Projects/Hermes Mission Control/Knowledge Pack Contract V1.md
+confidence: medium
+---
+
+# Knowledge Pack Routing
+
+**Knowledge Pack Routing** is Jamie's markdown-first pattern for telling agents where durable truth lives before they start work.
+
+It does not try to put every fact into one file. A pack is a map to truth: it states scope, freshness, source paths, fallback rules, and ownership so the agent can route itself to GitHub issues, Obsidian notes, skills, session search, or live tools.
+
+## Why it exists
+
+Without routing, agents waste context on archaeology, treat stale notes as current, or build infrastructure before proving retrieval failure. KPR makes the first step explicit: load the right compact contract, then follow canonical source links.
+
+## Operating rule
+
+A useful pack answers five questions quickly:
+
+- What does this pack cover?
+- What does it explicitly not cover?
+- How fresh is it?
+- Where are the canonical source paths?
+- What should the agent do if the answer is missing, stale, or out of scope?
+
+## Product judgment
+
+KPR deliberately keeps MCP/RAG/search deferred until a concrete eval shows markdown routing cannot answer important questions. That turns retrieval infrastructure into a response to evidence, not a default reflex.
+
+## Related pages
+
+- [[agent-entrypoint-mesh]]
+- [[static-retrieval-evals]]
+- [[runtime-memory-knowledge-routing]]
+- [[../entities/hermes-mission-control|Hermes Mission Control]]
+
+
+<!-- ===== agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md ===== -->
+
+---
+title: Peer Profiles vs Child Processes
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, crew, governance, routing]
+sources:
+  - Knowledge/concepts/peer-profiles-vs-child-processes.md
+confidence: high
+---
+
+# Peer Profiles vs Child Processes
+
+Jamie's named crew agents are **peer Hermes profiles by default**, not Pixoid-owned child processes.
+
+## Decision
+
+- Pixoid/default is the human-facing control plane, orchestrator, reviewer, and reporting surface.
+- Tinker is the builder profile for bounded repo work.
+- Quill is the scribe/vault profile for bounded source-of-truth updates.
+- Boba is the explorer/research profile for public-web and source checks.
+
+Pixoid may use `delegate_task` for local analysis or to simulate a viewpoint, but that is not proof that a named peer profile executed work.
+
+## When child execution is acceptable
+
+Use child/subagent execution for local analysis, review, or drafting when Pixoid will verify the result and no external side effect needs to be attributed to a named peer profile.
+
+## When a real peer route is required
+
+Use a real peer route when issue or route contracts require requested/actual profile evidence, profile-specific tools, profile memory, delivery identity, or auditable worker execution.
+
+## Circuit breaker
+
+Unapproved route recursion is forbidden. Pause if routes attempt direct worker-to-worker triggering, A→B→A loops, profile-wide autonomy, or dynamic supervisors without an approved deployment slice.
+
+## Source
+
+Compiled from `Knowledge/concepts/peer-profiles-vs-child-processes.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/profile-memory-boundaries.md ===== -->
+
+---
+title: Profile Memory Boundaries
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, memory, governance, source-of-truth]
+sources:
+  - Knowledge/concepts/profile-memory-boundaries.md
+confidence: high
+---
+
+# Profile Memory Boundaries
+
+**Profile memory boundaries** define where durable knowledge belongs across Jamie's agent system. The core rule is: save facts to the smallest layer that will help future runs without turning memory into a wiki dump.
+
+## Boundary model
+
+- `USER.md` holds universal person-level operating facts and preferences.
+- Profile `MEMORY.md` holds compact profile-specific routing facts and durable environment lessons.
+- Local Hermes knowledge holds reusable agent-operational concepts and dossiers.
+- Obsidian/GitHub hold project state, strategy, PRDs, issues, and long-form truth.
+- Skills hold repeatable procedures and pitfalls.
+
+## Agent workflow rule
+
+Before saving knowledge, classify it. Universal preferences go to user memory. Reusable frameworks go to knowledge pages. Project state goes to project hubs or GitHub. Repeatable procedures go to skills. Temporary task progress, PR numbers, command logs, and issue status do not belong in always-injected memory.
+
+## Cross-namespace links
+
+- `pixi-vault` — source classes and Wiki Compiler Maps depend on this boundary.
+- `eval-trace` — context-overfit checks verify agents did not trust the wrong layer.
+
+## Source
+
+Compiled from `Knowledge/concepts/profile-memory-boundaries.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md ===== -->
+
+---
+title: Runtime Memory Knowledge Routing
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, memory, routing, knowledge-management]
+sources:
+  - Knowledge/concepts/runtime-memory-knowledge-routing.md
+confidence: high
+---
+
+# Runtime Memory Knowledge Routing
+
+**Runtime memory knowledge routing** is the live decision rule for combining injected memory, Honcho, local Hermes knowledge, Obsidian Knowledge, skills, GitHub/project truth, and session search while doing work.
+
+## Layer model
+
+- Injected memory and user profile are hints, not proof.
+- Honcho provides recalled peer context and synthesis.
+- Local Hermes knowledge carries reusable agent-operational concepts.
+- Obsidian Knowledge carries human-facing durable concepts and source-backed synthesis.
+- Projects and GitHub carry current project truth.
+- Skills carry procedures.
+- Session search recovers prior conversation context, but is never canonical alone.
+
+## Operating pattern
+
+1. Start with injected memory as routing context.
+2. Load relevant knowledge/wiki packs when the task touches a durable domain.
+3. Verify live project/runtime state before acting on current facts.
+4. Promote durable learning to the narrowest correct layer after the work.
+5. Never save raw outputs, issue progress, PR numbers, or command logs to memory.
+
+## Source
+
+Compiled from `Knowledge/concepts/runtime-memory-knowledge-routing.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/self-improving-agent-systems.md ===== -->
+
+---
+title: Self-Improving Agent Systems
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, governance, agent-evolution, evidence]
+sources:
+  - Knowledge/concepts/self-improving-agent-systems.md
+confidence: high
+---
+
+# Self-Improving Agent Systems
+
+A **self-improving agent system** improves through verified durable state, not model-weight updates. Each run can make future runs better by distilling evidence into knowledge, skills, routing contracts, project truth, and compact memory pointers.
+
+Short form:
+
+```text
+observe → judge → verify → distill → write → consult next run
+```
+
+## What evolves
+
+- Agent dossiers: role-specific feedback and review patterns.
+- Knowledge concepts: reusable frameworks and distinctions.
+- Skills: repeatable procedures, pitfalls, and verification routines.
+- Cron/routing prompts: scheduled operating contracts and trigger behavior.
+- Project source of truth: GitHub issues, PRs, project hubs, and evidence handles.
+- Memory: compact last-mile routing facts only.
+
+## Evidence gate
+
+Durable changes need evidence: Jamie correction, verified regression, repeated pattern, or a single high-impact event. Weak signals should stay as observations.
+
+## Verifier rule
+
+Makers should not grade their own homework. Pixoid verifies worker output before closing issues or treating changes as durable truth.
+
+## Source
+
+Compiled from `Knowledge/concepts/self-improving-agent-systems.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/static-retrieval-evals.md ===== -->
+
+---
+title: Static Retrieval Evals
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, evals, retrieval, quality-gates]
+sources:
+  - Projects/Hermes Mission Control/KPR Static Retrieval Eval - 2026-06-15.md
+  - Projects/Hermes Mission Control/kpr-v1-validation-report.md
+  - Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md
+confidence: medium
+---
+
+# Static Retrieval Evals
+
+**Static retrieval evals** are small question sets that test whether the current markdown/wiki routing surface answers important agent questions before heavier retrieval infrastructure is justified.
+
+They are a build/no-build gate.
+
+## What they test
+
+A good static retrieval eval asks questions that reveal routing failures:
+
+- Does the agent find the active repo or project?
+- Does it distinguish canonical source truth from derived output?
+- Does it understand what the pack does not cover?
+- Does it preserve provenance and source boundaries?
+- Does it avoid leaking secrets or relying on scratch notes?
+- Does it know when to escalate to live tools or GitHub?
+
+## Gate behavior
+
+If the static eval passes, do not build search/RAG/MCP just because it feels sophisticated. Improve the markdown route only when the eval exposes a concrete failure.
+
+If the eval fails, fix the cheapest layer first: source wording, index coverage, scope boundaries, crosslinks, or freshness metadata. Only then consider infrastructure.
+
+## Related pages
+
+- [[knowledge-pack-routing]]
+- [[agent-entrypoint-mesh]]
+- [Context Overfitting](../../../eval-trace/wiki/concepts/context-overfitting.md)
+
+
+<!-- ===== agent-workflows/wiki/entities/hermes-mission-control.md ===== -->
+
+---
+title: Hermes Mission Control
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, hermes, pixoid, route-governance]
+sources:
+  - Projects/Hermes Mission Control/Index.md
+  - Projects/Hermes Mission Control/kpr-pixoid-routing-rule.md
+  - Projects/Hermes Mission Control/PRD - Knowledge Pack Routing.md
+confidence: medium
+---
+
+# Hermes Mission Control
+
+**Hermes Mission Control** is Jamie's agent-ops coordination hub for the Pixoid crew: Pixoid, Quill, Tinker, and Boba.
+
+Its primary namespace is `agent-workflows` because the durable knowledge is not the public wiki itself. The durable knowledge is how agents coordinate work: route governance, persona boundaries, issue-backed execution, handoffs, review gates, and durable truth routing.
+
+## Crew roles
+
+- **Pixoid:** orchestrator, reviewer, route owner, final verifier.
+- **Tinker:** builder for bounded implementation slices.
+- **Quill:** scribe for vault/docs updates and compiled knowledge pages.
+- **Boba:** explorer/researcher for external signal and reality checks.
+
+## What it controls
+
+- Crew role boundaries and operating surfaces.
+- GitHub issue/PR coordination as durable work truth.
+- Obsidian/Git as knowledge and project truth.
+- Discord as notification surface, not durable truth.
+- Cron output as context, not canonical project state.
+- Verification gates before tracker closure.
+
+## Routing significance
+
+Hermes Mission Control feeds `pixi-vault` when compiler/publication rules are affected, and it feeds `eval-trace` when route quality or workflow evidence needs evaluation.
+
+The project should not become a standalone namespace unless it grows an independent audience, source corpus, document types, and freshness lifecycle beyond the broader `agent-workflows` domain.
+
+## Cross-namespace links
+
+- `pixi-vault` — source/output repo boundaries and namespace compiler rules.
+- `eval-trace` — route-quality checks and failure-mode evaluation, including [context overfitting](../../../eval-trace/wiki/concepts/context-overfitting.md).
+
+## Related pages
+
+- [[../concepts/knowledge-pack-routing|Knowledge Pack Routing]]
+- [[../concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]]
+- [[../syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]]
+
+## Source
+
+Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operating docs.
+
+
+<!-- ===== agent-workflows/wiki/index.md ===== -->
+
+---
+title: Agent Workflows — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: compiled
+namespace: agent-workflows
+---
+
+# Agent Workflows — Master Index
+
+> Compiled index for `agent-workflows`.
+
+## Concepts
+
+- [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
+- [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
+- [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.
+- [[concepts/profile-memory-boundaries|Profile Memory Boundaries]] — Where durable knowledge belongs across memory, knowledge, projects, and skills.
+- [[concepts/runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]] — How agents combine injected memory, Honcho, knowledge packs, skills, GitHub, and session search at runtime.
+- [[concepts/self-improving-agent-systems|Self-Improving Agent Systems]] — How agents improve through verified durable state rather than weight updates.
+- [[concepts/static-retrieval-evals|Static Retrieval Evals]] — Small retrieval question sets used as gates before heavier search/RAG/MCP infrastructure.
+- Cross-namespace concept: [[../../eval-trace/wiki/concepts/context-overfitting|Context Overfitting]] — Eval Trace primary page for a workflow reliability failure mode.
+
+## Entities
+
+- [[entities/hermes-mission-control|Hermes Mission Control]] — Agent-ops coordination hub for Pixoid crew route governance, delivery boundaries, and durable work truth.
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+- [[syntheses/markdown-first-agent-memory|Markdown-First Agent Memory]] — Why visible, versioned Markdown/issues/skills should carry durable operational knowledge before hidden infrastructure.
+- [[syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — Crew roles, source-of-truth boundaries, route rules, and verification gates.
+
+## Source Roots
+
+- `Projects/Hermes Mission Control/Index.md`
+- `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing.md`
+- `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md`
+- `Projects/Hermes Mission Control/Knowledge Pack Contract V1.md`
+- `Projects/Hermes Mission Control/KPR Static Retrieval Eval - 2026-06-15.md`
+- `Projects/Hermes Mission Control/kpr-pixoid-routing-rule.md`
+- `Knowledge/concepts/self-improving-agent-systems.md`
+- `Knowledge/concepts/profile-memory-boundaries.md`
+- `Knowledge/concepts/runtime-memory-knowledge-routing.md`
+- `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+
+
+<!-- ===== agent-workflows/wiki/log.md ===== -->
+
+---
+title: Agent Workflows — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: compiled
+namespace: agent-workflows
+---
+
+# Agent Workflows — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Pilot compiled namespace page
+
+- Added pilot entity `wiki/entities/hermes-mission-control.md` and crosslink to Eval Trace context-overfitting concept.
+- Source pages remained in `Knowledge/` and `Projects/`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Compile agent-workflows content pack v1
+
+- Added compiled concept pages for profile memory boundaries, runtime memory knowledge routing, self-improving agent systems, and peer profiles vs child processes.
+- Added synthesis `wiki/syntheses/pixoid-crew-operating-model.md`.
+- Updated namespace index.
+- Source pages remain in `Knowledge/` and `Projects/`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Add KPR and clean publishing gate content
+
+- Promoted `agent-workflows` from scaffold to active namespace overview.
+- Added concept pages for `knowledge-pack-routing`, `agent-entrypoint-mesh`, and `static-retrieval-evals`.
+- Added synthesis `wiki/syntheses/markdown-first-agent-memory.md`.
+- Expanded `Hermes Mission Control` as a compiled entity page with crew role boundaries and source routing.
+- Updated namespace index and source roots.
+- Final public publish remains gated by the clean `pixi-wiki` rebuild.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== agent-workflows/wiki/syntheses/markdown-first-agent-memory.md ===== -->
+
+---
+title: Markdown-First Agent Memory
+created: 2026-06-16
+updated: 2026-06-16
+type: synthesis
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, memory, markdown, routing]
+sources:
+  - Projects/Hermes Mission Control/PRD - Knowledge Pack Routing.md
+  - Projects/Hermes Mission Control/Knowledge Pack Contract V1.md
+  - Knowledge/concepts/runtime-memory-knowledge-routing.md
+  - Knowledge/concepts/profile-memory-boundaries.md
+confidence: medium
+---
+
+# Markdown-First Agent Memory
+
+Markdown-first agent memory is the rule that durable operational knowledge should live in source-controlled notes, packs, issues, and skills before it becomes infrastructure.
+
+The memory layer should help the agent route itself. It should not become a hidden second database of project truth.
+
+## Layer model
+
+- **Injected memory:** compact stable hints, preferences, and environment facts.
+- **Knowledge / wiki pages:** durable concepts and synthesis.
+- **Project notes:** concrete project state and decisions.
+- **GitHub issues:** execution truth and active coordination.
+- **Skills:** reusable procedures.
+- **Live tools:** current system state and verification.
+
+Markdown-first means the agent can inspect and cite the source. When the source is too volatile, the agent should use live tools instead of freezing it into memory.
+
+## Why this matters
+
+Hidden memory is convenient but hard to audit. Markdown and issues are slower but visible, reviewable, and versioned. For Jamie's crew, that makes them better default truth surfaces.
+
+## Failure mode
+
+The danger is treating written context as commandment. Packs and notes are routing aids. They must be overridden by current GitHub state, live filesystem state, tests, and Jamie's latest instruction.
+
+## Related pages
+
+- [[../concepts/knowledge-pack-routing|Knowledge Pack Routing]]
+- [[../concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]]
+- [[../concepts/profile-memory-boundaries|Profile Memory Boundaries]]
+- [[../concepts/runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]]
+
+
+<!-- ===== agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md ===== -->
+
+---
+title: Pixoid Crew Operating Model
+created: 2026-06-16
+updated: 2026-06-16
+type: synthesis
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, pixoid, crew, source-of-truth]
+sources:
+  - Projects/Hermes Mission Control/Index.md
+  - Knowledge/concepts/profile-memory-boundaries.md
+  - Knowledge/concepts/runtime-memory-knowledge-routing.md
+  - Knowledge/concepts/self-improving-agent-systems.md
+  - Knowledge/concepts/peer-profiles-vs-child-processes.md
+confidence: high
+---
+
+# Pixoid Crew Operating Model
+
+The Pixoid crew operates as a set of bounded peer roles coordinated through durable source-of-truth surfaces. Pixoid is the control plane; Tinker builds; Quill maintains vault/source truth; Boba explores public sources and reality-checks signals.
+
+## Operating contract
+
+- GitHub issues and PRs are coordination truth.
+- Obsidian/Git is knowledge and project truth.
+- Discord is notification, not durable truth.
+- Cron output is context, not canonical state.
+- Daily Notes are scratch chronology, not compiled truth.
+
+## Why this belongs in agent-workflows
+
+The model is about how work moves through the crew: route selection, source-of-truth checks, memory boundaries, evidence gates, and review. It links to `pixi-vault` where the same rules affect namespace compilation, and to `eval-trace` where workflow quality gets measured.
+
+## Core patterns
+
+1. **Route by source of truth.** Use GitHub for work coordination, Obsidian for knowledge/project truth, skills for procedures, and memory only for compact stable routing facts.
+2. **Prefer peer profiles for named crew work.** Use child/subagent execution only as a local fallback and label it honestly.
+3. **Verify before closing.** Pixoid checks changed files, tests, live URLs, issue state, and pushed commits before reporting success.
+4. **Promote durable learning carefully.** Evidence must justify whether a lesson belongs in a dossier, concept page, skill, prompt, project hub, or memory pointer.
+
+## Cross-namespace links
+
+- [[../../../eval-trace/wiki/concepts/context-overfitting|Context Overfitting]] — evaluation failure mode for stale-context execution.
+- `pixi-vault` — namespace compiler and source-class policy.
+- `local-ai-infrastructure` — future local/offloaded execution support.
+

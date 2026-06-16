@@ -1,0 +1,57 @@
+{
+  "slug": "pixi-vault",
+  "title": "Pixi Vault",
+  "description": "Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.",
+  "documentCount": 6,
+  "counts": {
+    "wiki": 1,
+    "concepts": 1,
+    "entities": 0,
+    "summaries": 0,
+    "syntheses": 1
+  },
+  "documents": [
+    {
+      "title": "Pixi Vault Namespace Instructions",
+      "path": "CLAUDE.md",
+      "raw": "/raw/pixi-vault/CLAUDE.md",
+      "html": "/wiki/pixi-vault/CLAUDE.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Pixi Vault",
+      "path": "README.md",
+      "raw": "/raw/pixi-vault/README.md",
+      "html": "/wiki/pixi-vault/README.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Wiki Compiler Map and Source Classes",
+      "path": "wiki/concepts/wiki-compiler-map-and-source-classes.md",
+      "raw": "/raw/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md",
+      "html": "/wiki/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Pixi Vault \u2014 Master Index",
+      "path": "wiki/index.md",
+      "raw": "/raw/pixi-vault/wiki/index.md",
+      "html": "/wiki/pixi-vault/wiki/index.md.html",
+      "category": "wiki"
+    },
+    {
+      "title": "Pixi Vault \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "raw": "/raw/pixi-vault/wiki/log.md",
+      "html": "/wiki/pixi-vault/wiki/log.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Pixi Vault to Pixi Wiki Publishing Model",
+      "path": "wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md",
+      "raw": "/raw/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md",
+      "html": "/wiki/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md.html",
+      "category": "syntheses"
+    }
+  ]
+}

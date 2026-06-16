@@ -1,13 +1,14 @@
 # Pixi Wiki Namespace Registry
 
-> Clean AgentWikis-style registry generated from pixi-vault compiled namespaces.
+> Agent Wikis compiles messy, fast-moving sources — repos, changelogs, video transcripts, community Q&A — into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with llms.txt.
 
-> Raw Markdown: `/raw/<slug>/<path>`. Human HTML: `/wiki/<slug>/<path>.html`.
+> Raw Markdown: `/raw/<slug>/<path>`. Human HTML: `/wiki/<slug>/<path>.html`. Namespace agents: `/wiki/<slug>/llms.txt`.
 
 ## Pixi Vault
 
 > Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.
-> Current as of: 2026-06-16
+> Current as of: 2026-06-16 — content pack v1 compiled with Wiki Compiler Map/source-class and publishing-model pages.
+> Agent access: [/wiki/pixi-vault/llms.txt](/wiki/pixi-vault/llms.txt) [/wiki/pixi-vault/llms-full.txt](/wiki/pixi-vault/llms-full.txt) [/wiki/pixi-vault/index.json](/wiki/pixi-vault/index.json)
 
 - [Pixi Vault Namespace Instructions](/raw/pixi-vault/CLAUDE.md) ([html](/wiki/pixi-vault/CLAUDE.md.html))
 - [Pixi Vault](/raw/pixi-vault/README.md) ([html](/wiki/pixi-vault/README.md.html))
@@ -18,8 +19,9 @@
 
 ## Agent Workflows
 
-> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practi
-> Current as of: 2026-06-16
+> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.
+> Current as of: 2026-06-16 — first compiled content pack for agent-workflows.
+> Agent access: [/wiki/agent-workflows/llms.txt](/wiki/agent-workflows/llms.txt) [/wiki/agent-workflows/llms-full.txt](/wiki/agent-workflows/llms-full.txt) [/wiki/agent-workflows/index.json](/wiki/agent-workflows/index.json)
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
 - [Agent Workflows](/raw/agent-workflows/README.md) ([html](/wiki/agent-workflows/README.md.html))
@@ -39,7 +41,8 @@
 ## Eval Trace
 
 > Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.
-> Current as of: 2026-06-16
+> Current as of: 2026-06-16 — scaffold only. Content has not yet been fully compiled.
+> Agent access: [/wiki/eval-trace/llms.txt](/wiki/eval-trace/llms.txt) [/wiki/eval-trace/llms-full.txt](/wiki/eval-trace/llms-full.txt) [/wiki/eval-trace/index.json](/wiki/eval-trace/index.json)
 
 - [Eval Trace Namespace Instructions](/raw/eval-trace/CLAUDE.md) ([html](/wiki/eval-trace/CLAUDE.md.html))
 - [Eval Trace](/raw/eval-trace/README.md) ([html](/wiki/eval-trace/README.md.html))
@@ -52,7 +55,8 @@
 ## AI-Native Product Surfaces
 
 > AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
-> Current as of: 2026-06-16
+> Current as of: 2026-06-16 — scaffold only. Content has not yet been fully compiled.
+> Agent access: [/wiki/ai-native-product-surfaces/llms.txt](/wiki/ai-native-product-surfaces/llms.txt) [/wiki/ai-native-product-surfaces/llms-full.txt](/wiki/ai-native-product-surfaces/llms-full.txt) [/wiki/ai-native-product-surfaces/index.json](/wiki/ai-native-product-surfaces/index.json)
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
@@ -62,7 +66,8 @@
 ## RL Sim Labs
 
 > PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.
-> Current as of: 2026-06-16
+> Current as of: 2026-06-16 — scaffold only. Content has not yet been fully compiled.
+> Agent access: [/wiki/rl-sim-labs/llms.txt](/wiki/rl-sim-labs/llms.txt) [/wiki/rl-sim-labs/llms-full.txt](/wiki/rl-sim-labs/llms-full.txt) [/wiki/rl-sim-labs/index.json](/wiki/rl-sim-labs/index.json)
 
 - [RL Sim Labs Namespace Instructions](/raw/rl-sim-labs/CLAUDE.md) ([html](/wiki/rl-sim-labs/CLAUDE.md.html))
 - [RL Sim Labs](/raw/rl-sim-labs/README.md) ([html](/wiki/rl-sim-labs/README.md.html))
@@ -72,7 +77,8 @@
 ## Curated Tuning Datasets
 
 > Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
-> Current as of: 2026-06-16
+> Current as of: 2026-06-16 — scaffold only. Content has not yet been fully compiled.
+> Agent access: [/wiki/curated-tuning-datasets/llms.txt](/wiki/curated-tuning-datasets/llms.txt) [/wiki/curated-tuning-datasets/llms-full.txt](/wiki/curated-tuning-datasets/llms-full.txt) [/wiki/curated-tuning-datasets/index.json](/wiki/curated-tuning-datasets/index.json)
 
 - [Curated Tuning Datasets Namespace Instructions](/raw/curated-tuning-datasets/CLAUDE.md) ([html](/wiki/curated-tuning-datasets/CLAUDE.md.html))
 - [Curated Tuning Datasets](/raw/curated-tuning-datasets/README.md) ([html](/wiki/curated-tuning-datasets/README.md.html))
@@ -83,7 +89,8 @@
 ## Local AI Infrastructure
 
 > Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.
-> Current as of: 2026-06-16
+> Current as of: 2026-06-16 — scaffold only. Content has not yet been fully compiled.
+> Agent access: [/wiki/local-ai-infrastructure/llms.txt](/wiki/local-ai-infrastructure/llms.txt) [/wiki/local-ai-infrastructure/llms-full.txt](/wiki/local-ai-infrastructure/llms-full.txt) [/wiki/local-ai-infrastructure/index.json](/wiki/local-ai-infrastructure/index.json)
 
 - [Local AI Infrastructure Namespace Instructions](/raw/local-ai-infrastructure/CLAUDE.md) ([html](/wiki/local-ai-infrastructure/CLAUDE.md.html))
 - [Local AI Infrastructure](/raw/local-ai-infrastructure/README.md) ([html](/wiki/local-ai-infrastructure/README.md.html))

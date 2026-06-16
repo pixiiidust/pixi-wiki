@@ -6,6 +6,7 @@
   "source_path": "wikis/<slug>/",
   "raw_pattern": "/raw/<slug>/<path>",
   "html_pattern": "/wiki/<slug>/<path>.html",
+  "namespace_agent_pattern": "/wiki/<slug>/llms.txt",
   "legacy_root_flat_pages": "removed",
   "wikis": [
     {
@@ -19,11 +20,20 @@
       "scope": {
         "covers": "Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.",
         "notCovered": "General agent workflow behavior unless it changes vault/compiler architecture; project-specific implementation details unless they affect the namespace compiler.",
-        "currentAs": "2026-06-16"
+        "currentAs": "2026-06-16 \u2014 content pack v1 compiled with Wiki Compiler Map/source-class and publishing-model pages."
       },
       "lastUpdated": "2026-06-16",
       "documentCount": 6,
-      "llms_txt": "/llms.txt",
+      "counts": {
+        "wiki": 1,
+        "concepts": 1,
+        "entities": 0,
+        "summaries": 0,
+        "syntheses": 1
+      },
+      "llms_txt": "/wiki/pixi-vault/llms.txt",
+      "llms_full_txt": "/wiki/pixi-vault/llms-full.txt",
+      "index_json": "/wiki/pixi-vault/index.json",
       "raw_base": "/raw/pixi-vault/",
       "html_base": "/wiki/pixi-vault/",
       "documents": [
@@ -31,44 +41,50 @@
           "title": "Pixi Vault Namespace Instructions",
           "path": "CLAUDE.md",
           "raw": "/raw/pixi-vault/CLAUDE.md",
-          "html": "/wiki/pixi-vault/CLAUDE.md.html"
+          "html": "/wiki/pixi-vault/CLAUDE.md.html",
+          "category": "other"
         },
         {
           "title": "Pixi Vault",
           "path": "README.md",
           "raw": "/raw/pixi-vault/README.md",
-          "html": "/wiki/pixi-vault/README.md.html"
+          "html": "/wiki/pixi-vault/README.md.html",
+          "category": "other"
         },
         {
           "title": "Wiki Compiler Map and Source Classes",
           "path": "wiki/concepts/wiki-compiler-map-and-source-classes.md",
           "raw": "/raw/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md",
-          "html": "/wiki/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md.html"
+          "html": "/wiki/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md.html",
+          "category": "concepts"
         },
         {
           "title": "Pixi Vault \u2014 Master Index",
           "path": "wiki/index.md",
           "raw": "/raw/pixi-vault/wiki/index.md",
-          "html": "/wiki/pixi-vault/wiki/index.md.html"
+          "html": "/wiki/pixi-vault/wiki/index.md.html",
+          "category": "wiki"
         },
         {
           "title": "Pixi Vault \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/pixi-vault/wiki/log.md",
-          "html": "/wiki/pixi-vault/wiki/log.md.html"
+          "html": "/wiki/pixi-vault/wiki/log.md.html",
+          "category": "other"
         },
         {
           "title": "Pixi Vault to Pixi Wiki Publishing Model",
           "path": "wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md",
           "raw": "/raw/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md",
-          "html": "/wiki/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md.html"
+          "html": "/wiki/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md.html",
+          "category": "syntheses"
         }
       ]
     },
     {
       "slug": "agent-workflows",
       "title": "Agent Workflows",
-      "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practi",
+      "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
       "tags": [
         "agents"
       ],
@@ -76,11 +92,20 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-06-16"
+        "currentAs": "2026-06-16 \u2014 first compiled content pack for agent-workflows."
       },
       "lastUpdated": "2026-06-16",
       "documentCount": 14,
-      "llms_txt": "/llms.txt",
+      "counts": {
+        "wiki": 1,
+        "concepts": 7,
+        "entities": 1,
+        "summaries": 0,
+        "syntheses": 2
+      },
+      "llms_txt": "/wiki/agent-workflows/llms.txt",
+      "llms_full_txt": "/wiki/agent-workflows/llms-full.txt",
+      "index_json": "/wiki/agent-workflows/index.json",
       "raw_base": "/raw/agent-workflows/",
       "html_base": "/wiki/agent-workflows/",
       "documents": [
@@ -88,85 +113,99 @@
           "title": "Agent Workflows Namespace Instructions",
           "path": "CLAUDE.md",
           "raw": "/raw/agent-workflows/CLAUDE.md",
-          "html": "/wiki/agent-workflows/CLAUDE.md.html"
+          "html": "/wiki/agent-workflows/CLAUDE.md.html",
+          "category": "other"
         },
         {
           "title": "Agent Workflows",
           "path": "README.md",
           "raw": "/raw/agent-workflows/README.md",
-          "html": "/wiki/agent-workflows/README.md.html"
+          "html": "/wiki/agent-workflows/README.md.html",
+          "category": "other"
         },
         {
           "title": "Agent Entrypoint Mesh",
           "path": "wiki/concepts/agent-entrypoint-mesh.md",
           "raw": "/raw/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md",
-          "html": "/wiki/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md.html"
+          "html": "/wiki/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md.html",
+          "category": "concepts"
         },
         {
           "title": "Knowledge Pack Routing",
           "path": "wiki/concepts/knowledge-pack-routing.md",
           "raw": "/raw/agent-workflows/wiki/concepts/knowledge-pack-routing.md",
-          "html": "/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html"
+          "html": "/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html",
+          "category": "concepts"
         },
         {
           "title": "Peer Profiles vs Child Processes",
           "path": "wiki/concepts/peer-profiles-vs-child-processes.md",
           "raw": "/raw/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md",
-          "html": "/wiki/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md.html"
+          "html": "/wiki/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md.html",
+          "category": "concepts"
         },
         {
           "title": "Profile Memory Boundaries",
           "path": "wiki/concepts/profile-memory-boundaries.md",
           "raw": "/raw/agent-workflows/wiki/concepts/profile-memory-boundaries.md",
-          "html": "/wiki/agent-workflows/wiki/concepts/profile-memory-boundaries.md.html"
+          "html": "/wiki/agent-workflows/wiki/concepts/profile-memory-boundaries.md.html",
+          "category": "concepts"
         },
         {
           "title": "Runtime Memory Knowledge Routing",
           "path": "wiki/concepts/runtime-memory-knowledge-routing.md",
           "raw": "/raw/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md",
-          "html": "/wiki/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md.html"
+          "html": "/wiki/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md.html",
+          "category": "concepts"
         },
         {
           "title": "Self-Improving Agent Systems",
           "path": "wiki/concepts/self-improving-agent-systems.md",
           "raw": "/raw/agent-workflows/wiki/concepts/self-improving-agent-systems.md",
-          "html": "/wiki/agent-workflows/wiki/concepts/self-improving-agent-systems.md.html"
+          "html": "/wiki/agent-workflows/wiki/concepts/self-improving-agent-systems.md.html",
+          "category": "concepts"
         },
         {
           "title": "Static Retrieval Evals",
           "path": "wiki/concepts/static-retrieval-evals.md",
           "raw": "/raw/agent-workflows/wiki/concepts/static-retrieval-evals.md",
-          "html": "/wiki/agent-workflows/wiki/concepts/static-retrieval-evals.md.html"
+          "html": "/wiki/agent-workflows/wiki/concepts/static-retrieval-evals.md.html",
+          "category": "concepts"
         },
         {
           "title": "Hermes Mission Control",
           "path": "wiki/entities/hermes-mission-control.md",
           "raw": "/raw/agent-workflows/wiki/entities/hermes-mission-control.md",
-          "html": "/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html"
+          "html": "/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html",
+          "category": "entities"
         },
         {
           "title": "Agent Workflows \u2014 Master Index",
           "path": "wiki/index.md",
           "raw": "/raw/agent-workflows/wiki/index.md",
-          "html": "/wiki/agent-workflows/wiki/index.md.html"
+          "html": "/wiki/agent-workflows/wiki/index.md.html",
+          "category": "wiki"
         },
         {
           "title": "Agent Workflows \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/agent-workflows/wiki/log.md",
-          "html": "/wiki/agent-workflows/wiki/log.md.html"
+          "html": "/wiki/agent-workflows/wiki/log.md.html",
+          "category": "other"
         },
         {
           "title": "Markdown-First Agent Memory",
           "path": "wiki/syntheses/markdown-first-agent-memory.md",
           "raw": "/raw/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md",
-          "html": "/wiki/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md.html"
+          "html": "/wiki/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md.html",
+          "category": "syntheses"
         },
         {
           "title": "Pixoid Crew Operating Model",
           "path": "wiki/syntheses/pixoid-crew-operating-model.md",
           "raw": "/raw/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md",
-          "html": "/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html"
+          "html": "/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html",
+          "category": "syntheses"
         }
       ]
     },
@@ -181,11 +220,20 @@
       "scope": {
         "covers": "Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.",
         "notCovered": "General observability unrelated to workflow quality; product analytics unless used as an evaluation surface.",
-        "currentAs": "2026-06-16"
+        "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
       },
       "lastUpdated": "2026-06-16",
       "documentCount": 7,
-      "llms_txt": "/llms.txt",
+      "counts": {
+        "wiki": 1,
+        "concepts": 1,
+        "entities": 1,
+        "summaries": 0,
+        "syntheses": 1
+      },
+      "llms_txt": "/wiki/eval-trace/llms.txt",
+      "llms_full_txt": "/wiki/eval-trace/llms-full.txt",
+      "index_json": "/wiki/eval-trace/index.json",
       "raw_base": "/raw/eval-trace/",
       "html_base": "/wiki/eval-trace/",
       "documents": [
@@ -193,43 +241,50 @@
           "title": "Eval Trace Namespace Instructions",
           "path": "CLAUDE.md",
           "raw": "/raw/eval-trace/CLAUDE.md",
-          "html": "/wiki/eval-trace/CLAUDE.md.html"
+          "html": "/wiki/eval-trace/CLAUDE.md.html",
+          "category": "other"
         },
         {
           "title": "Eval Trace",
           "path": "README.md",
           "raw": "/raw/eval-trace/README.md",
-          "html": "/wiki/eval-trace/README.md.html"
+          "html": "/wiki/eval-trace/README.md.html",
+          "category": "other"
         },
         {
           "title": "Context Overfitting",
           "path": "wiki/concepts/context-overfitting.md",
           "raw": "/raw/eval-trace/wiki/concepts/context-overfitting.md",
-          "html": "/wiki/eval-trace/wiki/concepts/context-overfitting.md.html"
+          "html": "/wiki/eval-trace/wiki/concepts/context-overfitting.md.html",
+          "category": "concepts"
         },
         {
           "title": "Eval Trace",
           "path": "wiki/entities/eval-trace.md",
           "raw": "/raw/eval-trace/wiki/entities/eval-trace.md",
-          "html": "/wiki/eval-trace/wiki/entities/eval-trace.md.html"
+          "html": "/wiki/eval-trace/wiki/entities/eval-trace.md.html",
+          "category": "entities"
         },
         {
           "title": "Eval Trace \u2014 Master Index",
           "path": "wiki/index.md",
           "raw": "/raw/eval-trace/wiki/index.md",
-          "html": "/wiki/eval-trace/wiki/index.md.html"
+          "html": "/wiki/eval-trace/wiki/index.md.html",
+          "category": "wiki"
         },
         {
           "title": "Eval Trace \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/eval-trace/wiki/log.md",
-          "html": "/wiki/eval-trace/wiki/log.md.html"
+          "html": "/wiki/eval-trace/wiki/log.md.html",
+          "category": "other"
         },
         {
           "title": "Workflow Quality Evaluation Map",
           "path": "wiki/syntheses/workflow-quality-evaluation-map.md",
           "raw": "/raw/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md",
-          "html": "/wiki/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md.html"
+          "html": "/wiki/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md.html",
+          "category": "syntheses"
         }
       ]
     },
@@ -244,11 +299,20 @@
       "scope": {
         "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.",
         "notCovered": "Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.",
-        "currentAs": "2026-06-16"
+        "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
       },
       "lastUpdated": "2026-06-16",
       "documentCount": 4,
-      "llms_txt": "/llms.txt",
+      "counts": {
+        "wiki": 1,
+        "concepts": 0,
+        "entities": 0,
+        "summaries": 0,
+        "syntheses": 0
+      },
+      "llms_txt": "/wiki/ai-native-product-surfaces/llms.txt",
+      "llms_full_txt": "/wiki/ai-native-product-surfaces/llms-full.txt",
+      "index_json": "/wiki/ai-native-product-surfaces/index.json",
       "raw_base": "/raw/ai-native-product-surfaces/",
       "html_base": "/wiki/ai-native-product-surfaces/",
       "documents": [
@@ -256,25 +320,29 @@
           "title": "AI-Native Product Surfaces Namespace Instructions",
           "path": "CLAUDE.md",
           "raw": "/raw/ai-native-product-surfaces/CLAUDE.md",
-          "html": "/wiki/ai-native-product-surfaces/CLAUDE.md.html"
+          "html": "/wiki/ai-native-product-surfaces/CLAUDE.md.html",
+          "category": "other"
         },
         {
           "title": "AI-Native Product Surfaces",
           "path": "README.md",
           "raw": "/raw/ai-native-product-surfaces/README.md",
-          "html": "/wiki/ai-native-product-surfaces/README.md.html"
+          "html": "/wiki/ai-native-product-surfaces/README.md.html",
+          "category": "other"
         },
         {
           "title": "AI-Native Product Surfaces \u2014 Master Index",
           "path": "wiki/index.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
-          "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
+          "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html",
+          "category": "wiki"
         },
         {
           "title": "AI-Native Product Surfaces \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
-          "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
+          "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html",
+          "category": "other"
         }
       ]
     },
@@ -289,11 +357,20 @@
       "scope": {
         "covers": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.",
         "notCovered": "General local GPU setup unless required by RL experiment execution; unrelated game projects without RL/simulation learning goals.",
-        "currentAs": "2026-06-16"
+        "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
       },
       "lastUpdated": "2026-06-16",
       "documentCount": 4,
-      "llms_txt": "/llms.txt",
+      "counts": {
+        "wiki": 1,
+        "concepts": 0,
+        "entities": 0,
+        "summaries": 0,
+        "syntheses": 0
+      },
+      "llms_txt": "/wiki/rl-sim-labs/llms.txt",
+      "llms_full_txt": "/wiki/rl-sim-labs/llms-full.txt",
+      "index_json": "/wiki/rl-sim-labs/index.json",
       "raw_base": "/raw/rl-sim-labs/",
       "html_base": "/wiki/rl-sim-labs/",
       "documents": [
@@ -301,25 +378,29 @@
           "title": "RL Sim Labs Namespace Instructions",
           "path": "CLAUDE.md",
           "raw": "/raw/rl-sim-labs/CLAUDE.md",
-          "html": "/wiki/rl-sim-labs/CLAUDE.md.html"
+          "html": "/wiki/rl-sim-labs/CLAUDE.md.html",
+          "category": "other"
         },
         {
           "title": "RL Sim Labs",
           "path": "README.md",
           "raw": "/raw/rl-sim-labs/README.md",
-          "html": "/wiki/rl-sim-labs/README.md.html"
+          "html": "/wiki/rl-sim-labs/README.md.html",
+          "category": "other"
         },
         {
           "title": "RL Sim Labs \u2014 Master Index",
           "path": "wiki/index.md",
           "raw": "/raw/rl-sim-labs/wiki/index.md",
-          "html": "/wiki/rl-sim-labs/wiki/index.md.html"
+          "html": "/wiki/rl-sim-labs/wiki/index.md.html",
+          "category": "wiki"
         },
         {
           "title": "RL Sim Labs \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/rl-sim-labs/wiki/log.md",
-          "html": "/wiki/rl-sim-labs/wiki/log.md.html"
+          "html": "/wiki/rl-sim-labs/wiki/log.md.html",
+          "category": "other"
         }
       ]
     },
@@ -334,11 +415,20 @@
       "scope": {
         "covers": "Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.",
         "notCovered": "Training methods themselves except where they impose dataset-readiness requirements; copyright-risk decisions without provenance evidence.",
-        "currentAs": "2026-06-16"
+        "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
       },
       "lastUpdated": "2026-06-16",
       "documentCount": 5,
-      "llms_txt": "/llms.txt",
+      "counts": {
+        "wiki": 1,
+        "concepts": 0,
+        "entities": 1,
+        "summaries": 0,
+        "syntheses": 0
+      },
+      "llms_txt": "/wiki/curated-tuning-datasets/llms.txt",
+      "llms_full_txt": "/wiki/curated-tuning-datasets/llms-full.txt",
+      "index_json": "/wiki/curated-tuning-datasets/index.json",
       "raw_base": "/raw/curated-tuning-datasets/",
       "html_base": "/wiki/curated-tuning-datasets/",
       "documents": [
@@ -346,31 +436,36 @@
           "title": "Curated Tuning Datasets Namespace Instructions",
           "path": "CLAUDE.md",
           "raw": "/raw/curated-tuning-datasets/CLAUDE.md",
-          "html": "/wiki/curated-tuning-datasets/CLAUDE.md.html"
+          "html": "/wiki/curated-tuning-datasets/CLAUDE.md.html",
+          "category": "other"
         },
         {
           "title": "Curated Tuning Datasets",
           "path": "README.md",
           "raw": "/raw/curated-tuning-datasets/README.md",
-          "html": "/wiki/curated-tuning-datasets/README.md.html"
+          "html": "/wiki/curated-tuning-datasets/README.md.html",
+          "category": "other"
         },
         {
           "title": "LKY Archive",
           "path": "wiki/entities/lky-archive.md",
           "raw": "/raw/curated-tuning-datasets/wiki/entities/lky-archive.md",
-          "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html"
+          "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html",
+          "category": "entities"
         },
         {
           "title": "Curated Tuning Datasets \u2014 Master Index",
           "path": "wiki/index.md",
           "raw": "/raw/curated-tuning-datasets/wiki/index.md",
-          "html": "/wiki/curated-tuning-datasets/wiki/index.md.html"
+          "html": "/wiki/curated-tuning-datasets/wiki/index.md.html",
+          "category": "wiki"
         },
         {
           "title": "Curated Tuning Datasets \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/curated-tuning-datasets/wiki/log.md",
-          "html": "/wiki/curated-tuning-datasets/wiki/log.md.html"
+          "html": "/wiki/curated-tuning-datasets/wiki/log.md.html",
+          "category": "other"
         }
       ]
     },
@@ -385,11 +480,20 @@
       "scope": {
         "covers": "Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.",
         "notCovered": "Cloud-only infrastructure unless it affects local-first migration; product UX unless tied to local model constraints.",
-        "currentAs": "2026-06-16"
+        "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
       },
       "lastUpdated": "2026-06-16",
       "documentCount": 4,
-      "llms_txt": "/llms.txt",
+      "counts": {
+        "wiki": 1,
+        "concepts": 0,
+        "entities": 0,
+        "summaries": 0,
+        "syntheses": 0
+      },
+      "llms_txt": "/wiki/local-ai-infrastructure/llms.txt",
+      "llms_full_txt": "/wiki/local-ai-infrastructure/llms-full.txt",
+      "index_json": "/wiki/local-ai-infrastructure/index.json",
       "raw_base": "/raw/local-ai-infrastructure/",
       "html_base": "/wiki/local-ai-infrastructure/",
       "documents": [
@@ -397,25 +501,29 @@
           "title": "Local AI Infrastructure Namespace Instructions",
           "path": "CLAUDE.md",
           "raw": "/raw/local-ai-infrastructure/CLAUDE.md",
-          "html": "/wiki/local-ai-infrastructure/CLAUDE.md.html"
+          "html": "/wiki/local-ai-infrastructure/CLAUDE.md.html",
+          "category": "other"
         },
         {
           "title": "Local AI Infrastructure",
           "path": "README.md",
           "raw": "/raw/local-ai-infrastructure/README.md",
-          "html": "/wiki/local-ai-infrastructure/README.md.html"
+          "html": "/wiki/local-ai-infrastructure/README.md.html",
+          "category": "other"
         },
         {
           "title": "Local AI Infrastructure \u2014 Master Index",
           "path": "wiki/index.md",
           "raw": "/raw/local-ai-infrastructure/wiki/index.md",
-          "html": "/wiki/local-ai-infrastructure/wiki/index.md.html"
+          "html": "/wiki/local-ai-infrastructure/wiki/index.md.html",
+          "category": "wiki"
         },
         {
           "title": "Local AI Infrastructure \u2014 Activity Log",
           "path": "wiki/log.md",
           "raw": "/raw/local-ai-infrastructure/wiki/log.md",
-          "html": "/wiki/local-ai-infrastructure/wiki/log.md.html"
+          "html": "/wiki/local-ai-infrastructure/wiki/log.md.html",
+          "category": "other"
         }
       ]
     }

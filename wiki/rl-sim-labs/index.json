@@ -1,0 +1,43 @@
+{
+  "slug": "rl-sim-labs",
+  "title": "RL Sim Labs",
+  "description": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.",
+  "documentCount": 4,
+  "counts": {
+    "wiki": 1,
+    "concepts": 0,
+    "entities": 0,
+    "summaries": 0,
+    "syntheses": 0
+  },
+  "documents": [
+    {
+      "title": "RL Sim Labs Namespace Instructions",
+      "path": "CLAUDE.md",
+      "raw": "/raw/rl-sim-labs/CLAUDE.md",
+      "html": "/wiki/rl-sim-labs/CLAUDE.md.html",
+      "category": "other"
+    },
+    {
+      "title": "RL Sim Labs",
+      "path": "README.md",
+      "raw": "/raw/rl-sim-labs/README.md",
+      "html": "/wiki/rl-sim-labs/README.md.html",
+      "category": "other"
+    },
+    {
+      "title": "RL Sim Labs \u2014 Master Index",
+      "path": "wiki/index.md",
+      "raw": "/raw/rl-sim-labs/wiki/index.md",
+      "html": "/wiki/rl-sim-labs/wiki/index.md.html",
+      "category": "wiki"
+    },
+    {
+      "title": "RL Sim Labs \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "raw": "/raw/rl-sim-labs/wiki/log.md",
+      "html": "/wiki/rl-sim-labs/wiki/log.md.html",
+      "category": "other"
+    }
+  ]
+}

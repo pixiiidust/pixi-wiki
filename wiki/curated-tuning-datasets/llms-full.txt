@@ -1,0 +1,188 @@
+<!-- ===== curated-tuning-datasets/CLAUDE.md ===== -->
+
+# Curated Tuning Datasets Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/curated-tuning-datasets/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== curated-tuning-datasets/README.md ===== -->
+
+---
+title: Curated Tuning Datasets
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: data-curation
+namespace: curated-tuning-datasets
+confidence: medium
+---
+
+# Curated Tuning Datasets
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
+
+### Not Covered
+
+Training methods themselves except where they impose dataset-readiness requirements; copyright-risk decisions without provenance evidence.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `Projects/LKY Archive/Index.md`
+- `Projects/LKY Archive/Source Inventory.md`
+
+## Crosslinks
+
+- [[../local-ai-infrastructure/README|local-ai-infrastructure]]
+- [[../eval-trace/README|eval-trace]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/curated-tuning-datasets/README.md
+/raw/curated-tuning-datasets/wiki/index.md
+/wiki/curated-tuning-datasets/README.md
+/wiki/curated-tuning-datasets/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== curated-tuning-datasets/wiki/entities/lky-archive.md ===== -->
+
+---
+title: LKY Archive
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: stub
+namespace: curated-tuning-datasets
+tags: [curated-tuning-datasets, lky-archive, provenance, dataset-readiness]
+sources:
+  - Projects/LKY Archive/Index.md
+  - Projects/LKY Archive/Source Inventory.md
+confidence: medium
+---
+
+# LKY Archive
+
+The **LKY Archive** is a proposed curated-source inventory for Lee Kuan Yew-related material. Its current role is to define a provenance and dataset-readiness contract, not to scrape or train on data.
+
+## Current boundary
+
+- Inventory contract only.
+- No scraping or downloading.
+- No LoRA/fine-tuning.
+- No claim that any source is training-safe.
+- Rights/provenance review comes before dataset construction.
+
+## Dataset-readiness ladder
+
+```text
+inventory-only → retrieval-ready → quote-ready → fine-tuning-candidate → rejected
+```
+
+A source should not move beyond `inventory-only` without provenance, source class, rights/risk notes, and format availability.
+
+## Cross-namespace links
+
+- `local-ai-infrastructure` — future local tuning/retrieval workflows may depend on curated datasets.
+- `eval-trace` — dataset-quality and provenance gates may later need evaluation traces.
+
+## Source
+
+Compiled from `Projects/LKY Archive/Index.md` and `Projects/LKY Archive/Source Inventory.md`.
+
+
+<!-- ===== curated-tuning-datasets/wiki/index.md ===== -->
+
+---
+title: Curated Tuning Datasets — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: scaffold
+namespace: curated-tuning-datasets
+---
+
+# Curated Tuning Datasets — Master Index
+
+> Scaffold index for `curated-tuning-datasets`. Add compiled pages here as they are created.
+
+## Concepts
+
+<!-- Add compiled concepts alphabetically. -->
+
+## Entities
+
+- [[entities/lky-archive|LKY Archive]] — Proposed curated-source inventory for Lee Kuan Yew material, with provenance and dataset-readiness boundaries.
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+<!-- Add compiled syntheses alphabetically. -->
+
+## Source Roots
+
+- `Projects/LKY Archive/Index.md`
+- `Projects/LKY Archive/Source Inventory.md`
+
+
+<!-- ===== curated-tuning-datasets/wiki/log.md ===== -->
+
+---
+title: Curated Tuning Datasets — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: scaffold
+namespace: curated-tuning-datasets
+---
+
+# Curated Tuning Datasets — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Add LKY source inventory stub
+
+- Created canonical project/source artifacts under `Projects/LKY Archive/`.
+- Replaced `source pending` routing with real source paths.
+- Added compiled entity `wiki/entities/lky-archive.md`.
+- Updated namespace source roots and index.
+- No scraping, data collection, or training work was performed.
+- No Daily Notes were copied or compiled.
+

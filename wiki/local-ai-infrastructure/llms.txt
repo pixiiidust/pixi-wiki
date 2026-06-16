@@ -1,0 +1,8 @@
+# Local AI Infrastructure Knowledge Base
+
+> Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.
+
+- [Local AI Infrastructure Namespace Instructions](/raw/local-ai-infrastructure/CLAUDE.md) ([html](/wiki/local-ai-infrastructure/CLAUDE.md.html))
+- [Local AI Infrastructure](/raw/local-ai-infrastructure/README.md) ([html](/wiki/local-ai-infrastructure/README.md.html))
+- [Local AI Infrastructure — Master Index](/raw/local-ai-infrastructure/wiki/index.md) ([html](/wiki/local-ai-infrastructure/wiki/index.md.html))
+- [Local AI Infrastructure — Activity Log](/raw/local-ai-infrastructure/wiki/log.md) ([html](/wiki/local-ai-infrastructure/wiki/log.md.html))

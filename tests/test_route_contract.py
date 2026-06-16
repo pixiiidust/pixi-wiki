@@ -80,8 +80,32 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("# Pixi Wiki Namespace Registry", llms)
         self.assertIn("/raw/agent-workflows/README.md", llms)
         self.assertIn("/wiki/agent-workflows/README.md.html", llms)
+        self.assertIn("/wiki/agent-workflows/llms.txt", llms)
         self.assertNotIn("Knowledge domain llms.txt", llms)
         self.assertNotIn("concept-knowledge-concepts", llms)
+
+    def test_namespace_pages_have_agentwikis_sidebar_and_readme_card(self) -> None:
+        html = (ROOT / "wiki" / "agent-workflows" / "README.md.html").read_text(encoding="utf-8")
+        self.assertIn("Agent Workflows Knowledge Base", html)
+        self.assertIn("14 documents", html)
+        self.assertIn("📄 Agent Workflows Knowledge Base", html)
+        self.assertIn("📄 Agent Workflows KB — Master Index", html)
+        self.assertIn("CONCEPTS 7", html)
+        self.assertIn("ENTITIES 1", html)
+        self.assertIn("SYNTHESES 2", html)
+        self.assertIn("// FOR AGENTS", html)
+        self.assertIn("/wiki/agent-workflows/llms.txt", html)
+        self.assertIn("Covers", html)
+        self.assertIn("Not Covered", html)
+        self.assertIn("Current As Of", html)
+        self.assertIn("view as markdown", html)
+
+    def test_namespace_local_agent_files_exist(self) -> None:
+        for slug in ["pixi-vault", "agent-workflows", "eval-trace"]:
+            with self.subTest(slug=slug):
+                self.assertTrue((ROOT / "wiki" / slug / "llms.txt").is_file())
+                self.assertTrue((ROOT / "wiki" / slug / "llms-full.txt").is_file())
+                self.assertTrue((ROOT / "wiki" / slug / "index.json").is_file())
 
 
 if __name__ == "__main__":

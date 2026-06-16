@@ -1,0 +1,64 @@
+{
+  "slug": "eval-trace",
+  "title": "Eval Trace",
+  "description": "Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.",
+  "documentCount": 7,
+  "counts": {
+    "wiki": 1,
+    "concepts": 1,
+    "entities": 1,
+    "summaries": 0,
+    "syntheses": 1
+  },
+  "documents": [
+    {
+      "title": "Eval Trace Namespace Instructions",
+      "path": "CLAUDE.md",
+      "raw": "/raw/eval-trace/CLAUDE.md",
+      "html": "/wiki/eval-trace/CLAUDE.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Eval Trace",
+      "path": "README.md",
+      "raw": "/raw/eval-trace/README.md",
+      "html": "/wiki/eval-trace/README.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Context Overfitting",
+      "path": "wiki/concepts/context-overfitting.md",
+      "raw": "/raw/eval-trace/wiki/concepts/context-overfitting.md",
+      "html": "/wiki/eval-trace/wiki/concepts/context-overfitting.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Eval Trace",
+      "path": "wiki/entities/eval-trace.md",
+      "raw": "/raw/eval-trace/wiki/entities/eval-trace.md",
+      "html": "/wiki/eval-trace/wiki/entities/eval-trace.md.html",
+      "category": "entities"
+    },
+    {
+      "title": "Eval Trace \u2014 Master Index",
+      "path": "wiki/index.md",
+      "raw": "/raw/eval-trace/wiki/index.md",
+      "html": "/wiki/eval-trace/wiki/index.md.html",
+      "category": "wiki"
+    },
+    {
+      "title": "Eval Trace \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "raw": "/raw/eval-trace/wiki/log.md",
+      "html": "/wiki/eval-trace/wiki/log.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Workflow Quality Evaluation Map",
+      "path": "wiki/syntheses/workflow-quality-evaluation-map.md",
+      "raw": "/raw/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md",
+      "html": "/wiki/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md.html",
+      "category": "syntheses"
+    }
+  ]
+}

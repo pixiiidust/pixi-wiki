@@ -1,0 +1,296 @@
+<!-- ===== eval-trace/CLAUDE.md ===== -->
+
+# Eval Trace Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/eval-trace/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and `Projects/` as canonical authoring sources.
+- Treat Daily Notes as scratch chronology, not direct compiled content.
+- Keep this namespace scoped to: Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.
+- Do not widen scope silently; propose a namespace promotion/routing update first.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
+
+
+<!-- ===== eval-trace/README.md ===== -->
+
+---
+title: Eval Trace
+created: 2026-06-16
+updated: 2026-06-16
+type: namespace-overview
+status: scaffold
+category: evaluation
+namespace: eval-trace
+confidence: medium
+---
+
+# Eval Trace
+
+> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+
+## Scope
+
+### Covers
+
+Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.
+
+### Not Covered
+
+General observability unrelated to workflow quality; product analytics unless used as an evaluation surface.
+
+### Current As
+
+2026-06-16 — scaffold only. Content has not yet been fully compiled.
+
+## Canonical Source Roots
+
+- `Projects/Eval Trace/Index.md`
+- `Knowledge/concepts/context-overfitting.md`
+
+## Crosslinks
+
+- [[../agent-workflows/README|agent-workflows]]
+- [[../pixi-vault/README|pixi-vault]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/eval-trace/README.md
+/raw/eval-trace/wiki/index.md
+/wiki/eval-trace/README.md
+/wiki/eval-trace/wiki/index.md
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+- Do not compile Daily Notes directly unless promoted or verified.
+
+
+<!-- ===== eval-trace/wiki/concepts/context-overfitting.md ===== -->
+
+---
+title: Context Overfitting
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: eval-trace
+tags: [eval-trace, agent-workflows, reliability, context-management]
+sources:
+  - Knowledge/concepts/context-overfitting.md
+  - Projects/Eval Trace/Index.md
+confidence: high
+---
+
+# Context Overfitting
+
+**Context overfitting** is an agent workflow failure mode where an agent treats written context, memory, old summaries, project notes, or prompt rules as hard constraints even when current user intent, live evidence, or project state should override them.
+
+## Failure shape
+
+An agent is context-overfit when it:
+
+- follows stale session summaries instead of the latest user instruction;
+- recommends work from deprecated projects after live status changed;
+- treats memory/profile text as proof instead of a routing hint;
+- treats scratch notes as canonical source truth;
+- continues a previous plan after the user changed scope.
+
+## Evaluation verdict
+
+```text
+Context overfit? YES / NO / UNSURE
+```
+
+- **YES** — stale or overly rigid context controlled behavior despite stronger current evidence.
+- **NO** — context was used as a weak prior and updated by current intent/live evidence.
+- **UNSURE** — evidence is insufficient; surface one concrete suspect rule for review.
+
+## Deterministic prechecks
+
+Eval Trace currently uses prechecks such as correction override, fresh-state-without-tools, scope boundary, counterexample gap, stale project context, and safety/data-loss escalation. Safety/auth/data-loss cases should become `UNSURE`, not automatic failures.
+
+## Cross-namespace links
+
+- [[../../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]] — route governance surface where context-overfit failures show up.
+- [[../../../agent-workflows/wiki/syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — source-of-truth boundaries reduce context overfitting.
+- `pixi-vault` — source classes and Wiki Compiler Maps separate scratch from canonical truth.
+
+## Source
+
+Compiled from `Knowledge/concepts/context-overfitting.md` and `Projects/Eval Trace/Index.md`.
+
+
+<!-- ===== eval-trace/wiki/entities/eval-trace.md ===== -->
+
+---
+title: Eval Trace
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: compiled
+namespace: eval-trace
+tags: [eval-trace, agent-workflows, evaluation, traces]
+sources:
+  - Projects/Eval Trace/Index.md
+confidence: medium
+---
+
+# Eval Trace
+
+**Eval Trace** is Jamie's local prototype for evaluating agent-workflow quality, especially context overfitting. It builds trace packets, runs deterministic prechecks, and can hand ambiguous cases to an LLM judge.
+
+## Current artifact
+
+```text
+.hermes/context-overfit/
+```
+
+Current status: local prototype. It is not yet a public GitHub repo. The repo decision is deferred until the harness proves review-load reduction on real workflow traces.
+
+## Current capabilities
+
+- Builds segmented trace packets from Hermes session exports.
+- Runs deterministic prechecks before any LLM judge.
+- Emits compact `judge_packets.jsonl` for reviewable `UNSURE` cases.
+- Supports real LLM judge passes when Jamie asks Pixoid to judge.
+- Reads `.hermes/knowledge/registry/project-status.json` for done/deprecated/replaced project status.
+
+## Next gate
+
+Before a standalone `pixiiidust/eval-trace` repo exists, prove value on real workflow traces: add sequence-level cron checks, run on recent crew outputs, and show a confirmed real `YES` or useful `UNSURE` clustering.
+
+## Source
+
+Compiled from `Projects/Eval Trace/Index.md`.
+
+
+<!-- ===== eval-trace/wiki/index.md ===== -->
+
+---
+title: Eval Trace — Master Index
+created: 2026-06-16
+updated: 2026-06-16
+type: index
+status: compiled
+namespace: eval-trace
+---
+
+# Eval Trace — Master Index
+
+> Compiled index for `eval-trace`.
+
+## Concepts
+
+- [[concepts/context-overfitting|Context Overfitting]] — Agent workflow failure mode where stale or overly rigid context overwhelms current intent/live evidence.
+
+## Entities
+
+- [[entities/eval-trace|Eval Trace]] — Local prototype for context-overfit trace packets, deterministic prechecks, and LLM judge review.
+- Cross-namespace entity: [[../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]] — Agent Workflows primary page for route governance and crew operating surfaces.
+
+## Summaries
+
+<!-- Add compiled summaries alphabetically. -->
+
+## Syntheses
+
+- [[syntheses/workflow-quality-evaluation-map|Workflow Quality Evaluation Map]] — Evaluation surfaces, gates, and evidence rules for agent workflow quality.
+
+## Source Roots
+
+- `Projects/Eval Trace/Index.md`
+- `Knowledge/concepts/context-overfitting.md`
+
+
+<!-- ===== eval-trace/wiki/log.md ===== -->
+
+---
+title: Eval Trace — Activity Log
+created: 2026-06-16
+updated: 2026-06-16
+type: log
+status: compiled
+namespace: eval-trace
+---
+
+# Eval Trace — Activity Log
+
+> Append-only namespace log.
+
+## 2026-06-16 create | Namespace scaffold initialized
+
+- Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
+- Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Pilot compiled namespace page
+
+- Added pilot concept `wiki/concepts/context-overfitting.md` and crosslink to Agent Workflows Hermes Mission Control entity.
+- Source pages remained in `Knowledge/` and `Projects/`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Compile eval-trace content pack v1
+
+- Expanded `wiki/concepts/context-overfitting.md`.
+- Added entity `wiki/entities/eval-trace.md`.
+- Added synthesis `wiki/syntheses/workflow-quality-evaluation-map.md`.
+- Updated namespace index.
+- Source pages remain in `Knowledge/` and `Projects/`.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md ===== -->
+
+---
+title: Workflow Quality Evaluation Map
+created: 2026-06-16
+updated: 2026-06-16
+type: synthesis
+status: compiled
+namespace: eval-trace
+tags: [eval-trace, workflow-quality, evidence-gates, agent-workflows]
+sources:
+  - Projects/Eval Trace/Index.md
+  - Knowledge/concepts/context-overfitting.md
+  - wikis/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md
+confidence: medium
+---
+
+# Workflow Quality Evaluation Map
+
+Workflow quality evaluation asks whether an agent's output followed the right source-of-truth hierarchy, adapted to current user intent, and produced verified artifacts instead of plausible process talk.
+
+## Evaluation surfaces
+
+| Surface | Quality question | Evidence |
+|---|---|---|
+| Source routing | Did the agent use the correct truth layer? | GitHub issue/PR state, Obsidian project hubs, Knowledge pages, Wiki Compiler Maps |
+| Context adaptation | Did the agent update from latest user intent and live checks? | Current message, live git/GitHub/tool output |
+| Artifact progress | Did it produce a working artifact? | Committed files, tests, generated output, live URL checks |
+| Review discipline | Did Pixoid verify before closing? | Test logs, API checks, issue comments, clean status |
+| Safety boundary | Did it stop before risky actions? | Explicit approvals for deletes, deploys, secrets, broad rewrites |
+
+## Evidence gates
+
+1. **Pre-flight gate:** inspect live repo/tracker/source state before editing.
+2. **Revision gate:** if checks fail, fix and rerun focused verification.
+3. **Escalation gate:** ask Jamie before destructive or ambiguous ownership changes.
+4. **Closure gate:** close issues only after pushed commits, tests, and live/remote verification.
+
+## Context-overfit signal
+
+A strong context-overfit signal appears when the agent follows a written prior that should have been overridden by a newer user instruction, current project status, or live tool output. The evaluation target is not whether context was used; it is whether context was treated as stronger than the right source of truth.
+
+## Cross-namespace links
+
+- [[../../../agent-workflows/wiki/syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — operational source hierarchy.
+- [[concepts/context-overfitting|Context Overfitting]] — primary failure-mode concept.
+

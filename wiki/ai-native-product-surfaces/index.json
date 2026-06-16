@@ -1,0 +1,43 @@
+{
+  "slug": "ai-native-product-surfaces",
+  "title": "AI-Native Product Surfaces",
+  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.",
+  "documentCount": 4,
+  "counts": {
+    "wiki": 1,
+    "concepts": 0,
+    "entities": 0,
+    "summaries": 0,
+    "syntheses": 0
+  },
+  "documents": [
+    {
+      "title": "AI-Native Product Surfaces Namespace Instructions",
+      "path": "CLAUDE.md",
+      "raw": "/raw/ai-native-product-surfaces/CLAUDE.md",
+      "html": "/wiki/ai-native-product-surfaces/CLAUDE.md.html",
+      "category": "other"
+    },
+    {
+      "title": "AI-Native Product Surfaces",
+      "path": "README.md",
+      "raw": "/raw/ai-native-product-surfaces/README.md",
+      "html": "/wiki/ai-native-product-surfaces/README.md.html",
+      "category": "other"
+    },
+    {
+      "title": "AI-Native Product Surfaces \u2014 Master Index",
+      "path": "wiki/index.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html",
+      "category": "wiki"
+    },
+    {
+      "title": "AI-Native Product Surfaces \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html",
+      "category": "other"
+    }
+  ]
+}
