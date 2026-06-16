@@ -102,6 +102,18 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("Not Covered", html)
         self.assertIn("Current As Of", html)
         self.assertIn("view as markdown", html)
+        self.assertIn("report a mistake", html)
+        self.assertIn("prev-next-card", html)
+
+    def test_rendered_wiki_page_exposes_metadata_tools_and_prev_next(self) -> None:
+        html = (ROOT / "wiki" / "agent-workflows" / "wiki" / "concepts" / "knowledge-pack-routing.md.html").read_text(encoding="utf-8")
+        self.assertIn("type</span>: concept", html)
+        self.assertIn("updated</span>:", html)
+        self.assertIn("sources</span>:", html)
+        self.assertIn("view as markdown", html)
+        self.assertIn("report a mistake", html)
+        self.assertIn("← Prev", html)
+        self.assertIn("Next", html)
 
     def test_namespace_local_agent_files_exist(self) -> None:
         for slug in ["pixi-vault", "agent-workflows", "eval-trace"]:

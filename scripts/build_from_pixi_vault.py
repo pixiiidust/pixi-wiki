@@ -16,6 +16,7 @@ import shutil
 from collections import Counter
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote_plus
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = Path("/root/ObsidianVault/wikis")
@@ -168,7 +169,7 @@ def site_css() -> str:
     return """
 :root{color-scheme:light;--bg:#f7f3ea;--panel:#fffaf1;--panel2:#f0e8d8;--border:#d9cdb8;--soft:#eadfcb;--text:#22202a;--muted:#6f6a77;--heading:#111018;--accent:#9b5c00;--accent2:#6f4200;--green:#087a4a;--header:#fffdf8;--active-bg:#fff1d1}
 [data-theme=dark]{color-scheme:dark;--bg:#06070d;--panel:#0b0c15;--panel2:#10111c;--border:#24263a;--soft:#1a1c2c;--text:#d7e2ff;--muted:#7f87a6;--heading:#fff;--accent:#ffb323;--accent2:#ffd166;--green:#24e693;--header:#080912;--active-bg:#2b2116}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"IBM Plex Mono","JetBrains Mono","Roboto Mono",ui-monospace,monospace;font-size:14px;line-height:1.7}a{color:var(--accent);text-decoration:none;border-bottom:1px dotted currentColor}a:hover{color:var(--accent2)}code{background:var(--panel2);border:1px solid var(--border);color:var(--accent2);padding:1px 5px;border-radius:4px}pre{background:var(--panel2);border:1px solid var(--border);padding:14px;overflow:auto}.site-header{height:66px;border-bottom:1px solid var(--border);background:var(--header)}.header-inner{max-width:1180px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 20px}.logo{color:var(--heading);font-weight:800;letter-spacing:.04em;border:0}.nav{display:flex;align-items:center;gap:24px}.nav a{color:var(--muted);border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.nav a:hover{color:var(--heading)}.theme-toggle{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 10px;border-radius:999px;font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}.category-bar{border-bottom:1px solid var(--border);background:var(--panel)}.category-inner{max-width:1180px;margin:0 auto;display:flex;gap:22px;min-height:46px;align-items:center;padding:0 20px;flex-wrap:wrap}.category-inner a{color:var(--muted);border:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.category-inner a:first-child{color:var(--muted)}.page{max-width:1180px;margin:40px auto 90px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:0 20px}.sidebar{color:var(--muted)}.sidebar-block{border-left:1px solid var(--border);padding-left:12px;margin-bottom:24px}.sidebar-title{color:var(--heading);font-weight:800;margin-bottom:4px}.sidebar-count{color:var(--muted);font-size:11px;margin-bottom:16px}.sidebar a{display:block;padding:6px 10px;color:var(--muted);border:0;font-size:13px}.sidebar a.active{background:var(--active-bg);color:var(--accent);border-left:2px solid var(--accent);margin-left:-13px;padding-left:11px;font-weight:800}.sidebar-section-title{margin:12px 0 6px;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.sidebar-section{margin:10px 0}.sidebar-section summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:6px 10px;border-radius:8px}.sidebar-section summary::-webkit-details-marker{display:none}.sidebar-section summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent);transition:transform .12s ease}.sidebar-section[open] summary::before{transform:rotate(90deg)}.sidebar-section summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-section-body{margin:2px 0 6px 12px;border-left:1px solid var(--border);padding-left:4px}.sidebar-empty{padding:6px 10px;color:var(--muted);font-size:12px;font-style:italic}.article{min-width:0}.content-header{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:18px;color:var(--muted);font-size:13px}.breadcrumbs a,.markdown-link{color:var(--accent)}h1{margin:0 0 10px;color:var(--heading);font-size:36px;line-height:1.1;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}h2{margin:48px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--heading);font-size:22px;line-height:1.2;font-weight:900;text-transform:uppercase}h2::before{content:"// ";color:var(--accent2)}h3{margin:26px 0 8px;color:var(--heading);text-transform:uppercase;font-size:15px;letter-spacing:.08em}.updated{color:var(--muted);font-size:13px;margin-bottom:18px}.info-card{border:1px solid var(--border);background:var(--panel);padding:20px 22px;margin:24px 0}.info-row{display:grid;grid-template-columns:136px 1fr;gap:18px;margin-bottom:12px}.info-row:last-child{margin-bottom:0}.info-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}.green{color:var(--green)}.yellow{color:var(--accent2)}.white{color:var(--heading)}.agent-card{margin:24px 0 22px;padding:14px 18px;background:var(--active-bg);border:1px solid var(--border);border-left:2px solid var(--accent);color:var(--text)}.agent-card a{font-weight:800;margin-right:12px}.hero-copy{max-width:860px;color:var(--text);font-size:16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:26px}.card{border:1px solid var(--border);border-radius:14px;padding:18px;background:var(--panel)}.card h2{border:0;margin:0 0 8px;padding:0;font-size:18px}.card h2::before{content:""}.meta{color:var(--muted);font-size:.9rem}.next-card{margin-top:48px;margin-left:auto;width:min(360px,100%);border:1px solid var(--border);border-bottom:1px dotted var(--accent);background:var(--panel);padding:18px 20px;text-align:right;text-decoration:none;display:block}.next-label{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}.next-title{color:var(--heading);font-weight:800}.footer{border-top:1px solid var(--border);background:var(--header);color:var(--muted)}.footer-inner{max-width:1180px;margin:0 auto;padding:28px 20px;display:flex;justify-content:space-between;gap:20px}.footer a{margin-left:12px}@media(max-width:820px){.page{grid-template-columns:1fr}.nav{display:none}.info-row{grid-template-columns:1fr}.footer-inner{display:block}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"IBM Plex Mono","JetBrains Mono","Roboto Mono",ui-monospace,monospace;font-size:14px;line-height:1.7}a{color:var(--accent);text-decoration:none;border-bottom:1px dotted currentColor}a:hover{color:var(--accent2)}code{background:var(--panel2);border:1px solid var(--border);color:var(--accent2);padding:1px 5px;border-radius:4px}pre{background:var(--panel2);border:1px solid var(--border);padding:14px;overflow:auto}.site-header{height:66px;border-bottom:1px solid var(--border);background:var(--header)}.header-inner{max-width:1180px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 20px}.logo{color:var(--heading);font-weight:800;letter-spacing:.04em;border:0}.nav{display:flex;align-items:center;gap:24px}.nav a{color:var(--muted);border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.nav a:hover{color:var(--heading)}.theme-toggle{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 10px;border-radius:999px;font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}.category-bar{border-bottom:1px solid var(--border);background:var(--panel)}.category-inner{max-width:1180px;margin:0 auto;display:flex;gap:22px;min-height:46px;align-items:center;padding:0 20px;flex-wrap:wrap}.category-inner a{color:var(--muted);border:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.category-inner a:first-child{color:var(--muted)}.page{max-width:1180px;margin:40px auto 90px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:0 20px}.sidebar{color:var(--muted)}.sidebar-block{border-left:1px solid var(--border);padding-left:12px;margin-bottom:24px}.sidebar-title{color:var(--heading);font-weight:800;margin-bottom:4px}.sidebar-count{color:var(--muted);font-size:11px;margin-bottom:16px}.sidebar a{display:block;padding:6px 10px;color:var(--muted);border:0;font-size:13px}.sidebar a.active{background:var(--active-bg);color:var(--accent);border-left:2px solid var(--accent);margin-left:-13px;padding-left:11px;font-weight:800}.sidebar-section-title{margin:12px 0 6px;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.sidebar-section{margin:10px 0}.sidebar-section summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:6px 10px;border-radius:8px}.sidebar-section summary::-webkit-details-marker{display:none}.sidebar-section summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent);transition:transform .12s ease}.sidebar-section[open] summary::before{transform:rotate(90deg)}.sidebar-section summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-section-body{margin:2px 0 6px 12px;border-left:1px solid var(--border);padding-left:4px}.sidebar-empty{padding:6px 10px;color:var(--muted);font-size:12px;font-style:italic}.article{min-width:0}.content-header{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:18px;color:var(--muted);font-size:13px}.breadcrumbs a,.markdown-link{color:var(--accent)}h1{margin:0 0 10px;color:var(--heading);font-size:36px;line-height:1.1;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}h2{margin:48px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--heading);font-size:22px;line-height:1.2;font-weight:900;text-transform:uppercase}h2::before{content:"// ";color:var(--accent2)}h3{margin:26px 0 8px;color:var(--heading);text-transform:uppercase;font-size:15px;letter-spacing:.08em}.updated{color:var(--muted);font-size:13px;margin-bottom:18px}.info-card{border:1px solid var(--border);background:var(--panel);padding:20px 22px;margin:24px 0}.info-row{display:grid;grid-template-columns:136px 1fr;gap:18px;margin-bottom:12px}.info-row:last-child{margin-bottom:0}.info-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}.green{color:var(--green)}.yellow{color:var(--accent2)}.white{color:var(--heading)}.agent-card{margin:24px 0 22px;padding:14px 18px;background:var(--active-bg);border:1px solid var(--border);border-left:2px solid var(--accent);color:var(--text)}.agent-card a{font-weight:800;margin-right:12px}.hero-copy{max-width:860px;color:var(--text);font-size:16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:26px}.card{border:1px solid var(--border);border-radius:14px;padding:18px;background:var(--panel)}.card h2{border:0;margin:0 0 8px;padding:0;font-size:18px}.card h2::before{content:""}.meta{color:var(--muted);font-size:.9rem}.page-meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 22px;color:var(--muted);font-size:13px}.page-meta span{color:var(--heading);font-weight:800}.page-tools{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.prev-next{margin-top:54px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.prev-next-card{border:1px solid var(--border);border-bottom:1px dotted var(--accent);background:var(--panel);padding:18px 20px;text-decoration:none;display:block}.prev-card{text-align:left}.next-card{text-align:right}.next-label{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}.next-title{color:var(--heading);font-weight:800}.footer{border-top:1px solid var(--border);background:var(--header);color:var(--muted)}.footer-inner{max-width:1180px;margin:0 auto;padding:28px 20px;display:flex;justify-content:space-between;gap:20px}.footer a{margin-left:12px}@media(max-width:820px){.page{grid-template-columns:1fr}.nav{display:none}.info-row{grid-template-columns:1fr}.footer-inner{display:block}}
 """
 
 
@@ -258,14 +259,63 @@ def page_shell(slug: str, namespace_title: str, doc_count: int, counts: Counter[
 </body></html>"""
 
 
-def render_readme(slug: str, title: str, fm: dict[str, Any], body: str, covers: str, not_covered: str, current_as: str) -> str:
+def report_mistake_url(slug: str, rel: str) -> str:
+    title = quote_plus(f"Pixi Wiki correction: {slug}/{rel}")
+    body = quote_plus(f"Page: https://pixiiidust.github.io/pixi-wiki/wiki/{slug}/{rel}.html\n\nWhat should be corrected?")
+    return f"https://github.com/pixiiidust/pixi-wiki/issues/new?title={title}&body={body}"
+
+
+def page_tools(slug: str, rel: str) -> str:
+    return (
+        f'<span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/{slug}/{html.escape(rel)}">view as markdown</a>'
+        f'<a class="markdown-link" href="{report_mistake_url(slug, rel)}">report a mistake</a></span>'
+    )
+
+
+def metadata_block(fm: dict[str, Any]) -> str:
+    rows: list[str] = []
+    for key in ["type", "confidence", "updated", "status", "namespace"]:
+        value = fm.get(key)
+        if value:
+            rows.append(f'<div><span>{html.escape(key)}</span>: {html.escape(str(value))}</div>')
+    sources = fm.get("sources")
+    if isinstance(sources, list) and sources:
+        rows.append(f'<div><span>sources</span>: {len(sources)}</div>')
+    elif sources:
+        rows.append(f'<div><span>sources</span>: {html.escape(str(sources))}</div>')
+    return f'<div class="page-meta">{"".join(rows)}</div>' if rows else ""
+
+
+def with_metadata_after_h1(rendered_body: str, meta: str) -> str:
+    if not meta:
+        return rendered_body
+    return re.sub(r"(</h1>)", r"\1\n" + meta, rendered_body, count=1) if "</h1>" in rendered_body else meta + rendered_body
+
+
+def prev_next_nav(slug: str, prev_doc: dict[str, str] | None, next_doc: dict[str, str] | None) -> str:
+    cards: list[str] = []
+    if prev_doc:
+        cards.append(
+            f'<a class="prev-next-card prev-card" href="/pixi-wiki/wiki/{slug}/{html.escape(prev_doc["path"])}.html">'
+            f'<span class="next-label">← Prev</span><span class="next-title">{html.escape(prev_doc["title"])}</span></a>'
+        )
+    if next_doc:
+        cards.append(
+            f'<a class="prev-next-card next-card" href="/pixi-wiki/wiki/{slug}/{html.escape(next_doc["path"])}.html">'
+            f'<span class="next-label">Next</span><span class="next-title">{html.escape(next_doc["title"])} →</span></a>'
+        )
+    return f'<nav class="prev-next">{"".join(cards)}</nav>' if cards else ""
+
+
+def render_readme(slug: str, title: str, fm: dict[str, Any], body: str, covers: str, not_covered: str, current_as: str, next_doc: dict[str, str] | None) -> str:
     updated = fm.get("updated", "unknown")
     description = first_paragraph(body)
     body_without_title = re.sub(r"^#\s+.+\n", "", body, count=1).strip()
     body_without_scope = strip_scope_section(body_without_title).strip()
     article = f"""
-<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/{slug}/README.md.html">{html.escape(title)}</a> / README.md</div><a class="markdown-link" href="/pixi-wiki/raw/{slug}/README.md">view as markdown</a></div>
+<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/{slug}/README.md.html">{html.escape(title)}</a> / README.md</div>{page_tools(slug, "README.md")}</div>
 <h1>{html.escape(title)} Knowledge Base</h1>
+{metadata_block(fm)}
 <div class="updated">updated: <strong>{html.escape(str(updated))}</strong></div>
 <section class="info-card"><div class="info-row"><div class="info-label green">Covers</div><div>{inline_markdown(covers)}</div></div><div class="info-row"><div class="info-label yellow">Not Covered</div><div>{inline_markdown(not_covered or "Out-of-scope or stale material; verify with source notes and live tools.")}</div></div><div class="info-row"><div class="info-label white">Current As Of</div><div>{html.escape(current_as or str(updated))}</div></div></section>
 <div class="agent-card">🤖 Agent access: <a href="/pixi-wiki/wiki/{slug}/llms.txt">/wiki/{slug}/llms.txt</a> <a href="/pixi-wiki/wiki/{slug}/llms-full.txt">/wiki/{slug}/llms-full.txt</a> <a href="/pixi-wiki/wiki/{slug}/index.json">/wiki/{slug}/index.json</a></div>
@@ -273,15 +323,17 @@ def render_readme(slug: str, title: str, fm: dict[str, Any], body: str, covers: 
 <h2>Structure</h2><ul><li><code>raw/</code> — raw Markdown provenance mirror for agents and source inspection.</li><li><code>wiki/</code> — synthesized knowledge pages: concepts, entities, summaries, and syntheses.</li><li>Schema and maintenance rules: see <code>CLAUDE.md</code>.</li></ul>
 <h2>Usage</h2><ul><li><strong>Add new sources:</strong> update canonical source notes in <code>pixi-vault</code>, then compile into this namespace.</li><li><strong>Ask questions:</strong> agents read this wiki and cite raw/source paths.</li><li><strong>Publish:</strong> regenerate <code>pixi-wiki</code>, run tests, then live-verify raw and HTML routes.</li></ul>
 {markdown_fragment(body_without_scope) if body_without_scope else ""}
-<a class="next-card" href="/pixi-wiki/wiki/{slug}/wiki/index.md.html"><span class="next-label">Next</span><span class="next-title">{html.escape(title)} KB — Master Index →</span></a>
+{prev_next_nav(slug, None, next_doc)}
 """
     return article
 
 
-def render_page(slug: str, title: str, rel: str, page_title: str, body: str) -> str:
+def render_page(slug: str, title: str, rel: str, page_title: str, fm: dict[str, Any], body: str, prev_doc: dict[str, str] | None, next_doc: dict[str, str] | None) -> str:
+    rendered_body = with_metadata_after_h1(markdown_fragment(body), metadata_block(fm))
     return f"""
-<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/{slug}/README.md.html">{html.escape(title)}</a> / {html.escape(rel)}</div><a class="markdown-link" href="/pixi-wiki/raw/{slug}/{html.escape(rel)}">view as markdown</a></div>
-{markdown_fragment(body)}
+<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/{slug}/README.md.html">{html.escape(title)}</a> / {html.escape(rel)}</div>{page_tools(slug, rel)}</div>
+{rendered_body}
+{prev_next_nav(slug, prev_doc, next_doc)}
 """
 
 
@@ -318,6 +370,23 @@ def collect_namespace(source_dir: Path, output_root: Path, slug: str) -> tuple[d
         if rel.as_posix() not in {"README.md", "wiki/index.md", "CLAUDE.md"}
     ]
 
+    def navigation_rank(item: tuple[Path, str, dict[str, Any], str, str]) -> tuple[int, str]:
+        rel, _text, page_fm, _body, page_title = item
+        rel_posix = rel.as_posix()
+        if rel_posix == "README.md":
+            return (0, page_title.lower())
+        if rel_posix == "wiki/index.md":
+            return (1, page_title.lower())
+        category_rank = {"concepts": 2, "entities": 3, "summaries": 4, "syntheses": 5, "wiki": 6, "other": 7}
+        return (category_rank.get(sidebar_category(rel, page_fm), 7), page_title.lower())
+
+    nav_docs = [
+        {"title": page_title, "path": rel.as_posix()}
+        for rel, _text, page_fm, _body, page_title in sorted(parsed, key=navigation_rank)
+        if rel.as_posix() != "CLAUDE.md"
+    ]
+    nav_by_path = {doc["path"]: index for index, doc in enumerate(nav_docs)}
+
     # Namespace-local agent access files.
     ns_wiki_dir = output_root / "wiki" / slug
     ns_wiki_dir.mkdir(parents=True, exist_ok=True)
@@ -337,10 +406,13 @@ def collect_namespace(source_dir: Path, output_root: Path, slug: str) -> tuple[d
         raw_output.parent.mkdir(parents=True, exist_ok=True)
         html_output.parent.mkdir(parents=True, exist_ok=True)
         raw_output.write_text(text, encoding="utf-8")
+        nav_index = nav_by_path.get(rel_posix)
+        prev_doc = nav_docs[nav_index - 1] if nav_index is not None and nav_index > 0 else None
+        next_doc = nav_docs[nav_index + 1] if nav_index is not None and nav_index + 1 < len(nav_docs) else None
         if rel_posix == "README.md":
-            article = render_readme(slug, str(title), fm, readme_body, covers, not_covered, current_as)
+            article = render_readme(slug, str(title), fm, readme_body, covers, not_covered, current_as, next_doc)
         else:
-            article = render_page(slug, str(title), rel_posix, str(page_title), body if page_fm else text)
+            article = render_page(slug, str(title), rel_posix, str(page_title), page_fm, body if page_fm else text, prev_doc, next_doc)
         html_output.write_text(page_shell(slug, str(title), len(md_files), counts, rel_posix, sidebar_docs, article, str(page_title)), encoding="utf-8")
         raw_url = f"/raw/{slug}/{rel_posix}"
         html_url = f"/wiki/{slug}/{rel_posix}.html"
