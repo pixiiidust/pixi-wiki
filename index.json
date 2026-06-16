@@ -3,8 +3,11 @@
     "no_crawler": true,
     "no_mcp": true,
     "no_profile_gateway_webhook_changes": true,
-    "no_rag": true,
-    "no_search_index": true
+    "no_runtime_rag": true,
+    "no_search_index": true,
+    "rag_ready": true,
+    "schema_map_entrypoint": "/pixi-wiki/wiki/maps-of-content/llms.txt",
+    "wiki_pattern": "karpathy-llm-wiki"
   },
   "category": "agents",
   "concept_count": 17,

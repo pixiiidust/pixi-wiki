@@ -50,17 +50,32 @@ v_next:
   - automated_freshness_check
 ---
 
-# Maps of Content Domain Pack — Agent Entrypoint
+# Maps of Content Domain Pack — Schema Map Agent Entrypoint
 
 ## Agent Start Here
 
-Use this pack when working on MOCs themselves or when deciding how an agent should traverse the wiki. MOCs are semantic navigation and schema-map surfaces: they show domains, branches, relationships, and likely routes. Adjacent `llms.txt` files are agent retrieval contracts for loading node context. Do not collapse one into the other.
+Use this pack when deciding how an agent should traverse the wiki. In the Karpathy LLM Wiki pattern, raw sources are compiled into a maintained Markdown/wiki layer, and agents read the compiled wiki before falling back to raw sources. Pixi-wiki follows that shape: `/raw/**` preserves provenance, `/wiki/**` is the compiled wiki, and Maps of Content are the schema map / agent entrypoint layer that tells an agent where to go first.
+
+MOCs are semantic navigation and schema-map surfaces: they show domains, branches, relationships, likely routes, and source-of-truth boundaries. Adjacent `llms.txt` files are agent retrieval contracts for loading node context. Do not collapse one into the other.
+
+## RAG-Ready Retrieval Role
+
+MOCs make future knowledge retrieval and RAG more efficient because they narrow the search space before embedding or retrieval happens. The intended path is:
+
+1. Start at root `llms.txt` for whole-wiki routing.
+2. Use this MOC schema map to choose the right domain or branch.
+3. Load the adjacent domain/node `llms.txt` contract.
+4. Retrieve from the compiled wiki node first.
+5. Use raw sources only for provenance, conflict checks, or deeper audit.
+
+This is **RAG-ready**, not a shipped runtime RAG/vector database. The map improves retrieval quality by giving agents a maintained graph of domains and boundaries before they search.
 
 ## What This Pack Routes
 
 - Which MOC to inspect for vault navigation and agent route planning.
 - How agents should use MOCs as schema maps without treating them as canonical truth.
 - Boundaries between MOCs, adjacent node `llms.txt` contracts, root/project/knowledge packs, project hubs, and GitHub.
+- The Karpathy-style LLM Wiki split: raw sources → compiled wiki → schema maps / entrypoints.
 - The current decision that `Templates/llms.txt` is deferred unless template-routing rules become distinct enough to justify it.
 
 ## What This Pack Does Not Route
@@ -69,14 +84,16 @@ Use this pack when working on MOCs themselves or when deciding how an agent shou
 - Full Knowledge wiki content.
 - Template body content.
 - Asset/evidence handling under `Attachments/`.
-- Runtime automation, cron, MCP, RAG, crawler, search, vector DB, or public hosting.
+- Runtime automation, cron, MCP, crawler, hosted search, vector DB, or public hosting.
+- Runtime RAG implementation; this pack only keeps the wiki structure RAG-ready.
 
 ## Source-of-Truth Hierarchy
 
-1. **Canonical domain sources** — GitHub/project hubs/Knowledge schema/raw sources, depending on the topic.
-2. **Domain packs** — root, Projects, Knowledge, and project-specific `llms.txt` files.
-3. **MOCs** — human navigation and cross-link surfaces.
-4. **This pack** — routing truth for MOC maintenance boundaries.
+1. **Raw sources** — immutable provenance and audit trail.
+2. **Compiled wiki** — maintained Knowledge concepts, project packs, and domain pages.
+3. **Domain packs** — root, Projects, Knowledge, MOC, and project-specific `llms.txt` contracts.
+4. **MOCs / schema maps** — traversal layer for agents and humans.
+5. **This pack** — routing truth for MOC maintenance boundaries.
 
 ## Canonical Sources
 

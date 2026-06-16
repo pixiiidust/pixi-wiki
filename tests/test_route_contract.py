@@ -270,6 +270,31 @@ class MOCIndexRouteTest(unittest.TestCase):
         found_keyword = any(kw in html.lower() for kw in map_keywords)
         self.assertTrue(found_keyword, "MOC index does not mention map/traversal role")
 
+    def test_moc_pack_explains_llm_wiki_schema_map_pattern(self) -> None:
+        """MOC agent contract names the Karpathy-style LLM wiki role clearly."""
+        text = (ROOT / "wiki" / "maps-of-content" / "llms.txt").read_text(encoding="utf-8").lower()
+        for token in [
+            "schema map",
+            "agent entrypoint",
+            "karpathy",
+            "llm wiki",
+            "raw sources",
+            "compiled wiki",
+            "retrieval",
+            "rag-ready",
+        ]:
+            with self.subTest(token=token):
+                self.assertIn(token, text)
+
+    def test_manifest_marks_wiki_as_rag_ready_not_runtime_rag(self) -> None:
+        """Public manifest distinguishes RAG-ready structure from shipped RAG runtime."""
+        data = _load_index_json()
+        boundary = data.get("boundary", {})
+        self.assertTrue(boundary.get("rag_ready"))
+        self.assertTrue(boundary.get("no_runtime_rag"))
+        self.assertEqual(boundary.get("wiki_pattern"), "karpathy-llm-wiki")
+        self.assertIn("maps-of-content", boundary.get("schema_map_entrypoint", ""))
+
 
 class WikiRouteLinkTest(unittest.TestCase):
     """Assert generated /wiki/ HTML links resolve within the static output."""

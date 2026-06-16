@@ -220,21 +220,25 @@ th { background: var(--surface-soft); text-align: left; font-size: 12px; letter-
 <section class="agent-callout"><strong>🤖 Agent access:</strong> load this node's local <code>llms.txt</code>; use the Markdown source for provenance/debugging.<div class="agent-links"><a href="wiki/maps-of-content/llms.txt">llms.txt</a><a class="provenance-link" href="raw/Maps of Content/llms.txt">view as markdown</a></div></section>
 <section class="wiki-section"><h2>Map room entrypoints</h2><p class="section-kicker">Browse the human surfaces in this domain. Each node also has an adjacent llms.txt contract.</p><div class="pack-grid"><a class="pack-card" href="wiki/maps-of-content/llms.txt"><span class="badge">agent map</span><h3>Maps of Content llms.txt</h3><span class="pack-path">Navigation cortex / schema map contract</span></a></div></section>
 <nav class="toc" aria-label="Page sections"><p class="toc-title">// Contents</p><ul><li><a href="#section-0">Agent Start Here</a></li><li><a href="#section-1">What This Pack Routes</a></li><li><a href="#section-2">What This Pack Does Not Route</a></li><li><a href="#section-3">Source-of-Truth Hierarchy</a></li><li><a href="#section-4">Canonical Sources</a></li><li><a href="#section-5">Current Narrative / Operating Posture</a></li><li><a href="#section-6">Do Not Do</a></li><li><a href="#section-7">Fallback Rules</a></li><li><a href="#section-8">Human Surface</a></li><li><a href="#section-9">Maintenance Notes</a></li></ul></nav>
-<section class="wiki-section" id="section-0"><h2>Agent Start Here</h2><div class="section-body"><p>Use this pack when working on MOCs themselves or when deciding how an agent should traverse the wiki. MOCs are semantic navigation and schema-map surfaces: they show domains, branches, relationships, and likely routes. Adjacent <code>llms.txt</code> files are agent retrieval contracts for loading node context. Do not collapse one into the other.</p></div></section><section class="wiki-section" id="section-1"><h2>What This Pack Routes</h2><div class="section-body"><ul>
+<section class="wiki-section" id="section-0"><h2>Agent Start Here</h2><div class="section-body"><p>Use this pack when deciding how an agent should traverse the wiki. In the Karpathy LLM Wiki pattern, raw sources are compiled into a maintained Markdown/wiki layer, and agents read the compiled wiki before falling back to raw sources. Pixi-wiki follows that shape: <code>/raw/<strong></code> preserves provenance, <code>/wiki/</strong></code> is the compiled wiki, and Maps of Content are the schema map / agent entrypoint layer that tells an agent where to go first.</p>
+<p>MOCs are semantic navigation and schema-map surfaces: they show domains, branches, relationships, likely routes, and source-of-truth boundaries. Adjacent <code>llms.txt</code> files are agent retrieval contracts for loading node context. Do not collapse one into the other.</p></div></section><section class="wiki-section" id="section-1"><h2>What This Pack Routes</h2><div class="section-body"><ul>
 <li>Which MOC to inspect for vault navigation and agent route planning.</li>
 <li>How agents should use MOCs as schema maps without treating them as canonical truth.</li>
 <li>Boundaries between MOCs, adjacent node <code>llms.txt</code> contracts, root/project/knowledge packs, project hubs, and GitHub.</li>
+<li>The Karpathy-style LLM Wiki split: raw sources → compiled wiki → schema maps / entrypoints.</li>
 <li>The current decision that <code>Templates/llms.txt</code> is deferred unless template-routing rules become distinct enough to justify it.</li>
 </ul></div></section><section class="wiki-section" id="section-2"><h2>What This Pack Does Not Route</h2><div class="section-body"><ul>
 <li>Current project implementation state.</li>
 <li>Full Knowledge wiki content.</li>
 <li>Template body content.</li>
 <li>Asset/evidence handling under <code>Attachments/</code>.</li>
-<li>Runtime automation, cron, MCP, RAG, crawler, search, vector DB, or public hosting.</li>
+<li>Runtime automation, cron, MCP, crawler, hosted search, vector DB, or public hosting.</li>
+<li>Runtime RAG implementation; this pack only keeps the wiki structure RAG-ready.</li>
 </ul></div></section><section class="wiki-section" id="section-3"><h2>Source-of-Truth Hierarchy</h2><div class="section-body"><ol>
-<li><strong>Canonical domain sources</strong> — GitHub/project hubs/Knowledge schema/raw sources, depending on the topic.</li>
-<li><strong>Domain packs</strong> — root, Projects, Knowledge, and project-specific <code>llms.txt</code> files.</li>
-<li><strong>MOCs</strong> — human navigation and cross-link surfaces.</li>
+<li><strong>Raw sources</strong> — immutable provenance and audit trail.</li>
+<li><strong>Compiled wiki</strong> — maintained Knowledge concepts, project packs, and domain pages.</li>
+<li><strong>Domain packs</strong> — root, Projects, Knowledge, MOC, and project-specific <code>llms.txt</code> contracts.</li>
+<li><strong>MOCs / schema maps</strong> — traversal layer for agents and humans.</li>
 <li><strong>This pack</strong> — routing truth for MOC maintenance boundaries.</li>
 </ol></div></section><section class="wiki-section" id="section-4"><h2>Canonical Sources</h2><div class="section-body"><table><tbody>
 <tr><th>Label</th><th>Path/URL</th><th>Role</th></tr>
