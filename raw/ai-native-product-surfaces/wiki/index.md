@@ -3,7 +3,7 @@ title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
 updated: 2026-06-16
 type: index
-status: scaffold
+status: active
 namespace: ai-native-product-surfaces
 ---
 
@@ -13,11 +13,12 @@ namespace: ai-native-product-surfaces
 
 ## Concepts
 
-<!-- Add compiled concepts alphabetically. -->
+- [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
 
 ## Entities
 
-<!-- Add compiled entities alphabetically. -->
+- [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
+- [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
 
 ## Summaries
 

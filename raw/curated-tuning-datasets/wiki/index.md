@@ -25,7 +25,7 @@ namespace: curated-tuning-datasets
 
 ## Syntheses
 
-<!-- Add compiled syntheses alphabetically. -->
+- [[syntheses/lky-dataset-readiness-map|LKY Dataset Readiness Map]] — Readiness ladder and namespace boundary for the LKY source corpus.
 
 ## Source Roots
 

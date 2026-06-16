@@ -4,5 +4,8 @@
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
+- [AI-Native Problem Framing Framework](/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html))
+- [myAbode](/raw/ai-native-product-surfaces/wiki/entities/myabode.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html))
+- [Planned Program Intel](/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html))
 - [AI-Native Product Surfaces — Master Index](/raw/ai-native-product-surfaces/wiki/index.md) ([html](/wiki/ai-native-product-surfaces/wiki/index.md.html))
 - [AI-Native Product Surfaces — Activity Log](/raw/ai-native-product-surfaces/wiki/log.md) ([html](/wiki/ai-native-product-surfaces/wiki/log.md.html))

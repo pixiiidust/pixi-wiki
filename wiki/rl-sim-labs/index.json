@@ -2,11 +2,11 @@
   "slug": "rl-sim-labs",
   "title": "RL Sim Labs",
   "description": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.",
-  "documentCount": 4,
+  "documentCount": 5,
   "counts": {
     "wiki": 1,
     "concepts": 0,
-    "entities": 0,
+    "entities": 1,
     "summaries": 0,
     "syntheses": 0
   },
@@ -24,6 +24,13 @@
       "raw": "/raw/rl-sim-labs/README.md",
       "html": "/wiki/rl-sim-labs/README.md.html",
       "category": "other"
+    },
+    {
+      "title": "Critical Ranger FFM",
+      "path": "wiki/entities/critical-ranger-ffm.md",
+      "raw": "/raw/rl-sim-labs/wiki/entities/critical-ranger-ffm.md",
+      "html": "/wiki/rl-sim-labs/wiki/entities/critical-ranger-ffm.md.html",
+      "category": "entities"
     },
     {
       "title": "RL Sim Labs \u2014 Master Index",

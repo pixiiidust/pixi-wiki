@@ -3,7 +3,7 @@ title: RL Sim Labs — Master Index
 created: 2026-06-16
 updated: 2026-06-16
 type: index
-status: scaffold
+status: active
 namespace: rl-sim-labs
 ---
 
@@ -17,7 +17,7 @@ namespace: rl-sim-labs
 
 ## Entities
 
-<!-- Add compiled entities alphabetically. -->
+- [[entities/critical-ranger-ffm|Critical Ranger FFM]] — Zone-control RL forest-fire experiment; entity under RL Sim Labs until it earns standalone namespace promotion.
 
 ## Summaries
 

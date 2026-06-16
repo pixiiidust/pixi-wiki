@@ -7,3 +7,4 @@
 - [LKY Archive](/raw/curated-tuning-datasets/wiki/entities/lky-archive.md) ([html](/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html))
 - [Curated Tuning Datasets — Master Index](/raw/curated-tuning-datasets/wiki/index.md) ([html](/wiki/curated-tuning-datasets/wiki/index.md.html))
 - [Curated Tuning Datasets — Activity Log](/raw/curated-tuning-datasets/wiki/log.md) ([html](/wiki/curated-tuning-datasets/wiki/log.md.html))
+- [LKY Dataset Readiness Map](/raw/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md) ([html](/wiki/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md.html))

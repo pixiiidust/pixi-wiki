@@ -60,6 +60,9 @@
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
+- [AI-Native Problem Framing Framework](/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html))
+- [myAbode](/raw/ai-native-product-surfaces/wiki/entities/myabode.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html))
+- [Planned Program Intel](/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html))
 - [AI-Native Product Surfaces — Master Index](/raw/ai-native-product-surfaces/wiki/index.md) ([html](/wiki/ai-native-product-surfaces/wiki/index.md.html))
 - [AI-Native Product Surfaces — Activity Log](/raw/ai-native-product-surfaces/wiki/log.md) ([html](/wiki/ai-native-product-surfaces/wiki/log.md.html))
 
@@ -71,6 +74,7 @@
 
 - [RL Sim Labs Namespace Instructions](/raw/rl-sim-labs/CLAUDE.md) ([html](/wiki/rl-sim-labs/CLAUDE.md.html))
 - [RL Sim Labs](/raw/rl-sim-labs/README.md) ([html](/wiki/rl-sim-labs/README.md.html))
+- [Critical Ranger FFM](/raw/rl-sim-labs/wiki/entities/critical-ranger-ffm.md) ([html](/wiki/rl-sim-labs/wiki/entities/critical-ranger-ffm.md.html))
 - [RL Sim Labs — Master Index](/raw/rl-sim-labs/wiki/index.md) ([html](/wiki/rl-sim-labs/wiki/index.md.html))
 - [RL Sim Labs — Activity Log](/raw/rl-sim-labs/wiki/log.md) ([html](/wiki/rl-sim-labs/wiki/log.md.html))
 
@@ -85,6 +89,7 @@
 - [LKY Archive](/raw/curated-tuning-datasets/wiki/entities/lky-archive.md) ([html](/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html))
 - [Curated Tuning Datasets — Master Index](/raw/curated-tuning-datasets/wiki/index.md) ([html](/wiki/curated-tuning-datasets/wiki/index.md.html))
 - [Curated Tuning Datasets — Activity Log](/raw/curated-tuning-datasets/wiki/log.md) ([html](/wiki/curated-tuning-datasets/wiki/log.md.html))
+- [LKY Dataset Readiness Map](/raw/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md) ([html](/wiki/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md.html))
 
 ## Local AI Infrastructure
 
@@ -94,5 +99,7 @@
 
 - [Local AI Infrastructure Namespace Instructions](/raw/local-ai-infrastructure/CLAUDE.md) ([html](/wiki/local-ai-infrastructure/CLAUDE.md.html))
 - [Local AI Infrastructure](/raw/local-ai-infrastructure/README.md) ([html](/wiki/local-ai-infrastructure/README.md.html))
+- [Local Retrieval-Augmented Agent Infrastructure](/raw/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md) ([html](/wiki/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md.html))
+- [RAG over Agent Wikis](/raw/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md) ([html](/wiki/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md.html))
 - [Local AI Infrastructure — Master Index](/raw/local-ai-infrastructure/wiki/index.md) ([html](/wiki/local-ai-infrastructure/wiki/index.md.html))
 - [Local AI Infrastructure — Activity Log](/raw/local-ai-infrastructure/wiki/log.md) ([html](/wiki/local-ai-infrastructure/wiki/log.md.html))

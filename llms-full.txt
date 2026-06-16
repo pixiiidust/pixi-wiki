@@ -1315,6 +1315,151 @@ When published to `pixi-wiki`, this namespace should expose:
 - Do not compile Daily Notes directly unless promoted or verified.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md ===== -->
+
+---
+title: AI-Native Problem Framing Framework
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, ai-native, product-framing, product-management]
+sources:
+  - Knowledge/concepts/ai-native-problem-framing-framework.md
+confidence: high
+---
+
+# AI-Native Problem Framing Framework
+
+The **AI-Native Problem Framing Framework** is the reusable lens for deciding whether a product surface is genuinely AI-native or merely has AI attached.
+
+## Core frame
+
+Define the system before picking models:
+
+- **Environment** — what data describes the world?
+- **Actions** — what can the system do?
+- **Goal** — what is success or what is optimized?
+- **Constraints** — what must never be violated?
+
+Bad framing creates bad AI. Environment, action space, objective, and constraints define the intelligence problem.
+
+## Product-surface use
+
+For `ai-native-product-surfaces`, this framework prevents vague “add AI” product thinking. It asks whether the surface perceives a domain, chooses or prepares actions, improves the chance of achieving a goal, and respects hard constraints.
+
+It is especially useful for comparing:
+
+- Planned Program Intel: event-program decision routing and institutional memory;
+- myAbode: real-estate prepared next actions under compliance and adoption constraints;
+- future surfaces that need prediction, optimization, and execution separated rather than collapsed into a black box.
+
+## Boundary
+
+Do not blindly copy game/RL patterns into product domains. Real-world operational products have partial visibility, noisy outcomes, multiple stakeholders, and constraints that must be represented explicitly.
+
+## Source
+
+Compiled from `Knowledge/concepts/ai-native-problem-framing-framework.md`.
+
+
+<!-- ===== ai-native-product-surfaces/wiki/entities/myabode.md ===== -->
+
+---
+title: myAbode
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: parked
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, myabode, real-estate, ai-crm, product-strategy]
+sources:
+  - Projects/myAbode/Index.md
+confidence: medium
+---
+
+# myAbode
+
+**myAbode** is a parked AI-native real-estate CRM case study. It belongs under `ai-native-product-surfaces` because the learning value is product-surface design: how to turn messy constraints into prepared next actions that agents actually choose to use.
+
+## Current posture
+
+myAbode is not an active build. It should be treated as a problem-first product-strategy case study, with the Command Grid prototype as the strongest artifact.
+
+The key adoption constraint is that real-estate agents are independent contractors. The product cannot rely on mandated workflow change; it must make the better action obvious enough that time-poor agents adopt it voluntarily.
+
+## Product-surface lessons
+
+The durable lessons for this namespace are:
+
+- deterministic compliance boundaries matter in regulated workflows;
+- AI should reduce cognitive load without surveilling or nagging users;
+- prepared next actions are stronger than generic dashboards;
+- a precedent library and scratchpad-then-reconcile flow can keep humans in authority;
+- adoption incentives are part of the product architecture, not a go-to-market afterthought.
+
+## Promotion boundary
+
+Do not promote myAbode into its own namespace while parked. Reconsider only if it becomes active again with its own source corpus, recurring update lifecycle, and public-facing audience.
+
+## Source
+
+Compiled from `Projects/myAbode/Index.md`.
+
+
+<!-- ===== ai-native-product-surfaces/wiki/entities/planned-program-intel.md ===== -->
+
+---
+title: Planned Program Intel
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, planned-program-intel, product-management, decision-routing]
+sources:
+  - Projects/Planned Program Intel/Index.md
+  - Projects/Planned/PRD.md
+confidence: high
+---
+
+# Planned Program Intel
+
+**Planned Program Intel** is an AI-native decision layer for enterprise event programs. It is the strongest current product-surface proof inside the `ai-native-product-surfaces` namespace.
+
+## Product shape
+
+The product routes customer-side decisions by answering:
+
+1. What needs attention?
+2. Who should decide?
+3. What happened in similar past events?
+4. What is different this time?
+5. What action is recommended?
+6. Should the human accept, change, override, or escalate?
+
+The core loop is not a chatbot. It is a decision-routing and institutional-memory surface: signals create decisions, decisions route to owners, evidence packages prior cases/exceptions/precedents, and resolutions become program memory.
+
+## Status
+
+The Vite prototype is done and live. The source hub records the build queue as complete and treats future work as optional portfolio packaging: deck, Loom walkthrough, application submission, or case-study narrative.
+
+## Namespace role
+
+Planned Program Intel anchors the product-surface namespace because it shows:
+
+- decision moments as the product primitive;
+- inspectable evidence rather than opaque confidence;
+- human authority through accept/change/override/escalate verbs;
+- program memory compounding through resolutions;
+- a PM-portfolio-friendly artifact that connects product reasoning to a working demo.
+
+## Source
+
+Compiled from `Projects/Planned Program Intel/Index.md` with supporting historical PRD context in `Projects/Planned/PRD.md`.
+
+
 <!-- ===== ai-native-product-surfaces/wiki/index.md ===== -->
 
 ---
@@ -1322,7 +1467,7 @@ title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
 updated: 2026-06-16
 type: index
-status: scaffold
+status: active
 namespace: ai-native-product-surfaces
 ---
 
@@ -1332,11 +1477,12 @@ namespace: ai-native-product-surfaces
 
 ## Concepts
 
-<!-- Add compiled concepts alphabetically. -->
+- [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
 
 ## Entities
 
-<!-- Add compiled entities alphabetically. -->
+- [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
+- [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
 
 ## Summaries
 
@@ -1375,6 +1521,14 @@ namespace: ai-native-product-surfaces
 
 - Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
 - Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Add first product-surface compiled pages
+
+- Added `wiki/entities/planned-program-intel.md`.
+- Added `wiki/entities/myabode.md`.
+- Added `wiki/concepts/ai-native-problem-framing-framework.md`.
+- Updated `wiki/index.md` from scaffold to active content index.
 - No Daily Notes were copied or compiled.
 
 
@@ -1452,6 +1606,56 @@ When published to `pixi-wiki`, this namespace should expose:
 - Do not compile Daily Notes directly unless promoted or verified.
 
 
+<!-- ===== rl-sim-labs/wiki/entities/critical-ranger-ffm.md ===== -->
+
+---
+title: Critical Ranger FFM
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: compiled
+namespace: rl-sim-labs
+tags: [rl-sim-labs, reinforcement-learning, pufferlib, zone-control, simulation]
+sources:
+  - Projects/Critical Ranger FFM/Index.md
+confidence: high
+---
+
+# Critical Ranger FFM
+
+**Critical Ranger FFM** is the first concrete project under the `rl-sim-labs` namespace. It is a toy forest-fire / PufferLib reinforcement-learning experiment focused on zone-control policies, not a standalone namespace yet.
+
+## Current role in this namespace
+
+Critical Ranger is the seed RL simulation lab:
+
+- environment: forest-fire simulation with self-organized dynamics;
+- action model: no-op or thin one selected zone at a decision tick;
+- evaluation target: reduce mega-fire frequency versus honest simple baselines;
+- constraints: preserve acceptable tree density and stay within intervention budget;
+- evidence posture: metrics and anti-cheat gates decide belief, not training reward alone.
+
+## Active roadmap
+
+The active path is the **Zone-Control RL MVP**. The prior switch-point / single-cell efficacy path is parked as diagnostic infrastructure.
+
+Current next implementation gate from the source note:
+
+```text
+#54 — zone-control action contract fixtures
+```
+
+That slice is intentionally narrow: deterministic zone indexing, no-op action, one-zone thinning contract, decision interval semantics, and CPU-safe fixture tests.
+
+## Promotion boundary
+
+Do not promote Critical Ranger to its own namespace yet. It should remain an entity/project inside `rl-sim-labs` until it has an independent audience, raw experiment corpus, recurring reports, multiple durable document types, and a clear covers/not-covered boundary.
+
+## Source
+
+Compiled from `Projects/Critical Ranger FFM/Index.md`.
+
+
 <!-- ===== rl-sim-labs/wiki/index.md ===== -->
 
 ---
@@ -1459,7 +1663,7 @@ title: RL Sim Labs — Master Index
 created: 2026-06-16
 updated: 2026-06-16
 type: index
-status: scaffold
+status: active
 namespace: rl-sim-labs
 ---
 
@@ -1473,7 +1677,7 @@ namespace: rl-sim-labs
 
 ## Entities
 
-<!-- Add compiled entities alphabetically. -->
+- [[entities/critical-ranger-ffm|Critical Ranger FFM]] — Zone-control RL forest-fire experiment; entity under RL Sim Labs until it earns standalone namespace promotion.
 
 ## Summaries
 
@@ -1507,6 +1711,13 @@ namespace: rl-sim-labs
 
 - Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
 - Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Add Critical Ranger compiled entity
+
+- Added `wiki/entities/critical-ranger-ffm.md` under `rl-sim-labs`.
+- Kept Critical Ranger as a project/entity, not a standalone namespace.
+- Updated `wiki/index.md` from scaffold to active content index.
 - No Daily Notes were copied or compiled.
 
 
@@ -1660,7 +1871,7 @@ namespace: curated-tuning-datasets
 
 ## Syntheses
 
-<!-- Add compiled syntheses alphabetically. -->
+- [[syntheses/lky-dataset-readiness-map|LKY Dataset Readiness Map]] — Readiness ladder and namespace boundary for the LKY source corpus.
 
 ## Source Roots
 
@@ -1697,6 +1908,66 @@ namespace: curated-tuning-datasets
 - Updated namespace source roots and index.
 - No scraping, data collection, or training work was performed.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Add LKY dataset readiness synthesis
+
+- Added `wiki/syntheses/lky-dataset-readiness-map.md` so LKY notes compile under `curated-tuning-datasets` as requested.
+- Kept readiness at `inventory-only`; no scraping, data collection, training, or training-safety claim was introduced.
+- Updated namespace index.
+- No Daily Notes were copied or compiled.
+
+
+<!-- ===== curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md ===== -->
+
+---
+title: LKY Dataset Readiness Map
+created: 2026-06-16
+updated: 2026-06-16
+type: synthesis
+status: compiled
+namespace: curated-tuning-datasets
+tags: [curated-tuning-datasets, lky-archive, dataset-readiness, provenance]
+sources:
+  - Projects/LKY Archive/Index.md
+  - Projects/LKY Archive/Source Inventory.md
+confidence: medium
+---
+
+# LKY Dataset Readiness Map
+
+The **LKY Archive** belongs in `curated-tuning-datasets` as a source-provenance and readiness problem, not as a training-method project.
+
+## Current readiness level
+
+```text
+inventory-only
+```
+
+The project currently defines source-selection and provenance expectations. It does not authorize scraping, downloading, fine-tuning, LoRA training, or claims that any material is training-safe.
+
+## Readiness ladder
+
+```text
+inventory-only → retrieval-ready → quote-ready → fine-tuning-candidate → rejected
+```
+
+A source should only move upward when provenance, rights/risk notes, transcript/audio/video availability, and format quality are recorded.
+
+## What this namespace owns
+
+`curated-tuning-datasets` owns:
+
+- source inventory structure;
+- provenance and source-class notes;
+- corpus readiness criteria;
+- copyright/risk flags;
+- separation between retrieval-readiness and fine-tuning-readiness.
+
+Training methods, model selection, and local training infrastructure should link out to `local-ai-infrastructure` unless they directly impose dataset requirements.
+
+## Source
+
+Compiled from `Projects/LKY Archive/Index.md` and `Projects/LKY Archive/Source Inventory.md`.
 
 
 <!-- ===== local-ai-infrastructure/CLAUDE.md ===== -->
@@ -1775,6 +2046,116 @@ When published to `pixi-wiki`, this namespace should expose:
 - Do not compile Daily Notes directly unless promoted or verified.
 
 
+<!-- ===== local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md ===== -->
+
+---
+title: Local Retrieval-Augmented Agent Infrastructure
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: local-ai-infrastructure
+tags: [local-ai-infrastructure, local-llm, rag, hardware, retrieval]
+sources:
+  - Knowledge/concepts/local-retrieval-agent-infrastructure.md
+confidence: high
+---
+
+# Local Retrieval-Augmented Agent Infrastructure
+
+**Local Retrieval-Augmented Agent Infrastructure** is the local-first stack pattern for keeping private corpora and retrieval workflows off hosted providers while still giving agents useful memory and evidence access.
+
+## Reference architecture
+
+The source concept points to a practical pattern:
+
+```text
+ingest → clean → chunk → embed → store → retrieve → rerank → serve locally
+```
+
+The concrete example uses local models, local vector storage, and an agent-facing retrieval wrapper. The exact tools can change; the durable shape is local corpus control plus verifiable retrieval quality.
+
+## Relevance to Jamie's setup
+
+This namespace should hold infrastructure decisions around:
+
+- local LLM serving;
+- embeddings and reranking;
+- Qdrant/FAISS-style vector stores;
+- RAG over compiled `pixi-wiki` pages;
+- deterministic local workflow offload;
+- hardware constraints for 5090 / 4090 / helper-node setups;
+- privacy boundaries between work, personal, and public artifacts.
+
+## Guardrails
+
+- Secrets and sensitive corpus material must be neutralized before generated artifacts leave the local environment.
+- Retrieval does not replace source-of-truth routing; `llms.txt`, namespace indexes, and frontmatter still define where truth lives.
+- Local infrastructure should be justified by eval failures or privacy constraints, not by architectural neatness alone.
+
+## Source
+
+Compiled from `Knowledge/concepts/local-retrieval-agent-infrastructure.md`.
+
+
+<!-- ===== local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md ===== -->
+
+---
+title: RAG over Agent Wikis
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: local-ai-infrastructure
+tags: [local-ai-infrastructure, rag, agent-wikis, retrieval, infrastructure]
+sources:
+  - Knowledge/concepts/rag-over-agent-wikis.md
+  - Knowledge/concepts/local-retrieval-agent-infrastructure.md
+confidence: medium
+---
+
+# RAG over Agent Wikis
+
+**RAG over Agent Wikis** means using maintained compiled wiki pages as the retrieval corpus for agents, instead of retrieving directly from raw source dumps or asking the model to answer from memory.
+
+## Infrastructure shape
+
+The practical loop is:
+
+```text
+compiled wiki pages → chunks/sections → embeddings → retrieval/rerank → cited answer
+```
+
+For Jamie's stack, the important design choice is that the wiki compilation layer comes before the vector layer. Retrieval quality should be improved by curated pages, frontmatter, source metadata, freshness, and namespace boundaries before adding infrastructure complexity.
+
+## Local-first implementation posture
+
+A future local prototype can use:
+
+- compiled `pixi-wiki` Markdown pages as the corpus;
+- local embeddings such as `nomic-embed-text` or a similar sentence model;
+- FAISS or Qdrant for local vector storage;
+- optional reranking for quality;
+- source metadata preserved for citations and freshness checks.
+
+## Quality gates
+
+Do not ship retrieval infrastructure because it sounds useful. Use evals:
+
+- recall@k for known routing questions;
+- citation support for factual answers;
+- fallback behavior when a namespace does not cover the query;
+- change-aware questions that test whether updated wiki metadata helps.
+
+## Boundary
+
+No MCP server, vector DB, crawler, hosted search, or runtime RAG is approved by this compiled page. This page is an infrastructure concept and future implementation home, not a build authorization.
+
+## Source
+
+Compiled from `Knowledge/concepts/rag-over-agent-wikis.md` and `Knowledge/concepts/local-retrieval-agent-infrastructure.md`.
+
+
 <!-- ===== local-ai-infrastructure/wiki/index.md ===== -->
 
 ---
@@ -1782,7 +2163,7 @@ title: Local AI Infrastructure — Master Index
 created: 2026-06-16
 updated: 2026-06-16
 type: index
-status: scaffold
+status: active
 namespace: local-ai-infrastructure
 ---
 
@@ -1792,7 +2173,8 @@ namespace: local-ai-infrastructure
 
 ## Concepts
 
-<!-- Add compiled concepts alphabetically. -->
+- [[concepts/local-retrieval-agent-infrastructure|Local Retrieval-Augmented Agent Infrastructure]] — Local-first model/retrieval stack pattern for private corpora and agent memory.
+- [[concepts/rag-over-agent-wikis|RAG over Agent Wikis]] — Retrieval architecture over compiled wiki pages rather than raw source dumps.
 
 ## Entities
 
@@ -1831,4 +2213,12 @@ namespace: local-ai-infrastructure
 
 - Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
 - Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Add first local-AI infrastructure compiled concepts
+
+- Added `wiki/concepts/local-retrieval-agent-infrastructure.md`.
+- Added `wiki/concepts/rag-over-agent-wikis.md`.
+- Updated `wiki/index.md` from scaffold to active content index.
+- Preserved the boundary that this is not approval to build MCP/vector/search runtime infrastructure.
 - No Daily Notes were copied or compiled.

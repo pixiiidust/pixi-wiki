@@ -25,3 +25,10 @@ namespace: curated-tuning-datasets
 - Updated namespace source roots and index.
 - No scraping, data collection, or training work was performed.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Add LKY dataset readiness synthesis
+
+- Added `wiki/syntheses/lky-dataset-readiness-map.md` so LKY notes compile under `curated-tuning-datasets` as requested.
+- Kept readiness at `inventory-only`; no scraping, data collection, training, or training-safety claim was introduced.
+- Updated namespace index.
+- No Daily Notes were copied or compiled.

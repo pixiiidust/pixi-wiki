@@ -77,6 +77,151 @@ When published to `pixi-wiki`, this namespace should expose:
 - Do not compile Daily Notes directly unless promoted or verified.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md ===== -->
+
+---
+title: AI-Native Problem Framing Framework
+created: 2026-06-16
+updated: 2026-06-16
+type: concept
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, ai-native, product-framing, product-management]
+sources:
+  - Knowledge/concepts/ai-native-problem-framing-framework.md
+confidence: high
+---
+
+# AI-Native Problem Framing Framework
+
+The **AI-Native Problem Framing Framework** is the reusable lens for deciding whether a product surface is genuinely AI-native or merely has AI attached.
+
+## Core frame
+
+Define the system before picking models:
+
+- **Environment** — what data describes the world?
+- **Actions** — what can the system do?
+- **Goal** — what is success or what is optimized?
+- **Constraints** — what must never be violated?
+
+Bad framing creates bad AI. Environment, action space, objective, and constraints define the intelligence problem.
+
+## Product-surface use
+
+For `ai-native-product-surfaces`, this framework prevents vague “add AI” product thinking. It asks whether the surface perceives a domain, chooses or prepares actions, improves the chance of achieving a goal, and respects hard constraints.
+
+It is especially useful for comparing:
+
+- Planned Program Intel: event-program decision routing and institutional memory;
+- myAbode: real-estate prepared next actions under compliance and adoption constraints;
+- future surfaces that need prediction, optimization, and execution separated rather than collapsed into a black box.
+
+## Boundary
+
+Do not blindly copy game/RL patterns into product domains. Real-world operational products have partial visibility, noisy outcomes, multiple stakeholders, and constraints that must be represented explicitly.
+
+## Source
+
+Compiled from `Knowledge/concepts/ai-native-problem-framing-framework.md`.
+
+
+<!-- ===== ai-native-product-surfaces/wiki/entities/myabode.md ===== -->
+
+---
+title: myAbode
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: parked
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, myabode, real-estate, ai-crm, product-strategy]
+sources:
+  - Projects/myAbode/Index.md
+confidence: medium
+---
+
+# myAbode
+
+**myAbode** is a parked AI-native real-estate CRM case study. It belongs under `ai-native-product-surfaces` because the learning value is product-surface design: how to turn messy constraints into prepared next actions that agents actually choose to use.
+
+## Current posture
+
+myAbode is not an active build. It should be treated as a problem-first product-strategy case study, with the Command Grid prototype as the strongest artifact.
+
+The key adoption constraint is that real-estate agents are independent contractors. The product cannot rely on mandated workflow change; it must make the better action obvious enough that time-poor agents adopt it voluntarily.
+
+## Product-surface lessons
+
+The durable lessons for this namespace are:
+
+- deterministic compliance boundaries matter in regulated workflows;
+- AI should reduce cognitive load without surveilling or nagging users;
+- prepared next actions are stronger than generic dashboards;
+- a precedent library and scratchpad-then-reconcile flow can keep humans in authority;
+- adoption incentives are part of the product architecture, not a go-to-market afterthought.
+
+## Promotion boundary
+
+Do not promote myAbode into its own namespace while parked. Reconsider only if it becomes active again with its own source corpus, recurring update lifecycle, and public-facing audience.
+
+## Source
+
+Compiled from `Projects/myAbode/Index.md`.
+
+
+<!-- ===== ai-native-product-surfaces/wiki/entities/planned-program-intel.md ===== -->
+
+---
+title: Planned Program Intel
+created: 2026-06-16
+updated: 2026-06-16
+type: entity
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, planned-program-intel, product-management, decision-routing]
+sources:
+  - Projects/Planned Program Intel/Index.md
+  - Projects/Planned/PRD.md
+confidence: high
+---
+
+# Planned Program Intel
+
+**Planned Program Intel** is an AI-native decision layer for enterprise event programs. It is the strongest current product-surface proof inside the `ai-native-product-surfaces` namespace.
+
+## Product shape
+
+The product routes customer-side decisions by answering:
+
+1. What needs attention?
+2. Who should decide?
+3. What happened in similar past events?
+4. What is different this time?
+5. What action is recommended?
+6. Should the human accept, change, override, or escalate?
+
+The core loop is not a chatbot. It is a decision-routing and institutional-memory surface: signals create decisions, decisions route to owners, evidence packages prior cases/exceptions/precedents, and resolutions become program memory.
+
+## Status
+
+The Vite prototype is done and live. The source hub records the build queue as complete and treats future work as optional portfolio packaging: deck, Loom walkthrough, application submission, or case-study narrative.
+
+## Namespace role
+
+Planned Program Intel anchors the product-surface namespace because it shows:
+
+- decision moments as the product primitive;
+- inspectable evidence rather than opaque confidence;
+- human authority through accept/change/override/escalate verbs;
+- program memory compounding through resolutions;
+- a PM-portfolio-friendly artifact that connects product reasoning to a working demo.
+
+## Source
+
+Compiled from `Projects/Planned Program Intel/Index.md` with supporting historical PRD context in `Projects/Planned/PRD.md`.
+
+
 <!-- ===== ai-native-product-surfaces/wiki/index.md ===== -->
 
 ---
@@ -84,7 +229,7 @@ title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
 updated: 2026-06-16
 type: index
-status: scaffold
+status: active
 namespace: ai-native-product-surfaces
 ---
 
@@ -94,11 +239,12 @@ namespace: ai-native-product-surfaces
 
 ## Concepts
 
-<!-- Add compiled concepts alphabetically. -->
+- [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
 
 ## Entities
 
-<!-- Add compiled entities alphabetically. -->
+- [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
+- [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
 
 ## Summaries
 
@@ -137,5 +283,13 @@ namespace: ai-native-product-surfaces
 
 - Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.
 - Source routing comes from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Add first product-surface compiled pages
+
+- Added `wiki/entities/planned-program-intel.md`.
+- Added `wiki/entities/myabode.md`.
+- Added `wiki/concepts/ai-native-problem-framing-framework.md`.
+- Updated `wiki/index.md` from scaffold to active content index.
 - No Daily Notes were copied or compiled.
 

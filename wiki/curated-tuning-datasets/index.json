@@ -2,13 +2,13 @@
   "slug": "curated-tuning-datasets",
   "title": "Curated Tuning Datasets",
   "description": "Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.",
-  "documentCount": 5,
+  "documentCount": 6,
   "counts": {
     "wiki": 1,
     "concepts": 0,
     "entities": 1,
     "summaries": 0,
-    "syntheses": 0
+    "syntheses": 1
   },
   "documents": [
     {
@@ -45,6 +45,13 @@
       "raw": "/raw/curated-tuning-datasets/wiki/log.md",
       "html": "/wiki/curated-tuning-datasets/wiki/log.md.html",
       "category": "other"
+    },
+    {
+      "title": "LKY Dataset Readiness Map",
+      "path": "wiki/syntheses/lky-dataset-readiness-map.md",
+      "raw": "/raw/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md.html",
+      "category": "syntheses"
     }
   ]
 }

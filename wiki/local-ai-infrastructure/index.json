@@ -2,10 +2,10 @@
   "slug": "local-ai-infrastructure",
   "title": "Local AI Infrastructure",
   "description": "Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.",
-  "documentCount": 4,
+  "documentCount": 6,
   "counts": {
     "wiki": 1,
-    "concepts": 0,
+    "concepts": 2,
     "entities": 0,
     "summaries": 0,
     "syntheses": 0
@@ -24,6 +24,20 @@
       "raw": "/raw/local-ai-infrastructure/README.md",
       "html": "/wiki/local-ai-infrastructure/README.md.html",
       "category": "other"
+    },
+    {
+      "title": "Local Retrieval-Augmented Agent Infrastructure",
+      "path": "wiki/concepts/local-retrieval-agent-infrastructure.md",
+      "raw": "/raw/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "RAG over Agent Wikis",
+      "path": "wiki/concepts/rag-over-agent-wikis.md",
+      "raw": "/raw/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md.html",
+      "category": "concepts"
     },
     {
       "title": "Local AI Infrastructure \u2014 Master Index",

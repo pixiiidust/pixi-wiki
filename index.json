@@ -302,11 +302,11 @@
         "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
       },
       "lastUpdated": "2026-06-16",
-      "documentCount": 4,
+      "documentCount": 7,
       "counts": {
         "wiki": 1,
-        "concepts": 0,
-        "entities": 0,
+        "concepts": 1,
+        "entities": 2,
         "summaries": 0,
         "syntheses": 0
       },
@@ -329,6 +329,27 @@
           "raw": "/raw/ai-native-product-surfaces/README.md",
           "html": "/wiki/ai-native-product-surfaces/README.md.html",
           "category": "other"
+        },
+        {
+          "title": "AI-Native Problem Framing Framework",
+          "path": "wiki/concepts/ai-native-problem-framing-framework.md",
+          "raw": "/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md",
+          "html": "/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "myAbode",
+          "path": "wiki/entities/myabode.md",
+          "raw": "/raw/ai-native-product-surfaces/wiki/entities/myabode.md",
+          "html": "/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html",
+          "category": "entities"
+        },
+        {
+          "title": "Planned Program Intel",
+          "path": "wiki/entities/planned-program-intel.md",
+          "raw": "/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md",
+          "html": "/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html",
+          "category": "entities"
         },
         {
           "title": "AI-Native Product Surfaces \u2014 Master Index",
@@ -360,11 +381,11 @@
         "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
       },
       "lastUpdated": "2026-06-16",
-      "documentCount": 4,
+      "documentCount": 5,
       "counts": {
         "wiki": 1,
         "concepts": 0,
-        "entities": 0,
+        "entities": 1,
         "summaries": 0,
         "syntheses": 0
       },
@@ -387,6 +408,13 @@
           "raw": "/raw/rl-sim-labs/README.md",
           "html": "/wiki/rl-sim-labs/README.md.html",
           "category": "other"
+        },
+        {
+          "title": "Critical Ranger FFM",
+          "path": "wiki/entities/critical-ranger-ffm.md",
+          "raw": "/raw/rl-sim-labs/wiki/entities/critical-ranger-ffm.md",
+          "html": "/wiki/rl-sim-labs/wiki/entities/critical-ranger-ffm.md.html",
+          "category": "entities"
         },
         {
           "title": "RL Sim Labs \u2014 Master Index",
@@ -418,13 +446,13 @@
         "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
       },
       "lastUpdated": "2026-06-16",
-      "documentCount": 5,
+      "documentCount": 6,
       "counts": {
         "wiki": 1,
         "concepts": 0,
         "entities": 1,
         "summaries": 0,
-        "syntheses": 0
+        "syntheses": 1
       },
       "llms_txt": "/wiki/curated-tuning-datasets/llms.txt",
       "llms_full_txt": "/wiki/curated-tuning-datasets/llms-full.txt",
@@ -466,6 +494,13 @@
           "raw": "/raw/curated-tuning-datasets/wiki/log.md",
           "html": "/wiki/curated-tuning-datasets/wiki/log.md.html",
           "category": "other"
+        },
+        {
+          "title": "LKY Dataset Readiness Map",
+          "path": "wiki/syntheses/lky-dataset-readiness-map.md",
+          "raw": "/raw/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md",
+          "html": "/wiki/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md.html",
+          "category": "syntheses"
         }
       ]
     },
@@ -483,10 +518,10 @@
         "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
       },
       "lastUpdated": "2026-06-16",
-      "documentCount": 4,
+      "documentCount": 6,
       "counts": {
         "wiki": 1,
-        "concepts": 0,
+        "concepts": 2,
         "entities": 0,
         "summaries": 0,
         "syntheses": 0
@@ -510,6 +545,20 @@
           "raw": "/raw/local-ai-infrastructure/README.md",
           "html": "/wiki/local-ai-infrastructure/README.md.html",
           "category": "other"
+        },
+        {
+          "title": "Local Retrieval-Augmented Agent Infrastructure",
+          "path": "wiki/concepts/local-retrieval-agent-infrastructure.md",
+          "raw": "/raw/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md",
+          "html": "/wiki/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "RAG over Agent Wikis",
+          "path": "wiki/concepts/rag-over-agent-wikis.md",
+          "raw": "/raw/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md",
+          "html": "/wiki/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md.html",
+          "category": "concepts"
         },
         {
           "title": "Local AI Infrastructure \u2014 Master Index",

@@ -3,7 +3,7 @@ title: Local AI Infrastructure — Master Index
 created: 2026-06-16
 updated: 2026-06-16
 type: index
-status: scaffold
+status: active
 namespace: local-ai-infrastructure
 ---
 
@@ -13,7 +13,8 @@ namespace: local-ai-infrastructure
 
 ## Concepts
 
-<!-- Add compiled concepts alphabetically. -->
+- [[concepts/local-retrieval-agent-infrastructure|Local Retrieval-Augmented Agent Infrastructure]] — Local-first model/retrieval stack pattern for private corpora and agent memory.
+- [[concepts/rag-over-agent-wikis|RAG over Agent Wikis]] — Retrieval architecture over compiled wiki pages rather than raw source dumps.
 
 ## Entities
 

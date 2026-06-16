@@ -2,11 +2,11 @@
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
   "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.",
-  "documentCount": 4,
+  "documentCount": 7,
   "counts": {
     "wiki": 1,
-    "concepts": 0,
-    "entities": 0,
+    "concepts": 1,
+    "entities": 2,
     "summaries": 0,
     "syntheses": 0
   },
@@ -24,6 +24,27 @@
       "raw": "/raw/ai-native-product-surfaces/README.md",
       "html": "/wiki/ai-native-product-surfaces/README.md.html",
       "category": "other"
+    },
+    {
+      "title": "AI-Native Problem Framing Framework",
+      "path": "wiki/concepts/ai-native-problem-framing-framework.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "myAbode",
+      "path": "wiki/entities/myabode.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/entities/myabode.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html",
+      "category": "entities"
+    },
+    {
+      "title": "Planned Program Intel",
+      "path": "wiki/entities/planned-program-intel.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html",
+      "category": "entities"
     },
     {
       "title": "AI-Native Product Surfaces \u2014 Master Index",
