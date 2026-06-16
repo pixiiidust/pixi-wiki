@@ -364,7 +364,7 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     all_full_sections: list[tuple[str, str]] = []
     llms_parts = [
         "# Pixi Wiki Namespace Registry\n\n",
-        "> Agent Wikis compiles messy, fast-moving sources — repos, changelogs, video transcripts, community Q&A — into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with llms.txt.\n\n",
+        "> Pixi Wiki compiles messy, fast-moving sources — repos, changelogs, video transcripts, community Q&A — into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with llms.txt.\n\n",
         "> Raw Markdown: `/raw/<slug>/<path>`. Human HTML: `/wiki/<slug>/<path>.html`. Namespace agents: `/wiki/<slug>/llms.txt`.\n\n",
     ]
     index_cards: list[str] = []
@@ -413,7 +413,7 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
 <title>Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
 <header class="site-header"><div class="header-inner"><a class="logo" href="/pixi-wiki/">Pixi Wiki</a><nav class="nav"><a href="/pixi-wiki/">Wikis</a><a href="/pixi-wiki/llms.txt">For Agents</a><a href="/pixi-wiki/index.json">Index JSON</a><button class="theme-toggle" data-theme-toggle type="button">☾ Dark</button></nav></div></header>
 <nav class="category-bar"><div class="category-inner"><a>/Namespaces</a>{''.join(top_links)}</div></nav>
-<main style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Agent Wikis compiles messy, fast-moving sources — repos, changelogs, video transcripts, community Q&A — into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/llms-full.txt">llms-full.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></p><section class="grid">{''.join(index_cards)}</section></main>
+<main style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki compiles messy, fast-moving sources — repos, changelogs, video transcripts, community Q&A — into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">llms.txt</a> · <a href="/pixi-wiki/llms-full.txt">llms-full.txt</a> · <a href="/pixi-wiki/index.json">index.json</a></p><section class="grid">{''.join(index_cards)}</section></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. No JavaScript is required to read any page — agents welcome.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
 </body></html>"""
     (output_root / "index.html").write_text(index_html, encoding="utf-8")

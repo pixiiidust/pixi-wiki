@@ -1,6 +1,6 @@
 # Pixi Wiki Namespace Registry
 
-> Agent Wikis compiles messy, fast-moving sources — repos, changelogs, video transcripts, community Q&A — into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with llms.txt.
+> Pixi Wiki compiles messy, fast-moving sources — repos, changelogs, video transcripts, community Q&A — into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with llms.txt.
 
 > Raw Markdown: `/raw/<slug>/<path>`. Human HTML: `/wiki/<slug>/<path>.html`. Namespace agents: `/wiki/<slug>/llms.txt`.
 
