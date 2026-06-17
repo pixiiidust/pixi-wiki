@@ -17,7 +17,7 @@ namespace: pixi-vault
 
 ## Entities
 
-<!-- Add compiled entities alphabetically. -->
+- [[entities/pixi-wiki|Pixi Wiki]] — Public generated AgentWikis-style mirror for humans, agents, and RAG over compiled wiki pages.
 
 ## Summaries
 

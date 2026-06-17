@@ -24,3 +24,9 @@ namespace: local-ai-infrastructure
 - Updated `wiki/index.md` from scaffold to active content index.
 - Preserved the boundary that this is not approval to build MCP/vector/search runtime infrastructure.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Link Pixi Wiki to RAG-over-wiki posture
+
+- Updated `wiki/concepts/rag-over-agent-wikis.md` to name `pixi-wiki` as the current public corpus candidate.
+- Preserved the eval-first boundary: use the compiled wiki as the first retrieval/eval surface before adding vector DB or runtime RAG infrastructure.
+- No Daily Notes were copied or compiled.

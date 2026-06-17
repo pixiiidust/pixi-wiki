@@ -30,3 +30,10 @@ namespace: pixi-vault
 - Replaced legacy-shim language with clean rebuild policy for `pixi-wiki`.
 - Added cross-namespace links to Agent Workflows, Eval Trace, and Local AI Infrastructure.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-16 update | Record Pixi Wiki public artifact milestone
+
+- Added entity `wiki/entities/pixi-wiki.md` to classify Pixi Wiki as a public generated artifact under the `pixi-vault` namespace.
+- Recorded the current UX contract: collapsible namespace sidebars, rendered Markdown pages with metadata, raw/source links, report-a-mistake links, and previous/next navigation.
+- Linked Pixi Wiki's RAG/retrieval use case to `local-ai-infrastructure` and `RAG over Agent Wikis`.
+- No Daily Notes were copied or compiled.

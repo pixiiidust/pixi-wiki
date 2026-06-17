@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RAG over Agent Wikis — Local AI Infrastructure — Pixi Wiki</title>
+<title>Pixi Wiki — Pixi Vault — Pixi Wiki</title>
 <style>
 :root{color-scheme:light;--bg:#f7f3ea;--panel:#fffaf1;--panel2:#f0e8d8;--border:#d9cdb8;--soft:#eadfcb;--text:#22202a;--muted:#6f6a77;--heading:#111018;--accent:#9b5c00;--accent2:#6f4200;--green:#087a4a;--header:#fffdf8;--active-bg:#fff1d1}
 [data-theme=dark]{color-scheme:dark;--bg:#06070d;--panel:#0b0c15;--panel2:#10111c;--border:#24263a;--soft:#1a1c2c;--text:#d7e2ff;--muted:#7f87a6;--heading:#fff;--accent:#ffb323;--accent2:#ffd166;--green:#24e693;--header:#080912;--active-bg:#2b2116}
@@ -8,51 +8,63 @@
 </style><script>(function(){const key='pixi-wiki-theme';const root=document.documentElement;const saved=localStorage.getItem(key)||'light';root.dataset.theme=saved;function label(){const b=document.querySelector('[data-theme-toggle]');if(b)b.textContent=root.dataset.theme==='dark'?'☀ Light':'☾ Dark';}document.addEventListener('DOMContentLoaded',function(){label();const b=document.querySelector('[data-theme-toggle]');if(b)b.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem(key,root.dataset.theme);label();});});})();</script></head><body>
 <header class="site-header"><div class="header-inner"><a class="logo" href="/pixi-wiki/">Pixi Wiki</a><nav class="nav"><a href="/pixi-wiki/">Wikis</a><a href="/pixi-wiki/llms.txt">For Agents</a><a href="/pixi-wiki/index.json">Index JSON</a><button class="theme-toggle" data-theme-toggle type="button">☾ Dark</button></nav></div></header>
 <nav class="category-bar"><div class="category-inner"><a>/Namespaces</a><a href="/pixi-wiki/wiki/pixi-vault/README.md.html">Pixi Vault</a><a href="/pixi-wiki/wiki/agent-workflows/README.md.html">Agent Workflows</a><a href="/pixi-wiki/wiki/eval-trace/README.md.html">Eval Trace</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/README.md.html">AI Product Surfaces</a></div></nav>
-<main class="page"><aside class="sidebar"><div class="sidebar-block"><div class="sidebar-title">Local AI Infrastructure</div><div class="sidebar-count">6 documents</div>
-<a href="/pixi-wiki/wiki/local-ai-infrastructure/README.md.html">📄 Local AI Infrastructure Knowledge Base</a>
-<a href="/pixi-wiki/wiki/local-ai-infrastructure/wiki/index.md.html">📄 Local AI Infrastructure KB — Master Index</a>
-<details class="sidebar-section"><summary>WIKI 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/local-ai-infrastructure/wiki/log.md.html">📄 Local AI Infrastructure — Activity Log</a></div></details>
-<details class="sidebar-section" open><summary>CONCEPTS 2</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md.html">📄 Local Retrieval-Augmented Agent Infrastructure</a><a class="active" href="/pixi-wiki/wiki/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md.html">📄 RAG over Agent Wikis</a></div></details>
-<details class="sidebar-section"><summary>ENTITIES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
+<main class="page"><aside class="sidebar"><div class="sidebar-block"><div class="sidebar-title">Pixi Vault</div><div class="sidebar-count">7 documents</div>
+<a href="/pixi-wiki/wiki/pixi-vault/README.md.html">📄 Pixi Vault Knowledge Base</a>
+<a href="/pixi-wiki/wiki/pixi-vault/wiki/index.md.html">📄 Pixi Vault KB — Master Index</a>
+<details class="sidebar-section"><summary>WIKI 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/pixi-vault/wiki/log.md.html">📄 Pixi Vault — Activity Log</a></div></details>
+<details class="sidebar-section"><summary>CONCEPTS 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md.html">📄 Wiki Compiler Map and Source Classes</a></div></details>
+<details class="sidebar-section" open><summary>ENTITIES 1</summary><div class="sidebar-section-body"><a class="active" href="/pixi-wiki/wiki/pixi-vault/wiki/entities/pixi-wiki.md.html">📄 Pixi Wiki</a></div></details>
 <details class="sidebar-section"><summary>SUMMARIES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
-<details class="sidebar-section"><summary>SYNTHESES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
+<details class="sidebar-section"><summary>SYNTHESES 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md.html">📄 Pixi Vault to Pixi Wiki Publishing Model</a></div></details>
 </div><div class="sidebar-block"><details class="sidebar-section" open><summary>// FOR AGENTS</summary><div class="sidebar-section-body">
-<a href="/pixi-wiki/wiki/local-ai-infrastructure/llms.txt">llms.txt</a>
-<a href="/pixi-wiki/wiki/local-ai-infrastructure/llms-full.txt">llms-full.txt</a>
-<a href="/pixi-wiki/wiki/local-ai-infrastructure/index.json">index.json</a>
+<a href="/pixi-wiki/wiki/pixi-vault/llms.txt">llms.txt</a>
+<a href="/pixi-wiki/wiki/pixi-vault/llms-full.txt">llms-full.txt</a>
+<a href="/pixi-wiki/wiki/pixi-vault/index.json">index.json</a>
 </div></details></div></aside><article class="article">
-<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/local-ai-infrastructure/README.md.html">Local AI Infrastructure</a> / wiki/concepts/rag-over-agent-wikis.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+local-ai-infrastructure%2Fwiki%2Fconcepts%2Frag-over-agent-wikis.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Flocal-ai-infrastructure%2Fwiki%2Fconcepts%2Frag-over-agent-wikis.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
-<h1>RAG over Agent Wikis</h1>
-<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: medium</div><div><span>updated</span>: 2026-06-16</div><div><span>status</span>: compiled</div><div><span>namespace</span>: local-ai-infrastructure</div><div><span>sources</span>: 2</div></div>
-<p>**RAG over Agent Wikis** means using maintained compiled wiki pages as the retrieval corpus for agents, instead of retrieving directly from raw source dumps or asking the model to answer from memory.</p>
-<h2>Infrastructure shape</h2>
-<p>The practical loop is:</p>
-<pre><code>compiled wiki pages → chunks/sections → embeddings → retrieval/rerank → cited answer</code></pre>
-<p>For Jamie&#x27;s stack, the important design choice is that the wiki compilation layer comes before the vector layer. Retrieval quality should be improved by curated pages, frontmatter, source metadata, freshness, and namespace boundaries before adding infrastructure complexity.</p>
-<h2>Local-first implementation posture</h2>
-<p>A future local prototype can use:</p>
+<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/pixi-vault/README.md.html">Pixi Vault</a> / wiki/entities/pixi-wiki.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/pixi-vault/wiki/entities/pixi-wiki.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+pixi-vault%2Fwiki%2Fentities%2Fpixi-wiki.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fpixi-vault%2Fwiki%2Fentities%2Fpixi-wiki.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
+<h1>Pixi Wiki</h1>
+<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-16</div><div><span>status</span>: active</div><div><span>namespace</span>: pixi-vault</div><div><span>sources</span>: 3</div></div>
+<p><code>pixi-wiki</code> is the public generated mirror of <code>pixi-vault</code>: a browsable AgentWikis-style wiki-of-wikis for humans, agents, and future retrieval systems.</p>
+<h2>What it does</h2>
+<p>Pixi Wiki compiles curated vault namespaces into:</p>
 <ul>
-<li>compiled <code>pixi-wiki</code> Markdown pages as the corpus;</li>
-<li>local embeddings such as <code>nomic-embed-text</code> or a similar sentence model;</li>
-<li>FAISS or Qdrant for local vector storage;</li>
-<li>optional reranking for quality;</li>
-<li>source metadata preserved for citations and freshness checks.</li>
+<li>rendered HTML pages for human browsing;</li>
+<li>raw Markdown pages for provenance and source inspection;</li>
+<li><code>llms.txt</code> files for compact agent routing;</li>
+<li><code>llms-full.txt</code> files for full-corpus agent context;</li>
+<li><code>index.json</code> registries for tools, tests, and retrieval pipelines.</li>
 </ul>
-<h2>Current Pixi Wiki use</h2>
-<p><code>pixi-wiki</code> is the current public corpus candidate for this pattern. Its generated pages include namespace scopes, page metadata, raw Markdown mirrors, full-corpus exports, and navigable HTML. That structure should be used as the first retrieval/eval surface before adding a vector database or runtime RAG service.</p>
-<h2>Quality gates</h2>
-<p>Do not ship retrieval infrastructure because it sounds useful. Use evals:</p>
+<h2>Why it exists</h2>
+<p>The project turns messy private knowledge work into a cleaner public interface. It gives agents a better starting point than chat history or raw vault dumps, while keeping the private vault as the source of truth.</p>
+<h2>Potential uses</h2>
 <ul>
-<li>recall@k for known routing questions;</li>
-<li>citation support for factual answers;</li>
-<li>fallback behavior when a namespace does not cover the query;</li>
-<li>change-aware questions that test whether updated wiki metadata helps.</li>
+<li>**RAG over compiled wiki pages:** use maintained pages as the retrieval corpus before adding vector/search infrastructure.</li>
+<li>**Hallucination reduction:** route agents to scoped, cited, freshness-aware pages instead of letting them answer from memory.</li>
+<li>**Agent onboarding:** give new sessions a compact <code>llms.txt</code> map before they read deeper pages.</li>
+<li>**Project memory:** preserve decisions, entities, concepts, syntheses, and publication boundaries across sessions.</li>
+<li>**Portfolio surface:** expose selected knowledge/project work as a coherent public system.</li>
+<li>**Eval target:** test whether agents retrieve from the right namespace and cite the right source.</li>
 </ul>
-<h2>Boundary</h2>
-<p>No MCP server, vector DB, crawler, hosted search, or runtime RAG is approved by this compiled page. This page is an infrastructure concept and future implementation home, not a build authorization.</p>
-<h2>Source</h2>
-<p>Compiled from <code>Knowledge/concepts/rag-over-agent-wikis.md</code> and <code>Knowledge/concepts/local-retrieval-agent-infrastructure.md</code>.</p>
-<nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md.html"><span class="next-label">← Prev</span><span class="next-title">Local Retrieval-Augmented Agent Infrastructure</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/local-ai-infrastructure/wiki/log.md.html"><span class="next-label">Next</span><span class="next-title">Local AI Infrastructure — Activity Log →</span></a></nav>
+<h2>Namespace classification</h2>
+<p>Pixi Wiki is primarily an **entity/project artifact** inside the <code>pixi-vault</code> namespace because it is the generated public output of the vault compiler system.</p>
+<p>Its retrieval use case cross-links to <code>local-ai-infrastructure</code>, especially RAG over Agent Wikis. Its workflow/use-contract side cross-links to Agent Workflows.</p>
+<h2>Current milestone</h2>
+<p>As of 2026-06-16, the public mirror has:</p>
+<ul>
+<li>compiled namespace pages for project/domain clusters;</li>
+<li>collapsible namespace sidebars with page lists;</li>
+<li>rendered Markdown pages with metadata, raw Markdown links, report-a-mistake links, and previous/next navigation;</li>
+<li>a repository README and GitHub description explaining the public wiki contract and RAG-oriented benefits.</li>
+</ul>
+<h2>Public handles</h2>
+<ul>
+<li>Human site: https://pixiiidust.github.io/pixi-wiki/</li>
+<li>Repository: https://github.com/pixiiidust/pixi-wiki</li>
+<li>Agent registry: https://pixiiidust.github.io/pixi-wiki/llms.txt</li>
+<li>Full corpus: https://pixiiidust.github.io/pixi-wiki/llms-full.txt</li>
+<li>Machine registry: https://pixiiidust.github.io/pixi-wiki/index.json</li>
+</ul>
+<nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md.html"><span class="next-label">← Prev</span><span class="next-title">Wiki Compiler Map and Source Classes</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md.html"><span class="next-label">Next</span><span class="next-title">Pixi Vault to Pixi Wiki Publishing Model →</span></a></nav>
 </article></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
 </body></html>

@@ -36,6 +36,10 @@ A future local prototype can use:
 - optional reranking for quality;
 - source metadata preserved for citations and freshness checks.
 
+## Current Pixi Wiki use
+
+`pixi-wiki` is the current public corpus candidate for this pattern. Its generated pages include namespace scopes, page metadata, raw Markdown mirrors, full-corpus exports, and navigable HTML. That structure should be used as the first retrieval/eval surface before adding a vector database or runtime RAG service.
+
 ## Quality gates
 
 Do not ship retrieval infrastructure because it sounds useful. Use evals:

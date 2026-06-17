@@ -20,14 +20,14 @@
       "scope": {
         "covers": "Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.",
         "notCovered": "General agent workflow behavior unless it changes vault/compiler architecture; project-specific implementation details unless they affect the namespace compiler.",
-        "currentAs": "2026-06-16 \u2014 content pack v1 compiled with Wiki Compiler Map/source-class and publishing-model pages."
+        "currentAs": "2026-06-16 \u2014 Pixi Wiki public artifact recorded; content pack v1 plus generated-site UX contract now compiled."
       },
       "lastUpdated": "2026-06-16",
-      "documentCount": 6,
+      "documentCount": 7,
       "counts": {
         "wiki": 1,
         "concepts": 1,
-        "entities": 0,
+        "entities": 1,
         "summaries": 0,
         "syntheses": 1
       },
@@ -57,6 +57,13 @@
           "raw": "/raw/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md",
           "html": "/wiki/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md.html",
           "category": "concepts"
+        },
+        {
+          "title": "Pixi Wiki",
+          "path": "wiki/entities/pixi-wiki.md",
+          "raw": "/raw/pixi-vault/wiki/entities/pixi-wiki.md",
+          "html": "/wiki/pixi-vault/wiki/entities/pixi-wiki.md.html",
+          "category": "entities"
         },
         {
           "title": "Pixi Vault \u2014 Master Index",

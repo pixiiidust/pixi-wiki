@@ -25,7 +25,7 @@ General agent workflow behavior unless it changes vault/compiler architecture; p
 
 ### Current As
 
-2026-06-16 — content pack v1 compiled with Wiki Compiler Map/source-class and publishing-model pages.
+2026-06-16 — Pixi Wiki public artifact recorded; content pack v1 plus generated-site UX contract now compiled.
 
 ## Canonical Source Roots
 

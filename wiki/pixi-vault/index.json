@@ -2,11 +2,11 @@
   "slug": "pixi-vault",
   "title": "Pixi Vault",
   "description": "Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.",
-  "documentCount": 6,
+  "documentCount": 7,
   "counts": {
     "wiki": 1,
     "concepts": 1,
-    "entities": 0,
+    "entities": 1,
     "summaries": 0,
     "syntheses": 1
   },
@@ -31,6 +31,13 @@
       "raw": "/raw/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md",
       "html": "/wiki/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md.html",
       "category": "concepts"
+    },
+    {
+      "title": "Pixi Wiki",
+      "path": "wiki/entities/pixi-wiki.md",
+      "raw": "/raw/pixi-vault/wiki/entities/pixi-wiki.md",
+      "html": "/wiki/pixi-vault/wiki/entities/pixi-wiki.md.html",
+      "category": "entities"
     },
     {
       "title": "Pixi Vault \u2014 Master Index",

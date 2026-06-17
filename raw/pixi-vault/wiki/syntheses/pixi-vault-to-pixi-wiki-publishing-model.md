@@ -41,6 +41,8 @@ pixi-wiki/
 
 `llms.txt` is the compact agent registry. `llms-full.txt` is the full concatenated corpus. `index.json` is the machine-readable registry. `raw/<slug>/` preserves Markdown, and `wiki/<slug>/` exposes human-readable HTML.
 
+Human pages render Markdown with breadcrumbs, visible frontmatter metadata, raw Markdown links, report-a-mistake links, namespace sidebars, and previous/next navigation. The goal is not only publication; the site should make the compiled knowledge navigable enough for people and structured enough for agents.
+
 ## Publication workflow
 
 1. Update canonical source in `Knowledge/`, `Projects/`, or Wiki Compiler Maps.
