@@ -1,7 +1,7 @@
 ---
 title: Pixi Vault to Pixi Wiki Publishing Model
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: synthesis
 status: compiled
 namespace: pixi-vault
@@ -39,9 +39,9 @@ pixi-wiki/
 └── wiki/<slug>/...
 ```
 
-`llms.txt` is the compact agent registry. `llms-full.txt` is the full concatenated corpus. `index.json` is the machine-readable registry. `raw/<slug>/` preserves Markdown, and `wiki/<slug>/` exposes human-readable HTML.
+`llms.txt` is the compact agent registry. `llms-full.txt` is the full concatenated corpus. `index.json` is the machine-readable registry. `raw/<slug>/` preserves Markdown, `wiki/<slug>/` exposes human-readable HTML, and the local MCP server exposes read/search tools over the same KB files.
 
-Human pages render Markdown with breadcrumbs, visible frontmatter metadata, raw Markdown links, report-a-mistake links, namespace sidebars, and previous/next navigation. The goal is not only publication; the site should make the compiled knowledge navigable enough for people and structured enough for agents.
+Human pages render Markdown with breadcrumbs, visible frontmatter metadata, raw Markdown links, report-a-mistake links, namespace sidebars, and previous/next navigation. The goal is a two-surface publication model: humans browse the web wiki, while agents use raw Markdown, `llms.txt`, `index.json`, and local MCP tools over the same KBs.
 
 ## Publication workflow
 
@@ -52,6 +52,7 @@ Human pages render Markdown with breadcrumbs, visible frontmatter metadata, raw 
 5. Run public-output tests.
 6. Push both repos as needed.
 7. Verify live GitHub Pages URLs with HTTP 200 checks.
+8. For local MCP changes, run the MCP self-test and a real stdio client smoke test.
 
 ## Clean rebuild policy
 

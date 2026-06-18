@@ -38,6 +38,14 @@ class CleanRootContractTest(unittest.TestCase):
             with self.subTest(file=name):
                 self.assertTrue((ROOT / name).exists(), name)
 
+    def test_homepage_has_clean_agent_setup_navigation(self) -> None:
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn("Agent Setup", html)
+        self.assertIn("Connect agents via MCP", html)
+        self.assertIn("Use Pixi Wiki with AI agents", html)
+        self.assertIn('/pixi-wiki/docs/AGENT_SETUP.html', html)
+        self.assertNotIn("/Namespaces", html)
+
 
 class NamespaceRegistryContractTest(unittest.TestCase):
     def setUp(self) -> None:
@@ -124,14 +132,21 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 self.assertTrue((ROOT / "wiki" / slug / "index.json").is_file())
 
     def test_light_theme_is_default_with_dark_toggle(self) -> None:
-        for path in [ROOT / "index.html", ROOT / "wiki" / "agent-workflows" / "README.md.html"]:
+        for path in [ROOT / "index.html", ROOT / "wiki" / "agent-workflows" / "README.md.html", ROOT / "docs" / "AGENT_SETUP.html"]:
             html = path.read_text(encoding="utf-8")
             with self.subTest(path=path):
                 self.assertIn('data-theme="light"', html)
                 self.assertIn('data-theme-toggle', html)
-                self.assertIn('☾ Dark', html)
+                self.assertIn('>☾</button>', html)
                 self.assertIn('[data-theme=dark]', html)
                 self.assertIn('localStorage.getItem', html)
+
+    def test_agent_setup_page_has_subagent_usage_contract(self) -> None:
+        html = (ROOT / "docs" / "AGENT_SETUP.html").read_text(encoding="utf-8")
+        self.assertIn("Subagents do not inherit your full context", html)
+        self.assertIn("Recommended agent workflow", html)
+        self.assertIn("Subagent instruction template", html)
+        self.assertIn("mcp_pixi_wiki_", html)
 
 
 if __name__ == "__main__":

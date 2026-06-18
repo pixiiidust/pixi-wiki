@@ -1,7 +1,7 @@
 ---
 title: Pixi Vault — Activity Log
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: log
 status: compiled
 namespace: pixi-vault
@@ -36,4 +36,10 @@ namespace: pixi-vault
 - Added entity `wiki/entities/pixi-wiki.md` to classify Pixi Wiki as a public generated artifact under the `pixi-vault` namespace.
 - Recorded the current UX contract: collapsible namespace sidebars, rendered Markdown pages with metadata, raw/source links, report-a-mistake links, and previous/next navigation.
 - Linked Pixi Wiki's RAG/retrieval use case to `local-ai-infrastructure` and `RAG over Agent Wikis`.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Clarify Pixi Wiki human/agent publishing surface
+
+- Reframed Pixi Wiki as a publishing surface for curated KBs: human web wiki plus agent-readable raw Markdown, `llms.txt`, `index.json`, and local read-only MCP.
+- Recorded the shipped local MCP server and docs as repo/public-artifact features, while preserving the boundary that the MCP server is not hosted by GitHub Pages.
 - No Daily Notes were copied or compiled.

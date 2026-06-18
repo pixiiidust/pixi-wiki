@@ -2,6 +2,8 @@
 
 Pixi Wiki publishes Markdown knowledge bases for both humans and agents. Humans get the GitHub Pages web wiki; agents get raw Markdown, `llms.txt`, `index.json`, and this local read-only MCP server over the same KB files.
 
+For the shorter agent workflow guide and subagent instruction template, see [Agent Setup](AGENT_SETUP.html).
+
 **Deployment status:** the web wiki and this guide are published on GitHub Pages. The MCP server itself is not hosted; it runs locally through stdio on the same machine as your MCP client. To share it, share this repo and have users clone it, install the MCP SDK, and configure their client to launch `scripts/pixi_wiki_mcp.py`.
 
 The server is intentionally boring:

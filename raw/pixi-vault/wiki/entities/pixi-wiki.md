@@ -1,7 +1,7 @@
 ---
 title: Pixi Wiki
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: entity
 status: active
 namespace: pixi-vault
@@ -15,21 +15,22 @@ confidence: high
 
 # Pixi Wiki
 
-`pixi-wiki` is the public generated mirror of `pixi-vault`: a browsable AgentWikis-style wiki-of-wikis for humans, agents, and future retrieval systems.
+`pixi-wiki` publishes Jamie's notes, project docs, and research as maintained knowledge bases so humans can browse a clean wiki and agents can read, search, and cite the same Markdown corpus.
 
 ## What it does
 
-Pixi Wiki compiles curated vault namespaces into:
+Pixi Wiki turns each compiled knowledge base into:
 
 - rendered HTML pages for human browsing;
-- raw Markdown pages for provenance and source inspection;
-- `llms.txt` files for compact agent routing;
+- raw Markdown pages for source-backed retrieval;
+- `llms.txt` files for compact agent routing and onboarding;
 - `llms-full.txt` files for full-corpus agent context;
-- `index.json` registries for tools, tests, and retrieval pipelines.
+- `index.json` registries for tools, tests, and retrieval pipelines;
+- a local read-only MCP server so agents can list, search, and read the same KB Markdown files.
 
 ## Why it exists
 
-The project turns messy private knowledge work into a cleaner public interface. It gives agents a better starting point than chat history or raw vault dumps, while keeping the private vault as the source of truth.
+The project turns messy private knowledge work into a shareable publishing surface. Humans browse the web wiki; agents consume the raw Markdown, routing files, registry, and local MCP tools. The private vault remains the source of truth.
 
 ## Potential uses
 
@@ -48,12 +49,14 @@ Its retrieval use case cross-links to `local-ai-infrastructure`, especially [[..
 
 ## Current milestone
 
-As of 2026-06-16, the public mirror has:
+As of 2026-06-18, the public mirror has:
 
 - compiled namespace pages for project/domain clusters;
 - collapsible namespace sidebars with page lists;
 - rendered Markdown pages with metadata, raw Markdown links, report-a-mistake links, and previous/next navigation;
-- a repository README and GitHub description explaining the public wiki contract and RAG-oriented benefits.
+- a repository README and GitHub About description that frame Pixi Wiki as a publishing surface for human and agent KB access;
+- MCP setup docs at `docs/MCP_SERVER.md`;
+- a local read-only MCP server with `list_kbs`, `list_documents`, `read_document`, `search_kb`, `search_all_kbs`, and `get_kb_summary`.
 
 ## Public handles
 
@@ -62,3 +65,4 @@ As of 2026-06-16, the public mirror has:
 - Agent registry: https://pixiiidust.github.io/pixi-wiki/llms.txt
 - Full corpus: https://pixiiidust.github.io/pixi-wiki/llms-full.txt
 - Machine registry: https://pixiiidust.github.io/pixi-wiki/index.json
+- MCP guide: https://pixiiidust.github.io/pixi-wiki/docs/MCP_SERVER.md

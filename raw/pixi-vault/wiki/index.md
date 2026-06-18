@@ -1,7 +1,7 @@
 ---
 title: Pixi Vault — Master Index
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: index
 status: compiled
 namespace: pixi-vault
@@ -17,7 +17,7 @@ namespace: pixi-vault
 
 ## Entities
 
-- [[entities/pixi-wiki|Pixi Wiki]] — Public generated AgentWikis-style mirror for humans, agents, and RAG over compiled wiki pages.
+- [[entities/pixi-wiki|Pixi Wiki]] — Publishing surface for maintained knowledge bases: human wiki plus agent-readable raw Markdown, `llms.txt`, `llms-full.txt`, `index.json`, and local read-only MCP.
 
 ## Summaries
 
@@ -25,7 +25,7 @@ namespace: pixi-vault
 
 ## Syntheses
 
-- [[syntheses/pixi-vault-to-pixi-wiki-publishing-model|Pixi Vault to Pixi Wiki Publishing Model]] — Source/output repo boundary and publish workflow from vault to public AgentWikis mirror.
+- [[syntheses/pixi-vault-to-pixi-wiki-publishing-model|Pixi Vault to Pixi Wiki Publishing Model]] — Source/output repo boundary and publish workflow from vault to human and agent KB surfaces.
 
 ## Source Roots
 

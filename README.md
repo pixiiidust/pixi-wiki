@@ -15,7 +15,8 @@ It turns each knowledge base into:
 - Agent registry: https://pixiiidust.github.io/pixi-wiki/llms.txt
 - Machine registry: https://pixiiidust.github.io/pixi-wiki/index.json
 - Full corpus: https://pixiiidust.github.io/pixi-wiki/llms-full.txt
-- MCP setup guide: https://pixiiidust.github.io/pixi-wiki/docs/MCP_SERVER.md
+- Agent setup guide: https://pixiiidust.github.io/pixi-wiki/docs/AGENT_SETUP.html
+- MCP server reference: https://pixiiidust.github.io/pixi-wiki/docs/MCP_SERVER.md
 
 ## Deployment status
 
@@ -108,7 +109,7 @@ Self-test without starting MCP stdio:
 python3 scripts/pixi_wiki_mcp.py --self-test
 ```
 
-Full setup, tool list, Hermes config, KB editing flow, and assumptions are documented in [`docs/MCP_SERVER.md`](docs/MCP_SERVER.md).
+Agent workflow guidance is documented in [`docs/AGENT_SETUP.html`](docs/AGENT_SETUP.html). Full setup, tool list, Hermes config, KB editing flow, and assumptions are documented in [`docs/MCP_SERVER.md`](docs/MCP_SERVER.md).
 
 ## Source of truth
 
