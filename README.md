@@ -1,14 +1,14 @@
 # Pixi Wiki
 
-Pixi Wiki turns curated Markdown knowledge bases into a browsable public wiki, raw agent entrypoints, and read-only local MCP tools so humans and AI agents can use the same source-backed knowledge.
+Pixi Wiki publishes curated Markdown knowledge bases as two connected surfaces: a browsable web wiki for humans and agent-readable entrypoints for AI systems.
 
-It compiles curated vault namespaces into:
+It turns each knowledge base into:
 
 - readable HTML pages for people;
-- raw Markdown mirrors for provenance and source inspection;
-- `llms.txt` routing files for agents;
+- raw Markdown mirrors for source-backed retrieval;
+- `llms.txt` routing files for agent onboarding;
 - `llms-full.txt` full-corpus exports for long-context agents;
-- `index.json` registries for tools, scripts, and future retrieval systems;
+- `index.json` registries for tools, scripts, and retrieval systems;
 - a local read-only MCP server so agents can list, search, and read the same Markdown KBs.
 
 - Human site: https://pixiiidust.github.io/pixi-wiki/
