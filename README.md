@@ -16,6 +16,7 @@ It turns each knowledge base into:
 - Machine registry: https://pixiiidust.github.io/pixi-wiki/index.json
 - Full corpus: https://pixiiidust.github.io/pixi-wiki/llms-full.txt
 - Agent setup guide: https://pixiiidust.github.io/pixi-wiki/docs/AGENT_SETUP.html
+- Replicate this approach: https://pixiiidust.github.io/pixi-wiki/docs/REPLICATE_APPROACH.html
 - MCP server reference: https://pixiiidust.github.io/pixi-wiki/docs/MCP_SERVER.md
 
 ## Deployment status
@@ -70,6 +71,18 @@ Potential uses:
 - **Project memory:** decisions, concepts, entities, summaries, and syntheses stay findable across sessions.
 - **Public portfolio surface:** selected work can be shown as a coherent knowledge system, not scattered repo files.
 - **Evaluation target:** retrieval/eval tools can test whether agents answer from the right namespace and cite the right source.
+
+## Copy this approach
+
+Pixi Wiki is meant to be reusable. You can adapt the pattern for your own Markdown knowledge bases:
+
+1. Keep your source notes/docs in stable Markdown folders.
+2. Generate a human web wiki from those folders.
+3. Preserve raw Markdown mirrors for source-backed agent reading.
+4. Generate `llms.txt`, `llms-full.txt`, and `index.json` as agent entrypoints.
+5. Run the local read-only MCP server so agents can list, search, and read your KBs.
+
+See the replication guide: [`docs/REPLICATE_APPROACH.html`](docs/REPLICATE_APPROACH.html).
 
 ## Current namespaces
 

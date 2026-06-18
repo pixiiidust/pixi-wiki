@@ -490,6 +490,46 @@ python3 scripts/pixi_wiki_mcp.py --self-test</code></pre>
     (docs_dir / "AGENT_SETUP.html").write_text(page, encoding="utf-8")
 
 
+def write_replicate_page(output_root: Path) -> None:
+    docs_dir = output_root / "docs"
+    docs_dir.mkdir(exist_ok=True)
+    body = """
+<article class="article" style="max-width:900px;margin:44px auto 90px;padding:0 20px">
+<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / Replicate the Approach</div><span class="page-tools"><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki">GitHub repo</a></span></div>
+<h1>Replicate the Approach</h1>
+<p class="hero-copy">Use Pixi Wiki as a reusable pattern for turning your own Markdown notes, research, docs, or vault into a human wiki plus agent-readable context layer.</p>
+<section class="info-card"><div class="info-row"><div class="info-label green">Input</div><div>Your Markdown knowledge bases: Obsidian vault folders, project docs, research notes, decision logs, or curated public notes.</div></div><div class="info-row"><div class="info-label yellow">Output</div><div>A static web wiki, raw Markdown mirrors, <code>llms.txt</code>, <code>llms-full.txt</code>, <code>index.json</code>, and local read-only MCP tools.</div></div><div class="info-row"><div class="info-label white">Rule</div><div>Keep Markdown files canonical. Generated HTML, registries, and MCP access should read from the same source-shaped KB files.</div></div></section>
+<h2>Who this is for</h2>
+<ul><li>People with scattered Markdown notes who want a clean public or local knowledge surface.</li><li>Teams that want agents to retrieve from maintained docs instead of stale chat context.</li><li>Researchers, builders, and PMs who want their thesis, project boundaries, and source trails to survive across AI sessions.</li></ul>
+<h2>The reusable contract</h2>
+<pre><code>your-wiki/
+├── README.md
+├── index.html
+├── index.json
+├── llms.txt
+├── llms-full.txt
+├── raw/&lt;kb&gt;/**/*.md
+├── wiki/&lt;kb&gt;/**/*.html
+└── scripts/pixi_wiki_mcp.py</code></pre>
+<h2>Port your own knowledge base</h2>
+<ul><li>Create one folder per knowledge base.</li><li>Add a <code>README.md</code> that explains scope, current status, and what is not covered.</li><li>Add curated Markdown docs under stable paths.</li><li>Generate raw Markdown mirrors and HTML pages.</li><li>Generate <code>index.json</code> so tools can list KBs and documents.</li><li>Generate <code>llms.txt</code> and <code>llms-full.txt</code> so agents have compact and full entrypoints.</li><li>Run the read-only MCP server locally so agents can list, search, and read your KBs.</li></ul>
+<h2>Copy this repo</h2>
+<p>The implementation lives in the public GitHub repo. Start there if you want to copy the shape and adapt it to your own use case.</p>
+<p><a class="button-link primary" href="https://github.com/pixiiidust/pixi-wiki">Open the Pixi Wiki repo →</a></p>
+<h2>Recommended adaptation boundary</h2>
+<p>Publish only what you want public. Keep private voice, preferences, secrets, and sensitive strategy in a local-only KB or private repo, then connect that private KB to your agent client separately.</p>
+</article>
+"""
+    page = f"""<!doctype html>
+<html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
+<title>Replicate the Approach — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
+<header class=\"site-header\"><div class=\"header-inner\"><a class=\"logo\" href=\"/pixi-wiki/\">Pixi Wiki</a><nav class=\"nav\"><a href=\"/pixi-wiki/#wikis\">Wikis</a><a href=\"/pixi-wiki/docs/AGENT_SETUP.html\">Agent Setup</a><a href=\"/pixi-wiki/index.json\">Index JSON</a><button class=\"theme-toggle\" data-theme-toggle type=\"button\">☾</button></nav></div></header>
+<main>{body}</main>
+<footer class=\"footer\"><div class=\"footer-inner\"><p>Copy the pattern. Keep your source files canonical.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
+</body></html>"""
+    (docs_dir / "REPLICATE_APPROACH.html").write_text(page, encoding="utf-8")
+
+
 def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     if not source_dir.is_dir():
         raise SystemExit(f"Source namespace directory not found: {source_dir}")
@@ -547,12 +587,13 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     full_body = "\n\n".join(f"<!-- ===== {name} ===== -->\n\n{text}" for name, text in all_full_sections)
     (output_root / "llms-full.txt").write_text(full_body.rstrip() + "\n", encoding="utf-8")
     write_agent_setup_page(output_root)
+    write_replicate_page(output_root)
 
     index_html = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
 <header class="site-header"><div class="header-inner"><a class="logo" href="/pixi-wiki/">Pixi Wiki</a><nav class="nav"><a href="/pixi-wiki/#wikis">Wikis</a><a href="/pixi-wiki/docs/AGENT_SETUP.html">Agent Setup</a><a href="/pixi-wiki/index.json">Index JSON</a><button class="theme-toggle" data-theme-toggle type="button">☾</button></nav></div></header>
-<main style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="/pixi-wiki/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="/pixi-wiki/index.json">View index.json</a></div><section class="agent-setup-callout"><h2>Use Pixi Wiki with AI agents</h2><p>Connect Claude, Hermes, Cursor, or other MCP-compatible agents to the local read-only Pixi Wiki MCP server so subagents can list, search, and read the same Markdown KBs before producing generic work.</p></section><section id="wikis" class="grid">{''.join(index_cards)}</section></main>
+<main style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="/pixi-wiki/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="/pixi-wiki/docs/REPLICATE_APPROACH.html">Copy this approach</a><a class="button-link" href="/pixi-wiki/index.json">View index.json</a></div><section class="agent-setup-callout"><h2>Use Pixi Wiki with AI agents</h2><p>Connect Claude, Hermes, Cursor, or other MCP-compatible agents to the local read-only Pixi Wiki MCP server so subagents can list, search, and read the same Markdown KBs before producing generic work.</p></section><section class="agent-setup-callout"><h2>Replicate this for your own knowledge base</h2><p>Bring your own Markdown notes, docs, or vault; keep them canonical; publish a human wiki plus raw Markdown, <code>llms.txt</code>, <code>index.json</code>, and local MCP access. <a href="/pixi-wiki/docs/REPLICATE_APPROACH.html">See the replication guide</a>.</p></section><section id="wikis" class="grid">{''.join(index_cards)}</section></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. No JavaScript is required to read any page — agents welcome.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
 </body></html>"""
     (output_root / "index.html").write_text(index_html, encoding="utf-8")

@@ -43,7 +43,10 @@ class CleanRootContractTest(unittest.TestCase):
         self.assertIn("Agent Setup", html)
         self.assertIn("Connect agents via MCP", html)
         self.assertIn("Use Pixi Wiki with AI agents", html)
+        self.assertIn("Copy this approach", html)
+        self.assertIn("Replicate this for your own knowledge base", html)
         self.assertIn('/pixi-wiki/docs/AGENT_SETUP.html', html)
+        self.assertIn('/pixi-wiki/docs/REPLICATE_APPROACH.html', html)
         self.assertNotIn("/Namespaces", html)
 
 
@@ -132,7 +135,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 self.assertTrue((ROOT / "wiki" / slug / "index.json").is_file())
 
     def test_light_theme_is_default_with_dark_toggle(self) -> None:
-        for path in [ROOT / "index.html", ROOT / "wiki" / "agent-workflows" / "README.md.html", ROOT / "docs" / "AGENT_SETUP.html"]:
+        for path in [ROOT / "index.html", ROOT / "wiki" / "agent-workflows" / "README.md.html", ROOT / "docs" / "AGENT_SETUP.html", ROOT / "docs" / "REPLICATE_APPROACH.html"]:
             html = path.read_text(encoding="utf-8")
             with self.subTest(path=path):
                 self.assertIn('data-theme="light"', html)
@@ -147,6 +150,14 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("Recommended agent workflow", html)
         self.assertIn("Subagent instruction template", html)
         self.assertIn("mcp_pixi_wiki_", html)
+
+    def test_replicate_approach_page_links_to_repo_and_contract(self) -> None:
+        html = (ROOT / "docs" / "REPLICATE_APPROACH.html").read_text(encoding="utf-8")
+        self.assertIn("Replicate the Approach", html)
+        self.assertIn("your own Markdown notes", html)
+        self.assertIn("The reusable contract", html)
+        self.assertIn("https://github.com/pixiiidust/pixi-wiki", html)
+        self.assertIn("local read-only MCP tools", html)
 
 
 if __name__ == "__main__":
