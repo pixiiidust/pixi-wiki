@@ -8,7 +8,8 @@ It compiles curated vault namespaces into:
 - raw Markdown mirrors for provenance and source inspection;
 - `llms.txt` routing files for agents;
 - `llms-full.txt` full-corpus exports for long-context agents;
-- `index.json` registries for tools, scripts, and future retrieval systems.
+- `index.json` registries for tools, scripts, and future retrieval systems;
+- a local read-only MCP server so agents can list, search, and read the same Markdown KBs.
 
 - Human site: https://pixiiidust.github.io/pixi-wiki/
 - Agent registry: https://pixiiidust.github.io/pixi-wiki/llms.txt
@@ -56,6 +57,36 @@ Potential uses:
 - `rl-sim-labs` — reinforcement-learning simulation projects such as Critical Ranger FFM.
 - `curated-tuning-datasets` — source inventories and readiness maps for future tuning datasets, including LKY archive work.
 - `local-ai-infrastructure` — local LLMs, retrieval, RAG over AgentWikis, local-first AI setup.
+
+## Local development
+
+### Run the web app locally
+
+Pixi Wiki is a static site. Serve the repository root:
+
+```bash
+cd /path/to/pixi-wiki
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000/`.
+
+### Run the MCP server locally
+
+The read-only MCP server exposes the generated Markdown KBs to local agent clients.
+
+```bash
+cd /path/to/pixi-wiki
+python3 scripts/pixi_wiki_mcp.py
+```
+
+Self-test without starting MCP stdio:
+
+```bash
+python3 scripts/pixi_wiki_mcp.py --self-test
+```
+
+Full setup, tool list, Hermes config, KB editing flow, and assumptions are documented in [`docs/MCP_SERVER.md`](docs/MCP_SERVER.md).
 
 ## Source of truth
 
