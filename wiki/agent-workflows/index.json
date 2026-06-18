@@ -2,10 +2,10 @@
   "slug": "agent-workflows",
   "title": "Agent Workflows",
   "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
-  "documentCount": 14,
+  "documentCount": 15,
   "counts": {
     "wiki": 1,
-    "concepts": 7,
+    "concepts": 8,
     "entities": 1,
     "summaries": 0,
     "syntheses": 2
@@ -44,6 +44,13 @@
       "path": "wiki/concepts/peer-profiles-vs-child-processes.md",
       "raw": "/raw/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md",
       "html": "/wiki/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Ponytail Minimal Code Discipline",
+      "path": "wiki/concepts/ponytail-minimal-code-discipline.md",
+      "raw": "/raw/agent-workflows/wiki/concepts/ponytail-minimal-code-discipline.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/ponytail-minimal-code-discipline.md.html",
       "category": "concepts"
     },
     {

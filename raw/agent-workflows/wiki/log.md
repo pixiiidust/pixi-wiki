@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: log
 status: compiled
 namespace: agent-workflows
@@ -39,4 +39,10 @@ namespace: agent-workflows
 - Expanded `Hermes Mission Control` as a compiled entity page with crew role boundaries and source routing.
 - Updated namespace index and source roots.
 - Final public publish remains gated by the clean `pixi-wiki` rebuild.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Add Ponytail minimal-code discipline concept
+
+- Added compiled concept `wiki/concepts/ponytail-minimal-code-discipline.md` from the canonical Knowledge page and Hermes skill.
+- Updated namespace README and index source roots.
 - No Daily Notes were copied or compiled.

@@ -371,7 +371,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: namespace-overview
 status: active
 category: agents
@@ -395,7 +395,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-16 — first compiled content pack for agent-workflows.
+2026-06-18 — Ponytail minimal-code discipline added as a compiled workflow concept.
 
 ## Canonical Source Roots
 
@@ -409,6 +409,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 
 ## Routing Rules
 
@@ -577,6 +578,72 @@ Unapproved route recursion is forbidden. Pause if routes attempt direct worker-t
 ## Source
 
 Compiled from `Knowledge/concepts/peer-profiles-vs-child-processes.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/ponytail-minimal-code-discipline.md ===== -->
+
+---
+title: Ponytail Minimal Code Discipline
+created: 2026-06-18
+updated: 2026-06-18
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, code-review, minimalism, verification]
+sources:
+  - Knowledge/concepts/ponytail-minimal-code-discipline.md
+  - /root/.hermes/skills/software-development/ponytail-code-discipline/SKILL.md
+confidence: high
+---
+
+# Ponytail Minimal Code Discipline
+
+**Ponytail** is a minimal-code discipline for agentic coding work: write only the code the current task needs, prefer native/stdlib/existing-dependency solutions, and run a separate simplification pass during review.
+
+It is a workflow guardrail, not a product spec or always-on personality override.
+
+## Build ladder
+
+1. Does this need to exist?
+2. Does stdlib/browser/native platform already do it?
+3. Does an existing dependency solve it?
+4. Can it be one line or one small function?
+5. Only then, write the minimum code that satisfies the current issue.
+
+## Where it belongs
+
+- Coding workflows before implementation.
+- Pre-PR checks.
+- Pixoid/Tinker PR review passes.
+- Reusable Knowledge and skill surfaces.
+- Project-specific repo docs only after a concrete project adopts it.
+
+## Boundaries
+
+Ponytail cannot simplify away:
+
+- Jamie's current instruction.
+- GitHub issue / PRD acceptance criteria.
+- Security, auth, secrets, and trust-boundary validation.
+- Accessibility basics.
+- Data-loss prevention and persistence/recovery requirements.
+- Evidence quality, eval proof, or human decision authority.
+- One small runnable check for non-trivial logic.
+
+Current user instruction, issue scope, and safety gates beat memory or generic Ponytail preference.
+
+## Review seam
+
+Run two passes:
+
+1. **Correctness pass:** scope, acceptance criteria, tests, UX, security, accessibility, product/evidence gates.
+2. **Ponytail pass:** `delete`, `stdlib`, `native`, `yagni`, and `shrink` findings only.
+
+If there is nothing to cut: `Ponytail: lean already.`
+
+## Source
+
+Compiled from `Knowledge/concepts/ponytail-minimal-code-discipline.md` and the Hermes `ponytail-code-discipline` skill.
 
 
 <!-- ===== agent-workflows/wiki/concepts/profile-memory-boundaries.md ===== -->
@@ -822,7 +889,7 @@ Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operati
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: index
 status: compiled
 namespace: agent-workflows
@@ -837,6 +904,7 @@ namespace: agent-workflows
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
 - [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.
+- [[concepts/ponytail-minimal-code-discipline|Ponytail Minimal Code Discipline]] — Minimal-code build/review guardrail that keeps implementation lean without weakening acceptance, safety, evidence, or verification gates.
 - [[concepts/profile-memory-boundaries|Profile Memory Boundaries]] — Where durable knowledge belongs across memory, knowledge, projects, and skills.
 - [[concepts/runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]] — How agents combine injected memory, Honcho, knowledge packs, skills, GitHub, and session search at runtime.
 - [[concepts/self-improving-agent-systems|Self-Improving Agent Systems]] — How agents improve through verified durable state rather than weight updates.
@@ -868,6 +936,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 
 
 <!-- ===== agent-workflows/wiki/log.md ===== -->
@@ -875,7 +944,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: log
 status: compiled
 namespace: agent-workflows
@@ -913,6 +982,12 @@ namespace: agent-workflows
 - Expanded `Hermes Mission Control` as a compiled entity page with crew role boundaries and source routing.
 - Updated namespace index and source roots.
 - Final public publish remains gated by the clean `pixi-wiki` rebuild.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Add Ponytail minimal-code discipline concept
+
+- Added compiled concept `wiki/concepts/ponytail-minimal-code-discipline.md` from the canonical Knowledge page and Hermes skill.
+- Updated namespace README and index source roots.
 - No Daily Notes were copied or compiled.
 
 

@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: namespace-overview
 status: active
 category: agents
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-16 — first compiled content pack for agent-workflows.
+2026-06-18 — Ponytail minimal-code discipline added as a compiled workflow concept.
 
 ## Canonical Source Roots
 
@@ -39,6 +39,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 
 ## Routing Rules
 

@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: index
 status: compiled
 namespace: agent-workflows
@@ -16,6 +16,7 @@ namespace: agent-workflows
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
 - [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.
+- [[concepts/ponytail-minimal-code-discipline|Ponytail Minimal Code Discipline]] — Minimal-code build/review guardrail that keeps implementation lean without weakening acceptance, safety, evidence, or verification gates.
 - [[concepts/profile-memory-boundaries|Profile Memory Boundaries]] — Where durable knowledge belongs across memory, knowledge, projects, and skills.
 - [[concepts/runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]] — How agents combine injected memory, Honcho, knowledge packs, skills, GitHub, and session search at runtime.
 - [[concepts/self-improving-agent-systems|Self-Improving Agent Systems]] — How agents improve through verified durable state rather than weight updates.
@@ -47,3 +48,4 @@ namespace: agent-workflows
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `Knowledge/concepts/ponytail-minimal-code-discipline.md`
