@@ -1,6 +1,6 @@
 # Pixi Wiki
 
-Pixi Wiki turns Jamie's private `pixi-vault` notes into a public, AgentWikis-style wiki-of-wikis that humans can browse and agents can read directly.
+Pixi Wiki turns curated Markdown knowledge bases into a browsable public wiki, raw agent entrypoints, and read-only local MCP tools so humans and AI agents can use the same source-backed knowledge.
 
 It compiles curated vault namespaces into:
 
@@ -15,6 +15,28 @@ It compiles curated vault namespaces into:
 - Agent registry: https://pixiiidust.github.io/pixi-wiki/llms.txt
 - Machine registry: https://pixiiidust.github.io/pixi-wiki/index.json
 - Full corpus: https://pixiiidust.github.io/pixi-wiki/llms-full.txt
+- MCP setup guide: https://pixiiidust.github.io/pixi-wiki/docs/MCP_SERVER.md
+
+## Deployment status
+
+The web wiki and docs are deployed on GitHub Pages. The MCP server is **not** a hosted web service; it is a local stdio MCP server that runs on the same machine as your agent client.
+
+To use it, clone the repo and point your MCP client at the local script:
+
+```bash
+git clone https://github.com/pixiiidust/pixi-wiki.git
+cd pixi-wiki
+python3 -m pip install mcp
+python3 scripts/pixi_wiki_mcp.py --self-test
+```
+
+Then configure your MCP client to launch:
+
+```bash
+python3 /path/to/pixi-wiki/scripts/pixi_wiki_mcp.py
+```
+
+No separate server deploy is needed unless you later want remote/shared HTTP MCP access.
 
 ## How it works
 

@@ -2,6 +2,8 @@
 
 Pixi Wiki includes a local, read-only MCP server for agent access to the same Markdown knowledge bases used by the web UI.
 
+**Deployment status:** the web wiki and this guide are published on GitHub Pages. The MCP server itself is not hosted; it runs locally through stdio on the same machine as your MCP client. To share it, share this repo and have users clone it, install the MCP SDK, and configure their client to launch `scripts/pixi_wiki_mcp.py`.
+
 The server is intentionally boring:
 
 - local stdio MCP transport;
@@ -74,7 +76,16 @@ http://localhost:8000/
 
 ## Run the MCP server locally
 
-From the repo root:
+From a fresh clone:
+
+```bash
+git clone https://github.com/pixiiidust/pixi-wiki.git
+cd pixi-wiki
+python3 -m pip install mcp
+python3 scripts/pixi_wiki_mcp.py --self-test
+```
+
+Then run the stdio MCP server from the repo root:
 
 ```bash
 cd /path/to/pixi-wiki
