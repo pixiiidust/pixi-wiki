@@ -144,8 +144,10 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 self.assertIn('data-theme-toggle', html)
                 self.assertIn('>☾</button>', html)
                 self.assertIn('[data-theme=dark]', html)
-                self.assertIn('--bg:#111827', html)
-                self.assertIn('--text:#d1d5db', html)
+                self.assertIn('--bg:#07090d', html)
+                self.assertIn('--accent:#8fb7c8', html)
+                self.assertIn('--accent2:#fbdc92', html)
+                self.assertNotIn('--accent:#f59e0b', html)
                 self.assertIn('localStorage.getItem', html)
 
     def test_agent_setup_page_has_subagent_usage_contract(self) -> None:
