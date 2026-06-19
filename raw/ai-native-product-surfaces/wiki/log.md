@@ -25,10 +25,10 @@ namespace: ai-native-product-surfaces
 - Updated `wiki/index.md` from scaffold to active content index.
 - No Daily Notes were copied or compiled.
 
-## 2026-06-19 update | Add I-know-kungfu product-surface project
+## 2026-06-19 update | Clarify I-know-kungfu wiki-first framing
 
-- Added `wiki/entities/i-know-kungfu.md`.
-- Added `Projects/I-know-kungfu/Index.md` as the canonical project hub.
-- Updated `wiki/index.md` source roots and entity list.
-- I-know-kungfu routes to `ai-native-product-surfaces` as a local-first Cookbook / Knowledge Pack serving project.
+- Updated `wiki/entities/i-know-kungfu.md` and `Projects/I-know-kungfu/Index.md` after product-language clarification.
+- Set **knowledge base wiki** as the core product object.
+- Demoted **Knowledge Pack** to the portable package/install format for a wiki.
+- Preserved Variant C: find useful wiki → check local fit → choose serving entry point → harmonize overlap → inspect proof/refusal.
 - No Daily Notes were copied or compiled.

@@ -17,7 +17,7 @@ namespace: ai-native-product-surfaces
 
 ## Entities
 
-- [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook/Knowledge Pack serving project for fit-checking and routing trusted context into agents.
+- [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook wiki serving project for growing a user's knowledge base with bounded, agent-readable wikis.
 - [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
 - [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
 

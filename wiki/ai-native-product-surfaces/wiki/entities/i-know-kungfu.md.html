@@ -23,23 +23,27 @@
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/ai-native-product-surfaces/README.md.html">AI-Native Product Surfaces</a> / wiki/entities/i-know-kungfu.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+ai-native-product-surfaces%2Fwiki%2Fentities%2Fi-know-kungfu.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fai-native-product-surfaces%2Fwiki%2Fentities%2Fi-know-kungfu.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>I-know-kungfu</h1>
 <div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: medium</div><div><span>updated</span>: 2026-06-19</div><div><span>status</span>: active</div><div><span>namespace</span>: ai-native-product-surfaces</div><div><span>sources</span>: 3</div></div>
-<p>**I-know-kungfu** is an AI-native product surface for finding useful wikis, checking local fit, serving them through agent-readable surfaces, and harmonizing overlap with an existing knowledge base.</p>
+<p>I-know-kungfu is an AI-native product surface for growing a user&#x27;s own knowledge base by importing, adapting, and serving bounded knowledge base wikis that agents can search, cite, and refuse against.</p>
 <h2>Product shape</h2>
 <p>The current flow is:</p>
-<pre><code>Find useful wiki / pack
+<pre><code>Find useful knowledge base wiki
 → check local fit
-→ choose serving surface
+→ choose serving entry point
 → harmonize overlap
 → inspect scope / proof / refusal</code></pre>
-<p>The product turns docs, vaults, repos, and research folders into installable Knowledge Packs that agents can inspect, search, cite, and refuse from without building custom RAG from scratch.</p>
+<p>The product is not primarily a generic &quot;pack&quot; marketplace. Each imported serving unit is conceptually a wiki: source-backed pages, scope/non-scope, provenance, freshness, and agent-friendly entry points such as MCP, <code>llms.txt</code>, raw Markdown, and <code>index.json</code>.</p>
+<p>A Knowledge Pack is the portable package/install format for a knowledge base wiki. The wiki is the thing users grow and agents use; the pack is how that wiki moves between local storage, Cookbook listings, and agent harnesses.</p>
+<h2>Why it matters</h2>
+<p>The goal is to let users evolve their knowledge base without reinventing the wheel. In the ideal case, a user can adapt proven wikis with known quality or track record to improve their own coverage, fill gaps, and avoid duplicating or polluting what they already know.</p>
+<p>For agents, bounded wiki entry points should be faster and more token-efficient than broad web search. Agents can search a specific source, cite exact pages, and refuse when a task falls outside the wiki&#x27;s scope.</p>
 <h2>Current status</h2>
-<p>The first static Cookbook serving prototype passed Jamie&#x27;s initial smell test with Variant C. The accepted direction is table/list-first and decision-first: check fit before trust, choose one serving surface, then make overlap harmonization explicit.</p>
-<p>The repo has a pushed PRD and README. The next planned pass is domain modeling plus codebase-design refinement of <code>CONTEXT.md</code> and <code>docs/PRD.md</code>, followed potentially by another grill-with-docs session.</p>
+<p>The first static Cookbook serving prototype passed Jamie&#x27;s initial smell test with Variant C. The accepted direction is table/list-first and decision-first: check fit before trust, choose one serving entry point, then make overlap harmonization explicit.</p>
+<p>The repo now has a PRD, README, glossary, and ADR that center knowledge base wiki as the product object and demote Knowledge Pack to package/install format.</p>
 <h2>Namespace role</h2>
-<p>I-know-kungfu belongs in <code>ai-native-product-surfaces</code> because it is primarily about the user-facing and agent-facing product surface for trusted context routing.</p>
+<p>I-know-kungfu belongs in <code>ai-native-product-surfaces</code> because it is primarily about the user-facing and agent-facing product surface for trusted context routing and knowledge-base growth.</p>
 <p>It crosslinks to:</p>
 <ul>
-<li><code>agent-workflows</code> for agent consumption, MCP, <code>llms.txt</code>, and Knowledge Pack routing mechanics;</li>
+<li><code>agent-workflows</code> for agent consumption, MCP, <code>llms.txt</code>, and bounded source routing mechanics;</li>
 <li><code>pixi-vault</code> for compiled wiki / namespace publishing patterns;</li>
 <li><code>local-ai-infrastructure</code> for local-first serving and future retrieval infrastructure.</li>
 </ul>
