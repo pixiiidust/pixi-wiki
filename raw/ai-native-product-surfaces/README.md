@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-19
 type: namespace-overview
 status: scaffold
 category: product
@@ -17,7 +17,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
 
 ### Not Covered
 
@@ -25,10 +25,11 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-16 — scaffold only. Content has not yet been fully compiled.
+2026-06-19 — active namespace. Includes compiled product-surface entities and concepts; I-know-kungfu is the newest active project entry.
 
 ## Canonical Source Roots
 
+- `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
 - `Projects/Planned/PRD.md`
 - `Projects/myAbode/Index.md`

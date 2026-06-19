@@ -2643,7 +2643,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 - Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
 - Treat `Knowledge/` and `Projects/` as canonical authoring sources.
 - Treat Daily Notes as scratch chronology, not direct compiled content.
-- Keep this namespace scoped to: AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
+- Keep this namespace scoped to: AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
 - Do not widen scope silently; propose a namespace promotion/routing update first.
 - Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
 
@@ -2653,7 +2653,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-19
 type: namespace-overview
 status: scaffold
 category: product
@@ -2669,7 +2669,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
 
 ### Not Covered
 
@@ -2677,10 +2677,11 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-16 — scaffold only. Content has not yet been fully compiled.
+2026-06-19 — active namespace. Includes compiled product-surface entities and concepts; I-know-kungfu is the newest active project entry.
 
 ## Canonical Source Roots
 
+- `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
 - `Projects/Planned/PRD.md`
 - `Projects/myAbode/Index.md`
@@ -2758,6 +2759,66 @@ Do not blindly copy game/RL patterns into product domains. Real-world operationa
 ## Source
 
 Compiled from `Knowledge/concepts/ai-native-problem-framing-framework.md`.
+
+
+<!-- ===== ai-native-product-surfaces/wiki/entities/i-know-kungfu.md ===== -->
+
+---
+title: I-know-kungfu
+created: 2026-06-19
+updated: 2026-06-19
+type: entity
+status: active
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, i-know-kungfu, knowledge-packs, cookbook, local-first, agent-context]
+sources:
+  - Projects/I-know-kungfu/Index.md
+  - https://github.com/pixiiidust/I-know-kungfu
+  - https://github.com/pixiiidust/I-know-kungfu/issues/1
+confidence: medium
+---
+
+# I-know-kungfu
+
+**I-know-kungfu** is an AI-native product surface for finding useful wikis, checking local fit, serving them through agent-readable surfaces, and harmonizing overlap with an existing knowledge base.
+
+## Product shape
+
+The current flow is:
+
+```text
+Find useful wiki / pack
+→ check local fit
+→ choose serving surface
+→ harmonize overlap
+→ inspect scope / proof / refusal
+```
+
+The product turns docs, vaults, repos, and research folders into installable Knowledge Packs that agents can inspect, search, cite, and refuse from without building custom RAG from scratch.
+
+## Current status
+
+The first static Cookbook serving prototype passed Jamie's initial smell test with Variant C. The accepted direction is table/list-first and decision-first: check fit before trust, choose one serving surface, then make overlap harmonization explicit.
+
+The repo has a pushed PRD and README. The next planned pass is domain modeling plus codebase-design refinement of `CONTEXT.md` and `docs/PRD.md`, followed potentially by another grill-with-docs session.
+
+## Namespace role
+
+I-know-kungfu belongs in `ai-native-product-surfaces` because it is primarily about the user-facing and agent-facing product surface for trusted context routing.
+
+It crosslinks to:
+
+- `agent-workflows` for agent consumption, MCP, `llms.txt`, and Knowledge Pack routing mechanics;
+- `pixi-vault` for compiled wiki / namespace publishing patterns;
+- `local-ai-infrastructure` for local-first serving and future retrieval infrastructure.
+
+## Boundaries
+
+The first slice should remain local-first and endpoint-ready. Do not treat the current project as a hosted marketplace, vector database, hosted RAG layer, payments system, public upload-moderation system, or cloud MCP service.
+
+## Source
+
+Compiled from `Projects/I-know-kungfu/Index.md`, the public repo README/PRD, and GitHub issue #1.
 
 
 <!-- ===== ai-native-product-surfaces/wiki/entities/myabode.md ===== -->
@@ -2861,7 +2922,7 @@ Compiled from `Projects/Planned Program Intel/Index.md` with supporting historic
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-19
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -2877,6 +2938,7 @@ namespace: ai-native-product-surfaces
 
 ## Entities
 
+- [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook/Knowledge Pack serving project for fit-checking and routing trusted context into agents.
 - [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
 - [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
 
@@ -2890,6 +2952,7 @@ namespace: ai-native-product-surfaces
 
 ## Source Roots
 
+- `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
 - `Projects/Planned/PRD.md`
 - `Projects/myAbode/Index.md`
@@ -2903,7 +2966,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-19
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -2925,6 +2988,14 @@ namespace: ai-native-product-surfaces
 - Added `wiki/entities/myabode.md`.
 - Added `wiki/concepts/ai-native-problem-framing-framework.md`.
 - Updated `wiki/index.md` from scaffold to active content index.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-19 update | Add I-know-kungfu product-surface project
+
+- Added `wiki/entities/i-know-kungfu.md`.
+- Added `Projects/I-know-kungfu/Index.md` as the canonical project hub.
+- Updated `wiki/index.md` source roots and entity list.
+- I-know-kungfu routes to `ai-native-product-surfaces` as a local-first Cookbook / Knowledge Pack serving project.
 - No Daily Notes were copied or compiled.
 
 

@@ -1,12 +1,12 @@
 {
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
-  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.",
-  "documentCount": 7,
+  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.",
+  "documentCount": 8,
   "counts": {
     "wiki": 1,
     "concepts": 1,
-    "entities": 2,
+    "entities": 3,
     "summaries": 0,
     "syntheses": 0
   },
@@ -31,6 +31,13 @@
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html",
       "category": "concepts"
+    },
+    {
+      "title": "I-know-kungfu",
+      "path": "wiki/entities/i-know-kungfu.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html",
+      "category": "entities"
     },
     {
       "title": "myAbode",

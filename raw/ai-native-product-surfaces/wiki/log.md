@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-19
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -23,4 +23,12 @@ namespace: ai-native-product-surfaces
 - Added `wiki/entities/myabode.md`.
 - Added `wiki/concepts/ai-native-problem-framing-framework.md`.
 - Updated `wiki/index.md` from scaffold to active content index.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-19 update | Add I-know-kungfu product-surface project
+
+- Added `wiki/entities/i-know-kungfu.md`.
+- Added `Projects/I-know-kungfu/Index.md` as the canonical project hub.
+- Updated `wiki/index.md` source roots and entity list.
+- I-know-kungfu routes to `ai-native-product-surfaces` as a local-first Cookbook / Knowledge Pack serving project.
 - No Daily Notes were copied or compiled.

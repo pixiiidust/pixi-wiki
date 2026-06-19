@@ -77,13 +77,14 @@
 
 ## AI-Native Product Surfaces
 
-> AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.
-> Current as of: 2026-06-16 — scaffold only. Content has not yet been fully compiled.
+> AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
+> Current as of: 2026-06-19 — active namespace. Includes compiled product-surface entities and concepts; I-know-kungfu is the newest active project entry.
 > Agent access: [/wiki/ai-native-product-surfaces/llms.txt](/wiki/ai-native-product-surfaces/llms.txt) [/wiki/ai-native-product-surfaces/llms-full.txt](/wiki/ai-native-product-surfaces/llms-full.txt) [/wiki/ai-native-product-surfaces/index.json](/wiki/ai-native-product-surfaces/index.json)
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
 - [AI-Native Problem Framing Framework](/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html))
+- [I-know-kungfu](/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html))
 - [myAbode](/raw/ai-native-product-surfaces/wiki/entities/myabode.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html))
 - [Planned Program Intel](/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html))
 - [AI-Native Product Surfaces — Master Index](/raw/ai-native-product-surfaces/wiki/index.md) ([html](/wiki/ai-native-product-surfaces/wiki/index.md.html))
