@@ -147,6 +147,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 self.assertIn('--bg:#07090d', html)
                 self.assertIn('--accent:#8fb7c8', html)
                 self.assertIn('--accent2:#fbdc92', html)
+                self.assertIn('--active-bg:#8b4356', html)
                 self.assertNotIn('--accent:#f59e0b', html)
                 self.assertIn('localStorage.getItem', html)
 
