@@ -674,10 +674,10 @@
         "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
       },
       "lastUpdated": "2026-06-16",
-      "documentCount": 6,
+      "documentCount": 8,
       "counts": {
         "wiki": 1,
-        "concepts": 2,
+        "concepts": 3,
         "entities": 0,
         "summaries": 0,
         "syntheses": 0
@@ -703,6 +703,13 @@
           "category": "other"
         },
         {
+          "title": "Transcript \u2014 The Autonomous Agentic Workflow that Runs My Web App w/ Hermes + a $6 VPS",
+          "path": "raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md",
+          "raw": "/raw/local-ai-infrastructure/raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md",
+          "html": "/wiki/local-ai-infrastructure/raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md.html",
+          "category": "other"
+        },
+        {
           "title": "Local Retrieval Agent Infrastructure",
           "path": "wiki/concepts/local-retrieval-agent-infrastructure.md",
           "raw": "/raw/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md",
@@ -714,6 +721,13 @@
           "path": "wiki/concepts/rag-over-agent-wikis.md",
           "raw": "/raw/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md",
           "html": "/wiki/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "VPS Agent Web App Pattern",
+          "path": "wiki/concepts/vps-agent-web-app-pattern.md",
+          "raw": "/raw/local-ai-infrastructure/wiki/concepts/vps-agent-web-app-pattern.md",
+          "html": "/wiki/local-ai-infrastructure/wiki/concepts/vps-agent-web-app-pattern.md.html",
           "category": "concepts"
         },
         {

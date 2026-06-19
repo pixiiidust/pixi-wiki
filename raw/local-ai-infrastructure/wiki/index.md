@@ -1,7 +1,7 @@
 ---
 title: Local AI Infrastructure — Master Index
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-19
 type: index
 status: active
 namespace: local-ai-infrastructure
@@ -15,6 +15,7 @@ namespace: local-ai-infrastructure
 
 - [[concepts/local-retrieval-agent-infrastructure|Local Retrieval-Augmented Agent Infrastructure]] — Local-first model/retrieval stack pattern for private corpora and agent memory.
 - [[concepts/rag-over-agent-wikis|RAG over Agent Wikis]] — Retrieval architecture over compiled wiki pages rather than raw source dumps.
+- [[concepts/vps-agent-web-app-pattern|VPS Agent Web App Pattern]] — Small-VPS + resident-agent pattern for git-backed web apps, Caddy/TLS hosting, human-gated content freshness loops, and when not to replace managed platforms.
 
 ## Entities
 
@@ -32,3 +33,5 @@ namespace: local-ai-infrastructure
 
 - `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
 - `Knowledge/concepts/rag-over-agent-wikis.md`
+- `raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md`
+- `https://youtu.be/K8ZTlMaDfmQ?si=IuNRaHVc-fFHZw41`

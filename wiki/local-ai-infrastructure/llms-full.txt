@@ -74,6 +74,64 @@ When published to `pixi-wiki`, this namespace should expose:
 - Do not compile Daily Notes directly unless promoted or verified.
 
 
+<!-- ===== local-ai-infrastructure/raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md ===== -->
+
+---
+source_url: https://youtu.be/K8ZTlMaDfmQ?si=IuNRaHVc-fFHZw41
+ingested: 2026-06-19
+sha256: 3718867c216538e104df7998eb758988e9fd4f264cc916a554fb6a36efd339fb
+type: transcript
+---
+
+# Transcript — The Autonomous Agentic Workflow that Runs My Web App w/ Hermes + a $6 VPS
+
+Source: https://youtu.be/K8ZTlMaDfmQ?si=IuNRaHVc-fFHZw41
+Creator/channel: Tonbi AI
+Transcript supplied by Jamie in chat on 2026-06-19.
+
+## Video description
+
+When you start vibe-coding apps, the tools push you toward Vercel, Supabase, and Railway — but I run everything on one small VPS with a Hermes agent instead, and I'll show you exactly how. Using my live site Agent Wikis (agentwikis.com — free knowledge bases for agents) as the example, I break down why git is the only "database" a docs/wiki/blog-class site needs, how the agent lives on the box and serves the site through Caddy, and the autonomous Cron pipeline that keeps every wiki fresh behind a single Telegram approval. Then I demo the new "demand loop": agents search the wikis via an MCP server, repeated misses (privacy-preserving, no prompts or IPs stored) become an authoring backlog, and the agent researches and fills those gaps automatically — live on the site in minutes. This is Part 1 (the site that needs no database); Part 2 deploys a game app that does need one, on the same box.
+
+## Chaptered transcript notes
+
+### 1. Replacing Vercel/Supabase/Railway with a VPS + agent
+
+The setup replaces common beginner deployment platforms — Vercel, Supabase, Railway — with a small VPS and one Hermes agent that maintains web apps, content, and business workflows. The video uses Agent Wikis as the live example and promises a later database-backed game app example.
+
+### 2. The usual stack and what it really gives you
+
+Vercel, Railway, and Supabase provide deployment, managed Postgres, backups, auth, realtime, row-level security, storage, and beginner convenience. The core claim is not that they are bad, but that their main value is de-risking and convenience. A VPS can replace the core functions for some project classes, but not all.
+
+### 3. Agent Wikis: when git is your database
+
+Agent Wikis has no application database. It is a folder of Markdown files, one git clone per wiki, rendered from disk. The server renders Markdown on each request and keeps a search index in memory, rebuilding only when files change. For docs, blogs, wikis, marketing pages, and similar content sites, git can act as database, CMS, and deploy pipeline. A git push plus server pull makes content live without app restart or build.
+
+### 4. The VPS setup
+
+The site runs as a tenant on a small VPS that already hosts the Hermes agent. Caddy terminates TLS and adds a virtual host that reverse-proxies the public domain to localhost; Caddy auto-provisions certificates. The operator can SSH into the VPS and run Hermes directly against files on the box. The agent does not receive unrestricted access; the security model should scope it to the site/workspace areas it needs.
+
+### 5. The content pipeline
+
+A cron job fires scout/research agents to check sources such as releases, changelogs, major features, and community notes for each wiki. They deduplicate, research what is genuinely new, and create a plan. A Telegram human gate approves the plan. After approval, the system ingests sources, lints, commits to git, and the site becomes live within roughly 15 minutes. Weekly cadence controls token cost.
+
+### 6. The demand loop
+
+Agent Wikis learns from what agents ask for without storing prompts or identities. Agents query through an MCP server. The server receives a distilled query, records only aggregate hit/miss information, and does not store prompts, IPs, or identity. Repeated misses become an authoring backlog. Research agents turn those misses into candidate updates, propose page-vs-extension decisions, and wait for a human approval gate.
+
+### 7. Live demo: filling demand gaps autonomously
+
+The demo parses five live demand gaps, each asked at least twice in seven days. It creates item files and child cards, routes them through research and verification, and blocks at the human proposal gate. One example adds a webhook route rate limit answer to the messaging gateway page: each webhook route defaults to 30 requests per minute using a fixed window. Lint checks verify formatting and conflicts before commit.
+
+### 8. Two human gates + merging live
+
+The workflow has two gates: proposal approval before writing, then final diff review and merge to main. The author may eventually automate the merge gate after confidence grows, but currently keeps human review before live merge. Once merged, the live site updates automatically.
+
+### 9. When a single box is not enough
+
+The VPS pattern is not universal. Use managed services when the project needs real auth/password resets, cannot-lose or regulated data, managed Postgres, global/viral traffic, email deliverability, team preview deploys, or sensitive credential handling. The video frames the VPS pattern as appropriate for solo/operator-controlled apps and content/wiki-class sites first.
+
+
 <!-- ===== local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md ===== -->
 
 ---
@@ -223,12 +281,152 @@ No MCP server, vector DB, crawler, hosted search, or runtime RAG is approved by 
 Compiled from `Knowledge/concepts/rag-over-agent-wikis.md` and `Knowledge/concepts/local-retrieval-agent-infrastructure.md`.
 
 
+<!-- ===== local-ai-infrastructure/wiki/concepts/vps-agent-web-app-pattern.md ===== -->
+
+---
+title: VPS Agent Web App Pattern
+created: 2026-06-19
+updated: 2026-06-19
+type: concept
+status: compiled
+namespace: local-ai-infrastructure
+tags: [local-ai-infrastructure, vps, hermes-agent, agent-workflows, gitops, web-apps]
+sources:
+  - raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md
+  - https://youtu.be/K8ZTlMaDfmQ?si=IuNRaHVc-fFHZw41
+confidence: medium
+---
+
+# VPS Agent Web App Pattern
+
+The **VPS Agent Web App Pattern** uses a small always-on VPS plus a resident agent to replace parts of the beginner Vercel/Supabase/Railway stack for simple, operator-controlled web apps. It works best when the app is mostly files, Markdown, static-ish content, or a small service where the agent can safely own the deploy loop.
+
+This is not “VPS beats managed platforms.” The useful distinction is: managed platforms buy convenience and de-risking; a VPS buys control, low recurring cost, direct file access, and an agent that can operate the system where it runs.
+
+## Core shape
+
+```text
+git-backed content/app repo
+        ↓
+VPS workspace with one app clone + one clone per knowledge base
+        ↓
+local web server / app process
+        ↓
+Caddy vhost + automatic TLS
+        ↓
+resident Hermes agent reachable by SSH or gateway
+        ↓
+cron/scout/research/update loops with human gates
+```
+
+For docs, blogs, wikis, and marketing pages, git can be the database, CMS, and deploy pipeline. The server can render Markdown from disk, keep a search index in memory, and rebuild only when files change. In that class of system, a database would answer a question the app does not actually ask.
+
+## What the agent replaces
+
+The resident agent can cover a subset of what Vercel/Supabase/Railway usually provide:
+
+| Managed stack job | VPS-agent equivalent | Boundary |
+|---|---|---|
+| Frontend deploy | git push/pull, Caddy vhost, local app process | Good for small sites; weak for preview deploy/team workflows. |
+| CMS updates | Markdown files in git | Good for docs/wiki/blog content; weak for multi-user editing. |
+| Background jobs | Hermes cron / shell cron / systemd timers | Needs explicit logging and recovery. |
+| Content freshness | scout agents + source checks + lint + commit | Needs human gates until trust is earned. |
+| Admin console | SSH + Hermes CLI/gateway | Powerful but must be scoped. |
+| Search/retrieval feedback | aggregate MCP hit/miss demand loop | Must avoid prompt/IP/user logging. |
+
+## Agent Wikis example
+
+The transcript's example is Agent Wikis: a public wiki-of-wikis where each wiki is a folder of Markdown files. The site renders from disk, uses git as the deploy mechanism, and avoids an application database.
+
+That maps closely to Pixi Wiki's source/output model:
+
+- `pixi-vault` holds source truth and compiled namespace source.
+- `pixi-wiki` publishes raw Markdown, rendered HTML, `llms.txt`, `llms-full.txt`, `index.json`, and MCP-facing corpus files.
+- [[rag-over-agent-wikis|RAG over Agent Wikis]] uses the compiled wiki as retrieval corpus before adding heavier vector infrastructure.
+- [[../../../pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model|Pixi Vault to Pixi Wiki Publishing Model]] defines the publish boundary.
+
+## Content freshness loop
+
+The durable workflow pattern is:
+
+```text
+cron fires
+  → scout checks sources
+  → deduplicate and score newness
+  → research what matters
+  → propose page changes
+  → human gate approves plan
+  → ingest/update Markdown
+  → lint and verify
+  → commit to git
+  → merge/pull makes site live
+```
+
+The human gate is important. It keeps the agent from turning noisy sources into public content just because it can write. A second merge/diff gate is useful until the operator trusts the loop.
+
+## Demand loop
+
+The demand loop is the stronger product idea:
+
+```text
+agent asks wiki via MCP
+  → server records aggregate hit/miss for distilled query
+  → repeated misses become backlog candidates
+  → scout/research agents propose additions
+  → human approves
+  → wiki fills real usage gaps
+```
+
+The privacy contract matters more than the automation: record aggregate misses, not prompts, IP addresses, or identities. The loop should learn what the knowledge base lacks without becoming surveillance infrastructure.
+
+## When to use this pattern
+
+Use it when:
+
+- the app is a docs/wiki/blog/marketing/content site;
+- git can be the source of truth;
+- one operator can tolerate SSH/Git-based operations;
+- the resident agent can be scoped to the app workspace;
+- freshness comes from source monitoring and editorial review;
+- downtime or rollback risk is acceptable for a small VPS.
+
+Avoid it, or add managed services, when:
+
+- the app needs real auth, password resets, or user account recovery;
+- it stores cannot-lose or regulated data;
+- it needs managed Postgres, backups, row-level security, or object storage guarantees;
+- it may face global/viral traffic;
+- it needs high email deliverability;
+- a team needs preview deploys and parallel environments;
+- secrets or credentials require stronger isolation than a general-purpose agent workspace.
+
+## Pixi Wiki routing
+
+Primary namespace: `local-ai-infrastructure`, because the reusable pattern is about local/VPS deployment topology, file-backed web apps, Caddy/git operations, and deciding when a single box can replace managed infrastructure.
+
+Crosslinks:
+
+- [[../../../agent-workflows/wiki/syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — route governance, human gates, verification, and durable state.
+- [[../../../hermes-agent/wiki/concepts/source-priority|Hermes Source Priority]] — use official Hermes docs/local source for commands and runtime behavior; this transcript is a pattern source, not command truth.
+- [[../../../pixi-vault/wiki/entities/pixi-wiki|Pixi Wiki]] — the public wiki surface where this pattern can inform source→generated publishing.
+
+## Open questions
+
+- Should Pixi Wiki eventually have its own demand-loop telemetry over MCP queries, and if so what aggregate-only privacy contract is acceptable?
+- Which parts of the publish workflow are safe to automate beyond the current regenerate/test/push/live-verify loop?
+- Should a future `agent-workflows` page split out the human-gated content freshness loop from this infrastructure page?
+
+## Source
+
+Compiled from Tonbi AI's video transcript, “The Autonomous Agentic Workflow that Runs My Web App w/ Hermes + a $6 VPS,” supplied by Jamie on 2026-06-19.
+
+
 <!-- ===== local-ai-infrastructure/wiki/index.md ===== -->
 
 ---
 title: Local AI Infrastructure — Master Index
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-19
 type: index
 status: active
 namespace: local-ai-infrastructure
@@ -242,6 +440,7 @@ namespace: local-ai-infrastructure
 
 - [[concepts/local-retrieval-agent-infrastructure|Local Retrieval-Augmented Agent Infrastructure]] — Local-first model/retrieval stack pattern for private corpora and agent memory.
 - [[concepts/rag-over-agent-wikis|RAG over Agent Wikis]] — Retrieval architecture over compiled wiki pages rather than raw source dumps.
+- [[concepts/vps-agent-web-app-pattern|VPS Agent Web App Pattern]] — Small-VPS + resident-agent pattern for git-backed web apps, Caddy/TLS hosting, human-gated content freshness loops, and when not to replace managed platforms.
 
 ## Entities
 
@@ -259,6 +458,8 @@ namespace: local-ai-infrastructure
 
 - `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
 - `Knowledge/concepts/rag-over-agent-wikis.md`
+- `raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md`
+- `https://youtu.be/K8ZTlMaDfmQ?si=IuNRaHVc-fFHZw41`
 
 
 <!-- ===== local-ai-infrastructure/wiki/log.md ===== -->
@@ -266,7 +467,7 @@ namespace: local-ai-infrastructure
 ---
 title: Local AI Infrastructure — Activity Log
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-19
 type: log
 status: scaffold
 namespace: local-ai-infrastructure
@@ -304,4 +505,11 @@ namespace: local-ai-infrastructure
 
 - Refreshed `wiki/concepts/local-retrieval-agent-infrastructure.md` from the verified local Hermes KB closure synthesis.
 - Preserved the explicit no-install/no-MCP/no-RAG-build/no-provider/no-deploy authorization boundary.
+
+## 2026-06-19 ingest | Tonbi VPS agent web app workflow
+
+- Added `raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md` from Jamie-supplied transcript of Tonbi AI video.
+- Added `wiki/concepts/vps-agent-web-app-pattern.md` as a local-infrastructure concept for small-VPS + resident-agent web app operation.
+- Updated `wiki/index.md` with the new concept and source handles.
+- Routed workflow/human-gate material by crosslink to `agent-workflows`; kept primary namespace as `local-ai-infrastructure` because the reusable decision is VPS/local deployment topology.
 

@@ -124,7 +124,9 @@
 
 - [Local AI Infrastructure Namespace Instructions](/raw/local-ai-infrastructure/CLAUDE.md) ([html](/wiki/local-ai-infrastructure/CLAUDE.md.html))
 - [Local AI Infrastructure](/raw/local-ai-infrastructure/README.md) ([html](/wiki/local-ai-infrastructure/README.md.html))
+- [Transcript — The Autonomous Agentic Workflow that Runs My Web App w/ Hermes + a $6 VPS](/raw/local-ai-infrastructure/raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md) ([html](/wiki/local-ai-infrastructure/raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md.html))
 - [Local Retrieval Agent Infrastructure](/raw/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md) ([html](/wiki/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md.html))
 - [RAG over Agent Wikis](/raw/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md) ([html](/wiki/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md.html))
+- [VPS Agent Web App Pattern](/raw/local-ai-infrastructure/wiki/concepts/vps-agent-web-app-pattern.md) ([html](/wiki/local-ai-infrastructure/wiki/concepts/vps-agent-web-app-pattern.md.html))
 - [Local AI Infrastructure — Master Index](/raw/local-ai-infrastructure/wiki/index.md) ([html](/wiki/local-ai-infrastructure/wiki/index.md.html))
 - [Local AI Infrastructure — Activity Log](/raw/local-ai-infrastructure/wiki/log.md) ([html](/wiki/local-ai-infrastructure/wiki/log.md.html))

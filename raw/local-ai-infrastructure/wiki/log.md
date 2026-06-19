@@ -1,7 +1,7 @@
 ---
 title: Local AI Infrastructure — Activity Log
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-19
 type: log
 status: scaffold
 namespace: local-ai-infrastructure
@@ -39,3 +39,10 @@ namespace: local-ai-infrastructure
 
 - Refreshed `wiki/concepts/local-retrieval-agent-infrastructure.md` from the verified local Hermes KB closure synthesis.
 - Preserved the explicit no-install/no-MCP/no-RAG-build/no-provider/no-deploy authorization boundary.
+
+## 2026-06-19 ingest | Tonbi VPS agent web app workflow
+
+- Added `raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md` from Jamie-supplied transcript of Tonbi AI video.
+- Added `wiki/concepts/vps-agent-web-app-pattern.md` as a local-infrastructure concept for small-VPS + resident-agent web app operation.
+- Updated `wiki/index.md` with the new concept and source handles.
+- Routed workflow/human-gate material by crosslink to `agent-workflows`; kept primary namespace as `local-ai-infrastructure` because the reusable decision is VPS/local deployment topology.
