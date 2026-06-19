@@ -22,7 +22,7 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/hermes-agent/README.md.html">Hermes Agent</a> / wiki/summaries/external-hermes-wikis-import-review.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+hermes-agent%2Fwiki%2Fsummaries%2Fexternal-hermes-wikis-import-review.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fhermes-agent%2Fwiki%2Fsummaries%2Fexternal-hermes-wikis-import-review.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>External Hermes Wikis Import Review</h1>
-<div class="page-meta"><div><span>type</span>: summary</div><div><span>confidence</span>: medium</div><div><span>updated</span>: 2026-06-18</div><div><span>status</span>: compiled</div><div><span>namespace</span>: hermes-agent</div><div><span>sources</span>: 5</div></div>
+<div class="page-meta"><div><span>type</span>: summary</div><div><span>confidence</span>: medium</div><div><span>updated</span>: 2026-06-19</div><div><span>status</span>: compiled</div><div><span>namespace</span>: hermes-agent</div><div><span>sources</span>: 5</div></div>
 <p>Reviewed <code>hermesguide.xyz</code> and AgentWikis Hermes for content worth importing into Jamie/Pixoid&#x27;s Hermes Agent namespace.</p>
 <h2>Verdict</h2>
 <p>Do **not** mirror either source. Keep this namespace slim and operational.</p>
@@ -125,6 +125,71 @@
 <li><code>eval-trace</code> owns observability/evaluation failure modes and evidence gates, not general Hermes setup.</li>
 <li><code>pixi-vault</code> owns the namespace-routing/import methodology and public wiki/compiler mechanics.</li>
 </ul>
+<p>---</p>
+<h2>2026-06-19 re-run after namespace population updates</h2>
+<h3>Live Pixi Wiki state that changes routing</h3>
+<p>The namespace set is now materially populated, so the external Hermes sources should be routed more narrowly than the first review:</p>
+<ul>
+<li><code>hermes-agent</code> already contains source-priority, session-trace, eval/trace setup, AgentWikis seed, and this import review. It remains the primary home for Hermes commands, config, providers, memory, profiles, gateway, cron, skills, and subagent mechanics.</li>
+<li><code>agent-workflows</code> is now a real workflow namespace with route-pattern, SOUL.md, memory-boundary, peer-profile, Ponytail, and crew operating model pages. It should receive crosslinks for governance decisions, not duplicate Hermes mechanics.</li>
+<li><code>local-ai-infrastructure</code> now has local retrieval and RAG-over-AgentWikis pages. It is the right primary home for local/offline model stack tradeoffs, with Hermes setup notes linked back to <code>hermes-agent</code>.</li>
+<li><code>eval-trace</code> now has context-overfitting, workflow-quality evaluation, and Eval Trace entity pages. It should crosslink auxiliary-model/evidence-gate footguns, not own general Hermes setup.</li>
+<li><code>pixi-vault</code> now has Pixi Wiki and compiler-model pages. It owns the reusable import methodology and source/output repo boundary, not Hermes operations.</li>
+<li>Newly populated <code>ai-native-product-surfaces</code>, <code>curated-tuning-datasets</code>, and <code>rl-sim-labs</code> do not materially change this import route. They are useful only if a specific Hermes tool becomes part of a product demo, dataset pipeline, or RL experiment workflow.</li>
+</ul>
+<h3>Source inspection notes</h3>
+<ul>
+<li>Hermes Guide <code>/wiki/</code> is still mostly landing/marketing HTML. Its reusable signal remains <code>/directory</code>, now observed as a 156+ tool directory across Dev Workflow, Integrations, Personal Assistant, Meta &amp; Ecosystem, Business Ops, Enterprise, Content Creation, Cost Optimization, Creative, Research, Messaging, Trading &amp; Markets, and Privacy/Self-Hosted.</li>
+<li>AgentWikis Hermes still exposes about 105 documents through <code>llms.txt</code> / raw markdown. It has useful topic maps for auxiliary models, deployment backends, cron troubleshooting, profiles, subagents, memory, local models, release notes, providers, platforms, and ecosystem pages.</li>
+<li>Any command/config/runtime claim from either external source still requires official Hermes docs or local installed source verification before use.</li>
+</ul>
+<h3>Candidate imports by priority</h3>
+<p>#### Import now</p>
+<p>No new full imports recommended from the re-run. The high-reuse material is already represented as source-priority, curated seed, eval/trace setup, and this routing review. Importing more now would mostly duplicate official docs or AgentWikis pages without a live operating need.</p>
+<p>#### Crosslink only</p>
+<ul>
+<li><code>Subagents &amp; Delegation</code> — crosslink from <code>agent-workflows</code> route-governance pages to the Hermes mechanics in <code>hermes-agent</code>; do not duplicate the API mechanics in workflow pages.</li>
+<li><code>Profiles &amp; Multi-Instance</code> — crosslink from <code>profile-memory-boundaries</code>, <code>peer-profiles-vs-child-processes</code>, and <code>hermes-soul-md-wiring</code> to a future Hermes mechanics page if Jamie asks for one.</li>
+<li><code>Local Models &amp; Airplane Mode</code> — crosslink from <code>local-ai-infrastructure</code>; import only if local/offline Hermes operation becomes an active slice.</li>
+<li><code>Auxiliary Models</code> — crosslink from <code>eval-trace</code> for evidence gates and context-overfit diagnostics; import only a Hermes concept if troubleshooting side-task routing.</li>
+<li><code>Hermes Guide Directory</code> and AgentWikis ecosystem pages — keep as a source pointer for future triage; do not create 156 entity pages.</li>
+</ul>
+<p>#### Import on demand</p>
+<ul>
+<li><code>Memory Providers Compared</code> — synthesize only when choosing or troubleshooting Honcho/Mem0/Holographic/Hindsight/etc.; primary <code>hermes-agent</code>, crosslink <code>agent-workflows</code> and <code>local-ai-infrastructure</code>.</li>
+<li><code>Deployment Backends Compared</code> — synthesize only when making a VPS/WSL/local/Docker/Modal/Daytona choice; primary <code>hermes-agent</code>, crosslink <code>local-ai-infrastructure</code> and <code>agent-workflows</code>.</li>
+<li><code>Hermes Cron Troubleshooting</code> — create only when a real cron job fails or crew cron behavior needs a durable checklist; primary <code>hermes-agent</code>, crosslink <code>agent-workflows</code>.</li>
+<li><code>Hermes Auxiliary Model Routing</code> — create only when side-task routing/compression/vision/web-extract behavior affects work quality; primary <code>hermes-agent</code>, crosslink <code>eval-trace</code>.</li>
+<li><code>Hermes Ecosystem Directory Triage</code> — create only when Jamie asks to evaluate external Hermes tools; primary <code>hermes-agent</code>, crosslink <code>pixi-vault</code> for import method and <code>agent-workflows</code> for route/governance patterns.</li>
+</ul>
+<p>#### Skip</p>
+<ul>
+<li>Wholesale AgentWikis mirror.</li>
+<li>Hermes Guide landing/marketing pages.</li>
+<li>Video transcripts unless a specific workflow becomes durable.</li>
+<li>Release/version pages unless debugging historical behavior.</li>
+<li>Provider/platform pages unless Jamie is configuring that provider/platform.</li>
+<li>Onchain/trading/game/novelty ecosystem tools unless a matching project is opened.</li>
+<li>Entity pages for every memory provider, backend, community project, or directory listing.</li>
+</ul>
+<h3>Updated routing table</h3>
+<p>| Candidate | Primary namespace | Crosslink namespaces | Page type | Action | Rationale |</p>
+<p>|---|---|---|---|---|---|</p>
+<p>| External Hermes import methodology | <code>pixi-vault</code> | <code>hermes-agent</code>, <code>agent-workflows</code> | synthesis / source pointer | Crosslink only | Reusable import/routing logic belongs to compiler/source methodology, while this page remains the Hermes-specific assessment. |</p>
+<p>| Hermes commands/config/providers/profiles/gateway/cron/skills | <code>hermes-agent</code> | <code>agent-workflows</code>, <code>eval-trace</code> | concept or synthesis | Import on demand | Durable only when verified against official docs/local source and tied to Jamie/Pixoid operations. |</p>
+<p>| Subagents &amp; delegation mechanics | <code>hermes-agent</code> | <code>agent-workflows</code> | concept / decision table | Crosslink now; import on demand | Hermes owns tool mechanics; Agent Workflows owns when to delegate/spawn/schedule. |</p>
+<p>| Profile/peer/worker boundaries | <code>hermes-agent</code> | <code>agent-workflows</code> | concept | Crosslink now; import on demand | Existing workflow pages already cover route boundaries; import mechanics only if configuring profiles. |</p>
+<p>| Memory providers comparison | <code>hermes-agent</code> | <code>agent-workflows</code>, <code>local-ai-infrastructure</code> | synthesis | Import on demand | High-reuse for provider choice, but stale/risky without official/local verification. |</p>
+<p>| Deployment backends comparison | <code>hermes-agent</code> | <code>local-ai-infrastructure</code>, <code>agent-workflows</code> | synthesis | Import on demand | Backend tradeoffs are reusable when choosing local/VPS/Docker/remote execution; no active decision in this review. |</p>
+<p>| Local Models / Airplane Mode | <code>local-ai-infrastructure</code> | <code>hermes-agent</code>, <code>agent-workflows</code> | concept / source pointer | Crosslink only now | Local/offline tradeoffs belong to local infrastructure; Hermes Agent should hold only verified setup mechanics. |</p>
+<p>| Auxiliary models / side-task routing | <code>hermes-agent</code> | <code>eval-trace</code>, <code>agent-workflows</code> | concept | Import on demand | Useful for evidence-gate and side-task failures, but should be verified against docs/source before trusted. |</p>
+<p>| Cron troubleshooting checklist | <code>hermes-agent</code> | <code>agent-workflows</code> | concept/checklist | Import on demand | Likely reusable for crew cron, but best created from a real failure or official-doc check. |</p>
+<p>| Hermes ecosystem directory triage | <code>hermes-agent</code> | <code>pixi-vault</code>, <code>agent-workflows</code>, <code>local-ai-infrastructure</code> | summary | Import on demand | Directory is broad and noisy; only a curated shortlist beats future web search. |</p>
+<p>| Product/demo uses of Hermes tools | <code>ai-native-product-surfaces</code> | <code>hermes-agent</code>, <code>agent-workflows</code> | source pointer | Defer | New namespace exists, but no candidate source is product-surface-specific yet. |</p>
+<p>| Dataset/fine-tuning uses of Hermes tools | <code>curated-tuning-datasets</code> | <code>local-ai-infrastructure</code>, <code>hermes-agent</code> | source pointer | Defer | No external Hermes content is dataset-corpus-specific except possible future source collection tooling. |</p>
+<p>| RL/simulation workflow uses of Hermes tools | <code>rl-sim-labs</code> | <code>eval-trace</code>, <code>local-ai-infrastructure</code>, <code>hermes-agent</code> | source pointer | Defer | No external Hermes content is RL-sim-specific unless a tool is adopted for Critical Ranger operations. |</p>
+<h3>Practical verdict</h3>
+<p>Keep the review as the durable artifact. Do not import new pages until Jamie asks for one of the on-demand operating questions. The populated namespaces make crosslinks more precise, but they do not justify a broader mirror.</p>
 <nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md.html"><span class="next-label">← Prev</span><span class="next-title">AgentWikis Hermes Curated Seed</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/hermes-agent/wiki/log.md.html"><span class="next-label">Next</span><span class="next-title">Hermes Agent — Activity Log →</span></a></nav>
 </article></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>

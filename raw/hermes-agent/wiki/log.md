@@ -1,7 +1,7 @@
 ---
 title: Hermes Agent — Activity Log
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-06-19
 type: log
 status: compiled
 namespace: hermes-agent
@@ -15,3 +15,8 @@ namespace: hermes-agent
 - Added source-priority policy: official docs and local installed source outrank AgentWikis; AgentWikis is a discovery map.
 - Added setup notes for native session traces, batch trajectories, Langfuse traces, and NeMo Relay ATOF/ATIF exports from official Hermes docs/local source.
 - Reviewed Hermes Guide and AgentWikis Hermes for import candidates; added `wiki/summaries/external-hermes-wikis-import-review.md` with a slim import queue and skip rules.
+
+## 2026-06-19
+
+- Re-ran the external Hermes wiki import assessment after namespace population updates.
+- Confirmed no wholesale import and no new immediate import pages; updated `wiki/summaries/external-hermes-wikis-import-review.md` with current namespace routing, crosslink-only/default defer decisions, and source-priority caveats.

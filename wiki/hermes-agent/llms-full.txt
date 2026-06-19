@@ -348,7 +348,7 @@ Do not mirror the whole AgentWikis Hermes corpus into Pixi Wiki. Import only pag
 ---
 title: Hermes Agent — Master Index
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-06-19
 type: index
 status: compiled
 namespace: hermes-agent
@@ -389,7 +389,7 @@ namespace: hermes-agent
 ---
 title: Hermes Agent — Activity Log
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-06-19
 type: log
 status: compiled
 namespace: hermes-agent
@@ -403,6 +403,11 @@ namespace: hermes-agent
 - Added source-priority policy: official docs and local installed source outrank AgentWikis; AgentWikis is a discovery map.
 - Added setup notes for native session traces, batch trajectories, Langfuse traces, and NeMo Relay ATOF/ATIF exports from official Hermes docs/local source.
 - Reviewed Hermes Guide and AgentWikis Hermes for import candidates; added `wiki/summaries/external-hermes-wikis-import-review.md` with a slim import queue and skip rules.
+
+## 2026-06-19
+
+- Re-ran the external Hermes wiki import assessment after namespace population updates.
+- Confirmed no wholesale import and no new immediate import pages; updated `wiki/summaries/external-hermes-wikis-import-review.md` with current namespace routing, crosslink-only/default defer decisions, and source-priority caveats.
 
 
 <!-- ===== hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md ===== -->
@@ -462,7 +467,7 @@ AgentWikis is a discovery layer. Official Hermes docs and live local source deci
 ---
 title: External Hermes Wikis Import Review
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-06-19
 type: summary
 status: compiled
 namespace: hermes-agent
@@ -601,4 +606,80 @@ Primary home stays `hermes-agent` for Hermes-specific operations and setup. Othe
 - `local-ai-infrastructure` owns offline/local model stacks, local retrieval, hardware constraints, and local-first deployment tradeoffs.
 - `eval-trace` owns observability/evaluation failure modes and evidence gates, not general Hermes setup.
 - `pixi-vault` owns the namespace-routing/import methodology and public wiki/compiler mechanics.
+
+
+---
+
+## 2026-06-19 re-run after namespace population updates
+
+### Live Pixi Wiki state that changes routing
+
+The namespace set is now materially populated, so the external Hermes sources should be routed more narrowly than the first review:
+
+- `hermes-agent` already contains source-priority, session-trace, eval/trace setup, AgentWikis seed, and this import review. It remains the primary home for Hermes commands, config, providers, memory, profiles, gateway, cron, skills, and subagent mechanics.
+- `agent-workflows` is now a real workflow namespace with route-pattern, SOUL.md, memory-boundary, peer-profile, Ponytail, and crew operating model pages. It should receive crosslinks for governance decisions, not duplicate Hermes mechanics.
+- `local-ai-infrastructure` now has local retrieval and RAG-over-AgentWikis pages. It is the right primary home for local/offline model stack tradeoffs, with Hermes setup notes linked back to `hermes-agent`.
+- `eval-trace` now has context-overfitting, workflow-quality evaluation, and Eval Trace entity pages. It should crosslink auxiliary-model/evidence-gate footguns, not own general Hermes setup.
+- `pixi-vault` now has Pixi Wiki and compiler-model pages. It owns the reusable import methodology and source/output repo boundary, not Hermes operations.
+- Newly populated `ai-native-product-surfaces`, `curated-tuning-datasets`, and `rl-sim-labs` do not materially change this import route. They are useful only if a specific Hermes tool becomes part of a product demo, dataset pipeline, or RL experiment workflow.
+
+### Source inspection notes
+
+- Hermes Guide `/wiki/` is still mostly landing/marketing HTML. Its reusable signal remains `/directory`, now observed as a 156+ tool directory across Dev Workflow, Integrations, Personal Assistant, Meta & Ecosystem, Business Ops, Enterprise, Content Creation, Cost Optimization, Creative, Research, Messaging, Trading & Markets, and Privacy/Self-Hosted.
+- AgentWikis Hermes still exposes about 105 documents through `llms.txt` / raw markdown. It has useful topic maps for auxiliary models, deployment backends, cron troubleshooting, profiles, subagents, memory, local models, release notes, providers, platforms, and ecosystem pages.
+- Any command/config/runtime claim from either external source still requires official Hermes docs or local installed source verification before use.
+
+### Candidate imports by priority
+
+#### Import now
+
+No new full imports recommended from the re-run. The high-reuse material is already represented as source-priority, curated seed, eval/trace setup, and this routing review. Importing more now would mostly duplicate official docs or AgentWikis pages without a live operating need.
+
+#### Crosslink only
+
+- `Subagents & Delegation` — crosslink from `agent-workflows` route-governance pages to the Hermes mechanics in `hermes-agent`; do not duplicate the API mechanics in workflow pages.
+- `Profiles & Multi-Instance` — crosslink from `profile-memory-boundaries`, `peer-profiles-vs-child-processes`, and `hermes-soul-md-wiring` to a future Hermes mechanics page if Jamie asks for one.
+- `Local Models & Airplane Mode` — crosslink from `local-ai-infrastructure`; import only if local/offline Hermes operation becomes an active slice.
+- `Auxiliary Models` — crosslink from `eval-trace` for evidence gates and context-overfit diagnostics; import only a Hermes concept if troubleshooting side-task routing.
+- `Hermes Guide Directory` and AgentWikis ecosystem pages — keep as a source pointer for future triage; do not create 156 entity pages.
+
+#### Import on demand
+
+- `Memory Providers Compared` — synthesize only when choosing or troubleshooting Honcho/Mem0/Holographic/Hindsight/etc.; primary `hermes-agent`, crosslink `agent-workflows` and `local-ai-infrastructure`.
+- `Deployment Backends Compared` — synthesize only when making a VPS/WSL/local/Docker/Modal/Daytona choice; primary `hermes-agent`, crosslink `local-ai-infrastructure` and `agent-workflows`.
+- `Hermes Cron Troubleshooting` — create only when a real cron job fails or crew cron behavior needs a durable checklist; primary `hermes-agent`, crosslink `agent-workflows`.
+- `Hermes Auxiliary Model Routing` — create only when side-task routing/compression/vision/web-extract behavior affects work quality; primary `hermes-agent`, crosslink `eval-trace`.
+- `Hermes Ecosystem Directory Triage` — create only when Jamie asks to evaluate external Hermes tools; primary `hermes-agent`, crosslink `pixi-vault` for import method and `agent-workflows` for route/governance patterns.
+
+#### Skip
+
+- Wholesale AgentWikis mirror.
+- Hermes Guide landing/marketing pages.
+- Video transcripts unless a specific workflow becomes durable.
+- Release/version pages unless debugging historical behavior.
+- Provider/platform pages unless Jamie is configuring that provider/platform.
+- Onchain/trading/game/novelty ecosystem tools unless a matching project is opened.
+- Entity pages for every memory provider, backend, community project, or directory listing.
+
+### Updated routing table
+
+| Candidate | Primary namespace | Crosslink namespaces | Page type | Action | Rationale |
+|---|---|---|---|---|---|
+| External Hermes import methodology | `pixi-vault` | `hermes-agent`, `agent-workflows` | synthesis / source pointer | Crosslink only | Reusable import/routing logic belongs to compiler/source methodology, while this page remains the Hermes-specific assessment. |
+| Hermes commands/config/providers/profiles/gateway/cron/skills | `hermes-agent` | `agent-workflows`, `eval-trace` | concept or synthesis | Import on demand | Durable only when verified against official docs/local source and tied to Jamie/Pixoid operations. |
+| Subagents & delegation mechanics | `hermes-agent` | `agent-workflows` | concept / decision table | Crosslink now; import on demand | Hermes owns tool mechanics; Agent Workflows owns when to delegate/spawn/schedule. |
+| Profile/peer/worker boundaries | `hermes-agent` | `agent-workflows` | concept | Crosslink now; import on demand | Existing workflow pages already cover route boundaries; import mechanics only if configuring profiles. |
+| Memory providers comparison | `hermes-agent` | `agent-workflows`, `local-ai-infrastructure` | synthesis | Import on demand | High-reuse for provider choice, but stale/risky without official/local verification. |
+| Deployment backends comparison | `hermes-agent` | `local-ai-infrastructure`, `agent-workflows` | synthesis | Import on demand | Backend tradeoffs are reusable when choosing local/VPS/Docker/remote execution; no active decision in this review. |
+| Local Models / Airplane Mode | `local-ai-infrastructure` | `hermes-agent`, `agent-workflows` | concept / source pointer | Crosslink only now | Local/offline tradeoffs belong to local infrastructure; Hermes Agent should hold only verified setup mechanics. |
+| Auxiliary models / side-task routing | `hermes-agent` | `eval-trace`, `agent-workflows` | concept | Import on demand | Useful for evidence-gate and side-task failures, but should be verified against docs/source before trusted. |
+| Cron troubleshooting checklist | `hermes-agent` | `agent-workflows` | concept/checklist | Import on demand | Likely reusable for crew cron, but best created from a real failure or official-doc check. |
+| Hermes ecosystem directory triage | `hermes-agent` | `pixi-vault`, `agent-workflows`, `local-ai-infrastructure` | summary | Import on demand | Directory is broad and noisy; only a curated shortlist beats future web search. |
+| Product/demo uses of Hermes tools | `ai-native-product-surfaces` | `hermes-agent`, `agent-workflows` | source pointer | Defer | New namespace exists, but no candidate source is product-surface-specific yet. |
+| Dataset/fine-tuning uses of Hermes tools | `curated-tuning-datasets` | `local-ai-infrastructure`, `hermes-agent` | source pointer | Defer | No external Hermes content is dataset-corpus-specific except possible future source collection tooling. |
+| RL/simulation workflow uses of Hermes tools | `rl-sim-labs` | `eval-trace`, `local-ai-infrastructure`, `hermes-agent` | source pointer | Defer | No external Hermes content is RL-sim-specific unless a tool is adopted for Critical Ranger operations. |
+
+### Practical verdict
+
+Keep the review as the durable artifact. Do not import new pages until Jamie asks for one of the on-demand operating questions. The populated namespaces make crosslinks more precise, but they do not justify a broader mirror.
 
