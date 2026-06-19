@@ -43,3 +43,11 @@ namespace: pixi-vault
 - Reframed Pixi Wiki as a publishing surface for curated KBs: human web wiki plus agent-readable raw Markdown, `llms.txt`, `index.json`, and local read-only MCP.
 - Recorded the shipped local MCP server and docs as repo/public-artifact features, while preserving the boundary that the MCP server is not hosted by GitHub Pages.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Ship agent-first homepage and reusable approach guide
+
+- Recorded the live homepage IA: `WIKIS`, `AGENT SETUP`, `GITHUB`, dark toggle, and `curl https://pixiiidust.github.io/pixi-wiki/llms.txt` as the explicit agent-start command.
+- Moved `index.json` out of the primary hero/nav and kept it as a footer/docs machine-contract link.
+- Added the replication guide handle so other users can copy the Markdown KB → human wiki → agent entrypoints → local MCP pattern.
+- Recorded the corrected dark palette contract: near-black background, muted teal links, `#8b4356` reddish-purple active accent, and pale gold highlights.
+- No Daily Notes were copied or compiled.

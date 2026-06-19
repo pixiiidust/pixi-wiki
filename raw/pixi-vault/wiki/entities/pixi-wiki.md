@@ -26,7 +26,8 @@ Pixi Wiki turns each compiled knowledge base into:
 - `llms.txt` files for compact agent routing and onboarding;
 - `llms-full.txt` files for full-corpus agent context;
 - `index.json` registries for tools, tests, and retrieval pipelines;
-- a local read-only MCP server so agents can list, search, and read the same KB Markdown files.
+- a local read-only MCP server so agents can list, search, and read the same KB Markdown files;
+- an Agent Setup page and replication guide that explain how agents and other users connect to or copy the pattern.
 
 ## Why it exists
 
@@ -55,6 +56,9 @@ As of 2026-06-18, the public mirror has:
 - collapsible namespace sidebars with page lists;
 - rendered Markdown pages with metadata, raw Markdown links, report-a-mistake links, and previous/next navigation;
 - a repository README and GitHub About description that frame Pixi Wiki as a publishing surface for human and agent KB access;
+- a simplified homepage IA: `WIKIS`, `AGENT SETUP`, `GITHUB`, dark toggle, and an “Agents start here” command using `curl https://pixiiidust.github.io/pixi-wiki/llms.txt`;
+- a reusable approach guide at `docs/REPLICATE_APPROACH.html` for adapting the pattern to other Markdown KBs;
+- a reading-focused dark palette based on near-black, muted teal, `#8b4356` reddish-purple, and pale gold;
 - MCP setup docs at `docs/MCP_SERVER.md`;
 - a local read-only MCP server with `list_kbs`, `list_documents`, `read_document`, `search_kb`, `search_all_kbs`, and `get_kb_summary`.
 
@@ -65,4 +69,6 @@ As of 2026-06-18, the public mirror has:
 - Agent registry: https://pixiiidust.github.io/pixi-wiki/llms.txt
 - Full corpus: https://pixiiidust.github.io/pixi-wiki/llms-full.txt
 - Machine registry: https://pixiiidust.github.io/pixi-wiki/index.json
+- Agent setup: https://pixiiidust.github.io/pixi-wiki/docs/AGENT_SETUP.html
+- Replication guide: https://pixiiidust.github.io/pixi-wiki/docs/REPLICATE_APPROACH.html
 - MCP guide: https://pixiiidust.github.io/pixi-wiki/docs/MCP_SERVER.md

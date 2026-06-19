@@ -17,7 +17,7 @@ namespace: pixi-vault
 
 ## Entities
 
-- [[entities/pixi-wiki|Pixi Wiki]] — Publishing surface for maintained knowledge bases: human wiki plus agent-readable raw Markdown, `llms.txt`, `llms-full.txt`, `index.json`, and local read-only MCP.
+- [[entities/pixi-wiki|Pixi Wiki]] — Publishing surface for maintained knowledge bases: human wiki plus agent-readable raw Markdown, `llms.txt`, `llms-full.txt`, `index.json`, local read-only MCP, Agent Setup, and reusable approach guide.
 
 ## Summaries
 

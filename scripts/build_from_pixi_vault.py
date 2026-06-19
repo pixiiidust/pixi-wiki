@@ -24,6 +24,7 @@ DEFAULT_SEED_SLUGS = [
     "pixi-vault",
     "agent-workflows",
     "eval-trace",
+    "hermes-agent",
     "ai-native-product-surfaces",
     "rl-sim-labs",
     "curated-tuning-datasets",

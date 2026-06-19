@@ -1,79 +1,103 @@
 <!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pixi Wiki — Pixi Vault — Pixi Wiki</title>
+<title>Hermes Evals and Traces Setup — Hermes Agent — Pixi Wiki</title>
 <style>
 :root{color-scheme:light;--bg:#f7f3ea;--panel:#fffaf1;--panel2:#f0e8d8;--border:#d9cdb8;--soft:#eadfcb;--text:#22202a;--muted:#6f6a77;--heading:#111018;--accent:#9b5c00;--accent2:#6f4200;--green:#087a4a;--header:#fffdf8;--active-bg:#fff1d1}
 [data-theme=dark]{color-scheme:dark;--bg:#07090d;--panel:#101820;--panel2:#0b1118;--border:#263849;--soft:#172231;--text:#d8dee8;--muted:#95a6b4;--heading:#f6f0df;--accent:#8fb7c8;--accent2:#fbdc92;--green:#fbdc92;--header:#07090d;--active-bg:#8b4356}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"IBM Plex Mono","JetBrains Mono","Roboto Mono",ui-monospace,monospace;font-size:14px;line-height:1.7}a{color:var(--accent);text-decoration:none;border-bottom:1px dotted currentColor}a:hover{color:var(--accent2)}code{background:var(--panel2);border:1px solid var(--border);color:var(--accent2);padding:1px 5px;border-radius:4px}pre{background:var(--panel2);border:1px solid var(--border);padding:14px;overflow:auto}.site-header{height:66px;border-bottom:1px solid var(--border);background:var(--header)}.header-inner{max-width:1180px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 20px}.logo{color:var(--heading);font-weight:800;letter-spacing:.04em;border:0}.nav{display:flex;align-items:center;gap:24px}.nav a{color:var(--muted);border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.nav a:hover{color:var(--heading)}.theme-toggle{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 10px;border-radius:999px;font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}.category-bar{border-bottom:1px solid var(--border);background:var(--panel)}.category-inner{max-width:1180px;margin:0 auto;display:flex;gap:22px;min-height:46px;align-items:center;padding:0 20px;flex-wrap:wrap}.category-inner a{color:var(--muted);border:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.category-inner a:first-child{color:var(--muted)}.page{max-width:1180px;margin:40px auto 90px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:0 20px}.sidebar{color:var(--muted)}.sidebar-block{border-left:1px solid var(--border);padding-left:12px;margin-bottom:24px}.sidebar-title{color:var(--heading);font-weight:800;margin-bottom:4px}.sidebar-count{color:var(--muted);font-size:11px;margin-bottom:16px}.sidebar a{display:block;padding:6px 10px;color:var(--muted);border:0;font-size:13px}.sidebar a.active{background:var(--active-bg);color:var(--accent2);border-left:2px solid var(--accent);margin-left:-13px;padding-left:11px;font-weight:800}.sidebar-section-title{margin:12px 0 6px;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.sidebar-section{margin:10px 0}.sidebar-section summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:6px 10px;border-radius:8px}.sidebar-section summary::-webkit-details-marker{display:none}.sidebar-section summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent);transition:transform .12s ease}.sidebar-section[open] summary::before{transform:rotate(90deg)}.sidebar-section summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-section-body{margin:2px 0 6px 12px;border-left:1px solid var(--border);padding-left:4px}.sidebar-empty{padding:6px 10px;color:var(--muted);font-size:12px;font-style:italic}.article{min-width:0}.content-header{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:18px;color:var(--muted);font-size:13px}.breadcrumbs a,.markdown-link{color:var(--accent)}h1{margin:0 0 10px;color:var(--heading);font-size:36px;line-height:1.1;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}h2{margin:48px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--heading);font-size:22px;line-height:1.2;font-weight:900;text-transform:uppercase}h2::before{content:"// ";color:var(--accent2)}h3{margin:26px 0 8px;color:var(--heading);text-transform:uppercase;font-size:15px;letter-spacing:.08em}.updated{color:var(--muted);font-size:13px;margin-bottom:18px}.info-card{border:1px solid var(--border);background:var(--panel);padding:20px 22px;margin:24px 0}.info-row{display:grid;grid-template-columns:136px 1fr;gap:18px;margin-bottom:12px}.info-row:last-child{margin-bottom:0}.info-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}.green{color:var(--green)}.yellow{color:var(--accent2)}.white{color:var(--heading)}.agent-card{margin:24px 0 22px;padding:14px 18px;background:var(--active-bg);border:1px solid var(--border);border-left:2px solid var(--accent);color:var(--text)}.agent-card a{font-weight:800;margin-right:12px}.hero-copy{max-width:860px;color:var(--text);font-size:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 18px}.button-link{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:999px;padding:9px 14px;background:var(--panel);color:var(--heading);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.button-link.primary{background:var(--active-bg);border-color:var(--accent);color:var(--accent2)}.button-link:hover{border-color:var(--accent);color:var(--accent2)}.agent-setup-callout{max-width:860px;margin:18px 0 34px;padding:16px 18px;background:var(--panel);border:1px solid var(--border);border-left:2px solid var(--accent)}.agent-setup-callout h2{font-size:16px;margin:0 0 6px;padding:0;border:0}.agent-setup-callout h2::before{content:""}.agent-setup-callout p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:26px}.card{border:1px solid var(--border);border-radius:14px;padding:18px;background:var(--panel)}.card h2{border:0;margin:0 0 8px;padding:0;font-size:18px}.card h2::before{content:""}.meta{color:var(--muted);font-size:.9rem}.page-meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 22px;color:var(--muted);font-size:13px}.page-meta span{color:var(--heading);font-weight:800}.page-tools{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.prev-next{margin-top:54px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.prev-next-card{border:1px solid var(--border);border-bottom:1px dotted var(--accent);background:var(--panel);padding:18px 20px;text-decoration:none;display:block}.prev-card{text-align:left}.next-card{text-align:right}.next-label{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}.next-title{color:var(--heading);font-weight:800}.footer{border-top:1px solid var(--border);background:var(--header);color:var(--muted)}.footer-inner{max-width:1180px;margin:0 auto;padding:28px 20px;display:flex;justify-content:space-between;gap:20px}.footer a{margin-left:12px}@media(max-width:820px){.page{grid-template-columns:1fr}.nav{display:none}.info-row{grid-template-columns:1fr}.footer-inner{display:block}}
 </style><script>(function(){const key='pixi-wiki-theme';const root=document.documentElement;const saved=localStorage.getItem(key)||'light';root.dataset.theme=saved;function label(){const b=document.querySelector('[data-theme-toggle]');if(b)b.textContent=root.dataset.theme==='dark'?'☀':'☾';}document.addEventListener('DOMContentLoaded',function(){label();const b=document.querySelector('[data-theme-toggle]');if(b)b.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem(key,root.dataset.theme);label();});});})();</script></head><body>
 <header class="site-header"><div class="header-inner"><a class="logo" href="/pixi-wiki/">Pixi Wiki</a><nav class="nav"><a href="/pixi-wiki/#wikis">Wikis</a><a href="/pixi-wiki/docs/AGENT_SETUP.html">Agent Setup</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a><button class="theme-toggle" data-theme-toggle type="button">☾</button></nav></div></header>
-<main class="page"><aside class="sidebar"><div class="sidebar-block"><div class="sidebar-title">Pixi Vault</div><div class="sidebar-count">7 documents</div>
-<a href="/pixi-wiki/wiki/pixi-vault/README.md.html">📄 Pixi Vault Knowledge Base</a>
-<a href="/pixi-wiki/wiki/pixi-vault/wiki/index.md.html">📄 Pixi Vault KB — Master Index</a>
-<details class="sidebar-section"><summary>WIKI 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/pixi-vault/wiki/log.md.html">📄 Pixi Vault — Activity Log</a></div></details>
-<details class="sidebar-section"><summary>CONCEPTS 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md.html">📄 Wiki Compiler Map and Source Classes</a></div></details>
-<details class="sidebar-section" open><summary>ENTITIES 1</summary><div class="sidebar-section-body"><a class="active" href="/pixi-wiki/wiki/pixi-vault/wiki/entities/pixi-wiki.md.html">📄 Pixi Wiki</a></div></details>
-<details class="sidebar-section"><summary>SUMMARIES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
-<details class="sidebar-section"><summary>SYNTHESES 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md.html">📄 Pixi Vault to Pixi Wiki Publishing Model</a></div></details>
+<main class="page"><aside class="sidebar"><div class="sidebar-block"><div class="sidebar-title">Hermes Agent</div><div class="sidebar-count">8 documents</div>
+<a href="/pixi-wiki/wiki/hermes-agent/README.md.html">📄 Hermes Agent Knowledge Base</a>
+<a href="/pixi-wiki/wiki/hermes-agent/wiki/index.md.html">📄 Hermes Agent KB — Master Index</a>
+<details class="sidebar-section"><summary>WIKI 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/hermes-agent/wiki/log.md.html">📄 Hermes Agent — Activity Log</a></div></details>
+<details class="sidebar-section" open><summary>CONCEPTS 3</summary><div class="sidebar-section-body"><a class="active" href="/pixi-wiki/wiki/hermes-agent/wiki/concepts/evals-and-traces-setup.md.html">📄 Hermes Evals and Traces Setup</a><a href="/pixi-wiki/wiki/hermes-agent/wiki/concepts/session-trace-store.md.html">📄 Hermes Session Trace Store</a><a href="/pixi-wiki/wiki/hermes-agent/wiki/concepts/source-priority.md.html">📄 Hermes Source Priority</a></div></details>
+<details class="sidebar-section"><summary>ENTITIES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
+<details class="sidebar-section"><summary>SUMMARIES 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md.html">📄 AgentWikis Hermes Curated Seed</a></div></details>
+<details class="sidebar-section"><summary>SYNTHESES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
 </div><div class="sidebar-block"><details class="sidebar-section" open><summary>// FOR AGENTS</summary><div class="sidebar-section-body">
-<a href="/pixi-wiki/wiki/pixi-vault/llms.txt">llms.txt</a>
-<a href="/pixi-wiki/wiki/pixi-vault/llms-full.txt">llms-full.txt</a>
-<a href="/pixi-wiki/wiki/pixi-vault/index.json">index.json</a>
+<a href="/pixi-wiki/wiki/hermes-agent/llms.txt">llms.txt</a>
+<a href="/pixi-wiki/wiki/hermes-agent/llms-full.txt">llms-full.txt</a>
+<a href="/pixi-wiki/wiki/hermes-agent/index.json">index.json</a>
 </div></details></div></aside><article class="article">
-<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/pixi-vault/README.md.html">Pixi Vault</a> / wiki/entities/pixi-wiki.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/pixi-vault/wiki/entities/pixi-wiki.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+pixi-vault%2Fwiki%2Fentities%2Fpixi-wiki.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fpixi-vault%2Fwiki%2Fentities%2Fpixi-wiki.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
-<h1>Pixi Wiki</h1>
-<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-18</div><div><span>status</span>: active</div><div><span>namespace</span>: pixi-vault</div><div><span>sources</span>: 3</div></div>
-<p><code>pixi-wiki</code> publishes Jamie&#x27;s notes, project docs, and research as maintained knowledge bases so humans can browse a clean wiki and agents can read, search, and cite the same Markdown corpus.</p>
-<h2>What it does</h2>
-<p>Pixi Wiki turns each compiled knowledge base into:</p>
-<ul>
-<li>rendered HTML pages for human browsing;</li>
-<li>raw Markdown pages for source-backed retrieval;</li>
-<li><code>llms.txt</code> files for compact agent routing and onboarding;</li>
-<li><code>llms-full.txt</code> files for full-corpus agent context;</li>
-<li><code>index.json</code> registries for tools, tests, and retrieval pipelines;</li>
-<li>a local read-only MCP server so agents can list, search, and read the same KB Markdown files;</li>
-<li>an Agent Setup page and replication guide that explain how agents and other users connect to or copy the pattern.</li>
-</ul>
-<h2>Why it exists</h2>
-<p>The project turns messy private knowledge work into a shareable publishing surface. Humans browse the web wiki; agents consume the raw Markdown, routing files, registry, and local MCP tools. The private vault remains the source of truth.</p>
-<h2>Potential uses</h2>
-<ul>
-<li>**RAG over compiled wiki pages:** use maintained pages as the retrieval corpus before adding vector/search infrastructure.</li>
-<li>**Hallucination reduction:** route agents to scoped, cited, freshness-aware pages instead of letting them answer from memory.</li>
-<li>**Agent onboarding:** give new sessions a compact <code>llms.txt</code> map before they read deeper pages.</li>
-<li>**Project memory:** preserve decisions, entities, concepts, syntheses, and publication boundaries across sessions.</li>
-<li>**Portfolio surface:** expose selected knowledge/project work as a coherent public system.</li>
-<li>**Eval target:** test whether agents retrieve from the right namespace and cite the right source.</li>
-</ul>
-<h2>Namespace classification</h2>
-<p>Pixi Wiki is primarily an **entity/project artifact** inside the <code>pixi-vault</code> namespace because it is the generated public output of the vault compiler system.</p>
-<p>Its retrieval use case cross-links to <code>local-ai-infrastructure</code>, especially RAG over Agent Wikis. Its workflow/use-contract side cross-links to Agent Workflows.</p>
-<h2>Current milestone</h2>
-<p>As of 2026-06-18, the public mirror has:</p>
-<ul>
-<li>compiled namespace pages for project/domain clusters;</li>
-<li>collapsible namespace sidebars with page lists;</li>
-<li>rendered Markdown pages with metadata, raw Markdown links, report-a-mistake links, and previous/next navigation;</li>
-<li>a repository README and GitHub About description that frame Pixi Wiki as a publishing surface for human and agent KB access;</li>
-<li>a simplified homepage IA: <code>WIKIS</code>, <code>AGENT SETUP</code>, <code>GITHUB</code>, dark toggle, and an “Agents start here” command using <code>curl https://pixiiidust.github.io/pixi-wiki/llms.txt</code>;</li>
-<li>a reusable approach guide at <code>docs/REPLICATE_APPROACH.html</code> for adapting the pattern to other Markdown KBs;</li>
-<li>a reading-focused dark palette based on near-black, muted teal, <code>#8b4356</code> reddish-purple, and pale gold;</li>
-<li>MCP setup docs at <code>docs/MCP_SERVER.md</code>;</li>
-<li>a local read-only MCP server with <code>list_kbs</code>, <code>list_documents</code>, <code>read_document</code>, <code>search_kb</code>, <code>search_all_kbs</code>, and <code>get_kb_summary</code>.</li>
-</ul>
-<h2>Public handles</h2>
-<ul>
-<li>Human site: https://pixiiidust.github.io/pixi-wiki/</li>
-<li>Repository: https://github.com/pixiiidust/pixi-wiki</li>
-<li>Agent registry: https://pixiiidust.github.io/pixi-wiki/llms.txt</li>
-<li>Full corpus: https://pixiiidust.github.io/pixi-wiki/llms-full.txt</li>
-<li>Machine registry: https://pixiiidust.github.io/pixi-wiki/index.json</li>
-<li>Agent setup: https://pixiiidust.github.io/pixi-wiki/docs/AGENT_SETUP.html</li>
-<li>Replication guide: https://pixiiidust.github.io/pixi-wiki/docs/REPLICATE_APPROACH.html</li>
-<li>MCP guide: https://pixiiidust.github.io/pixi-wiki/docs/MCP_SERVER.md</li>
-</ul>
-<nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/pixi-vault/wiki/concepts/wiki-compiler-map-and-source-classes.md.html"><span class="next-label">← Prev</span><span class="next-title">Wiki Compiler Map and Source Classes</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md.html"><span class="next-label">Next</span><span class="next-title">Pixi Vault to Pixi Wiki Publishing Model →</span></a></nav>
+<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/hermes-agent/README.md.html">Hermes Agent</a> / wiki/concepts/evals-and-traces-setup.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/hermes-agent/wiki/concepts/evals-and-traces-setup.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+hermes-agent%2Fwiki%2Fconcepts%2Fevals-and-traces-setup.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fhermes-agent%2Fwiki%2Fconcepts%2Fevals-and-traces-setup.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
+<h1>Hermes Evals and Traces Setup</h1>
+<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-18</div><div><span>status</span>: compiled</div><div><span>namespace</span>: hermes-agent</div><div><span>sources</span>: 4</div></div>
+<p>Hermes has native trace surfaces and trajectory capture, but it does not ship a full generic pass/fail eval dashboard. Use the right layer for the job.</p>
+<h2>Native trace layers</h2>
+<p>| Layer | Use | Setup |</p>
+<p>|---|---|---|</p>
+<p>| <code>state.db</code> sessions | Review real conversations, tool calls, usage, cost, and platform history. | Built in. Use <code>hermes sessions ...</code>. |</p>
+<p>| Session JSONL export | Build eval datasets or review failure traces outside Hermes. | <code>hermes sessions export ...</code>. |</p>
+<p>| <code>/insights</code> | Usage analytics: models, tools, skills, tokens, cost, platforms, top sessions. | Built in. Use <code>hermes insights --days N</code>. |</p>
+<p>| Trajectory saving | ShareGPT-compatible turn/tool traces from CLI sessions. | <code>agent.save_trajectories: true</code> or <code>--save-trajectories</code>. |</p>
+<p>| Batch runner | Run many prompts and collect structured trajectories/statistics. | <code>python batch_runner.py ...</code>. |</p>
+<p>| Langfuse plugin | External LLM observability dashboard for turns, LLM calls, and tool calls. | Enable <code>observability/langfuse</code> and set keys. |</p>
+<p>| NeMo Relay plugin | ATOF/ATIF exports for replay, evaluation, and harness analysis. | Enable <code>observability/nemo_relay</code> and set export env vars. |</p>
+<h2>Session export</h2>
+<pre><code>hermes sessions export sessions.jsonl
+hermes sessions export --source discord discord.jsonl
+hermes sessions export --session-id &lt;session_id&gt; one-session.jsonl</code></pre>
+<p>Use this for failure review, dataset building, replay-style analysis, and tool-use trace mining.</p>
+<h2>Insights</h2>
+<pre><code>hermes insights --days 30
+hermes insights --days 7 --source cli</code></pre>
+<p>Use this for operational analytics, not task correctness scoring.</p>
+<h2>Trajectory saving</h2>
+<p>Official developer docs describe ShareGPT-compatible JSONL trajectories written as:</p>
+<pre><code>trajectory_samples.jsonl      # completed=True
+failed_trajectories.jsonl     # failed or interrupted</code></pre>
+<p>Enable in config:</p>
+<pre><code>agent:
+  save_trajectories: true</code></pre>
+<p>or run with:</p>
+<pre><code>hermes chat --save-trajectories -q &quot;...&quot;</code></pre>
+<p>The batch runner always saves trajectories.</p>
+<h2>Batch eval runner</h2>
+<p>Official batch-processing docs describe <code>batch_runner.py</code> as the native path for running many prompts and producing trajectory data plus statistics.</p>
+<pre><code>python batch_runner.py   --dataset_file=data/eval_suite.jsonl   --batch_size=10   --run_name=eval_gpt55   --model=gpt-5.5   --num_workers=4   --max_turns=10</code></pre>
+<p>Outputs:</p>
+<pre><code>data/&lt;run_name&gt;/
+├── trajectories.jsonl
+├── batch_0.jsonl
+├── checkpoint.json
+└── statistics.json</code></pre>
+<p>Tracked fields include <code>completed</code>, <code>partial</code>, <code>api_calls</code>, <code>toolsets_used</code>, <code>tool_stats</code>, and <code>tool_error_counts</code>.</p>
+<h2>Langfuse setup</h2>
+<p>Official built-in plugin docs say the Langfuse plugin traces Hermes turns, LLM calls, and tool invocations.</p>
+<p>Interactive setup:</p>
+<pre><code>hermes tools          # choose Langfuse Observability</code></pre>
+<p>Manual setup:</p>
+<pre><code>pip install langfuse
+hermes plugins enable observability/langfuse</code></pre>
+<p>Add credentials to <code>~/.hermes/.env</code>:</p>
+<pre><code>HERMES_LANGFUSE_PUBLIC_KEY=pk-lf-...
+HERMES_LANGFUSE_SECRET_KEY=sk-lf-...
+HERMES_LANGFUSE_BASE_URL=https://cloud.langfuse.com</code></pre>
+<p>Verify:</p>
+<pre><code>hermes plugins list
+hermes chat -q &quot;hello&quot;</code></pre>
+<p>Then check Langfuse for a <code>Hermes turn</code> trace.</p>
+<h2>NeMo Relay ATOF/ATIF setup</h2>
+<p>The NeMo Relay plugin maps Hermes observer hooks to scopes, LLM spans, tool spans, marks, ATOF, and ATIF. It can export raw lifecycle events as ATOF JSONL and ATIF trajectory files for replay/eval harnesses.</p>
+<p>Enable plugin:</p>
+<pre><code>hermes plugins enable observability/nemo_relay</code></pre>
+<p>Install runtime if needed:</p>
+<pre><code>pip install &quot;nemo-relay==0.3&quot;</code></pre>
+<p>Local export settings:</p>
+<pre><code>export HERMES_NEMO_RELAY_ATOF_ENABLED=1
+export HERMES_NEMO_RELAY_ATOF_OUTPUT_DIRECTORY=.nemo-relay/atof
+export HERMES_NEMO_RELAY_ATIF_ENABLED=1
+export HERMES_NEMO_RELAY_ATIF_OUTPUT_DIRECTORY=.nemo-relay/atif</code></pre>
+<p>Optional controls include <code>HERMES_NEMO_RELAY_ATOF_FILENAME</code>, <code>HERMES_NEMO_RELAY_ATOF_MODE</code>, <code>HERMES_NEMO_RELAY_ATIF_FILENAME_TEMPLATE</code>, <code>HERMES_NEMO_RELAY_ATIF_AGENT_NAME</code>, <code>HERMES_NEMO_RELAY_ATIF_AGENT_VERSION</code>, <code>HERMES_NEMO_RELAY_ATIF_MODEL_NAME</code>, and <code>HERMES_NEMO_RELAY_ATIF_SUBAGENT_EXPORT_MODE</code>.</p>
+<h2>Decision rule</h2>
+<p>Use the lightest trace surface that answers the question:</p>
+<pre><code>Need to inspect one past run?       → sessions export / session_search
+Need usage trends?                  → insights
+Need many-prompt eval trajectories? → batch_runner.py
+Need external observability UI?     → Langfuse
+Need replay/harness trajectory form?→ NeMo Relay ATIF/ATOF</code></pre>
+<nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/hermes-agent/wiki/index.md.html"><span class="next-label">← Prev</span><span class="next-title">Hermes Agent — Master Index</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/hermes-agent/wiki/concepts/session-trace-store.md.html"><span class="next-label">Next</span><span class="next-title">Hermes Session Trace Store →</span></a></nav>
 </article></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
 </body></html>

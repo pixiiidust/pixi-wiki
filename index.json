@@ -303,6 +303,92 @@
       ]
     },
     {
+      "slug": "hermes-agent",
+      "title": "Hermes Agent",
+      "description": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, and Jamie-specific operating reference for Pixoid.",
+      "tags": [
+        "agent-infrastructure"
+      ],
+      "category": "agent-infrastructure",
+      "scope": {
+        "covers": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, and Jamie-specific operating reference for Pixoid.",
+        "notCovered": "General AI-agent theory, unrelated community projects, old video transcripts unless they explain a workflow Jamie uses, stale release history not needed for current operation, and web rumors not verified against official Hermes docs or local installed source.",
+        "currentAs": "2026-06-18 \u2014 seeded from AgentWikis Hermes as a curated map, then grounded against official Hermes docs and local installed Hermes v0.16.0 source on the VPS."
+      },
+      "lastUpdated": "2026-06-18",
+      "documentCount": 8,
+      "counts": {
+        "wiki": 1,
+        "concepts": 3,
+        "entities": 0,
+        "summaries": 1,
+        "syntheses": 0
+      },
+      "llms_txt": "/wiki/hermes-agent/llms.txt",
+      "llms_full_txt": "/wiki/hermes-agent/llms-full.txt",
+      "index_json": "/wiki/hermes-agent/index.json",
+      "raw_base": "/raw/hermes-agent/",
+      "html_base": "/wiki/hermes-agent/",
+      "documents": [
+        {
+          "title": "Hermes Agent Namespace Instructions",
+          "path": "CLAUDE.md",
+          "raw": "/raw/hermes-agent/CLAUDE.md",
+          "html": "/wiki/hermes-agent/CLAUDE.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Hermes Agent",
+          "path": "README.md",
+          "raw": "/raw/hermes-agent/README.md",
+          "html": "/wiki/hermes-agent/README.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Hermes Evals and Traces Setup",
+          "path": "wiki/concepts/evals-and-traces-setup.md",
+          "raw": "/raw/hermes-agent/wiki/concepts/evals-and-traces-setup.md",
+          "html": "/wiki/hermes-agent/wiki/concepts/evals-and-traces-setup.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Hermes Session Trace Store",
+          "path": "wiki/concepts/session-trace-store.md",
+          "raw": "/raw/hermes-agent/wiki/concepts/session-trace-store.md",
+          "html": "/wiki/hermes-agent/wiki/concepts/session-trace-store.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Hermes Source Priority",
+          "path": "wiki/concepts/source-priority.md",
+          "raw": "/raw/hermes-agent/wiki/concepts/source-priority.md",
+          "html": "/wiki/hermes-agent/wiki/concepts/source-priority.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Hermes Agent \u2014 Master Index",
+          "path": "wiki/index.md",
+          "raw": "/raw/hermes-agent/wiki/index.md",
+          "html": "/wiki/hermes-agent/wiki/index.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Hermes Agent \u2014 Activity Log",
+          "path": "wiki/log.md",
+          "raw": "/raw/hermes-agent/wiki/log.md",
+          "html": "/wiki/hermes-agent/wiki/log.md.html",
+          "category": "wiki"
+        },
+        {
+          "title": "AgentWikis Hermes Curated Seed",
+          "path": "wiki/summaries/agentwikis-hermes-curated-seed.md",
+          "raw": "/raw/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md",
+          "html": "/wiki/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md.html",
+          "category": "summaries"
+        }
+      ]
+    },
+    {
       "slug": "ai-native-product-surfaces",
       "title": "AI-Native Product Surfaces",
       "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, planned program intelligence, myAbode, and product-language frameworks.",
