@@ -42,11 +42,13 @@ class CleanRootContractTest(unittest.TestCase):
         html = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn("Agent Setup", html)
         self.assertIn("Connect agents via MCP", html)
-        self.assertIn("Use Pixi Wiki with AI agents", html)
-        self.assertIn("Copy this approach", html)
-        self.assertIn("Replicate this for your own knowledge base", html)
+        self.assertIn("Agents start here", html)
+        self.assertIn("$ curl https://pixiiidust.github.io/pixi-wiki/llms.txt", html)
+        self.assertIn("GitHub", html)
         self.assertIn('/pixi-wiki/docs/AGENT_SETUP.html', html)
         self.assertIn('/pixi-wiki/docs/REPLICATE_APPROACH.html', html)
+        self.assertNotIn("View index.json", html)
+        self.assertNotIn("Replicate this for your own knowledge base", html)
         self.assertNotIn("/Namespaces", html)
 
 
@@ -142,6 +144,8 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 self.assertIn('data-theme-toggle', html)
                 self.assertIn('>☾</button>', html)
                 self.assertIn('[data-theme=dark]', html)
+                self.assertIn('--bg:#111827', html)
+                self.assertIn('--text:#d1d5db', html)
                 self.assertIn('localStorage.getItem', html)
 
     def test_agent_setup_page_has_subagent_usage_contract(self) -> None:
