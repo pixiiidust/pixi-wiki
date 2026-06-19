@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-06-19
 type: log
 status: compiled
 namespace: agent-workflows
@@ -57,3 +57,10 @@ namespace: agent-workflows
 - Refreshed `peer-profiles-vs-child-processes` from the verified local Hermes KB closure synthesis.
 - Updated namespace index so the public Pixi Wiki can expose the closed tracker concepts.
 - Preserved no-auto-trigger and no profile/cron/gateway/MCP/RAG/deploy authorization boundaries.
+
+## 2026-06-19 create | Matt Pocock skills best practices
+
+- Added compiled concept `wiki/concepts/matt-pocock-skills-best-practices.md` from the canonical Knowledge page and upstream `mattpocock/skills` README.
+- Cross-linked `matt-pocock-sdlc-rhythm` so the generalized SDLC rhythm points back to the source-backed best-practices pattern.
+- Updated namespace README and index source roots.
+- No Daily Notes were copied or compiled.

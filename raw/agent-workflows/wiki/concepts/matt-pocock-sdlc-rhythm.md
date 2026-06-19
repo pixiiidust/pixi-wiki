@@ -1,7 +1,7 @@
 ---
 title: Matt Pocock SDLC Rhythm
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-06-19
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -62,6 +62,10 @@ Sequence:
 
 If uncertainty becomes experiential or hard to reason about in words, switch back to `/prototype` as a probe or logic/state prototype.
 
+## Source-backed best practices
+
+[[matt-pocock-skills-best-practices]] preserves the source-backed pattern from `mattpocock/skills`: small composable skills, grilling for alignment, shared language docs, feedback loops, and architecture discipline. This SDLC rhythm is Jamie's generalized implementation sequence for applying those practices without turning them into a rigid framework.
+
 ## Router skill layer
 
 The Pocock skill layer is a router and decomposition toolkit, not a reason to skip current evidence.
@@ -97,6 +101,7 @@ Useful routes include:
 
 ## Related pages
 
+- [[matt-pocock-skills-best-practices]]
 - [[find-the-lock-problem-first]]
 - [[issue-driven-afk-workflow]]
 - [[smart-zone-context-discipline]]

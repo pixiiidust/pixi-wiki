@@ -401,7 +401,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-06-19
 type: namespace-overview
 status: active
 category: agents
@@ -425,7 +425,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-18 — Ponytail minimal-code discipline added as a compiled workflow concept.
+2026-06-19 — Matt Pocock skills best-practices concept added and cross-linked to the SDLC rhythm.
 
 ## Canonical Source Roots
 
@@ -440,6 +440,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
+- `Knowledge/concepts/matt-pocock-skills-best-practices.md`
 
 ## Routing Rules
 
@@ -809,7 +810,7 @@ KPR deliberately keeps MCP/RAG/search deferred until a concrete eval shows markd
 ---
 title: Matt Pocock SDLC Rhythm
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-06-19
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -870,6 +871,10 @@ Sequence:
 
 If uncertainty becomes experiential or hard to reason about in words, switch back to `/prototype` as a probe or logic/state prototype.
 
+## Source-backed best practices
+
+[[matt-pocock-skills-best-practices]] preserves the source-backed pattern from `mattpocock/skills`: small composable skills, grilling for alignment, shared language docs, feedback loops, and architecture discipline. This SDLC rhythm is Jamie's generalized implementation sequence for applying those practices without turning them into a rigid framework.
+
 ## Router skill layer
 
 The Pocock skill layer is a router and decomposition toolkit, not a reason to skip current evidence.
@@ -905,6 +910,7 @@ Useful routes include:
 
 ## Related pages
 
+- [[matt-pocock-skills-best-practices]]
 - [[find-the-lock-problem-first]]
 - [[issue-driven-afk-workflow]]
 - [[smart-zone-context-discipline]]
@@ -912,6 +918,76 @@ Useful routes include:
 - [[context-overfitting]]
 - [[agent-capability-route-pattern]]
 - [[bounded-context-tree-pattern]]
+
+
+<!-- ===== agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md ===== -->
+
+---
+title: Matt Pocock Skills Best Practices
+created: 2026-06-19
+updated: 2026-06-19
+type: concept
+description: Best-practice pattern from Matt Pocock's skills repo for reducing agent misalignment through small composable skills, grilling, shared language, feedback loops, and architecture discipline.
+status: compiled
+namespace: agent-workflows
+domain: agent-systems
+tags: [workflow, agent-systems, architecture]
+sources:
+  - Knowledge/concepts/matt-pocock-skills-best-practices.md
+  - Knowledge/raw/articles/matt-pocock-skills-readme.md
+  - https://github.com/mattpocock/skills
+confidence: high
+---
+
+# Matt Pocock Skills Best Practices
+
+## Definition
+
+Matt Pocock's `skills` repo is a reusable best-practice pattern for reducing agent misalignment while keeping the human in control. The key move is not “let a framework own the process”; it is “give the agent small, composable operating skills that make alignment, shared language, feedback, and design discipline repeatable.”
+
+For Jamie's workflow, this page is the source-backed best-practices concept. [[matt-pocock-sdlc-rhythm]] is the generalized implementation rhythm that translates those practices into Pixoid/Tinker execution gates.
+
+## Misalignment reducers
+
+1. **Keep skills small and composable.** Avoid monolithic process frameworks that hide control flow. Use focused skills that can be adapted per repo and per problem.
+2. **Grill before building.** Misalignment is the default failure mode. Use `grill-me` / `grill-with-docs` to ask detailed questions before turning a vague request into implementation.
+3. **Write shared language.** Use domain docs such as `CONTEXT.md` and ADRs so humans, agents, files, functions, and tests reuse the same domain terms instead of re-decoding jargon every run.
+4. **Tighten feedback loops.** Red-green-refactor tests, static types, browser/runtime checks, and diagnosis loops are the guardrails that stop aligned intent from becoming broken code.
+5. **Care about codebase shape.** Agent speed can accelerate entropy. Use architecture/design review skills to keep modules deep, names consistent, and boundaries navigable.
+6. **Separate orchestration from discipline.** User-invoked skills route and orchestrate; model-invoked skills hold reusable discipline. A router should not recursively invoke another user-invoked router.
+
+## Implementation pattern
+
+Use the repo as a menu of practices, not as a rigid mandatory pipeline:
+
+- run setup once per repo so tracker labels and docs locations are explicit;
+- choose the smallest skill that matches the current failure risk;
+- preserve human approval gates before PRDs become issues and before merge/deploy actions;
+- verify with real tests/checks before claiming completion;
+- capture durable learning in docs, issues, or skills rather than hidden chat memory.
+
+## Relationship to Jamie's SDLC rhythm
+
+[[matt-pocock-sdlc-rhythm]] generalizes the upstream repo into Jamie's default flow:
+
+`/prototype` when surface truth or lock discovery is needed → `/grill-with-docs` for alignment and language → `/to-prd` for a lean requirements spine → `/to-issues` for vertical slices → `/tdd` and verification → PR/review → `/handoff`.
+
+This concept explains **why** those gates reduce misalignment. The SDLC rhythm explains **when** to apply them.
+
+## Boundaries
+
+- Do not use a skill repo as evidence that the agent may create issues, merge, deploy, or mutate runtime configuration without explicit scope and approval.
+- Do not let a preferred workflow override current user intent, issue acceptance criteria, live evidence, or safety constraints.
+- Do not copy upstream process wholesale when Jamie's repo already has a clearer source of truth; adapt the practice to the active project contract.
+
+## Related pages
+
+- [[matt-pocock-sdlc-rhythm]]
+- [[find-the-lock-problem-first]]
+- [[building-software-is-learning]]
+- [[bounded-context-tree-pattern]]
+- [[context-overfitting]]
+- [[ponytail-minimal-code-discipline]]
 
 
 <!-- ===== agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md ===== -->
@@ -1295,7 +1371,7 @@ Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operati
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-06-19
 type: index
 status: compiled
 namespace: agent-workflows
@@ -1313,6 +1389,7 @@ namespace: agent-workflows
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
 - [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, router skills, and grill/PRD/issue/TDD gates.
+- [[concepts/matt-pocock-skills-best-practices|Matt Pocock Skills Best Practices]] — Source-backed best practices from `mattpocock/skills` for reducing agent misalignment through composable skills, grilling, shared language, feedback loops, and architecture discipline.
 - [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.
 - [[concepts/ponytail-minimal-code-discipline|Ponytail Minimal Code Discipline]] — Minimal-code build/review guardrail that keeps implementation lean without weakening acceptance, safety, evidence, or verification gates.
 - [[concepts/profile-memory-boundaries|Profile Memory Boundaries]] — Where durable knowledge belongs across memory, knowledge, projects, and skills.
@@ -1351,6 +1428,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/agent-capability-route-pattern.md`
 - `Knowledge/concepts/hermes-soul-md-wiring.md`
 - `Knowledge/concepts/matt-pocock-sdlc-rhythm.md`
+- `Knowledge/concepts/matt-pocock-skills-best-practices.md`
 - `Knowledge/concepts/bounded-context-tree-pattern.md`
 
 
@@ -1359,7 +1437,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-06-19
 type: log
 status: compiled
 namespace: agent-workflows
@@ -1415,6 +1493,13 @@ namespace: agent-workflows
 - Refreshed `peer-profiles-vs-child-processes` from the verified local Hermes KB closure synthesis.
 - Updated namespace index so the public Pixi Wiki can expose the closed tracker concepts.
 - Preserved no-auto-trigger and no profile/cron/gateway/MCP/RAG/deploy authorization boundaries.
+
+## 2026-06-19 create | Matt Pocock skills best practices
+
+- Added compiled concept `wiki/concepts/matt-pocock-skills-best-practices.md` from the canonical Knowledge page and upstream `mattpocock/skills` README.
+- Cross-linked `matt-pocock-sdlc-rhythm` so the generalized SDLC rhythm points back to the source-backed best-practices pattern.
+- Updated namespace README and index source roots.
+- No Daily Notes were copied or compiled.
 
 
 <!-- ===== agent-workflows/wiki/syntheses/markdown-first-agent-memory.md ===== -->

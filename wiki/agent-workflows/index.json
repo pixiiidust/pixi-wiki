@@ -2,10 +2,10 @@
   "slug": "agent-workflows",
   "title": "Agent Workflows",
   "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
-  "documentCount": 19,
+  "documentCount": 20,
   "counts": {
     "wiki": 1,
-    "concepts": 12,
+    "concepts": 13,
     "entities": 1,
     "summaries": 0,
     "syntheses": 2
@@ -65,6 +65,13 @@
       "path": "wiki/concepts/matt-pocock-sdlc-rhythm.md",
       "raw": "/raw/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md",
       "html": "/wiki/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Matt Pocock Skills Best Practices",
+      "path": "wiki/concepts/matt-pocock-skills-best-practices.md",
+      "raw": "/raw/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md.html",
       "category": "concepts"
     },
     {

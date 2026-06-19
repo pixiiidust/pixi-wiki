@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-06-19
 type: index
 status: compiled
 namespace: agent-workflows
@@ -19,6 +19,7 @@ namespace: agent-workflows
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
 - [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, router skills, and grill/PRD/issue/TDD gates.
+- [[concepts/matt-pocock-skills-best-practices|Matt Pocock Skills Best Practices]] — Source-backed best practices from `mattpocock/skills` for reducing agent misalignment through composable skills, grilling, shared language, feedback loops, and architecture discipline.
 - [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.
 - [[concepts/ponytail-minimal-code-discipline|Ponytail Minimal Code Discipline]] — Minimal-code build/review guardrail that keeps implementation lean without weakening acceptance, safety, evidence, or verification gates.
 - [[concepts/profile-memory-boundaries|Profile Memory Boundaries]] — Where durable knowledge belongs across memory, knowledge, projects, and skills.
@@ -57,4 +58,5 @@ namespace: agent-workflows
 - `Knowledge/concepts/agent-capability-route-pattern.md`
 - `Knowledge/concepts/hermes-soul-md-wiring.md`
 - `Knowledge/concepts/matt-pocock-sdlc-rhythm.md`
+- `Knowledge/concepts/matt-pocock-skills-best-practices.md`
 - `Knowledge/concepts/bounded-context-tree-pattern.md`

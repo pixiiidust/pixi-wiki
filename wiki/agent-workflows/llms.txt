@@ -10,6 +10,7 @@
 - [Hermes SOUL.md Wiring](/raw/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md) ([html](/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html))
 - [Knowledge Pack Routing](/raw/agent-workflows/wiki/concepts/knowledge-pack-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html))
 - [Matt Pocock SDLC Rhythm](/raw/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md) ([html](/wiki/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md.html))
+- [Matt Pocock Skills Best Practices](/raw/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md) ([html](/wiki/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md.html))
 - [Peer Profiles vs Child Processes](/raw/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md) ([html](/wiki/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md.html))
 - [Ponytail Minimal Code Discipline](/raw/agent-workflows/wiki/concepts/ponytail-minimal-code-discipline.md) ([html](/wiki/agent-workflows/wiki/concepts/ponytail-minimal-code-discipline.md.html))
 - [Profile Memory Boundaries](/raw/agent-workflows/wiki/concepts/profile-memory-boundaries.md) ([html](/wiki/agent-workflows/wiki/concepts/profile-memory-boundaries.md.html))
