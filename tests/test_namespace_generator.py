@@ -91,6 +91,7 @@ status: compiled
 namespace: sample-namespace
 sources:
   - Knowledge/concepts/test-concept.md
+  - https://example.com/source-doc
 ---
 
 # Test Concept
@@ -147,6 +148,8 @@ def test_generator_rebuilds_clean_namespace_registry(tmp_path: Path) -> None:
     html_text = html_path.read_text(encoding="utf-8")
     assert "Test Concept" in html_text
     assert '<a href="/pixi-wiki/wiki/sample-namespace/wiki/concepts/test-concept.md.html">Test Concept</a>' in html_text
+    assert "External links" in html_text
+    assert '<a href="https://example.com/source-doc">example.com/source-doc</a>' in html_text
 
 
 def test_generator_removes_legacy_root_and_old_layers(tmp_path: Path) -> None:

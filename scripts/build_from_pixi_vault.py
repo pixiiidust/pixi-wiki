@@ -16,7 +16,7 @@ import shutil
 from collections import Counter
 from pathlib import Path
 from typing import Any, Callable
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = Path("/root/ObsidianVault/wikis")
@@ -312,6 +312,47 @@ def with_metadata_after_h1(rendered_body: str, meta: str) -> str:
     return re.sub(r"(</h1>)", r"\1\n" + meta, rendered_body, count=1) if "</h1>" in rendered_body else meta + rendered_body
 
 
+def is_external_url(value: str) -> bool:
+    return value.startswith("https://") or value.startswith("http://")
+
+
+def external_link_label(url: str, fallback: str | None = None) -> str:
+    if fallback:
+        return fallback
+    parsed = urlparse(url)
+    path = parsed.path.strip("/")
+    return f"{parsed.netloc}/{path}".rstrip("/") if parsed.netloc else url
+
+
+def external_links_block(fm: dict[str, Any], body: str) -> str:
+    links: dict[str, str] = {}
+
+    for key in ["resource", "source_url", "raw_url"]:
+        value = fm.get(key)
+        if isinstance(value, str) and is_external_url(value):
+            links[value] = external_link_label(value)
+
+    sources = fm.get("sources")
+    if isinstance(sources, list):
+        for source in sources:
+            if isinstance(source, str) and is_external_url(source):
+                links[source] = external_link_label(source)
+    elif isinstance(sources, str) and is_external_url(sources):
+        links[sources] = external_link_label(sources)
+
+    for label, url in re.findall(r"\[([^\]]+)\]\((https?://[^)]+)\)", body):
+        links[url] = external_link_label(url, label)
+
+    if not links:
+        return ""
+
+    rows = "".join(
+        f'<li><a href="{html.escape(url)}">{html.escape(label)}</a></li>'
+        for url, label in sorted(links.items(), key=lambda item: item[1].lower())
+    )
+    return f"<h2>External links</h2>\n<ul>\n{rows}\n</ul>"
+
+
 def prev_next_nav(slug: str, prev_doc: dict[str, str] | None, next_doc: dict[str, str] | None) -> str:
     cards: list[str] = []
     if prev_doc:
@@ -353,6 +394,7 @@ def render_readme(
 <h2>Structure</h2><ul><li><code>raw/</code> — raw Markdown provenance mirror for agents and source inspection.</li><li><code>wiki/</code> — synthesized knowledge pages: concepts, entities, summaries, and syntheses.</li><li>Schema and maintenance rules: see <code>CLAUDE.md</code>.</li></ul>
 <h2>Usage</h2><ul><li><strong>Add new sources:</strong> update canonical source notes in <code>pixi-vault</code>, then compile into this namespace.</li><li><strong>Ask questions:</strong> agents read this wiki and cite raw/source paths.</li><li><strong>Publish:</strong> regenerate <code>pixi-wiki</code>, run tests, then live-verify raw and HTML routes.</li></ul>
 {markdown_fragment(body_without_scope, link_resolver) if body_without_scope else ""}
+{external_links_block(fm, body)}
 {prev_next_nav(slug, None, next_doc)}
 """
     return article
@@ -370,9 +412,11 @@ def render_page(
     link_resolver: LinkResolver | None = None,
 ) -> str:
     rendered_body = with_metadata_after_h1(markdown_fragment(body, link_resolver), metadata_block(fm))
+    external_links = external_links_block(fm, body)
     return f"""
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/{slug}/README.md.html">{html.escape(title)}</a> / {html.escape(rel)}</div>{page_tools(slug, rel)}</div>
 {rendered_body}
+{external_links}
 {prev_next_nav(slug, prev_doc, next_doc)}
 """
 
