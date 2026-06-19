@@ -1,51 +1,89 @@
 ---
 title: Context Overfitting
-created: 2026-06-16
-updated: 2026-06-16
+created: 2026-06-18
+updated: 2026-06-18
 type: concept
 status: compiled
 namespace: eval-trace
-tags: [eval-trace, agent-workflows, reliability, context-management]
+tags: [agent-systems, governance, workflow, ai]
 sources:
+  - /root/.hermes/knowledge/concepts/context-overfitting.md
   - Knowledge/concepts/context-overfitting.md
-  - Projects/Eval Trace/Index.md
 confidence: high
 ---
 
 # Context Overfitting
 
-**Context overfitting** is an agent workflow failure mode where an agent treats written context, memory, old summaries, project notes, or prompt rules as hard constraints even when current user intent, live evidence, or project state should override them.
+## Definition
 
-## Failure shape
+**Context overfitting** is when an agent over-weights written context — memory, skills, dossiers, project notes, cron prompts, prior suggestions, or old issue state — and treats it as a hard constraint even when current user intent, live evidence, or scope boundaries should override it.
 
-An agent is context-overfit when it:
+The written rule may still be useful. The failure is the weighting and scope.
 
-- follows stale session summaries instead of the latest user instruction;
-- recommends work from deprecated projects after live status changed;
-- treats memory/profile text as proof instead of a routing hint;
-- treats scratch notes as canonical source truth;
-- continues a previous plan after the user changed scope.
+## Current synthesis
 
-## Evaluation verdict
+Use the compact test:
 
 ```text
 Context overfit? YES / NO / UNSURE
+Suspect source: <memory / skill / dossier / prompt / project note / issue / none>
+Evidence:
+- <1-2 concrete observations>
+Recommended action: <demote / scope / patch / update truth / keep / ask Jamie>
 ```
 
-- **YES** — stale or overly rigid context controlled behavior despite stronger current evidence.
-- **NO** — context was used as a weak prior and updated by current intent/live evidence.
-- **UNSURE** — evidence is insufficient; surface one concrete suspect rule for review.
+Verdicts:
 
-## Deterministic prechecks
+| Verdict | Meaning | Action |
+|---|---|---|
+| YES | Written context or stale truth overrode current user intent, live evidence, or scope boundaries. | Demote the rule, scope it, patch the source, update the canonical truth surface, or remove the stale consumer. |
+| NO | Context was used as a weak prior and the agent stayed steerable. | Keep the rule; no durable change unless another defect appears. |
+| UNSURE | Evidence is insufficient, or Jamie must judge whether the rule should generalize. | Ask Jamie, inspect the suspect source, or gather better trace evidence before changing durable state. |
 
-Eval Trace currently uses prechecks such as correction override, fresh-state-without-tools, scope boundary, counterexample gap, stale project context, and safety/data-loss escalation. Safety/auth/data-loss cases should become `UNSURE`, not automatic failures.
+## Source-layer priority
 
-## Cross-namespace links
+When context conflicts, prefer current and canonical truth in this order:
 
-- [[../../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]] — route governance surface where context-overfit failures show up.
-- [[../../../agent-workflows/wiki/syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — source-of-truth boundaries reduce context overfitting.
-- `pixi-vault` — source classes and Wiki Compiler Maps separate scratch from canonical truth.
+1. current user instruction and explicit scope;
+2. safety, secrets, data-loss, and approval boundaries;
+3. live filesystem/GitHub/runtime evidence;
+4. current PRD, issue, route contract, or handoff;
+5. project/vault source of truth;
+6. local Hermes knowledge concepts;
+7. skills and procedures;
+8. memory, dossiers, cron prompts, and older session recalls as weak priors.
 
-## Source
+This is a routing rule, not a license to ignore durable context. Written context is useful when it is current, scoped, and backed by live evidence.
 
-Compiled from `Knowledge/concepts/context-overfitting.md` and `Projects/Eval Trace/Index.md`.
+## Application
+
+Run this check when:
+
+- an agent refuses a reasonable correction because an older rule says otherwise;
+- project-local advice leaks into another project;
+- stale issue or repo state drives a current recommendation;
+- a self-improvement loop tries to promote a one-off suggestion into global behavior;
+- memory or a dossier sounds authoritative but live evidence disagrees;
+- a route/profile rule is treated as automatic approval when it is only a recommendation.
+
+For self-improvement, pair this page with [[self-improving-agent-systems]]: promote only evidence-graded, reversible, layer-fit lessons. For memory and knowledge routing, pair it with [[runtime-memory-knowledge-routing]] and [[profile-memory-boundaries]].
+
+## Boundaries
+
+- Do not use this rubric to bypass safety, secrets, destructive-action, merge, deploy, or live-posting approvals.
+- Do not patch memory, cron, profiles, providers, gateways, MCP, RAG, or GitHub state merely because a context-overfit risk exists; verify and use the correct change process.
+- Do not store raw eval traces, issue progress, PR numbers, or command logs in concept pages.
+- Do not call every stale page context overfitting. Ordinary knowledge rot is stale content; context overfitting is stale or over-scoped content being weighted too strongly during action.
+
+## Related pages
+
+- [[self-improving-agent-systems]]
+- [[runtime-memory-knowledge-routing]]
+- [[profile-memory-boundaries]]
+- [[agent-ops-harness-health]]
+- [[agent-capability-route-pattern]]
+- [[matt-pocock-sdlc-rhythm]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/context-overfitting.md`

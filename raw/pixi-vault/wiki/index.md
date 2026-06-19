@@ -21,7 +21,7 @@ namespace: pixi-vault
 
 ## Summaries
 
-<!-- Add compiled summaries alphabetically. -->
+- Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Hermes-specific instance of external wiki import triage and namespace-routing rules.
 
 ## Syntheses
 

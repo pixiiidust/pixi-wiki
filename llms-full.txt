@@ -231,7 +231,7 @@ namespace: pixi-vault
 
 ## Summaries
 
-<!-- Add compiled summaries alphabetically. -->
+- Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Hermes-specific instance of external wiki import triage and namespace-routing rules.
 
 ## Syntheses
 
@@ -297,6 +297,11 @@ namespace: pixi-vault
 - Moved `index.json` out of the primary hero/nav and kept it as a footer/docs machine-contract link.
 - Added the replication guide handle so other users can copy the Markdown KB → human wiki → agent entrypoints → local MCP pattern.
 - Recorded the corrected dark palette contract: near-black background, muted teal links, `#8b4356` reddish-purple active accent, and pale gold highlights.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Crosslink external wiki import method
+
+- Added cross-namespace pointer to the Hermes Agent external wiki import review as a concrete instance of Pixi Vault namespace-routing/import triage.
 - No Daily Notes were copied or compiled.
 
 
@@ -462,6 +467,93 @@ When published to `pixi-wiki`, this namespace should expose:
 - Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
 
 
+<!-- ===== agent-workflows/wiki/concepts/agent-capability-route-pattern.md ===== -->
+
+---
+title: Agent Capability Route Pattern
+created: 2026-06-18
+updated: 2026-06-18
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [architecture, agent-systems, workflow, governance]
+sources:
+  - /root/.hermes/knowledge/concepts/agent-capability-route-pattern.md
+  - Knowledge/concepts/agent-capability-route-pattern.md
+confidence: high
+---
+
+# Agent Capability Route Pattern
+
+## Definition
+
+An **agent capability route** is an explicit, bounded path from approved work into a Hermes agent capability. It defines how work enters, which profile may execute it, what that profile may do, what artifact it must return, and how Pixoid verifies the result before it becomes durable truth.
+
+Short form:
+
+```text
+approved trigger → profile seam → bounded execution → artifact → verification → handoff/closure
+```
+
+## Current synthesis
+
+A route is not just “ask an agent.” It is a small operating contract with these parts:
+
+| Component | Question it answers |
+|---|---|
+| Trigger | How does work enter the route: approved issue, explicit handoff, scheduled job, or manual CLI command? |
+| Profile seam | Which Hermes profile is requested, and how is the actual executing profile verified? |
+| Authorization | What approval is required before execution, merge, posting, deployment, or live side effects? |
+| Execution bounds | What scope, tools, context budget, max slices, and stop conditions apply? |
+| Artifact contract | What must the route produce: PR, report, vault note, issue comment, handoff, or launch prompt? |
+| Verification gate | What real evidence proves the artifact worked or stayed in bounds? |
+| Observability | What event, issue comment, report, or handoff records requested profile, actual profile, status, and proof? |
+
+The profile seam is the identity-critical part. Named crew work should run through peer Hermes profiles when a real route exists; child subagents can help with analysis, but they are not proof that Tinker, Quill, Boba, or another named peer profile executed work. See [[peer-profiles-vs-child-processes]] and [[hermes-soul-md-wiring]].
+
+## Application
+
+Use this pattern when a future agent needs to decide whether work may be delegated, run AFK, launched under a profile, or closed from existing evidence.
+
+A healthy route should state:
+
+1. the source of truth for the task, usually a GitHub issue, PRD, or handoff;
+2. the requested profile or capability;
+3. the allowed side effects;
+4. the forbidden side effects;
+5. verification commands or review checks;
+6. the required durable artifact;
+7. who may close or merge.
+
+For issue-driven work, route execution usually pairs with [[issue-driven-afk-workflow]] and [[smart-zone-context-discipline]]. For broader autonomy, map the route to [[workspace-autonomy-levels]].
+
+## Boundaries
+
+- A route recommendation is not an automatic trigger.
+- Documentation Hygiene recommendations do not automatically invoke Quill, Boba, Tinker, or any worker route.
+- `delegate_task` children are useful for local read-only synthesis or review, but they are not named peer-profile execution evidence.
+- Do not claim a route is live unless runtime proof shows the requested profile and actual profile match.
+- Do not mutate profiles, gateways, providers, cron, webhooks, secrets, MCP, RAG, or deployment state unless the route explicitly authorizes that action.
+- Do not merge, deploy, post live messages, or expose secrets without the route’s approval policy and current user scope supporting it.
+- Keep transient issue numbers, PR numbers, commit SHAs, and milestone state out of generic concept pages.
+
+## Related pages
+
+- [[peer-profiles-vs-child-processes]]
+- [[hermes-soul-md-wiring]]
+- [[profile-memory-boundaries]]
+- [[workspace-autonomy-levels]]
+- [[issue-driven-afk-workflow]]
+- [[smart-zone-context-discipline]]
+- [[runtime-memory-knowledge-routing]]
+- [[context-overfitting]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/agent-capability-route-pattern.md`
+- `/root/ObsidianVault/Projects/Pixoid Agent Capability Routes/Index.md`
+
+
 <!-- ===== agent-workflows/wiki/concepts/agent-entrypoint-mesh.md ===== -->
 
 ---
@@ -509,6 +601,158 @@ Pixoid should treat entrypoints as routing contracts, not as replacement truth. 
 - [[knowledge-pack-routing]]
 - [[static-retrieval-evals]]
 - [[runtime-memory-knowledge-routing]]
+
+
+<!-- ===== agent-workflows/wiki/concepts/bounded-context-tree-pattern.md ===== -->
+
+---
+title: Bounded Context Tree Pattern
+created: 2026-06-18
+updated: 2026-06-18
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [architecture, workflow, ai, knowledge-management]
+sources:
+  - /root/.hermes/knowledge/concepts/bounded-context-tree-pattern.md
+  - Knowledge/concepts/bounded-context-tree-pattern.md
+confidence: high
+---
+
+# Bounded Context Tree Pattern
+
+## Definition
+
+A **bounded context tree** organizes project knowledge as a self-contained domain with its own language, decisions, and artifacts.
+
+```text
+Root = bounded context / project hub
+Branch = major concern inside the context
+Leaf = specific artifact, decision, PRD, ADR, report, or source note
+```
+
+This adapts Domain-Driven Design for personal and agent-readable knowledge management.
+
+## Current synthesis
+
+Use this pattern for serious multi-artifact project knowledge. A strong context tree has:
+
+- one `Index.md` or hub at the root that defines scope, current status, source-of-truth order, and branch map;
+- branches for stable concerns such as strategy, domain model, architecture, product, research, decisions, and implementation artifacts;
+- leaves that hold focused evidence or decisions, not transcript dumps;
+- explicit cross-context links only when a real boundary is crossed;
+- one primary parent branch for each durable note.
+
+The goal is language isolation. Each project or domain owns its vocabulary. Agents should not import terms, priorities, or constraints from one bounded context into another unless a cross-link explains why.
+
+## Application
+
+Use this pattern when:
+
+- a project has multiple PRDs, ADRs, decisions, source inventories, prototypes, or research notes;
+- a brainstorm is becoming a committed project;
+- raw transcripts need to be distilled into a project hub and leaf artifacts;
+- an agent needs a map before editing Obsidian or a local knowledge namespace;
+- MOC/navigation work risks becoming a backlink hairball.
+
+Minimal example:
+
+```text
+Projects/Example/Index.md          # root / hub
+Projects/Example/01-Strategy/      # branch
+Projects/Example/02-Domain/        # branch
+Projects/Example/03-Architecture/  # branch
+Projects/Example/Decisions/        # branch
+Projects/Example/Decisions/ADR-001.md  # leaf
+```
+
+In the local Hermes KB, the same principle means concept pages should be concise reusable leaves linked through [[moc-knowledge-cortex]], not copied project logs.
+
+## Boundaries
+
+- Do not dump raw chat transcripts or command logs into a project hub.
+- Do not let MOCs replace project hubs; MOCs route, hubs own context.
+- Do not create deep folder trees before the domain has enough durable artifacts to justify them.
+- Do not import stale project status into generic concept pages.
+- Do not add backlinks just to make graph view look connected; add crosslinks only for useful retrieval or real domain meaning.
+- Do not promote scratch/capture notes into canonical knowledge without source review.
+
+## Related pages
+
+- [[moc-knowledge-cortex]]
+- [[matt-pocock-sdlc-rhythm]]
+- [[runtime-memory-knowledge-routing]]
+- [[agent-wikis]]
+- [[context-overfitting]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/bounded-context-tree-pattern.md`
+- `/root/ObsidianVault/Projects/README.md`
+
+
+<!-- ===== agent-workflows/wiki/concepts/hermes-soul-md-wiring.md ===== -->
+
+---
+title: Hermes SOUL.md Wiring
+created: 2026-06-18
+updated: 2026-06-18
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-systems, governance, workflow]
+sources:
+  - /root/.hermes/knowledge/concepts/hermes-soul-md-wiring.md
+  - Knowledge/concepts/hermes-soul-md-wiring.md
+confidence: high
+---
+
+# Hermes SOUL.md Wiring
+
+## Definition
+
+Hermes agent identity is wired through an uppercase `SOUL.md` file, not lowercase `soul.md`.
+
+This matters on Linux because paths are case-sensitive. A lowercase search can falsely report that profile identity files are missing even when `SOUL.md` exists.
+
+## Current synthesis
+
+| Scope | Canonical path |
+|---|---|
+| Default profile | `$HERMES_HOME/SOUL.md`, usually `~/.hermes/SOUL.md` |
+| Named profile | `~/.hermes/profiles/<name>/SOUL.md` |
+
+`SOUL.md` is the identity/system-prompt surface for a Hermes profile. It should be understood together with profile memory, tools, model/provider configuration, and route contracts. The SOUL file says who the profile is; an [[agent-capability-route-pattern]] says when that profile may act.
+
+## Application
+
+When auditing or debugging profile identity:
+
+1. use uppercase `SOUL.md` in file searches;
+2. verify the active profile with Hermes profile/runtime commands when available;
+3. distinguish default Pixoid identity from named peer identities;
+4. compare requested profile and actual profile before claiming a route ran under a named peer;
+5. treat missing/changed SOUL files as profile/config work, not as a generic knowledge-page edit.
+
+## Boundaries
+
+- Do not write lowercase `soul.md` guidance.
+- Do not modify `SOUL.md`, profile config, providers, gateways, cron, or secrets from this concept page.
+- Do not infer a live route from the presence of a `SOUL.md` file. Profile identity exists separately from trigger/routing proof.
+- Do not claim Quill, Boba, Tinker, or another peer profile executed work unless route evidence verifies the actual profile.
+- Keep profile-specific persona details in the profile and route artifacts, not in generic concept pages.
+
+## Related pages
+
+- [[agent-capability-route-pattern]]
+- [[peer-profiles-vs-child-processes]]
+- [[profile-memory-boundaries]]
+- [[runtime-memory-knowledge-routing]]
+- [[workspace-autonomy-levels]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/hermes-soul-md-wiring.md`
 
 
 <!-- ===== agent-workflows/wiki/concepts/knowledge-pack-routing.md ===== -->
@@ -560,49 +804,186 @@ KPR deliberately keeps MCP/RAG/search deferred until a concrete eval shows markd
 - [[../entities/hermes-mission-control|Hermes Mission Control]]
 
 
+<!-- ===== agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md ===== -->
+
+---
+title: Matt Pocock SDLC Rhythm
+created: 2026-06-18
+updated: 2026-06-18
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [workflow, agent-systems, product-management, design]
+sources:
+  - /root/.hermes/knowledge/concepts/matt-pocock-sdlc-rhythm.md
+  - Knowledge/concepts/matt-pocock-sdlc-rhythm.md
+confidence: high
+---
+
+# Matt Pocock SDLC Rhythm
+
+## Definition
+
+Jamie uses Matt Pocock-style skills as a pattern-based agent-assisted SDLC rhythm because they counter common agent failure modes: misalignment, missing shared language, weak feedback loops, solution-jumping, and codebase entropy.
+
+Choose the path based on problem clarity and whether product/UI/workflow surface truth is needed. Do not force every request through one rigid pipeline.
+
+## Lock vs key framing
+
+A feature request is a **possible key**. The real user problem, workflow friction, domain constraint, trust gap, or decision bottleneck is the **lock**.
+
+The agent should not rush to compare keys. It should first understand the lock’s shape, then prototype or grill the right thing.
+
+## Pattern 1 — Problem seems clear, but surface truth is needed
+
+Use when the domain problem sounds clear, but product/UI/workflow reality may reveal friction that prose misses.
+
+Sequence:
+
+`/prototype` → `/grill-with-docs` → `/to-prd` → human PRD approval → `/to-issues` → one issue at a time with `/tdd` → verify → PR/review → `/handoff`
+
+Why: visual and interactive surfaces often reveal missing states, wrong information hierarchy, trust gaps, awkward workflow loops, or language that sounds right but feels wrong in use.
+
+## Pattern 2 — Problem is unclear or input is a premature key
+
+Use when the input is a proposed solution, feature request, or “key” but the underlying domain problem / “lock” is fuzzy.
+
+Sequence:
+
+`/prototype` as probe to reveal the lock/problem shape → `/grill-with-docs` → `/to-prd` → human PRD approval → `/to-issues` → one issue at a time with `/tdd` → verify → PR/review → `/handoff`
+
+Prototype-as-probe means creating small disposable artifacts where each variant tests a different lock hypothesis. The goal is not solution polish; the goal is to learn what problem is actually being solved.
+
+Examples:
+
+- “Build an agent dashboard” → probe visibility, control, and trust/evidence surfaces.
+- “Add notifications” → probe state-change indicators, audit trails, and digest/subscription flows.
+- “Improve CRM deal view” → probe timeline-first, stage-board, and command-center layouts.
+
+## Pattern 3 — Mostly non-visual domain / architecture / rule uncertainty
+
+Use when the uncertainty is primarily terminology, bounded contexts, rules, state transitions, architecture, or trade-offs and a visual surface is unlikely to teach much.
+
+Sequence:
+
+`/grill-with-docs` → `/to-prd` → human PRD approval → `/to-issues` → one issue at a time with `/tdd` → verify → PR/review → `/handoff`
+
+If uncertainty becomes experiential or hard to reason about in words, switch back to `/prototype` as a probe or logic/state prototype.
+
+## Router skill layer
+
+The Pocock skill layer is a router and decomposition toolkit, not a reason to skip current evidence.
+
+Useful routes include:
+
+- `ask-matt` — choose which Matt-style flow fits the situation.
+- `grilling` / `grill-me` / `grill-with-docs` — pressure-test the problem, language, and assumptions.
+- `decision-mapping` — turn a loose idea into a sequenced investigation map.
+- `implement` — implement a bounded piece of work from an approved PRD or issue.
+- `codebase-design` — reason about deep modules and vocabulary before changing code.
+- `domain-modeling` — sharpen domain language and boundaries.
+- `writing-great-skills` — improve reusable skill artifacts.
+
+## Applications
+
+- Use [[find-the-lock-problem-first]] before treating a feature request as the real problem.
+- Do not skip `/prototype` just because a product/UI/workflow problem sounds clear.
+- Use `/prototype` as a probe when the lock/problem shape is unclear.
+- Use `/grill-with-docs` for alignment, ubiquitous language, `CONTEXT.md`, and ADR capture.
+- Use `/to-prd` as the lean requirements spine; do not proceed to issues until approved.
+- Use `/to-issues` for vertical tracer-bullet slices, not horizontal layers.
+- Use `/tdd` for red-green-refactor feedback loops.
+- Use `/handoff` to keep continuity across fresh contexts.
+- Use Smart Zone discipline: watch context around 30%, checkpoint/stop before 40%, then continue in a fresh session with handoff.
+- Run a [[context-overfitting]] check when a past skill, memory, or project note seems to override current user intent or live evidence.
+
+## Boundaries
+
+- Do not import transient issue, PR, commit, or project milestone state into this concept.
+- Do not treat a skill’s existence as authorization to create issues, merge, deploy, change profiles, or trigger worker routes.
+- Do not let written SDLC preferences override a current explicit user instruction, live evidence, or the active route contract.
+
+## Related pages
+
+- [[find-the-lock-problem-first]]
+- [[issue-driven-afk-workflow]]
+- [[smart-zone-context-discipline]]
+- [[workspace-autonomy-levels]]
+- [[context-overfitting]]
+- [[agent-capability-route-pattern]]
+- [[bounded-context-tree-pattern]]
+
+
 <!-- ===== agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md ===== -->
 
 ---
 title: Peer Profiles vs Child Processes
-created: 2026-06-16
-updated: 2026-06-16
+created: 2026-06-18
+updated: 2026-06-18
 type: concept
 status: compiled
 namespace: agent-workflows
-tags: [agent-workflows, crew, governance, routing]
+tags: [agent-systems, governance, workflow]
 sources:
+  - /root/.hermes/knowledge/concepts/peer-profiles-vs-child-processes.md
   - Knowledge/concepts/peer-profiles-vs-child-processes.md
 confidence: high
 ---
 
 # Peer Profiles vs Child Processes
 
-Jamie's named crew agents are **peer Hermes profiles by default**, not Pixoid-owned child processes.
+## Definition
 
-## Decision
+Jamie’s named crew agents are **peer Hermes profiles by default**, not Pixoid-owned child processes.
 
-- Pixoid/default is the human-facing control plane, orchestrator, reviewer, and reporting surface.
-- Tinker is the builder profile for bounded repo work.
-- Quill is the scribe/vault profile for bounded source-of-truth updates.
-- Boba is the explorer/research profile for public-web and source checks.
+Peer profiles have their own identity surface, memory boundary, tool configuration, and route evidence. Child processes or `delegate_task` subagents are temporary workers inside the current session; they can analyze, draft, or review, but they do not prove that a named peer profile executed work.
 
-Pixoid may use `delegate_task` for local analysis or to simulate a viewpoint, but that is not proof that a named peer profile executed work.
+## Current synthesis
 
-## When child execution is acceptable
+Use the distinction this way:
 
-Use child/subagent execution for local analysis, review, or drafting when Pixoid will verify the result and no external side effect needs to be attributed to a named peer profile.
+| Execution shape | Use it for | Do not use it for |
+|---|---|---|
+| Peer Hermes profile | Named crew execution with profile identity, credentials, memory boundary, route logs, and durable audit requirements. | Fast in-session synthesis when no real profile route is needed. |
+| Child/subagent process | Local read-only research, drafting, compatibility review, or linting that Pixoid will synthesize and verify. | Claiming “Tinker/Quill/Boba did this,” persistent route proof, profile-specific credentials, or live side effects. |
 
-## When a real peer route is required
+Pixoid remains the control plane: clarify scope, route work, verify output, and report to Jamie. Named peers may execute bounded work when an [[agent-capability-route-pattern]] exists and current authorization allows it.
 
-Use a real peer route when issue or route contracts require requested/actual profile evidence, profile-specific tools, profile memory, delivery identity, or auditable worker execution.
+## Application
 
-## Circuit breaker
+Before saying a named peer did work, verify route evidence:
 
-Unapproved route recursion is forbidden. Pause if routes attempt direct worker-to-worker triggering, A→B→A loops, profile-wide autonomy, or dynamic supervisors without an approved deployment slice.
+1. requested profile;
+2. actual profile;
+3. route trigger or handoff;
+4. output artifact;
+5. verification proof;
+6. Pixoid review or closure comment.
 
-## Source
+If those are absent, describe the work as child-subagent analysis, local synthesis, or Pixoid-authored output.
 
-Compiled from `Knowledge/concepts/peer-profiles-vs-child-processes.md`.
+## Boundaries
+
+- Do not trigger Quill, Boba, Tinker, or recursive worker chains from a concept page or Documentation Hygiene note.
+- Do not treat persona wording, a child-agent summary, or a simulated viewpoint as live peer-profile execution.
+- Do not route one worker profile directly into another unless an explicit route contract authorizes that chain.
+- Do not let profile memories bleed across profiles; use [[profile-memory-boundaries]] and [[runtime-memory-knowledge-routing]] to choose the correct layer.
+- Do not use child agents for durable side effects that require named accountability unless Pixoid verifies the resulting artifact independently.
+
+## Related pages
+
+- [[agent-capability-route-pattern]]
+- [[hermes-soul-md-wiring]]
+- [[profile-memory-boundaries]]
+- [[workspace-autonomy-levels]]
+- [[issue-driven-afk-workflow]]
+- [[self-improving-agent-systems]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `/root/ObsidianVault/Projects/Hermes Mission Control/Index.md`
+- `/root/ObsidianVault/Projects/Pixoid Agent Capability Routes/Index.md`
 
 
 <!-- ===== agent-workflows/wiki/concepts/ponytail-minimal-code-discipline.md ===== -->
@@ -926,8 +1307,12 @@ namespace: agent-workflows
 
 ## Concepts
 
+- [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
+- [[concepts/bounded-context-tree-pattern|Bounded Context Tree Pattern]] — Root/branch/leaf structure for project and knowledge contexts with explicit language boundaries and routing links.
+- [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
+- [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, router skills, and grill/PRD/issue/TDD gates.
 - [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.
 - [[concepts/ponytail-minimal-code-discipline|Ponytail Minimal Code Discipline]] — Minimal-code build/review guardrail that keeps implementation lean without weakening acceptance, safety, evidence, or verification gates.
 - [[concepts/profile-memory-boundaries|Profile Memory Boundaries]] — Where durable knowledge belongs across memory, knowledge, projects, and skills.
@@ -942,7 +1327,7 @@ namespace: agent-workflows
 
 ## Summaries
 
-<!-- Add compiled summaries alphabetically. -->
+- Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Routes external Hermes content between Hermes Agent, Agent Workflows, Local AI Infrastructure, Eval Trace, and Pixi Vault.
 
 ## Syntheses
 
@@ -962,6 +1347,11 @@ namespace: agent-workflows
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
+
+- `Knowledge/concepts/agent-capability-route-pattern.md`
+- `Knowledge/concepts/hermes-soul-md-wiring.md`
+- `Knowledge/concepts/matt-pocock-sdlc-rhythm.md`
+- `Knowledge/concepts/bounded-context-tree-pattern.md`
 
 
 <!-- ===== agent-workflows/wiki/log.md ===== -->
@@ -1014,6 +1404,17 @@ namespace: agent-workflows
 - Added compiled concept `wiki/concepts/ponytail-minimal-code-discipline.md` from the canonical Knowledge page and Hermes skill.
 - Updated namespace README and index source roots.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Crosslink external Hermes import routing
+
+- Added cross-namespace pointer to the Hermes Agent external wiki import review so workflow-specific candidates route through Agent Workflows instead of duplicating Hermes setup content.
+- No Daily Notes were copied or compiled.
+## 2026-06-18 update | Publish local Hermes KB workflow concepts
+
+- Added compiled concept pages for `agent-capability-route-pattern`, `hermes-soul-md-wiring`, `matt-pocock-sdlc-rhythm`, and `bounded-context-tree-pattern`.
+- Refreshed `peer-profiles-vs-child-processes` from the verified local Hermes KB closure synthesis.
+- Updated namespace index so the public Pixi Wiki can expose the closed tracker concepts.
+- Preserved no-auto-trigger and no profile/cron/gateway/MCP/RAG/deploy authorization boundaries.
 
 
 <!-- ===== agent-workflows/wiki/syntheses/markdown-first-agent-memory.md ===== -->
@@ -1195,55 +1596,93 @@ When published to `pixi-wiki`, this namespace should expose:
 
 ---
 title: Context Overfitting
-created: 2026-06-16
-updated: 2026-06-16
+created: 2026-06-18
+updated: 2026-06-18
 type: concept
 status: compiled
 namespace: eval-trace
-tags: [eval-trace, agent-workflows, reliability, context-management]
+tags: [agent-systems, governance, workflow, ai]
 sources:
+  - /root/.hermes/knowledge/concepts/context-overfitting.md
   - Knowledge/concepts/context-overfitting.md
-  - Projects/Eval Trace/Index.md
 confidence: high
 ---
 
 # Context Overfitting
 
-**Context overfitting** is an agent workflow failure mode where an agent treats written context, memory, old summaries, project notes, or prompt rules as hard constraints even when current user intent, live evidence, or project state should override them.
+## Definition
 
-## Failure shape
+**Context overfitting** is when an agent over-weights written context — memory, skills, dossiers, project notes, cron prompts, prior suggestions, or old issue state — and treats it as a hard constraint even when current user intent, live evidence, or scope boundaries should override it.
 
-An agent is context-overfit when it:
+The written rule may still be useful. The failure is the weighting and scope.
 
-- follows stale session summaries instead of the latest user instruction;
-- recommends work from deprecated projects after live status changed;
-- treats memory/profile text as proof instead of a routing hint;
-- treats scratch notes as canonical source truth;
-- continues a previous plan after the user changed scope.
+## Current synthesis
 
-## Evaluation verdict
+Use the compact test:
 
 ```text
 Context overfit? YES / NO / UNSURE
+Suspect source: <memory / skill / dossier / prompt / project note / issue / none>
+Evidence:
+- <1-2 concrete observations>
+Recommended action: <demote / scope / patch / update truth / keep / ask Jamie>
 ```
 
-- **YES** — stale or overly rigid context controlled behavior despite stronger current evidence.
-- **NO** — context was used as a weak prior and updated by current intent/live evidence.
-- **UNSURE** — evidence is insufficient; surface one concrete suspect rule for review.
+Verdicts:
 
-## Deterministic prechecks
+| Verdict | Meaning | Action |
+|---|---|---|
+| YES | Written context or stale truth overrode current user intent, live evidence, or scope boundaries. | Demote the rule, scope it, patch the source, update the canonical truth surface, or remove the stale consumer. |
+| NO | Context was used as a weak prior and the agent stayed steerable. | Keep the rule; no durable change unless another defect appears. |
+| UNSURE | Evidence is insufficient, or Jamie must judge whether the rule should generalize. | Ask Jamie, inspect the suspect source, or gather better trace evidence before changing durable state. |
 
-Eval Trace currently uses prechecks such as correction override, fresh-state-without-tools, scope boundary, counterexample gap, stale project context, and safety/data-loss escalation. Safety/auth/data-loss cases should become `UNSURE`, not automatic failures.
+## Source-layer priority
 
-## Cross-namespace links
+When context conflicts, prefer current and canonical truth in this order:
 
-- [[../../../agent-workflows/wiki/entities/hermes-mission-control|Hermes Mission Control]] — route governance surface where context-overfit failures show up.
-- [[../../../agent-workflows/wiki/syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — source-of-truth boundaries reduce context overfitting.
-- `pixi-vault` — source classes and Wiki Compiler Maps separate scratch from canonical truth.
+1. current user instruction and explicit scope;
+2. safety, secrets, data-loss, and approval boundaries;
+3. live filesystem/GitHub/runtime evidence;
+4. current PRD, issue, route contract, or handoff;
+5. project/vault source of truth;
+6. local Hermes knowledge concepts;
+7. skills and procedures;
+8. memory, dossiers, cron prompts, and older session recalls as weak priors.
 
-## Source
+This is a routing rule, not a license to ignore durable context. Written context is useful when it is current, scoped, and backed by live evidence.
 
-Compiled from `Knowledge/concepts/context-overfitting.md` and `Projects/Eval Trace/Index.md`.
+## Application
+
+Run this check when:
+
+- an agent refuses a reasonable correction because an older rule says otherwise;
+- project-local advice leaks into another project;
+- stale issue or repo state drives a current recommendation;
+- a self-improvement loop tries to promote a one-off suggestion into global behavior;
+- memory or a dossier sounds authoritative but live evidence disagrees;
+- a route/profile rule is treated as automatic approval when it is only a recommendation.
+
+For self-improvement, pair this page with [[self-improving-agent-systems]]: promote only evidence-graded, reversible, layer-fit lessons. For memory and knowledge routing, pair it with [[runtime-memory-knowledge-routing]] and [[profile-memory-boundaries]].
+
+## Boundaries
+
+- Do not use this rubric to bypass safety, secrets, destructive-action, merge, deploy, or live-posting approvals.
+- Do not patch memory, cron, profiles, providers, gateways, MCP, RAG, or GitHub state merely because a context-overfit risk exists; verify and use the correct change process.
+- Do not store raw eval traces, issue progress, PR numbers, or command logs in concept pages.
+- Do not call every stale page context overfitting. Ordinary knowledge rot is stale content; context overfitting is stale or over-scoped content being weighted too strongly during action.
+
+## Related pages
+
+- [[self-improving-agent-systems]]
+- [[runtime-memory-knowledge-routing]]
+- [[profile-memory-boundaries]]
+- [[agent-ops-harness-health]]
+- [[agent-capability-route-pattern]]
+- [[matt-pocock-sdlc-rhythm]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/context-overfitting.md`
 
 
 <!-- ===== eval-trace/wiki/entities/eval-trace.md ===== -->
@@ -1316,7 +1755,7 @@ namespace: eval-trace
 
 ## Summaries
 
-<!-- Add compiled summaries alphabetically. -->
+- Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Routes auxiliary-model and evaluation/trace-adjacent Hermes content back to Hermes Agent with Eval Trace crosslinks.
 
 ## Syntheses
 
@@ -1363,6 +1802,15 @@ namespace: eval-trace
 - Updated namespace index.
 - Source pages remain in `Knowledge/` and `Projects/`.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Crosslink Hermes eval-adjacent imports
+
+- Added cross-namespace pointer to the Hermes Agent external wiki import review for auxiliary-model and trace/eval-adjacent routing.
+- No Daily Notes were copied or compiled.
+## 2026-06-18 update | Refresh context-overfitting from local Hermes KB closure
+
+- Refreshed `wiki/concepts/context-overfitting.md` with the verified YES/NO/UNSURE rubric and source-layer priority from the local Hermes KB tracker closure.
+- Preserved the boundary that context-overfit checks do not bypass safety, approval, profile, cron, or deployment gates.
 
 
 <!-- ===== eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md ===== -->
@@ -1786,6 +2234,7 @@ namespace: hermes-agent
 ## Summaries
 
 - [[summaries/agentwikis-hermes-curated-seed|AgentWikis Hermes Curated Seed]] — What to use from AgentWikis and what to skip.
+- [[summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Triage of Hermes Guide and AgentWikis content worth importing for Jamie/Pixoid.
 
 ## Syntheses
 
@@ -1816,6 +2265,7 @@ namespace: hermes-agent
 - Seeded `hermes-agent` namespace as a slim operating reference, not a wholesale AgentWikis mirror.
 - Added source-priority policy: official docs and local installed source outrank AgentWikis; AgentWikis is a discovery map.
 - Added setup notes for native session traces, batch trajectories, Langfuse traces, and NeMo Relay ATOF/ATIF exports from official Hermes docs/local source.
+- Reviewed Hermes Guide and AgentWikis Hermes for import candidates; added `wiki/summaries/external-hermes-wikis-import-review.md` with a slim import queue and skip rules.
 
 
 <!-- ===== hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md ===== -->
@@ -1868,6 +2318,152 @@ The AgentWikis Hermes README still claims an older verified release in one place
 ## Import posture
 
 AgentWikis is a discovery layer. Official Hermes docs and live local source decide commands, config, and setup steps.
+
+
+<!-- ===== hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md ===== -->
+
+---
+title: External Hermes Wikis Import Review
+created: 2026-06-18
+updated: 2026-06-18
+type: summary
+status: compiled
+namespace: hermes-agent
+tags: [hermes-agent, curation, import-review, agentwikis, hermesguide]
+sources:
+  - https://hermesguide.xyz/wiki/
+  - https://hermesguide.xyz/directory
+  - https://agentwikis.com/wiki/hermes/README.md
+  - https://agentwikis.com/wiki/hermes/llms.txt
+  - https://agentwikis.com/raw/hermes/wiki/index.md
+confidence: medium
+---
+
+# External Hermes Wikis Import Review
+
+Reviewed `hermesguide.xyz` and AgentWikis Hermes for content worth importing into Jamie/Pixoid's Hermes Agent namespace.
+
+## Verdict
+
+Do **not** mirror either source. Keep this namespace slim and operational.
+
+Import only content that is:
+
+- hard to rediscover with one web search;
+- likely to help Jamie operate Hermes, profiles, gateway, cron, memory, evals, or subagents;
+- stable enough to be useful after a week;
+- cross-checked against official Hermes docs or local installed source before commands/config are trusted.
+
+## Hermes Guide / hermesguide.xyz
+
+### Useful signal
+
+`https://hermesguide.xyz/wiki/` is currently a landing/marketing route, not a deep wiki. The useful page is the ecosystem directory at `https://hermesguide.xyz/directory`, which lists 156+ community tools grouped by Dev Workflow, Integrations, Personal Assistant, Meta & Ecosystem, Business Ops, Enterprise, Content Creation, Cost Optimization, Creative, Research, Messaging, Trading & Markets, and Privacy/Self-Hosted.
+
+### Worth importing
+
+Import as **one summary**, not 156 entity pages:
+
+- `Hermes Ecosystem Directory Triage` — curated shortlist of tools Jamie might actually evaluate.
+- Include categories, short descriptions, and triage status: `watch`, `maybe`, `skip`, `needs verification`.
+- Verify each selected tool against its primary repo before creating an entity page.
+
+Possible shortlist for Jamie:
+
+- Hermes Desktop / Scarf / Hermes Workspace / Hermes Console — front-end/control-plane options for sessions, memory, cron, project dashboards, and SSH-first operation.
+- Hermes Memory UI / Herm / Autograph / Obsidian memory keep-alive — memory observability or Obsidian-linked memory workflows.
+- Hermes Labyrinth / Hermescheck / Hermes progress tail / H-Ops — observability, health checks, progress visibility, and Kanban operations.
+- Hermes Google Workspace / Microsoft Graph API skill / Nextcloud / Apple Calendar assistant — productivity integrations matching Jamie's assistant workflows.
+- Hermes-Web-Search-Plus / video research ingest / Obsidian-Video-Notes — research ingestion helpers.
+- Hermes-Multitenancy / Shellward / Hermes-Aegis / HermesClaw — security and multi-tenant routing ideas, only if Jamie works on gateway/profile isolation.
+- Agent-Team-Orchestrator / Maestro / mission-control-like tools — compare against Jamie's existing crew/mission-control model; avoid importing unless they add a concrete pattern.
+
+### Skip
+
+- Broad creative/game/trading novelty tools unless Jamie opens a matching project.
+- Most named forks with no current need.
+- Pricing/model benchmark pages from Hermes Guide; freshness decays fast and web search is better.
+- Landing pages that duplicate official docs.
+
+## AgentWikis Hermes
+
+AgentWikis has roughly 105 Hermes documents. It is a useful discovery map, but it is secondary to official docs and local source.
+
+### Already covered locally
+
+The current `hermes-agent` namespace already has:
+
+- [[../concepts/source-priority|Hermes Source Priority]]
+- [[../concepts/session-trace-store|Hermes Session Trace Store]]
+- [[../concepts/evals-and-traces-setup|Hermes Evals and Traces Setup]]
+- [[agentwikis-hermes-curated-seed|AgentWikis Hermes Curated Seed]]
+
+### Highest-value imports
+
+Create or expand these only when verified against official docs/local source:
+
+1. `Memory Providers Compared` — high leverage because provider choice is hard to rediscover by search and crosses Honcho, Holographic, Hindsight, Mem0, OpenViking, ByteRover, RetainDB, Supermemory, and Memori. This should be a concept or synthesis, not separate entity pages for every provider unless Jamie evaluates them.
+2. `Deployment Backends Compared` — useful for local vs Docker vs SSH/VPS vs Modal vs Daytona vs Singularity decisions. Jamie already uses VPS/WSL/local distinctions, so this would reduce repeated setup reasoning.
+3. `Cron Troubleshooting Checklist` — worth a compact operational concept: timing, delivery, permissions, skill loading. This is likely to be reused for crew cron and gateway jobs.
+4. `Auxiliary Models` — import the footguns: side-task routing, `auto` fallback, compression config split, approval/vision/web_extract/curator/task slots. This is web-search-resistant operational detail.
+5. `Profiles & Multi-Instance` — import as Jamie-specific operating notes: profile isolation, gateway token boundaries, profile-scoped cron/memory paths, when to clone vs separate profile.
+6. `Subagents & Delegation` — import only the operational decision table: `delegate_task` vs background process vs cron vs full spawned Hermes instance.
+7. `Local Stack / Airplane Mode` — import only if Jamie actively works on local/offline Hermes; otherwise keep as a deferred pointer under local-ai-infrastructure.
+
+### Medium priority / import on demand
+
+- `Skills Catalog — 644-Skill Map` — useful as a pointer, but likely stale; prefer live `hermes skills browse/search` when available.
+- `Awesome Hermes Agent — Ecosystem Inventory` — overlaps Hermes Guide directory; keep as source for the same ecosystem triage summary.
+- Release summaries — only import when debugging historical behavior.
+- Provider pages — import only selected providers Jamie actually uses or evaluates.
+- Platform pages — import only Discord/Telegram/Email/Home Assistant/Google Workspace/Slack if actively configured.
+
+### Skip by default
+
+- Video transcript summaries unless they contain a workflow Jamie wants to preserve.
+- OpenClaw comparison pages unless doing migration/positioning work.
+- Onchain/trading workflow pages.
+- One-page entity stubs for every community project.
+- Old version pages as standalone entities.
+
+## Suggested import queue
+
+1. Create `wiki/syntheses/memory-providers-compared.md` from AgentWikis + official docs. Crosslink to agent-workflows memory-routing pages.
+2. Create `wiki/syntheses/hermes-deployment-backends-compared.md` from AgentWikis + local source/docs. Include Jamie-specific VPS/WSL/Puffer notes only if they are stable and already authorized for this namespace.
+3. Create `wiki/concepts/hermes-cron-troubleshooting.md` as a compact four-category checklist.
+4. Create `wiki/concepts/hermes-auxiliary-model-routing.md` for side-task model routing and compression footguns.
+5. Create `wiki/summaries/hermes-ecosystem-directory-triage.md` from Hermes Guide + AgentWikis ecosystem pages, with selected tools only.
+
+## Import rule
+
+One external source can justify a local page only if the page answers: “Would Jamie/Pixoid plausibly ask this again, and would web search be slower or noisier than retrieving the wiki page?”
+
+If yes, import a compact synthesis. If no, leave the source as a pointer.
+
+
+## Namespace routing review
+
+Primary home stays `hermes-agent` for Hermes-specific operations and setup. Other namespaces should crosslink to this review or to future focused pages rather than duplicate the content.
+
+| Candidate | Primary namespace | Crosslink namespaces | Decision |
+|---|---|---|---|
+| Memory Providers Compared | `hermes-agent` | `agent-workflows`, `local-ai-infrastructure` | Add as a Hermes synthesis if Jamie starts comparing providers; crosslink to runtime memory routing and local-first memory infrastructure. |
+| Deployment Backends Compared | `hermes-agent` | `local-ai-infrastructure`, `agent-workflows` | Add as a Hermes synthesis; crosslink from local infrastructure because backend choice affects VPS/WSL/local execution. |
+| Cron Troubleshooting Checklist | `hermes-agent` | `agent-workflows` | Add as a Hermes operational concept; crosslink from crew/cron workflow pages because recurring jobs are workflow infrastructure. |
+| Auxiliary Models | `hermes-agent` | `eval-trace`, `agent-workflows` | Add as a Hermes concept; crosslink where eval/tracing side tasks and approval/compression behavior affect workflow quality. |
+| Profiles & Multi-Instance | `hermes-agent` | `agent-workflows` | Add as a Hermes concept; crosslink from profile/memory boundary and peer-profile pages. |
+| Subagents & Delegation | `hermes-agent` | `agent-workflows` | Split if needed: Hermes API/tool mechanics in `hermes-agent`; route-governance decision table in `agent-workflows`. |
+| Local Stack / Airplane Mode | `local-ai-infrastructure` | `hermes-agent` | If imported, primary home should be local infrastructure; Hermes Agent should only link to setup-specific notes. |
+| Ecosystem Directory Triage | `hermes-agent` | `pixi-vault`, `agent-workflows`, `local-ai-infrastructure` | Keep as a single triage summary first; create entity pages only for tools Jamie evaluates. |
+| AgentWikis / external wiki import pattern | `pixi-vault` | `hermes-agent`, `agent-workflows` | The reusable import/routing method belongs to Pixi Vault; this page is the Hermes-specific instance. |
+
+### Crosslink policy
+
+- `hermes-agent` owns Hermes commands, config, providers, memory plugins, profiles, gateway, cron, skills, and subagent mechanics.
+- `agent-workflows` owns Pixoid/Tinker/Quill/Boba route decisions, handoffs, governance, memory-boundary behavior, and when to delegate vs spawn vs schedule.
+- `local-ai-infrastructure` owns offline/local model stacks, local retrieval, hardware constraints, and local-first deployment tradeoffs.
+- `eval-trace` owns observability/evaluation failure modes and evidence gates, not general Hermes setup.
+- `pixi-vault` owns the namespace-routing/import methodology and public wiki/compiler mechanics.
 
 
 <!-- ===== ai-native-product-surfaces/CLAUDE.md ===== -->
@@ -2683,53 +3279,88 @@ When published to `pixi-wiki`, this namespace should expose:
 <!-- ===== local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md ===== -->
 
 ---
-title: Local Retrieval-Augmented Agent Infrastructure
-created: 2026-06-16
-updated: 2026-06-16
+title: Local Retrieval Agent Infrastructure
+created: 2026-06-18
+updated: 2026-06-18
 type: concept
 status: compiled
 namespace: local-ai-infrastructure
-tags: [local-ai-infrastructure, local-llm, rag, hardware, retrieval]
+tags: [agent-systems, ai, architecture, workflow, knowledge-management]
 sources:
+  - /root/.hermes/knowledge/concepts/local-retrieval-agent-infrastructure.md
   - Knowledge/concepts/local-retrieval-agent-infrastructure.md
-confidence: high
+confidence: medium
 ---
 
-# Local Retrieval-Augmented Agent Infrastructure
+# Local Retrieval Agent Infrastructure
 
-**Local Retrieval-Augmented Agent Infrastructure** is the local-first stack pattern for keeping private corpora and retrieval workflows off hosted providers while still giving agents useful memory and evidence access.
+## Definition
 
-## Reference architecture
+**Local retrieval agent infrastructure** is the reference pattern for giving agents private, source-grounded retrieval over local knowledge without sending the private corpus to hosted systems.
 
-The source concept points to a practical pattern:
+Reference pipeline:
 
 ```text
-ingest → clean → chunk → embed → store → retrieve → rerank → serve locally
+ingest → clean → chunk → embed → Qdrant/vector store → retrieve → rerank → MCP/agent access
 ```
 
-The concrete example uses local models, local vector storage, and an agent-facing retrieval wrapper. The exact tools can change; the durable shape is local corpus control plus verifiable retrieval quality.
+The pattern is useful as architecture vocabulary. It is not an implementation approval.
 
-## Relevance to Jamie's setup
+## Current synthesis
 
-This namespace should hold infrastructure decisions around:
+The vault source describes a local RAG stack inspired by Krill-style infrastructure:
 
-- local LLM serving;
-- embeddings and reranking;
-- Qdrant/FAISS-style vector stores;
-- RAG over compiled `pixi-wiki` pages;
-- deterministic local workflow offload;
-- hardware constraints for 5090 / 4090 / helper-node setups;
-- privacy boundaries between work, personal, and public artifacts.
+1. ingest documents from approved local sources;
+2. clean and neutralize sensitive or irrelevant material;
+3. chunk by stable sections with metadata;
+4. embed chunks with a local embedding model;
+5. store vectors in Qdrant or a similar vector database;
+6. retrieve a broad candidate set;
+7. rerank to a small evidence packet;
+8. expose results to an agent through MCP or another controlled local interface.
 
-## Guardrails
+For Jamie’s current agent workflow, the governance lesson matters more than the stack: improve explicit routing first, then only add retrieval infrastructure if static wiki/index/llms routing fails an important question set. See [[agent-wikis]], [[rag-over-agent-wikis]], and [[runtime-memory-knowledge-routing]].
 
-- Secrets and sensitive corpus material must be neutralized before generated artifacts leave the local environment.
-- Retrieval does not replace source-of-truth routing; `llms.txt`, namespace indexes, and frontmatter still define where truth lives.
-- Local infrastructure should be justified by eval failures or privacy constraints, not by architectural neatness alone.
+## Application
 
-## Source
+Use this page to reason about:
 
-Compiled from `Knowledge/concepts/local-retrieval-agent-infrastructure.md`.
+- when a markdown/`llms.txt` knowledge pack is enough;
+- when a static retrieval eval should be written before infrastructure;
+- how private-corpus retrieval should preserve provenance and freshness;
+- why compiled/synthesized wiki pages are usually a better retrieval corpus than raw transcripts;
+- how hardware/local-model lessons differ from agent workflow governance.
+
+Hardware/local-model lessons answer “can this run locally?” Workflow-governance lessons answer “should this be routed, verified, and maintained this way?” Keep those questions separate.
+
+## Boundaries
+
+This concept does **not** authorize:
+
+- installing Qdrant, Ollama, MCP servers, vector databases, rerankers, or embedding services;
+- changing providers, gateways, profile config, cron jobs, webhooks, secrets, or deployment routing;
+- building or deploying RAG infrastructure;
+- generating or publishing public wiki output;
+- creating automatic memory pruning, model fine-tuning, profile creation, or provider changes;
+- treating raw transcripts or scratch notes as equivalent to compiled wiki pages;
+- replacing explicit routing with embeddings.
+
+If retrieval is needed, start with a separate approved issue that defines eval questions, privacy boundaries, corpus scope, verification, and rollback.
+
+## Related pages
+
+- [[agent-wikis]]
+- [[rag-over-agent-wikis]]
+- [[runtime-memory-knowledge-routing]]
+- [[self-improving-agent-systems]]
+- [[moc-knowledge-cortex]]
+- [[bounded-context-tree-pattern]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/local-retrieval-agent-infrastructure.md`
+- `/root/ObsidianVault/Knowledge/concepts/agent-wikis.md`
+- `/root/ObsidianVault/Knowledge/concepts/rag-over-agent-wikis.md`
 
 
 <!-- ===== local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md ===== -->
@@ -2824,7 +3455,7 @@ namespace: local-ai-infrastructure
 
 ## Syntheses
 
-<!-- Add compiled syntheses alphabetically. -->
+- Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Marks Local Stack / Airplane Mode as local-infrastructure primary, with deployment backend tradeoffs crosslinked from Hermes Agent.
 
 ## Source Roots
 
@@ -2866,3 +3497,12 @@ namespace: local-ai-infrastructure
 - Updated `wiki/concepts/rag-over-agent-wikis.md` to name `pixi-wiki` as the current public corpus candidate.
 - Preserved the eval-first boundary: use the compiled wiki as the first retrieval/eval surface before adding vector DB or runtime RAG infrastructure.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Crosslink Hermes local-stack routing
+
+- Added cross-namespace pointer to the Hermes Agent external wiki import review for Local Stack / Airplane Mode and deployment-backend routing.
+- No Daily Notes were copied or compiled.
+## 2026-06-18 update | Refresh local retrieval infrastructure boundary
+
+- Refreshed `wiki/concepts/local-retrieval-agent-infrastructure.md` from the verified local Hermes KB closure synthesis.
+- Preserved the explicit no-install/no-MCP/no-RAG-build/no-provider/no-deploy authorization boundary.

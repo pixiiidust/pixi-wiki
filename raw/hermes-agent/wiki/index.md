@@ -24,6 +24,7 @@ namespace: hermes-agent
 ## Summaries
 
 - [[summaries/agentwikis-hermes-curated-seed|AgentWikis Hermes Curated Seed]] — What to use from AgentWikis and what to skip.
+- [[summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Triage of Hermes Guide and AgentWikis content worth importing for Jamie/Pixoid.
 
 ## Syntheses
 

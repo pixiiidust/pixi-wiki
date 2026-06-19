@@ -22,7 +22,7 @@ namespace: eval-trace
 
 ## Summaries
 
-<!-- Add compiled summaries alphabetically. -->
+- Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Routes auxiliary-model and evaluation/trace-adjacent Hermes content back to Hermes Agent with Eval Trace crosslinks.
 
 ## Syntheses
 

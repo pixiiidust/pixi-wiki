@@ -51,3 +51,8 @@ namespace: pixi-vault
 - Added the replication guide handle so other users can copy the Markdown KB → human wiki → agent entrypoints → local MCP pattern.
 - Recorded the corrected dark palette contract: near-black background, muted teal links, `#8b4356` reddish-purple active accent, and pale gold highlights.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Crosslink external wiki import method
+
+- Added cross-namespace pointer to the Hermes Agent external wiki import review as a concrete instance of Pixi Vault namespace-routing/import triage.
+- No Daily Notes were copied or compiled.

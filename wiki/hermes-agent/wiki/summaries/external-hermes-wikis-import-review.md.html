@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>External Hermes Wikis Import Review — Hermes Agent — Pixi Wiki</title>
+<style>
+:root{color-scheme:light;--bg:#f7f3ea;--panel:#fffaf1;--panel2:#f0e8d8;--border:#d9cdb8;--soft:#eadfcb;--text:#22202a;--muted:#6f6a77;--heading:#111018;--accent:#9b5c00;--accent2:#6f4200;--green:#087a4a;--header:#fffdf8;--active-bg:#fff1d1}
+[data-theme=dark]{color-scheme:dark;--bg:#0d1117;--panel:#161b22;--panel2:#21262d;--border:#30363d;--soft:#21262d;--text:#e6edf3;--muted:#8b949e;--heading:#f0f6fc;--accent:#58a6ff;--accent2:#79c0ff;--green:#3fb950;--header:#010409;--active-bg:#1f6feb33}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"IBM Plex Mono","JetBrains Mono","Roboto Mono",ui-monospace,monospace;font-size:14px;line-height:1.7}a{color:var(--accent);text-decoration:none;border-bottom:1px dotted currentColor}a:hover{color:var(--accent2)}code{background:var(--panel2);border:1px solid var(--border);color:var(--accent2);padding:1px 5px;border-radius:4px}pre{background:var(--panel2);border:1px solid var(--border);padding:14px;overflow:auto}.site-header{height:66px;border-bottom:1px solid var(--border);background:var(--header)}.header-inner{max-width:1180px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 20px}.logo{color:var(--heading);font-weight:800;letter-spacing:.04em;border:0}.nav{display:flex;align-items:center;gap:24px}.nav a{color:var(--muted);border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.nav a:hover{color:var(--heading)}.theme-toggle{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 10px;border-radius:999px;font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}.category-bar{border-bottom:1px solid var(--border);background:var(--panel)}.category-inner{max-width:1180px;margin:0 auto;display:flex;gap:22px;min-height:46px;align-items:center;padding:0 20px;flex-wrap:wrap}.category-inner a{color:var(--muted);border:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.category-inner a:first-child{color:var(--muted)}.page{max-width:1180px;margin:40px auto 90px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:0 20px}.sidebar{color:var(--muted)}.sidebar-block{border-left:1px solid var(--border);padding-left:12px;margin-bottom:24px}.sidebar-title{color:var(--heading);font-weight:800;margin-bottom:4px}.sidebar-count{color:var(--muted);font-size:11px;margin-bottom:16px}.sidebar a{display:block;padding:6px 10px;color:var(--muted);border:0;font-size:13px}.sidebar a.active{background:var(--active-bg);color:var(--accent2);border-left:2px solid var(--accent);margin-left:-13px;padding-left:11px;font-weight:800}.sidebar-section-title{margin:12px 0 6px;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.sidebar-section{margin:10px 0}.sidebar-section summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:6px 10px;border-radius:8px}.sidebar-section summary::-webkit-details-marker{display:none}.sidebar-section summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent);transition:transform .12s ease}.sidebar-section[open] summary::before{transform:rotate(90deg)}.sidebar-section summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-section-body{margin:2px 0 6px 12px;border-left:1px solid var(--border);padding-left:4px}.sidebar-empty{padding:6px 10px;color:var(--muted);font-size:12px;font-style:italic}.article{min-width:0}.content-header{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:18px;color:var(--muted);font-size:13px}.breadcrumbs a,.markdown-link{color:var(--accent)}h1{margin:0 0 10px;color:var(--heading);font-size:36px;line-height:1.1;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}h2{margin:48px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--heading);font-size:22px;line-height:1.2;font-weight:900;text-transform:uppercase}h2::before{content:"// ";color:var(--accent2)}h3{margin:26px 0 8px;color:var(--heading);text-transform:uppercase;font-size:15px;letter-spacing:.08em}.updated{color:var(--muted);font-size:13px;margin-bottom:18px}.info-card{border:1px solid var(--border);background:var(--panel);padding:20px 22px;margin:24px 0}.info-row{display:grid;grid-template-columns:136px 1fr;gap:18px;margin-bottom:12px}.info-row:last-child{margin-bottom:0}.info-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}.green{color:var(--green)}.yellow{color:var(--accent2)}.white{color:var(--heading)}.agent-card{margin:24px 0 22px;padding:14px 18px;background:var(--active-bg);border:1px solid var(--border);border-left:2px solid var(--accent);color:var(--text)}.agent-card a{font-weight:800;margin-right:12px}.hero-copy{max-width:860px;color:var(--text);font-size:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 18px}.button-link{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:999px;padding:9px 14px;background:var(--panel);color:var(--heading);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.button-link.primary{background:var(--active-bg);border-color:var(--accent);color:var(--accent2)}.button-link:hover{border-color:var(--accent);color:var(--accent2)}.agent-setup-callout{max-width:860px;margin:18px 0 34px;padding:16px 18px;background:var(--panel);border:1px solid var(--border);border-left:2px solid var(--accent)}.agent-setup-callout h2{font-size:16px;margin:0 0 6px;padding:0;border:0}.agent-setup-callout h2::before{content:""}.agent-setup-callout p{margin:0;color:var(--muted)}.wiki-nav{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 8px}.wiki-group{margin-top:34px;padding-top:8px}.group-header{max-width:760px;border-left:3px solid var(--active-bg);padding-left:14px;margin-bottom:14px}.group-header h2{margin:2px 0 4px}.group-header p{margin:0;color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2)!important;font-weight:800}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}.card{border:1px solid var(--border);border-radius:14px;padding:18px;background:var(--panel)}.card h2{border:0;margin:0 0 8px;padding:0;font-size:18px}.card h2::before{content:""}.meta{color:var(--muted);font-size:.9rem}.page-meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 22px;color:var(--muted);font-size:13px}.page-meta span{color:var(--heading);font-weight:800}.page-tools{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.prev-next{margin-top:54px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.prev-next-card{border:1px solid var(--border);border-bottom:1px dotted var(--accent);background:var(--panel);padding:18px 20px;text-decoration:none;display:block}.prev-card{text-align:left}.next-card{text-align:right}.next-label{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}.next-title{color:var(--heading);font-weight:800}.footer{border-top:1px solid var(--border);background:var(--header);color:var(--muted)}.footer-inner{max-width:1180px;margin:0 auto;padding:28px 20px;display:flex;justify-content:space-between;gap:20px}.footer a{margin-left:12px}@media(max-width:820px){.page{grid-template-columns:1fr}.nav{display:none}.info-row{grid-template-columns:1fr}.footer-inner{display:block}}
+</style><script>(function(){const key='pixi-wiki-theme';const root=document.documentElement;const saved=localStorage.getItem(key)||'light';root.dataset.theme=saved;function label(){const b=document.querySelector('[data-theme-toggle]');if(b)b.textContent=root.dataset.theme==='dark'?'☀':'☾';}document.addEventListener('DOMContentLoaded',function(){label();const b=document.querySelector('[data-theme-toggle]');if(b)b.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem(key,root.dataset.theme);label();});});})();</script></head><body>
+<header class="site-header"><div class="header-inner"><a class="logo" href="/pixi-wiki/">Pixi Wiki</a><nav class="nav"><a href="/pixi-wiki/#wikis">Wikis</a><a href="/pixi-wiki/docs/AGENT_SETUP.html">Agent Setup</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a><button class="theme-toggle" data-theme-toggle type="button">☾</button></nav></div></header>
+<main class="page"><aside class="sidebar"><div class="sidebar-block"><div class="sidebar-title">Hermes Agent</div><div class="sidebar-count">9 documents</div>
+<a href="/pixi-wiki/wiki/hermes-agent/README.md.html">📄 Hermes Agent Knowledge Base</a>
+<a href="/pixi-wiki/wiki/hermes-agent/wiki/index.md.html">📄 Hermes Agent KB — Master Index</a>
+<details class="sidebar-section"><summary>WIKI 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/hermes-agent/wiki/log.md.html">📄 Hermes Agent — Activity Log</a></div></details>
+<details class="sidebar-section"><summary>CONCEPTS 3</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/hermes-agent/wiki/concepts/evals-and-traces-setup.md.html">📄 Hermes Evals and Traces Setup</a><a href="/pixi-wiki/wiki/hermes-agent/wiki/concepts/session-trace-store.md.html">📄 Hermes Session Trace Store</a><a href="/pixi-wiki/wiki/hermes-agent/wiki/concepts/source-priority.md.html">📄 Hermes Source Priority</a></div></details>
+<details class="sidebar-section"><summary>ENTITIES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
+<details class="sidebar-section" open><summary>SUMMARIES 2</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md.html">📄 AgentWikis Hermes Curated Seed</a><a class="active" href="/pixi-wiki/wiki/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md.html">📄 External Hermes Wikis Import Review</a></div></details>
+<details class="sidebar-section"><summary>SYNTHESES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
+</div><div class="sidebar-block"><details class="sidebar-section" open><summary>// FOR AGENTS</summary><div class="sidebar-section-body">
+<a href="/pixi-wiki/wiki/hermes-agent/llms.txt">llms.txt</a>
+<a href="/pixi-wiki/wiki/hermes-agent/llms-full.txt">llms-full.txt</a>
+<a href="/pixi-wiki/wiki/hermes-agent/index.json">index.json</a>
+</div></details></div></aside><article class="article">
+<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/hermes-agent/README.md.html">Hermes Agent</a> / wiki/summaries/external-hermes-wikis-import-review.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+hermes-agent%2Fwiki%2Fsummaries%2Fexternal-hermes-wikis-import-review.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fhermes-agent%2Fwiki%2Fsummaries%2Fexternal-hermes-wikis-import-review.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
+<h1>External Hermes Wikis Import Review</h1>
+<div class="page-meta"><div><span>type</span>: summary</div><div><span>confidence</span>: medium</div><div><span>updated</span>: 2026-06-18</div><div><span>status</span>: compiled</div><div><span>namespace</span>: hermes-agent</div><div><span>sources</span>: 5</div></div>
+<p>Reviewed <code>hermesguide.xyz</code> and AgentWikis Hermes for content worth importing into Jamie/Pixoid&#x27;s Hermes Agent namespace.</p>
+<h2>Verdict</h2>
+<p>Do **not** mirror either source. Keep this namespace slim and operational.</p>
+<p>Import only content that is:</p>
+<ul>
+<li>hard to rediscover with one web search;</li>
+<li>likely to help Jamie operate Hermes, profiles, gateway, cron, memory, evals, or subagents;</li>
+<li>stable enough to be useful after a week;</li>
+<li>cross-checked against official Hermes docs or local installed source before commands/config are trusted.</li>
+</ul>
+<h2>Hermes Guide / hermesguide.xyz</h2>
+<h3>Useful signal</h3>
+<p><code>https://hermesguide.xyz/wiki/</code> is currently a landing/marketing route, not a deep wiki. The useful page is the ecosystem directory at <code>https://hermesguide.xyz/directory</code>, which lists 156+ community tools grouped by Dev Workflow, Integrations, Personal Assistant, Meta &amp; Ecosystem, Business Ops, Enterprise, Content Creation, Cost Optimization, Creative, Research, Messaging, Trading &amp; Markets, and Privacy/Self-Hosted.</p>
+<h3>Worth importing</h3>
+<p>Import as **one summary**, not 156 entity pages:</p>
+<ul>
+<li><code>Hermes Ecosystem Directory Triage</code> — curated shortlist of tools Jamie might actually evaluate.</li>
+<li>Include categories, short descriptions, and triage status: <code>watch</code>, <code>maybe</code>, <code>skip</code>, <code>needs verification</code>.</li>
+<li>Verify each selected tool against its primary repo before creating an entity page.</li>
+</ul>
+<p>Possible shortlist for Jamie:</p>
+<ul>
+<li>Hermes Desktop / Scarf / Hermes Workspace / Hermes Console — front-end/control-plane options for sessions, memory, cron, project dashboards, and SSH-first operation.</li>
+<li>Hermes Memory UI / Herm / Autograph / Obsidian memory keep-alive — memory observability or Obsidian-linked memory workflows.</li>
+<li>Hermes Labyrinth / Hermescheck / Hermes progress tail / H-Ops — observability, health checks, progress visibility, and Kanban operations.</li>
+<li>Hermes Google Workspace / Microsoft Graph API skill / Nextcloud / Apple Calendar assistant — productivity integrations matching Jamie&#x27;s assistant workflows.</li>
+<li>Hermes-Web-Search-Plus / video research ingest / Obsidian-Video-Notes — research ingestion helpers.</li>
+<li>Hermes-Multitenancy / Shellward / Hermes-Aegis / HermesClaw — security and multi-tenant routing ideas, only if Jamie works on gateway/profile isolation.</li>
+<li>Agent-Team-Orchestrator / Maestro / mission-control-like tools — compare against Jamie&#x27;s existing crew/mission-control model; avoid importing unless they add a concrete pattern.</li>
+</ul>
+<h3>Skip</h3>
+<ul>
+<li>Broad creative/game/trading novelty tools unless Jamie opens a matching project.</li>
+<li>Most named forks with no current need.</li>
+<li>Pricing/model benchmark pages from Hermes Guide; freshness decays fast and web search is better.</li>
+<li>Landing pages that duplicate official docs.</li>
+</ul>
+<h2>AgentWikis Hermes</h2>
+<p>AgentWikis has roughly 105 Hermes documents. It is a useful discovery map, but it is secondary to official docs and local source.</p>
+<h3>Already covered locally</h3>
+<p>The current <code>hermes-agent</code> namespace already has:</p>
+<ul>
+<li>Hermes Source Priority</li>
+<li>Hermes Session Trace Store</li>
+<li>Hermes Evals and Traces Setup</li>
+<li>AgentWikis Hermes Curated Seed</li>
+</ul>
+<h3>Highest-value imports</h3>
+<p>Create or expand these only when verified against official docs/local source:</p>
+<p>1. <code>Memory Providers Compared</code> — high leverage because provider choice is hard to rediscover by search and crosses Honcho, Holographic, Hindsight, Mem0, OpenViking, ByteRover, RetainDB, Supermemory, and Memori. This should be a concept or synthesis, not separate entity pages for every provider unless Jamie evaluates them.</p>
+<p>2. <code>Deployment Backends Compared</code> — useful for local vs Docker vs SSH/VPS vs Modal vs Daytona vs Singularity decisions. Jamie already uses VPS/WSL/local distinctions, so this would reduce repeated setup reasoning.</p>
+<p>3. <code>Cron Troubleshooting Checklist</code> — worth a compact operational concept: timing, delivery, permissions, skill loading. This is likely to be reused for crew cron and gateway jobs.</p>
+<p>4. <code>Auxiliary Models</code> — import the footguns: side-task routing, <code>auto</code> fallback, compression config split, approval/vision/web_extract/curator/task slots. This is web-search-resistant operational detail.</p>
+<p>5. <code>Profiles &amp; Multi-Instance</code> — import as Jamie-specific operating notes: profile isolation, gateway token boundaries, profile-scoped cron/memory paths, when to clone vs separate profile.</p>
+<p>6. <code>Subagents &amp; Delegation</code> — import only the operational decision table: <code>delegate_task</code> vs background process vs cron vs full spawned Hermes instance.</p>
+<p>7. <code>Local Stack / Airplane Mode</code> — import only if Jamie actively works on local/offline Hermes; otherwise keep as a deferred pointer under local-ai-infrastructure.</p>
+<h3>Medium priority / import on demand</h3>
+<ul>
+<li><code>Skills Catalog — 644-Skill Map</code> — useful as a pointer, but likely stale; prefer live <code>hermes skills browse/search</code> when available.</li>
+<li><code>Awesome Hermes Agent — Ecosystem Inventory</code> — overlaps Hermes Guide directory; keep as source for the same ecosystem triage summary.</li>
+<li>Release summaries — only import when debugging historical behavior.</li>
+<li>Provider pages — import only selected providers Jamie actually uses or evaluates.</li>
+<li>Platform pages — import only Discord/Telegram/Email/Home Assistant/Google Workspace/Slack if actively configured.</li>
+</ul>
+<h3>Skip by default</h3>
+<ul>
+<li>Video transcript summaries unless they contain a workflow Jamie wants to preserve.</li>
+<li>OpenClaw comparison pages unless doing migration/positioning work.</li>
+<li>Onchain/trading workflow pages.</li>
+<li>One-page entity stubs for every community project.</li>
+<li>Old version pages as standalone entities.</li>
+</ul>
+<h2>Suggested import queue</h2>
+<p>1. Create <code>wiki/syntheses/memory-providers-compared.md</code> from AgentWikis + official docs. Crosslink to agent-workflows memory-routing pages.</p>
+<p>2. Create <code>wiki/syntheses/hermes-deployment-backends-compared.md</code> from AgentWikis + local source/docs. Include Jamie-specific VPS/WSL/Puffer notes only if they are stable and already authorized for this namespace.</p>
+<p>3. Create <code>wiki/concepts/hermes-cron-troubleshooting.md</code> as a compact four-category checklist.</p>
+<p>4. Create <code>wiki/concepts/hermes-auxiliary-model-routing.md</code> for side-task model routing and compression footguns.</p>
+<p>5. Create <code>wiki/summaries/hermes-ecosystem-directory-triage.md</code> from Hermes Guide + AgentWikis ecosystem pages, with selected tools only.</p>
+<h2>Import rule</h2>
+<p>One external source can justify a local page only if the page answers: “Would Jamie/Pixoid plausibly ask this again, and would web search be slower or noisier than retrieving the wiki page?”</p>
+<p>If yes, import a compact synthesis. If no, leave the source as a pointer.</p>
+<h2>Namespace routing review</h2>
+<p>Primary home stays <code>hermes-agent</code> for Hermes-specific operations and setup. Other namespaces should crosslink to this review or to future focused pages rather than duplicate the content.</p>
+<p>| Candidate | Primary namespace | Crosslink namespaces | Decision |</p>
+<p>|---|---|---|---|</p>
+<p>| Memory Providers Compared | <code>hermes-agent</code> | <code>agent-workflows</code>, <code>local-ai-infrastructure</code> | Add as a Hermes synthesis if Jamie starts comparing providers; crosslink to runtime memory routing and local-first memory infrastructure. |</p>
+<p>| Deployment Backends Compared | <code>hermes-agent</code> | <code>local-ai-infrastructure</code>, <code>agent-workflows</code> | Add as a Hermes synthesis; crosslink from local infrastructure because backend choice affects VPS/WSL/local execution. |</p>
+<p>| Cron Troubleshooting Checklist | <code>hermes-agent</code> | <code>agent-workflows</code> | Add as a Hermes operational concept; crosslink from crew/cron workflow pages because recurring jobs are workflow infrastructure. |</p>
+<p>| Auxiliary Models | <code>hermes-agent</code> | <code>eval-trace</code>, <code>agent-workflows</code> | Add as a Hermes concept; crosslink where eval/tracing side tasks and approval/compression behavior affect workflow quality. |</p>
+<p>| Profiles &amp; Multi-Instance | <code>hermes-agent</code> | <code>agent-workflows</code> | Add as a Hermes concept; crosslink from profile/memory boundary and peer-profile pages. |</p>
+<p>| Subagents &amp; Delegation | <code>hermes-agent</code> | <code>agent-workflows</code> | Split if needed: Hermes API/tool mechanics in <code>hermes-agent</code>; route-governance decision table in <code>agent-workflows</code>. |</p>
+<p>| Local Stack / Airplane Mode | <code>local-ai-infrastructure</code> | <code>hermes-agent</code> | If imported, primary home should be local infrastructure; Hermes Agent should only link to setup-specific notes. |</p>
+<p>| Ecosystem Directory Triage | <code>hermes-agent</code> | <code>pixi-vault</code>, <code>agent-workflows</code>, <code>local-ai-infrastructure</code> | Keep as a single triage summary first; create entity pages only for tools Jamie evaluates. |</p>
+<p>| AgentWikis / external wiki import pattern | <code>pixi-vault</code> | <code>hermes-agent</code>, <code>agent-workflows</code> | The reusable import/routing method belongs to Pixi Vault; this page is the Hermes-specific instance. |</p>
+<h3>Crosslink policy</h3>
+<ul>
+<li><code>hermes-agent</code> owns Hermes commands, config, providers, memory plugins, profiles, gateway, cron, skills, and subagent mechanics.</li>
+<li><code>agent-workflows</code> owns Pixoid/Tinker/Quill/Boba route decisions, handoffs, governance, memory-boundary behavior, and when to delegate vs spawn vs schedule.</li>
+<li><code>local-ai-infrastructure</code> owns offline/local model stacks, local retrieval, hardware constraints, and local-first deployment tradeoffs.</li>
+<li><code>eval-trace</code> owns observability/evaluation failure modes and evidence gates, not general Hermes setup.</li>
+<li><code>pixi-vault</code> owns the namespace-routing/import methodology and public wiki/compiler mechanics.</li>
+</ul>
+<nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md.html"><span class="next-label">← Prev</span><span class="next-title">AgentWikis Hermes Curated Seed</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/hermes-agent/wiki/log.md.html"><span class="next-label">Next</span><span class="next-title">Hermes Agent — Activity Log →</span></a></nav>
+</article></main>
+<footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
+</body></html>

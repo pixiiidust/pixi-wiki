@@ -85,6 +85,93 @@ When published to `pixi-wiki`, this namespace should expose:
 - Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
 
 
+<!-- ===== agent-workflows/wiki/concepts/agent-capability-route-pattern.md ===== -->
+
+---
+title: Agent Capability Route Pattern
+created: 2026-06-18
+updated: 2026-06-18
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [architecture, agent-systems, workflow, governance]
+sources:
+  - /root/.hermes/knowledge/concepts/agent-capability-route-pattern.md
+  - Knowledge/concepts/agent-capability-route-pattern.md
+confidence: high
+---
+
+# Agent Capability Route Pattern
+
+## Definition
+
+An **agent capability route** is an explicit, bounded path from approved work into a Hermes agent capability. It defines how work enters, which profile may execute it, what that profile may do, what artifact it must return, and how Pixoid verifies the result before it becomes durable truth.
+
+Short form:
+
+```text
+approved trigger → profile seam → bounded execution → artifact → verification → handoff/closure
+```
+
+## Current synthesis
+
+A route is not just “ask an agent.” It is a small operating contract with these parts:
+
+| Component | Question it answers |
+|---|---|
+| Trigger | How does work enter the route: approved issue, explicit handoff, scheduled job, or manual CLI command? |
+| Profile seam | Which Hermes profile is requested, and how is the actual executing profile verified? |
+| Authorization | What approval is required before execution, merge, posting, deployment, or live side effects? |
+| Execution bounds | What scope, tools, context budget, max slices, and stop conditions apply? |
+| Artifact contract | What must the route produce: PR, report, vault note, issue comment, handoff, or launch prompt? |
+| Verification gate | What real evidence proves the artifact worked or stayed in bounds? |
+| Observability | What event, issue comment, report, or handoff records requested profile, actual profile, status, and proof? |
+
+The profile seam is the identity-critical part. Named crew work should run through peer Hermes profiles when a real route exists; child subagents can help with analysis, but they are not proof that Tinker, Quill, Boba, or another named peer profile executed work. See [[peer-profiles-vs-child-processes]] and [[hermes-soul-md-wiring]].
+
+## Application
+
+Use this pattern when a future agent needs to decide whether work may be delegated, run AFK, launched under a profile, or closed from existing evidence.
+
+A healthy route should state:
+
+1. the source of truth for the task, usually a GitHub issue, PRD, or handoff;
+2. the requested profile or capability;
+3. the allowed side effects;
+4. the forbidden side effects;
+5. verification commands or review checks;
+6. the required durable artifact;
+7. who may close or merge.
+
+For issue-driven work, route execution usually pairs with [[issue-driven-afk-workflow]] and [[smart-zone-context-discipline]]. For broader autonomy, map the route to [[workspace-autonomy-levels]].
+
+## Boundaries
+
+- A route recommendation is not an automatic trigger.
+- Documentation Hygiene recommendations do not automatically invoke Quill, Boba, Tinker, or any worker route.
+- `delegate_task` children are useful for local read-only synthesis or review, but they are not named peer-profile execution evidence.
+- Do not claim a route is live unless runtime proof shows the requested profile and actual profile match.
+- Do not mutate profiles, gateways, providers, cron, webhooks, secrets, MCP, RAG, or deployment state unless the route explicitly authorizes that action.
+- Do not merge, deploy, post live messages, or expose secrets without the route’s approval policy and current user scope supporting it.
+- Keep transient issue numbers, PR numbers, commit SHAs, and milestone state out of generic concept pages.
+
+## Related pages
+
+- [[peer-profiles-vs-child-processes]]
+- [[hermes-soul-md-wiring]]
+- [[profile-memory-boundaries]]
+- [[workspace-autonomy-levels]]
+- [[issue-driven-afk-workflow]]
+- [[smart-zone-context-discipline]]
+- [[runtime-memory-knowledge-routing]]
+- [[context-overfitting]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/agent-capability-route-pattern.md`
+- `/root/ObsidianVault/Projects/Pixoid Agent Capability Routes/Index.md`
+
+
 <!-- ===== agent-workflows/wiki/concepts/agent-entrypoint-mesh.md ===== -->
 
 ---
@@ -132,6 +219,158 @@ Pixoid should treat entrypoints as routing contracts, not as replacement truth. 
 - [[knowledge-pack-routing]]
 - [[static-retrieval-evals]]
 - [[runtime-memory-knowledge-routing]]
+
+
+<!-- ===== agent-workflows/wiki/concepts/bounded-context-tree-pattern.md ===== -->
+
+---
+title: Bounded Context Tree Pattern
+created: 2026-06-18
+updated: 2026-06-18
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [architecture, workflow, ai, knowledge-management]
+sources:
+  - /root/.hermes/knowledge/concepts/bounded-context-tree-pattern.md
+  - Knowledge/concepts/bounded-context-tree-pattern.md
+confidence: high
+---
+
+# Bounded Context Tree Pattern
+
+## Definition
+
+A **bounded context tree** organizes project knowledge as a self-contained domain with its own language, decisions, and artifacts.
+
+```text
+Root = bounded context / project hub
+Branch = major concern inside the context
+Leaf = specific artifact, decision, PRD, ADR, report, or source note
+```
+
+This adapts Domain-Driven Design for personal and agent-readable knowledge management.
+
+## Current synthesis
+
+Use this pattern for serious multi-artifact project knowledge. A strong context tree has:
+
+- one `Index.md` or hub at the root that defines scope, current status, source-of-truth order, and branch map;
+- branches for stable concerns such as strategy, domain model, architecture, product, research, decisions, and implementation artifacts;
+- leaves that hold focused evidence or decisions, not transcript dumps;
+- explicit cross-context links only when a real boundary is crossed;
+- one primary parent branch for each durable note.
+
+The goal is language isolation. Each project or domain owns its vocabulary. Agents should not import terms, priorities, or constraints from one bounded context into another unless a cross-link explains why.
+
+## Application
+
+Use this pattern when:
+
+- a project has multiple PRDs, ADRs, decisions, source inventories, prototypes, or research notes;
+- a brainstorm is becoming a committed project;
+- raw transcripts need to be distilled into a project hub and leaf artifacts;
+- an agent needs a map before editing Obsidian or a local knowledge namespace;
+- MOC/navigation work risks becoming a backlink hairball.
+
+Minimal example:
+
+```text
+Projects/Example/Index.md          # root / hub
+Projects/Example/01-Strategy/      # branch
+Projects/Example/02-Domain/        # branch
+Projects/Example/03-Architecture/  # branch
+Projects/Example/Decisions/        # branch
+Projects/Example/Decisions/ADR-001.md  # leaf
+```
+
+In the local Hermes KB, the same principle means concept pages should be concise reusable leaves linked through [[moc-knowledge-cortex]], not copied project logs.
+
+## Boundaries
+
+- Do not dump raw chat transcripts or command logs into a project hub.
+- Do not let MOCs replace project hubs; MOCs route, hubs own context.
+- Do not create deep folder trees before the domain has enough durable artifacts to justify them.
+- Do not import stale project status into generic concept pages.
+- Do not add backlinks just to make graph view look connected; add crosslinks only for useful retrieval or real domain meaning.
+- Do not promote scratch/capture notes into canonical knowledge without source review.
+
+## Related pages
+
+- [[moc-knowledge-cortex]]
+- [[matt-pocock-sdlc-rhythm]]
+- [[runtime-memory-knowledge-routing]]
+- [[agent-wikis]]
+- [[context-overfitting]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/bounded-context-tree-pattern.md`
+- `/root/ObsidianVault/Projects/README.md`
+
+
+<!-- ===== agent-workflows/wiki/concepts/hermes-soul-md-wiring.md ===== -->
+
+---
+title: Hermes SOUL.md Wiring
+created: 2026-06-18
+updated: 2026-06-18
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-systems, governance, workflow]
+sources:
+  - /root/.hermes/knowledge/concepts/hermes-soul-md-wiring.md
+  - Knowledge/concepts/hermes-soul-md-wiring.md
+confidence: high
+---
+
+# Hermes SOUL.md Wiring
+
+## Definition
+
+Hermes agent identity is wired through an uppercase `SOUL.md` file, not lowercase `soul.md`.
+
+This matters on Linux because paths are case-sensitive. A lowercase search can falsely report that profile identity files are missing even when `SOUL.md` exists.
+
+## Current synthesis
+
+| Scope | Canonical path |
+|---|---|
+| Default profile | `$HERMES_HOME/SOUL.md`, usually `~/.hermes/SOUL.md` |
+| Named profile | `~/.hermes/profiles/<name>/SOUL.md` |
+
+`SOUL.md` is the identity/system-prompt surface for a Hermes profile. It should be understood together with profile memory, tools, model/provider configuration, and route contracts. The SOUL file says who the profile is; an [[agent-capability-route-pattern]] says when that profile may act.
+
+## Application
+
+When auditing or debugging profile identity:
+
+1. use uppercase `SOUL.md` in file searches;
+2. verify the active profile with Hermes profile/runtime commands when available;
+3. distinguish default Pixoid identity from named peer identities;
+4. compare requested profile and actual profile before claiming a route ran under a named peer;
+5. treat missing/changed SOUL files as profile/config work, not as a generic knowledge-page edit.
+
+## Boundaries
+
+- Do not write lowercase `soul.md` guidance.
+- Do not modify `SOUL.md`, profile config, providers, gateways, cron, or secrets from this concept page.
+- Do not infer a live route from the presence of a `SOUL.md` file. Profile identity exists separately from trigger/routing proof.
+- Do not claim Quill, Boba, Tinker, or another peer profile executed work unless route evidence verifies the actual profile.
+- Keep profile-specific persona details in the profile and route artifacts, not in generic concept pages.
+
+## Related pages
+
+- [[agent-capability-route-pattern]]
+- [[peer-profiles-vs-child-processes]]
+- [[profile-memory-boundaries]]
+- [[runtime-memory-knowledge-routing]]
+- [[workspace-autonomy-levels]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/hermes-soul-md-wiring.md`
 
 
 <!-- ===== agent-workflows/wiki/concepts/knowledge-pack-routing.md ===== -->
@@ -183,49 +422,186 @@ KPR deliberately keeps MCP/RAG/search deferred until a concrete eval shows markd
 - [[../entities/hermes-mission-control|Hermes Mission Control]]
 
 
+<!-- ===== agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md ===== -->
+
+---
+title: Matt Pocock SDLC Rhythm
+created: 2026-06-18
+updated: 2026-06-18
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [workflow, agent-systems, product-management, design]
+sources:
+  - /root/.hermes/knowledge/concepts/matt-pocock-sdlc-rhythm.md
+  - Knowledge/concepts/matt-pocock-sdlc-rhythm.md
+confidence: high
+---
+
+# Matt Pocock SDLC Rhythm
+
+## Definition
+
+Jamie uses Matt Pocock-style skills as a pattern-based agent-assisted SDLC rhythm because they counter common agent failure modes: misalignment, missing shared language, weak feedback loops, solution-jumping, and codebase entropy.
+
+Choose the path based on problem clarity and whether product/UI/workflow surface truth is needed. Do not force every request through one rigid pipeline.
+
+## Lock vs key framing
+
+A feature request is a **possible key**. The real user problem, workflow friction, domain constraint, trust gap, or decision bottleneck is the **lock**.
+
+The agent should not rush to compare keys. It should first understand the lock’s shape, then prototype or grill the right thing.
+
+## Pattern 1 — Problem seems clear, but surface truth is needed
+
+Use when the domain problem sounds clear, but product/UI/workflow reality may reveal friction that prose misses.
+
+Sequence:
+
+`/prototype` → `/grill-with-docs` → `/to-prd` → human PRD approval → `/to-issues` → one issue at a time with `/tdd` → verify → PR/review → `/handoff`
+
+Why: visual and interactive surfaces often reveal missing states, wrong information hierarchy, trust gaps, awkward workflow loops, or language that sounds right but feels wrong in use.
+
+## Pattern 2 — Problem is unclear or input is a premature key
+
+Use when the input is a proposed solution, feature request, or “key” but the underlying domain problem / “lock” is fuzzy.
+
+Sequence:
+
+`/prototype` as probe to reveal the lock/problem shape → `/grill-with-docs` → `/to-prd` → human PRD approval → `/to-issues` → one issue at a time with `/tdd` → verify → PR/review → `/handoff`
+
+Prototype-as-probe means creating small disposable artifacts where each variant tests a different lock hypothesis. The goal is not solution polish; the goal is to learn what problem is actually being solved.
+
+Examples:
+
+- “Build an agent dashboard” → probe visibility, control, and trust/evidence surfaces.
+- “Add notifications” → probe state-change indicators, audit trails, and digest/subscription flows.
+- “Improve CRM deal view” → probe timeline-first, stage-board, and command-center layouts.
+
+## Pattern 3 — Mostly non-visual domain / architecture / rule uncertainty
+
+Use when the uncertainty is primarily terminology, bounded contexts, rules, state transitions, architecture, or trade-offs and a visual surface is unlikely to teach much.
+
+Sequence:
+
+`/grill-with-docs` → `/to-prd` → human PRD approval → `/to-issues` → one issue at a time with `/tdd` → verify → PR/review → `/handoff`
+
+If uncertainty becomes experiential or hard to reason about in words, switch back to `/prototype` as a probe or logic/state prototype.
+
+## Router skill layer
+
+The Pocock skill layer is a router and decomposition toolkit, not a reason to skip current evidence.
+
+Useful routes include:
+
+- `ask-matt` — choose which Matt-style flow fits the situation.
+- `grilling` / `grill-me` / `grill-with-docs` — pressure-test the problem, language, and assumptions.
+- `decision-mapping` — turn a loose idea into a sequenced investigation map.
+- `implement` — implement a bounded piece of work from an approved PRD or issue.
+- `codebase-design` — reason about deep modules and vocabulary before changing code.
+- `domain-modeling` — sharpen domain language and boundaries.
+- `writing-great-skills` — improve reusable skill artifacts.
+
+## Applications
+
+- Use [[find-the-lock-problem-first]] before treating a feature request as the real problem.
+- Do not skip `/prototype` just because a product/UI/workflow problem sounds clear.
+- Use `/prototype` as a probe when the lock/problem shape is unclear.
+- Use `/grill-with-docs` for alignment, ubiquitous language, `CONTEXT.md`, and ADR capture.
+- Use `/to-prd` as the lean requirements spine; do not proceed to issues until approved.
+- Use `/to-issues` for vertical tracer-bullet slices, not horizontal layers.
+- Use `/tdd` for red-green-refactor feedback loops.
+- Use `/handoff` to keep continuity across fresh contexts.
+- Use Smart Zone discipline: watch context around 30%, checkpoint/stop before 40%, then continue in a fresh session with handoff.
+- Run a [[context-overfitting]] check when a past skill, memory, or project note seems to override current user intent or live evidence.
+
+## Boundaries
+
+- Do not import transient issue, PR, commit, or project milestone state into this concept.
+- Do not treat a skill’s existence as authorization to create issues, merge, deploy, change profiles, or trigger worker routes.
+- Do not let written SDLC preferences override a current explicit user instruction, live evidence, or the active route contract.
+
+## Related pages
+
+- [[find-the-lock-problem-first]]
+- [[issue-driven-afk-workflow]]
+- [[smart-zone-context-discipline]]
+- [[workspace-autonomy-levels]]
+- [[context-overfitting]]
+- [[agent-capability-route-pattern]]
+- [[bounded-context-tree-pattern]]
+
+
 <!-- ===== agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md ===== -->
 
 ---
 title: Peer Profiles vs Child Processes
-created: 2026-06-16
-updated: 2026-06-16
+created: 2026-06-18
+updated: 2026-06-18
 type: concept
 status: compiled
 namespace: agent-workflows
-tags: [agent-workflows, crew, governance, routing]
+tags: [agent-systems, governance, workflow]
 sources:
+  - /root/.hermes/knowledge/concepts/peer-profiles-vs-child-processes.md
   - Knowledge/concepts/peer-profiles-vs-child-processes.md
 confidence: high
 ---
 
 # Peer Profiles vs Child Processes
 
-Jamie's named crew agents are **peer Hermes profiles by default**, not Pixoid-owned child processes.
+## Definition
 
-## Decision
+Jamie’s named crew agents are **peer Hermes profiles by default**, not Pixoid-owned child processes.
 
-- Pixoid/default is the human-facing control plane, orchestrator, reviewer, and reporting surface.
-- Tinker is the builder profile for bounded repo work.
-- Quill is the scribe/vault profile for bounded source-of-truth updates.
-- Boba is the explorer/research profile for public-web and source checks.
+Peer profiles have their own identity surface, memory boundary, tool configuration, and route evidence. Child processes or `delegate_task` subagents are temporary workers inside the current session; they can analyze, draft, or review, but they do not prove that a named peer profile executed work.
 
-Pixoid may use `delegate_task` for local analysis or to simulate a viewpoint, but that is not proof that a named peer profile executed work.
+## Current synthesis
 
-## When child execution is acceptable
+Use the distinction this way:
 
-Use child/subagent execution for local analysis, review, or drafting when Pixoid will verify the result and no external side effect needs to be attributed to a named peer profile.
+| Execution shape | Use it for | Do not use it for |
+|---|---|---|
+| Peer Hermes profile | Named crew execution with profile identity, credentials, memory boundary, route logs, and durable audit requirements. | Fast in-session synthesis when no real profile route is needed. |
+| Child/subagent process | Local read-only research, drafting, compatibility review, or linting that Pixoid will synthesize and verify. | Claiming “Tinker/Quill/Boba did this,” persistent route proof, profile-specific credentials, or live side effects. |
 
-## When a real peer route is required
+Pixoid remains the control plane: clarify scope, route work, verify output, and report to Jamie. Named peers may execute bounded work when an [[agent-capability-route-pattern]] exists and current authorization allows it.
 
-Use a real peer route when issue or route contracts require requested/actual profile evidence, profile-specific tools, profile memory, delivery identity, or auditable worker execution.
+## Application
 
-## Circuit breaker
+Before saying a named peer did work, verify route evidence:
 
-Unapproved route recursion is forbidden. Pause if routes attempt direct worker-to-worker triggering, A→B→A loops, profile-wide autonomy, or dynamic supervisors without an approved deployment slice.
+1. requested profile;
+2. actual profile;
+3. route trigger or handoff;
+4. output artifact;
+5. verification proof;
+6. Pixoid review or closure comment.
 
-## Source
+If those are absent, describe the work as child-subagent analysis, local synthesis, or Pixoid-authored output.
 
-Compiled from `Knowledge/concepts/peer-profiles-vs-child-processes.md`.
+## Boundaries
+
+- Do not trigger Quill, Boba, Tinker, or recursive worker chains from a concept page or Documentation Hygiene note.
+- Do not treat persona wording, a child-agent summary, or a simulated viewpoint as live peer-profile execution.
+- Do not route one worker profile directly into another unless an explicit route contract authorizes that chain.
+- Do not let profile memories bleed across profiles; use [[profile-memory-boundaries]] and [[runtime-memory-knowledge-routing]] to choose the correct layer.
+- Do not use child agents for durable side effects that require named accountability unless Pixoid verifies the resulting artifact independently.
+
+## Related pages
+
+- [[agent-capability-route-pattern]]
+- [[hermes-soul-md-wiring]]
+- [[profile-memory-boundaries]]
+- [[workspace-autonomy-levels]]
+- [[issue-driven-afk-workflow]]
+- [[self-improving-agent-systems]]
+
+## Sources
+
+- `/root/ObsidianVault/Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `/root/ObsidianVault/Projects/Hermes Mission Control/Index.md`
+- `/root/ObsidianVault/Projects/Pixoid Agent Capability Routes/Index.md`
 
 
 <!-- ===== agent-workflows/wiki/concepts/ponytail-minimal-code-discipline.md ===== -->
@@ -549,8 +925,12 @@ namespace: agent-workflows
 
 ## Concepts
 
+- [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
+- [[concepts/bounded-context-tree-pattern|Bounded Context Tree Pattern]] — Root/branch/leaf structure for project and knowledge contexts with explicit language boundaries and routing links.
+- [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
+- [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, router skills, and grill/PRD/issue/TDD gates.
 - [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.
 - [[concepts/ponytail-minimal-code-discipline|Ponytail Minimal Code Discipline]] — Minimal-code build/review guardrail that keeps implementation lean without weakening acceptance, safety, evidence, or verification gates.
 - [[concepts/profile-memory-boundaries|Profile Memory Boundaries]] — Where durable knowledge belongs across memory, knowledge, projects, and skills.
@@ -565,7 +945,7 @@ namespace: agent-workflows
 
 ## Summaries
 
-<!-- Add compiled summaries alphabetically. -->
+- Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Routes external Hermes content between Hermes Agent, Agent Workflows, Local AI Infrastructure, Eval Trace, and Pixi Vault.
 
 ## Syntheses
 
@@ -585,6 +965,11 @@ namespace: agent-workflows
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
+
+- `Knowledge/concepts/agent-capability-route-pattern.md`
+- `Knowledge/concepts/hermes-soul-md-wiring.md`
+- `Knowledge/concepts/matt-pocock-sdlc-rhythm.md`
+- `Knowledge/concepts/bounded-context-tree-pattern.md`
 
 
 <!-- ===== agent-workflows/wiki/log.md ===== -->
@@ -637,6 +1022,17 @@ namespace: agent-workflows
 - Added compiled concept `wiki/concepts/ponytail-minimal-code-discipline.md` from the canonical Knowledge page and Hermes skill.
 - Updated namespace README and index source roots.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Crosslink external Hermes import routing
+
+- Added cross-namespace pointer to the Hermes Agent external wiki import review so workflow-specific candidates route through Agent Workflows instead of duplicating Hermes setup content.
+- No Daily Notes were copied or compiled.
+## 2026-06-18 update | Publish local Hermes KB workflow concepts
+
+- Added compiled concept pages for `agent-capability-route-pattern`, `hermes-soul-md-wiring`, `matt-pocock-sdlc-rhythm`, and `bounded-context-tree-pattern`.
+- Refreshed `peer-profiles-vs-child-processes` from the verified local Hermes KB closure synthesis.
+- Updated namespace index so the public Pixi Wiki can expose the closed tracker concepts.
+- Preserved no-auto-trigger and no profile/cron/gateway/MCP/RAG/deploy authorization boundaries.
 
 
 <!-- ===== agent-workflows/wiki/syntheses/markdown-first-agent-memory.md ===== -->

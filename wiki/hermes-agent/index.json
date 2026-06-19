@@ -2,12 +2,12 @@
   "slug": "hermes-agent",
   "title": "Hermes Agent",
   "description": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, and Jamie-specific operating reference for Pixoid.",
-  "documentCount": 8,
+  "documentCount": 9,
   "counts": {
     "wiki": 1,
     "concepts": 3,
     "entities": 0,
-    "summaries": 1,
+    "summaries": 2,
     "syntheses": 0
   },
   "documents": [
@@ -65,6 +65,13 @@
       "path": "wiki/summaries/agentwikis-hermes-curated-seed.md",
       "raw": "/raw/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md",
       "html": "/wiki/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md.html",
+      "category": "summaries"
+    },
+    {
+      "title": "External Hermes Wikis Import Review",
+      "path": "wiki/summaries/external-hermes-wikis-import-review.md",
+      "raw": "/raw/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md",
+      "html": "/wiki/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md.html",
       "category": "summaries"
     }
   ]

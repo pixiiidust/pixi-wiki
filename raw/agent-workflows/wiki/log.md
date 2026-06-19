@@ -46,3 +46,14 @@ namespace: agent-workflows
 - Added compiled concept `wiki/concepts/ponytail-minimal-code-discipline.md` from the canonical Knowledge page and Hermes skill.
 - Updated namespace README and index source roots.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Crosslink external Hermes import routing
+
+- Added cross-namespace pointer to the Hermes Agent external wiki import review so workflow-specific candidates route through Agent Workflows instead of duplicating Hermes setup content.
+- No Daily Notes were copied or compiled.
+## 2026-06-18 update | Publish local Hermes KB workflow concepts
+
+- Added compiled concept pages for `agent-capability-route-pattern`, `hermes-soul-md-wiring`, `matt-pocock-sdlc-rhythm`, and `bounded-context-tree-pattern`.
+- Refreshed `peer-profiles-vs-child-processes` from the verified local Hermes KB closure synthesis.
+- Updated namespace index so the public Pixi Wiki can expose the closed tracker concepts.
+- Preserved no-auto-trigger and no profile/cron/gateway/MCP/RAG/deploy authorization boundaries.

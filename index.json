@@ -102,10 +102,10 @@
         "currentAs": "2026-06-18 \u2014 Ponytail minimal-code discipline added as a compiled workflow concept."
       },
       "lastUpdated": "2026-06-18",
-      "documentCount": 15,
+      "documentCount": 19,
       "counts": {
         "wiki": 1,
-        "concepts": 8,
+        "concepts": 12,
         "entities": 1,
         "summaries": 0,
         "syntheses": 2
@@ -131,6 +131,13 @@
           "category": "other"
         },
         {
+          "title": "Agent Capability Route Pattern",
+          "path": "wiki/concepts/agent-capability-route-pattern.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/agent-capability-route-pattern.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/agent-capability-route-pattern.md.html",
+          "category": "concepts"
+        },
+        {
           "title": "Agent Entrypoint Mesh",
           "path": "wiki/concepts/agent-entrypoint-mesh.md",
           "raw": "/raw/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md",
@@ -138,10 +145,31 @@
           "category": "concepts"
         },
         {
+          "title": "Bounded Context Tree Pattern",
+          "path": "wiki/concepts/bounded-context-tree-pattern.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Hermes SOUL.md Wiring",
+          "path": "wiki/concepts/hermes-soul-md-wiring.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html",
+          "category": "concepts"
+        },
+        {
           "title": "Knowledge Pack Routing",
           "path": "wiki/concepts/knowledge-pack-routing.md",
           "raw": "/raw/agent-workflows/wiki/concepts/knowledge-pack-routing.md",
           "html": "/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Matt Pocock SDLC Rhythm",
+          "path": "wiki/concepts/matt-pocock-sdlc-rhythm.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md.html",
           "category": "concepts"
         },
         {
@@ -316,12 +344,12 @@
         "currentAs": "2026-06-18 \u2014 seeded from AgentWikis Hermes as a curated map, then grounded against official Hermes docs and local installed Hermes v0.16.0 source on the VPS."
       },
       "lastUpdated": "2026-06-18",
-      "documentCount": 8,
+      "documentCount": 9,
       "counts": {
         "wiki": 1,
         "concepts": 3,
         "entities": 0,
-        "summaries": 1,
+        "summaries": 2,
         "syntheses": 0
       },
       "llms_txt": "/wiki/hermes-agent/llms.txt",
@@ -384,6 +412,13 @@
           "path": "wiki/summaries/agentwikis-hermes-curated-seed.md",
           "raw": "/raw/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md",
           "html": "/wiki/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md.html",
+          "category": "summaries"
+        },
+        {
+          "title": "External Hermes Wikis Import Review",
+          "path": "wiki/summaries/external-hermes-wikis-import-review.md",
+          "raw": "/raw/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md",
+          "html": "/wiki/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md.html",
           "category": "summaries"
         }
       ]
@@ -647,7 +682,7 @@
           "category": "other"
         },
         {
-          "title": "Local Retrieval-Augmented Agent Infrastructure",
+          "title": "Local Retrieval Agent Infrastructure",
           "path": "wiki/concepts/local-retrieval-agent-infrastructure.md",
           "raw": "/raw/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md",
           "html": "/wiki/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md.html",

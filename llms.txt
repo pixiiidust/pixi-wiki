@@ -26,8 +26,12 @@
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
 - [Agent Workflows](/raw/agent-workflows/README.md) ([html](/wiki/agent-workflows/README.md.html))
+- [Agent Capability Route Pattern](/raw/agent-workflows/wiki/concepts/agent-capability-route-pattern.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-capability-route-pattern.md.html))
 - [Agent Entrypoint Mesh](/raw/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md.html))
+- [Bounded Context Tree Pattern](/raw/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md) ([html](/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html))
+- [Hermes SOUL.md Wiring](/raw/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md) ([html](/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html))
 - [Knowledge Pack Routing](/raw/agent-workflows/wiki/concepts/knowledge-pack-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html))
+- [Matt Pocock SDLC Rhythm](/raw/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md) ([html](/wiki/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md.html))
 - [Peer Profiles vs Child Processes](/raw/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md) ([html](/wiki/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md.html))
 - [Ponytail Minimal Code Discipline](/raw/agent-workflows/wiki/concepts/ponytail-minimal-code-discipline.md) ([html](/wiki/agent-workflows/wiki/concepts/ponytail-minimal-code-discipline.md.html))
 - [Profile Memory Boundaries](/raw/agent-workflows/wiki/concepts/profile-memory-boundaries.md) ([html](/wiki/agent-workflows/wiki/concepts/profile-memory-boundaries.md.html))
@@ -68,6 +72,7 @@
 - [Hermes Agent — Master Index](/raw/hermes-agent/wiki/index.md) ([html](/wiki/hermes-agent/wiki/index.md.html))
 - [Hermes Agent — Activity Log](/raw/hermes-agent/wiki/log.md) ([html](/wiki/hermes-agent/wiki/log.md.html))
 - [AgentWikis Hermes Curated Seed](/raw/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md) ([html](/wiki/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md.html))
+- [External Hermes Wikis Import Review](/raw/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md) ([html](/wiki/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md.html))
 
 ## AI-Native Product Surfaces
 
@@ -116,7 +121,7 @@
 
 - [Local AI Infrastructure Namespace Instructions](/raw/local-ai-infrastructure/CLAUDE.md) ([html](/wiki/local-ai-infrastructure/CLAUDE.md.html))
 - [Local AI Infrastructure](/raw/local-ai-infrastructure/README.md) ([html](/wiki/local-ai-infrastructure/README.md.html))
-- [Local Retrieval-Augmented Agent Infrastructure](/raw/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md) ([html](/wiki/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md.html))
+- [Local Retrieval Agent Infrastructure](/raw/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md) ([html](/wiki/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md.html))
 - [RAG over Agent Wikis](/raw/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md) ([html](/wiki/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md.html))
 - [Local AI Infrastructure — Master Index](/raw/local-ai-infrastructure/wiki/index.md) ([html](/wiki/local-ai-infrastructure/wiki/index.md.html))
 - [Local AI Infrastructure — Activity Log](/raw/local-ai-infrastructure/wiki/log.md) ([html](/wiki/local-ai-infrastructure/wiki/log.md.html))

@@ -22,34 +22,65 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/eval-trace/README.md.html">Eval Trace</a> / wiki/concepts/context-overfitting.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/eval-trace/wiki/concepts/context-overfitting.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+eval-trace%2Fwiki%2Fconcepts%2Fcontext-overfitting.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Feval-trace%2Fwiki%2Fconcepts%2Fcontext-overfitting.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>Context Overfitting</h1>
-<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-16</div><div><span>status</span>: compiled</div><div><span>namespace</span>: eval-trace</div><div><span>sources</span>: 2</div></div>
-<p>**Context overfitting** is an agent workflow failure mode where an agent treats written context, memory, old summaries, project notes, or prompt rules as hard constraints even when current user intent, live evidence, or project state should override them.</p>
-<h2>Failure shape</h2>
-<p>An agent is context-overfit when it:</p>
+<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-18</div><div><span>status</span>: compiled</div><div><span>namespace</span>: eval-trace</div><div><span>sources</span>: 2</div></div>
+<h2>Definition</h2>
+<p>**Context overfitting** is when an agent over-weights written context — memory, skills, dossiers, project notes, cron prompts, prior suggestions, or old issue state — and treats it as a hard constraint even when current user intent, live evidence, or scope boundaries should override it.</p>
+<p>The written rule may still be useful. The failure is the weighting and scope.</p>
+<h2>Current synthesis</h2>
+<p>Use the compact test:</p>
+<pre><code>Context overfit? YES / NO / UNSURE
+Suspect source: &lt;memory / skill / dossier / prompt / project note / issue / none&gt;
+Evidence:
+- &lt;1-2 concrete observations&gt;
+Recommended action: &lt;demote / scope / patch / update truth / keep / ask Jamie&gt;</code></pre>
+<p>Verdicts:</p>
+<p>| Verdict | Meaning | Action |</p>
+<p>|---|---|---|</p>
+<p>| YES | Written context or stale truth overrode current user intent, live evidence, or scope boundaries. | Demote the rule, scope it, patch the source, update the canonical truth surface, or remove the stale consumer. |</p>
+<p>| NO | Context was used as a weak prior and the agent stayed steerable. | Keep the rule; no durable change unless another defect appears. |</p>
+<p>| UNSURE | Evidence is insufficient, or Jamie must judge whether the rule should generalize. | Ask Jamie, inspect the suspect source, or gather better trace evidence before changing durable state. |</p>
+<h2>Source-layer priority</h2>
+<p>When context conflicts, prefer current and canonical truth in this order:</p>
+<p>1. current user instruction and explicit scope;</p>
+<p>2. safety, secrets, data-loss, and approval boundaries;</p>
+<p>3. live filesystem/GitHub/runtime evidence;</p>
+<p>4. current PRD, issue, route contract, or handoff;</p>
+<p>5. project/vault source of truth;</p>
+<p>6. local Hermes knowledge concepts;</p>
+<p>7. skills and procedures;</p>
+<p>8. memory, dossiers, cron prompts, and older session recalls as weak priors.</p>
+<p>This is a routing rule, not a license to ignore durable context. Written context is useful when it is current, scoped, and backed by live evidence.</p>
+<h2>Application</h2>
+<p>Run this check when:</p>
 <ul>
-<li>follows stale session summaries instead of the latest user instruction;</li>
-<li>recommends work from deprecated projects after live status changed;</li>
-<li>treats memory/profile text as proof instead of a routing hint;</li>
-<li>treats scratch notes as canonical source truth;</li>
-<li>continues a previous plan after the user changed scope.</li>
+<li>an agent refuses a reasonable correction because an older rule says otherwise;</li>
+<li>project-local advice leaks into another project;</li>
+<li>stale issue or repo state drives a current recommendation;</li>
+<li>a self-improvement loop tries to promote a one-off suggestion into global behavior;</li>
+<li>memory or a dossier sounds authoritative but live evidence disagrees;</li>
+<li>a route/profile rule is treated as automatic approval when it is only a recommendation.</li>
 </ul>
-<h2>Evaluation verdict</h2>
-<pre><code>Context overfit? YES / NO / UNSURE</code></pre>
+<p>For self-improvement, pair this page with self-improving-agent-systems: promote only evidence-graded, reversible, layer-fit lessons. For memory and knowledge routing, pair it with runtime-memory-knowledge-routing and profile-memory-boundaries.</p>
+<h2>Boundaries</h2>
 <ul>
-<li>**YES** — stale or overly rigid context controlled behavior despite stronger current evidence.</li>
-<li>**NO** — context was used as a weak prior and updated by current intent/live evidence.</li>
-<li>**UNSURE** — evidence is insufficient; surface one concrete suspect rule for review.</li>
+<li>Do not use this rubric to bypass safety, secrets, destructive-action, merge, deploy, or live-posting approvals.</li>
+<li>Do not patch memory, cron, profiles, providers, gateways, MCP, RAG, or GitHub state merely because a context-overfit risk exists; verify and use the correct change process.</li>
+<li>Do not store raw eval traces, issue progress, PR numbers, or command logs in concept pages.</li>
+<li>Do not call every stale page context overfitting. Ordinary knowledge rot is stale content; context overfitting is stale or over-scoped content being weighted too strongly during action.</li>
 </ul>
-<h2>Deterministic prechecks</h2>
-<p>Eval Trace currently uses prechecks such as correction override, fresh-state-without-tools, scope boundary, counterexample gap, stale project context, and safety/data-loss escalation. Safety/auth/data-loss cases should become <code>UNSURE</code>, not automatic failures.</p>
-<h2>Cross-namespace links</h2>
+<h2>Related pages</h2>
 <ul>
-<li>Hermes Mission Control — route governance surface where context-overfit failures show up.</li>
-<li>Pixoid Crew Operating Model — source-of-truth boundaries reduce context overfitting.</li>
-<li><code>pixi-vault</code> — source classes and Wiki Compiler Maps separate scratch from canonical truth.</li>
+<li>self-improving-agent-systems</li>
+<li>runtime-memory-knowledge-routing</li>
+<li>profile-memory-boundaries</li>
+<li>agent-ops-harness-health</li>
+<li>agent-capability-route-pattern</li>
+<li>matt-pocock-sdlc-rhythm</li>
 </ul>
-<h2>Source</h2>
-<p>Compiled from <code>Knowledge/concepts/context-overfitting.md</code> and <code>Projects/Eval Trace/Index.md</code>.</p>
+<h2>Sources</h2>
+<ul>
+<li><code>/root/ObsidianVault/Knowledge/concepts/context-overfitting.md</code></li>
+</ul>
 <nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/eval-trace/wiki/index.md.html"><span class="next-label">← Prev</span><span class="next-title">Eval Trace — Master Index</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/eval-trace/wiki/entities/eval-trace.md.html"><span class="next-label">Next</span><span class="next-title">Eval Trace →</span></a></nav>
 </article></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>

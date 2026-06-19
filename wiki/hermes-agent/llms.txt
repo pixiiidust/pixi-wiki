@@ -10,3 +10,4 @@
 - [Hermes Agent — Master Index](/raw/hermes-agent/wiki/index.md) ([html](/wiki/hermes-agent/wiki/index.md.html))
 - [Hermes Agent — Activity Log](/raw/hermes-agent/wiki/log.md) ([html](/wiki/hermes-agent/wiki/log.md.html))
 - [AgentWikis Hermes Curated Seed](/raw/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md) ([html](/wiki/hermes-agent/wiki/summaries/agentwikis-hermes-curated-seed.md.html))
+- [External Hermes Wikis Import Review](/raw/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md) ([html](/wiki/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md.html))

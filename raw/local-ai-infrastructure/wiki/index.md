@@ -26,7 +26,7 @@ namespace: local-ai-infrastructure
 
 ## Syntheses
 
-<!-- Add compiled syntheses alphabetically. -->
+- Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Marks Local Stack / Airplane Mode as local-infrastructure primary, with deployment backend tradeoffs crosslinked from Hermes Agent.
 
 ## Source Roots
 

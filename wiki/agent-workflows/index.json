@@ -2,10 +2,10 @@
   "slug": "agent-workflows",
   "title": "Agent Workflows",
   "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
-  "documentCount": 15,
+  "documentCount": 19,
   "counts": {
     "wiki": 1,
-    "concepts": 8,
+    "concepts": 12,
     "entities": 1,
     "summaries": 0,
     "syntheses": 2
@@ -26,6 +26,13 @@
       "category": "other"
     },
     {
+      "title": "Agent Capability Route Pattern",
+      "path": "wiki/concepts/agent-capability-route-pattern.md",
+      "raw": "/raw/agent-workflows/wiki/concepts/agent-capability-route-pattern.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/agent-capability-route-pattern.md.html",
+      "category": "concepts"
+    },
+    {
       "title": "Agent Entrypoint Mesh",
       "path": "wiki/concepts/agent-entrypoint-mesh.md",
       "raw": "/raw/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md",
@@ -33,10 +40,31 @@
       "category": "concepts"
     },
     {
+      "title": "Bounded Context Tree Pattern",
+      "path": "wiki/concepts/bounded-context-tree-pattern.md",
+      "raw": "/raw/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Hermes SOUL.md Wiring",
+      "path": "wiki/concepts/hermes-soul-md-wiring.md",
+      "raw": "/raw/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html",
+      "category": "concepts"
+    },
+    {
       "title": "Knowledge Pack Routing",
       "path": "wiki/concepts/knowledge-pack-routing.md",
       "raw": "/raw/agent-workflows/wiki/concepts/knowledge-pack-routing.md",
       "html": "/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Matt Pocock SDLC Rhythm",
+      "path": "wiki/concepts/matt-pocock-sdlc-rhythm.md",
+      "raw": "/raw/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md.html",
       "category": "concepts"
     },
     {

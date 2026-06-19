@@ -31,3 +31,12 @@ namespace: eval-trace
 - Updated namespace index.
 - Source pages remain in `Knowledge/` and `Projects/`.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Crosslink Hermes eval-adjacent imports
+
+- Added cross-namespace pointer to the Hermes Agent external wiki import review for auxiliary-model and trace/eval-adjacent routing.
+- No Daily Notes were copied or compiled.
+## 2026-06-18 update | Refresh context-overfitting from local Hermes KB closure
+
+- Refreshed `wiki/concepts/context-overfitting.md` with the verified YES/NO/UNSURE rubric and source-layer priority from the local Hermes KB tracker closure.
+- Preserved the boundary that context-overfit checks do not bypass safety, approval, profile, cron, or deployment gates.

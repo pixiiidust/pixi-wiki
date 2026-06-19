@@ -30,3 +30,12 @@ namespace: local-ai-infrastructure
 - Updated `wiki/concepts/rag-over-agent-wikis.md` to name `pixi-wiki` as the current public corpus candidate.
 - Preserved the eval-first boundary: use the compiled wiki as the first retrieval/eval surface before adding vector DB or runtime RAG infrastructure.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-18 update | Crosslink Hermes local-stack routing
+
+- Added cross-namespace pointer to the Hermes Agent external wiki import review for Local Stack / Airplane Mode and deployment-backend routing.
+- No Daily Notes were copied or compiled.
+## 2026-06-18 update | Refresh local retrieval infrastructure boundary
+
+- Refreshed `wiki/concepts/local-retrieval-agent-infrastructure.md` from the verified local Hermes KB closure synthesis.
+- Preserved the explicit no-install/no-MCP/no-RAG-build/no-provider/no-deploy authorization boundary.
