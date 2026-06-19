@@ -96,6 +96,10 @@ sources:
 # Test Concept
 
 This fixture proves raw Markdown and HTML are generated.
+
+## Related pages
+
+- [[concepts/test-concept|Test Concept]]
 """,
         encoding="utf-8",
     )
@@ -140,7 +144,9 @@ def test_generator_rebuilds_clean_namespace_registry(tmp_path: Path) -> None:
     html_path = output / "wiki" / "sample-namespace" / "wiki" / "concepts" / "test-concept.md.html"
     assert raw_path.exists()
     assert html_path.exists()
-    assert "Test Concept" in html_path.read_text(encoding="utf-8")
+    html_text = html_path.read_text(encoding="utf-8")
+    assert "Test Concept" in html_text
+    assert '<a href="/pixi-wiki/wiki/sample-namespace/wiki/concepts/test-concept.md.html">Test Concept</a>' in html_text
 
 
 def test_generator_removes_legacy_root_and_old_layers(tmp_path: Path) -> None:

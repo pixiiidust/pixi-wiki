@@ -15,7 +15,7 @@ import re
 import shutil
 from collections import Counter
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 from urllib.parse import quote_plus
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -104,16 +104,36 @@ def strip_scope_section(markdown: str) -> str:
     return re.sub(r"\n## Scope\n\n.*?(?=\n##\s+|\Z)", "\n", markdown, flags=re.DOTALL)
 
 
-def inline_markdown(value: str) -> str:
+LinkResolver = Callable[[str], str | None]
+
+
+def inline_markdown(value: str, link_resolver: LinkResolver | None = None) -> str:
     escaped = html.escape(value)
     escaped = re.sub(r"`([^`]+)`", r"<code>\1</code>", escaped)
+
+    def replace_wikilink_with_alias(match: re.Match[str]) -> str:
+        target = match.group(1).strip()
+        label = match.group(2).strip()
+        href = link_resolver(target) if link_resolver else None
+        if href:
+            return f'<a href="{html.escape(href)}">{html.escape(label)}</a>'
+        return html.escape(label)
+
+    def replace_wikilink(match: re.Match[str]) -> str:
+        target = match.group(1).strip()
+        label = target.split("/")[-1]
+        href = link_resolver(target) if link_resolver else None
+        if href:
+            return f'<a href="{html.escape(href)}">{html.escape(label)}</a>'
+        return html.escape(label)
+
+    escaped = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", replace_wikilink_with_alias, escaped)
+    escaped = re.sub(r"\[\[([^\]]+)\]\]", replace_wikilink, escaped)
     escaped = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', escaped)
-    escaped = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", r"\2", escaped)
-    escaped = re.sub(r"\[\[([^\]]+)\]\]", r"\1", escaped)
     return escaped
 
 
-def markdown_fragment(markdown: str) -> str:
+def markdown_fragment(markdown: str, link_resolver: LinkResolver | None = None) -> str:
     out: list[str] = []
     in_code = False
     code: list[str] = []
@@ -144,24 +164,24 @@ def markdown_fragment(markdown: str) -> str:
             continue
         if stripped.startswith("# "):
             close_ul()
-            out.append(f"<h1>{inline_markdown(stripped[2:].strip())}</h1>")
+            out.append(f"<h1>{inline_markdown(stripped[2:].strip(), link_resolver)}</h1>")
         elif stripped.startswith("## "):
             close_ul()
-            out.append(f"<h2>{inline_markdown(stripped[3:].strip())}</h2>")
+            out.append(f"<h2>{inline_markdown(stripped[3:].strip(), link_resolver)}</h2>")
         elif stripped.startswith("### "):
             close_ul()
-            out.append(f"<h3>{inline_markdown(stripped[4:].strip())}</h3>")
+            out.append(f"<h3>{inline_markdown(stripped[4:].strip(), link_resolver)}</h3>")
         elif stripped.startswith("- "):
             if not in_ul:
                 out.append("<ul>")
                 in_ul = True
-            out.append(f"<li>{inline_markdown(stripped[2:].strip())}</li>")
+            out.append(f"<li>{inline_markdown(stripped[2:].strip(), link_resolver)}</li>")
         elif stripped.startswith("> "):
             close_ul()
-            out.append(f"<blockquote>{inline_markdown(stripped[2:].strip())}</blockquote>")
+            out.append(f"<blockquote>{inline_markdown(stripped[2:].strip(), link_resolver)}</blockquote>")
         else:
             close_ul()
-            out.append(f"<p>{inline_markdown(stripped.strip())}</p>")
+            out.append(f"<p>{inline_markdown(stripped.strip(), link_resolver)}</p>")
     close_ul()
     return "\n".join(out)
 
@@ -307,7 +327,17 @@ def prev_next_nav(slug: str, prev_doc: dict[str, str] | None, next_doc: dict[str
     return f'<nav class="prev-next">{"".join(cards)}</nav>' if cards else ""
 
 
-def render_readme(slug: str, title: str, fm: dict[str, Any], body: str, covers: str, not_covered: str, current_as: str, next_doc: dict[str, str] | None) -> str:
+def render_readme(
+    slug: str,
+    title: str,
+    fm: dict[str, Any],
+    body: str,
+    covers: str,
+    not_covered: str,
+    current_as: str,
+    next_doc: dict[str, str] | None,
+    link_resolver: LinkResolver | None = None,
+) -> str:
     updated = fm.get("updated", "unknown")
     description = first_paragraph(body)
     body_without_title = re.sub(r"^#\s+.+\n", "", body, count=1).strip()
@@ -317,19 +347,29 @@ def render_readme(slug: str, title: str, fm: dict[str, Any], body: str, covers: 
 <h1>{html.escape(title)} Knowledge Base</h1>
 {metadata_block(fm)}
 <div class="updated">updated: <strong>{html.escape(str(updated))}</strong></div>
-<section class="info-card"><div class="info-row"><div class="info-label green">Covers</div><div>{inline_markdown(covers)}</div></div><div class="info-row"><div class="info-label yellow">Not Covered</div><div>{inline_markdown(not_covered or "Out-of-scope or stale material; verify with source notes and live tools.")}</div></div><div class="info-row"><div class="info-label white">Current As Of</div><div>{html.escape(current_as or str(updated))}</div></div></section>
+<section class="info-card"><div class="info-row"><div class="info-label green">Covers</div><div>{inline_markdown(covers, link_resolver)}</div></div><div class="info-row"><div class="info-label yellow">Not Covered</div><div>{inline_markdown(not_covered or "Out-of-scope or stale material; verify with source notes and live tools.", link_resolver)}</div></div><div class="info-row"><div class="info-label white">Current As Of</div><div>{html.escape(current_as or str(updated))}</div></div></section>
 <div class="agent-card">🤖 Agent access: <a href="/pixi-wiki/wiki/{slug}/llms.txt">/wiki/{slug}/llms.txt</a> <a href="/pixi-wiki/wiki/{slug}/llms-full.txt">/wiki/{slug}/llms-full.txt</a> <a href="/pixi-wiki/wiki/{slug}/index.json">/wiki/{slug}/index.json</a></div>
-<p>{inline_markdown(description)}</p>
+<p>{inline_markdown(description, link_resolver)}</p>
 <h2>Structure</h2><ul><li><code>raw/</code> — raw Markdown provenance mirror for agents and source inspection.</li><li><code>wiki/</code> — synthesized knowledge pages: concepts, entities, summaries, and syntheses.</li><li>Schema and maintenance rules: see <code>CLAUDE.md</code>.</li></ul>
 <h2>Usage</h2><ul><li><strong>Add new sources:</strong> update canonical source notes in <code>pixi-vault</code>, then compile into this namespace.</li><li><strong>Ask questions:</strong> agents read this wiki and cite raw/source paths.</li><li><strong>Publish:</strong> regenerate <code>pixi-wiki</code>, run tests, then live-verify raw and HTML routes.</li></ul>
-{markdown_fragment(body_without_scope) if body_without_scope else ""}
+{markdown_fragment(body_without_scope, link_resolver) if body_without_scope else ""}
 {prev_next_nav(slug, None, next_doc)}
 """
     return article
 
 
-def render_page(slug: str, title: str, rel: str, page_title: str, fm: dict[str, Any], body: str, prev_doc: dict[str, str] | None, next_doc: dict[str, str] | None) -> str:
-    rendered_body = with_metadata_after_h1(markdown_fragment(body), metadata_block(fm))
+def render_page(
+    slug: str,
+    title: str,
+    rel: str,
+    page_title: str,
+    fm: dict[str, Any],
+    body: str,
+    prev_doc: dict[str, str] | None,
+    next_doc: dict[str, str] | None,
+    link_resolver: LinkResolver | None = None,
+) -> str:
+    rendered_body = with_metadata_after_h1(markdown_fragment(body, link_resolver), metadata_block(fm))
     return f"""
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/{slug}/README.md.html">{html.escape(title)}</a> / {html.escape(rel)}</div>{page_tools(slug, rel)}</div>
 {rendered_body}
@@ -337,7 +377,37 @@ def render_page(slug: str, title: str, rel: str, page_title: str, fm: dict[str, 
 """
 
 
-def collect_namespace(source_dir: Path, output_root: Path, slug: str) -> tuple[dict[str, Any], list[tuple[str, str, str, str]], list[tuple[str, str]]]:
+def build_global_link_targets(source_dir: Path, slugs: list[str]) -> dict[str, str]:
+    targets: dict[str, str] = {}
+    for slug in slugs:
+        namespace_dir = source_dir / slug
+        for source_file in namespace_dir.rglob("*.md"):
+            rel = source_file.relative_to(namespace_dir)
+            text = source_file.read_text(encoding="utf-8")
+            fm, _body = parse_frontmatter(text)
+            page_title = fm.get("title") or first_heading(text) or rel.name
+            rel_posix = rel.as_posix()
+            href = f"/pixi-wiki/wiki/{slug}/{rel_posix}.html"
+            keys = {
+                rel_posix,
+                rel_posix.removesuffix(".md"),
+                rel.stem,
+                str(page_title),
+                str(page_title).lower(),
+            }
+            if len(rel.parts) >= 2:
+                keys.add("/".join(rel.parts[-2:]).removesuffix(".md"))
+            for key in keys:
+                targets.setdefault(key, href)
+    return targets
+
+
+def collect_namespace(
+    source_dir: Path,
+    output_root: Path,
+    slug: str,
+    global_link_targets: dict[str, str] | None = None,
+) -> tuple[dict[str, Any], list[tuple[str, str, str, str]], list[tuple[str, str]]]:
     namespace_dir = source_dir / slug
     readme_path = namespace_dir / "README.md"
     readme = readme_path.read_text(encoding="utf-8")
@@ -387,6 +457,36 @@ def collect_namespace(source_dir: Path, output_root: Path, slug: str) -> tuple[d
     ]
     nav_by_path = {doc["path"]: index for index, doc in enumerate(nav_docs)}
 
+    link_targets: dict[str, str] = dict(global_link_targets or {})
+    for rel, _text, _page_fm, _body, page_title in parsed:
+        rel_posix = rel.as_posix()
+        href = f"/pixi-wiki/wiki/{slug}/{rel_posix}.html"
+        keys = {
+            rel_posix,
+            rel_posix.removesuffix(".md"),
+            rel.stem,
+            str(page_title),
+            str(page_title).lower(),
+        }
+        if len(rel.parts) >= 2:
+            keys.add("/".join(rel.parts[-2:]).removesuffix(".md"))
+        for key in keys:
+            link_targets[key] = href
+
+    def resolve_wikilink(target: str) -> str | None:
+        normalized = target.strip().removesuffix(".html")
+        if normalized in link_targets:
+            return link_targets[normalized]
+        if normalized.lower() in link_targets:
+            return link_targets[normalized.lower()]
+        cross_namespace = re.match(r"^\.\./\.\./([^/]+)/(.+)$", normalized)
+        if cross_namespace:
+            target_slug, target_path = cross_namespace.groups()
+            if not target_path.endswith(".md"):
+                target_path = f"{target_path}.md"
+            return f"/pixi-wiki/wiki/{target_slug}/{target_path}.html"
+        return None
+
     # Namespace-local agent access files.
     ns_wiki_dir = output_root / "wiki" / slug
     ns_wiki_dir.mkdir(parents=True, exist_ok=True)
@@ -410,9 +510,9 @@ def collect_namespace(source_dir: Path, output_root: Path, slug: str) -> tuple[d
         prev_doc = nav_docs[nav_index - 1] if nav_index is not None and nav_index > 0 else None
         next_doc = nav_docs[nav_index + 1] if nav_index is not None and nav_index + 1 < len(nav_docs) else None
         if rel_posix == "README.md":
-            article = render_readme(slug, str(title), fm, readme_body, covers, not_covered, current_as, next_doc)
+            article = render_readme(slug, str(title), fm, readme_body, covers, not_covered, current_as, next_doc, resolve_wikilink)
         else:
-            article = render_page(slug, str(title), rel_posix, str(page_title), page_fm, body if page_fm else text, prev_doc, next_doc)
+            article = render_page(slug, str(title), rel_posix, str(page_title), page_fm, body if page_fm else text, prev_doc, next_doc, resolve_wikilink)
         html_output.write_text(page_shell(slug, str(title), len(md_files), counts, rel_posix, sidebar_docs, article, str(page_title)), encoding="utf-8")
         raw_url = f"/raw/{slug}/{rel_posix}"
         html_url = f"/wiki/{slug}/{rel_posix}.html"
@@ -540,6 +640,8 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
 
     clean_generated_output(output_root)
 
+    global_link_targets = build_global_link_targets(source_dir, slugs)
+
     wikis: list[dict[str, Any]] = []
     all_full_sections: list[tuple[str, str]] = []
     llms_parts = [
@@ -571,7 +673,7 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     card_by_slug: dict[str, str] = {}
 
     for slug in slugs:
-        wiki_record, links, full_sections = collect_namespace(source_dir, output_root, slug)
+        wiki_record, links, full_sections = collect_namespace(source_dir, output_root, slug, global_link_targets)
         wikis.append(wiki_record)
         all_full_sections.extend(full_sections)
         title = wiki_record["title"]
