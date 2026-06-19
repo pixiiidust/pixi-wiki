@@ -96,6 +96,9 @@
 
 - [RL Sim Labs Namespace Instructions](/raw/rl-sim-labs/CLAUDE.md) ([html](/wiki/rl-sim-labs/CLAUDE.md.html))
 - [RL Sim Labs](/raw/rl-sim-labs/README.md) ([html](/wiki/rl-sim-labs/README.md.html))
+- [PufferLib 3.0: Better Reinforcement Learning at 4,000,000 Steps/Second](/raw/rl-sim-labs/raw/puffer-ai-blog.md) ([html](/wiki/rl-sim-labs/raw/puffer-ai-blog.md.html))
+- [Installation](/raw/rl-sim-labs/raw/puffer-ai-docs.md) ([html](/wiki/rl-sim-labs/raw/puffer-ai-docs.md.html))
+- [PufferLib Fast Environment Loop](/raw/rl-sim-labs/wiki/concepts/pufferlib-fast-environment-loop.md) ([html](/wiki/rl-sim-labs/wiki/concepts/pufferlib-fast-environment-loop.md.html))
 - [Critical Ranger FFM](/raw/rl-sim-labs/wiki/entities/critical-ranger-ffm.md) ([html](/wiki/rl-sim-labs/wiki/entities/critical-ranger-ffm.md.html))
 - [RL Sim Labs — Master Index](/raw/rl-sim-labs/wiki/index.md) ([html](/wiki/rl-sim-labs/wiki/index.md.html))
 - [RL Sim Labs — Activity Log](/raw/rl-sim-labs/wiki/log.md) ([html](/wiki/rl-sim-labs/wiki/log.md.html))

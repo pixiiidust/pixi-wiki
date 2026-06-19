@@ -2,10 +2,10 @@
   "slug": "rl-sim-labs",
   "title": "RL Sim Labs",
   "description": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.",
-  "documentCount": 5,
+  "documentCount": 8,
   "counts": {
     "wiki": 1,
-    "concepts": 0,
+    "concepts": 1,
     "entities": 1,
     "summaries": 0,
     "syntheses": 0
@@ -24,6 +24,27 @@
       "raw": "/raw/rl-sim-labs/README.md",
       "html": "/wiki/rl-sim-labs/README.md.html",
       "category": "other"
+    },
+    {
+      "title": "PufferLib 3.0: Better Reinforcement Learning at 4,000,000 Steps/Second",
+      "path": "raw/puffer-ai-blog.md",
+      "raw": "/raw/rl-sim-labs/raw/puffer-ai-blog.md",
+      "html": "/wiki/rl-sim-labs/raw/puffer-ai-blog.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Installation",
+      "path": "raw/puffer-ai-docs.md",
+      "raw": "/raw/rl-sim-labs/raw/puffer-ai-docs.md",
+      "html": "/wiki/rl-sim-labs/raw/puffer-ai-docs.md.html",
+      "category": "other"
+    },
+    {
+      "title": "PufferLib Fast Environment Loop",
+      "path": "wiki/concepts/pufferlib-fast-environment-loop.md",
+      "raw": "/raw/rl-sim-labs/wiki/concepts/pufferlib-fast-environment-loop.md",
+      "html": "/wiki/rl-sim-labs/wiki/concepts/pufferlib-fast-environment-loop.md.html",
+      "category": "concepts"
     },
     {
       "title": "Critical Ranger FFM",

@@ -1,7 +1,7 @@
 ---
 title: RL Sim Labs — Master Index
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-18
 type: index
 status: active
 namespace: rl-sim-labs
@@ -9,9 +9,11 @@ namespace: rl-sim-labs
 
 # RL Sim Labs — Master Index
 
-> Scaffold index for `rl-sim-labs`. Add compiled pages here as they are created.
+> Content index for `rl-sim-labs`. Add compiled pages here as they are created.
 
 ## Concepts
+
+- [[concepts/pufferlib-fast-environment-loop|PufferLib Fast Environment Loop]] — Systems-first pattern for fast PufferLib environment authoring, training, sweeps, and evidence gates.
 
 <!-- Add compiled concepts alphabetically. -->
 
