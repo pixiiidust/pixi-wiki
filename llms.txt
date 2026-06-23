@@ -21,13 +21,14 @@
 ## Agent Workflows
 
 > Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.
-> Current as of: 2026-06-19 — Matt Pocock skills best-practices concept added and cross-linked to the SDLC rhythm.
+> Current as of: 2026-06-23 — Agent skill routing contract added so Pixoid auto-selects useful skills and carries active constraints into delegated subagents.
 > Agent access: [/wiki/agent-workflows/llms.txt](/wiki/agent-workflows/llms.txt) [/wiki/agent-workflows/llms-full.txt](/wiki/agent-workflows/llms-full.txt) [/wiki/agent-workflows/index.json](/wiki/agent-workflows/index.json)
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
 - [Agent Workflows](/raw/agent-workflows/README.md) ([html](/wiki/agent-workflows/README.md.html))
 - [Agent Capability Route Pattern](/raw/agent-workflows/wiki/concepts/agent-capability-route-pattern.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-capability-route-pattern.md.html))
 - [Agent Entrypoint Mesh](/raw/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md.html))
+- [Agent Skill Routing](/raw/agent-workflows/wiki/concepts/agent-skill-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-skill-routing.md.html))
 - [Bounded Context Tree Pattern](/raw/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md) ([html](/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html))
 - [Hermes SOUL.md Wiring](/raw/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md) ([html](/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html))
 - [Knowledge Pack Routing](/raw/agent-workflows/wiki/concepts/knowledge-pack-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html))

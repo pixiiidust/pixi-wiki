@@ -99,13 +99,13 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-06-19 \u2014 Matt Pocock skills best-practices concept added and cross-linked to the SDLC rhythm."
+        "currentAs": "2026-06-23 \u2014 Agent skill routing contract added so Pixoid auto-selects useful skills and carries active constraints into delegated subagents."
       },
-      "lastUpdated": "2026-06-19",
-      "documentCount": 20,
+      "lastUpdated": "2026-06-23",
+      "documentCount": 21,
       "counts": {
         "wiki": 1,
-        "concepts": 13,
+        "concepts": 14,
         "entities": 1,
         "summaries": 0,
         "syntheses": 2
@@ -142,6 +142,13 @@
           "path": "wiki/concepts/agent-entrypoint-mesh.md",
           "raw": "/raw/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md",
           "html": "/wiki/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Agent Skill Routing",
+          "path": "wiki/concepts/agent-skill-routing.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/agent-skill-routing.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/agent-skill-routing.md.html",
           "category": "concepts"
         },
         {

@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-19
+updated: 2026-06-23
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-23 create | Agent skill routing contract
+
+- Added compiled concept `wiki/concepts/agent-skill-routing.md` from the canonical Knowledge page and the new `jamie-skill-router` Hermes skill.
+- Captured the rule that Pixoid chooses the skill stack by default and passes active skill constraints into delegated subagent context.
+- Updated namespace README and index source roots.
 
 ## 2026-06-16 create | Namespace scaffold initialized
 

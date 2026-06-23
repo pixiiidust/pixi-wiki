@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-19
+updated: 2026-06-23
 type: namespace-overview
 status: active
 category: agents
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-19 — Matt Pocock skills best-practices concept added and cross-linked to the SDLC rhythm.
+2026-06-23 — Agent skill routing contract added so Pixoid auto-selects useful skills and carries active constraints into delegated subagents.
 
 ## Canonical Source Roots
 
@@ -38,6 +38,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/self-improving-agent-systems.md`
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
+- `Knowledge/concepts/agent-skill-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/matt-pocock-skills-best-practices.md`
