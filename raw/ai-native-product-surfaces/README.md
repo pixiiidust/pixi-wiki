@@ -27,7 +27,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-23 — active namespace. Includes Jamie's top-level AI definition plus compiled product-surface entities and concepts; I-know-kungfu is the newest active project entry.
+2026-06-23 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry.
 
 ## Canonical Source Roots
 
@@ -36,6 +36,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Projects/Planned/PRD.md`
 - `Projects/myAbode/Index.md`
 - `Knowledge/concepts/ai-native-problem-framing-framework.md`
+- `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
 

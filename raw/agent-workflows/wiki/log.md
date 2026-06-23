@@ -15,6 +15,7 @@ namespace: agent-workflows
 
 - Added compiled concept `wiki/concepts/agent-skill-routing.md` from the canonical Knowledge page and the new `jamie-skill-router` Hermes skill.
 - Captured the rule that Pixoid chooses the skill stack by default and passes active skill constraints into delegated subagent context.
+- Added edge cases for explicit user-invoked modes, ambiguous routing, unavailable tools, public deploy approval, and context overload.
 - Updated namespace README and index source roots.
 
 ## 2026-06-16 create | Namespace scaffold initialized
@@ -68,5 +69,12 @@ namespace: agent-workflows
 
 - Added compiled concept `wiki/concepts/matt-pocock-skills-best-practices.md` from the canonical Knowledge page and upstream `mattpocock/skills` README.
 - Cross-linked `matt-pocock-sdlc-rhythm` so the generalized SDLC rhythm points back to the source-backed best-practices pattern.
+- Updated namespace README and index source roots.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-23 update | Interaction Mode Routing crosslink
+
+- Added cross-namespace routing to `ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md`.
+- Updated `wiki/entities/hermes-mission-control.md` with the Pixoid Review Surface pattern.
 - Updated namespace README and index source roots.
 - No Daily Notes were copied or compiled.

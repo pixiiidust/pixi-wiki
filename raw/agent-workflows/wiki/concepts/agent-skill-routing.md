@@ -64,6 +64,15 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 - Subagent output that does not report required retrieval, evidence, or skill constraints is incomplete.
 - Durable lessons still route by layer: facts to memory, concepts to Knowledge/Pixi Wiki, project state to Obsidian/GitHub, procedures to skills.
 
+## Edge cases
+
+- Explicit user-invoked skills or slash commands are the chosen mode unless they conflict with safety or live evidence.
+- Ask only when different skill stacks imply materially different artifacts or side effects.
+- If a skill might matter but its description is unclear, load it before relying on it or excluding it.
+- If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.
+- Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public `pixi-wiki` deploys still needs explicit approval.
+- If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.
+
 ## Source
 
 Canonical source: `Knowledge/concepts/agent-skill-routing.md`.

@@ -99,7 +99,7 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-06-23 \u2014 Agent skill routing contract added so Pixoid auto-selects useful skills and carries active constraints into delegated subagents."
+        "currentAs": "2026-06-23 \u2014 Agent skill routing contract added; Interaction Mode Routing now crosslinks Hermes review/control surfaces to AI-native product-surface design."
       },
       "lastUpdated": "2026-06-23",
       "documentCount": 21,
@@ -448,13 +448,13 @@
       "scope": {
         "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.",
         "notCovered": "Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.",
-        "currentAs": "2026-06-23 \u2014 active namespace. Includes Jamie's top-level AI definition plus compiled product-surface entities and concepts; I-know-kungfu is the newest active project entry."
+        "currentAs": "2026-06-23 \u2014 active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry."
       },
       "lastUpdated": "2026-06-23",
-      "documentCount": 8,
+      "documentCount": 9,
       "counts": {
         "wiki": 1,
-        "concepts": 1,
+        "concepts": 2,
         "entities": 3,
         "summaries": 0,
         "syntheses": 0
@@ -484,6 +484,13 @@
           "path": "wiki/concepts/ai-native-problem-framing-framework.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Interaction Mode Routing",
+          "path": "wiki/concepts/interaction-mode-routing.md",
+          "raw": "/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md",
+          "html": "/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html",
           "category": "concepts"
         },
         {

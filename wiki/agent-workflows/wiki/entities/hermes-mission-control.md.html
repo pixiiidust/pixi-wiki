@@ -22,7 +22,7 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/agent-workflows/README.md.html">Agent Workflows</a> / wiki/entities/hermes-mission-control.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/agent-workflows/wiki/entities/hermes-mission-control.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+agent-workflows%2Fwiki%2Fentities%2Fhermes-mission-control.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fagent-workflows%2Fwiki%2Fentities%2Fhermes-mission-control.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>Hermes Mission Control</h1>
-<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: medium</div><div><span>updated</span>: 2026-06-16</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div><div><span>sources</span>: 3</div></div>
+<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: medium</div><div><span>updated</span>: 2026-06-23</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div><div><span>sources</span>: 3</div></div>
 <p>**Hermes Mission Control** is Jamie&#x27;s agent-ops coordination hub for the Pixoid crew: Pixoid, Quill, Tinker, and Boba.</p>
 <p>Its primary namespace is <code>agent-workflows</code> because the durable knowledge is not the public wiki itself. The durable knowledge is how agents coordinate work: route governance, persona boundaries, issue-backed execution, handoffs, review gates, and durable truth routing.</p>
 <h2>Crew roles</h2>
@@ -41,6 +41,9 @@
 <li>Cron output as context, not canonical project state.</li>
 <li>Verification gates before tracker closure.</li>
 </ul>
+<h2>Pixoid Review Surface</h2>
+<p>Interaction Mode Routing clarifies that chat is the command channel, not the whole Hermes interface. Pixoid should generate small review/control surfaces when Jamie needs to approve or steer work, while durable truth remains in GitHub issues/PRs, Obsidian hubs, handoffs, skills, and knowledge entrypoints.</p>
+<p>The standard review surface includes status, evidence, risks, files/handles, verification run, options, and Pixoid&#x27;s recommended next slice.</p>
 <h2>Routing significance</h2>
 <p>Hermes Mission Control feeds <code>pixi-vault</code> when compiler/publication rules are affected, and it feeds <code>eval-trace</code> when route quality or workflow evidence needs evaluation.</p>
 <p>The project should not become a standalone namespace unless it grows an independent audience, source corpus, document types, and freshness lifecycle beyond the broader <code>agent-workflows</code> domain.</p>
@@ -53,6 +56,7 @@
 <ul>
 <li>Knowledge Pack Routing</li>
 <li>Agent Entrypoint Mesh</li>
+<li><a href="../../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md">Interaction Mode Routing</a></li>
 <li>Pixoid Crew Operating Model</li>
 </ul>
 <h2>Source</h2>

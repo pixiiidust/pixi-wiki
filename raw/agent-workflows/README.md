@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-23 — Agent skill routing contract added so Pixoid auto-selects useful skills and carries active constraints into delegated subagents.
+2026-06-23 — Agent skill routing contract added; Interaction Mode Routing now crosslinks Hermes review/control surfaces to AI-native product-surface design.
 
 ## Canonical Source Roots
 
@@ -39,6 +39,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/matt-pocock-skills-best-practices.md`

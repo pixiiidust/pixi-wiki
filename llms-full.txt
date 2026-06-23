@@ -425,7 +425,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-23 — Agent skill routing contract added so Pixoid auto-selects useful skills and carries active constraints into delegated subagents.
+2026-06-23 — Agent skill routing contract added; Interaction Mode Routing now crosslinks Hermes review/control surfaces to AI-native product-surface design.
 
 ## Canonical Source Roots
 
@@ -439,6 +439,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/matt-pocock-skills-best-practices.md`
@@ -672,6 +673,15 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 - Skills do not override current user intent, live repo state, GitHub issues, PRDs, safety rules, or verification evidence.
 - Subagent output that does not report required retrieval, evidence, or skill constraints is incomplete.
 - Durable lessons still route by layer: facts to memory, concepts to Knowledge/Pixi Wiki, project state to Obsidian/GitHub, procedures to skills.
+
+## Edge cases
+
+- Explicit user-invoked skills or slash commands are the chosen mode unless they conflict with safety or live evidence.
+- Ask only when different skill stacks imply materially different artifacts or side effects.
+- If a skill might matter but its description is unclear, load it before relying on it or excluding it.
+- If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.
+- Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public `pixi-wiki` deploys still needs explicit approval.
+- If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.
 
 ## Source
 
@@ -1388,7 +1398,7 @@ If the eval fails, fix the cheapest layer first: source wording, index coverage,
 ---
 title: Hermes Mission Control
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-23
 type: entity
 status: compiled
 namespace: agent-workflows
@@ -1422,6 +1432,13 @@ Its primary namespace is `agent-workflows` because the durable knowledge is not 
 - Cron output as context, not canonical project state.
 - Verification gates before tracker closure.
 
+
+## Pixoid Review Surface
+
+Interaction Mode Routing clarifies that chat is the command channel, not the whole Hermes interface. Pixoid should generate small review/control surfaces when Jamie needs to approve or steer work, while durable truth remains in GitHub issues/PRs, Obsidian hubs, handoffs, skills, and knowledge entrypoints.
+
+The standard review surface includes status, evidence, risks, files/handles, verification run, options, and Pixoid's recommended next slice.
+
 ## Routing significance
 
 Hermes Mission Control feeds `pixi-vault` when compiler/publication rules are affected, and it feeds `eval-trace` when route quality or workflow evidence needs evaluation.
@@ -1437,6 +1454,7 @@ The project should not become a standalone namespace unless it grows an independ
 
 - [[../concepts/knowledge-pack-routing|Knowledge Pack Routing]]
 - [[../concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]]
+- [Interaction Mode Routing](../../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md)
 - [[../syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]]
 
 ## Source
@@ -1464,6 +1482,7 @@ namespace: agent-workflows
 - [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
+- Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] — Product/refactor lens that also defines Hermes review/control surfaces.
 - [[concepts/bounded-context-tree-pattern|Bounded Context Tree Pattern]] — Root/branch/leaf structure for project and knowledge contexts with explicit language boundaries and routing links.
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
@@ -1502,6 +1521,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 
@@ -1531,6 +1551,7 @@ namespace: agent-workflows
 
 - Added compiled concept `wiki/concepts/agent-skill-routing.md` from the canonical Knowledge page and the new `jamie-skill-router` Hermes skill.
 - Captured the rule that Pixoid chooses the skill stack by default and passes active skill constraints into delegated subagent context.
+- Added edge cases for explicit user-invoked modes, ambiguous routing, unavailable tools, public deploy approval, and context overload.
 - Updated namespace README and index source roots.
 
 ## 2026-06-16 create | Namespace scaffold initialized
@@ -1584,6 +1605,13 @@ namespace: agent-workflows
 
 - Added compiled concept `wiki/concepts/matt-pocock-skills-best-practices.md` from the canonical Knowledge page and upstream `mattpocock/skills` README.
 - Cross-linked `matt-pocock-sdlc-rhythm` so the generalized SDLC rhythm points back to the source-backed best-practices pattern.
+- Updated namespace README and index source roots.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-23 update | Interaction Mode Routing crosslink
+
+- Added cross-namespace routing to `ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md`.
+- Updated `wiki/entities/hermes-mission-control.md` with the Pixoid Review Surface pattern.
 - Updated namespace README and index source roots.
 - No Daily Notes were copied or compiled.
 
@@ -2765,7 +2793,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-23 — active namespace. Includes Jamie's top-level AI definition plus compiled product-surface entities and concepts; I-know-kungfu is the newest active project entry.
+2026-06-23 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry.
 
 ## Canonical Source Roots
 
@@ -2774,6 +2802,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Projects/Planned/PRD.md`
 - `Projects/myAbode/Index.md`
 - `Knowledge/concepts/ai-native-problem-framing-framework.md`
+- `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
 
@@ -2805,7 +2834,7 @@ When published to `pixi-wiki`, this namespace should expose:
 ---
 title: AI-Native Problem Framing Framework
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-23
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -2830,6 +2859,12 @@ Define the system before picking models:
 
 Bad framing creates bad AI. Environment, action space, objective, and constraints define the intelligence problem.
 
+## Interface mode after framing
+
+After the environment/actions/goal/constraints frame is clear, use [[interaction-mode-routing|Interaction Mode Routing]] to choose which parts should be direct UI, agentic delegation, generative UI, or stable truth/routing.
+
+This keeps AI-native product work from collapsing into either chatbot theatre or agentic overreach. The interface should preserve provenance, constraints, and human control where the domain requires them.
+
 ## Product-surface use
 
 For `ai-native-product-surfaces`, this framework prevents vague “add AI” product thinking. It asks whether the surface perceives a domain, chooses or prepares actions, improves the chance of achieving a goal, and respects hard constraints.
@@ -2844,9 +2879,87 @@ It is especially useful for comparing:
 
 Do not blindly copy game/RL patterns into product domains. Real-world operational products have partial visibility, noisy outcomes, multiple stakeholders, and constraints that must be represented explicitly.
 
+## Related pages
+
+- [[interaction-mode-routing|Interaction Mode Routing]]
+
 ## Source
 
 Compiled from `Knowledge/concepts/ai-native-problem-framing-framework.md`.
+
+
+<!-- ===== ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md ===== -->
+
+---
+title: Interaction Mode Routing
+created: 2026-06-23
+updated: 2026-06-23
+type: concept
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, ai-native, product-framing, interaction-design, generative-ui]
+sources:
+  - Knowledge/concepts/interaction-mode-routing.md
+  - Knowledge/concepts/ai-native-problem-framing-framework.md
+  - Projects/I-know-kungfu/Index.md
+  - Projects/Hermes Mission Control/Index.md
+confidence: medium
+---
+
+# Interaction Mode Routing
+
+**Interaction Mode Routing** is a product refactor lens for choosing whether a task should use direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
+
+The question is not "should this use AI?" The question is: **what interaction mode best fits the user's need for speed, control, exploration, inspection, and execution?**
+
+## Four modes
+
+| Mode | Use when | Failure smell |
+|---|---|---|
+| Direct UI | The human can act faster by manipulating visible objects than by describing the action. | Replacing a faster button, slider, table, or visual control with a slower chatbot. |
+| Agentic delegation | The user wants an outcome across repetitive or cross-tool work, not every step. | Hiding judgment, provenance, or approval behind autonomous action. |
+| Generative UI | The user needs to compare, inspect, tune, approve, or understand a middle-complexity task. | A prompt box that only feeds a fixed grid, or a generated surface that hides source/constraints. |
+| Stable truth/routing | The surface is durable source truth, provenance, or routing. | Generated UI becoming the only place a decision, source, or constraint exists. |
+
+## Product-surface use
+
+Use [[ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] first to define environment, actions, goal, and constraints. Then choose the interaction mode:
+
+- direct manipulation for fast, visual, precise work;
+- agents for boring multi-step execution;
+- generative UI for review/control surfaces;
+- stable truth for PRDs, project hubs, GitHub issues, handoffs, skills, MOCs, `llms.txt`, `index.json`, raw Markdown, and MCP entrypoints.
+
+## I-know-kungfu refactor
+
+For [[../entities/i-know-kungfu|I-know-kungfu]], the strongest next surface is a generated **Fit Check Surface** over stable wiki truth:
+
+- source coverage;
+- local overlap;
+- recommended serving entrypoint;
+- refusal boundaries;
+- trust/eval state;
+- clearly labeled evidence provenance.
+
+This keeps the product out of two traps: pure chatbot and static card pile.
+
+## Pixi Wiki / vault refactor
+
+Pixi Wiki should keep source/navigation stable and generate temporary review surfaces above the corpus:
+
+- compile-review report;
+- source-to-output trace map;
+- namespace coverage dashboard;
+- MCP/live-route visibility report;
+- broken/stale route repair panel.
+
+## Agent workflow connection
+
+For Hermes Mission Control, chat is the command channel, not the whole interface. Review and approval should be shaped as small generated control surfaces while durable truth remains in GitHub, Obsidian, handoffs, skills, and knowledge entrypoints.
+
+## Source
+
+Compiled from `Knowledge/concepts/interaction-mode-routing.md` plus project applications in I-know-kungfu, Pixi Wiki, and Hermes Mission Control.
 
 
 <!-- ===== ai-native-product-surfaces/wiki/entities/i-know-kungfu.md ===== -->
@@ -2854,7 +2967,7 @@ Compiled from `Knowledge/concepts/ai-native-problem-framing-framework.md`.
 ---
 title: I-know-kungfu
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-06-23
 type: entity
 status: active
 namespace: ai-native-product-surfaces
@@ -2907,6 +3020,20 @@ It crosslinks to:
 - `agent-workflows` for agent consumption, MCP, `llms.txt`, and bounded source routing mechanics;
 - `pixi-vault` for compiled wiki / namespace publishing patterns;
 - `local-ai-infrastructure` for local-first serving and future retrieval infrastructure.
+
+
+## Interaction mode refactor
+
+Use [[../concepts/interaction-mode-routing|Interaction Mode Routing]] as the product-surface lens for the next slice. I-know-kungfu should not become a pure chatbot or a static card pile. Its strongest wedge is a generated fit-check surface around stable wiki truth.
+
+| Mode | I-know-kungfu surface |
+|---|---|
+| Direct UI | Browse candidate wikis, search/filter metadata, choose install/serve target, inspect source links. |
+| Agentic delegation | Fetch candidate wiki metadata, summarize scope, detect local overlap, propose harmonization, run quality/eval/provenance checks. |
+| Generative UI | Fit-check report, overlap map, scope/non-scope checklist, provenance coverage grid, serving-entrypoint decision table, trust panel. |
+| Stable truth/routing | Wiki contracts, source pages, install manifests, `llms.txt`, `index.json`, MCP, PRD, ADRs. |
+
+Next product slice to spec: **Generated Fit Check Surface** — source coverage, local overlap, recommended serving entrypoint, refusal boundaries, trust/eval state, and clearly labeled evidence provenance.
 
 ## Boundaries
 
@@ -3033,6 +3160,7 @@ namespace: ai-native-product-surfaces
 ## Concepts
 
 - [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
+- [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 
 ## Entities
 
@@ -3055,6 +3183,7 @@ namespace: ai-native-product-surfaces
 - `Projects/Planned/PRD.md`
 - `Projects/myAbode/Index.md`
 - `Knowledge/concepts/ai-native-problem-framing-framework.md`
+- `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
 
@@ -3100,6 +3229,13 @@ namespace: ai-native-product-surfaces
 
 - Added Jamie's AI definition to the top of `README.md` and `wiki/index.md`.
 - Preserved existing namespace scope and source roots.
+
+## 2026-06-23 create/update | Interaction Mode Routing
+
+- Added `wiki/concepts/interaction-mode-routing.md` from the canonical Knowledge page.
+- Updated the AI-native framing page with interface-mode selection after E/A/G/C framing.
+- Updated I-know-kungfu with the Generated Fit Check Surface direction.
+- No Daily Notes were copied or compiled.
 
 
 <!-- ===== rl-sim-labs/CLAUDE.md ===== -->

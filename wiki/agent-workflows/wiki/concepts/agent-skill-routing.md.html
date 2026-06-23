@@ -60,6 +60,15 @@
 <li>Subagent output that does not report required retrieval, evidence, or skill constraints is incomplete.</li>
 <li>Durable lessons still route by layer: facts to memory, concepts to Knowledge/Pixi Wiki, project state to Obsidian/GitHub, procedures to skills.</li>
 </ul>
+<h2>Edge cases</h2>
+<ul>
+<li>Explicit user-invoked skills or slash commands are the chosen mode unless they conflict with safety or live evidence.</li>
+<li>Ask only when different skill stacks imply materially different artifacts or side effects.</li>
+<li>If a skill might matter but its description is unclear, load it before relying on it or excluding it.</li>
+<li>If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.</li>
+<li>Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public <code>pixi-wiki</code> deploys still needs explicit approval.</li>
+<li>If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.</li>
+</ul>
 <h2>Source</h2>
 <p>Canonical source: <code>Knowledge/concepts/agent-skill-routing.md</code>.</p>
 <p>Reusable Hermes skill: <code>~/.hermes/skills/productivity/jamie-skill-router/SKILL.md</code>.</p>

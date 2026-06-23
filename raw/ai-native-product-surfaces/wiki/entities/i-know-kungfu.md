@@ -1,7 +1,7 @@
 ---
 title: I-know-kungfu
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-06-23
 type: entity
 status: active
 namespace: ai-native-product-surfaces
@@ -54,6 +54,20 @@ It crosslinks to:
 - `agent-workflows` for agent consumption, MCP, `llms.txt`, and bounded source routing mechanics;
 - `pixi-vault` for compiled wiki / namespace publishing patterns;
 - `local-ai-infrastructure` for local-first serving and future retrieval infrastructure.
+
+
+## Interaction mode refactor
+
+Use [[../concepts/interaction-mode-routing|Interaction Mode Routing]] as the product-surface lens for the next slice. I-know-kungfu should not become a pure chatbot or a static card pile. Its strongest wedge is a generated fit-check surface around stable wiki truth.
+
+| Mode | I-know-kungfu surface |
+|---|---|
+| Direct UI | Browse candidate wikis, search/filter metadata, choose install/serve target, inspect source links. |
+| Agentic delegation | Fetch candidate wiki metadata, summarize scope, detect local overlap, propose harmonization, run quality/eval/provenance checks. |
+| Generative UI | Fit-check report, overlap map, scope/non-scope checklist, provenance coverage grid, serving-entrypoint decision table, trust panel. |
+| Stable truth/routing | Wiki contracts, source pages, install manifests, `llms.txt`, `index.json`, MCP, PRD, ADRs. |
+
+Next product slice to spec: **Generated Fit Check Surface** — source coverage, local overlap, recommended serving entrypoint, refusal boundaries, trust/eval state, and clearly labeled evidence provenance.
 
 ## Boundaries
 

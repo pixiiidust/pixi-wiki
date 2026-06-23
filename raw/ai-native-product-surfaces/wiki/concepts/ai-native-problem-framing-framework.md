@@ -1,7 +1,7 @@
 ---
 title: AI-Native Problem Framing Framework
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-23
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -26,6 +26,12 @@ Define the system before picking models:
 
 Bad framing creates bad AI. Environment, action space, objective, and constraints define the intelligence problem.
 
+## Interface mode after framing
+
+After the environment/actions/goal/constraints frame is clear, use [[interaction-mode-routing|Interaction Mode Routing]] to choose which parts should be direct UI, agentic delegation, generative UI, or stable truth/routing.
+
+This keeps AI-native product work from collapsing into either chatbot theatre or agentic overreach. The interface should preserve provenance, constraints, and human control where the domain requires them.
+
 ## Product-surface use
 
 For `ai-native-product-surfaces`, this framework prevents vague “add AI” product thinking. It asks whether the surface perceives a domain, chooses or prepares actions, improves the chance of achieving a goal, and respects hard constraints.
@@ -39,6 +45,10 @@ It is especially useful for comparing:
 ## Boundary
 
 Do not blindly copy game/RL patterns into product domains. Real-world operational products have partial visibility, noisy outcomes, multiple stakeholders, and constraints that must be represented explicitly.
+
+## Related pages
+
+- [[interaction-mode-routing|Interaction Mode Routing]]
 
 ## Source
 

@@ -37,3 +37,10 @@ namespace: ai-native-product-surfaces
 
 - Added Jamie's AI definition to the top of `README.md` and `wiki/index.md`.
 - Preserved existing namespace scope and source roots.
+
+## 2026-06-23 create/update | Interaction Mode Routing
+
+- Added `wiki/concepts/interaction-mode-routing.md` from the canonical Knowledge page.
+- Updated the AI-native framing page with interface-mode selection after E/A/G/C framing.
+- Updated I-know-kungfu with the Generated Fit Check Surface direction.
+- No Daily Notes were copied or compiled.

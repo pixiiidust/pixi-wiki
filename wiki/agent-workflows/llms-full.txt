@@ -43,7 +43,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-23 — Agent skill routing contract added so Pixoid auto-selects useful skills and carries active constraints into delegated subagents.
+2026-06-23 — Agent skill routing contract added; Interaction Mode Routing now crosslinks Hermes review/control surfaces to AI-native product-surface design.
 
 ## Canonical Source Roots
 
@@ -57,6 +57,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/matt-pocock-skills-best-practices.md`
@@ -290,6 +291,15 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 - Skills do not override current user intent, live repo state, GitHub issues, PRDs, safety rules, or verification evidence.
 - Subagent output that does not report required retrieval, evidence, or skill constraints is incomplete.
 - Durable lessons still route by layer: facts to memory, concepts to Knowledge/Pixi Wiki, project state to Obsidian/GitHub, procedures to skills.
+
+## Edge cases
+
+- Explicit user-invoked skills or slash commands are the chosen mode unless they conflict with safety or live evidence.
+- Ask only when different skill stacks imply materially different artifacts or side effects.
+- If a skill might matter but its description is unclear, load it before relying on it or excluding it.
+- If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.
+- Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public `pixi-wiki` deploys still needs explicit approval.
+- If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.
 
 ## Source
 
@@ -1006,7 +1016,7 @@ If the eval fails, fix the cheapest layer first: source wording, index coverage,
 ---
 title: Hermes Mission Control
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-23
 type: entity
 status: compiled
 namespace: agent-workflows
@@ -1040,6 +1050,13 @@ Its primary namespace is `agent-workflows` because the durable knowledge is not 
 - Cron output as context, not canonical project state.
 - Verification gates before tracker closure.
 
+
+## Pixoid Review Surface
+
+Interaction Mode Routing clarifies that chat is the command channel, not the whole Hermes interface. Pixoid should generate small review/control surfaces when Jamie needs to approve or steer work, while durable truth remains in GitHub issues/PRs, Obsidian hubs, handoffs, skills, and knowledge entrypoints.
+
+The standard review surface includes status, evidence, risks, files/handles, verification run, options, and Pixoid's recommended next slice.
+
 ## Routing significance
 
 Hermes Mission Control feeds `pixi-vault` when compiler/publication rules are affected, and it feeds `eval-trace` when route quality or workflow evidence needs evaluation.
@@ -1055,6 +1072,7 @@ The project should not become a standalone namespace unless it grows an independ
 
 - [[../concepts/knowledge-pack-routing|Knowledge Pack Routing]]
 - [[../concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]]
+- [Interaction Mode Routing](../../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md)
 - [[../syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]]
 
 ## Source
@@ -1082,6 +1100,7 @@ namespace: agent-workflows
 - [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
+- Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] — Product/refactor lens that also defines Hermes review/control surfaces.
 - [[concepts/bounded-context-tree-pattern|Bounded Context Tree Pattern]] — Root/branch/leaf structure for project and knowledge contexts with explicit language boundaries and routing links.
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
@@ -1120,6 +1139,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 
@@ -1149,6 +1169,7 @@ namespace: agent-workflows
 
 - Added compiled concept `wiki/concepts/agent-skill-routing.md` from the canonical Knowledge page and the new `jamie-skill-router` Hermes skill.
 - Captured the rule that Pixoid chooses the skill stack by default and passes active skill constraints into delegated subagent context.
+- Added edge cases for explicit user-invoked modes, ambiguous routing, unavailable tools, public deploy approval, and context overload.
 - Updated namespace README and index source roots.
 
 ## 2026-06-16 create | Namespace scaffold initialized
@@ -1202,6 +1223,13 @@ namespace: agent-workflows
 
 - Added compiled concept `wiki/concepts/matt-pocock-skills-best-practices.md` from the canonical Knowledge page and upstream `mattpocock/skills` README.
 - Cross-linked `matt-pocock-sdlc-rhythm` so the generalized SDLC rhythm points back to the source-backed best-practices pattern.
+- Updated namespace README and index source roots.
+- No Daily Notes were copied or compiled.
+
+## 2026-06-23 update | Interaction Mode Routing crosslink
+
+- Added cross-namespace routing to `ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md`.
+- Updated `wiki/entities/hermes-mission-control.md` with the Pixoid Review Surface pattern.
 - Updated namespace README and index source roots.
 - No Daily Notes were copied or compiled.
 

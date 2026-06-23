@@ -1,7 +1,7 @@
 ---
 title: Hermes Mission Control
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-23
 type: entity
 status: compiled
 namespace: agent-workflows
@@ -35,6 +35,13 @@ Its primary namespace is `agent-workflows` because the durable knowledge is not 
 - Cron output as context, not canonical project state.
 - Verification gates before tracker closure.
 
+
+## Pixoid Review Surface
+
+Interaction Mode Routing clarifies that chat is the command channel, not the whole Hermes interface. Pixoid should generate small review/control surfaces when Jamie needs to approve or steer work, while durable truth remains in GitHub issues/PRs, Obsidian hubs, handoffs, skills, and knowledge entrypoints.
+
+The standard review surface includes status, evidence, risks, files/handles, verification run, options, and Pixoid's recommended next slice.
+
 ## Routing significance
 
 Hermes Mission Control feeds `pixi-vault` when compiler/publication rules are affected, and it feeds `eval-trace` when route quality or workflow evidence needs evaluation.
@@ -50,6 +57,7 @@ The project should not become a standalone namespace unless it grows an independ
 
 - [[../concepts/knowledge-pack-routing|Knowledge Pack Routing]]
 - [[../concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]]
+- [Interaction Mode Routing](../../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md)
 - [[../syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]]
 
 ## Source

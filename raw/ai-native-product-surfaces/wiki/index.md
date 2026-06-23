@@ -16,6 +16,7 @@ namespace: ai-native-product-surfaces
 ## Concepts
 
 - [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
+- [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 
 ## Entities
 
@@ -38,5 +39,6 @@ namespace: ai-native-product-surfaces
 - `Projects/Planned/PRD.md`
 - `Projects/myAbode/Index.md`
 - `Knowledge/concepts/ai-native-problem-framing-framework.md`
+- `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
