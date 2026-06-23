@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-06-19
+updated: 2026-06-23
 type: namespace-overview
 status: scaffold
 category: product
@@ -28,6 +28,8 @@ confidence: medium
 ---
 
 # AI-Native Product Surfaces
+
+> **Definition:** AI is any device that perceives its environment and constraints to take actions that maximize its chance of successfully achieving its goals.
 
 > Scaffold namespace for the Pixi Vault AgentWikis compiler.
 
@@ -43,7 +45,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-19 — active namespace. Includes compiled product-surface entities and concepts; I-know-kungfu is the newest active project entry.
+2026-06-23 — active namespace. Includes Jamie's top-level AI definition plus compiled product-surface entities and concepts; I-know-kungfu is the newest active project entry.
 
 ## Canonical Source Roots
 
@@ -296,13 +298,15 @@ Compiled from `Projects/Planned Program Intel/Index.md` with supporting historic
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-06-19
+updated: 2026-06-23
 type: index
 status: active
 namespace: ai-native-product-surfaces
 ---
 
 # AI-Native Product Surfaces — Master Index
+
+> **Definition:** AI is any device that perceives its environment and constraints to take actions that maximize its chance of successfully achieving its goals.
 
 > Scaffold index for `ai-native-product-surfaces`. Add compiled pages here as they are created.
 
@@ -340,7 +344,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-19
+updated: 2026-06-23
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -371,4 +375,9 @@ namespace: ai-native-product-surfaces
 - Demoted **Knowledge Pack** to the portable package/install format for a wiki.
 - Preserved Variant C: find useful wiki → check local fit → choose serving entry point → harmonize overlap → inspect proof/refusal.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-23 update | Add AI definition to namespace top
+
+- Added Jamie's AI definition to the top of `README.md` and `wiki/index.md`.
+- Preserved existing namespace scope and source roots.
 

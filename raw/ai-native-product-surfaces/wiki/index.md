@@ -1,13 +1,15 @@
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-06-19
+updated: 2026-06-23
 type: index
 status: active
 namespace: ai-native-product-surfaces
 ---
 
 # AI-Native Product Surfaces — Master Index
+
+> **Definition:** AI is any device that perceives its environment and constraints to take actions that maximize its chance of successfully achieving its goals.
 
 > Scaffold index for `ai-native-product-surfaces`. Add compiled pages here as they are created.
 

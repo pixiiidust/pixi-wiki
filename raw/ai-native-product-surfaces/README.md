@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-06-19
+updated: 2026-06-23
 type: namespace-overview
 status: scaffold
 category: product
@@ -10,6 +10,8 @@ confidence: medium
 ---
 
 # AI-Native Product Surfaces
+
+> **Definition:** AI is any device that perceives its environment and constraints to take actions that maximize its chance of successfully achieving its goals.
 
 > Scaffold namespace for the Pixi Vault AgentWikis compiler.
 
@@ -25,7 +27,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-19 — active namespace. Includes compiled product-surface entities and concepts; I-know-kungfu is the newest active project entry.
+2026-06-23 — active namespace. Includes Jamie's top-level AI definition plus compiled product-surface entities and concepts; I-know-kungfu is the newest active project entry.
 
 ## Canonical Source Roots
 

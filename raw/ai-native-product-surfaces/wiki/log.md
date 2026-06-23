@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-19
+updated: 2026-06-23
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -32,3 +32,8 @@ namespace: ai-native-product-surfaces
 - Demoted **Knowledge Pack** to the portable package/install format for a wiki.
 - Preserved Variant C: find useful wiki → check local fit → choose serving entry point → harmonize overlap → inspect proof/refusal.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-23 update | Add AI definition to namespace top
+
+- Added Jamie's AI definition to the top of `README.md` and `wiki/index.md`.
+- Preserved existing namespace scope and source roots.
