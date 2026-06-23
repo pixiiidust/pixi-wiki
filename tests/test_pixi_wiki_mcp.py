@@ -3,7 +3,9 @@
 
 from __future__ import annotations
 
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -80,6 +82,39 @@ class PixiWikiMcpStoreTest(unittest.TestCase):
         with self.assertRaises(PixiWikiError) as ctx:
             self.store.search_all_kbs("   ")
         self.assertEqual(ctx.exception.code, "EMPTY_QUERY")
+
+    def test_store_refreshes_registry_when_index_changes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            raw_dir = root / "raw" / "demo"
+            raw_dir.mkdir(parents=True)
+            (raw_dir / "README.md").write_text("---\ntitle: Demo\n---\n\n# Demo\n", encoding="utf-8")
+            index = root / "index.json"
+            base_registry = {
+                "name": "Test Wiki",
+                "schema_version": "pixi-agentwikis-registry-v1",
+                "wikis": [
+                    {
+                        "slug": "demo",
+                        "title": "Demo",
+                        "documents": [
+                            {"path": "README.md", "title": "Demo", "category": "other", "raw": "/raw/demo/README.md"}
+                        ],
+                    }
+                ],
+            }
+            index.write_text(json.dumps(base_registry), encoding="utf-8")
+            store = PixiWikiStore(root)
+            self.assertEqual(store.list_documents("demo")["document_count"], 1)
+
+            (raw_dir / "new.md").write_text("---\ntitle: New\n---\n\n# New\n", encoding="utf-8")
+            base_registry["wikis"][0]["documents"].append(
+                {"path": "new.md", "title": "New", "category": "other", "raw": "/raw/demo/new.md"}
+            )
+            index.write_text(json.dumps(base_registry), encoding="utf-8")
+
+            payload = store.read_document("demo", "new.md")
+            self.assertEqual(payload["document_id"], "new.md")
 
 
 if __name__ == "__main__":

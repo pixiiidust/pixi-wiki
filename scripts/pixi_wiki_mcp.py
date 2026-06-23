@@ -132,10 +132,23 @@ class PixiWikiStore:
         self.index_path = self.root / "index.json"
         if not self.index_path.is_file():
             raise PixiWikiError("REGISTRY_NOT_FOUND", f"No Pixi Wiki registry found at {self.index_path}.")
+        self._index_mtime_ns = 0
+        self.registry: dict[str, Any] = {}
+        self._kbs: dict[str, dict[str, Any]] = {}
+        self._load_registry()
+
+    def _load_registry(self) -> None:
         self.registry = json.loads(self.index_path.read_text(encoding="utf-8"))
         self._kbs = {wiki["slug"]: wiki for wiki in self.registry.get("wikis", [])}
+        self._index_mtime_ns = self.index_path.stat().st_mtime_ns
+
+    def _refresh_if_changed(self) -> None:
+        current_mtime_ns = self.index_path.stat().st_mtime_ns
+        if current_mtime_ns != self._index_mtime_ns:
+            self._load_registry()
 
     def list_kbs(self) -> dict[str, Any]:
+        self._refresh_if_changed()
         kbs = []
         for wiki in self.registry.get("wikis", []):
             kbs.append(
@@ -160,6 +173,7 @@ class PixiWikiStore:
         }
 
     def _get_kb(self, kb_id: str) -> dict[str, Any]:
+        self._refresh_if_changed()
         kb = self._kbs.get(kb_id)
         if not kb:
             available = ", ".join(sorted(self._kbs)) or "none"
