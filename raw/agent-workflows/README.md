@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: namespace-overview
 status: active
 category: agents
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-23 — Agent skill routing contract added; Interaction Mode Routing now crosslinks Hermes review/control surfaces to AI-native product-surface design.
+2026-06-24 — Creative Ideation Routing added to the agent skill-routing layer; open-ended inspiration now routes through `creative-ideation` before returning to product/build gates.
 
 ## Canonical Source Roots
 
@@ -39,6 +39,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`

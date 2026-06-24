@@ -1,7 +1,7 @@
 ---
 title: Agent Skill Routing
 created: 2026-06-23
-updated: 2026-06-23
+updated: 2026-06-24
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -32,6 +32,7 @@ Tools already work this way: Jamie does not need to say `read_file` or `web_sear
 | Delegated research, writing, product strategy, portfolio, or project analysis | `pixi-wiki-first-research` | `business-model-research`, `public-signal-monitoring`, `verb-first` |
 | PM portfolio or product case study | `portfolio-build-readiness-review` | `product-case-study`, `verb-first`, `pixi-wiki-first-research` |
 | Product positioning or copy | `verb-first` | `find-lock`, `ai-native-framing` |
+| Creative inspiration, brainstorming, project ideas, or option generation | `creative-ideation` | `find-lock`, `verb-first`, `ai-native-framing` after an idea is selected |
 | Build or implementation slice | `implement` | `test-driven-development`, `ponytail-code-discipline`, `github-operations` |
 | Debugging | `debugging` | project-specific skill, `codebase-inspection` |
 | PR or diff review | `code-review` | `ponytail-code-discipline`, `github-operations` |
@@ -70,6 +71,7 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 - Ask only when different skill stacks imply materially different artifacts or side effects.
 - If a skill might matter but its description is unclear, load it before relying on it or excluding it.
 - If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.
+- For open-ended inspiration or option generation, load `creative-ideation`, route through one method, and produce grounded non-generic ideas before returning to product/build gates.
 - Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public `pixi-wiki` deploys still needs explicit approval.
 - If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.
 
@@ -80,3 +82,5 @@ Canonical source: `Knowledge/concepts/agent-skill-routing.md`.
 Reusable Hermes skill: `~/.hermes/skills/productivity/jamie-skill-router/SKILL.md`.
 
 Related skill: `~/.hermes/skills/research/pixi-wiki-first-research/SKILL.md`.
+
+Creative support skill: `~/.hermes/skills/creative/creative-ideation/SKILL.md`.

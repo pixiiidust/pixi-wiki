@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: namespace-overview
 status: active
 category: agents
@@ -43,7 +43,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-23 — Agent skill routing contract added; Interaction Mode Routing now crosslinks Hermes review/control surfaces to AI-native product-surface design.
+2026-06-24 — Creative Ideation Routing added to the agent skill-routing layer; open-ended inspiration now routes through `creative-ideation` before returning to product/build gates.
 
 ## Canonical Source Roots
 
@@ -57,6 +57,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
@@ -229,7 +230,7 @@ Pixoid should treat entrypoints as routing contracts, not as replacement truth. 
 ---
 title: Agent Skill Routing
 created: 2026-06-23
-updated: 2026-06-23
+updated: 2026-06-24
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -260,6 +261,7 @@ Tools already work this way: Jamie does not need to say `read_file` or `web_sear
 | Delegated research, writing, product strategy, portfolio, or project analysis | `pixi-wiki-first-research` | `business-model-research`, `public-signal-monitoring`, `verb-first` |
 | PM portfolio or product case study | `portfolio-build-readiness-review` | `product-case-study`, `verb-first`, `pixi-wiki-first-research` |
 | Product positioning or copy | `verb-first` | `find-lock`, `ai-native-framing` |
+| Creative inspiration, brainstorming, project ideas, or option generation | `creative-ideation` | `find-lock`, `verb-first`, `ai-native-framing` after an idea is selected |
 | Build or implementation slice | `implement` | `test-driven-development`, `ponytail-code-discipline`, `github-operations` |
 | Debugging | `debugging` | project-specific skill, `codebase-inspection` |
 | PR or diff review | `code-review` | `ponytail-code-discipline`, `github-operations` |
@@ -298,6 +300,7 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 - Ask only when different skill stacks imply materially different artifacts or side effects.
 - If a skill might matter but its description is unclear, load it before relying on it or excluding it.
 - If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.
+- For open-ended inspiration or option generation, load `creative-ideation`, route through one method, and produce grounded non-generic ideas before returning to product/build gates.
 - Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public `pixi-wiki` deploys still needs explicit approval.
 - If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.
 
@@ -308,6 +311,8 @@ Canonical source: `Knowledge/concepts/agent-skill-routing.md`.
 Reusable Hermes skill: `~/.hermes/skills/productivity/jamie-skill-router/SKILL.md`.
 
 Related skill: `~/.hermes/skills/research/pixi-wiki-first-research/SKILL.md`.
+
+Creative support skill: `~/.hermes/skills/creative/creative-ideation/SKILL.md`.
 
 
 <!-- ===== agent-workflows/wiki/concepts/bounded-context-tree-pattern.md ===== -->
@@ -396,6 +401,63 @@ In the local Hermes KB, the same principle means concept pages should be concise
 
 - `/root/ObsidianVault/Knowledge/concepts/bounded-context-tree-pattern.md`
 - `/root/ObsidianVault/Projects/README.md`
+
+
+<!-- ===== agent-workflows/wiki/concepts/creative-ideation-routing.md ===== -->
+
+---
+title: Creative Ideation Routing
+created: 2026-06-24
+updated: 2026-06-24
+type: concept
+status: compiled
+namespace: agent-workflows
+source: Knowledge/concepts/creative-ideation-routing.md
+confidence: high
+---
+
+# Creative Ideation Routing
+
+Creative ideation routing is the agent-workflow pattern for turning open-ended inspiration requests into method-routed idea generation instead of generic brainstorming.
+
+## Runtime rule
+
+When Jamie asks for inspiration, project ideas, weirdness, options, research questions, or a way out of a stale creative loop:
+
+1. Load the `creative-ideation` Hermes skill.
+2. Classify phase, domain, and specificity.
+3. Apply overrides for mood, named method, method recommendation, or high-slop terrain.
+4. Route to one named method.
+5. Generate concrete, non-obvious ideas with mechanisms, tradeoffs, and at least one grounded first step.
+
+## Why this belongs in Agent Workflows
+
+This is not a new Pixi Wiki namespace. It is a reusable skill-routing behavior: Jamie states the creative need, Pixoid chooses the method and skill constraints, then returns any chosen idea to the normal product/build gates.
+
+## Quality bar
+
+Good ideation output:
+
+- names the method used;
+- avoids obvious first ideas;
+- uses concrete mechanisms and situations;
+- states failure modes or tradeoffs;
+- includes at least one buildable option;
+- stops ideating once Jamie chooses.
+
+Bad output is unrouted LLM slop: generic lists, vague app nouns, no method, no mechanism, no tradeoff, and no first step.
+
+## Relationships
+
+- [[agent-skill-routing|Agent Skill Routing]] chooses when to load `creative-ideation`.
+- [[matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] takes over after Jamie chooses an idea.
+- Cross-namespace product lenses such as [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] decide which surface should carry a selected idea.
+
+## Source
+
+Canonical source: `Knowledge/concepts/creative-ideation-routing.md`.
+
+Reusable Hermes skill: `~/.hermes/skills/creative/creative-ideation/SKILL.md`.
 
 
 <!-- ===== agent-workflows/wiki/concepts/hermes-soul-md-wiring.md ===== -->
@@ -1085,7 +1147,7 @@ Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operati
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: index
 status: compiled
 namespace: agent-workflows
@@ -1100,6 +1162,7 @@ namespace: agent-workflows
 - [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
+- [[concepts/creative-ideation-routing|Creative Ideation Routing]] — Method-routed inspiration loop for using the `creative-ideation` skill without generic brainstorming.
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] — Product/refactor lens that also defines Hermes review/control surfaces.
 - [[concepts/bounded-context-tree-pattern|Bounded Context Tree Pattern]] — Root/branch/leaf structure for project and knowledge contexts with explicit language boundaries and routing links.
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
@@ -1139,6 +1202,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
@@ -1155,7 +1219,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: log
 status: compiled
 namespace: agent-workflows
@@ -1164,6 +1228,13 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-24 create/update | Creative ideation routing
+
+- Added compiled concept `wiki/concepts/creative-ideation-routing.md` from the canonical Knowledge page and the `creative-ideation` Hermes skill.
+- Updated `agent-skill-routing` so open-ended inspiration, brainstorming, project ideas, and option generation route through `creative-ideation` by default.
+- Updated namespace README and index source roots.
+- No Daily Notes were copied or compiled, and no public `pixi-wiki` deploy was pushed.
 
 ## 2026-06-23 create | Agent skill routing contract
 

@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,13 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-24 create/update | Creative ideation routing
+
+- Added compiled concept `wiki/concepts/creative-ideation-routing.md` from the canonical Knowledge page and the `creative-ideation` Hermes skill.
+- Updated `agent-skill-routing` so open-ended inspiration, brainstorming, project ideas, and option generation route through `creative-ideation` by default.
+- Updated namespace README and index source roots.
+- No Daily Notes were copied or compiled, and no public `pixi-wiki` deploy was pushed.
 
 ## 2026-06-23 create | Agent skill routing contract
 
