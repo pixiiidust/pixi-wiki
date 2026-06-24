@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -44,3 +44,10 @@ namespace: ai-native-product-surfaces
 - Updated the AI-native framing page with interface-mode selection after E/A/G/C framing.
 - Updated I-know-kungfu with the Generated Fit Check Surface direction.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-24 create/update | Material Loop and Glass Interfaces
+
+- Added `wiki/concepts/material-loop-and-glass-interfaces.md` from the canonical Knowledge page.
+- Updated Interaction Mode Routing and AI-Native Problem Framing with agency/material-closeness framing.
+- Updated I-know-kungfu with the glass fit-check authorship lens.
+- Updated namespace README and index; no public Pixi Wiki deploy.

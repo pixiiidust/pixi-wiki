@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -17,6 +17,7 @@ namespace: ai-native-product-surfaces
 
 - [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
+- [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
 
 ## Entities
 
@@ -40,5 +41,6 @@ namespace: ai-native-product-surfaces
 - `Projects/myAbode/Index.md`
 - `Knowledge/concepts/ai-native-problem-framing-framework.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
+- `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`

@@ -1,13 +1,14 @@
 ---
 title: I-know-kungfu
 created: 2026-06-19
-updated: 2026-06-23
+updated: 2026-06-24
 type: entity
 status: active
 namespace: ai-native-product-surfaces
 tags: [ai-native-product-surfaces, i-know-kungfu, knowledge-base-wikis, cookbook, local-first, agent-context]
 sources:
   - Projects/I-know-kungfu/Index.md
+  - Knowledge/concepts/material-loop-and-glass-interfaces.md
   - https://github.com/pixiiidust/I-know-kungfu
   - https://github.com/pixiiidust/I-know-kungfu/issues/1
 confidence: medium
@@ -59,6 +60,8 @@ It crosslinks to:
 ## Interaction mode refactor
 
 Use [[../concepts/interaction-mode-routing|Interaction Mode Routing]] as the product-surface lens for the next slice. I-know-kungfu should not become a pure chatbot or a static card pile. Its strongest wedge is a generated fit-check surface around stable wiki truth.
+
+Use [[../concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] as the authorship lens: importing a wiki should not feel like a magic install button. The user should see what will enter their knowledge system, where it overlaps, what it will route to agents, what it refuses to cover, and what evidence supports trust before it becomes durable context.
 
 | Mode | I-know-kungfu surface |
 |---|---|

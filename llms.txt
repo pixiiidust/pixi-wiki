@@ -79,13 +79,14 @@
 ## AI-Native Product Surfaces
 
 > AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
-> Current as of: 2026-06-23 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry.
+> Current as of: 2026-06-24 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry.
 > Agent access: [/wiki/ai-native-product-surfaces/llms.txt](/wiki/ai-native-product-surfaces/llms.txt) [/wiki/ai-native-product-surfaces/llms-full.txt](/wiki/ai-native-product-surfaces/llms-full.txt) [/wiki/ai-native-product-surfaces/index.json](/wiki/ai-native-product-surfaces/index.json)
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
 - [AI-Native Problem Framing Framework](/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html))
 - [Interaction Mode Routing](/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html))
+- [Material Loop and Glass Interfaces](/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html))
 - [I-know-kungfu](/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html))
 - [myAbode](/raw/ai-native-product-surfaces/wiki/entities/myabode.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html))
 - [Planned Program Intel](/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html))

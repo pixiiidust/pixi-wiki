@@ -2,10 +2,10 @@
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
   "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.",
-  "documentCount": 9,
+  "documentCount": 10,
   "counts": {
     "wiki": 1,
-    "concepts": 2,
+    "concepts": 3,
     "entities": 3,
     "summaries": 0,
     "syntheses": 0
@@ -37,6 +37,13 @@
       "path": "wiki/concepts/interaction-mode-routing.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Material Loop and Glass Interfaces",
+      "path": "wiki/concepts/material-loop-and-glass-interfaces.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html",
       "category": "concepts"
     },
     {

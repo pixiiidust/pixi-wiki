@@ -448,13 +448,13 @@
       "scope": {
         "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.",
         "notCovered": "Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.",
-        "currentAs": "2026-06-23 \u2014 active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry."
+        "currentAs": "2026-06-24 \u2014 active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry."
       },
-      "lastUpdated": "2026-06-23",
-      "documentCount": 9,
+      "lastUpdated": "2026-06-24",
+      "documentCount": 10,
       "counts": {
         "wiki": 1,
-        "concepts": 2,
+        "concepts": 3,
         "entities": 3,
         "summaries": 0,
         "syntheses": 0
@@ -491,6 +491,13 @@
           "path": "wiki/concepts/interaction-mode-routing.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Material Loop and Glass Interfaces",
+          "path": "wiki/concepts/material-loop-and-glass-interfaces.md",
+          "raw": "/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md",
+          "html": "/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html",
           "category": "concepts"
         },
         {

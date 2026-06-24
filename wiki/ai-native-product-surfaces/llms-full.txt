@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: namespace-overview
 status: scaffold
 category: product
@@ -45,7 +45,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-23 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry.
+2026-06-24 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry.
 
 ## Canonical Source Roots
 
@@ -55,6 +55,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Projects/myAbode/Index.md`
 - `Knowledge/concepts/ai-native-problem-framing-framework.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
+- `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
 
@@ -86,13 +87,14 @@ When published to `pixi-wiki`, this namespace should expose:
 ---
 title: AI-Native Problem Framing Framework
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
 tags: [ai-native-product-surfaces, ai-native, product-framing, product-management]
 sources:
   - Knowledge/concepts/ai-native-problem-framing-framework.md
+  - Knowledge/concepts/material-loop-and-glass-interfaces.md
 confidence: high
 ---
 
@@ -108,8 +110,11 @@ Define the system before picking models:
 - **Actions** — what can the system do?
 - **Goal** — what is success or what is optimized?
 - **Constraints** — what must never be violated?
+- **Agency constraints** — what must remain visible, steerable, inspectable, interruptible, or user-owned?
 
-Bad framing creates bad AI. Environment, action space, objective, and constraints define the intelligence problem.
+Bad framing creates bad AI. Environment, action space, objective, constraints, and agency boundaries define the intelligence problem.
+
+Agency constraints come from [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]: AI can shorten the path from idea to artifact, but the interface should not hide the judgment-bearing parts of the loop.
 
 ## Interface mode after framing
 
@@ -134,6 +139,7 @@ Do not blindly copy game/RL patterns into product domains. Real-world operationa
 ## Related pages
 
 - [[interaction-mode-routing|Interaction Mode Routing]]
+- [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
 
 ## Source
 
@@ -145,13 +151,14 @@ Compiled from `Knowledge/concepts/ai-native-problem-framing-framework.md`.
 ---
 title: Interaction Mode Routing
 created: 2026-06-23
-updated: 2026-06-23
+updated: 2026-06-24
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
 tags: [ai-native-product-surfaces, ai-native, product-framing, interaction-design, generative-ui]
 sources:
   - Knowledge/concepts/interaction-mode-routing.md
+  - Knowledge/concepts/material-loop-and-glass-interfaces.md
   - Knowledge/concepts/ai-native-problem-framing-framework.md
   - Projects/I-know-kungfu/Index.md
   - Projects/Hermes Mission Control/Index.md
@@ -175,12 +182,14 @@ The question is not "should this use AI?" The question is: **what interaction mo
 
 ## Product-surface use
 
-Use [[ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] first to define environment, actions, goal, and constraints. Then choose the interaction mode:
+Use [[ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] first to define environment, actions, goal, constraints, and agency constraints. Then choose the interaction mode:
 
 - direct manipulation for fast, visual, precise work;
 - agents for boring multi-step execution;
 - generative UI for review/control surfaces;
 - stable truth for PRDs, project hubs, GitHub issues, handoffs, skills, MOCs, `llms.txt`, `index.json`, raw Markdown, and MCP entrypoints.
+
+Use [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] as the material closeness test: if the work carries taste, trust, scope, provenance, architecture, or release responsibility, keep it visible and steerable instead of collapsing it into black-box output.
 
 ## I-know-kungfu refactor
 
@@ -214,18 +223,100 @@ For Hermes Mission Control, chat is the command channel, not the whole interface
 Compiled from `Knowledge/concepts/interaction-mode-routing.md` plus project applications in I-know-kungfu, Pixi Wiki, and Hermes Mission Control.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md ===== -->
+
+---
+title: Material Loop and Glass Interfaces
+created: 2026-06-24
+updated: 2026-06-24
+type: concept
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, ai-native, product-framing, interaction-design, generative-ui]
+sources:
+  - Knowledge/concepts/material-loop-and-glass-interfaces.md
+  - Knowledge/concepts/interaction-mode-routing.md
+  - Knowledge/concepts/ai-native-problem-framing-framework.md
+  - https://youtu.be/az6OEZV8iHw
+confidence: medium
+---
+
+# Material Loop and Glass Interfaces
+
+**Material Loop and Glass Interfaces** is the agency/authorship lens for AI-native product surfaces.
+
+The **Material Loop** is the cycle where a person turns an idea into a visible artifact, inspects what feels wrong, changes it, and develops judgment through contact with the work.
+
+A **Glass Interface** keeps AI-shaped work inspectable, steerable, interruptible, and traceable. It exposes enough plan, state, sources, tools, diffs, commands, constraints, and intermediate artifacts for the user to stay close to the material without micromanaging every step.
+
+Black-box AI optimizes for clean output. Glass AI optimizes for human agency over shapeable material.
+
+## Output vs material
+
+| Output | Material |
+|---|---|
+| Finished-looking answer | Shapeable intermediate artifact |
+| Accept/reject loop | Inspect/steer/edit loop |
+| Hides process | Shows relevant state and provenance |
+| User becomes approver | User remains author |
+| Can weaken judgment | Can build judgment |
+
+## Material closeness test
+
+Before choosing an interaction mode, ask:
+
+1. Is this a taste-bearing or judgment-bearing decision?
+2. Would hiding the process make the user less able to learn, steer, or verify?
+3. Does the user need to see the plan, sources, diff, trace, or intermediate state?
+4. Is the artifact still shapeable, or has the system collapsed it into final output?
+5. Can the user interrupt, edit, branch, or take over?
+
+If the work is boring execution, delegate it to an agent with verifiable output. If the work carries judgment, taste, trust, scope, provenance, architecture, or release responsibility, keep the user close to the material through direct UI, generative UI, stable truth surfaces, or visible agent traces.
+
+## Relationship to Interaction Mode Routing
+
+[[interaction-mode-routing|Interaction Mode Routing]] chooses the tactical surface: direct UI, agentic delegation, generative UI, or stable truth/routing.
+
+Material Loop and Glass Interfaces explain why the route matters: the interface should preserve the user's ability to inspect, steer, learn, and care.
+
+## Pixi Wiki implication
+
+Pixi Wiki should keep source/navigation stable while generating temporary review surfaces above the corpus:
+
+- source-to-output trace maps;
+- namespace coverage dashboards;
+- compile-review reports;
+- MCP/live-route visibility reports;
+- stale route repair panels.
+
+The goal is not only to publish knowledge, but to keep the knowledge system close enough to the material that humans and agents can inspect, route, correct, and trust it.
+
+## I-know-kungfu implication
+
+[[../entities/i-know-kungfu|I-know-kungfu]] should not become a magic import button. Its strongest surface is a glass fit-check interface over stable wiki truth: source coverage, local overlap, proposed harmonization, serving entrypoint, refusal boundaries, trust/eval state, and provenance.
+
+## Hermes Mission Control implication
+
+Hermes review surfaces should show enough plan, diff, evidence, risk, and next-action state for Jamie to remain the author of the decision instead of merely approving a plausible agent summary.
+
+## Source
+
+Compiled from `Knowledge/concepts/material-loop-and-glass-interfaces.md`, inspired by Ryo Lu's "Closer to the Material" talk for Cursor Compile 26.
+
+
 <!-- ===== ai-native-product-surfaces/wiki/entities/i-know-kungfu.md ===== -->
 
 ---
 title: I-know-kungfu
 created: 2026-06-19
-updated: 2026-06-23
+updated: 2026-06-24
 type: entity
 status: active
 namespace: ai-native-product-surfaces
 tags: [ai-native-product-surfaces, i-know-kungfu, knowledge-base-wikis, cookbook, local-first, agent-context]
 sources:
   - Projects/I-know-kungfu/Index.md
+  - Knowledge/concepts/material-loop-and-glass-interfaces.md
   - https://github.com/pixiiidust/I-know-kungfu
   - https://github.com/pixiiidust/I-know-kungfu/issues/1
 confidence: medium
@@ -277,6 +368,8 @@ It crosslinks to:
 ## Interaction mode refactor
 
 Use [[../concepts/interaction-mode-routing|Interaction Mode Routing]] as the product-surface lens for the next slice. I-know-kungfu should not become a pure chatbot or a static card pile. Its strongest wedge is a generated fit-check surface around stable wiki truth.
+
+Use [[../concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] as the authorship lens: importing a wiki should not feel like a magic install button. The user should see what will enter their knowledge system, where it overlaps, what it will route to agents, what it refuses to cover, and what evidence supports trust before it becomes durable context.
 
 | Mode | I-know-kungfu surface |
 |---|---|
@@ -397,7 +490,7 @@ Compiled from `Projects/Planned Program Intel/Index.md` with supporting historic
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -413,6 +506,7 @@ namespace: ai-native-product-surfaces
 
 - [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
+- [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
 
 ## Entities
 
@@ -436,6 +530,7 @@ namespace: ai-native-product-surfaces
 - `Projects/myAbode/Index.md`
 - `Knowledge/concepts/ai-native-problem-framing-framework.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
+- `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
 
@@ -445,7 +540,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-24
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -488,4 +583,11 @@ namespace: ai-native-product-surfaces
 - Updated the AI-native framing page with interface-mode selection after E/A/G/C framing.
 - Updated I-know-kungfu with the Generated Fit Check Surface direction.
 - No Daily Notes were copied or compiled.
+
+## 2026-06-24 create/update | Material Loop and Glass Interfaces
+
+- Added `wiki/concepts/material-loop-and-glass-interfaces.md` from the canonical Knowledge page.
+- Updated Interaction Mode Routing and AI-Native Problem Framing with agency/material-closeness framing.
+- Updated I-know-kungfu with the glass fit-check authorship lens.
+- Updated namespace README and index; no public Pixi Wiki deploy.
 

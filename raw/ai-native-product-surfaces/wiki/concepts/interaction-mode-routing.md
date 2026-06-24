@@ -1,13 +1,14 @@
 ---
 title: Interaction Mode Routing
 created: 2026-06-23
-updated: 2026-06-23
+updated: 2026-06-24
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
 tags: [ai-native-product-surfaces, ai-native, product-framing, interaction-design, generative-ui]
 sources:
   - Knowledge/concepts/interaction-mode-routing.md
+  - Knowledge/concepts/material-loop-and-glass-interfaces.md
   - Knowledge/concepts/ai-native-problem-framing-framework.md
   - Projects/I-know-kungfu/Index.md
   - Projects/Hermes Mission Control/Index.md
@@ -31,12 +32,14 @@ The question is not "should this use AI?" The question is: **what interaction mo
 
 ## Product-surface use
 
-Use [[ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] first to define environment, actions, goal, and constraints. Then choose the interaction mode:
+Use [[ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] first to define environment, actions, goal, constraints, and agency constraints. Then choose the interaction mode:
 
 - direct manipulation for fast, visual, precise work;
 - agents for boring multi-step execution;
 - generative UI for review/control surfaces;
 - stable truth for PRDs, project hubs, GitHub issues, handoffs, skills, MOCs, `llms.txt`, `index.json`, raw Markdown, and MCP entrypoints.
+
+Use [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] as the material closeness test: if the work carries taste, trust, scope, provenance, architecture, or release responsibility, keep it visible and steerable instead of collapsing it into black-box output.
 
 ## I-know-kungfu refactor
 
