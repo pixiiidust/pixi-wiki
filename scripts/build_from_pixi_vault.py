@@ -675,6 +675,35 @@ def write_replicate_page(output_root: Path) -> None:
     (docs_dir / "REPLICATE_APPROACH.html").write_text(page, encoding="utf-8")
 
 
+def write_signal_graph_page(output_root: Path) -> None:
+    docs_dir = output_root / "docs"
+    docs_dir.mkdir(exist_ok=True)
+    body = """
+<article class="article" style="max-width:900px;margin:44px auto 90px;padding:0 20px">
+<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / Signal Graph</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/docs/SIGNAL_GRAPH.md">Markdown docs</a></span></div>
+<h1>Signal Graph</h1>
+<p class="hero-copy">A local analysis sidecar for mapping Pixi Wiki's Markdown corpus before edits, fit-checks, and agent orientation.</p>
+<section class="info-card"><div class="info-row"><div class="info-label green">Input</div><div>Generated Pixi Wiki Markdown under <code>raw/</code>: namespaces, frontmatter, tags, headings, wikilinks, Markdown links, and declared sources.</div></div><div class="info-row"><div class="info-label yellow">Output</div><div>A Graphify-compatible <code>graphify-out/graph.json</code> plus optional <code>GRAPH_REPORT.md</code> and <code>graph.html</code>.</div></div><div class="info-row"><div class="info-label white">Boundary</div><div>The graph is disposable and ignored by Git. It helps orientation; it does not replace raw Markdown, <code>llms.txt</code>, <code>index.json</code>, or MCP retrieval.</div></div></section>
+<h2>Run it locally</h2>
+<pre><code>python scripts/build_signal_graph.py raw graphify-out
+graphify cluster-only . --graph graphify-out/graph.json --no-label</code></pre>
+<h2>Why it exists</h2>
+<p>Naive corpus graphs over-weight generic glue like <code>status: compiled</code>, <code>type: concept</code>, <code>Rules</code>, and <code>Boundaries</code>. The signal graph filters that noise so the report highlights real documents, concepts, bridges, and source classes.</p>
+<h2>Use it for</h2>
+<ul><li>Map-before-edit orientation.</li><li>Finding cross-namespace concept bridges.</li><li>I-know-kungfu / Knowledge Pack fit-checks.</li><li>Choosing which Pixi Wiki MCP documents to read next.</li></ul>
+<p><a class="button-link primary" href="/pixi-wiki/docs/SIGNAL_GRAPH.md">Read the implementation notes →</a></p>
+</article>
+"""
+    page = f"""<!doctype html>
+<html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
+<title>Signal Graph — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
+<header class=\"site-header\"><div class=\"header-inner\"><a class=\"logo\" href=\"/pixi-wiki/\">Pixi Wiki</a><nav class=\"nav\"><a href=\"/pixi-wiki/#wikis\">Wikis</a><a href=\"/pixi-wiki/docs/AGENT_SETUP.html\">Agent Setup</a><a href=\"/pixi-wiki/docs/SIGNAL_GRAPH.html\">Signal Graph</a><a href=\"https://github.com/pixiiidust/pixi-wiki\">GitHub</a><button class=\"theme-toggle\" data-theme-toggle type=\"button\">☾</button></nav></div></header>
+<main>{body}</main>
+<footer class=\"footer\"><div class=\"footer-inner\"><p>Generated graph artifacts stay local unless intentionally shared.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
+</body></html>"""
+    (docs_dir / "SIGNAL_GRAPH.html").write_text(page, encoding="utf-8")
+
+
 def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     if not source_dir.is_dir():
         raise SystemExit(f"Source namespace directory not found: {source_dir}")
@@ -773,13 +802,14 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     (output_root / "llms-full.txt").write_text(full_body.rstrip() + "\n", encoding="utf-8")
     write_agent_setup_page(output_root)
     write_replicate_page(output_root)
+    write_signal_graph_page(output_root)
 
     index_html = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
-<header class="site-header"><div class="header-inner"><a class="logo" href="/pixi-wiki/">Pixi Wiki</a><nav class="nav"><a href="/pixi-wiki/#wikis">Wikis</a><a href="/pixi-wiki/docs/AGENT_SETUP.html">Agent Setup</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a><button class="theme-toggle" data-theme-toggle type="button">☾</button></nav></div></header>
-<main style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="/pixi-wiki/docs/AGENT_SETUP.html">Connect agents via MCP</a></div><section class="agent-setup-callout"><h2>Agents start here</h2><pre><code>$ curl https://pixiiidust.github.io/pixi-wiki/llms.txt</code></pre><p>Use <code>llms.txt</code> as the first routing map, then follow links to raw Markdown, namespace files, or MCP setup.</p></section><nav class="wiki-nav" aria-label="Wiki categories"><a class="button-link" href="#agent-ops">Agent Operations</a><a class="button-link" href="#knowledge-systems">Knowledge Systems</a><a class="button-link" href="#labs-products">Labs & Product Surfaces</a></nav><div id="wikis">{grouped_index}</div></main>
-<footer class="footer"><div class="footer-inner"><p>Plain static HTML. No JavaScript is required to read any page — agents welcome.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a><a href="/pixi-wiki/docs/REPLICATE_APPROACH.html">Copy this approach</a></p></div></footer>
+<header class="site-header"><div class="header-inner"><a class="logo" href="/pixi-wiki/">Pixi Wiki</a><nav class="nav"><a href="/pixi-wiki/#wikis">Wikis</a><a href="/pixi-wiki/docs/AGENT_SETUP.html">Agent Setup</a><a href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal Graph</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a><button class="theme-toggle" data-theme-toggle type="button">☾</button></nav></div></header>
+<main style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="/pixi-wiki/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal graph sidecar</a></div><section class="agent-setup-callout"><h2>Agents start here</h2><pre><code>$ curl https://pixiiidust.github.io/pixi-wiki/llms.txt</code></pre><p>Use <code>llms.txt</code> as the first routing map, then follow links to raw Markdown, namespace files, or MCP setup.</p></section><nav class="wiki-nav" aria-label="Wiki categories"><a class="button-link" href="#agent-ops">Agent Operations</a><a class="button-link" href="#knowledge-systems">Knowledge Systems</a><a class="button-link" href="#labs-products">Labs & Product Surfaces</a></nav><div id="wikis">{grouped_index}</div></main>
+<footer class="footer"><div class="footer-inner"><p>Plain static HTML. No JavaScript is required to read any page — agents welcome.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a><a href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal Graph</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a><a href="/pixi-wiki/docs/REPLICATE_APPROACH.html">Copy this approach</a></p></div></footer>
 </body></html>"""
     (output_root / "index.html").write_text(index_html, encoding="utf-8")
 
