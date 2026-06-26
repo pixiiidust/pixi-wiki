@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-26 — Visual Plan Review Surfaces added to the agent skill-routing layer; PRDs and implementation plans can become local/private MDX review artifacts before issues or code, without requiring hosted share/comment links.
+2026-06-26 — High Agency Work Levels added to the Pixoid operating layer; default to Level 4 recommendations, rise to Level 5 only when safe/scoped/approved, and use Level 6 for repeated failure classes.
 
 ## Canonical Source Roots
 
@@ -39,6 +39,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/high-agency-work-levels.md`
 - `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`

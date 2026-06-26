@@ -21,7 +21,7 @@
 ## Agent Workflows
 
 > Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.
-> Current as of: 2026-06-26 — Visual Plan Review Surfaces added to the agent skill-routing layer; PRDs and implementation plans can become local/private MDX review artifacts before issues or code, without requiring hosted share/comment links.
+> Current as of: 2026-06-26 — High Agency Work Levels added to the Pixoid operating layer; default to Level 4 recommendations, rise to Level 5 only when safe/scoped/approved, and use Level 6 for repeated failure classes.
 > Agent access: [/wiki/agent-workflows/llms.txt](/wiki/agent-workflows/llms.txt) [/wiki/agent-workflows/llms-full.txt](/wiki/agent-workflows/llms-full.txt) [/wiki/agent-workflows/index.json](/wiki/agent-workflows/index.json)
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
@@ -32,6 +32,7 @@
 - [Bounded Context Tree Pattern](/raw/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md) ([html](/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html))
 - [Creative Ideation Routing](/raw/agent-workflows/wiki/concepts/creative-ideation-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/creative-ideation-routing.md.html))
 - [Hermes SOUL.md Wiring](/raw/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md) ([html](/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html))
+- [High Agency Work Levels](/raw/agent-workflows/wiki/concepts/high-agency-work-levels.md) ([html](/wiki/agent-workflows/wiki/concepts/high-agency-work-levels.md.html))
 - [Knowledge Pack Routing](/raw/agent-workflows/wiki/concepts/knowledge-pack-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html))
 - [Matt Pocock SDLC Rhythm](/raw/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md) ([html](/wiki/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md.html))
 - [Matt Pocock Skills Best Practices](/raw/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md) ([html](/wiki/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md.html))

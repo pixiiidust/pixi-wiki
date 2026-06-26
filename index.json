@@ -99,13 +99,13 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-06-26 \u2014 Visual Plan Review Surfaces added to the agent skill-routing layer; PRDs and implementation plans can become local/private MDX review artifacts before issues or code, without requiring hosted share/comment links."
+        "currentAs": "2026-06-26 \u2014 High Agency Work Levels added to the Pixoid operating layer; default to Level 4 recommendations, rise to Level 5 only when safe/scoped/approved, and use Level 6 for repeated failure classes."
       },
       "lastUpdated": "2026-06-26",
-      "documentCount": 23,
+      "documentCount": 24,
       "counts": {
         "wiki": 1,
-        "concepts": 16,
+        "concepts": 17,
         "entities": 1,
         "summaries": 0,
         "syntheses": 2
@@ -170,6 +170,13 @@
           "path": "wiki/concepts/hermes-soul-md-wiring.md",
           "raw": "/raw/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md",
           "html": "/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "High Agency Work Levels",
+          "path": "wiki/concepts/high-agency-work-levels.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/high-agency-work-levels.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/high-agency-work-levels.md.html",
           "category": "concepts"
         },
         {

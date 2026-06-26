@@ -11,6 +11,12 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-06-26 create | High agency work levels
+
+- Added compiled concept `wiki/concepts/high-agency-work-levels.md` from Jamie's Level 4+ agency framework and the patched `agent-workflow-os` skill.
+- Captured the operating rule: Pixoid defaults to Level 4, moves to Level 5 only when safe/scoped/approved, and uses Level 6 for repeated failure classes.
+- Updated namespace README and index source roots.
+
 ## 2026-06-26 create/update | Visual plan review surfaces
 
 - Added compiled concept `wiki/concepts/visual-plan-review-surfaces.md` from the canonical Knowledge page and the local `visual-plan` Hermes skill.

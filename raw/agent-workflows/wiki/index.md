@@ -20,6 +20,7 @@ namespace: agent-workflows
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] — Product/refactor lens that also defines Hermes review/control surfaces.
 - [[concepts/bounded-context-tree-pattern|Bounded Context Tree Pattern]] — Root/branch/leaf structure for project and knowledge contexts with explicit language boundaries and routing links.
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
+- [[concepts/high-agency-work-levels|High Agency Work Levels]] — Level 4+ operating ladder for recommendations, verified fixes, and system improvements with explicit approval boundaries.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
 - [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, router skills, and grill/PRD/issue/TDD gates.
 - [[concepts/matt-pocock-skills-best-practices|Matt Pocock Skills Best Practices]] — Source-backed best practices from `mattpocock/skills` for reducing agent misalignment through composable skills, grilling, shared language, feedback loops, and architecture discipline.
@@ -57,6 +58,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/high-agency-work-levels.md`
 - `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`

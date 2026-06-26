@@ -10,6 +10,7 @@
 - [Bounded Context Tree Pattern](/raw/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md) ([html](/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html))
 - [Creative Ideation Routing](/raw/agent-workflows/wiki/concepts/creative-ideation-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/creative-ideation-routing.md.html))
 - [Hermes SOUL.md Wiring](/raw/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md) ([html](/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html))
+- [High Agency Work Levels](/raw/agent-workflows/wiki/concepts/high-agency-work-levels.md) ([html](/wiki/agent-workflows/wiki/concepts/high-agency-work-levels.md.html))
 - [Knowledge Pack Routing](/raw/agent-workflows/wiki/concepts/knowledge-pack-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html))
 - [Matt Pocock SDLC Rhythm](/raw/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md) ([html](/wiki/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md.html))
 - [Matt Pocock Skills Best Practices](/raw/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md) ([html](/wiki/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md.html))

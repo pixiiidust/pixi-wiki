@@ -43,7 +43,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-26 — Visual Plan Review Surfaces added to the agent skill-routing layer; PRDs and implementation plans can become local/private MDX review artifacts before issues or code, without requiring hosted share/comment links.
+2026-06-26 — High Agency Work Levels added to the Pixoid operating layer; default to Level 4 recommendations, rise to Level 5 only when safe/scoped/approved, and use Level 6 for repeated failure classes.
 
 ## Canonical Source Roots
 
@@ -57,6 +57,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/high-agency-work-levels.md`
 - `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
@@ -527,6 +528,99 @@ When auditing or debugging profile identity:
 ## Sources
 
 - `/root/ObsidianVault/Knowledge/concepts/hermes-soul-md-wiring.md`
+
+
+<!-- ===== agent-workflows/wiki/concepts/high-agency-work-levels.md ===== -->
+
+---
+title: High Agency Work Levels
+created: 2026-06-26
+updated: 2026-06-26
+type: concept
+description: Operating ladder for moving agent work from problem alerts to recommendations, verified fixes, and system improvements without crossing approval boundaries.
+status: active
+domain: agent-systems
+tags: [agent-systems, workflow]
+sources: [Knowledge/concepts/high-agency-work-levels.md, hermes-skill:agent-workflow-os]
+confidence: medium
+---
+
+# High Agency Work Levels
+
+## Definition
+
+High-agency work compresses uncertainty into a decision or a verified action instead of merely reporting friction.
+
+For Jamie's agent crew, the default posture is:
+
+> **Level 4 by default. Level 5 when safe. Level 6 when the pattern repeats.**
+
+## The ladder
+
+| Level | Agent behavior | Good output |
+|---|---|---|
+| 1 | Alert | “There is a problem.” |
+| 2 | Diagnose | “There is a problem, and here are likely causes.” |
+| 3 | Options | “Here is the problem, likely causes, and possible fixes.” |
+| 4 | Recommend | “Here is the problem, likely cause, options, and the path I recommend.” |
+| 5 | Closed loop | “I found it, fixed it, verified it, and here is the proof.” |
+| 6 | System improvement | “This pattern recurs, so I patched the workflow/check/skill/test/route/handoff to reduce recurrence.” |
+
+## Pixoid operating rule
+
+Pixoid should live at **Level 4** for analysis, planning, review, and any task with approval or side-effect uncertainty. That means giving Jamie a recommendation, not just a list of observations.
+
+Pixoid may rise to **Level 5** only when the action is:
+
+- safe and scoped;
+- reversible or already approved;
+- inside the current task boundary;
+- verifiable with real output;
+- not a secret, deploy, destructive change, broad rewrite, public post, or unauthorized merge.
+
+Use **Level 6** only when a repeated failure class appears. A one-off correction does not need new process; a recurring miss should become a better skill, check, test, route contract, or handoff template.
+
+## Crew applications
+
+- **Pixoid:** default to Level 4; move to Level 5 for safe verified actions; use Level 6 for repeated operating-system fixes.
+- **Tinker:** target Level 5 on implementation slices: code changed, tests run, proof reported.
+- **Quill:** target Level 4+ on scribe work: state what changed, why it matters, and the next source-of-truth update.
+- **Boba:** target Level 4 on research: evidence, implication, recommendation, and uncertainty boundaries.
+
+## Useful report shapes
+
+For unresolved or approval-gated work:
+
+```text
+Problem:
+Evidence:
+Likely cause:
+Options:
+Recommendation:
+What I can do now:
+What needs Jamie approval:
+```
+
+For closed-loop work:
+
+```text
+Found:
+Did:
+Verified:
+Proof:
+Next:
+```
+
+## Boundaries
+
+High agency is not permissionless autonomy. If a step would change public state, mutate runtime/profile/secrets, deploy, merge, delete, rewrite broadly, or expand scope materially, stop at Level 4 and ask Jamie for the decision.
+
+## Related pages
+
+- [[agent-skill-routing]]
+- [[self-improving-agent-systems]]
+- [[agent-capability-route-pattern]]
+- [[profile-memory-boundaries]]
 
 
 <!-- ===== agent-workflows/wiki/concepts/knowledge-pack-routing.md ===== -->
@@ -1244,6 +1338,7 @@ namespace: agent-workflows
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] — Product/refactor lens that also defines Hermes review/control surfaces.
 - [[concepts/bounded-context-tree-pattern|Bounded Context Tree Pattern]] — Root/branch/leaf structure for project and knowledge contexts with explicit language boundaries and routing links.
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
+- [[concepts/high-agency-work-levels|High Agency Work Levels]] — Level 4+ operating ladder for recommendations, verified fixes, and system improvements with explicit approval boundaries.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
 - [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, router skills, and grill/PRD/issue/TDD gates.
 - [[concepts/matt-pocock-skills-best-practices|Matt Pocock Skills Best Practices]] — Source-backed best practices from `mattpocock/skills` for reducing agent misalignment through composable skills, grilling, shared language, feedback loops, and architecture discipline.
@@ -1281,6 +1376,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/high-agency-work-levels.md`
 - `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
@@ -1308,6 +1404,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-26 create | High agency work levels
+
+- Added compiled concept `wiki/concepts/high-agency-work-levels.md` from Jamie's Level 4+ agency framework and the patched `agent-workflow-os` skill.
+- Captured the operating rule: Pixoid defaults to Level 4, moves to Level 5 only when safe/scoped/approved, and uses Level 6 for repeated failure classes.
+- Updated namespace README and index source roots.
 
 ## 2026-06-26 create/update | Visual plan review surfaces
 
