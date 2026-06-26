@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-24
+updated: 2026-06-26
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-26 create/update | Visual plan review surfaces
+
+- Added compiled concept `wiki/concepts/visual-plan-review-surfaces.md` from the canonical Knowledge page and the local `visual-plan` Hermes skill.
+- Updated `agent-skill-routing` and `matt-pocock-sdlc-rhythm` routing so PRDs and implementation plans can become local/private MDX review surfaces before code.
+- Preserved the boundary that hosted share/comment links and public `pixi-wiki` deploys require explicit opt-in.
 
 ## 2026-06-24 create/update | Creative ideation routing
 

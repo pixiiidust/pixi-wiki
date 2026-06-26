@@ -2,10 +2,10 @@
   "slug": "agent-workflows",
   "title": "Agent Workflows",
   "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
-  "documentCount": 22,
+  "documentCount": 23,
   "counts": {
     "wiki": 1,
-    "concepts": 15,
+    "concepts": 16,
     "entities": 1,
     "summaries": 0,
     "syntheses": 2
@@ -128,6 +128,13 @@
       "path": "wiki/concepts/static-retrieval-evals.md",
       "raw": "/raw/agent-workflows/wiki/concepts/static-retrieval-evals.md",
       "html": "/wiki/agent-workflows/wiki/concepts/static-retrieval-evals.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Visual Plan Review Surfaces",
+      "path": "wiki/concepts/visual-plan-review-surfaces.md",
+      "raw": "/raw/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md.html",
       "category": "concepts"
     },
     {

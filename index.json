@@ -99,13 +99,13 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-06-24 \u2014 Creative Ideation Routing added to the agent skill-routing layer; open-ended inspiration now routes through `creative-ideation` before returning to product/build gates."
+        "currentAs": "2026-06-26 \u2014 Visual Plan Review Surfaces added to the agent skill-routing layer; PRDs and implementation plans can become local/private MDX review artifacts before issues or code, without requiring hosted share/comment links."
       },
-      "lastUpdated": "2026-06-24",
-      "documentCount": 22,
+      "lastUpdated": "2026-06-26",
+      "documentCount": 23,
       "counts": {
         "wiki": 1,
-        "concepts": 15,
+        "concepts": 16,
         "entities": 1,
         "summaries": 0,
         "syntheses": 2
@@ -233,6 +233,13 @@
           "path": "wiki/concepts/static-retrieval-evals.md",
           "raw": "/raw/agent-workflows/wiki/concepts/static-retrieval-evals.md",
           "html": "/wiki/agent-workflows/wiki/concepts/static-retrieval-evals.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Visual Plan Review Surfaces",
+          "path": "wiki/concepts/visual-plan-review-surfaces.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md.html",
           "category": "concepts"
         },
         {

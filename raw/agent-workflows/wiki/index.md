@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-06-24
+updated: 2026-06-26
 type: index
 status: compiled
 namespace: agent-workflows
@@ -29,6 +29,7 @@ namespace: agent-workflows
 - [[concepts/runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]] — How agents combine injected memory, Honcho, knowledge packs, skills, GitHub, and session search at runtime.
 - [[concepts/self-improving-agent-systems|Self-Improving Agent Systems]] — How agents improve through verified durable state rather than weight updates.
 - [[concepts/static-retrieval-evals|Static Retrieval Evals]] — Small retrieval question sets used as gates before heavier search/RAG/MCP infrastructure.
+- [[concepts/visual-plan-review-surfaces|Visual Plan Review Surfaces]] — Local/private review artifacts for turning PRDs and implementation plans into inspectable MDX before code changes.
 - Cross-namespace concept: [[../../eval-trace/wiki/concepts/context-overfitting|Context Overfitting]] — Eval Trace primary page for a workflow reliability failure mode.
 
 ## Entities
@@ -60,6 +61,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
+- `Knowledge/concepts/visual-plan-review-surfaces.md`
 
 - `Knowledge/concepts/agent-capability-route-pattern.md`
 - `Knowledge/concepts/hermes-soul-md-wiring.md`

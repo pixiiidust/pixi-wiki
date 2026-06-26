@@ -401,7 +401,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-24
+updated: 2026-06-26
 type: namespace-overview
 status: active
 category: agents
@@ -425,7 +425,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-24 — Creative Ideation Routing added to the agent skill-routing layer; open-ended inspiration now routes through `creative-ideation` before returning to product/build gates.
+2026-06-26 — Visual Plan Review Surfaces added to the agent skill-routing layer; PRDs and implementation plans can become local/private MDX review artifacts before issues or code, without requiring hosted share/comment links.
 
 ## Canonical Source Roots
 
@@ -443,6 +443,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
+- `Knowledge/concepts/visual-plan-review-surfaces.md`
 - `Knowledge/concepts/matt-pocock-skills-best-practices.md`
 
 ## Routing Rules
@@ -612,7 +613,7 @@ Pixoid should treat entrypoints as routing contracts, not as replacement truth. 
 ---
 title: Agent Skill Routing
 created: 2026-06-23
-updated: 2026-06-24
+updated: 2026-06-26
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -644,6 +645,7 @@ Tools already work this way: Jamie does not need to say `read_file` or `web_sear
 | PM portfolio or product case study | `portfolio-build-readiness-review` | `product-case-study`, `verb-first`, `pixi-wiki-first-research` |
 | Product positioning or copy | `verb-first` | `find-lock`, `ai-native-framing` |
 | Creative inspiration, brainstorming, project ideas, or option generation | `creative-ideation` | `find-lock`, `verb-first`, `ai-native-framing` after an idea is selected |
+| PRD or implementation plan needs an inspectable review surface | `visual-plan` | `plan`, `prototype`, `obsidian` when the artifact should be source-controlled |
 | Build or implementation slice | `implement` | `test-driven-development`, `ponytail-code-discipline`, `github-operations` |
 | Debugging | `debugging` | project-specific skill, `codebase-inspection` |
 | PR or diff review | `code-review` | `ponytail-code-discipline`, `github-operations` |
@@ -683,6 +685,7 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 - If a skill might matter but its description is unclear, load it before relying on it or excluding it.
 - If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.
 - For open-ended inspiration or option generation, load `creative-ideation`, route through one method, and produce grounded non-generic ideas before returning to product/build gates.
+- For PRD/implementation-plan review surfaces, load `visual-plan` and default to local/private MDX artifacts; hosted Plan auth, share links, and comments are optional, not prerequisites.
 - Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public `pixi-wiki` deploys still needs explicit approval.
 - If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.
 
@@ -695,6 +698,8 @@ Reusable Hermes skill: `~/.hermes/skills/productivity/jamie-skill-router/SKILL.m
 Related skill: `~/.hermes/skills/research/pixi-wiki-first-research/SKILL.md`.
 
 Creative support skill: `~/.hermes/skills/creative/creative-ideation/SKILL.md`.
+
+Visual review support skill: `~/.hermes/skills/visual-plan/SKILL.md`.
 
 
 <!-- ===== agent-workflows/wiki/concepts/bounded-context-tree-pattern.md ===== -->
@@ -960,7 +965,7 @@ KPR deliberately keeps MCP/RAG/search deferred until a concrete eval shows markd
 ---
 title: Matt Pocock SDLC Rhythm
 created: 2026-06-18
-updated: 2026-06-19
+updated: 2026-06-26
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -1021,6 +1026,12 @@ Sequence:
 
 If uncertainty becomes experiential or hard to reason about in words, switch back to `/prototype` as a probe or logic/state prototype.
 
+## Visual plan review gate
+
+Use [[visual-plan-review-surfaces]] when a PRD, implementation plan, or issue plan needs an inspectable artifact before execution. This is an optional review gate between `/to-prd` and `/to-issues`, or between an implementation plan and `/implement`.
+
+Jamie's default is local/private MDX artifacts under `.agent-native/plans/<slug>/`, not hosted share links or comment workflows. The visual plan should preserve durable truth in the PRD/GitHub/vault source while making the plan easier to inspect: file maps, diagrams, UI states, annotated code, open questions, and verification gates.
+
 ## Source-backed best practices
 
 [[matt-pocock-skills-best-practices]] preserves the source-backed pattern from `mattpocock/skills`: small composable skills, grilling for alignment, shared language docs, feedback loops, and architecture discipline. This SDLC rhythm is Jamie's generalized implementation sequence for applying those practices without turning them into a rigid framework.
@@ -1046,6 +1057,7 @@ Useful routes include:
 - Use `/prototype` as a probe when the lock/problem shape is unclear.
 - Use `/grill-with-docs` for alignment, ubiquitous language, `CONTEXT.md`, and ADR capture.
 - Use `/to-prd` as the lean requirements spine; do not proceed to issues until approved.
+- Use `visual-plan` when the PRD or implementation plan needs a richer local review surface before issues or code.
 - Use `/to-issues` for vertical tracer-bullet slices, not horizontal layers.
 - Use `/tdd` for red-green-refactor feedback loops.
 - Use `/handoff` to keep continuity across fresh contexts.
@@ -1061,6 +1073,7 @@ Useful routes include:
 ## Related pages
 
 - [[matt-pocock-skills-best-practices]]
+- [[visual-plan-review-surfaces]]
 - [[find-the-lock-problem-first]]
 - [[issue-driven-afk-workflow]]
 - [[smart-zone-context-discipline]]
@@ -1455,6 +1468,71 @@ If the eval fails, fix the cheapest layer first: source wording, index coverage,
 - [Context Overfitting](../../../eval-trace/wiki/concepts/context-overfitting.md)
 
 
+<!-- ===== agent-workflows/wiki/concepts/visual-plan-review-surfaces.md ===== -->
+
+---
+title: Visual Plan Review Surfaces
+created: 2026-06-26
+updated: 2026-06-26
+type: concept
+status: compiled
+namespace: agent-workflows
+source: Knowledge/concepts/visual-plan-review-surfaces.md
+confidence: high
+---
+
+# Visual Plan Review Surfaces
+
+A visual plan review surface turns a PRD, implementation plan, or planned multi-file change into a local interactive MDX artifact that Jamie can inspect before code changes begin.
+
+For Jamie's current workflow, the default is **local/private self-use**: local MDX files and local verification, not hosted publishing, share links, or comment workflows.
+
+## Default artifact shape
+
+```text
+.agent-native/plans/<slug>/
+  plan.mdx
+  canvas.mdx        # only when UI/product visuals help
+  prototype.mdx     # only when interaction matters
+```
+
+The `visual-plan` Hermes skill from BuilderIO's Agent-Native skills turns normal agent plans into a richer review medium: structured plan sections, file maps, diagrams, wireframes, annotated code, open questions, and optional prototype surfaces.
+
+## Routing rules
+
+- Load `visual-plan` when Jamie asks to turn a PRD, implementation plan, issue plan, or architecture/UI plan into a review surface.
+- Use local/private mode by default. Hosted Agent-Native Plan auth, share links, and comments are optional, not prerequisites.
+- Keep durable truth in source-controlled Markdown, Obsidian project hubs, GitHub issues/PRDs, and handoffs. The visual surface is a review artifact, not the only source of truth.
+- For UI/product work, include canvas wireframes or prototype surfaces only when they help review actual states or flows.
+- For backend/architecture/data work, skip decorative UI and use document-local diagrams, file maps, annotated code, API/schema blocks, risks, and verification steps.
+- Do not start implementation until the review surface has been generated and Jamie has approved the direction, unless the task is trivial or Jamie explicitly skips the gate.
+
+## Where it fits
+
+Visual-plan is an approval surface between planning and implementation:
+
+- after `/to-prd` when the PRD needs a richer review surface before issue slicing;
+- after an implementation plan when the plan touches multiple files, architecture, UX states, or open questions;
+- before `/to-issues` when the plan needs human review before creating execution slices;
+- before `/implement` when an existing plan needs visual inspection rather than more chat discussion.
+
+It complements [[matt-pocock-sdlc-rhythm]]: `/prototype` tests experiential unknowns, `/grill-with-docs` aligns language and decisions, `/to-prd` captures requirements, and `visual-plan` makes approved or near-approved plans inspectable.
+
+## Boundaries
+
+- Not for trivial one-line fixes or changes whose diff is easier to review than a plan.
+- Not a substitute for live repo inspection, tests, GitHub issues, PRDs, or handoffs.
+- Not authorization to publish, deploy, share, or use hosted comment workflows.
+- Not a place to store secrets, private customer data, or final project truth outside source-controlled plan files.
+
+## Related pages
+
+- [[matt-pocock-sdlc-rhythm]]
+- [[agent-skill-routing]]
+- [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]]
+- [[../../ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
+
+
 <!-- ===== agent-workflows/wiki/entities/hermes-mission-control.md ===== -->
 
 ---
@@ -1529,7 +1607,7 @@ Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operati
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-06-24
+updated: 2026-06-26
 type: index
 status: compiled
 namespace: agent-workflows
@@ -1557,6 +1635,7 @@ namespace: agent-workflows
 - [[concepts/runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]] — How agents combine injected memory, Honcho, knowledge packs, skills, GitHub, and session search at runtime.
 - [[concepts/self-improving-agent-systems|Self-Improving Agent Systems]] — How agents improve through verified durable state rather than weight updates.
 - [[concepts/static-retrieval-evals|Static Retrieval Evals]] — Small retrieval question sets used as gates before heavier search/RAG/MCP infrastructure.
+- [[concepts/visual-plan-review-surfaces|Visual Plan Review Surfaces]] — Local/private review artifacts for turning PRDs and implementation plans into inspectable MDX before code changes.
 - Cross-namespace concept: [[../../eval-trace/wiki/concepts/context-overfitting|Context Overfitting]] — Eval Trace primary page for a workflow reliability failure mode.
 
 ## Entities
@@ -1588,6 +1667,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
+- `Knowledge/concepts/visual-plan-review-surfaces.md`
 
 - `Knowledge/concepts/agent-capability-route-pattern.md`
 - `Knowledge/concepts/hermes-soul-md-wiring.md`
@@ -1601,7 +1681,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-24
+updated: 2026-06-26
 type: log
 status: compiled
 namespace: agent-workflows
@@ -1610,6 +1690,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-26 create/update | Visual plan review surfaces
+
+- Added compiled concept `wiki/concepts/visual-plan-review-surfaces.md` from the canonical Knowledge page and the local `visual-plan` Hermes skill.
+- Updated `agent-skill-routing` and `matt-pocock-sdlc-rhythm` routing so PRDs and implementation plans can become local/private MDX review surfaces before code.
+- Preserved the boundary that hosted share/comment links and public `pixi-wiki` deploys require explicit opt-in.
 
 ## 2026-06-24 create/update | Creative ideation routing
 

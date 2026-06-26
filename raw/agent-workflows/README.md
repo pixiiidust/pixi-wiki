@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-24
+updated: 2026-06-26
 type: namespace-overview
 status: active
 category: agents
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-24 — Creative Ideation Routing added to the agent skill-routing layer; open-ended inspiration now routes through `creative-ideation` before returning to product/build gates.
+2026-06-26 — Visual Plan Review Surfaces added to the agent skill-routing layer; PRDs and implementation plans can become local/private MDX review artifacts before issues or code, without requiring hosted share/comment links.
 
 ## Canonical Source Roots
 
@@ -43,6 +43,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
+- `Knowledge/concepts/visual-plan-review-surfaces.md`
 - `Knowledge/concepts/matt-pocock-skills-best-practices.md`
 
 ## Routing Rules

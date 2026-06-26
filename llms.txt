@@ -21,7 +21,7 @@
 ## Agent Workflows
 
 > Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.
-> Current as of: 2026-06-24 — Creative Ideation Routing added to the agent skill-routing layer; open-ended inspiration now routes through `creative-ideation` before returning to product/build gates.
+> Current as of: 2026-06-26 — Visual Plan Review Surfaces added to the agent skill-routing layer; PRDs and implementation plans can become local/private MDX review artifacts before issues or code, without requiring hosted share/comment links.
 > Agent access: [/wiki/agent-workflows/llms.txt](/wiki/agent-workflows/llms.txt) [/wiki/agent-workflows/llms-full.txt](/wiki/agent-workflows/llms-full.txt) [/wiki/agent-workflows/index.json](/wiki/agent-workflows/index.json)
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
@@ -41,6 +41,7 @@
 - [Runtime Memory Knowledge Routing](/raw/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md.html))
 - [Self-Improving Agent Systems](/raw/agent-workflows/wiki/concepts/self-improving-agent-systems.md) ([html](/wiki/agent-workflows/wiki/concepts/self-improving-agent-systems.md.html))
 - [Static Retrieval Evals](/raw/agent-workflows/wiki/concepts/static-retrieval-evals.md) ([html](/wiki/agent-workflows/wiki/concepts/static-retrieval-evals.md.html))
+- [Visual Plan Review Surfaces](/raw/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md) ([html](/wiki/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md.html))
 - [Hermes Mission Control](/raw/agent-workflows/wiki/entities/hermes-mission-control.md) ([html](/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html))
 - [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md) ([html](/wiki/agent-workflows/wiki/index.md.html))
 - [Agent Workflows — Activity Log](/raw/agent-workflows/wiki/log.md) ([html](/wiki/agent-workflows/wiki/log.md.html))

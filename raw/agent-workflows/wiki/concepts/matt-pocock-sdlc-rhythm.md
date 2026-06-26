@@ -1,7 +1,7 @@
 ---
 title: Matt Pocock SDLC Rhythm
 created: 2026-06-18
-updated: 2026-06-19
+updated: 2026-06-26
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -62,6 +62,12 @@ Sequence:
 
 If uncertainty becomes experiential or hard to reason about in words, switch back to `/prototype` as a probe or logic/state prototype.
 
+## Visual plan review gate
+
+Use [[visual-plan-review-surfaces]] when a PRD, implementation plan, or issue plan needs an inspectable artifact before execution. This is an optional review gate between `/to-prd` and `/to-issues`, or between an implementation plan and `/implement`.
+
+Jamie's default is local/private MDX artifacts under `.agent-native/plans/<slug>/`, not hosted share links or comment workflows. The visual plan should preserve durable truth in the PRD/GitHub/vault source while making the plan easier to inspect: file maps, diagrams, UI states, annotated code, open questions, and verification gates.
+
 ## Source-backed best practices
 
 [[matt-pocock-skills-best-practices]] preserves the source-backed pattern from `mattpocock/skills`: small composable skills, grilling for alignment, shared language docs, feedback loops, and architecture discipline. This SDLC rhythm is Jamie's generalized implementation sequence for applying those practices without turning them into a rigid framework.
@@ -87,6 +93,7 @@ Useful routes include:
 - Use `/prototype` as a probe when the lock/problem shape is unclear.
 - Use `/grill-with-docs` for alignment, ubiquitous language, `CONTEXT.md`, and ADR capture.
 - Use `/to-prd` as the lean requirements spine; do not proceed to issues until approved.
+- Use `visual-plan` when the PRD or implementation plan needs a richer local review surface before issues or code.
 - Use `/to-issues` for vertical tracer-bullet slices, not horizontal layers.
 - Use `/tdd` for red-green-refactor feedback loops.
 - Use `/handoff` to keep continuity across fresh contexts.
@@ -102,6 +109,7 @@ Useful routes include:
 ## Related pages
 
 - [[matt-pocock-skills-best-practices]]
+- [[visual-plan-review-surfaces]]
 - [[find-the-lock-problem-first]]
 - [[issue-driven-afk-workflow]]
 - [[smart-zone-context-discipline]]

@@ -19,6 +19,7 @@
 - [Runtime Memory Knowledge Routing](/raw/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md.html))
 - [Self-Improving Agent Systems](/raw/agent-workflows/wiki/concepts/self-improving-agent-systems.md) ([html](/wiki/agent-workflows/wiki/concepts/self-improving-agent-systems.md.html))
 - [Static Retrieval Evals](/raw/agent-workflows/wiki/concepts/static-retrieval-evals.md) ([html](/wiki/agent-workflows/wiki/concepts/static-retrieval-evals.md.html))
+- [Visual Plan Review Surfaces](/raw/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md) ([html](/wiki/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md.html))
 - [Hermes Mission Control](/raw/agent-workflows/wiki/entities/hermes-mission-control.md) ([html](/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html))
 - [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md) ([html](/wiki/agent-workflows/wiki/index.md.html))
 - [Agent Workflows — Activity Log](/raw/agent-workflows/wiki/log.md) ([html](/wiki/agent-workflows/wiki/log.md.html))
