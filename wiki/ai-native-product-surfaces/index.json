@@ -2,10 +2,10 @@
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
   "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
-  "documentCount": 14,
+  "documentCount": 16,
   "counts": {
     "wiki": 1,
-    "concepts": 5,
+    "concepts": 7,
     "entities": 4,
     "summaries": 0,
     "syntheses": 0
@@ -58,6 +58,20 @@
       "path": "wiki/concepts/material-loop-and-glass-interfaces.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Verified Video Answer Surfaces",
+      "path": "wiki/concepts/verified-video-answer-surfaces.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Video Retrieve-Then-Verify Loop",
+      "path": "wiki/concepts/video-retrieve-then-verify-loop.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md.html",
       "category": "concepts"
     },
     {

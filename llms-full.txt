@@ -3332,7 +3332,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry.
+2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry.
 
 ## Canonical Source Roots
 
@@ -3346,6 +3346,10 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
+- `Knowledge/concepts/video-retrieve-then-verify-loop.md`
+- `Knowledge/concepts/verified-video-answer-surfaces.md`
+- `Knowledge/raw/articles/tonbistudio-mini-vss.md`
+- `Knowledge/raw/articles/nvidia-vss-docs.md`
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
@@ -4233,6 +4237,162 @@ Hermes review surfaces should show enough plan, diff, evidence, risk, and next-a
 Compiled from `Knowledge/concepts/material-loop-and-glass-interfaces.md`, inspired by Ryo Lu's "Closer to the Material" talk for Cursor Compile 26.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md ===== -->
+
+---
+title: Verified Video Answer Surfaces
+created: 2026-06-27
+updated: 2026-06-27
+type: concept
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, video-ai, product-framing, interaction-design]
+sources:
+  - Knowledge/concepts/verified-video-answer-surfaces.md
+  - Knowledge/concepts/video-retrieve-then-verify-loop.md
+  - Knowledge/concepts/agent-output-decision-artifacts.md
+confidence: high
+---
+
+# Verified Video Answer Surfaces
+
+**Verified Video Answer Surfaces** turn video AI from a ranked search box into an evidence-backed answer workflow:
+
+```text
+question -> verified moments -> evidence cards -> clips/report -> next action
+```
+
+The answer should show the moment, timestamp, confidence, evidence, and coverage boundary.
+
+## Surface contract
+
+A useful verified-video answer includes:
+
+1. interpreted question;
+2. searched videos / time range / camera or source scope;
+3. verified moments with clip, timestamp, confidence, and evidence sentence;
+4. evidence trail: frame, transcript/caption excerpt, modality signal, and source video handle;
+5. explicit no-match state when weak candidates are rejected;
+6. recall warning for "every X" queries;
+7. next action: save clip, export report, refine search, mark false positive/negative, or ask a follow-up.
+
+## Product wedge formula
+
+```text
+For [person who scrubs video],
+find [repeated high-value moment],
+return [timestamped clips + evidence + confidence],
+so they can [make a decision / create an artifact / coach / report / publish].
+```
+
+Examples:
+
+- coach -> fast breaks, press breaks, missed rotations -> film-review clips;
+- creator -> beat, quote, visual action -> exportable clips;
+- training lead -> correct/incorrect procedure -> teaching examples;
+- operations lead -> candidate incidents -> verified report with rejected false alarms separated.
+
+## UI mode guidance
+
+- **Direct UI:** video library, timeline, filters, saved clips.
+- **Agentic delegation:** long ingest, batch indexing, recurring scans, report generation.
+- **Generative UI:** answer cards, evidence strips, comparison views, recall/coverage warnings.
+- **Stable truth/routing:** source IDs, timestamps, captions, transcripts, verdicts, and eval logs.
+
+## Quality bar
+
+Measure precision of verified results, recall for "every X" claims, time saved versus manual scrubbing, evidence-card trust, false-positive correction, false-negative discovery, and whether a returned report can be shared without redoing the review.
+
+## Boundaries
+
+- Do not promise "find every" without recall measurement.
+- Do not treat top-k ranking as a verified answer.
+- Do not hide transcript/commentary dependence when target footage may be silent.
+- Do not build real-time/multi-camera/alerting infrastructure before the verified answer loop works.
+
+## Related pages
+
+- [[video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]]
+- [[agent-output-decision-artifacts|Agent Output Decision Artifacts]]
+- [[interaction-mode-routing|Interaction Mode Routing]]
+- [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
+- [[world-model-control-surfaces|World Model Control Surfaces]]
+
+## Source
+
+Compiled from `Knowledge/concepts/verified-video-answer-surfaces.md` and adjacent AI-native product-surface concepts.
+
+
+<!-- ===== ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md ===== -->
+
+---
+title: Video Retrieve-Then-Verify Loop
+created: 2026-06-27
+updated: 2026-06-27
+type: concept
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, video-ai, retrieval, verification, product-framing]
+sources:
+  - Knowledge/concepts/video-retrieve-then-verify-loop.md
+  - Knowledge/raw/articles/tonbistudio-mini-vss.md
+  - Knowledge/raw/articles/nvidia-vss-docs.md
+confidence: high
+---
+
+# Video Retrieve-Then-Verify Loop
+
+The **Video Retrieve-Then-Verify Loop** is the reusable pattern for answering natural-language questions over video:
+
+```text
+ingest video -> segment -> caption/transcribe/embed -> retrieve candidates -> verify with visual/audio evidence -> return timestamped answer
+```
+
+Retrieval maximizes candidate recall. Verification filters false positives, cites evidence, sets confidence, and refines the answer.
+
+## Why it matters
+
+NVIDIA VSS shows the industrial version: video IO/storage, agent routing, model endpoints, search, summarization, alert verification, stream handling, and telemetry.
+
+Tonbi's `mini-vss` shows the desk-scale version: segment one video, embed frames/captions/transcripts, fuse retrieval, then judge candidates with evidence. Its reported "fast break" test moved from 0.20 precision@5 on retrieval alone to 1.00 verified precision with 75% recall. The verifier also found a full-court press the human label pass had missed.
+
+The product lesson: **video search quality is candidate recall plus evidence-bearing verification, not just vector ranking.**
+
+## Design rules
+
+1. Segment is the product unit; frames are evidence inside a segment.
+2. Visual, caption, transcript, object, and metadata signals propose candidates.
+3. Fusion should preserve recall before optimizing rank aesthetics.
+4. A verifier should output match/no-match, confidence, evidence, and refined timestamp.
+5. "Find every X" is a recall claim and needs deeper candidate pools.
+6. A trustworthy no-result state can be better than noisy ranked guesses.
+
+## Query tiers
+
+| Tier | Example | Answer path |
+|---|---|---|
+| Appearance | "player shooting", "forklift in aisle" | visual embeddings / detections |
+| Event | "made layup", "person enters restricted zone" | captions, transcript, object/action signals |
+| Tactical / semantic | "fast break", "unsafe loading pattern" | retrieval pool + verifier over clip context |
+
+## Product implication
+
+For Jamie's app exploration, do not start with "video search app" as the promise. Start with one painful video-review job where verified timestamped answers save obvious scrubbing time.
+
+Strong first-user candidates include coaches, creators, course/community operators, and small teams reviewing support, sales, training, or operations footage.
+
+## Related pages
+
+- [[verified-video-answer-surfaces|Verified Video Answer Surfaces]]
+- [[ai-native-problem-framing-framework|AI-Native Problem Framing Framework]]
+- [[world-model-control-surfaces|World Model Control Surfaces]]
+- [[../../local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis|RAG over Agent Wikis]]
+
+## Source
+
+Compiled from `Knowledge/concepts/video-retrieve-then-verify-loop.md`, Tonbi `mini-vss`, and NVIDIA VSS docs.
+
+
 <!-- ===== ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md ===== -->
 
 ---
@@ -4623,6 +4783,8 @@ namespace: ai-native-product-surfaces
 - [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
+- [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped visual/audio evidence.
+- [[concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]] — Product-surface pattern for video apps that answer natural-language questions with clips, confidence, evidence, and recall boundaries.
 - [[concepts/world-model-control-surfaces|World Model Control Surfaces]] — Grounded-AI control/review lens for exposing state, actions, predictions, objectives, guardrails, evidence, and the recommended next safe step.
 
 ## Entities
@@ -4652,6 +4814,10 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
+- `Knowledge/concepts/video-retrieve-then-verify-loop.md`
+- `Knowledge/concepts/verified-video-answer-surfaces.md`
+- `Knowledge/raw/articles/tonbistudio-mini-vss.md`
+- `Knowledge/raw/articles/nvidia-vss-docs.md`
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
@@ -4671,6 +4837,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-27 create/update | VSS video retrieve-then-verify concepts
+
+- Added `wiki/concepts/video-retrieve-then-verify-loop.md` and `wiki/concepts/verified-video-answer-surfaces.md` from the canonical Knowledge pages.
+- Routed Tonbi `mini-vss` and NVIDIA VSS as product-surface source material: the durable concept is candidate recall plus evidence-bearing verification, not a new namespace or infrastructure commitment.
+- Updated namespace README and index; no Daily Notes were copied or compiled.
 
 ## 2026-06-27 create/update | Agent Output Decision Artifacts
 

@@ -27,7 +27,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry.
+2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry.
 
 ## Canonical Source Roots
 
@@ -41,6 +41,10 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
+- `Knowledge/concepts/video-retrieve-then-verify-loop.md`
+- `Knowledge/concepts/verified-video-answer-surfaces.md`
+- `Knowledge/raw/articles/tonbistudio-mini-vss.md`
+- `Knowledge/raw/articles/nvidia-vss-docs.md`
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`

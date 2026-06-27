@@ -9,6 +9,8 @@
 - [AI-Native Problem Framing Framework](/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html))
 - [Interaction Mode Routing](/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html))
 - [Material Loop and Glass Interfaces](/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html))
+- [Verified Video Answer Surfaces](/raw/ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md.html))
+- [Video Retrieve-Then-Verify Loop](/raw/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md.html))
 - [World Model Control Surfaces](/raw/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md.html))
 - [I-know-kungfu](/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html))
 - [Job Edge](/raw/ai-native-product-surfaces/wiki/entities/job-edge.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/job-edge.md.html))

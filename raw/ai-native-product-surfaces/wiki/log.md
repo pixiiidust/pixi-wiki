@@ -11,6 +11,12 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-06-27 create/update | VSS video retrieve-then-verify concepts
+
+- Added `wiki/concepts/video-retrieve-then-verify-loop.md` and `wiki/concepts/verified-video-answer-surfaces.md` from the canonical Knowledge pages.
+- Routed Tonbi `mini-vss` and NVIDIA VSS as product-surface source material: the durable concept is candidate recall plus evidence-bearing verification, not a new namespace or infrastructure commitment.
+- Updated namespace README and index; no Daily Notes were copied or compiled.
+
 ## 2026-06-27 create/update | Agent Output Decision Artifacts
 
 - Added `wiki/concepts/agent-output-decision-artifacts.md` from the canonical Knowledge page.
