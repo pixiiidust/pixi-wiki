@@ -26,43 +26,45 @@
 <p>Compound Engineering is an EveryInc plugin that packages a repo-local engineering loop: ideate or brainstorm, plan, work, simplify, review, compound the learning, and repeat with better context.</p>
 <p>In Jamie&#x27;s Hermes setup, it is installed at <code>/root/.hermes/plugins/compound-engineering-plugin/skills</code> and exposed as normal Hermes skills such as <code>ce-setup</code>, <code>ce-brainstorm</code>, <code>ce-plan</code>, <code>ce-work</code>, <code>ce-simplify-code</code>, <code>ce-code-review</code>, <code>ce-debug</code>, <code>ce-compound</code>, and <code>lfg</code>.</p>
 <h2>Quick start</h2>
-<p>Run once per target repo:</p>
-<pre><code>/ce-setup</code></pre>
-<p>Then use the standard loop:</p>
-<pre><code>/ce-brainstorm describe the feature or problem
-/ce-plan
-/ce-work
-/ce-simplify-code
-/ce-code-review
-/ce-compound</code></pre>
+<p>Treat the CE names as Hermes skill invocations, not guaranteed Discord-native slash commands. In Discord, Jamie may write <code>/ce-ideate</code> as shorthand for the skill; if Discord rejects it as unknown, use natural language or the built-in skill loader:</p>
+<pre><code>@Pixoid use the ce-ideate skill: surprise me with app ideas
+/skill ce-ideate</code></pre>
+<p>Upstream docs often show <code>/ce-*</code>; that is command-style skill naming from the source ecosystem, not proof that the Discord gateway registered a native slash alias.</p>
+<p>Run <code>ce-setup</code> once per target repo, then use the standard loop:</p>
+<pre><code>ce-brainstorm describe the feature or problem
+ce-plan
+ce-work
+ce-simplify-code
+ce-code-review
+ce-compound</code></pre>
 <h2>When to use it</h2>
 <p>| Situation | Route |</p>
 <p>|---|---|</p>
-<p>| Need grounded build ideas | <code>/ce-ideate</code> -&gt; <code>/ce-brainstorm</code> |</p>
-<p>| Need requirements before implementation | <code>/ce-brainstorm</code> -&gt; <code>/ce-plan</code> |</p>
-<p>| Need to execute an approved CE plan | <code>/ce-work</code> |</p>
-<p>| Need to clean fresh implementation work | <code>/ce-simplify-code</code> |</p>
-<p>| Need plan-aware review | <code>/ce-code-review</code> |</p>
-<p>| Need bug reproduction/root cause/fix | <code>/ce-debug</code> -&gt; <code>/ce-code-review</code> -&gt; <code>/ce-compound</code> |</p>
-<p>| Need project-local learning capture | <code>/ce-compound</code> |</p>
-<p>| Need bounded autopilot after requirements | <code>/lfg</code>, only with explicit scope/approval gates |</p>
+<p>| Need grounded build ideas | <code>ce-ideate</code> -&gt; <code>ce-brainstorm</code> |</p>
+<p>| Need requirements before implementation | <code>ce-brainstorm</code> -&gt; <code>ce-plan</code> |</p>
+<p>| Need to execute an approved CE plan | <code>ce-work</code> |</p>
+<p>| Need to clean fresh implementation work | <code>ce-simplify-code</code> |</p>
+<p>| Need plan-aware review | <code>ce-code-review</code> |</p>
+<p>| Need bug reproduction/root cause/fix | <code>ce-debug</code> -&gt; <code>ce-code-review</code> -&gt; <code>ce-compound</code> |</p>
+<p>| Need project-local learning capture | <code>ce-compound</code> |</p>
+<p>| Need bounded autopilot after requirements | <code>lfg</code>, only with explicit scope/approval gates |</p>
 <h2>Similar to existing skills</h2>
 <p>Compound Engineering aligns with <a href="/pixi-wiki/wiki/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md.html">matt-pocock-sdlc-rhythm</a> and <a href="/pixi-wiki/wiki/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md.html">matt-pocock-skills-best-practices</a>: it reduces misalignment through planning, shared artifacts, feedback loops, review, and durable learning.</p>
 <p>It also overlaps with <a href="/pixi-wiki/wiki/agent-workflows/wiki/concepts/agent-skill-routing.md.html">agent-skill-routing</a> because Pixoid should choose the right CE skill automatically instead of making Jamie be the skill librarian.</p>
 <h2>Different from existing skills</h2>
 <ul>
 <li>CE is an integrated workflow package; Pocock/Jamie skills are modular gates.</li>
-<li>CE&#x27;s <code>/ce-brainstorm</code> and <code>/ce-plan</code> write a shared unified plan artifact for downstream CE commands; <code>/to-prd</code> and <code>/to-issues</code> remain better when the durable deliverable is a PRD/issue tree.</li>
-<li>CE&#x27;s <code>/ce-work</code> assumes the CE plan context; <code>implement</code>/<code>tdd</code> remain better for one narrow GitHub issue or an existing non-CE plan.</li>
-<li>CE&#x27;s <code>/ce-compound</code> captures project-local engineering learning, usually under <code>docs/solutions/</code>; Obsidian/Pixi Wiki remain the home for reusable human-facing knowledge.</li>
-<li>CE&#x27;s <code>/lfg</code> is an autopilot. Jamie&#x27;s AFK route contracts still govern profile boundaries, handoffs, merge/deploy approval, and route observability.</li>
+<li>CE&#x27;s <code>ce-brainstorm</code> and <code>ce-plan</code> write a shared unified plan artifact for downstream CE commands; <code>to-prd</code> and <code>to-issues</code> remain better when the durable deliverable is a PRD/issue tree.</li>
+<li>CE&#x27;s <code>ce-work</code> assumes the CE plan context; <code>implement</code>/<code>tdd</code> remain better for one narrow GitHub issue or an existing non-CE plan.</li>
+<li>CE&#x27;s <code>ce-compound</code> captures project-local engineering learning, usually under <code>docs/solutions/</code>; Obsidian/Pixi Wiki remain the home for reusable human-facing knowledge.</li>
+<li>CE&#x27;s <code>lfg</code> is an autopilot. Jamie&#x27;s AFK route contracts still govern profile boundaries, handoffs, merge/deploy approval, and route observability.</li>
 </ul>
 <h2>Pixoid routing rules</h2>
 <ul>
 <li>Use CE for repo-local engineering loops.</li>
 <li>Use <code>prototype</code>, <code>visual-plan</code>, <code>grill-with-docs</code>, <code>/to-prd</code>, and <code>/to-issues</code> when Jamie needs explicit human review artifacts before execution.</li>
 <li>Use normal <code>code-review</code>, <code>debugging</code>, <code>ponytail-code-discipline</code>, or <code>test-driven-development</code> when CE&#x27;s unified plan artifact is not the active source.</li>
-<li>Do not let <code>/lfg</code> bypass destructive-change, deploy, merge, secret, profile/runtime, or public publishing approvals.</li>
+<li>Do not let <code>lfg</code> bypass destructive-change, deploy, merge, secret, profile/runtime, or public publishing approvals.</li>
 <li>Treat CE skills as procedures, not proof: inspect live state, run tests, and verify outputs before reporting success.</li>
 </ul>
 <h2>Related pages</h2>

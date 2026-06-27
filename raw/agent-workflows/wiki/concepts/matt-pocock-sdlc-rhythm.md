@@ -70,7 +70,7 @@ Jamie's default is local/private MDX artifacts under `.agent-native/plans/<slug>
 
 ## Compound Engineering compatibility
 
-[[compound-engineering-skill-layer]] is compatible with this rhythm, but it packages the loop differently. Pocock/Jamie skills are modular gates for prototype, grill, PRD, issue slicing, TDD, review, and handoff. Compound Engineering is an integrated repo-local loop with `/ce-brainstorm`, `/ce-plan`, `/ce-work`, `/ce-simplify-code`, `/ce-code-review`, and `/ce-compound` sharing a unified plan artifact and project-local learning trail.
+[[compound-engineering-skill-layer]] is compatible with this rhythm, but it packages the loop differently. Pocock/Jamie skills are modular gates for prototype, grill, PRD, issue slicing, TDD, review, and handoff. Compound Engineering is an integrated repo-local loop with `ce-brainstorm`, `ce-plan`, `ce-work`, `ce-simplify-code`, `ce-code-review`, and `ce-compound` sharing a unified plan artifact and project-local learning trail. Upstream docs may write these as `/ce-*`; on Discord that is skill shorthand unless a native slash command exists.
 
 Use CE when the active repo should follow that integrated loop. Use this SDLC rhythm when Jamie needs explicit prototype/PRD/issue approval gates, a portfolio/product artifact, or a narrower one-issue implementation path.
 

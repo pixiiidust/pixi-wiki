@@ -17,35 +17,38 @@ In Jamie's Hermes setup, it is installed at `/root/.hermes/plugins/compound-engi
 
 ## Quick start
 
-Run once per target repo:
+Treat the CE names as Hermes skill invocations, not guaranteed Discord-native slash commands. In Discord, Jamie may write `/ce-ideate` as shorthand for the skill; if Discord rejects it as unknown, use natural language or the built-in skill loader:
 
 ```text
-/ce-setup
+@Pixoid use the ce-ideate skill: surprise me with app ideas
+/skill ce-ideate
 ```
 
-Then use the standard loop:
+Upstream docs often show `/ce-*`; that is command-style skill naming from the source ecosystem, not proof that the Discord gateway registered a native slash alias.
+
+Run `ce-setup` once per target repo, then use the standard loop:
 
 ```text
-/ce-brainstorm describe the feature or problem
-/ce-plan
-/ce-work
-/ce-simplify-code
-/ce-code-review
-/ce-compound
+ce-brainstorm describe the feature or problem
+ce-plan
+ce-work
+ce-simplify-code
+ce-code-review
+ce-compound
 ```
 
 ## When to use it
 
 | Situation | Route |
 |---|---|
-| Need grounded build ideas | `/ce-ideate` -> `/ce-brainstorm` |
-| Need requirements before implementation | `/ce-brainstorm` -> `/ce-plan` |
-| Need to execute an approved CE plan | `/ce-work` |
-| Need to clean fresh implementation work | `/ce-simplify-code` |
-| Need plan-aware review | `/ce-code-review` |
-| Need bug reproduction/root cause/fix | `/ce-debug` -> `/ce-code-review` -> `/ce-compound` |
-| Need project-local learning capture | `/ce-compound` |
-| Need bounded autopilot after requirements | `/lfg`, only with explicit scope/approval gates |
+| Need grounded build ideas | `ce-ideate` -> `ce-brainstorm` |
+| Need requirements before implementation | `ce-brainstorm` -> `ce-plan` |
+| Need to execute an approved CE plan | `ce-work` |
+| Need to clean fresh implementation work | `ce-simplify-code` |
+| Need plan-aware review | `ce-code-review` |
+| Need bug reproduction/root cause/fix | `ce-debug` -> `ce-code-review` -> `ce-compound` |
+| Need project-local learning capture | `ce-compound` |
+| Need bounded autopilot after requirements | `lfg`, only with explicit scope/approval gates |
 
 ## Similar to existing skills
 
@@ -56,17 +59,17 @@ It also overlaps with [[agent-skill-routing]] because Pixoid should choose the r
 ## Different from existing skills
 
 - CE is an integrated workflow package; Pocock/Jamie skills are modular gates.
-- CE's `/ce-brainstorm` and `/ce-plan` write a shared unified plan artifact for downstream CE commands; `/to-prd` and `/to-issues` remain better when the durable deliverable is a PRD/issue tree.
-- CE's `/ce-work` assumes the CE plan context; `implement`/`tdd` remain better for one narrow GitHub issue or an existing non-CE plan.
-- CE's `/ce-compound` captures project-local engineering learning, usually under `docs/solutions/`; Obsidian/Pixi Wiki remain the home for reusable human-facing knowledge.
-- CE's `/lfg` is an autopilot. Jamie's AFK route contracts still govern profile boundaries, handoffs, merge/deploy approval, and route observability.
+- CE's `ce-brainstorm` and `ce-plan` write a shared unified plan artifact for downstream CE commands; `to-prd` and `to-issues` remain better when the durable deliverable is a PRD/issue tree.
+- CE's `ce-work` assumes the CE plan context; `implement`/`tdd` remain better for one narrow GitHub issue or an existing non-CE plan.
+- CE's `ce-compound` captures project-local engineering learning, usually under `docs/solutions/`; Obsidian/Pixi Wiki remain the home for reusable human-facing knowledge.
+- CE's `lfg` is an autopilot. Jamie's AFK route contracts still govern profile boundaries, handoffs, merge/deploy approval, and route observability.
 
 ## Pixoid routing rules
 
 - Use CE for repo-local engineering loops.
 - Use `prototype`, `visual-plan`, `grill-with-docs`, `/to-prd`, and `/to-issues` when Jamie needs explicit human review artifacts before execution.
 - Use normal `code-review`, `debugging`, `ponytail-code-discipline`, or `test-driven-development` when CE's unified plan artifact is not the active source.
-- Do not let `/lfg` bypass destructive-change, deploy, merge, secret, profile/runtime, or public publishing approvals.
+- Do not let `lfg` bypass destructive-change, deploy, merge, secret, profile/runtime, or public publishing approvals.
 - Treat CE skills as procedures, not proof: inspect live state, run tests, and verify outputs before reporting success.
 
 ## Related pages

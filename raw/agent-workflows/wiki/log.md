@@ -14,7 +14,7 @@ namespace: agent-workflows
 ## 2026-06-27 create | Compound Engineering skill layer
 
 - Added compiled concept `wiki/concepts/compound-engineering-skill-layer.md` from the canonical Knowledge page and the installed EveryInc `compound-engineering-plugin`.
-- Captured `/ce-*` and `/lfg` routing, how CE compares with Jamie's Pocock/product/review/vault skills, and the approval boundaries around autopilot use.
+- Captured `ce-*` and `lfg` routing, how CE compares with Jamie's Pocock/product/review/vault skills, the Discord invocation caveat for `/ce-*` shorthand, and the approval boundaries around autopilot use.
 - Updated namespace README and index source roots.
 - No public `pixi-wiki` deploy was pushed.
 

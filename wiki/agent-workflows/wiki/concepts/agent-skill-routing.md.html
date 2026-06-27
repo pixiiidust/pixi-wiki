@@ -65,13 +65,13 @@
 </ul>
 <h2>Edge cases</h2>
 <ul>
-<li>Explicit user-invoked skills or slash commands are the chosen mode unless they conflict with safety or live evidence.</li>
+<li>Explicit user-invoked skills or <code>/skill-name</code> labels are the chosen mode unless they conflict with safety or live evidence. In Discord, distinguish native gateway commands from Hermes skill shorthand: <code>/ce-ideate</code> can mean the <code>ce-ideate</code> skill even if the Discord slash command is not registered.</li>
 <li>Ask only when different skill stacks imply materially different artifacts or side effects.</li>
 <li>If a skill might matter but its description is unclear, load it before relying on it or excluding it.</li>
 <li>If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.</li>
 <li>For open-ended inspiration or option generation, load <code>creative-ideation</code>, route through one method, and produce grounded non-generic ideas before returning to product/build gates.</li>
 <li>For PRD/implementation-plan review surfaces, load <code>visual-plan</code> and default to local/private MDX artifacts; hosted Plan auth, share links, and comments are optional, not prerequisites.</li>
-<li>For repo-local Compound Engineering loops, load <code>ce-setup</code> first, then route through <code>/ce-brainstorm</code> -&gt; <code>/ce-plan</code> -&gt; <code>/ce-work</code> -&gt; <code>/ce-simplify-code</code> -&gt; <code>/ce-code-review</code> -&gt; <code>/ce-compound</code>; keep <code>/lfg</code> approval-gated.</li>
+<li>For repo-local Compound Engineering loops, load <code>ce-setup</code> first, then route through <code>ce-brainstorm</code> -&gt; <code>ce-plan</code> -&gt; <code>ce-work</code> -&gt; <code>ce-simplify-code</code> -&gt; <code>ce-code-review</code> -&gt; <code>ce-compound</code>; keep <code>lfg</code> approval-gated. In Discord, invoke CE skills with natural language or <code>/skill &lt;name&gt;</code> unless native <code>/ce-*</code> aliases have been explicitly registered.</li>
 <li>Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public <code>pixi-wiki</code> deploys still needs explicit approval.</li>
 <li>If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.</li>
 </ul>

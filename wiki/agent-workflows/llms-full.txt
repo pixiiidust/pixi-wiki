@@ -302,13 +302,13 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 
 ## Edge cases
 
-- Explicit user-invoked skills or slash commands are the chosen mode unless they conflict with safety or live evidence.
+- Explicit user-invoked skills or `/skill-name` labels are the chosen mode unless they conflict with safety or live evidence. In Discord, distinguish native gateway commands from Hermes skill shorthand: `/ce-ideate` can mean the `ce-ideate` skill even if the Discord slash command is not registered.
 - Ask only when different skill stacks imply materially different artifacts or side effects.
 - If a skill might matter but its description is unclear, load it before relying on it or excluding it.
 - If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.
 - For open-ended inspiration or option generation, load `creative-ideation`, route through one method, and produce grounded non-generic ideas before returning to product/build gates.
 - For PRD/implementation-plan review surfaces, load `visual-plan` and default to local/private MDX artifacts; hosted Plan auth, share links, and comments are optional, not prerequisites.
-- For repo-local Compound Engineering loops, load `ce-setup` first, then route through `/ce-brainstorm` -> `/ce-plan` -> `/ce-work` -> `/ce-simplify-code` -> `/ce-code-review` -> `/ce-compound`; keep `/lfg` approval-gated.
+- For repo-local Compound Engineering loops, load `ce-setup` first, then route through `ce-brainstorm` -> `ce-plan` -> `ce-work` -> `ce-simplify-code` -> `ce-code-review` -> `ce-compound`; keep `lfg` approval-gated. In Discord, invoke CE skills with natural language or `/skill <name>` unless native `/ce-*` aliases have been explicitly registered.
 - Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public `pixi-wiki` deploys still needs explicit approval.
 - If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.
 
@@ -434,35 +434,38 @@ In Jamie's Hermes setup, it is installed at `/root/.hermes/plugins/compound-engi
 
 ## Quick start
 
-Run once per target repo:
+Treat the CE names as Hermes skill invocations, not guaranteed Discord-native slash commands. In Discord, Jamie may write `/ce-ideate` as shorthand for the skill; if Discord rejects it as unknown, use natural language or the built-in skill loader:
 
 ```text
-/ce-setup
+@Pixoid use the ce-ideate skill: surprise me with app ideas
+/skill ce-ideate
 ```
 
-Then use the standard loop:
+Upstream docs often show `/ce-*`; that is command-style skill naming from the source ecosystem, not proof that the Discord gateway registered a native slash alias.
+
+Run `ce-setup` once per target repo, then use the standard loop:
 
 ```text
-/ce-brainstorm describe the feature or problem
-/ce-plan
-/ce-work
-/ce-simplify-code
-/ce-code-review
-/ce-compound
+ce-brainstorm describe the feature or problem
+ce-plan
+ce-work
+ce-simplify-code
+ce-code-review
+ce-compound
 ```
 
 ## When to use it
 
 | Situation | Route |
 |---|---|
-| Need grounded build ideas | `/ce-ideate` -> `/ce-brainstorm` |
-| Need requirements before implementation | `/ce-brainstorm` -> `/ce-plan` |
-| Need to execute an approved CE plan | `/ce-work` |
-| Need to clean fresh implementation work | `/ce-simplify-code` |
-| Need plan-aware review | `/ce-code-review` |
-| Need bug reproduction/root cause/fix | `/ce-debug` -> `/ce-code-review` -> `/ce-compound` |
-| Need project-local learning capture | `/ce-compound` |
-| Need bounded autopilot after requirements | `/lfg`, only with explicit scope/approval gates |
+| Need grounded build ideas | `ce-ideate` -> `ce-brainstorm` |
+| Need requirements before implementation | `ce-brainstorm` -> `ce-plan` |
+| Need to execute an approved CE plan | `ce-work` |
+| Need to clean fresh implementation work | `ce-simplify-code` |
+| Need plan-aware review | `ce-code-review` |
+| Need bug reproduction/root cause/fix | `ce-debug` -> `ce-code-review` -> `ce-compound` |
+| Need project-local learning capture | `ce-compound` |
+| Need bounded autopilot after requirements | `lfg`, only with explicit scope/approval gates |
 
 ## Similar to existing skills
 
@@ -473,17 +476,17 @@ It also overlaps with [[agent-skill-routing]] because Pixoid should choose the r
 ## Different from existing skills
 
 - CE is an integrated workflow package; Pocock/Jamie skills are modular gates.
-- CE's `/ce-brainstorm` and `/ce-plan` write a shared unified plan artifact for downstream CE commands; `/to-prd` and `/to-issues` remain better when the durable deliverable is a PRD/issue tree.
-- CE's `/ce-work` assumes the CE plan context; `implement`/`tdd` remain better for one narrow GitHub issue or an existing non-CE plan.
-- CE's `/ce-compound` captures project-local engineering learning, usually under `docs/solutions/`; Obsidian/Pixi Wiki remain the home for reusable human-facing knowledge.
-- CE's `/lfg` is an autopilot. Jamie's AFK route contracts still govern profile boundaries, handoffs, merge/deploy approval, and route observability.
+- CE's `ce-brainstorm` and `ce-plan` write a shared unified plan artifact for downstream CE commands; `to-prd` and `to-issues` remain better when the durable deliverable is a PRD/issue tree.
+- CE's `ce-work` assumes the CE plan context; `implement`/`tdd` remain better for one narrow GitHub issue or an existing non-CE plan.
+- CE's `ce-compound` captures project-local engineering learning, usually under `docs/solutions/`; Obsidian/Pixi Wiki remain the home for reusable human-facing knowledge.
+- CE's `lfg` is an autopilot. Jamie's AFK route contracts still govern profile boundaries, handoffs, merge/deploy approval, and route observability.
 
 ## Pixoid routing rules
 
 - Use CE for repo-local engineering loops.
 - Use `prototype`, `visual-plan`, `grill-with-docs`, `/to-prd`, and `/to-issues` when Jamie needs explicit human review artifacts before execution.
 - Use normal `code-review`, `debugging`, `ponytail-code-discipline`, or `test-driven-development` when CE's unified plan artifact is not the active source.
-- Do not let `/lfg` bypass destructive-change, deploy, merge, secret, profile/runtime, or public publishing approvals.
+- Do not let `lfg` bypass destructive-change, deploy, merge, secret, profile/runtime, or public publishing approvals.
 - Treat CE skills as procedures, not proof: inspect live state, run tests, and verify outputs before reporting success.
 
 ## Related pages
@@ -832,7 +835,7 @@ Jamie's default is local/private MDX artifacts under `.agent-native/plans/<slug>
 
 ## Compound Engineering compatibility
 
-[[compound-engineering-skill-layer]] is compatible with this rhythm, but it packages the loop differently. Pocock/Jamie skills are modular gates for prototype, grill, PRD, issue slicing, TDD, review, and handoff. Compound Engineering is an integrated repo-local loop with `/ce-brainstorm`, `/ce-plan`, `/ce-work`, `/ce-simplify-code`, `/ce-code-review`, and `/ce-compound` sharing a unified plan artifact and project-local learning trail.
+[[compound-engineering-skill-layer]] is compatible with this rhythm, but it packages the loop differently. Pocock/Jamie skills are modular gates for prototype, grill, PRD, issue slicing, TDD, review, and handoff. Compound Engineering is an integrated repo-local loop with `ce-brainstorm`, `ce-plan`, `ce-work`, `ce-simplify-code`, `ce-code-review`, and `ce-compound` sharing a unified plan artifact and project-local learning trail. Upstream docs may write these as `/ce-*`; on Discord that is skill shorthand unless a native slash command exists.
 
 Use CE when the active repo should follow that integrated loop. Use this SDLC rhythm when Jamie needs explicit prototype/PRD/issue approval gates, a portfolio/product artifact, or a narrower one-issue implementation path.
 
@@ -1505,7 +1508,7 @@ namespace: agent-workflows
 ## 2026-06-27 create | Compound Engineering skill layer
 
 - Added compiled concept `wiki/concepts/compound-engineering-skill-layer.md` from the canonical Knowledge page and the installed EveryInc `compound-engineering-plugin`.
-- Captured `/ce-*` and `/lfg` routing, how CE compares with Jamie's Pocock/product/review/vault skills, and the approval boundaries around autopilot use.
+- Captured `ce-*` and `lfg` routing, how CE compares with Jamie's Pocock/product/review/vault skills, the Discord invocation caveat for `/ce-*` shorthand, and the approval boundaries around autopilot use.
 - Updated namespace README and index source roots.
 - No public `pixi-wiki` deploy was pushed.
 

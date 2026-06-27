@@ -69,13 +69,13 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 
 ## Edge cases
 
-- Explicit user-invoked skills or slash commands are the chosen mode unless they conflict with safety or live evidence.
+- Explicit user-invoked skills or `/skill-name` labels are the chosen mode unless they conflict with safety or live evidence. In Discord, distinguish native gateway commands from Hermes skill shorthand: `/ce-ideate` can mean the `ce-ideate` skill even if the Discord slash command is not registered.
 - Ask only when different skill stacks imply materially different artifacts or side effects.
 - If a skill might matter but its description is unclear, load it before relying on it or excluding it.
 - If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.
 - For open-ended inspiration or option generation, load `creative-ideation`, route through one method, and produce grounded non-generic ideas before returning to product/build gates.
 - For PRD/implementation-plan review surfaces, load `visual-plan` and default to local/private MDX artifacts; hosted Plan auth, share links, and comments are optional, not prerequisites.
-- For repo-local Compound Engineering loops, load `ce-setup` first, then route through `/ce-brainstorm` -> `/ce-plan` -> `/ce-work` -> `/ce-simplify-code` -> `/ce-code-review` -> `/ce-compound`; keep `/lfg` approval-gated.
+- For repo-local Compound Engineering loops, load `ce-setup` first, then route through `ce-brainstorm` -> `ce-plan` -> `ce-work` -> `ce-simplify-code` -> `ce-code-review` -> `ce-compound`; keep `lfg` approval-gated. In Discord, invoke CE skills with natural language or `/skill <name>` unless native `/ce-*` aliases have been explicitly registered.
 - Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public `pixi-wiki` deploys still needs explicit approval.
 - If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.
 
