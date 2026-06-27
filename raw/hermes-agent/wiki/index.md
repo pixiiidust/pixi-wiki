@@ -1,7 +1,7 @@
 ---
 title: Hermes Agent — Master Index
 created: 2026-06-18
-updated: 2026-06-26
+updated: 2026-06-27
 type: index
 status: compiled
 namespace: hermes-agent
@@ -15,6 +15,7 @@ namespace: hermes-agent
 
 - [[concepts/source-priority|Hermes Source Priority]] — How to rank official docs, local source, AgentWikis, and web search.
 - [[concepts/hermes-capability-routing|Hermes Capability Routing]] — Select the smallest effective Hermes surface for a task: tool, script, skill, memory, delegation, cron, gateway/API, MCP/plugin, profile, kanban, provider route, and verification handle.
+- [[concepts/hermes-remote-artifact-previews|Hermes Remote Artifact Previews]] — Use dashboard HTTP/API for remote Desktop artifacts; never hand local Desktop a VPS `file://` path.
 - [[concepts/evals-and-traces-setup|Hermes Evals and Traces Setup]] — Practical setup map for session exports, batch trajectories, Langfuse, and NeMo Relay ATOF/ATIF.
 - [[concepts/session-trace-store|Hermes Session Trace Store]] — Native `state.db`, session export, and `/insights` surfaces.
 

@@ -1,7 +1,7 @@
 ---
 title: Hermes Agent
 created: 2026-06-18
-updated: 2026-06-26
+updated: 2026-06-27
 type: namespace-overview
 status: compiled
 category: agent-infrastructure
@@ -25,7 +25,7 @@ General AI-agent theory, unrelated community projects, old video transcripts unl
 
 ### Current As
 
-2026-06-26 — added Hermes Capability Routing as the primary capability-selection concept: choose the smallest effective Hermes surface, preserve approval boundaries, and verify the route.
+2026-06-27 — added Hermes Remote Artifact Previews as a reusable rule: remote Desktop artifacts must use dashboard HTTP/API, never VPS-local `file://` preview paths.
 
 ## Source Priority
 
@@ -38,6 +38,7 @@ General AI-agent theory, unrelated community projects, old video transcripts unl
 
 - Official docs mirrored in local install: `/usr/local/lib/hermes-agent/website/docs/`
 - Canonical capability-routing concept: `Knowledge/concepts/hermes-capability-routing.md`
+- Remote artifact preview rule: `Knowledge/concepts/hermes-remote-artifact-previews.md`
 - Local source/plugin docs: `/usr/local/lib/hermes-agent/`
 - AgentWikis Hermes raw pages: `https://agentwikis.com/raw/hermes/...`
 

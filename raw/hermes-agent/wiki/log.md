@@ -1,13 +1,18 @@
 ---
 title: Hermes Agent — Activity Log
 created: 2026-06-18
-updated: 2026-06-26
+updated: 2026-06-27
 type: log
 status: compiled
 namespace: hermes-agent
 ---
 
 # Hermes Agent — Activity Log
+
+## 2026-06-27
+
+- Added `wiki/concepts/hermes-remote-artifact-previews.md` to preserve the remote Desktop preview rule: artifacts generated on the VPS must cross the dashboard HTTP/API boundary, not `file://`.
+- Updated namespace index/README so future agents retrieve this rule before handing Jamie artifact URLs.
 
 ## 2026-06-26
 

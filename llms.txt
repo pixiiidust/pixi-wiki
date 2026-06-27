@@ -67,13 +67,14 @@
 ## Hermes Agent
 
 > Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, capability-routing decisions, and Jamie-specific operating reference for Pi
-> Current as of: 2026-06-26 — added Hermes Capability Routing as the primary capability-selection concept: choose the smallest effective Hermes surface, preserve approval boundaries, and verify the route.
+> Current as of: 2026-06-27 — added Hermes Remote Artifact Previews as a reusable rule: remote Desktop artifacts must use dashboard HTTP/API, never VPS-local `file://` preview paths.
 > Agent access: [/wiki/hermes-agent/llms.txt](/wiki/hermes-agent/llms.txt) [/wiki/hermes-agent/llms-full.txt](/wiki/hermes-agent/llms-full.txt) [/wiki/hermes-agent/index.json](/wiki/hermes-agent/index.json)
 
 - [Hermes Agent Namespace Instructions](/raw/hermes-agent/CLAUDE.md) ([html](/wiki/hermes-agent/CLAUDE.md.html))
 - [Hermes Agent](/raw/hermes-agent/README.md) ([html](/wiki/hermes-agent/README.md.html))
 - [Hermes Evals and Traces Setup](/raw/hermes-agent/wiki/concepts/evals-and-traces-setup.md) ([html](/wiki/hermes-agent/wiki/concepts/evals-and-traces-setup.md.html))
 - [Hermes Capability Routing](/raw/hermes-agent/wiki/concepts/hermes-capability-routing.md) ([html](/wiki/hermes-agent/wiki/concepts/hermes-capability-routing.md.html))
+- [Hermes Remote Artifact Previews](/raw/hermes-agent/wiki/concepts/hermes-remote-artifact-previews.md) ([html](/wiki/hermes-agent/wiki/concepts/hermes-remote-artifact-previews.md.html))
 - [Hermes Session Trace Store](/raw/hermes-agent/wiki/concepts/session-trace-store.md) ([html](/wiki/hermes-agent/wiki/concepts/session-trace-store.md.html))
 - [Hermes Source Priority](/raw/hermes-agent/wiki/concepts/source-priority.md) ([html](/wiki/hermes-agent/wiki/concepts/source-priority.md.html))
 - [Hermes Agent — Master Index](/raw/hermes-agent/wiki/index.md) ([html](/wiki/hermes-agent/wiki/index.md.html))
