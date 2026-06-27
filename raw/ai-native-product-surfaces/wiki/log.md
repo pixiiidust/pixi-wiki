@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-26
+updated: 2026-06-27
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -58,3 +58,10 @@ namespace: ai-native-product-surfaces
 - Added `wiki/concepts/world-model-control-surfaces.md` from the canonical Knowledge page.
 - Updated AI-Native Problem Framing, namespace README, and index with the state/action/prediction/objective/guardrail control-loop lens.
 - Classified this as a concept, not a standalone entity or namespace; no public Pixi Wiki deploy was pushed from this source update.
+
+## 2026-06-27 create/update | Job Edge entity
+
+- Added `wiki/entities/job-edge.md` from the canonical `Projects/Job Edge/Index.md` hub.
+- Routed Job Edge as a job-search edge/dashboard product surface under `ai-native-product-surfaces`; `ashby-pm-radar` remains the first use case, not the whole product boundary.
+- Updated namespace README and index with the new source root and entity listing.
+- No Daily Notes were copied or compiled.

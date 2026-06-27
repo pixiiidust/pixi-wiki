@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-06-26
+updated: 2026-06-27
 type: namespace-overview
 status: scaffold
 category: product
@@ -27,10 +27,11 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-26 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry.
+2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry.
 
 ## Canonical Source Roots
 
+- `Projects/Job Edge/Index.md`
 - `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
 - `Projects/Planned/PRD.md`

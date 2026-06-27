@@ -490,14 +490,14 @@
       "scope": {
         "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.",
         "notCovered": "Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.",
-        "currentAs": "2026-06-26 \u2014 active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry."
+        "currentAs": "2026-06-27 \u2014 active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry."
       },
-      "lastUpdated": "2026-06-26",
-      "documentCount": 12,
+      "lastUpdated": "2026-06-27",
+      "documentCount": 13,
       "counts": {
         "wiki": 1,
         "concepts": 4,
-        "entities": 3,
+        "entities": 4,
         "summaries": 0,
         "syntheses": 0
       },
@@ -561,6 +561,13 @@
           "path": "wiki/entities/i-know-kungfu.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html",
+          "category": "entities"
+        },
+        {
+          "title": "Job Edge",
+          "path": "wiki/entities/job-edge.md",
+          "raw": "/raw/ai-native-product-surfaces/wiki/entities/job-edge.md",
+          "html": "/wiki/ai-native-product-surfaces/wiki/entities/job-edge.md.html",
           "category": "entities"
         },
         {

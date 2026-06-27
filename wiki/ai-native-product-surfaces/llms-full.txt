@@ -9,7 +9,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 - Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
 - Treat `Knowledge/` and `Projects/` as canonical authoring sources.
 - Treat Daily Notes as scratch chronology, not direct compiled content.
-- Keep this namespace scoped to: AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
+- Keep this namespace scoped to: AI-native product/application surfaces, problem framing, product demos, PM case studies, job-search edge dashboards, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
 - Do not widen scope silently; propose a namespace promotion/routing update first.
 - Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
 
@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-06-26
+updated: 2026-06-27
 type: namespace-overview
 status: scaffold
 category: product
@@ -45,10 +45,11 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-26 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry.
+2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry.
 
 ## Canonical Source Roots
 
+- `Projects/Job Edge/Index.md`
 - `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
 - `Projects/Planned/PRD.md`
@@ -1017,6 +1018,127 @@ The first slice should remain local-first and endpoint-ready. Do not treat the c
 Compiled from `Projects/I-know-kungfu/Index.md`, the public repo README/PRD, and GitHub issue #1.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/entities/job-edge.md ===== -->
+
+---
+title: Job Edge
+created: 2026-06-27
+updated: 2026-06-27
+type: entity
+status: active-prototype
+namespace: ai-native-product-surfaces
+source: Projects/Job Edge/Index.md
+confidence: high
+---
+# Job Edge
+
+Job Edge is a prototype for finding **edge in crowded job searches**: freshness, geography, fit, and distribution signals that make a role more worth applying to now.
+
+The first use case is **Ashby PM Radar**, a PM/product-role radar that turns public Ashby job-board data into an apply-action queue.
+
+## Thesis
+
+Most job-search tools optimize for more listings. Job Edge optimizes for better timing and lower competition.
+
+Core question:
+
+> Which roles are worth applying to today because timing, fit, and crowding signals create an edge?
+
+## Current prototype
+
+The private `pixiiidust/job-edge` repo contains:
+
+```text
+job_edge/ashby_pm_radar.py      # Ashby use-case CLI/scorer
+dashboard.html                  # static interactive dashboard prototype
+data/                           # saved discovery + scoring artifacts
+docs/                           # product/design notes
+tests/                          # unit tests
+```
+
+`ashby-pm-radar` is the first use case, not the full product boundary.
+
+## Ashby PM Radar flow
+
+```text
+web search → extract Ashby company slugs → fetch public boards → score jobs → dashboard triage
+```
+
+Ashby exposes company-scoped public boards, not a global search endpoint:
+
+```text
+https://api.ashbyhq.com/posting-api/job-board/{companySlug}?includeCompensation=true
+```
+
+Printing Press was inspected but not used for the prototype. Direct Python was enough for the simple endpoint; the product value is the strategy layer on top.
+
+## Edge signals
+
+The current scorer combines:
+
+- **Freshness** — recently posted roles are more actionable.
+- **Geographic narrowing** — Toronto/GTA/Canada roles shrink the applicant pool.
+- **Role specificity** — niche PM roles can be less crowded than generic product listings.
+- **Personal/product fit** — AI, agents, workflow, developer tools, design/product overlap, integrations, platform, and B2B SaaS.
+- **Distribution crowding** — public LinkedIn posting presence implies a larger applicant pool.
+
+Competition is inferred. Ashby does not expose applicant counts, and LinkedIn evidence only detects public posting presence; it does not scrape applicant counts.
+
+## Triage buckets
+
+```text
+apply_now            high score, fresh/local, no LinkedIn posting found
+apply_fast_crowded   high score, found on LinkedIn, likely larger applicant pool
+maybe                plausible but weaker timing/fit/competition profile
+low_priority         stale or low-score roles
+```
+
+Freshness buckets:
+
+```text
+new_0_3d
+fresh_4_7d
+recent_8_14d
+aging_15_30d
+old_31_90d
+stale_90d_plus
+```
+
+## Dashboard contract
+
+The dashboard is an action queue, not a generic job board.
+
+It supports:
+
+- Apply and source-job links.
+- Mark-applied state in browser local storage.
+- Copyable job notes.
+- Search by title, company, and location.
+- Filters for triage, freshness, and LinkedIn presence.
+- Sorting by best triage, freshness, low crowd risk, Canada/Toronto fit, role fit, or score.
+
+Primary workflow:
+
+```text
+1. Apply now — fresh/local roles with no LinkedIn evidence.
+2. Apply fast — strong roles already visible on LinkedIn.
+3. Review maybes — backup queue after the top targets.
+```
+
+## Verification snapshot
+
+The initial repository push verified:
+
+- 9 Python unit tests passed.
+- CLI package smoke returned current apply-now rows.
+- Dashboard served locally with HTTP 200.
+- Browser rendered the dashboard, filters/sorts worked, Apply links pointed at real Ashby application URLs, and the console had no JavaScript errors.
+
+## Next slice
+
+Add a refresh pipeline or real search API so discovery and LinkedIn evidence can update without manual Hermes web search. Then add row expansion for reasons/cautions, saved notes, and repost/stale-role detection.
+
+
 <!-- ===== ai-native-product-surfaces/wiki/entities/myabode.md ===== -->
 
 ---
@@ -1118,7 +1240,7 @@ Compiled from `Projects/Planned Program Intel/Index.md` with supporting historic
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-06-26
+updated: 2026-06-27
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -1140,6 +1262,7 @@ namespace: ai-native-product-surfaces
 ## Entities
 
 - [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook wiki serving project for growing a user's knowledge base with bounded, agent-readable wikis.
+- [[entities/job-edge|Job Edge]] — Active job-search edge dashboard prototype using freshness, geography, fit, and LinkedIn-crowding signals to prioritize applications.
 - [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
 - [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
 
@@ -1153,6 +1276,7 @@ namespace: ai-native-product-surfaces
 
 ## Source Roots
 
+- `Projects/Job Edge/Index.md`
 - `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
 - `Projects/Planned/PRD.md`
@@ -1171,7 +1295,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-26
+updated: 2026-06-27
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -1228,4 +1352,11 @@ namespace: ai-native-product-surfaces
 - Added `wiki/concepts/world-model-control-surfaces.md` from the canonical Knowledge page.
 - Updated AI-Native Problem Framing, namespace README, and index with the state/action/prediction/objective/guardrail control-loop lens.
 - Classified this as a concept, not a standalone entity or namespace; no public Pixi Wiki deploy was pushed from this source update.
+
+## 2026-06-27 create/update | Job Edge entity
+
+- Added `wiki/entities/job-edge.md` from the canonical `Projects/Job Edge/Index.md` hub.
+- Routed Job Edge as a job-search edge/dashboard product surface under `ai-native-product-surfaces`; `ashby-pm-radar` remains the first use case, not the whole product boundary.
+- Updated namespace README and index with the new source root and entity listing.
+- No Daily Notes were copied or compiled.
 
