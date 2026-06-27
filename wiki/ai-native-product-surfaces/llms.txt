@@ -16,5 +16,6 @@
 - [Job Edge](/raw/ai-native-product-surfaces/wiki/entities/job-edge.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/job-edge.md.html))
 - [myAbode](/raw/ai-native-product-surfaces/wiki/entities/myabode.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html))
 - [Planned Program Intel](/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html))
+- [Shifu](/raw/ai-native-product-surfaces/wiki/entities/shifu-app.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/shifu-app.md.html))
 - [AI-Native Product Surfaces — Master Index](/raw/ai-native-product-surfaces/wiki/index.md) ([html](/wiki/ai-native-product-surfaces/wiki/index.md.html))
 - [AI-Native Product Surfaces — Activity Log](/raw/ai-native-product-surfaces/wiki/log.md) ([html](/wiki/ai-native-product-surfaces/wiki/log.md.html))

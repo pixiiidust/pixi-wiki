@@ -11,6 +11,13 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-06-27 create/update | Shifu local-first video knowledge entity
+
+- Added `wiki/entities/shifu-app.md` from the canonical `Projects/Shifu/Index.md` hub.
+- Routed Shifu as an AI-native product surface: local-first searchable video knowledge with VPS upload/light smoke and a local GTX 1070 worker artifact seam.
+- Preserved the boundary that cloud GPUs are optional future adapters and private media/model artifacts stay out of git.
+- Updated namespace README and index; no Daily Notes were copied or compiled.
+
 ## 2026-06-27 create/update | VSS video retrieve-then-verify concepts
 
 - Added `wiki/concepts/video-retrieve-then-verify-loop.md` and `wiki/concepts/verified-video-answer-surfaces.md` from the canonical Knowledge pages.

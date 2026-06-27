@@ -27,11 +27,12 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry.
+2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a job-search edge/dashboard prototype, and Shifu as a local-first searchable video knowledge prototype.
 
 ## Canonical Source Roots
 
 - `Projects/Job Edge/Index.md`
+- `Projects/Shifu/Index.md`
 - `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
 - `Projects/Planned/PRD.md`

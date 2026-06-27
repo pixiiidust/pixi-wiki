@@ -2,11 +2,11 @@
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
   "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
-  "documentCount": 16,
+  "documentCount": 17,
   "counts": {
     "wiki": 1,
     "concepts": 7,
-    "entities": 4,
+    "entities": 5,
     "summaries": 0,
     "syntheses": 0
   },
@@ -107,6 +107,13 @@
       "path": "wiki/entities/planned-program-intel.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html",
+      "category": "entities"
+    },
+    {
+      "title": "Shifu",
+      "path": "wiki/entities/shifu-app.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/entities/shifu-app.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/entities/shifu-app.md.html",
       "category": "entities"
     },
     {

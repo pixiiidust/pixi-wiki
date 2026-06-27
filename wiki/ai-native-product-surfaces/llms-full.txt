@@ -45,11 +45,12 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry.
+2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a job-search edge/dashboard prototype, and Shifu as a local-first searchable video knowledge prototype.
 
 ## Canonical Source Roots
 
 - `Projects/Job Edge/Index.md`
+- `Projects/Shifu/Index.md`
 - `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
 - `Projects/Planned/PRD.md`
@@ -1473,6 +1474,103 @@ Planned Program Intel anchors the product-surface namespace because it shows:
 Compiled from `Projects/Planned Program Intel/Index.md` with supporting historical PRD context in `Projects/Planned/PRD.md`.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/entities/shifu-app.md ===== -->
+
+---
+title: Shifu
+created: 2026-06-27
+updated: 2026-06-27
+type: entity
+status: active-pr-review
+namespace: ai-native-product-surfaces
+source: Projects/Shifu/Index.md
+confidence: high
+---
+# Shifu
+
+Shifu is a local-first searchable video knowledge prototype: private videos stay close to the user, while the app produces timestamped, evidence-backed answers and reusable clips.
+
+The current corpus direction uses Valorant/CS VOD-style material as an evaluation corpus, not as the full product identity.
+
+## Product frame
+
+```text
+source video -> light indexing -> local heavy worker -> evidence-backed answer
+```
+
+Shifu should answer questions with candidate moments, keyframes, transcript/caption evidence when available, modality state, and clear boundaries. It should not pretend a query was answered when evidence is missing.
+
+## Local-first architecture
+
+The current architecture decision is:
+
+```text
+VPS app/orchestrator
+  -> upload, source registration, browser UI
+  -> light MiniVSS smoke: segmentation + keyframes
+  -> search/save/export surfaces
+
+Local NVIDIA GTX 1070 worker
+  -> heavy visual embeddings
+  -> transcription
+  -> later VLM/caption passes
+  -> worker_artifacts/<source_id>/status.json
+```
+
+This follows the same product logic as games and creator tools: use the user’s desktop GPU for heavy local media work, then make cloud GPU a later optional accelerator.
+
+Short contract:
+
+> Local first. Cloud when useful. Evidence always.
+
+## Current milestone state
+
+### Upload and VPS light smoke
+
+Issue #14 is closed via PR #16.
+
+The app now supports browser/API upload, stores private source files under `SHIFU_DATA_DIR/sources`, validates upload size/type, avoids blocking the async UI route during file writes, and exposes `/api/sources/mini-vss/status` for cheap dependency smoke.
+
+### Local worker artifact seam
+
+Issue #15 is implemented in PR #17 and open for review/merge.
+
+The PR adds:
+
+- `shifu-local-worker` / `python -m shifu_app.local_worker`;
+- deterministic local-worker status at `SHIFU_DATA_DIR/worker_artifacts/<source_id>/status.json`;
+- heavy modality states: `ready`, `disabled`, `pending-local-worker`, `failed`, `unsupported-on-vps`;
+- `/api/sources/{source_id}/worker-status`;
+- process-response merging of imported local-worker modality states;
+- a placeholder visual vector artifact for seam testing when GPU/OpenCLIP deps are unavailable.
+
+Verification before the shutdown handoff:
+
+```text
+focused tests: 18 passed
+full suite: 54 passed
+compileall clean
+git diff --check clean
+CLI worker smoke passed
+live API worker-import smoke passed
+```
+
+## Boundaries
+
+- Jamie’s target local GPU is **NVIDIA GTX 1070**, not RTX 3060.
+- Cloud GPU rental is deferred until the local-worker seam proves useful.
+- Private media, generated frames, transcripts, embeddings, and model artifacts should not be committed.
+- The worker status artifact is the first import boundary; real embeddings/transcription quality comes after the seam is verified.
+
+## Source handles
+
+- Project hub: `Projects/Shifu/Index.md`
+- Repo: https://github.com/pixiiidust/shifu-app
+- Parent issue: https://github.com/pixiiidust/shifu-app/issues/3
+- PR #17: https://github.com/pixiiidust/shifu-app/pull/17
+- Related concepts: [[../concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]], [[../concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]]
+
+
 <!-- ===== ai-native-product-surfaces/wiki/index.md ===== -->
 
 ---
@@ -1504,6 +1602,7 @@ namespace: ai-native-product-surfaces
 
 - [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook wiki serving project for growing a user's knowledge base with bounded, agent-readable wikis.
 - [[entities/job-edge|Job Edge]] — Active job-search edge dashboard prototype using freshness, geography, fit, and LinkedIn-crowding signals to prioritize applications.
+- [[entities/shifu-app|Shifu]] — Active local-first searchable video knowledge prototype with VPS upload/light smoke and a local GTX 1070 worker artifact seam.
 - [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
 - [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
 
@@ -1518,6 +1617,7 @@ namespace: ai-native-product-surfaces
 ## Source Roots
 
 - `Projects/Job Edge/Index.md`
+- `Projects/Shifu/Index.md`
 - `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
 - `Projects/Planned/PRD.md`
@@ -1550,6 +1650,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-27 create/update | Shifu local-first video knowledge entity
+
+- Added `wiki/entities/shifu-app.md` from the canonical `Projects/Shifu/Index.md` hub.
+- Routed Shifu as an AI-native product surface: local-first searchable video knowledge with VPS upload/light smoke and a local GTX 1070 worker artifact seam.
+- Preserved the boundary that cloud GPUs are optional future adapters and private media/model artifacts stay out of git.
+- Updated namespace README and index; no Daily Notes were copied or compiled.
 
 ## 2026-06-27 create/update | VSS video retrieve-then-verify concepts
 
