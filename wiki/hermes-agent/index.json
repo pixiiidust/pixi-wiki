@@ -1,11 +1,11 @@
 {
   "slug": "hermes-agent",
   "title": "Hermes Agent",
-  "description": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, and Jamie-specific operating reference for Pixoid.",
-  "documentCount": 9,
+  "description": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, capability-routing decisions, and Jamie-specific operating reference for Pi",
+  "documentCount": 10,
   "counts": {
     "wiki": 1,
-    "concepts": 3,
+    "concepts": 4,
     "entities": 0,
     "summaries": 2,
     "syntheses": 0
@@ -30,6 +30,13 @@
       "path": "wiki/concepts/evals-and-traces-setup.md",
       "raw": "/raw/hermes-agent/wiki/concepts/evals-and-traces-setup.md",
       "html": "/wiki/hermes-agent/wiki/concepts/evals-and-traces-setup.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Hermes Capability Routing",
+      "path": "wiki/concepts/hermes-capability-routing.md",
+      "raw": "/raw/hermes-agent/wiki/concepts/hermes-capability-routing.md",
+      "html": "/wiki/hermes-agent/wiki/concepts/hermes-capability-routing.md.html",
       "category": "concepts"
     },
     {

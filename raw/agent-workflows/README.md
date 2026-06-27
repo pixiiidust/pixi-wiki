@@ -39,6 +39,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/hermes-capability-routing.md`
 - `Knowledge/concepts/high-agency-work-levels.md`
 - `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`

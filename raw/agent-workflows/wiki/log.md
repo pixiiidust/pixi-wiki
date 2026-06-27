@@ -11,6 +11,12 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-06-26 update | Hermes capability routing crosslink
+
+- Added cross-namespace routing to `hermes-agent/wiki/concepts/hermes-capability-routing.md` so crew workflow readers can choose the right Hermes surface before turning work into skills, subagents, cron, profile/kanban routes, or publishing steps.
+- Updated namespace README and index source roots.
+- No Daily Notes were copied or compiled, and no public `pixi-wiki` deploy was pushed.
+
 ## 2026-06-26 create | High agency work levels
 
 - Added compiled concept `wiki/concepts/high-agency-work-levels.md` from Jamie's Level 4+ agency framework and the patched `agent-workflow-os` skill.

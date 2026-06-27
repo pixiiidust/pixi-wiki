@@ -368,21 +368,21 @@
     {
       "slug": "hermes-agent",
       "title": "Hermes Agent",
-      "description": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, and Jamie-specific operating reference for Pixoid.",
+      "description": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, capability-routing decisions, and Jamie-specific operating reference for Pi",
       "tags": [
         "agent-infrastructure"
       ],
       "category": "agent-infrastructure",
       "scope": {
-        "covers": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, and Jamie-specific operating reference for Pixoid.",
+        "covers": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, capability-routing decisions, and Jamie-specific operating reference for Pixoid.",
         "notCovered": "General AI-agent theory, unrelated community projects, old video transcripts unless they explain a workflow Jamie uses, stale release history not needed for current operation, and web rumors not verified against official Hermes docs or local installed source.",
-        "currentAs": "2026-06-18 \u2014 seeded from AgentWikis Hermes as a curated map, then grounded against official Hermes docs and local installed Hermes v0.16.0 source on the VPS."
+        "currentAs": "2026-06-26 \u2014 added Hermes Capability Routing as the primary capability-selection concept: choose the smallest effective Hermes surface, preserve approval boundaries, and verify the route."
       },
-      "lastUpdated": "2026-06-18",
-      "documentCount": 9,
+      "lastUpdated": "2026-06-26",
+      "documentCount": 10,
       "counts": {
         "wiki": 1,
-        "concepts": 3,
+        "concepts": 4,
         "entities": 0,
         "summaries": 2,
         "syntheses": 0
@@ -412,6 +412,13 @@
           "path": "wiki/concepts/evals-and-traces-setup.md",
           "raw": "/raw/hermes-agent/wiki/concepts/evals-and-traces-setup.md",
           "html": "/wiki/hermes-agent/wiki/concepts/evals-and-traces-setup.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Hermes Capability Routing",
+          "path": "wiki/concepts/hermes-capability-routing.md",
+          "raw": "/raw/hermes-agent/wiki/concepts/hermes-capability-routing.md",
+          "html": "/wiki/hermes-agent/wiki/concepts/hermes-capability-routing.md.html",
           "category": "concepts"
         },
         {

@@ -1,13 +1,19 @@
 ---
 title: Hermes Agent — Activity Log
 created: 2026-06-18
-updated: 2026-06-19
+updated: 2026-06-26
 type: log
 status: compiled
 namespace: hermes-agent
 ---
 
 # Hermes Agent — Activity Log
+
+## 2026-06-26
+
+- Added `wiki/concepts/hermes-capability-routing.md` as the primary Hermes capability-selection concept from the official docs review and reusable local skill.
+- Updated namespace README and index to route capability questions to `hermes-agent`; `agent-workflows` carries a cross-namespace pointer for Pixoid crew routing.
+- Preserved the public deploy boundary: source updated here, generated public `pixi-wiki` requires verified rebuild and explicit deploy/push approval.
 
 ## 2026-06-18
 
