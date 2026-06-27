@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-26
+updated: 2026-06-27
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,13 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-27 create | Compound Engineering skill layer
+
+- Added compiled concept `wiki/concepts/compound-engineering-skill-layer.md` from the canonical Knowledge page and the installed EveryInc `compound-engineering-plugin`.
+- Captured `/ce-*` and `/lfg` routing, how CE compares with Jamie's Pocock/product/review/vault skills, and the approval boundaries around autopilot use.
+- Updated namespace README and index source roots.
+- No public `pixi-wiki` deploy was pushed.
 
 ## 2026-06-26 update | Hermes capability routing crosslink
 

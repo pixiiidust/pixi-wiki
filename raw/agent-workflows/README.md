@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-26
+updated: 2026-06-27
 type: namespace-overview
 status: active
 category: agents
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-26 — High Agency Work Levels added to the Pixoid operating layer; default to Level 4 recommendations, rise to Level 5 only when safe/scoped/approved, and use Level 6 for repeated failure classes.
+2026-06-27 — Compound Engineering skill layer added as an installed external repo-workflow plugin: use `ce-*` for integrated repo-local engineering loops, keep existing Pocock/Jamie skills for modular product/PRD/issue/review gates, and treat `/lfg` as approval-gated autopilot.
 
 ## Canonical Source Roots
 
@@ -39,6 +39,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/compound-engineering-skill-layer.md`
 - `Knowledge/concepts/hermes-capability-routing.md`
 - `Knowledge/concepts/high-agency-work-levels.md`
 - `Knowledge/concepts/creative-ideation-routing.md`

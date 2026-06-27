@@ -1,7 +1,7 @@
 ---
 title: Agent Skill Routing
 created: 2026-06-23
-updated: 2026-06-26
+updated: 2026-06-27
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -35,6 +35,7 @@ Tools already work this way: Jamie does not need to say `read_file` or `web_sear
 | Creative inspiration, brainstorming, project ideas, or option generation | `creative-ideation` | `find-lock`, `verb-first`, `ai-native-framing` after an idea is selected |
 | PRD or implementation plan needs an inspectable review surface | `visual-plan` | `plan`, `prototype`, `obsidian` when the artifact should be source-controlled |
 | Build or implementation slice | `implement` | `test-driven-development`, `ponytail-code-discipline`, `github-operations` |
+| Repo-local Compound Engineering loop | `ce-setup`, then `ce-brainstorm` / `ce-plan` / `ce-work` | `ce-simplify-code`, `ce-code-review`, `ce-compound`; `/lfg` only with explicit scope and approval gates |
 | Debugging | `debugging` | project-specific skill, `codebase-inspection` |
 | PR or diff review | `code-review` | `ponytail-code-discipline`, `github-operations` |
 | Vault or source-of-truth update | `obsidian` | `pixi-wiki-first-research` when public/wiki context matters |
@@ -74,6 +75,7 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 - If required MCP/tool/source access is unavailable, report that directly or use a grounded fallback; do not produce generic output as if the constraint was satisfied.
 - For open-ended inspiration or option generation, load `creative-ideation`, route through one method, and produce grounded non-generic ideas before returning to product/build gates.
 - For PRD/implementation-plan review surfaces, load `visual-plan` and default to local/private MDX artifacts; hosted Plan auth, share links, and comments are optional, not prerequisites.
+- For repo-local Compound Engineering loops, load `ce-setup` first, then route through `/ce-brainstorm` -> `/ce-plan` -> `/ce-work` -> `/ce-simplify-code` -> `/ce-code-review` -> `/ce-compound`; keep `/lfg` approval-gated.
 - Updating vault/Pixi Wiki source can preserve durable knowledge; pushing public `pixi-wiki` deploys still needs explicit approval.
 - If skill routing would overload context, stop and hand off rather than carrying a bloated stack forward.
 

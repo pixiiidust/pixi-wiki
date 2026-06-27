@@ -99,13 +99,13 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-06-26 \u2014 High Agency Work Levels added to the Pixoid operating layer; default to Level 4 recommendations, rise to Level 5 only when safe/scoped/approved, and use Level 6 for repeated failure classes."
+        "currentAs": "2026-06-27 \u2014 Compound Engineering skill layer added as an installed external repo-workflow plugin: use `ce-*` for integrated repo-local engineering loops, keep existing Pocock/Jamie skills for modular product/PRD/issue/review gates, and treat `/lfg` as approval-gated autopilot."
       },
-      "lastUpdated": "2026-06-26",
-      "documentCount": 24,
+      "lastUpdated": "2026-06-27",
+      "documentCount": 25,
       "counts": {
         "wiki": 1,
-        "concepts": 17,
+        "concepts": 18,
         "entities": 1,
         "summaries": 0,
         "syntheses": 2
@@ -156,6 +156,13 @@
           "path": "wiki/concepts/bounded-context-tree-pattern.md",
           "raw": "/raw/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md",
           "html": "/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Compound Engineering Skill Layer",
+          "path": "wiki/concepts/compound-engineering-skill-layer.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md.html",
           "category": "concepts"
         },
         {

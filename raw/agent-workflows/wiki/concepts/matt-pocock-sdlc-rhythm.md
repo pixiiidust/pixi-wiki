@@ -1,7 +1,7 @@
 ---
 title: Matt Pocock SDLC Rhythm
 created: 2026-06-18
-updated: 2026-06-26
+updated: 2026-06-27
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -68,6 +68,12 @@ Use [[visual-plan-review-surfaces]] when a PRD, implementation plan, or issue pl
 
 Jamie's default is local/private MDX artifacts under `.agent-native/plans/<slug>/`, not hosted share links or comment workflows. The visual plan should preserve durable truth in the PRD/GitHub/vault source while making the plan easier to inspect: file maps, diagrams, UI states, annotated code, open questions, and verification gates.
 
+## Compound Engineering compatibility
+
+[[compound-engineering-skill-layer]] is compatible with this rhythm, but it packages the loop differently. Pocock/Jamie skills are modular gates for prototype, grill, PRD, issue slicing, TDD, review, and handoff. Compound Engineering is an integrated repo-local loop with `/ce-brainstorm`, `/ce-plan`, `/ce-work`, `/ce-simplify-code`, `/ce-code-review`, and `/ce-compound` sharing a unified plan artifact and project-local learning trail.
+
+Use CE when the active repo should follow that integrated loop. Use this SDLC rhythm when Jamie needs explicit prototype/PRD/issue approval gates, a portfolio/product artifact, or a narrower one-issue implementation path.
+
 ## Source-backed best practices
 
 [[matt-pocock-skills-best-practices]] preserves the source-backed pattern from `mattpocock/skills`: small composable skills, grilling for alignment, shared language docs, feedback loops, and architecture discipline. This SDLC rhythm is Jamie's generalized implementation sequence for applying those practices without turning them into a rigid framework.
@@ -109,6 +115,7 @@ Useful routes include:
 ## Related pages
 
 - [[matt-pocock-skills-best-practices]]
+- [[compound-engineering-skill-layer]]
 - [[visual-plan-review-surfaces]]
 - [[find-the-lock-problem-first]]
 - [[issue-driven-afk-workflow]]

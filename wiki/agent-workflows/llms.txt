@@ -8,6 +8,7 @@
 - [Agent Entrypoint Mesh](/raw/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md.html))
 - [Agent Skill Routing](/raw/agent-workflows/wiki/concepts/agent-skill-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-skill-routing.md.html))
 - [Bounded Context Tree Pattern](/raw/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md) ([html](/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html))
+- [Compound Engineering Skill Layer](/raw/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md) ([html](/wiki/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md.html))
 - [Creative Ideation Routing](/raw/agent-workflows/wiki/concepts/creative-ideation-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/creative-ideation-routing.md.html))
 - [Hermes SOUL.md Wiring](/raw/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md) ([html](/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html))
 - [High Agency Work Levels](/raw/agent-workflows/wiki/concepts/high-agency-work-levels.md) ([html](/wiki/agent-workflows/wiki/concepts/high-agency-work-levels.md.html))
