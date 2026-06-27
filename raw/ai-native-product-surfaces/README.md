@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-06-24
+updated: 2026-06-26
 type: namespace-overview
 status: scaffold
 category: product
@@ -27,7 +27,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-24 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry.
+2026-06-26 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, compiled product-surface entities and concepts, and I-know-kungfu as the newest active project entry.
 
 ## Canonical Source Roots
 
@@ -38,6 +38,8 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/ai-native-problem-framing-framework.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
+- `Knowledge/concepts/world-model-control-surfaces.md`
+- `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
 

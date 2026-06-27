@@ -2,10 +2,10 @@
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
   "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.",
-  "documentCount": 10,
+  "documentCount": 12,
   "counts": {
     "wiki": 1,
-    "concepts": 3,
+    "concepts": 4,
     "entities": 3,
     "summaries": 0,
     "syntheses": 0
@@ -23,6 +23,13 @@
       "path": "README.md",
       "raw": "/raw/ai-native-product-surfaces/README.md",
       "html": "/wiki/ai-native-product-surfaces/README.md.html",
+      "category": "other"
+    },
+    {
+      "title": "World Models: Possibly the Enabler for the Next AI Revolution",
+      "path": "raw/transcripts/yann-lecun-world-models-next-ai-revolution.md",
+      "raw": "/raw/ai-native-product-surfaces/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md",
+      "html": "/wiki/ai-native-product-surfaces/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md.html",
       "category": "other"
     },
     {
@@ -44,6 +51,13 @@
       "path": "wiki/concepts/material-loop-and-glass-interfaces.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "World Model Control Surfaces",
+      "path": "wiki/concepts/world-model-control-surfaces.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md.html",
       "category": "concepts"
     },
     {

@@ -4,9 +4,11 @@
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
+- [World Models: Possibly the Enabler for the Next AI Revolution](/raw/ai-native-product-surfaces/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md) ([html](/wiki/ai-native-product-surfaces/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md.html))
 - [AI-Native Problem Framing Framework](/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html))
 - [Interaction Mode Routing](/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html))
 - [Material Loop and Glass Interfaces](/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html))
+- [World Model Control Surfaces](/raw/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md.html))
 - [I-know-kungfu](/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html))
 - [myAbode](/raw/ai-native-product-surfaces/wiki/entities/myabode.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html))
 - [Planned Program Intel](/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html))

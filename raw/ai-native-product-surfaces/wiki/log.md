@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-24
+updated: 2026-06-26
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -51,3 +51,10 @@ namespace: ai-native-product-surfaces
 - Updated Interaction Mode Routing and AI-Native Problem Framing with agency/material-closeness framing.
 - Updated I-know-kungfu with the glass fit-check authorship lens.
 - Updated namespace README and index; no public Pixi Wiki deploy.
+
+## 2026-06-26 create/update | World Model Control Surfaces
+
+- Added `raw/transcripts/yann-lecun-world-models-next-ai-revolution.md` from the user-provided transcript.
+- Added `wiki/concepts/world-model-control-surfaces.md` from the canonical Knowledge page.
+- Updated AI-Native Problem Framing, namespace README, and index with the state/action/prediction/objective/guardrail control-loop lens.
+- Classified this as a concept, not a standalone entity or namespace; no public Pixi Wiki deploy was pushed from this source update.

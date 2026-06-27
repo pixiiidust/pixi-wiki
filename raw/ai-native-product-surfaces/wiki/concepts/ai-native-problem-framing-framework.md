@@ -1,7 +1,7 @@
 ---
 title: AI-Native Problem Framing Framework
 created: 2026-06-16
-updated: 2026-06-24
+updated: 2026-06-26
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -9,6 +9,7 @@ tags: [ai-native-product-surfaces, ai-native, product-framing, product-managemen
 sources:
   - Knowledge/concepts/ai-native-problem-framing-framework.md
   - Knowledge/concepts/material-loop-and-glass-interfaces.md
+  - Knowledge/concepts/world-model-control-surfaces.md
 confidence: high
 ---
 
@@ -27,6 +28,8 @@ Define the system before picking models:
 - **Agency constraints** — what must remain visible, steerable, inspectable, interruptible, or user-owned?
 
 Bad framing creates bad AI. Environment, action space, objective, constraints, and agency boundaries define the intelligence problem.
+
+[[world-model-control-surfaces|World Model Control Surfaces]] extend the frame into a planning/review loop: observed state -> candidate actions -> predicted outcomes -> objective/guardrail score -> recommended next safe step. Use it when an AI-native surface needs to expose what the system expects to happen before a human or agent acts.
 
 Agency constraints come from [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]: AI can shorten the path from idea to artifact, but the interface should not hide the judgment-bearing parts of the loop.
 
@@ -54,6 +57,7 @@ Do not blindly copy game/RL patterns into product domains. Real-world operationa
 
 - [[interaction-mode-routing|Interaction Mode Routing]]
 - [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
+- [[world-model-control-surfaces|World Model Control Surfaces]]
 
 ## Source
 
