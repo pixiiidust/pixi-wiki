@@ -20,6 +20,7 @@ namespace: agent-workflows
 - Cross-namespace concept: [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]] — Selects the smallest effective Hermes surface for a task before work becomes a skill, subagent, cron, gateway/API, MCP/plugin, profile, kanban, provider, or vault/Pixi Wiki route.
 - [[concepts/creative-ideation-routing|Creative Ideation Routing]] — Method-routed inspiration loop for using the `creative-ideation` skill without generic brainstorming.
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] — Product/refactor lens that also defines Hermes review/control surfaces.
+- Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]] — Compress verbose agent output into concise, visual, source-backed review/control artifacts when users need to decide, approve, compare, or steer.
 - [[concepts/bounded-context-tree-pattern|Bounded Context Tree Pattern]] — Root/branch/leaf structure for project and knowledge contexts with explicit language boundaries and routing links.
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
 - [[concepts/high-agency-work-levels|High Agency Work Levels]] — Level 4+ operating ladder for recommendations, verified fixes, and system improvements with explicit approval boundaries.
@@ -65,6 +66,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/high-agency-work-levels.md`
 - `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
+- `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/visual-plan-review-surfaces.md`

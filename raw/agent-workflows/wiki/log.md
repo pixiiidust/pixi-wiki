@@ -11,6 +11,11 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-06-27 update | Agent Output Decision Artifacts crosslink
+
+- Added cross-namespace routing to `ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts.md` from the workflow index and Visual Plan Review Surfaces page.
+- Preserved `agent-workflows` as the workflow layer while keeping the primary concept home under `ai-native-product-surfaces`.
+
 ## 2026-06-27 create | Compound Engineering skill layer
 
 - Added compiled concept `wiki/concepts/compound-engineering-skill-layer.md` from the canonical Knowledge page and the installed EveryInc `compound-engineering-plugin`.

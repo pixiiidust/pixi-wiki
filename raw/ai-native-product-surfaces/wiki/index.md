@@ -15,6 +15,7 @@ namespace: ai-native-product-surfaces
 
 ## Concepts
 
+- [[concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]] — Compress verbose agent output into concise, visual, source-backed decision artifacts with explicit next actions and feedback controls.
 - [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
@@ -46,6 +47,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
+- `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`

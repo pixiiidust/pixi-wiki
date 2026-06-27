@@ -11,6 +11,12 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-06-27 create/update | Agent Output Decision Artifacts
+
+- Added `wiki/concepts/agent-output-decision-artifacts.md` from the canonical Knowledge page.
+- Routed it as an AI-native product-surface concept: verbose agent output should become one-screen, visual, source-backed decision artifacts when the user needs to decide, approve, compare, or steer.
+- Kept pricing, revenue path, and product wedge details in the private brainstorm namespace; public Pixi Wiki gets the reusable surface principle only.
+
 ## 2026-06-16 create | Namespace scaffold initialized
 
 - Created README, CLAUDE instructions, raw folder, index/log, and typed wiki folders.

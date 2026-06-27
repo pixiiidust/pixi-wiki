@@ -1,7 +1,7 @@
 ---
 title: Interaction Mode Routing
 created: 2026-06-23
-updated: 2026-06-24
+updated: 2026-06-27
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -67,6 +67,8 @@ Pixi Wiki should keep source/navigation stable and generate temporary review sur
 ## Agent workflow connection
 
 For Hermes Mission Control, chat is the command channel, not the whole interface. Review and approval should be shaped as small generated control surfaces while durable truth remains in GitHub, Obsidian, handoffs, skills, and knowledge entrypoints.
+
+For verbose agent output, use [[agent-output-decision-artifacts|Agent Output Decision Artifacts]] when the user needs a decision, approval, comparison, or steering surface instead of a wall of chat prose.
 
 ## Source
 

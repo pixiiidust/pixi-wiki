@@ -1663,7 +1663,7 @@ If the eval fails, fix the cheapest layer first: source wording, index coverage,
 ---
 title: Visual Plan Review Surfaces
 created: 2026-06-26
-updated: 2026-06-26
+updated: 2026-06-27
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -1719,6 +1719,7 @@ It complements [[matt-pocock-sdlc-rhythm]]: `/prototype` tests experiential unkn
 
 - [[matt-pocock-sdlc-rhythm]]
 - [[agent-skill-routing]]
+- [[../../ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]]
 - [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]]
 - [[../../ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
 
@@ -1816,6 +1817,7 @@ namespace: agent-workflows
 - Cross-namespace concept: [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]] — Selects the smallest effective Hermes surface for a task before work becomes a skill, subagent, cron, gateway/API, MCP/plugin, profile, kanban, provider, or vault/Pixi Wiki route.
 - [[concepts/creative-ideation-routing|Creative Ideation Routing]] — Method-routed inspiration loop for using the `creative-ideation` skill without generic brainstorming.
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] — Product/refactor lens that also defines Hermes review/control surfaces.
+- Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]] — Compress verbose agent output into concise, visual, source-backed review/control artifacts when users need to decide, approve, compare, or steer.
 - [[concepts/bounded-context-tree-pattern|Bounded Context Tree Pattern]] — Root/branch/leaf structure for project and knowledge contexts with explicit language boundaries and routing links.
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
 - [[concepts/high-agency-work-levels|High Agency Work Levels]] — Level 4+ operating ladder for recommendations, verified fixes, and system improvements with explicit approval boundaries.
@@ -1861,6 +1863,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/high-agency-work-levels.md`
 - `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
+- `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/visual-plan-review-surfaces.md`
@@ -1886,6 +1889,11 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-27 update | Agent Output Decision Artifacts crosslink
+
+- Added cross-namespace routing to `ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts.md` from the workflow index and Visual Plan Review Surfaces page.
+- Preserved `agent-workflows` as the workflow layer while keeping the primary concept home under `ai-native-product-surfaces`.
 
 ## 2026-06-27 create | Compound Engineering skill layer
 
@@ -3316,7 +3324,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.
 
 ### Not Covered
 
@@ -3324,7 +3332,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry.
+2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, compiled product-surface entities and concepts, and Job Edge as the newest job-search edge/dashboard prototype entry.
 
 ## Canonical Source Roots
 
@@ -3337,6 +3345,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
+- `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
@@ -3921,6 +3930,81 @@ All right. Thank you.
 *[Applause]*
 
 
+<!-- ===== ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts.md ===== -->
+
+---
+title: Agent Output Decision Artifacts
+created: 2026-06-27
+updated: 2026-06-27
+type: concept
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, ai-native, product-framing, interaction-design, agent-workflows]
+sources:
+  - Knowledge/concepts/agent-output-decision-artifacts.md
+  - Knowledge/concepts/interaction-mode-routing.md
+  - Knowledge/concepts/material-loop-and-glass-interfaces.md
+  - Knowledge/concepts/visual-plan-review-surfaces.md
+confidence: medium
+---
+
+# Agent Output Decision Artifacts
+
+**Agent Output Decision Artifacts** are concise, visual, interactive surfaces that convert verbose AI-agent output into an inspectable decision.
+
+The artifact is not a generic summary. It is a control surface: preserve what matters for the decision, expose evidence where trust is needed, and make the next action obvious.
+
+## Core pattern
+
+1. **Compress** the agent run into decision-critical meaning.
+2. **Structure** it around three visible elements: options, risks, actions, evidence cards, or tradeoffs.
+3. **Close the loop** with approve, reject, annotate, choose, or steer-back controls.
+
+## Artifact contract
+
+A good decision artifact:
+
+- fits on one screen by default;
+- removes repetition, caveats, filler, and process narration;
+- uses simple clear sentences;
+- uses cards, tables, hierarchy, or diagrams when they carry structure faster than prose;
+- keeps details behind progressive disclosure;
+- preserves source anchors or expandable evidence;
+- makes the next action visible within 5-10 seconds.
+
+## Why it matters
+
+Verbose chat is useful while an agent is working. It is a weak final surface when the user needs to decide.
+
+Decision artifacts let chat remain the command channel while the review/approval work moves into a surface that is easier to scan, compare, and steer.
+
+## Relationship to existing lenses
+
+- [[interaction-mode-routing|Interaction Mode Routing]] decides when chat should give way to generated review/control surfaces.
+- [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] explains why judgment-bearing work needs to stay visible, steerable, interruptible, and traceable.
+- [[../../agent-workflows/wiki/concepts/visual-plan-review-surfaces|Visual Plan Review Surfaces]] is a workflow-specific subtype for turning PRDs and implementation plans into inspectable MDX/HTML review artifacts.
+- [[world-model-control-surfaces|World Model Control Surfaces]] gives the control-loop shape: show state, actions, predicted outcomes, objectives, guardrails, evidence, and next safe step.
+
+## Example surfaces
+
+| Surface | Compresses | User action |
+|---|---|---|
+| Ideation artifact | long brainstorm or agent proposal | choose, reject, or validate one direction |
+| PR review artifact | code-review run and verification output | merge, block, or request changes |
+| Research artifact | source-heavy investigation | accept answer, ask follow-up, or inspect evidence |
+| Compile/release artifact | source changes and generated outputs | approve publish or fix route gaps |
+
+## Boundaries
+
+- Not every agent output deserves a generated artifact; sometimes a table, diff, or short answer is enough.
+- The artifact should point back to stable truth rather than becoming the only source of truth.
+- Do not hide uncertainty; make it visible through confidence, evidence, open questions, or expandable detail.
+
+## Source
+
+Compiled from `Knowledge/concepts/agent-output-decision-artifacts.md` and adjacent Pixi Wiki concepts.
+
+
 <!-- ===== ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md ===== -->
 
 ---
@@ -3994,7 +4078,7 @@ Compiled from `Knowledge/concepts/ai-native-problem-framing-framework.md`.
 ---
 title: Interaction Mode Routing
 created: 2026-06-23
-updated: 2026-06-24
+updated: 2026-06-27
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -4060,6 +4144,8 @@ Pixi Wiki should keep source/navigation stable and generate temporary review sur
 ## Agent workflow connection
 
 For Hermes Mission Control, chat is the command channel, not the whole interface. Review and approval should be shaped as small generated control surfaces while durable truth remains in GitHub, Obsidian, handoffs, skills, and knowledge entrypoints.
+
+For verbose agent output, use [[agent-output-decision-artifacts|Agent Output Decision Artifacts]] when the user needs a decision, approval, comparison, or steering surface instead of a wall of chat prose.
 
 ## Source
 
@@ -4533,6 +4619,7 @@ namespace: ai-native-product-surfaces
 
 ## Concepts
 
+- [[concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]] — Compress verbose agent output into concise, visual, source-backed decision artifacts with explicit next actions and feedback controls.
 - [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
@@ -4564,6 +4651,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
+- `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
@@ -4583,6 +4671,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-27 create/update | Agent Output Decision Artifacts
+
+- Added `wiki/concepts/agent-output-decision-artifacts.md` from the canonical Knowledge page.
+- Routed it as an AI-native product-surface concept: verbose agent output should become one-screen, visual, source-backed decision artifacts when the user needs to decide, approve, compare, or steer.
+- Kept pricing, revenue path, and product wedge details in the private brainstorm namespace; public Pixi Wiki gets the reusable surface principle only.
 
 ## 2026-06-16 create | Namespace scaffold initialized
 

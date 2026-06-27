@@ -1,7 +1,7 @@
 ---
 title: Visual Plan Review Surfaces
 created: 2026-06-26
-updated: 2026-06-26
+updated: 2026-06-27
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -57,5 +57,6 @@ It complements [[matt-pocock-sdlc-rhythm]]: `/prototype` tests experiential unkn
 
 - [[matt-pocock-sdlc-rhythm]]
 - [[agent-skill-routing]]
+- [[../../ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]]
 - [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]]
 - [[../../ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]

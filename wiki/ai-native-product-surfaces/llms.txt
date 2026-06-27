@@ -1,10 +1,11 @@
 # AI-Native Product Surfaces Knowledge Base
 
-> AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
+> AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
 - [World Models: Possibly the Enabler for the Next AI Revolution](/raw/ai-native-product-surfaces/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md) ([html](/wiki/ai-native-product-surfaces/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md.html))
+- [Agent Output Decision Artifacts](/raw/ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts.md.html))
 - [AI-Native Problem Framing Framework](/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html))
 - [Interaction Mode Routing](/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html))
 - [Material Loop and Glass Interfaces](/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html))
