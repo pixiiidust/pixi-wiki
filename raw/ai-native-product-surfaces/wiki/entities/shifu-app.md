@@ -1,7 +1,7 @@
 ---
 title: Shifu
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-28
 type: entity
 status: active-pr-review
 namespace: ai-native-product-surfaces
@@ -20,7 +20,7 @@ The current corpus direction uses Valorant/CS VOD-style material as an evaluatio
 source video -> light indexing -> local heavy worker -> evidence-backed answer
 ```
 
-Shifu should answer questions with candidate moments, keyframes, transcript/caption evidence when available, modality state, and clear boundaries. It should not pretend a query was answered when evidence is missing.
+Shifu should answer questions with candidate moments, keyframes, transcript/caption evidence when available, modality state, verifier decisions, and clear boundaries. It should not pretend a query was answered when evidence is missing.
 
 ## Local-first architecture
 
@@ -31,15 +31,16 @@ VPS app/orchestrator
   -> upload, source registration, browser UI
   -> light MiniVSS smoke: segmentation + keyframes
   -> search/save/export surfaces
+  -> verifier manifests and reports
 
 Local NVIDIA GTX 1070 worker
   -> heavy visual embeddings
-  -> transcription
-  -> later VLM/caption passes
+  -> transcription/caption artifacts when available
+  -> structured verifier verdicts
   -> worker_artifacts/<source_id>/status.json
 ```
 
-This follows the same product logic as games and creator tools: use the user’s desktop GPU for heavy local media work, then make cloud GPU a later optional accelerator.
+This follows the same product logic as games and creator tools: use the user's desktop GPU for heavy local media work, then make cloud GPU a later optional accelerator.
 
 Short contract:
 
@@ -51,43 +52,35 @@ Short contract:
 
 Issue #14 is closed via PR #16.
 
-The app now supports browser/API upload, stores private source files under `SHIFU_DATA_DIR/sources`, validates upload size/type, avoids blocking the async UI route during file writes, and exposes `/api/sources/mini-vss/status` for cheap dependency smoke.
+The app supports browser/API upload, stores private source files under `SHIFU_DATA_DIR/sources`, validates upload size/type, avoids blocking the async UI route during file writes, and exposes `/api/sources/mini-vss/status` for cheap dependency smoke.
 
 ### Local worker artifact seam
 
-Issue #15 is implemented in PR #17 and open for review/merge.
+The local GTX 1070 worker seam adds `shifu-local-worker`, deterministic worker status at `SHIFU_DATA_DIR/worker_artifacts/<source_id>/status.json`, heavy modality states, `/api/sources/{source_id}/worker-status`, and process-response merging of imported modality states.
 
-The PR adds:
+The worker status artifact is the first import boundary; real embeddings/transcription quality comes after the seam is verified on Jamie's local machine.
 
-- `shifu-local-worker` / `python -m shifu_app.local_worker`;
-- deterministic local-worker status at `SHIFU_DATA_DIR/worker_artifacts/<source_id>/status.json`;
-- heavy modality states: `ready`, `disabled`, `pending-local-worker`, `failed`, `unsupported-on-vps`;
-- `/api/sources/{source_id}/worker-status`;
-- process-response merging of imported local-worker modality states;
-- a placeholder visual vector artifact for seam testing when GPU/OpenCLIP deps are unavailable.
+### Verifier report gate
 
-Verification before the shutdown handoff:
+Issue #21 is implemented in PR #26 and open for merge approval.
 
-```text
-focused tests: 18 passed
-full suite: 54 passed
-compileall clean
-git diff --check clean
-CLI worker smoke passed
-live API worker-import smoke passed
-```
+PR #26 adds verifier manifests, structured verdict import, deeper T3 verifier pools, verified-only T3 recall, baseline-vs-verified deltas, negative/refusal reporting, fixture/private proof-scope labels, and an actual-video guide at `docs/guide.md`.
+
+Review follow-up tightened the truth boundary: fallback `LIKELY` evidence is audit-only and no longer inflates verified hits or verified T3 recall. Fixture evaluation can pass baseline retrieval while still showing `Private VOD detection proof: no`, `Verified hits: 0`, and T3 verified recall `0.00` until structured verdicts are imported.
 
 ## Boundaries
 
-- Jamie’s target local GPU is **NVIDIA GTX 1070**, not RTX 3060.
+- Jamie's target local GPU is **NVIDIA GTX 1070**, not RTX 3060.
 - Cloud GPU rental is deferred until the local-worker seam proves useful.
-- Private media, generated frames, transcripts, embeddings, and model artifacts should not be committed.
-- The worker status artifact is the first import boundary; real embeddings/transcription quality comes after the seam is verified.
+- Private media, generated frames, transcripts, embeddings, worker artifacts, verifier verdicts, and private reports should not be committed.
+- Fixture reports are plumbing smoke only. Real private-VOD detection proof requires private media, private hand labels, non-placeholder modality artifacts, and structured verifier verdict imports.
+- Shifu can run on an actual video today for upload/light-processing/search smoke; production-grade proof is the next frontier.
 
 ## Source handles
 
 - Project hub: `Projects/Shifu/Index.md`
 - Repo: https://github.com/pixiiidust/shifu-app
 - Parent issue: https://github.com/pixiiidust/shifu-app/issues/3
-- PR #17: https://github.com/pixiiidust/shifu-app/pull/17
+- Current PR: https://github.com/pixiiidust/shifu-app/pull/26
+- Final child issue: https://github.com/pixiiidust/shifu-app/issues/21
 - Related concepts: [[../concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]], [[../concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]]

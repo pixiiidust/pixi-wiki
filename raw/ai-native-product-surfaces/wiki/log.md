@@ -11,6 +11,13 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-06-28 update | Shifu verifier report gate
+
+- Updated `wiki/entities/shifu-app.md` from the canonical `Projects/Shifu/Index.md` hub after issue #21 / PR #26.
+- Captured the verifier-report milestone: manifests, structured verdict import, deeper T3 verifier pools, verified-only T3 recall, baseline-vs-verified deltas, negative/refusal reporting, and actual-video guide.
+- Preserved the proof boundary: fixture smoke may pass baseline retrieval, but real private-VOD proof still requires Jamie's GTX 1070 run, private labels, non-placeholder modality artifacts, and structured verifier verdict imports.
+- Updated namespace index; no Daily Notes were copied or compiled.
+
 ## 2026-06-27 create/update | Shifu local-first video knowledge entity
 
 - Added `wiki/entities/shifu-app.md` from the canonical `Projects/Shifu/Index.md` hub.

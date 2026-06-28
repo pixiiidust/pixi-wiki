@@ -27,7 +27,7 @@ namespace: ai-native-product-surfaces
 
 - [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook wiki serving project for growing a user's knowledge base with bounded, agent-readable wikis.
 - [[entities/job-edge|Job Edge]] — Active job-search edge dashboard prototype using freshness, geography, fit, and LinkedIn-crowding signals to prioritize applications.
-- [[entities/shifu-app|Shifu]] — Active local-first searchable video knowledge prototype with VPS upload/light smoke and a local GTX 1070 worker artifact seam.
+- [[entities/shifu-app|Shifu]] — Active local-first searchable video knowledge prototype with upload/light smoke, local GTX 1070 worker artifact seam, and verifier-report PR #26 for T3 proof gating.
 - [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
 - [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
 
