@@ -51,6 +51,7 @@ The 2026-06-29 Discord council-mode hardening slice turned the boundary model in
 - Pixoid can open a bounded huddle, collect one short worker round, close on all-replied-or-timeout, and post one final answer to the original thread.
 - Closed huddle route records are enforced in the adapter/gateway path: ambient worker/bot chatter after close is dropped before model invocation.
 - Discord reply pings do not count as direct summons unless the message text explicitly includes the bot mention or an owned council role mention.
+- Top-level shared channels can be stricter than huddle threads: `discord.channel_allow_bots: none` blocks bot/status chatter in channels while preserving `allow_bots: mentions` for thread handoffs.
 - Prompt-level silence is a useful belt, not the lock. The lock is router-level suppression plus replay coverage.
 
 ## Boundary conditions

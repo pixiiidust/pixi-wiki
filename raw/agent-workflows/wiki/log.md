@@ -15,7 +15,7 @@ namespace: agent-workflows
 
 - Updated compiled `agent-workflows` source pages after `pixiiidust/pixi-wiki` tracker #33–#41 closed for Discord council-mode hardening.
 - Captured the shipped coordinator-first contract: `@Crew`/crew aliases route to Pixoid, direct worker mentions stay specialist-only, bounded huddles close on all-replied-or-timeout, and Pixoid returns one final answer.
-- Added the live-loop lesson: prompt-level silence is insufficient; closed huddle worker/bot chatter must be suppressed at the adapter/gateway layer and reply pings must not reopen the loop without explicit textual mention/approved trigger.
+- Added the live-loop lesson: prompt-level silence is insufficient; closed huddle worker/bot chatter must be suppressed at the adapter/gateway layer, reply pings must not reopen the loop without explicit textual mention/approved trigger, and top-level shared channels can use `discord.channel_allow_bots: none` while huddle threads preserve worker handoffs.
 - This update is intended for public `pixi-wiki` rebuild/deploy.
 
 ## 2026-06-29 create/update | Multi-agent multiplayer boundaries

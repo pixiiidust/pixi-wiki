@@ -1399,6 +1399,7 @@ The 2026-06-29 Discord council-mode hardening slice turned the boundary model in
 - Pixoid can open a bounded huddle, collect one short worker round, close on all-replied-or-timeout, and post one final answer to the original thread.
 - Closed huddle route records are enforced in the adapter/gateway path: ambient worker/bot chatter after close is dropped before model invocation.
 - Discord reply pings do not count as direct summons unless the message text explicitly includes the bot mention or an owned council role mention.
+- Top-level shared channels can be stricter than huddle threads: `discord.channel_allow_bots: none` blocks bot/status chatter in channels while preserving `allow_bots: mentions` for thread handoffs.
 - Prompt-level silence is a useful belt, not the lock. The lock is router-level suppression plus replay coverage.
 
 ## Boundary conditions
@@ -2095,7 +2096,7 @@ namespace: agent-workflows
 
 - Updated compiled `agent-workflows` source pages after `pixiiidust/pixi-wiki` tracker #33–#41 closed for Discord council-mode hardening.
 - Captured the shipped coordinator-first contract: `@Crew`/crew aliases route to Pixoid, direct worker mentions stay specialist-only, bounded huddles close on all-replied-or-timeout, and Pixoid returns one final answer.
-- Added the live-loop lesson: prompt-level silence is insufficient; closed huddle worker/bot chatter must be suppressed at the adapter/gateway layer and reply pings must not reopen the loop without explicit textual mention/approved trigger.
+- Added the live-loop lesson: prompt-level silence is insufficient; closed huddle worker/bot chatter must be suppressed at the adapter/gateway layer, reply pings must not reopen the loop without explicit textual mention/approved trigger, and top-level shared channels can use `discord.channel_allow_bots: none` while huddle threads preserve worker handoffs.
 - This update is intended for public `pixi-wiki` rebuild/deploy.
 
 ## 2026-06-29 create/update | Multi-agent multiplayer boundaries

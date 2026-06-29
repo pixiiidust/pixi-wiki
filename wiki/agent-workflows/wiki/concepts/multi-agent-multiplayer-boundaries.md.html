@@ -45,6 +45,7 @@
 <li>Pixoid can open a bounded huddle, collect one short worker round, close on all-replied-or-timeout, and post one final answer to the original thread.</li>
 <li>Closed huddle route records are enforced in the adapter/gateway path: ambient worker/bot chatter after close is dropped before model invocation.</li>
 <li>Discord reply pings do not count as direct summons unless the message text explicitly includes the bot mention or an owned council role mention.</li>
+<li>Top-level shared channels can be stricter than huddle threads: <code>discord.channel_allow_bots: none</code> blocks bot/status chatter in channels while preserving <code>allow_bots: mentions</code> for thread handoffs.</li>
 <li>Prompt-level silence is a useful belt, not the lock. The lock is router-level suppression plus replay coverage.</li>
 </ul>
 <h2>Boundary conditions</h2>
