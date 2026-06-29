@@ -25,6 +25,8 @@ The product goal is not “all bots talk all the time.” The product goal is co
 
 Directly mentioning a specialist should still work when Jamie intentionally summons them. The default restriction should prevent ambient worker chatter and broad crew dogpiles, not remove Jamie’s ability to call `@Boba`, `@Quill`, or `@Tinker` on purpose.
 
+A real early smoke test exposed an important UX gap: when Jamie said `@Crew ... just reply yes ... don't run any tools yet`, Pixoid correctly avoided tools, but the experience was confusing. Discord showed internal runtime notices, only Pixoid replied, and the follow-up explanation framed crew members as roles/routing conventions without giving a crisp product-level explanation of council mode. This PRD therefore treats user-facing council affordances as first-class, not just routing internals.
+
 ## User Stories
 
 1. As Jamie, I want `@Crew` to wake Pixoid as coordinator, so that crew requests produce one organized response instead of several independent bot replies.
@@ -38,20 +40,23 @@ Directly mentioning a specialist should still work when Jamie intentionally summ
 9. As Jamie, I want to directly summon `@Boba`, `@Quill`, or `@Tinker` when needed, so that specialist profiles remain available on purpose.
 10. As Jamie, I want worker profiles restricted from ambient participation, so that they do not respond just because a thread is active.
 11. As Jamie, I want direct specialist summons to be explicit mentions by allowed users in approved contexts, so that “restricted by default” does not mean “unreachable.”
-12. As Pixoid, I want route records for huddles, so that I can recover or explain council state after restarts and failures.
-13. As Pixoid, I want each huddle tied to one origin request, so that unrelated council runs do not collide in reused threads.
-14. As Pixoid, I want to close when all invited workers reply once or timeout hits, so that council mode is responsive without waiting unnecessarily.
-15. As Pixoid, I want missing worker replies recorded, so that final answers do not pretend every specialist contributed.
-16. As Boba, I want a clear research/reality-check lane, so that I challenge assumptions without rewriting the whole answer.
-17. As Quill, I want a source-of-truth/docs lane, so that durable knowledge and wording implications are covered.
-18. As Tinker, I want an implementation/verification lane, so that feasibility and breakage risks are surfaced.
-19. As a maintainer, I want tests for role mentions, crew aliases, huddle closure, bot-message filtering, and duplicate events, so that Discord orchestration does not regress silently.
-20. As a maintainer, I want a controlled live smoke test, so that success means the real Discord gateway behavior works, not just unit tests.
-21. As a maintainer, I want gateway restart behavior verified, so that code/config changes actually affect running profiles.
-22. As a maintainer, I want the local Hermes patch made durable, so that council mode is not lost during updates or upstream pulls.
-23. As a maintainer, I want worker blast radius minimized, so that worker bots cannot be accidentally woken across every visible channel.
-24. As a maintainer, I want public documentation and issue tracking in `pixi-wiki`, so that the coordination design and implementation slices are durable and reviewable.
-25. As a future agent, I want issue slices with acceptance criteria, so that council hardening can be implemented methodically without rediscovering the whole context.
+12. As Jamie, I want internal Hermes runtime notices hidden from normal Discord replies, so that model/config chatter does not make crew UX feel broken.
+13. As Jamie, I want `don't run tools yet` to suppress council huddle creation while still producing a clear explanation of what would normally happen, so that test prompts are predictable.
+14. As Jamie, I want Pixoid to explain `@Crew` behavior in product terms, so that “only Pixoid replied” feels intentional rather than like the other agents failed.
+15. As Pixoid, I want route records for huddles, so that I can recover or explain council state after restarts and failures.
+16. As Pixoid, I want each huddle tied to one origin request, so that unrelated council runs do not collide in reused threads.
+17. As Pixoid, I want to close when all invited workers reply once or timeout hits, so that council mode is responsive without waiting unnecessarily.
+18. As Pixoid, I want missing worker replies recorded, so that final answers do not pretend every specialist contributed.
+19. As Boba, I want a clear research/reality-check lane, so that I challenge assumptions without rewriting the whole answer.
+20. As Quill, I want a source-of-truth/docs lane, so that durable knowledge and wording implications are covered.
+21. As Tinker, I want an implementation/verification lane, so that feasibility and breakage risks are surfaced.
+22. As a maintainer, I want tests for role mentions, crew aliases, huddle closure, bot-message filtering, and duplicate events, so that Discord orchestration does not regress silently.
+23. As a maintainer, I want a controlled live smoke test, so that success means the real Discord gateway behavior works, not just unit tests.
+24. As a maintainer, I want gateway restart behavior verified, so that code/config changes actually affect running profiles.
+25. As a maintainer, I want the local Hermes patch made durable, so that council mode is not lost during updates or upstream pulls.
+26. As a maintainer, I want worker blast radius minimized, so that worker bots cannot be accidentally woken across every visible channel.
+27. As a maintainer, I want public documentation and issue tracking in `pixi-wiki`, so that the coordination design and implementation slices are durable and reviewable.
+28. As a future agent, I want issue slices with acceptance criteria, so that council hardening can be implemented methodically without rediscovering the whole context.
 
 ## Implementation Decisions
 
@@ -65,6 +70,9 @@ Directly mentioning a specialist should still work when Jamie intentionally summ
 - Worker behavior: reply once, stay in assigned lane, do not run tools unless explicitly asked, ignore acknowledgements, stop after the close marker.
 - Final answer behavior: Pixoid reads huddle transcript, closes the huddle, and returns one synthesized answer to the origin thread.
 - Direct specialist summons remain allowed: Jamie or another allowed user can intentionally mention `@Boba`, `@Quill`, or `@Tinker` to get that specialist, but workers should not wake from ambient thread chatter or broad crew aliases.
+- If the user says `don't run tools`, `no tools`, or equivalent, Pixoid should not open a huddle or wake workers; it should answer directly and, if relevant, explain that council mode was intentionally skipped because a huddle requires tool/gateway actions.
+- Discord-facing replies should suppress internal Hermes runtime notices such as model context/compression messages. Those belong in logs/status surfaces, not user chat.
+- When only Pixoid replies to `@Crew`, the explanation should be concise: `@Crew is coordinator-led by default; I can open a bounded huddle when tools are allowed, or you can directly mention @Boba/@Quill/@Tinker.`
 - Defer a `CrewLive` / direct live multiplayer mode. It can be added later as an explicit test-only escape hatch, but it is not part of this v1 hardening pass.
 - Prefer an all-replied-or-timeout close policy: close when each invited worker has replied once, with timeout as fallback.
 - Persist or reconstruct route state so each huddle has a traceable route record: origin, huddle, invited workers, actual responders, status, opened time, closed time, and final delivery target.
@@ -89,11 +97,14 @@ Good test seams:
 - All-replied-or-timeout close policy.
 - Duplicate Discord event idempotency.
 - Gateway restart/state recovery behavior where feasible.
+- No-tools council preflight behavior.
+- Discord-facing suppression of internal runtime notices.
 
 Required verification:
 
 - Unit/focused gateway tests pass.
-- Replay tests cover the real observed failure cases: existing thread membership trap, role mention behavior, worker close marker, `ok/lol/thanks` silence, duplicate event suppression, and worker bot messages that mention other agents.
+- Replay tests cover the real observed failure cases: existing thread membership trap, role mention behavior, worker close marker, `ok/lol/thanks` silence, duplicate event suppression, worker bot messages that mention other agents, and `@Crew` requests that include `don't run tools yet`.
+- Gateway/Discord output tests verify internal runtime notices are not posted as normal user-facing messages.
 - One controlled live smoke test in Discord verifies the full path:
 
 ```text
@@ -147,10 +158,11 @@ Boba, Quill, and Tinker should not ambiently join every conversation, but Jamie 
 
 Recommended next `/to-issues` shape:
 
-1. Make the local council-mode patch durable.
-2. Lock the direct-summon vs ambient-worker route contract.
-3. Add replay tests for observed Discord failure modes.
-4. Add durable/reconstructable huddle route records.
-5. Implement all-replied-or-timeout close behavior.
-6. Restrict worker blast radius while preserving direct summons.
-7. Run controlled live Discord smoke and restart verification.
+1. Clean the user-facing council UX: suppress internal notices and make no-tools preflight behavior explicit.
+2. Make the local council-mode patch durable.
+3. Lock the direct-summon vs ambient-worker route contract.
+4. Add replay tests for observed Discord failure modes.
+5. Add durable/reconstructable huddle route records.
+6. Implement all-replied-or-timeout close behavior.
+7. Restrict worker blast radius while preserving direct summons.
+8. Run controlled live Discord smoke and restart verification.
