@@ -99,9 +99,9 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-06-27 \u2014 Compound Engineering skill layer added as an installed external repo-workflow plugin: use `ce-*` for integrated repo-local engineering loops, keep existing Pocock/Jamie skills for modular product/PRD/issue/review gates, and treat `/lfg` as approval-gated autopilot."
+        "currentAs": "2026-06-29 \u2014 Discord crew routing clarified: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode; visible crew discussion should happen in topic-specific `#agent-workbench` threads before Pixoid returns one answer."
       },
-      "lastUpdated": "2026-06-27",
+      "lastUpdated": "2026-06-29",
       "documentCount": 25,
       "counts": {
         "wiki": 1,

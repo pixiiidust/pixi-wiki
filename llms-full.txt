@@ -401,7 +401,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-27
+updated: 2026-06-29
 type: namespace-overview
 status: active
 category: agents
@@ -425,7 +425,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-27 — Compound Engineering skill layer added as an installed external repo-workflow plugin: use `ce-*` for integrated repo-local engineering loops, keep existing Pocock/Jamie skills for modular product/PRD/issue/review gates, and treat `/lfg` as approval-gated autopilot.
+2026-06-29 — Discord crew routing clarified: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode; visible crew discussion should happen in topic-specific `#agent-workbench` threads before Pixoid returns one answer.
 
 ## Canonical Source Roots
 
@@ -1729,7 +1729,7 @@ It complements [[matt-pocock-sdlc-rhythm]]: `/prototype` tests experiential unkn
 ---
 title: Hermes Mission Control
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-29
 type: entity
 status: compiled
 namespace: agent-workflows
@@ -1760,6 +1760,7 @@ Its primary namespace is `agent-workflows` because the durable knowledge is not 
 - GitHub issue/PR coordination as durable work truth.
 - Obsidian/Git as knowledge and project truth.
 - Discord as notification surface, not durable truth.
+- Discord crew routing modes: `@Crew`/crew aliases call Pixoid as coordinator by default; direct worker mentions call individual profiles; workbench council threads carry visible crew discussion when useful.
 - Cron output as context, not canonical project state.
 - Verification gates before tracker closure.
 
@@ -1769,6 +1770,16 @@ Its primary namespace is `agent-workflows` because the durable knowledge is not 
 Interaction Mode Routing clarifies that chat is the command channel, not the whole Hermes interface. Pixoid should generate small review/control surfaces when Jamie needs to approve or steer work, while durable truth remains in GitHub issues/PRs, Obsidian hubs, handoffs, skills, and knowledge entrypoints.
 
 The standard review surface includes status, evidence, risks, files/handles, verification run, options, and Pixoid's recommended next slice.
+
+## Discord crew routing milestone
+
+As of 2026-06-29, the stable Discord contract is coordinator-first:
+
+- `@Crew` / `<@&1521188694915158078>` is a Pixoid/default coordinator call.
+- `crew:`, `get the crew`, and `calling the crew` are Pixoid/default text aliases.
+- `@Boba`, `@Quill`, and `@Tinker` are direct specialist calls.
+- If Pixoid needs visible crew discussion, it should create or reuse a topic-specific thread in `#agent-workbench` and return one final answer to the original thread.
+- Re-adding the shared `Crew` role to all worker bots is not the default because it causes duplicate independent work in the user thread.
 
 ## Routing significance
 
@@ -1880,7 +1891,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-27
+updated: 2026-06-29
 type: log
 status: compiled
 namespace: agent-workflows
@@ -1889,6 +1900,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-29 update | Discord crew routing coordinator mode
+
+- Updated Hermes Mission Control and Pixoid Crew Operating Model with the settled Discord contract: `@Crew`/crew aliases wake Pixoid as coordinator, direct worker mentions wake individual profiles, and visible crew discussion belongs in topic-specific `#agent-workbench` threads.
+- Captured the live failure mode: assigning the shared `Crew` role to every bot makes Boba/Quill/Tinker/Pixoid independently inspect and reply, causing duplicated work and noisy threads.
+- Recorded the role-mention/human-mention adapter lesson without treating it as sufficient for true multiplayer; the remaining open thread is a coordinator-mediated council protocol.
 
 ## 2026-06-27 update | Agent Output Decision Artifacts crosslink
 
@@ -2052,7 +2069,7 @@ The danger is treating written context as commandment. Packs and notes are routi
 ---
 title: Pixoid Crew Operating Model
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-06-29
 type: synthesis
 status: compiled
 namespace: agent-workflows
@@ -2088,6 +2105,18 @@ The model is about how work moves through the crew: route selection, source-of-t
 2. **Prefer peer profiles for named crew work.** Use child/subagent execution only as a local fallback and label it honestly.
 3. **Verify before closing.** Pixoid checks changed files, tests, live URLs, issue state, and pushed commits before reporting success.
 4. **Promote durable learning carefully.** Evidence must justify whether a lesson belongs in a dossier, concept page, skill, prompt, project hub, or memory pointer.
+5. **Separate coordinator mode from multiplayer mode.** `@Crew` is a Pixoid coordinator call by default, not a request for every live bot gateway to solve the same user message independently.
+
+## Discord crew interaction modes
+
+| Mode | Trigger | Contract |
+|---|---|---|
+| Coordinator | `@Crew`, `crew:`, `get the crew`, `calling the crew` | Pixoid handles the user-facing thread, creates/reuses a topic workbench thread when useful, gathers crew input, and posts one final answer. |
+| Specialist | `@Boba`, `@Quill`, `@Tinker` | Only the named profile replies directly. |
+| Workbench council | Pixoid-created topic thread in `#agent-workbench` | Worker profiles discuss a bounded prompt away from the user thread; Pixoid summarizes/decides. |
+| Direct multiplayer | Shared role assigned to all bots | Not default. It caused duplicate independent investigations and should only be enabled intentionally for tests. |
+
+The live 2026-06-29 Discord milestone proved that role mentions and human mentions arrive in different Discord fields (`message.role_mentions` vs `message.mentions`). The adapter fix made role mentions count as calls, but the operating fix is still route governance: shared crew summons should not wake all peer profiles into the same user thread unless the desired mode is deliberately direct multiplayer.
 
 ## Cross-namespace links
 

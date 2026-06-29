@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-27
+updated: 2026-06-29
 type: namespace-overview
 status: active
 category: agents
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-27 — Compound Engineering skill layer added as an installed external repo-workflow plugin: use `ce-*` for integrated repo-local engineering loops, keep existing Pocock/Jamie skills for modular product/PRD/issue/review gates, and treat `/lfg` as approval-gated autopilot.
+2026-06-29 — Discord crew routing clarified: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode; visible crew discussion should happen in topic-specific `#agent-workbench` threads before Pixoid returns one answer.
 
 ## Canonical Source Roots
 

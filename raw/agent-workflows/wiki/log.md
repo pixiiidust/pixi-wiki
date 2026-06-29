@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-27
+updated: 2026-06-29
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-29 update | Discord crew routing coordinator mode
+
+- Updated Hermes Mission Control and Pixoid Crew Operating Model with the settled Discord contract: `@Crew`/crew aliases wake Pixoid as coordinator, direct worker mentions wake individual profiles, and visible crew discussion belongs in topic-specific `#agent-workbench` threads.
+- Captured the live failure mode: assigning the shared `Crew` role to every bot makes Boba/Quill/Tinker/Pixoid independently inspect and reply, causing duplicated work and noisy threads.
+- Recorded the role-mention/human-mention adapter lesson without treating it as sufficient for true multiplayer; the remaining open thread is a coordinator-mediated council protocol.
 
 ## 2026-06-27 update | Agent Output Decision Artifacts crosslink
 

@@ -22,7 +22,7 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/agent-workflows/README.md.html">Agent Workflows</a> / wiki/syntheses/pixoid-crew-operating-model.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+agent-workflows%2Fwiki%2Fsyntheses%2Fpixoid-crew-operating-model.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fagent-workflows%2Fwiki%2Fsyntheses%2Fpixoid-crew-operating-model.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>Pixoid Crew Operating Model</h1>
-<div class="page-meta"><div><span>type</span>: synthesis</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-16</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div><div><span>sources</span>: 5</div></div>
+<div class="page-meta"><div><span>type</span>: synthesis</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-29</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div><div><span>sources</span>: 5</div></div>
 <p>The Pixoid crew operates as a set of bounded peer roles coordinated through durable source-of-truth surfaces. Pixoid is the control plane; Tinker builds; Quill maintains vault/source truth; Boba explores public sources and reality-checks signals.</p>
 <h2>Operating contract</h2>
 <ul>
@@ -39,6 +39,15 @@
 <p>2. **Prefer peer profiles for named crew work.** Use child/subagent execution only as a local fallback and label it honestly.</p>
 <p>3. **Verify before closing.** Pixoid checks changed files, tests, live URLs, issue state, and pushed commits before reporting success.</p>
 <p>4. **Promote durable learning carefully.** Evidence must justify whether a lesson belongs in a dossier, concept page, skill, prompt, project hub, or memory pointer.</p>
+<p>5. **Separate coordinator mode from multiplayer mode.** <code>@Crew</code> is a Pixoid coordinator call by default, not a request for every live bot gateway to solve the same user message independently.</p>
+<h2>Discord crew interaction modes</h2>
+<p>| Mode | Trigger | Contract |</p>
+<p>|---|---|---|</p>
+<p>| Coordinator | <code>@Crew</code>, <code>crew:</code>, <code>get the crew</code>, <code>calling the crew</code> | Pixoid handles the user-facing thread, creates/reuses a topic workbench thread when useful, gathers crew input, and posts one final answer. |</p>
+<p>| Specialist | <code>@Boba</code>, <code>@Quill</code>, <code>@Tinker</code> | Only the named profile replies directly. |</p>
+<p>| Workbench council | Pixoid-created topic thread in <code>#agent-workbench</code> | Worker profiles discuss a bounded prompt away from the user thread; Pixoid summarizes/decides. |</p>
+<p>| Direct multiplayer | Shared role assigned to all bots | Not default. It caused duplicate independent investigations and should only be enabled intentionally for tests. |</p>
+<p>The live 2026-06-29 Discord milestone proved that role mentions and human mentions arrive in different Discord fields (<code>message.role_mentions</code> vs <code>message.mentions</code>). The adapter fix made role mentions count as calls, but the operating fix is still route governance: shared crew summons should not wake all peer profiles into the same user thread unless the desired mode is deliberately direct multiplayer.</p>
 <h2>Cross-namespace links</h2>
 <ul>
 <li><a href="/pixi-wiki/wiki/../eval-trace/wiki/concepts/context-overfitting.md.html">Context Overfitting</a> — evaluation failure mode for stale-context execution.</li>

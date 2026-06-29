@@ -1,7 +1,7 @@
 ---
 title: Hermes Mission Control
 created: 2026-06-16
-updated: 2026-06-23
+updated: 2026-06-29
 type: entity
 status: compiled
 namespace: agent-workflows
@@ -32,6 +32,7 @@ Its primary namespace is `agent-workflows` because the durable knowledge is not 
 - GitHub issue/PR coordination as durable work truth.
 - Obsidian/Git as knowledge and project truth.
 - Discord as notification surface, not durable truth.
+- Discord crew routing modes: `@Crew`/crew aliases call Pixoid as coordinator by default; direct worker mentions call individual profiles; workbench council threads carry visible crew discussion when useful.
 - Cron output as context, not canonical project state.
 - Verification gates before tracker closure.
 
@@ -41,6 +42,16 @@ Its primary namespace is `agent-workflows` because the durable knowledge is not 
 Interaction Mode Routing clarifies that chat is the command channel, not the whole Hermes interface. Pixoid should generate small review/control surfaces when Jamie needs to approve or steer work, while durable truth remains in GitHub issues/PRs, Obsidian hubs, handoffs, skills, and knowledge entrypoints.
 
 The standard review surface includes status, evidence, risks, files/handles, verification run, options, and Pixoid's recommended next slice.
+
+## Discord crew routing milestone
+
+As of 2026-06-29, the stable Discord contract is coordinator-first:
+
+- `@Crew` / `<@&1521188694915158078>` is a Pixoid/default coordinator call.
+- `crew:`, `get the crew`, and `calling the crew` are Pixoid/default text aliases.
+- `@Boba`, `@Quill`, and `@Tinker` are direct specialist calls.
+- If Pixoid needs visible crew discussion, it should create or reuse a topic-specific thread in `#agent-workbench` and return one final answer to the original thread.
+- Re-adding the shared `Crew` role to all worker bots is not the default because it causes duplicate independent work in the user thread.
 
 ## Routing significance
 
