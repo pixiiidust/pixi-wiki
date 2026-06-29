@@ -49,7 +49,7 @@ As of 2026-06-29, the stable Discord contract is coordinator-first and gateway-e
 
 - `@Crew` / `<@&1521188694915158078>` is a Pixoid/default coordinator call.
 - `crew:`, `get the crew`, and `calling the crew` are Pixoid/default text aliases.
-- `@Boba`, `@Quill`, and `@Tinker` are direct specialist calls.
+- `@Boba`, `@Quill`, and `@Tinker` are direct specialist calls in approved channels/threads; they do not answer ambient top-level-channel chatter.
 - If Pixoid needs visible crew discussion, it opens a bounded huddle tied to the triggering message/origin, waits for one short worker round or timeout, closes the huddle, and returns one final answer.
 - Closed huddle threads suppress ambient worker/bot chatter before model invocation; prompt-level silence is not the enforcement layer.
 - Discord reply pings are not direct summons unless the message text explicitly mentions the bot or an owned council role.

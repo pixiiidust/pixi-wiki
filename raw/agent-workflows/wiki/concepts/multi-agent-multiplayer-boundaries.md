@@ -47,11 +47,11 @@ user message -> route classifier -> one visible owner -> optional workers -> ver
 The 2026-06-29 Discord council-mode hardening slice turned the boundary model into live gateway behavior for Jamie's crew:
 
 - `@Crew` and crew text aliases route to Pixoid/default as coordinator; they do not wake every worker bot.
-- Direct `@Boba`, `@Quill`, and `@Tinker` remain specialist summons.
+- Direct `@Boba`, `@Quill`, and `@Tinker` remain specialist summons in approved channels/threads; they do not wake from untagged top-level-channel chatter.
 - Pixoid can open a bounded huddle, collect one short worker round, close on all-replied-or-timeout, and post one final answer to the original thread.
 - Closed huddle route records are enforced in the adapter/gateway path: ambient worker/bot chatter after close is dropped before model invocation.
 - Discord reply pings do not count as direct summons unless the message text explicitly includes the bot mention or an owned council role mention.
-- Top-level shared channels can be stricter than huddle threads: `discord.channel_allow_bots: none` blocks bot/status chatter in channels while preserving `allow_bots: mentions` for thread handoffs.
+- Top-level shared channels can be stricter than huddle threads: `discord.channel_allow_bots: none` blocks bot/status chatter in channels while preserving `allow_bots: mentions` for thread handoffs. Worker profiles share Pixoid's approved room allowlist but still require direct mentions in top-level channels.
 - Prompt-level silence is a useful belt, not the lock. The lock is router-level suppression plus replay coverage.
 
 ## Boundary conditions

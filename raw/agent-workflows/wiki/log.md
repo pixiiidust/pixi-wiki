@@ -11,6 +11,11 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-06-29 update | Discord worker mention allowlist
+
+- Recorded that Boba/Quill/Tinker worker gateways share Pixoid's approved Discord room allowlist but remain bounded by direct mentions in top-level channels.
+- Captured the paired safety rule: `discord.channel_allow_bots: none` blocks bot/status chatter in top-level shared channels, while `allow_bots: mentions` keeps thread handoffs possible.
+
 ## 2026-06-29 update | Discord council-mode hardening shipped
 
 - Updated compiled `agent-workflows` source pages after `pixiiidust/pixi-wiki` tracker #33–#41 closed for Discord council-mode hardening.

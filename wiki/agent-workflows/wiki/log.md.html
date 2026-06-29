@@ -24,6 +24,11 @@
 <h1>Agent Workflows — Activity Log</h1>
 <div class="page-meta"><div><span>type</span>: log</div><div><span>updated</span>: 2026-06-29</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div></div>
 <blockquote>Append-only namespace log.</blockquote>
+<h2>2026-06-29 update | Discord worker mention allowlist</h2>
+<ul>
+<li>Recorded that Boba/Quill/Tinker worker gateways share Pixoid&#x27;s approved Discord room allowlist but remain bounded by direct mentions in top-level channels.</li>
+<li>Captured the paired safety rule: <code>discord.channel_allow_bots: none</code> blocks bot/status chatter in top-level shared channels, while <code>allow_bots: mentions</code> keeps thread handoffs possible.</li>
+</ul>
 <h2>2026-06-29 update | Discord council-mode hardening shipped</h2>
 <ul>
 <li>Updated compiled <code>agent-workflows</code> source pages after <code>pixiiidust/pixi-wiki</code> tracker #33–#41 closed for Discord council-mode hardening.</li>
