@@ -11,6 +11,13 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-06-29 update | Shifu implementation chain closed
+
+- Updated `wiki/entities/shifu-app.md` from the canonical `Projects/Shifu/Index.md` hub after PR #26 merged and parent #3 closed.
+- Captured post-merge verification: focused verifier/eval tests 18 passed, full suite 80 passed with one warning, compileall clean, `git diff --check` clean, and fixture evaluator passed 5/5 while preserving `Private VOD detection proof: no` and verified hits 0.
+- Reframed current state from PR-open gate to implementation-chain complete; next frontier is the actual private VOD proof run with GTX 1070 artifacts, labels, and structured verifier verdicts.
+- Updated namespace index; no Daily Notes were copied or compiled.
+
 ## 2026-06-28 update | Shifu verifier report gate
 
 - Updated `wiki/entities/shifu-app.md` from the canonical `Projects/Shifu/Index.md` hub after issue #21 / PR #26.

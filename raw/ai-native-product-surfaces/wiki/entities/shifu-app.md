@@ -1,9 +1,9 @@
 ---
 title: Shifu
 created: 2026-06-27
-updated: 2026-06-28
+updated: 2026-06-29
 type: entity
-status: active-pr-review
+status: implementation-chain-complete
 namespace: ai-native-product-surfaces
 source: Projects/Shifu/Index.md
 confidence: high
@@ -48,25 +48,11 @@ Short contract:
 
 ## Current milestone state
 
-### Upload and VPS light smoke
+The implementation chain through parent issue #3 is complete: PR #26 merged, issue #21 closed, and parent #3 closed after post-merge verification on `main`.
 
-Issue #14 is closed via PR #16.
+The app can run on an actual local video today for upload/light-processing/search smoke. It includes browser/API upload, source registration, light segmentation/keyframes, search/save/export surfaces, local GTX 1070 worker status seam, verifier manifests, structured verdict import, deeper T3 verifier pools, verified-only T3 recall, baseline-vs-verified deltas, and negative/refusal reporting.
 
-The app supports browser/API upload, stores private source files under `SHIFU_DATA_DIR/sources`, validates upload size/type, avoids blocking the async UI route during file writes, and exposes `/api/sources/mini-vss/status` for cheap dependency smoke.
-
-### Local worker artifact seam
-
-The local GTX 1070 worker seam adds `shifu-local-worker`, deterministic worker status at `SHIFU_DATA_DIR/worker_artifacts/<source_id>/status.json`, heavy modality states, `/api/sources/{source_id}/worker-status`, and process-response merging of imported modality states.
-
-The worker status artifact is the first import boundary; real embeddings/transcription quality comes after the seam is verified on Jamie's local machine.
-
-### Verifier report gate
-
-Issue #21 is implemented in PR #26 and open for merge approval.
-
-PR #26 adds verifier manifests, structured verdict import, deeper T3 verifier pools, verified-only T3 recall, baseline-vs-verified deltas, negative/refusal reporting, fixture/private proof-scope labels, and an actual-video guide at `docs/guide.md`.
-
-Review follow-up tightened the truth boundary: fallback `LIKELY` evidence is audit-only and no longer inflates verified hits or verified T3 recall. Fixture evaluation can pass baseline retrieval while still showing `Private VOD detection proof: no`, `Verified hits: 0`, and T3 verified recall `0.00` until structured verdicts are imported.
+Post-merge verification on `main`: focused verifier/eval tests 18 passed; full suite 80 passed with one warning; compileall clean; `git diff --check` clean; fixture evaluator passed 5/5 while honestly reporting `Private VOD detection proof: no`, `Verified hits: 0`, and T3 verified recall `0.00` until structured verdicts are imported.
 
 ## Boundaries
 
@@ -81,6 +67,6 @@ Review follow-up tightened the truth boundary: fallback `LIKELY` evidence is aud
 - Project hub: `Projects/Shifu/Index.md`
 - Repo: https://github.com/pixiiidust/shifu-app
 - Parent issue: https://github.com/pixiiidust/shifu-app/issues/3
-- Current PR: https://github.com/pixiiidust/shifu-app/pull/26
+- Final PR: https://github.com/pixiiidust/shifu-app/pull/26
 - Final child issue: https://github.com/pixiiidust/shifu-app/issues/21
 - Related concepts: [[../concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]], [[../concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]]

@@ -22,7 +22,7 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/ai-native-product-surfaces/README.md.html">AI-Native Product Surfaces</a> / wiki/entities/shifu-app.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/ai-native-product-surfaces/wiki/entities/shifu-app.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+ai-native-product-surfaces%2Fwiki%2Fentities%2Fshifu-app.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fai-native-product-surfaces%2Fwiki%2Fentities%2Fshifu-app.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>Shifu</h1>
-<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-28</div><div><span>status</span>: active-pr-review</div><div><span>namespace</span>: ai-native-product-surfaces</div></div>
+<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-29</div><div><span>status</span>: implementation-chain-complete</div><div><span>namespace</span>: ai-native-product-surfaces</div></div>
 <p>Shifu is a local-first searchable video knowledge prototype: private videos stay close to the user, while the app produces timestamped, evidence-backed answers and reusable clips.</p>
 <p>The current corpus direction uses Valorant/CS VOD-style material as an evaluation corpus, not as the full product identity.</p>
 <h2>Product frame</h2>
@@ -45,16 +45,9 @@ Local NVIDIA GTX 1070 worker
 <p>Short contract:</p>
 <blockquote>Local first. Cloud when useful. Evidence always.</blockquote>
 <h2>Current milestone state</h2>
-<h3>Upload and VPS light smoke</h3>
-<p>Issue #14 is closed via PR #16.</p>
-<p>The app supports browser/API upload, stores private source files under <code>SHIFU_DATA_DIR/sources</code>, validates upload size/type, avoids blocking the async UI route during file writes, and exposes <code>/api/sources/mini-vss/status</code> for cheap dependency smoke.</p>
-<h3>Local worker artifact seam</h3>
-<p>The local GTX 1070 worker seam adds <code>shifu-local-worker</code>, deterministic worker status at <code>SHIFU_DATA_DIR/worker_artifacts/&lt;source_id&gt;/status.json</code>, heavy modality states, <code>/api/sources/{source_id}/worker-status</code>, and process-response merging of imported modality states.</p>
-<p>The worker status artifact is the first import boundary; real embeddings/transcription quality comes after the seam is verified on Jamie&#x27;s local machine.</p>
-<h3>Verifier report gate</h3>
-<p>Issue #21 is implemented in PR #26 and open for merge approval.</p>
-<p>PR #26 adds verifier manifests, structured verdict import, deeper T3 verifier pools, verified-only T3 recall, baseline-vs-verified deltas, negative/refusal reporting, fixture/private proof-scope labels, and an actual-video guide at <code>docs/guide.md</code>.</p>
-<p>Review follow-up tightened the truth boundary: fallback <code>LIKELY</code> evidence is audit-only and no longer inflates verified hits or verified T3 recall. Fixture evaluation can pass baseline retrieval while still showing <code>Private VOD detection proof: no</code>, <code>Verified hits: 0</code>, and T3 verified recall <code>0.00</code> until structured verdicts are imported.</p>
+<p>The implementation chain through parent issue #3 is complete: PR #26 merged, issue #21 closed, and parent #3 closed after post-merge verification on <code>main</code>.</p>
+<p>The app can run on an actual local video today for upload/light-processing/search smoke. It includes browser/API upload, source registration, light segmentation/keyframes, search/save/export surfaces, local GTX 1070 worker status seam, verifier manifests, structured verdict import, deeper T3 verifier pools, verified-only T3 recall, baseline-vs-verified deltas, and negative/refusal reporting.</p>
+<p>Post-merge verification on <code>main</code>: focused verifier/eval tests 18 passed; full suite 80 passed with one warning; compileall clean; <code>git diff --check</code> clean; fixture evaluator passed 5/5 while honestly reporting <code>Private VOD detection proof: no</code>, <code>Verified hits: 0</code>, and T3 verified recall <code>0.00</code> until structured verdicts are imported.</p>
 <h2>Boundaries</h2>
 <ul>
 <li>Jamie&#x27;s target local GPU is **NVIDIA GTX 1070**, not RTX 3060.</li>
@@ -68,7 +61,7 @@ Local NVIDIA GTX 1070 worker
 <li>Project hub: <code>Projects/Shifu/Index.md</code></li>
 <li>Repo: https://github.com/pixiiidust/shifu-app</li>
 <li>Parent issue: https://github.com/pixiiidust/shifu-app/issues/3</li>
-<li>Current PR: https://github.com/pixiiidust/shifu-app/pull/26</li>
+<li>Final PR: https://github.com/pixiiidust/shifu-app/pull/26</li>
 <li>Final child issue: https://github.com/pixiiidust/shifu-app/issues/21</li>
 <li>Related concepts: Video Retrieve-Then-Verify Loop, Verified Video Answer Surfaces</li>
 </ul>
