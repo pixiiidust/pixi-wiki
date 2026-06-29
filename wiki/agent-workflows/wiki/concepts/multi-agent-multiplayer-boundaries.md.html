@@ -33,7 +33,7 @@
 <p>|---|---|---|</p>
 <p>| Coordinator mode | Pixoid owns the user thread, routes work, verifies results, and posts one final answer. | Yes |</p>
 <p>| Specialist mode | A direct <code>@Boba</code>, <code>@Quill</code>, or <code>@Tinker</code> call wakes only that named profile/route. | Yes |</p>
-<p>| Workbench council | Pixoid opens or reuses a bounded workbench thread for agent discussion, then summarizes/decides. | Preferred for crew input |</p>
+<p>| Bounded huddle / workbench council | Pixoid opens a bounded huddle or workbench thread for agent discussion, closes on all-replied-or-timeout, then summarizes/decides. | Preferred for crew input |</p>
 <p>| Direct multiplayer | Multiple live agents may speak in the same user thread. | Test-only / explicit opt-in |</p>
 <p>The core invariant:</p>
 <pre><code>user message -&gt; route classifier -&gt; one visible owner -&gt; optional workers -&gt; verified artifact -&gt; one final answer</code></pre>
