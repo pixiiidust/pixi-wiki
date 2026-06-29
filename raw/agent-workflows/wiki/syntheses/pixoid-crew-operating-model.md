@@ -45,10 +45,10 @@ The model is about how work moves through the crew: route selection, source-of-t
 |---|---|---|
 | Coordinator | `@Crew`, `crew:`, `get the crew`, `calling the crew` | Pixoid handles the user-facing thread, creates/reuses a topic workbench thread when useful, gathers crew input, and posts one final answer. |
 | Specialist | `@Boba`, `@Quill`, `@Tinker` | Only the named profile replies directly. |
-| Workbench council | Pixoid-created topic thread in `#agent-workbench` | Worker profiles discuss a bounded prompt away from the user thread; Pixoid summarizes/decides. |
+| Workbench council / bounded huddle | Pixoid-created huddle tied to the triggering message/origin | Worker profiles respond once to a bounded prompt; Pixoid closes on all-replied-or-timeout and posts one final answer. |
 | Direct multiplayer | Shared role assigned to all bots | Not default. It caused duplicate independent investigations and should only be enabled intentionally for tests. |
 
-The live 2026-06-29 Discord milestone proved that role mentions and human mentions arrive in different Discord fields (`message.role_mentions` vs `message.mentions`). The adapter fix made role mentions count as calls, but the operating fix is still route governance: shared crew summons should not wake all peer profiles into the same user thread unless the desired mode is deliberately direct multiplayer.
+The live 2026-06-29 Discord milestone proved that role mentions and human mentions arrive in different Discord fields (`message.role_mentions` vs `message.mentions`) and that prompt-level worker silence fails under reply-ping/runtime-notice loops. The adapter fixes therefore enforce both summon parsing and closure state: shared crew summons should not wake all peer profiles into the same user thread, closed huddle worker chatter is dropped before model invocation, and reply pings do not reopen the loop without an explicit direct mention or approved reopen trigger.
 
 ## Cross-namespace links
 

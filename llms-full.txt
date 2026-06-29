@@ -425,7 +425,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-29 — Discord crew routing clarified and expanded into a multiplayer boundary contract: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode; visible crew discussion should happen in topic-specific `#agent-workbench` threads before Pixoid returns one answer; direct multiplayer is explicit test-only mode.
+2026-06-29 — Discord council-mode hardening shipped: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode; bounded council huddles collect one worker round, close on all-replied-or-timeout, suppress post-close worker chatter at the gateway layer, and return one final Pixoid answer; direct multiplayer is explicit test-only mode.
 
 ## Canonical Source Roots
 
@@ -1390,6 +1390,17 @@ The core invariant:
 user message -> route classifier -> one visible owner -> optional workers -> verified artifact -> one final answer
 ```
 
+## Implemented council-mode hardening (2026-06-29)
+
+The 2026-06-29 Discord council-mode hardening slice turned the boundary model into live gateway behavior for Jamie's crew:
+
+- `@Crew` and crew text aliases route to Pixoid/default as coordinator; they do not wake every worker bot.
+- Direct `@Boba`, `@Quill`, and `@Tinker` remain specialist summons.
+- Pixoid can open a bounded huddle, collect one short worker round, close on all-replied-or-timeout, and post one final answer to the original thread.
+- Closed huddle route records are enforced in the adapter/gateway path: ambient worker/bot chatter after close is dropped before model invocation.
+- Discord reply pings do not count as direct summons unless the message text explicitly includes the bot mention or an owned council role mention.
+- Prompt-level silence is a useful belt, not the lock. The lock is router-level suppression plus replay coverage.
+
 ## Boundary conditions
 
 ### 1. Summoning and routing
@@ -1397,6 +1408,7 @@ user message -> route classifier -> one visible owner -> optional workers -> ver
 - `@Crew` must not blindly wake every bot; it should wake Pixoid as coordinator unless direct multiplayer is explicitly enabled.
 - Role mentions, user mentions, text aliases, quoted messages, edited messages, replies, thread names, and topic metadata need separate trigger handling.
 - Agent replies should not accidentally summon other agents unless the route contract permits that chain.
+- Discord reply metadata is not enough to prove a direct summon; direct calls should be based on explicit textual bot/role mentions or a route-owned trigger.
 - Webhook personas are outbound display identities only; they are not proof of an inbound, pingable agent route.
 - A crew request can mean opinions, delegation, workbench council, or live multiplayer; the route must classify which one before acting.
 
@@ -1405,6 +1417,7 @@ user message -> route classifier -> one visible owner -> optional workers -> ver
 - Without a single visible owner, agents duplicate answers, interrupt each other, debate endlessly, or bury the useful answer.
 - Each worker needs an explicit stop condition and return format.
 - The coordinator decides when enough input exists and closes the loop.
+- Closed route state must suppress post-close worker/bot chatter at the adapter or router layer; prompt-level silence is not sufficient.
 - Agent-to-agent discussion belongs in a workbench surface by default, not the main user thread.
 
 ### 3. Identity and accountability
@@ -1490,6 +1503,9 @@ A proper multiplayer agent system should have tests or replay traces for:
 - Direct multiplayer requires an explicit mode flag.
 - Parallel coding work uses separate branches/worktrees or an equivalent claim protocol.
 - Pixoid verifies artifacts before closure.
+- Closed huddle threads drop ambient worker/bot messages before model invocation.
+- Discord reply pings after a huddle closes do not reopen the loop unless there is an explicit direct mention or approved reopen trigger.
+- All-replied and timeout closure paths both produce one final owner answer, not worker chatter.
 
 ## Recommended default for Jamie's crew
 
@@ -1930,7 +1946,7 @@ Its primary namespace is `agent-workflows` because the durable knowledge is not 
 - GitHub issue/PR coordination as durable work truth.
 - Obsidian/Git as knowledge and project truth.
 - Discord as notification surface, not durable truth.
-- Discord crew routing modes: `@Crew`/crew aliases call Pixoid as coordinator by default; direct worker mentions call individual profiles; workbench council threads carry visible crew discussion when useful.
+- Discord council-mode routing: `@Crew`/crew aliases call Pixoid as coordinator by default; direct worker mentions call individual profiles; bounded huddles collect one worker round, close deterministically, and suppress post-close worker chatter at the gateway layer.
 - Cron output as context, not canonical project state.
 - Verification gates before tracker closure.
 
@@ -1941,14 +1957,16 @@ Interaction Mode Routing clarifies that chat is the command channel, not the who
 
 The standard review surface includes status, evidence, risks, files/handles, verification run, options, and Pixoid's recommended next slice.
 
-## Discord crew routing milestone
+## Discord council-mode hardening milestone
 
-As of 2026-06-29, the stable Discord contract is coordinator-first:
+As of 2026-06-29, the stable Discord contract is coordinator-first and gateway-enforced:
 
 - `@Crew` / `<@&1521188694915158078>` is a Pixoid/default coordinator call.
 - `crew:`, `get the crew`, and `calling the crew` are Pixoid/default text aliases.
 - `@Boba`, `@Quill`, and `@Tinker` are direct specialist calls.
-- If Pixoid needs visible crew discussion, it should create or reuse a topic-specific thread in `#agent-workbench` and return one final answer to the original thread.
+- If Pixoid needs visible crew discussion, it opens a bounded huddle tied to the triggering message/origin, waits for one short worker round or timeout, closes the huddle, and returns one final answer.
+- Closed huddle threads suppress ambient worker/bot chatter before model invocation; prompt-level silence is not the enforcement layer.
+- Discord reply pings are not direct summons unless the message text explicitly mentions the bot or an owned council role.
 - Re-adding the shared `Crew` role to all worker bots is not the default because it causes duplicate independent work in the user thread.
 
 ## Routing significance
@@ -2072,6 +2090,13 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-29 update | Discord council-mode hardening shipped
+
+- Updated compiled `agent-workflows` source pages after `pixiiidust/pixi-wiki` tracker #33–#41 closed for Discord council-mode hardening.
+- Captured the shipped coordinator-first contract: `@Crew`/crew aliases route to Pixoid, direct worker mentions stay specialist-only, bounded huddles close on all-replied-or-timeout, and Pixoid returns one final answer.
+- Added the live-loop lesson: prompt-level silence is insufficient; closed huddle worker/bot chatter must be suppressed at the adapter/gateway layer and reply pings must not reopen the loop without explicit textual mention/approved trigger.
+- This update is intended for public `pixi-wiki` rebuild/deploy.
 
 ## 2026-06-29 create/update | Multi-agent multiplayer boundaries
 
@@ -2292,10 +2317,10 @@ The model is about how work moves through the crew: route selection, source-of-t
 |---|---|---|
 | Coordinator | `@Crew`, `crew:`, `get the crew`, `calling the crew` | Pixoid handles the user-facing thread, creates/reuses a topic workbench thread when useful, gathers crew input, and posts one final answer. |
 | Specialist | `@Boba`, `@Quill`, `@Tinker` | Only the named profile replies directly. |
-| Workbench council | Pixoid-created topic thread in `#agent-workbench` | Worker profiles discuss a bounded prompt away from the user thread; Pixoid summarizes/decides. |
+| Workbench council / bounded huddle | Pixoid-created huddle tied to the triggering message/origin | Worker profiles respond once to a bounded prompt; Pixoid closes on all-replied-or-timeout and posts one final answer. |
 | Direct multiplayer | Shared role assigned to all bots | Not default. It caused duplicate independent investigations and should only be enabled intentionally for tests. |
 
-The live 2026-06-29 Discord milestone proved that role mentions and human mentions arrive in different Discord fields (`message.role_mentions` vs `message.mentions`). The adapter fix made role mentions count as calls, but the operating fix is still route governance: shared crew summons should not wake all peer profiles into the same user thread unless the desired mode is deliberately direct multiplayer.
+The live 2026-06-29 Discord milestone proved that role mentions and human mentions arrive in different Discord fields (`message.role_mentions` vs `message.mentions`) and that prompt-level worker silence fails under reply-ping/runtime-notice loops. The adapter fixes therefore enforce both summon parsing and closure state: shared crew summons should not wake all peer profiles into the same user thread, closed huddle worker chatter is dropped before model invocation, and reply pings do not reopen the loop without an explicit direct mention or approved reopen trigger.
 
 ## Cross-namespace links
 

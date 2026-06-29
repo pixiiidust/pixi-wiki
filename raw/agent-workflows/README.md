@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-29 — Discord crew routing clarified and expanded into a multiplayer boundary contract: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode; visible crew discussion should happen in topic-specific `#agent-workbench` threads before Pixoid returns one answer; direct multiplayer is explicit test-only mode.
+2026-06-29 — Discord council-mode hardening shipped: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode; bounded council huddles collect one worker round, close on all-replied-or-timeout, suppress post-close worker chatter at the gateway layer, and return one final Pixoid answer; direct multiplayer is explicit test-only mode.
 
 ## Canonical Source Roots
 

@@ -42,6 +42,17 @@ The core invariant:
 user message -> route classifier -> one visible owner -> optional workers -> verified artifact -> one final answer
 ```
 
+## Implemented council-mode hardening (2026-06-29)
+
+The 2026-06-29 Discord council-mode hardening slice turned the boundary model into live gateway behavior for Jamie's crew:
+
+- `@Crew` and crew text aliases route to Pixoid/default as coordinator; they do not wake every worker bot.
+- Direct `@Boba`, `@Quill`, and `@Tinker` remain specialist summons.
+- Pixoid can open a bounded huddle, collect one short worker round, close on all-replied-or-timeout, and post one final answer to the original thread.
+- Closed huddle route records are enforced in the adapter/gateway path: ambient worker/bot chatter after close is dropped before model invocation.
+- Discord reply pings do not count as direct summons unless the message text explicitly includes the bot mention or an owned council role mention.
+- Prompt-level silence is a useful belt, not the lock. The lock is router-level suppression plus replay coverage.
+
 ## Boundary conditions
 
 ### 1. Summoning and routing
@@ -49,6 +60,7 @@ user message -> route classifier -> one visible owner -> optional workers -> ver
 - `@Crew` must not blindly wake every bot; it should wake Pixoid as coordinator unless direct multiplayer is explicitly enabled.
 - Role mentions, user mentions, text aliases, quoted messages, edited messages, replies, thread names, and topic metadata need separate trigger handling.
 - Agent replies should not accidentally summon other agents unless the route contract permits that chain.
+- Discord reply metadata is not enough to prove a direct summon; direct calls should be based on explicit textual bot/role mentions or a route-owned trigger.
 - Webhook personas are outbound display identities only; they are not proof of an inbound, pingable agent route.
 - A crew request can mean opinions, delegation, workbench council, or live multiplayer; the route must classify which one before acting.
 
@@ -57,6 +69,7 @@ user message -> route classifier -> one visible owner -> optional workers -> ver
 - Without a single visible owner, agents duplicate answers, interrupt each other, debate endlessly, or bury the useful answer.
 - Each worker needs an explicit stop condition and return format.
 - The coordinator decides when enough input exists and closes the loop.
+- Closed route state must suppress post-close worker/bot chatter at the adapter or router layer; prompt-level silence is not sufficient.
 - Agent-to-agent discussion belongs in a workbench surface by default, not the main user thread.
 
 ### 3. Identity and accountability
@@ -142,6 +155,9 @@ A proper multiplayer agent system should have tests or replay traces for:
 - Direct multiplayer requires an explicit mode flag.
 - Parallel coding work uses separate branches/worktrees or an equivalent claim protocol.
 - Pixoid verifies artifacts before closure.
+- Closed huddle threads drop ambient worker/bot messages before model invocation.
+- Discord reply pings after a huddle closes do not reopen the loop unless there is an explicit direct mention or approved reopen trigger.
+- All-replied and timeout closure paths both produce one final owner answer, not worker chatter.
 
 ## Recommended default for Jamie's crew
 

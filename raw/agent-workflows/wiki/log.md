@@ -11,6 +11,13 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-06-29 update | Discord council-mode hardening shipped
+
+- Updated compiled `agent-workflows` source pages after `pixiiidust/pixi-wiki` tracker #33–#41 closed for Discord council-mode hardening.
+- Captured the shipped coordinator-first contract: `@Crew`/crew aliases route to Pixoid, direct worker mentions stay specialist-only, bounded huddles close on all-replied-or-timeout, and Pixoid returns one final answer.
+- Added the live-loop lesson: prompt-level silence is insufficient; closed huddle worker/bot chatter must be suppressed at the adapter/gateway layer and reply pings must not reopen the loop without explicit textual mention/approved trigger.
+- This update is intended for public `pixi-wiki` rebuild/deploy.
+
 ## 2026-06-29 create/update | Multi-agent multiplayer boundaries
 
 - Added compiled concept `wiki/concepts/multi-agent-multiplayer-boundaries.md` from the canonical Knowledge page and the Discord crew-edge-case analysis.

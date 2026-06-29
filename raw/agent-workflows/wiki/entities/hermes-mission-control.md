@@ -32,7 +32,7 @@ Its primary namespace is `agent-workflows` because the durable knowledge is not 
 - GitHub issue/PR coordination as durable work truth.
 - Obsidian/Git as knowledge and project truth.
 - Discord as notification surface, not durable truth.
-- Discord crew routing modes: `@Crew`/crew aliases call Pixoid as coordinator by default; direct worker mentions call individual profiles; workbench council threads carry visible crew discussion when useful.
+- Discord council-mode routing: `@Crew`/crew aliases call Pixoid as coordinator by default; direct worker mentions call individual profiles; bounded huddles collect one worker round, close deterministically, and suppress post-close worker chatter at the gateway layer.
 - Cron output as context, not canonical project state.
 - Verification gates before tracker closure.
 
@@ -43,14 +43,16 @@ Interaction Mode Routing clarifies that chat is the command channel, not the who
 
 The standard review surface includes status, evidence, risks, files/handles, verification run, options, and Pixoid's recommended next slice.
 
-## Discord crew routing milestone
+## Discord council-mode hardening milestone
 
-As of 2026-06-29, the stable Discord contract is coordinator-first:
+As of 2026-06-29, the stable Discord contract is coordinator-first and gateway-enforced:
 
 - `@Crew` / `<@&1521188694915158078>` is a Pixoid/default coordinator call.
 - `crew:`, `get the crew`, and `calling the crew` are Pixoid/default text aliases.
 - `@Boba`, `@Quill`, and `@Tinker` are direct specialist calls.
-- If Pixoid needs visible crew discussion, it should create or reuse a topic-specific thread in `#agent-workbench` and return one final answer to the original thread.
+- If Pixoid needs visible crew discussion, it opens a bounded huddle tied to the triggering message/origin, waits for one short worker round or timeout, closes the huddle, and returns one final answer.
+- Closed huddle threads suppress ambient worker/bot chatter before model invocation; prompt-level silence is not the enforcement layer.
+- Discord reply pings are not direct summons unless the message text explicitly mentions the bot or an owned council role.
 - Re-adding the shared `Crew` role to all worker bots is not the default because it causes duplicate independent work in the user thread.
 
 ## Routing significance
