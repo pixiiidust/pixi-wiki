@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-29 — Discord crew routing clarified: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode; visible crew discussion should happen in topic-specific `#agent-workbench` threads before Pixoid returns one answer.
+2026-06-29 — Discord crew routing clarified and expanded into a multiplayer boundary contract: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode; visible crew discussion should happen in topic-specific `#agent-workbench` threads before Pixoid returns one answer; direct multiplayer is explicit test-only mode.
 
 ## Canonical Source Roots
 
@@ -45,6 +45,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `Knowledge/concepts/multi-agent-multiplayer-boundaries.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/visual-plan-review-surfaces.md`
 - `Knowledge/concepts/matt-pocock-skills-best-practices.md`

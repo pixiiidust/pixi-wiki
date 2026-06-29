@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-06-27
+updated: 2026-06-29
 type: index
 status: compiled
 namespace: agent-workflows
@@ -27,6 +27,7 @@ namespace: agent-workflows
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
 - [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, router skills, and grill/PRD/issue/TDD gates.
 - [[concepts/matt-pocock-skills-best-practices|Matt Pocock Skills Best Practices]] — Source-backed best practices from `mattpocock/skills` for reducing agent misalignment through composable skills, grilling, shared language, feedback loops, and architecture discipline.
+- [[concepts/multi-agent-multiplayer-boundaries|Multi-Agent Multiplayer Boundaries]] — Coordinator/specialist/workbench/direct-multiplayer mode contract plus edge cases for triggers, turn-taking, identity, context, authority, concurrency, handoffs, verification, UX, safety, and eval traces.
 - [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.
 - [[concepts/ponytail-minimal-code-discipline|Ponytail Minimal Code Discipline]] — Minimal-code build/review guardrail that keeps implementation lean without weakening acceptance, safety, evidence, or verification gates.
 - [[concepts/profile-memory-boundaries|Profile Memory Boundaries]] — Where durable knowledge belongs across memory, knowledge, projects, and skills.
@@ -70,6 +71,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/visual-plan-review-surfaces.md`
+- `Knowledge/concepts/multi-agent-multiplayer-boundaries.md`
 
 - `Knowledge/concepts/agent-capability-route-pattern.md`
 - `Knowledge/concepts/hermes-soul-md-wiring.md`

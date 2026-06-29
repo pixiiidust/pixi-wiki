@@ -11,6 +11,13 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-06-29 create/update | Multi-agent multiplayer boundaries
+
+- Added compiled concept `wiki/concepts/multi-agent-multiplayer-boundaries.md` from the canonical Knowledge page and the Discord crew-edge-case analysis.
+- Captured the four-mode contract: coordinator mode, specialist mode, workbench council, and explicit direct multiplayer test mode.
+- Preserved edge cases for trigger parsing, turn-taking, identity proof, context/memory, authority, shared resources, handoffs, verification, UX, safety, and eval traces.
+- No public `pixi-wiki` deploy was pushed.
+
 ## 2026-06-29 update | Discord crew routing coordinator mode
 
 - Updated Hermes Mission Control and Pixoid Crew Operating Model with the settled Discord contract: `@Crew`/crew aliases wake Pixoid as coordinator, direct worker mentions wake individual profiles, and visible crew discussion belongs in topic-specific `#agent-workbench` threads.
