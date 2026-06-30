@@ -99,13 +99,13 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-06-29 \u2014 Discord council-mode hardening shipped: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode in approved channels/threads; worker profiles share Pixoid's room allowlist but require mentions and ignore top-level bot/status chatter; bounded council huddles collect one worker round, close on all-replied-or-timeout, suppress post-close worker chatter at the gateway layer, and return one final Pixoid answer; direct multiplayer is explicit test-only mode."
+        "currentAs": "2026-06-30 \u2014 Agent Tooling Plan added as the agent-as-tools planning playbook for mapping vague or clear requests into task buckets, tools, routing, memory, evaluation, permissions, and feedback loops. Previous current state: Discord council-mode hardening shipped: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode in approved channels/threads; worker profiles share Pixoid's room allowlist but require mentions and ignore top-level bot/status chatter; bounded council huddles collect one worker round, close on all-replied-or-timeout, suppress post-close worker chatter at the gateway layer, and return one final Pixoid answer; direct multiplayer is explicit test-only mode."
       },
-      "lastUpdated": "2026-06-29",
-      "documentCount": 26,
+      "lastUpdated": "2026-06-30",
+      "documentCount": 27,
       "counts": {
         "wiki": 1,
-        "concepts": 19,
+        "concepts": 20,
         "entities": 1,
         "summaries": 0,
         "syntheses": 2
@@ -149,6 +149,13 @@
           "path": "wiki/concepts/agent-skill-routing.md",
           "raw": "/raw/agent-workflows/wiki/concepts/agent-skill-routing.md",
           "html": "/wiki/agent-workflows/wiki/concepts/agent-skill-routing.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Agent Tooling Plan",
+          "path": "wiki/concepts/agent-tooling-plan.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/agent-tooling-plan.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/agent-tooling-plan.md.html",
           "category": "concepts"
         },
         {

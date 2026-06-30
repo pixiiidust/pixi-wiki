@@ -11,6 +11,12 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-06-30 create | Agent Tooling Plan
+
+- Added compiled concept `wiki/concepts/agent-tooling-plan.md` from Jamie's Agent-as-tools Product Playbook and the reusable Hermes skill.
+- Captured the vague-vs-clear request split: vague requests produce a scaffold plus `/grill-me` or `/grill-with-docs` questions; clear requests produce a full task-bucket/tool/routing/memory/evaluation/permissions/feedback-loop plan.
+- Updated namespace README and index source roots for public Pixi Wiki rebuild/deploy.
+
 ## 2026-06-29 update | Discord worker mention allowlist
 
 - Recorded that Boba/Quill/Tinker worker gateways share Pixoid's approved Discord room allowlist but remain bounded by direct mentions in top-level channels.

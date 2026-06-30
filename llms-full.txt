@@ -401,7 +401,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-29
+updated: 2026-06-30
 type: namespace-overview
 status: active
 category: agents
@@ -425,7 +425,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-29 — Discord council-mode hardening shipped: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode in approved channels/threads; worker profiles share Pixoid's room allowlist but require mentions and ignore top-level bot/status chatter; bounded council huddles collect one worker round, close on all-replied-or-timeout, suppress post-close worker chatter at the gateway layer, and return one final Pixoid answer; direct multiplayer is explicit test-only mode.
+2026-06-30 — Agent Tooling Plan added as the agent-as-tools planning playbook for mapping vague or clear requests into task buckets, tools, routing, memory, evaluation, permissions, and feedback loops. Previous current state: Discord council-mode hardening shipped: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode in approved channels/threads; worker profiles share Pixoid's room allowlist but require mentions and ignore top-level bot/status chatter; bounded council huddles collect one worker round, close on all-replied-or-timeout, suppress post-close worker chatter at the gateway layer, and return one final Pixoid answer; direct multiplayer is explicit test-only mode.
 
 ## Canonical Source Roots
 
@@ -439,6 +439,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/agent-tooling-plan.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
 - `Knowledge/concepts/hermes-capability-routing.md`
 - `Knowledge/concepts/high-agency-work-levels.md`
@@ -706,6 +707,95 @@ Related skill: `~/.hermes/skills/research/pixi-wiki-first-research/SKILL.md`.
 Creative support skill: `~/.hermes/skills/creative/creative-ideation/SKILL.md`.
 
 Visual review support skill: `~/.hermes/skills/visual-plan/SKILL.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/agent-tooling-plan.md ===== -->
+
+---
+title: Agent Tooling Plan
+created: 2026-06-30
+updated: 2026-06-30
+type: concept
+status: compiled
+namespace: agent-workflows
+source: Knowledge/concepts/agent-tooling-plan.md
+confidence: high
+---
+
+# Agent Tooling Plan
+
+An **Agent Tooling Plan** turns a problem into an agent-as-tools route: task buckets, tools, routing rules, memory, evaluation, permissions, and the feedback loop that lets an agent act safely.
+
+## Core premise
+
+An agent is not magic intelligence. It is an orchestration layer over bounded tools.
+
+The product work is:
+
+```text
+configure the right tools for the right task bucket, then give the agent reliable routing, memory, evaluation, and permissions
+```
+
+## Agent loop
+
+```text
+Goal → choose tool → run tool → observe result → interpret → choose next tool → repeat
+```
+
+## Tool buckets
+
+| Bucket | Purpose | Example tools |
+|---|---|---|
+| Perception | See the environment | Browser, files, APIs, sensors, logs |
+| Interpretation | Turn signals into meaning | LLM, classifier, parser, summarizer |
+| Memory | Apply interpreted past experience | Retrieval, compression, preference memory |
+| Planning | Decide possible next steps | Decomposer, simulator, option ranker |
+| Action | Change the environment | Email, code editor, deploy, browser click |
+| Evaluation | Judge result quality | Tests, metrics, scoring, human review |
+| Escalation | Hand off when uncertain | Approval gate, human decision, exception flow |
+
+## Design process
+
+1. Define the goal: what outcome should the agent optimize for?
+2. Map the environment: what does the agent need to see?
+3. Break the problem into task buckets: perceive, interpret, remember, plan, act, evaluate, escalate.
+4. Assign tools to each bucket: each tool needs a clear input, output, and boundary.
+5. Define routing rules: when should the agent use each tool?
+6. Add memory: interpreted experience that changes future action, not raw storage.
+7. Add evaluation: how does the agent know whether the action worked?
+8. Add permissions: what can it do alone, and what needs approval?
+9. Close the loop: observe the result and choose the next tool.
+
+## Planning outputs
+
+For a vague request, output a scaffold plus questions/gaps and route to `/grill-me` or `/grill-with-docs` instead of inventing a complete plan.
+
+For a clear request, output a full plan with:
+
+- goal;
+- environment;
+- bucket table;
+- routing rules;
+- memory contract;
+- evaluation contract;
+- permissions table;
+- feedback loop;
+- first implementation slice.
+
+## Boundaries
+
+- Tool assignment is incomplete without routing, memory, evaluation, permissions, and feedback.
+- Approval gates are part of the product surface, not an afterthought.
+- Memory should store interpreted experience, not raw logs.
+- Evaluation must be concrete enough to distinguish “agent says done” from “the loop worked.”
+
+## Source
+
+Canonical source: `Knowledge/concepts/agent-tooling-plan.md`.
+
+Reusable Hermes skill: `~/.hermes/skills/autonomous-ai-agents/agent-tooling-plan/SKILL.md`.
+
+Related pages: [[concepts/agent-skill-routing|Agent Skill Routing]], [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]], [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]], [[concepts/runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]], [[concepts/matt-pocock-skills-best-practices|Matt Pocock Skills Best Practices]].
 
 
 <!-- ===== agent-workflows/wiki/concepts/bounded-context-tree-pattern.md ===== -->
@@ -1998,7 +2088,7 @@ Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operati
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-06-29
+updated: 2026-06-30
 type: index
 status: compiled
 namespace: agent-workflows
@@ -2013,6 +2103,7 @@ namespace: agent-workflows
 - [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
+- [[concepts/agent-tooling-plan|Agent Tooling Plan]] — Agent-as-tools playbook for mapping vague or clear requests into task buckets, tools, routing rules, memory, evaluation, permissions, and feedback loops.
 - [[concepts/compound-engineering-skill-layer|Compound Engineering Skill Layer]] — Guide for using EveryInc Compound Engineering skills inside Hermes and routing them against Jamie's existing skill stack.
 - Cross-namespace concept: [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]] — Selects the smallest effective Hermes surface for a task before work becomes a skill, subagent, cron, gateway/API, MCP/plugin, profile, kanban, provider, or vault/Pixi Wiki route.
 - [[concepts/creative-ideation-routing|Creative Ideation Routing]] — Method-routed inspiration loop for using the `creative-ideation` skill without generic brainstorming.
@@ -2059,6 +2150,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/profile-memory-boundaries.md`
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
+- `Knowledge/concepts/agent-tooling-plan.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
 - `Knowledge/concepts/hermes-capability-routing.md`
 - `Knowledge/concepts/high-agency-work-levels.md`
@@ -2091,6 +2183,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-30 create | Agent Tooling Plan
+
+- Added compiled concept `wiki/concepts/agent-tooling-plan.md` from Jamie's Agent-as-tools Product Playbook and the reusable Hermes skill.
+- Captured the vague-vs-clear request split: vague requests produce a scaffold plus `/grill-me` or `/grill-with-docs` questions; clear requests produce a full task-bucket/tool/routing/memory/evaluation/permissions/feedback-loop plan.
+- Updated namespace README and index source roots for public Pixi Wiki rebuild/deploy.
 
 ## 2026-06-29 update | Discord worker mention allowlist
 
