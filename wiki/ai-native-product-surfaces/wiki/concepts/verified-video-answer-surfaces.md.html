@@ -22,10 +22,13 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/ai-native-product-surfaces/README.md.html">AI-Native Product Surfaces</a> / wiki/concepts/verified-video-answer-surfaces.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+ai-native-product-surfaces%2Fwiki%2Fconcepts%2Fverified-video-answer-surfaces.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fai-native-product-surfaces%2Fwiki%2Fconcepts%2Fverified-video-answer-surfaces.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>Verified Video Answer Surfaces</h1>
-<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-27</div><div><span>status</span>: compiled</div><div><span>namespace</span>: ai-native-product-surfaces</div><div><span>sources</span>: 3</div></div>
+<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-30</div><div><span>status</span>: compiled</div><div><span>namespace</span>: ai-native-product-surfaces</div><div><span>sources</span>: 3</div></div>
 <p>**Verified Video Answer Surfaces** turn video AI from a ranked search box into an evidence-backed answer workflow:</p>
 <pre><code>question -&gt; verified moments -&gt; evidence cards -&gt; clips/report -&gt; next action</code></pre>
 <p>The answer should show the moment, timestamp, confidence, evidence, and coverage boundary.</p>
+<h2>Shifu pivot note</h2>
+<p>Shifu&#x27;s current best framing is not “AI understands video.” It is a local video workbench that helps users find, verify, save, compare, and export moments with visible timestamps and evidence. AI is an assistant for transcript search, suggested tags, candidate expansion, and verifier notes only where it earns trust.</p>
+<p>For gameplay VODs, the primary surface may be workflow plus structured evidence: timeline marks, round tags, HUD/OCR state, killfeed/spike/phase metadata, manual corrections, collections, notes, and exports.</p>
 <h2>Surface contract</h2>
 <p>A useful verified-video answer includes:</p>
 <p>1. interpreted question;</p>
@@ -62,6 +65,8 @@ so they can [make a decision / create an artifact / coach / report / publish].</
 <li>Do not treat top-k ranking as a verified answer.</li>
 <li>Do not hide transcript/commentary dependence when target footage may be silent.</li>
 <li>Do not build real-time/multi-camera/alerting infrastructure before the verified answer loop works.</li>
+<li>Do not make AI the source of truth for precise gameplay state.</li>
+<li>Do not judge a Tonbi-style implementation before captions/transcripts/fusion/verifier are wired.</li>
 </ul>
 <h2>Related pages</h2>
 <ul>

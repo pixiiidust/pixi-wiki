@@ -1,7 +1,7 @@
 ---
 title: Verified Video Answer Surfaces
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-30
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -22,6 +22,12 @@ question -> verified moments -> evidence cards -> clips/report -> next action
 ```
 
 The answer should show the moment, timestamp, confidence, evidence, and coverage boundary.
+
+## Shifu pivot note
+
+Shifu's current best framing is not “AI understands video.” It is a local video workbench that helps users find, verify, save, compare, and export moments with visible timestamps and evidence. AI is an assistant for transcript search, suggested tags, candidate expansion, and verifier notes only where it earns trust.
+
+For gameplay VODs, the primary surface may be workflow plus structured evidence: timeline marks, round tags, HUD/OCR state, killfeed/spike/phase metadata, manual corrections, collections, notes, and exports.
 
 ## Surface contract
 
@@ -68,6 +74,8 @@ Measure precision of verified results, recall for "every X" claims, time saved v
 - Do not treat top-k ranking as a verified answer.
 - Do not hide transcript/commentary dependence when target footage may be silent.
 - Do not build real-time/multi-camera/alerting infrastructure before the verified answer loop works.
+- Do not make AI the source of truth for precise gameplay state.
+- Do not judge a Tonbi-style implementation before captions/transcripts/fusion/verifier are wired.
 
 ## Related pages
 

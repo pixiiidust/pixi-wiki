@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-27
+updated: 2026-06-30
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -10,6 +10,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-30 update | Shifu pivot/proof boundary
+
+- Updated `wiki/entities/shifu-app.md`, `wiki/concepts/video-retrieve-then-verify-loop.md`, and `wiki/concepts/verified-video-answer-surfaces.md` from the canonical project/Knowledge updates.
+- Captured the public-safe pivot posture: keep the local-first video workbench artifact, demote the old AI-core visual gameplay bet, and treat visual embeddings as low-trust recall until structured signals and verifier evidence prove value.
+- Recorded that Jamie's local `mini-vss` smoke likely has not exercised the full Tonbi loop yet; future proof should reproduce captions/transcripts/fusion/deeper pools/verifier before judging the implementation.
+- Updated namespace index; no Daily Notes were copied or compiled.
 
 ## 2026-06-29 update | Shifu implementation chain closed
 

@@ -1,7 +1,7 @@
 ---
 title: Video Retrieve-Then-Verify Loop
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-30
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -31,6 +31,12 @@ Tonbi's `mini-vss` shows the desk-scale version: segment one video, embed frames
 
 The product lesson: **video search quality is candidate recall plus evidence-bearing verification, not just vector ranking.**
 
+## Shifu / gameplay correction
+
+Jamie's private Valorant/CS smoke sharpened the boundary: OpenCLIP visual-only retrieval can work technically and still return wrong tactical moments. A fair Tonbi-style test needs segment captions, transcript search, fusion, deeper candidate pools, and verifier judgment.
+
+For precise gameplay, structured signals matter more than generic frame similarity: OCR/HUD, round phase, spike state, killfeed, economy, map location, utility usage, VOD metadata, before/after context, manual tags, and game APIs/demos where available.
+
 ## Design rules
 
 1. Segment is the product unit; frames are evidence inside a segment.
@@ -39,6 +45,7 @@ The product lesson: **video search quality is candidate recall plus evidence-bea
 4. A verifier should output match/no-match, confidence, evidence, and refined timestamp.
 5. "Find every X" is a recall claim and needs deeper candidate pools.
 6. A trustworthy no-result state can be better than noisy ranked guesses.
+7. For gameplay, structured state should outrank generic visual embeddings until evidence says otherwise.
 
 ## Query tiers
 

@@ -22,12 +22,12 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/ai-native-product-surfaces/README.md.html">AI-Native Product Surfaces</a> / wiki/entities/shifu-app.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/ai-native-product-surfaces/wiki/entities/shifu-app.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+ai-native-product-surfaces%2Fwiki%2Fentities%2Fshifu-app.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fai-native-product-surfaces%2Fwiki%2Fentities%2Fshifu-app.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>Shifu</h1>
-<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-29</div><div><span>status</span>: implementation-chain-complete</div><div><span>namespace</span>: ai-native-product-surfaces</div></div>
-<p>Shifu is a local-first searchable video knowledge prototype: private videos stay close to the user, while the app produces timestamped, evidence-backed answers and reusable clips.</p>
-<p>The current corpus direction uses Valorant/CS VOD-style material as an evaluation corpus, not as the full product identity.</p>
+<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-30</div><div><span>status</span>: pivot-thesis-under-review</div><div><span>namespace</span>: ai-native-product-surfaces</div></div>
+<p>Shifu is a local-first video knowledge/workbench prototype: private videos stay close to the user while the app helps users find, verify, save, compare, export, and reuse timestamped moments.</p>
+<p>The current corpus direction uses Valorant/CS VOD-style material as an evaluation corpus, not as the full product identity. The gameplay thesis is under review because generic visual embeddings are weak at precise tactical state.</p>
 <h2>Product frame</h2>
-<pre><code>source video -&gt; light indexing -&gt; local heavy worker -&gt; evidence-backed answer</code></pre>
-<p>Shifu should answer questions with candidate moments, keyframes, transcript/caption evidence when available, modality state, verifier decisions, and clear boundaries. It should not pretend a query was answered when evidence is missing.</p>
+<pre><code>source video -&gt; light indexing -&gt; local heavy worker -&gt; evidence/workflow surface</code></pre>
+<p>Shifu should expose candidate moments, keyframes, transcript/caption/structured evidence when available, modality state, verifier decisions, manual tags, and clear boundaries. It should not pretend a query was answered when evidence is missing; AI assists only where it earns trust.</p>
 <h2>Local-first architecture</h2>
 <p>The current architecture decision is:</p>
 <pre><code>VPS app/orchestrator
@@ -36,7 +36,7 @@
   -&gt; search/save/export surfaces
   -&gt; verifier manifests and reports
 
-Local NVIDIA GTX 1070 worker
+Local desktop GPU worker
   -&gt; heavy visual embeddings
   -&gt; transcription/caption artifacts when available
   -&gt; structured verifier verdicts
@@ -45,16 +45,19 @@ Local NVIDIA GTX 1070 worker
 <p>Short contract:</p>
 <blockquote>Local first. Cloud when useful. Evidence always.</blockquote>
 <h2>Current milestone state</h2>
-<p>The implementation chain through parent issue #3 is complete: PR #26 merged, issue #21 closed, and parent #3 closed after post-merge verification on <code>main</code>.</p>
-<p>The app can run on an actual local video today for upload/light-processing/search smoke. It includes browser/API upload, source registration, light segmentation/keyframes, search/save/export surfaces, local GTX 1070 worker status seam, verifier manifests, structured verdict import, deeper T3 verifier pools, verified-only T3 recall, baseline-vs-verified deltas, and negative/refusal reporting.</p>
+<p>The implementation chain through parent issue #3 is complete: PR #26 merged, issue #21 closed, parent #3 closed after post-merge verification on <code>main</code>, and PR #27 added the Windows/D: local-video guide.</p>
+<p>The app can run on an actual local video today for upload/light-processing/search smoke. It includes browser/API upload, source registration, light segmentation/keyframes, search/save/export surfaces, local worker status seam, verifier manifests, structured verdict import, deeper T3 verifier pools, verified-only T3 recall, baseline-vs-verified deltas, and negative/refusal reporting.</p>
+<p>The product thesis is now under review. Jamie&#x27;s private Valorant/CS <code>mini-vss</code> smoke showed the GTX 1070 CUDA/OpenCLIP path and LanceDB visual index can work technically, but manual inspection found the visual-only <code>post plant throw</code> hits wrong. Transcript/commentary looked more useful, and the full Tonbi loop still needs a clean reproduction with captions/transcripts/fusion/deeper pools/verifier before judging <code>mini-vss</code> itself.</p>
 <p>Post-merge verification on <code>main</code>: focused verifier/eval tests 18 passed; full suite 80 passed with one warning; compileall clean; <code>git diff --check</code> clean; fixture evaluator passed 5/5 while honestly reporting <code>Private VOD detection proof: no</code>, <code>Verified hits: 0</code>, and T3 verified recall <code>0.00</code> until structured verdicts are imported.</p>
 <h2>Boundaries</h2>
 <ul>
-<li>Jamie&#x27;s target local GPU is **NVIDIA GTX 1070**, not RTX 3060.</li>
+<li>Jamie&#x27;s previous local proof target was **NVIDIA GTX 1070**; next heavy experiments are expected after the repaired 5070 Ti desktop is available.</li>
 <li>Cloud GPU rental is deferred until the local-worker seam proves useful.</li>
 <li>Private media, generated frames, transcripts, embeddings, worker artifacts, verifier verdicts, and private reports should not be committed.</li>
 <li>Fixture reports are plumbing smoke only. Real private-VOD detection proof requires private media, private hand labels, non-placeholder modality artifacts, and structured verifier verdict imports.</li>
-<li>Shifu can run on an actual video today for upload/light-processing/search smoke; production-grade proof is the next frontier.</li>
+<li>Shifu can run on an actual video today for upload/light-processing/search smoke; production-grade proof is not established.</li>
+<li>Visual embeddings are low-trust recall for tactical gameplay until structured signals and verifier evidence support them.</li>
+<li>Do not judge Tonbi <code>mini-vss</code> from OpenCLIP visual-only output; its intended loop includes captions/transcripts, fused retrieval, candidate pools, and verification.</li>
 </ul>
 <h2>Source handles</h2>
 <ul>
@@ -63,6 +66,7 @@ Local NVIDIA GTX 1070 worker
 <li>Parent issue: https://github.com/pixiiidust/shifu-app/issues/3</li>
 <li>Final PR: https://github.com/pixiiidust/shifu-app/pull/26</li>
 <li>Final child issue: https://github.com/pixiiidust/shifu-app/issues/21</li>
+<li>Windows/D: guide PR: https://github.com/pixiiidust/shifu-app/pull/27</li>
 <li>Related concepts: Video Retrieve-Then-Verify Loop, Verified Video Answer Surfaces</li>
 </ul>
 

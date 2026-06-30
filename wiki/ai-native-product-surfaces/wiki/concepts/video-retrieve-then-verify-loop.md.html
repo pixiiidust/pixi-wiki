@@ -22,7 +22,7 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/ai-native-product-surfaces/README.md.html">AI-Native Product Surfaces</a> / wiki/concepts/video-retrieve-then-verify-loop.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+ai-native-product-surfaces%2Fwiki%2Fconcepts%2Fvideo-retrieve-then-verify-loop.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fai-native-product-surfaces%2Fwiki%2Fconcepts%2Fvideo-retrieve-then-verify-loop.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>Video Retrieve-Then-Verify Loop</h1>
-<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-27</div><div><span>status</span>: compiled</div><div><span>namespace</span>: ai-native-product-surfaces</div><div><span>sources</span>: 3</div></div>
+<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-30</div><div><span>status</span>: compiled</div><div><span>namespace</span>: ai-native-product-surfaces</div><div><span>sources</span>: 3</div></div>
 <p>The **Video Retrieve-Then-Verify Loop** is the reusable pattern for answering natural-language questions over video:</p>
 <pre><code>ingest video -&gt; segment -&gt; caption/transcribe/embed -&gt; retrieve candidates -&gt; verify with visual/audio evidence -&gt; return timestamped answer</code></pre>
 <p>Retrieval maximizes candidate recall. Verification filters false positives, cites evidence, sets confidence, and refines the answer.</p>
@@ -30,6 +30,9 @@
 <p>NVIDIA VSS shows the industrial version: video IO/storage, agent routing, model endpoints, search, summarization, alert verification, stream handling, and telemetry.</p>
 <p>Tonbi&#x27;s <code>mini-vss</code> shows the desk-scale version: segment one video, embed frames/captions/transcripts, fuse retrieval, then judge candidates with evidence. Its reported &quot;fast break&quot; test moved from 0.20 precision@5 on retrieval alone to 1.00 verified precision with 75% recall. The verifier also found a full-court press the human label pass had missed.</p>
 <p>The product lesson: **video search quality is candidate recall plus evidence-bearing verification, not just vector ranking.**</p>
+<h2>Shifu / gameplay correction</h2>
+<p>Jamie&#x27;s private Valorant/CS smoke sharpened the boundary: OpenCLIP visual-only retrieval can work technically and still return wrong tactical moments. A fair Tonbi-style test needs segment captions, transcript search, fusion, deeper candidate pools, and verifier judgment.</p>
+<p>For precise gameplay, structured signals matter more than generic frame similarity: OCR/HUD, round phase, spike state, killfeed, economy, map location, utility usage, VOD metadata, before/after context, manual tags, and game APIs/demos where available.</p>
 <h2>Design rules</h2>
 <p>1. Segment is the product unit; frames are evidence inside a segment.</p>
 <p>2. Visual, caption, transcript, object, and metadata signals propose candidates.</p>
@@ -37,6 +40,7 @@
 <p>4. A verifier should output match/no-match, confidence, evidence, and refined timestamp.</p>
 <p>5. &quot;Find every X&quot; is a recall claim and needs deeper candidate pools.</p>
 <p>6. A trustworthy no-result state can be better than noisy ranked guesses.</p>
+<p>7. For gameplay, structured state should outrank generic visual embeddings until evidence says otherwise.</p>
 <h2>Query tiers</h2>
 <p>| Tier | Example | Answer path |</p>
 <p>|---|---|---|</p>

@@ -4580,7 +4580,7 @@ Compiled from `Knowledge/concepts/material-loop-and-glass-interfaces.md`, inspir
 ---
 title: Verified Video Answer Surfaces
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-30
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -4601,6 +4601,12 @@ question -> verified moments -> evidence cards -> clips/report -> next action
 ```
 
 The answer should show the moment, timestamp, confidence, evidence, and coverage boundary.
+
+## Shifu pivot note
+
+Shifu's current best framing is not “AI understands video.” It is a local video workbench that helps users find, verify, save, compare, and export moments with visible timestamps and evidence. AI is an assistant for transcript search, suggested tags, candidate expansion, and verifier notes only where it earns trust.
+
+For gameplay VODs, the primary surface may be workflow plus structured evidence: timeline marks, round tags, HUD/OCR state, killfeed/spike/phase metadata, manual corrections, collections, notes, and exports.
 
 ## Surface contract
 
@@ -4647,6 +4653,8 @@ Measure precision of verified results, recall for "every X" claims, time saved v
 - Do not treat top-k ranking as a verified answer.
 - Do not hide transcript/commentary dependence when target footage may be silent.
 - Do not build real-time/multi-camera/alerting infrastructure before the verified answer loop works.
+- Do not make AI the source of truth for precise gameplay state.
+- Do not judge a Tonbi-style implementation before captions/transcripts/fusion/verifier are wired.
 
 ## Related pages
 
@@ -4666,7 +4674,7 @@ Compiled from `Knowledge/concepts/verified-video-answer-surfaces.md` and adjacen
 ---
 title: Video Retrieve-Then-Verify Loop
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-06-30
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -4696,6 +4704,12 @@ Tonbi's `mini-vss` shows the desk-scale version: segment one video, embed frames
 
 The product lesson: **video search quality is candidate recall plus evidence-bearing verification, not just vector ranking.**
 
+## Shifu / gameplay correction
+
+Jamie's private Valorant/CS smoke sharpened the boundary: OpenCLIP visual-only retrieval can work technically and still return wrong tactical moments. A fair Tonbi-style test needs segment captions, transcript search, fusion, deeper candidate pools, and verifier judgment.
+
+For precise gameplay, structured signals matter more than generic frame similarity: OCR/HUD, round phase, spike state, killfeed, economy, map location, utility usage, VOD metadata, before/after context, manual tags, and game APIs/demos where available.
+
 ## Design rules
 
 1. Segment is the product unit; frames are evidence inside a segment.
@@ -4704,6 +4718,7 @@ The product lesson: **video search quality is candidate recall plus evidence-bea
 4. A verifier should output match/no-match, confidence, evidence, and refined timestamp.
 5. "Find every X" is a recall claim and needs deeper candidate pools.
 6. A trustworthy no-result state can be better than noisy ranked guesses.
+7. For gameplay, structured state should outrank generic visual embeddings until evidence says otherwise.
 
 ## Query tiers
 
@@ -5103,26 +5118,26 @@ Compiled from `Projects/Planned Program Intel/Index.md` with supporting historic
 ---
 title: Shifu
 created: 2026-06-27
-updated: 2026-06-29
+updated: 2026-06-30
 type: entity
-status: implementation-chain-complete
+status: pivot-thesis-under-review
 namespace: ai-native-product-surfaces
 source: Projects/Shifu/Index.md
 confidence: high
 ---
 # Shifu
 
-Shifu is a local-first searchable video knowledge prototype: private videos stay close to the user, while the app produces timestamped, evidence-backed answers and reusable clips.
+Shifu is a local-first video knowledge/workbench prototype: private videos stay close to the user while the app helps users find, verify, save, compare, export, and reuse timestamped moments.
 
-The current corpus direction uses Valorant/CS VOD-style material as an evaluation corpus, not as the full product identity.
+The current corpus direction uses Valorant/CS VOD-style material as an evaluation corpus, not as the full product identity. The gameplay thesis is under review because generic visual embeddings are weak at precise tactical state.
 
 ## Product frame
 
 ```text
-source video -> light indexing -> local heavy worker -> evidence-backed answer
+source video -> light indexing -> local heavy worker -> evidence/workflow surface
 ```
 
-Shifu should answer questions with candidate moments, keyframes, transcript/caption evidence when available, modality state, verifier decisions, and clear boundaries. It should not pretend a query was answered when evidence is missing.
+Shifu should expose candidate moments, keyframes, transcript/caption/structured evidence when available, modality state, verifier decisions, manual tags, and clear boundaries. It should not pretend a query was answered when evidence is missing; AI assists only where it earns trust.
 
 ## Local-first architecture
 
@@ -5135,7 +5150,7 @@ VPS app/orchestrator
   -> search/save/export surfaces
   -> verifier manifests and reports
 
-Local NVIDIA GTX 1070 worker
+Local desktop GPU worker
   -> heavy visual embeddings
   -> transcription/caption artifacts when available
   -> structured verifier verdicts
@@ -5150,19 +5165,23 @@ Short contract:
 
 ## Current milestone state
 
-The implementation chain through parent issue #3 is complete: PR #26 merged, issue #21 closed, and parent #3 closed after post-merge verification on `main`.
+The implementation chain through parent issue #3 is complete: PR #26 merged, issue #21 closed, parent #3 closed after post-merge verification on `main`, and PR #27 added the Windows/D: local-video guide.
 
-The app can run on an actual local video today for upload/light-processing/search smoke. It includes browser/API upload, source registration, light segmentation/keyframes, search/save/export surfaces, local GTX 1070 worker status seam, verifier manifests, structured verdict import, deeper T3 verifier pools, verified-only T3 recall, baseline-vs-verified deltas, and negative/refusal reporting.
+The app can run on an actual local video today for upload/light-processing/search smoke. It includes browser/API upload, source registration, light segmentation/keyframes, search/save/export surfaces, local worker status seam, verifier manifests, structured verdict import, deeper T3 verifier pools, verified-only T3 recall, baseline-vs-verified deltas, and negative/refusal reporting.
+
+The product thesis is now under review. Jamie's private Valorant/CS `mini-vss` smoke showed the GTX 1070 CUDA/OpenCLIP path and LanceDB visual index can work technically, but manual inspection found the visual-only `post plant throw` hits wrong. Transcript/commentary looked more useful, and the full Tonbi loop still needs a clean reproduction with captions/transcripts/fusion/deeper pools/verifier before judging `mini-vss` itself.
 
 Post-merge verification on `main`: focused verifier/eval tests 18 passed; full suite 80 passed with one warning; compileall clean; `git diff --check` clean; fixture evaluator passed 5/5 while honestly reporting `Private VOD detection proof: no`, `Verified hits: 0`, and T3 verified recall `0.00` until structured verdicts are imported.
 
 ## Boundaries
 
-- Jamie's target local GPU is **NVIDIA GTX 1070**, not RTX 3060.
+- Jamie's previous local proof target was **NVIDIA GTX 1070**; next heavy experiments are expected after the repaired 5070 Ti desktop is available.
 - Cloud GPU rental is deferred until the local-worker seam proves useful.
 - Private media, generated frames, transcripts, embeddings, worker artifacts, verifier verdicts, and private reports should not be committed.
 - Fixture reports are plumbing smoke only. Real private-VOD detection proof requires private media, private hand labels, non-placeholder modality artifacts, and structured verifier verdict imports.
-- Shifu can run on an actual video today for upload/light-processing/search smoke; production-grade proof is the next frontier.
+- Shifu can run on an actual video today for upload/light-processing/search smoke; production-grade proof is not established.
+- Visual embeddings are low-trust recall for tactical gameplay until structured signals and verifier evidence support them.
+- Do not judge Tonbi `mini-vss` from OpenCLIP visual-only output; its intended loop includes captions/transcripts, fused retrieval, candidate pools, and verification.
 
 ## Source handles
 
@@ -5171,6 +5190,7 @@ Post-merge verification on `main`: focused verifier/eval tests 18 passed; full s
 - Parent issue: https://github.com/pixiiidust/shifu-app/issues/3
 - Final PR: https://github.com/pixiiidust/shifu-app/pull/26
 - Final child issue: https://github.com/pixiiidust/shifu-app/issues/21
+- Windows/D: guide PR: https://github.com/pixiiidust/shifu-app/pull/27
 - Related concepts: [[../concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]], [[../concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]]
 
 
@@ -5179,7 +5199,7 @@ Post-merge verification on `main`: focused verifier/eval tests 18 passed; full s
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-06-27
+updated: 2026-06-30
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -5197,15 +5217,15 @@ namespace: ai-native-product-surfaces
 - [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
-- [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped visual/audio evidence.
-- [[concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]] — Product-surface pattern for video apps that answer natural-language questions with clips, confidence, evidence, and recall boundaries.
+- [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped evidence; for gameplay, visual-only is low-trust and structured signals matter.
+- [[concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]] — Product-surface pattern for video apps/workbenches that return clips, confidence, evidence, and recall boundaries with AI as assistant, not source of truth.
 - [[concepts/world-model-control-surfaces|World Model Control Surfaces]] — Grounded-AI control/review lens for exposing state, actions, predictions, objectives, guardrails, evidence, and the recommended next safe step.
 
 ## Entities
 
 - [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook wiki serving project for growing a user's knowledge base with bounded, agent-readable wikis.
 - [[entities/job-edge|Job Edge]] — Active job-search edge dashboard prototype using freshness, geography, fit, and LinkedIn-crowding signals to prioritize applications.
-- [[entities/shifu-app|Shifu]] — Local-first searchable video knowledge prototype with implementation chain complete; next frontier is private GTX 1070 proof with labels, artifacts, and structured verifier verdicts.
+- [[entities/shifu-app|Shifu]] — Local-first video workbench/proof question with implementation chain complete; visual gameplay thesis under review after visual-only misses, next heavy tests wait for the repaired 5070 Ti desktop.
 - [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
 - [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
 
@@ -5244,7 +5264,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-27
+updated: 2026-06-30
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -5253,6 +5273,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-30 update | Shifu pivot/proof boundary
+
+- Updated `wiki/entities/shifu-app.md`, `wiki/concepts/video-retrieve-then-verify-loop.md`, and `wiki/concepts/verified-video-answer-surfaces.md` from the canonical project/Knowledge updates.
+- Captured the public-safe pivot posture: keep the local-first video workbench artifact, demote the old AI-core visual gameplay bet, and treat visual embeddings as low-trust recall until structured signals and verifier evidence prove value.
+- Recorded that Jamie's local `mini-vss` smoke likely has not exercised the full Tonbi loop yet; future proof should reproduce captions/transcripts/fusion/deeper pools/verifier before judging the implementation.
+- Updated namespace index; no Daily Notes were copied or compiled.
 
 ## 2026-06-29 update | Shifu implementation chain closed
 
