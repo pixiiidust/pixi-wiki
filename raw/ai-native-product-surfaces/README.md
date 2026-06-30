@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-06-27
+updated: 2026-06-30
 type: namespace-overview
 status: scaffold
 category: product
@@ -27,7 +27,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-27 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a job-search edge/dashboard prototype, and Shifu as a local-first searchable video knowledge prototype.
+2026-06-30 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype with scheduled Ashby refresh, and Shifu as a local-first searchable video knowledge prototype.
 
 ## Canonical Source Roots
 

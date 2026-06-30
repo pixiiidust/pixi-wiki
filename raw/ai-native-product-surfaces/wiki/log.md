@@ -11,6 +11,13 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-06-30 update | Job Edge public dashboard and Ashby auto-refresh
+
+- Updated `wiki/entities/job-edge.md` from the canonical `Projects/Job Edge/Index.md` hub after PR #10 merged on `pixiiidust/job-edge`.
+- Captured the live-public milestone: GitHub Pages dashboard, scheduled/manual GitHub Action refresh, successful workflow run, built Pages status, 150-job live snapshot, and no-browser-Python boundary.
+- Preserved the discovery boundary: current automation refreshes known Ashby company boards from `data/discovered_slugs.txt`; automated discovery of brand-new Ashby slugs and new/removed/changed diffs remain future slices.
+- Updated namespace README and index; no Daily Notes were copied or compiled.
+
 ## 2026-06-30 update | Shifu pivot/proof boundary
 
 - Updated `wiki/entities/shifu-app.md`, `wiki/concepts/video-retrieve-then-verify-loop.md`, and `wiki/concepts/verified-video-answer-surfaces.md` from the canonical project/Knowledge updates.

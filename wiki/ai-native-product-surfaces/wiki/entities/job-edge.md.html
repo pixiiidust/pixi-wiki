@@ -22,26 +22,36 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/ai-native-product-surfaces/README.md.html">AI-Native Product Surfaces</a> / wiki/entities/job-edge.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/ai-native-product-surfaces/wiki/entities/job-edge.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+ai-native-product-surfaces%2Fwiki%2Fentities%2Fjob-edge.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fai-native-product-surfaces%2Fwiki%2Fentities%2Fjob-edge.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>Job Edge</h1>
-<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-27</div><div><span>status</span>: active-prototype</div><div><span>namespace</span>: ai-native-product-surfaces</div></div>
-<p>Job Edge is a prototype for finding **edge in crowded job searches**: freshness, geography, fit, and distribution signals that make a role more worth applying to now.</p>
+<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-30</div><div><span>status</span>: live-public-prototype</div><div><span>namespace</span>: ai-native-product-surfaces</div></div>
+<p>Job Edge is a live public prototype for finding **edge in crowded job searches**: freshness, geography, fit, and distribution signals that make a role more worth applying to now.</p>
 <p>The first use case is **Ashby PM Radar**, a PM/product-role radar that turns public Ashby job-board data into an apply-action queue.</p>
 <h2>Thesis</h2>
 <p>Most job-search tools optimize for more listings. Job Edge optimizes for better timing and lower competition.</p>
 <p>Core question:</p>
 <blockquote>Which roles are worth applying to today because timing, fit, and crowding signals create an edge?</blockquote>
 <h2>Current prototype</h2>
-<p>The private <code>pixiiidust/job-edge</code> repo contains:</p>
-<pre><code>job_edge/ashby_pm_radar.py      # Ashby use-case CLI/scorer
-dashboard.html                  # static interactive dashboard prototype
-data/                           # saved discovery + scoring artifacts
-docs/                           # product/design notes
-tests/                          # unit tests</code></pre>
+<p>The public dashboard is live at:</p>
+<pre><code>https://pixiiidust.github.io/job-edge/</code></pre>
+<p>The public <code>pixiiidust/job-edge</code> repo contains:</p>
+<pre><code>job_edge/ashby_pm_radar.py                # Ashby use-case CLI/scorer
+scripts/refresh_ashby_pm_radar.py         # refresh wrapper for local/GitHub Actions use
+.github/workflows/refresh-ashby-pm-radar.yml
+dashboard.html                            # static interactive dashboard
+data/                                     # saved discovery, scoring, dashboard, provenance artifacts
+docs/                                     # product/PRD notes
+tests/                                    # unit tests</code></pre>
 <p><code>ashby-pm-radar</code> is the first use case, not the full product boundary.</p>
 <h2>Ashby PM Radar flow</h2>
-<pre><code>web search → extract Ashby company slugs → fetch public boards → score jobs → dashboard triage</code></pre>
+<p>Current automatic flow:</p>
+<pre><code>saved Ashby company slugs → fetch public boards → score jobs → commit static JSON → publish GitHub Pages</code></pre>
 <p>Ashby exposes company-scoped public boards, not a global search endpoint:</p>
 <pre><code>https://api.ashbyhq.com/posting-api/job-board/{companySlug}?includeCompensation=true</code></pre>
-<p>Printing Press was inspected but not used for the prototype. Direct Python was enough for the simple endpoint; the product value is the strategy layer on top.</p>
+<p>GitHub Actions now runs the refresh every 6 hours and on manual workflow dispatch. The browser does not run Python; the dashboard only re-fetches the latest published static JSON.</p>
+<h2>Discovery boundary</h2>
+<p>Job Edge currently refreshes **known Ashby boards** from <code>data/discovered_slugs.txt</code>. It does **not yet automatically search the public web for brand-new Ashby companies**.</p>
+<p>This means a future run can still show <code>150</code> jobs and be healthy. The success signal is a fresh generated timestamp plus current board data, not a changed count.</p>
+<p>Next discovery layer:</p>
+<pre><code>automated search queries → extract jobs.ashbyhq.com/{slug} → update slug list with provenance → refresh boards</code></pre>
 <h2>Edge signals</h2>
 <p>The current scorer combines:</p>
 <ul>
@@ -74,21 +84,25 @@ stale_90d_plus</code></pre>
 <li>Search by title, company, and location.</li>
 <li>Filters for triage, freshness, and LinkedIn presence.</li>
 <li>Sorting by best triage, freshness, low crowd risk, Canada/Toronto fit, role fit, or score.</li>
+<li>Manual <code>Run Ashby refresh</code> link to the GitHub Actions workflow.</li>
+<li><code>Reload latest published data</code> button for re-fetching the current static snapshot.</li>
 </ul>
 <p>Primary workflow:</p>
 <pre><code>1. Apply now — fresh/local roles with no LinkedIn evidence.
 2. Apply fast — strong roles already visible on LinkedIn.
 3. Review maybes — backup queue after the top targets.</code></pre>
 <h2>Verification snapshot</h2>
-<p>The initial repository push verified:</p>
+<p>2026-06-30 auto-refresh milestone verified:</p>
 <ul>
-<li>9 Python unit tests passed.</li>
-<li>CLI package smoke returned current apply-now rows.</li>
-<li>Dashboard served locally with HTTP 200.</li>
-<li>Browser rendered the dashboard, filters/sorts worked, Apply links pointed at real Ashby application URLs, and the console had no JavaScript errors.</li>
+<li>PR #10 merged on <code>pixiiidust/job-edge</code>.</li>
+<li>GitHub Action run succeeded.</li>
+<li>Pages status returned <code>built</code>.</li>
+<li>Live dashboard rendered 150 jobs from the auto-refreshed JSON snapshot.</li>
+<li>Latest verified generated timestamp: <code>2026-06-30T22:08:53.138975+00:00</code>.</li>
+<li>Browser smoke confirmed the refresh link, reload button, job rows, and no JavaScript console errors.</li>
 </ul>
 <h2>Next slice</h2>
-<p>Add a refresh pipeline or real search API so discovery and LinkedIn evidence can update without manual Hermes web search. Then add row expansion for reasons/cautions, saved notes, and repost/stale-role detection.</p>
+<p>Add automated discovery for new Ashby company slugs and a “new / removed / changed since last refresh” diff layer so users can distinguish a healthy refresh from a stable job count.</p>
 
 <nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html"><span class="next-label">← Prev</span><span class="next-title">I-know-kungfu</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html"><span class="next-label">Next</span><span class="next-title">myAbode →</span></a></nav>
 </article></main>
