@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-29
+updated: 2026-06-30
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,11 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-06-30 update | Agent Tooling Plan skill v1.0.1
+
+- Mirrored the tightened `agent-tooling-plan` skill into compiled namespace source.
+- Added live-state-first planning, max-five grill questions, adjacent skill routing, a concrete email-triage mini-example, and the smallest proving loop guardrail.
 
 ## 2026-06-30 create | Agent Tooling Plan
 

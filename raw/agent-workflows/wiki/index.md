@@ -16,7 +16,7 @@ namespace: agent-workflows
 - [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
-- [[concepts/agent-tooling-plan|Agent Tooling Plan]] — Agent-as-tools playbook for mapping vague or clear requests into task buckets, tools, routing rules, memory, evaluation, permissions, and feedback loops.
+- [[concepts/agent-tooling-plan|Agent Tooling Plan]] — Agent-as-tools playbook for mapping vague or clear requests into live-state checks, task buckets, tools, routing rules, memory, evaluation, permissions, and smallest proving loops.
 - [[concepts/compound-engineering-skill-layer|Compound Engineering Skill Layer]] — Guide for using EveryInc Compound Engineering skills inside Hermes and routing them against Jamie's existing skill stack.
 - Cross-namespace concept: [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]] — Selects the smallest effective Hermes surface for a task before work becomes a skill, subagent, cron, gateway/API, MCP/plugin, profile, kanban, provider, or vault/Pixi Wiki route.
 - [[concepts/creative-ideation-routing|Creative Ideation Routing]] — Method-routed inspiration loop for using the `creative-ideation` skill without generic brainstorming.
