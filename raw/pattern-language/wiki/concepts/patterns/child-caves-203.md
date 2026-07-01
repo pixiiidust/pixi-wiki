@@ -1,0 +1,42 @@
+---
+title: "Child Caves (203)"
+created: 2026-07-01
+updated: 2026-07-01
+type: concept
+status: compiled
+namespace: pattern-language
+pattern_number: 203
+pattern_name: "Child Caves"
+source_repository: https://github.com/zenodotus280/apl-md
+source_url: https://github.com/zenodotus280/apl-md/blob/master/Patterns/Child%20Caves%20%28203%29.md
+license_note: Non-commercial reuse with attribution; see namespace README and source LICENSE.md.
+related_patterns:
+  - "Adventure Playground (73)"
+  - "Children's Home (86)"
+  - "Children's Realm (137)"
+  - "Thick Walls (197)"
+  - "Thickening the Outer Walls (211)"
+  - "Low Doorway (224)"
+---
+
+# Child Caves (203)
+
+> Source pattern from the abridged `apl-md` corpus. Use as a design reference and constraint seed; do not treat as commercial-clean training data.
+
+### Problem
+>Children love to be in tiny, cave-like places.
+
+### Solution
+>Wherever children play, around the house, in the neighborhood, in schools, make small “caves” for them. Tuck these caves away in natural leftover spaces, under stairs, under kitchen counters. Keep the ceiling heights low—2 feet 6 inches to 4 feet—and the entrance tiny.
+
+### Related Patterns
+... the places specially devoted to children's play - [[Adventure Playground (73)]], [[Children's Home (86)]], [[Children's Realm (137)]] - and [[Thick Walls (197)]] - can be embellished with a special detail.
+
+Build the caves right into the fabric of the walls - [[Thickening the Outer Walls (211)]]. Make the doors very tiny to match the caves - an extreme version of [[Low Doorway (224)]] ...
+
+---
+
+> [!cite]- Alexander, Christopher. _A Pattern Language: Towns, Buildings, Construction_. Oxford University Press, 1977, p. 927.
+> #APL/confidence/low
+>
+> #APL/Building-Patterns/Thick-Walls

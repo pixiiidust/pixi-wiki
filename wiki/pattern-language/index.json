@@ -1,0 +1,1835 @@
+{
+  "slug": "pattern-language",
+  "title": "Pattern Language",
+  "description": "The `pattern-language` namespace covers the abridged, hyper-textual pattern corpus from `apl-md`: 253 built-environment patterns, their Problem/Solution framing, related-pattern graph, provenance, license guardrails, and agent-facing retrieval guidance for spatial design and worldbuilding.",
+  "documentCount": 260,
+  "counts": {
+    "wiki": 1,
+    "concepts": 254,
+    "entities": 0,
+    "summaries": 1,
+    "syntheses": 1
+  },
+  "documents": [
+    {
+      "title": "Pattern Language Namespace Instructions",
+      "path": "CLAUDE.md",
+      "raw": "/raw/pattern-language/CLAUDE.md",
+      "html": "/wiki/pattern-language/CLAUDE.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Pattern Language",
+      "path": "README.md",
+      "raw": "/raw/pattern-language/README.md",
+      "html": "/wiki/pattern-language/README.md.html",
+      "category": "other"
+    },
+    {
+      "title": "A Place to Wait (150)",
+      "path": "wiki/concepts/patterns/a-place-to-wait-150.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/a-place-to-wait-150.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/a-place-to-wait-150.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "A Room of One's Own (141)",
+      "path": "wiki/concepts/patterns/a-room-of-ones-own-141.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/a-room-of-ones-own-141.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/a-room-of-ones-own-141.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Access to Water (25)",
+      "path": "wiki/concepts/patterns/access-to-water-25.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/access-to-water-25.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/access-to-water-25.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Accessible Green (60)",
+      "path": "wiki/concepts/patterns/accessible-green-60.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/accessible-green-60.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/accessible-green-60.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Activity Nodes (30)",
+      "path": "wiki/concepts/patterns/activity-nodes-30.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/activity-nodes-30.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/activity-nodes-30.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Activity Pockets (124)",
+      "path": "wiki/concepts/patterns/activity-pockets-124.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/activity-pockets-124.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/activity-pockets-124.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Adventure Playground (73)",
+      "path": "wiki/concepts/patterns/adventure-playground-73.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/adventure-playground-73.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/adventure-playground-73.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Agricultural Valleys (4)",
+      "path": "wiki/concepts/patterns/agricultural-valleys-4.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/agricultural-valleys-4.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/agricultural-valleys-4.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Alcoves (179)",
+      "path": "wiki/concepts/patterns/alcoves-179.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/alcoves-179.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/alcoves-179.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Animals (74)",
+      "path": "wiki/concepts/patterns/animals-74.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/animals-74.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/animals-74.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Arcades (119)",
+      "path": "wiki/concepts/patterns/arcades-119.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/arcades-119.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/arcades-119.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Bathing Room (144)",
+      "path": "wiki/concepts/patterns/bathing-room-144.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/bathing-room-144.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/bathing-room-144.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Bed Alcove (188)",
+      "path": "wiki/concepts/patterns/bed-alcove-188.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/bed-alcove-188.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/bed-alcove-188.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Bed Cluster (143)",
+      "path": "wiki/concepts/patterns/bed-cluster-143.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/bed-cluster-143.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/bed-cluster-143.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Beer Hall (90)",
+      "path": "wiki/concepts/patterns/beer-hall-90.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/beer-hall-90.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/beer-hall-90.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Bike Paths and Racks (56)",
+      "path": "wiki/concepts/patterns/bike-paths-and-racks-56.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/bike-paths-and-racks-56.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/bike-paths-and-racks-56.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Birth Places (65)",
+      "path": "wiki/concepts/patterns/birth-places-65.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/birth-places-65.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/birth-places-65.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Box Columns (216)",
+      "path": "wiki/concepts/patterns/box-columns-216.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/box-columns-216.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/box-columns-216.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Building Complex (95)",
+      "path": "wiki/concepts/patterns/building-complex-95.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/building-complex-95.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/building-complex-95.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Building Edge (160)",
+      "path": "wiki/concepts/patterns/building-edge-160.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/building-edge-160.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/building-edge-160.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Building Fronts (122)",
+      "path": "wiki/concepts/patterns/building-fronts-122.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/building-fronts-122.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/building-fronts-122.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Building Thoroughfare (101)",
+      "path": "wiki/concepts/patterns/building-thoroughfare-101.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/building-thoroughfare-101.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/building-thoroughfare-101.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Built-in Seats (202)",
+      "path": "wiki/concepts/patterns/built-in-seats-202.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/built-in-seats-202.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/built-in-seats-202.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Bulk Storage (145)",
+      "path": "wiki/concepts/patterns/bulk-storage-145.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/bulk-storage-145.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/bulk-storage-145.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Bus Stop (92)",
+      "path": "wiki/concepts/patterns/bus-stop-92.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/bus-stop-92.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/bus-stop-92.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Canvas Roofs (244)",
+      "path": "wiki/concepts/patterns/canvas-roofs-244.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/canvas-roofs-244.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/canvas-roofs-244.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Car Connection (113)",
+      "path": "wiki/concepts/patterns/car-connection-113.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/car-connection-113.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/car-connection-113.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Carnival (58)",
+      "path": "wiki/concepts/patterns/carnival-58.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/carnival-58.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/carnival-58.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Cascade of Roofs (116)",
+      "path": "wiki/concepts/patterns/cascade-of-roofs-116.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/cascade-of-roofs-116.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/cascade-of-roofs-116.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Ceiling Height Variety (190)",
+      "path": "wiki/concepts/patterns/ceiling-height-variety-190.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/ceiling-height-variety-190.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/ceiling-height-variety-190.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Child Caves (203)",
+      "path": "wiki/concepts/patterns/child-caves-203.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/child-caves-203.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/child-caves-203.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Children in the City (57)",
+      "path": "wiki/concepts/patterns/children-in-the-city-57.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/children-in-the-city-57.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/children-in-the-city-57.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Children's Home (86)",
+      "path": "wiki/concepts/patterns/childrens-home-86.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/childrens-home-86.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/childrens-home-86.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Children's Realm (137)",
+      "path": "wiki/concepts/patterns/childrens-realm-137.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/childrens-realm-137.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/childrens-realm-137.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Circulation Realms (98)",
+      "path": "wiki/concepts/patterns/circulation-realms-98.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/circulation-realms-98.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/circulation-realms-98.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "City Country Fingers (3)",
+      "path": "wiki/concepts/patterns/city-country-fingers-3.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/city-country-fingers-3.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/city-country-fingers-3.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Climbing Plants (246)",
+      "path": "wiki/concepts/patterns/climbing-plants-246.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/climbing-plants-246.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/climbing-plants-246.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Closets Between Rooms (198)",
+      "path": "wiki/concepts/patterns/closets-between-rooms-198.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/closets-between-rooms-198.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/closets-between-rooms-198.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Column Connections (227)",
+      "path": "wiki/concepts/patterns/column-connections-227.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/column-connections-227.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/column-connections-227.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Column Place (226)",
+      "path": "wiki/concepts/patterns/column-place-226.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/column-place-226.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/column-place-226.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Columns at the Corners (212)",
+      "path": "wiki/concepts/patterns/columns-at-the-corners-212.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/columns-at-the-corners-212.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/columns-at-the-corners-212.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Common Areas at the Heart (129)",
+      "path": "wiki/concepts/patterns/common-areas-at-the-heart-129.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/common-areas-at-the-heart-129.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/common-areas-at-the-heart-129.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Common Land (67)",
+      "path": "wiki/concepts/patterns/common-land-67.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/common-land-67.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/common-land-67.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Communal Eating (147)",
+      "path": "wiki/concepts/patterns/communal-eating-147.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/communal-eating-147.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/communal-eating-147.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Communal Sleeping (186)",
+      "path": "wiki/concepts/patterns/communal-sleeping-186.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/communal-sleeping-186.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/communal-sleeping-186.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Community of 7000 (12)",
+      "path": "wiki/concepts/patterns/community-of-7000-12.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/community-of-7000-12.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/community-of-7000-12.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Compost (178)",
+      "path": "wiki/concepts/patterns/compost-178.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/compost-178.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/compost-178.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Connected Buildings (108)",
+      "path": "wiki/concepts/patterns/connected-buildings-108.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/connected-buildings-108.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/connected-buildings-108.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Connected Play (68)",
+      "path": "wiki/concepts/patterns/connected-play-68.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/connected-play-68.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/connected-play-68.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Connection to the Earth (168)",
+      "path": "wiki/concepts/patterns/connection-to-the-earth-168.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/connection-to-the-earth-168.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/connection-to-the-earth-168.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Cooking Layout (184)",
+      "path": "wiki/concepts/patterns/cooking-layout-184.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/cooking-layout-184.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/cooking-layout-184.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Corner Doors (196)",
+      "path": "wiki/concepts/patterns/corner-doors-196.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/corner-doors-196.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/corner-doors-196.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Corner Grocery (89)",
+      "path": "wiki/concepts/patterns/corner-grocery-89.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/corner-grocery-89.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/corner-grocery-89.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Country Towns (6)",
+      "path": "wiki/concepts/patterns/country-towns-6.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/country-towns-6.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/country-towns-6.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Couple's Realm (136)",
+      "path": "wiki/concepts/patterns/couples-realm-136.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/couples-realm-136.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/couples-realm-136.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Courtyards Which Live (115)",
+      "path": "wiki/concepts/patterns/courtyards-which-live-115.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/courtyards-which-live-115.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/courtyards-which-live-115.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Dancing in the Street (63)",
+      "path": "wiki/concepts/patterns/dancing-in-the-street-63.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/dancing-in-the-street-63.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/dancing-in-the-street-63.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Deep Reveals (223)",
+      "path": "wiki/concepts/patterns/deep-reveals-223.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/deep-reveals-223.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/deep-reveals-223.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Degrees of Publicness (36)",
+      "path": "wiki/concepts/patterns/degrees-of-publicness-36.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/degrees-of-publicness-36.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/degrees-of-publicness-36.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Density Rings (29)",
+      "path": "wiki/concepts/patterns/density-rings-29.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/density-rings-29.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/density-rings-29.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Different Chairs (251)",
+      "path": "wiki/concepts/patterns/different-chairs-251.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/different-chairs-251.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/different-chairs-251.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Dormer Windows (231)",
+      "path": "wiki/concepts/patterns/dormer-windows-231.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/dormer-windows-231.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/dormer-windows-231.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Dressing Rooms (189)",
+      "path": "wiki/concepts/patterns/dressing-rooms-189.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/dressing-rooms-189.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/dressing-rooms-189.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Duct Space (229)",
+      "path": "wiki/concepts/patterns/duct-space-229.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/duct-space-229.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/duct-space-229.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Eating Atmosphere (182)",
+      "path": "wiki/concepts/patterns/eating-atmosphere-182.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/eating-atmosphere-182.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/eating-atmosphere-182.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Eccentric Nucleus (28)",
+      "path": "wiki/concepts/patterns/eccentric-nucleus-28.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/eccentric-nucleus-28.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/eccentric-nucleus-28.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Efficient Structure (206)",
+      "path": "wiki/concepts/patterns/efficient-structure-206.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/efficient-structure-206.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/efficient-structure-206.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Entrance Room (130)",
+      "path": "wiki/concepts/patterns/entrance-room-130.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/entrance-room-130.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/entrance-room-130.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Entrance Transition (112)",
+      "path": "wiki/concepts/patterns/entrance-transition-112.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/entrance-transition-112.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/entrance-transition-112.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Family of Entrances (102)",
+      "path": "wiki/concepts/patterns/family-of-entrances-102.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/family-of-entrances-102.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/family-of-entrances-102.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Farmhouse Kitchen (139)",
+      "path": "wiki/concepts/patterns/farmhouse-kitchen-139.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/farmhouse-kitchen-139.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/farmhouse-kitchen-139.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Filtered Light (238)",
+      "path": "wiki/concepts/patterns/filtered-light-238.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/filtered-light-238.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/filtered-light-238.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Final Column Distribution (213)",
+      "path": "wiki/concepts/patterns/final-column-distribution-213.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/final-column-distribution-213.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/final-column-distribution-213.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Flexible Office Space (146)",
+      "path": "wiki/concepts/patterns/flexible-office-space-146.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/flexible-office-space-146.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/flexible-office-space-146.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Floor and Ceiling Layout (210)",
+      "path": "wiki/concepts/patterns/floor-and-ceiling-layout-210.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/floor-and-ceiling-layout-210.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/floor-and-ceiling-layout-210.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Floor-Ceiling Vaults (219)",
+      "path": "wiki/concepts/patterns/floor-ceiling-vaults-219.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/floor-ceiling-vaults-219.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/floor-ceiling-vaults-219.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Floor Surface (233)",
+      "path": "wiki/concepts/patterns/floor-surface-233.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/floor-surface-233.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/floor-surface-233.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Food Stands (93)",
+      "path": "wiki/concepts/patterns/food-stands-93.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/food-stands-93.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/food-stands-93.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Four-Story Limit (21)",
+      "path": "wiki/concepts/patterns/four-story-limit-21.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/four-story-limit-21.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/four-story-limit-21.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Frames as Thickened Edges (225)",
+      "path": "wiki/concepts/patterns/frames-as-thickened-edges-225.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/frames-as-thickened-edges-225.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/frames-as-thickened-edges-225.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Front Door Bench (242)",
+      "path": "wiki/concepts/patterns/front-door-bench-242.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/front-door-bench-242.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/front-door-bench-242.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Fruit Trees (170)",
+      "path": "wiki/concepts/patterns/fruit-trees-170.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/fruit-trees-170.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/fruit-trees-170.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Gallery Surround (166)",
+      "path": "wiki/concepts/patterns/gallery-surround-166.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/gallery-surround-166.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/gallery-surround-166.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Garden Growing Wild (172)",
+      "path": "wiki/concepts/patterns/garden-growing-wild-172.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/garden-growing-wild-172.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/garden-growing-wild-172.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Garden Seat (176)",
+      "path": "wiki/concepts/patterns/garden-seat-176.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/garden-seat-176.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/garden-seat-176.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Garden Wall (173)",
+      "path": "wiki/concepts/patterns/garden-wall-173.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/garden-wall-173.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/garden-wall-173.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Good Materials (207)",
+      "path": "wiki/concepts/patterns/good-materials-207.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/good-materials-207.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/good-materials-207.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Gradual Stiffening (208)",
+      "path": "wiki/concepts/patterns/gradual-stiffening-208.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/gradual-stiffening-208.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/gradual-stiffening-208.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Grave Sites (70)",
+      "path": "wiki/concepts/patterns/grave-sites-70.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/grave-sites-70.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/grave-sites-70.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Green Streets (51)",
+      "path": "wiki/concepts/patterns/green-streets-51.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/green-streets-51.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/green-streets-51.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Greenhouse (175)",
+      "path": "wiki/concepts/patterns/greenhouse-175.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/greenhouse-175.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/greenhouse-175.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Ground Floor Slab (215)",
+      "path": "wiki/concepts/patterns/ground-floor-slab-215.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/ground-floor-slab-215.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/ground-floor-slab-215.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Half-Hidden Garden (111)",
+      "path": "wiki/concepts/patterns/half-hidden-garden-111.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/half-hidden-garden-111.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/half-hidden-garden-111.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Half-Inch Trim (240)",
+      "path": "wiki/concepts/patterns/half-inch-trim-240.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/half-inch-trim-240.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/half-inch-trim-240.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Half-Open Wall (193)",
+      "path": "wiki/concepts/patterns/half-open-wall-193.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/half-open-wall-193.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/half-open-wall-193.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Half-Private Office (152)",
+      "path": "wiki/concepts/patterns/half-private-office-152.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/half-private-office-152.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/half-private-office-152.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Health Center (47)",
+      "path": "wiki/concepts/patterns/health-center-47.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/health-center-47.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/health-center-47.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Hierarchy of Open Space (114)",
+      "path": "wiki/concepts/patterns/hierarchy-of-open-space-114.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/hierarchy-of-open-space-114.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/hierarchy-of-open-space-114.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "High Places (62)",
+      "path": "wiki/concepts/patterns/high-places-62.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/high-places-62.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/high-places-62.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Holy Ground (66)",
+      "path": "wiki/concepts/patterns/holy-ground-66.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/holy-ground-66.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/holy-ground-66.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Home Workshop (157)",
+      "path": "wiki/concepts/patterns/home-workshop-157.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/home-workshop-157.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/home-workshop-157.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "House Cluster (37)",
+      "path": "wiki/concepts/patterns/house-cluster-37.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/house-cluster-37.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/house-cluster-37.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "House for a Couple (77)",
+      "path": "wiki/concepts/patterns/house-for-a-couple-77.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/house-for-a-couple-77.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/house-for-a-couple-77.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "House for a Small Family (76)",
+      "path": "wiki/concepts/patterns/house-for-a-small-family-76.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/house-for-a-small-family-76.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/house-for-a-small-family-76.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "House for One Person (78)",
+      "path": "wiki/concepts/patterns/house-for-one-person-78.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/house-for-one-person-78.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/house-for-one-person-78.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Household Mix (35)",
+      "path": "wiki/concepts/patterns/household-mix-35.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/household-mix-35.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/household-mix-35.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Housing Hill (39)",
+      "path": "wiki/concepts/patterns/housing-hill-39.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/housing-hill-39.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/housing-hill-39.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Housing In Between (48)",
+      "path": "wiki/concepts/patterns/housing-in-between-48.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/housing-in-between-48.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/housing-in-between-48.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Identifiable Neighborhood (14)",
+      "path": "wiki/concepts/patterns/identifiable-neighborhood-14.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/identifiable-neighborhood-14.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/identifiable-neighborhood-14.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Independent Regions (1)",
+      "path": "wiki/concepts/patterns/independent-regions-1.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/independent-regions-1.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/independent-regions-1.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Individually Owned Shops (87)",
+      "path": "wiki/concepts/patterns/individually-owned-shops-87.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/individually-owned-shops-87.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/individually-owned-shops-87.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Indoor Sunlight (128)",
+      "path": "wiki/concepts/patterns/indoor-sunlight-128.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/indoor-sunlight-128.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/indoor-sunlight-128.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Industrial Ribbon (42)",
+      "path": "wiki/concepts/patterns/industrial-ribbon-42.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/industrial-ribbon-42.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/industrial-ribbon-42.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Interchange (34)",
+      "path": "wiki/concepts/patterns/interchange-34.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/interchange-34.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/interchange-34.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Interior Windows (194)",
+      "path": "wiki/concepts/patterns/interior-windows-194.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/interior-windows-194.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/interior-windows-194.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Intimacy Gradient (127)",
+      "path": "wiki/concepts/patterns/intimacy-gradient-127.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/intimacy-gradient-127.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/intimacy-gradient-127.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Lace of Country Streets (5)",
+      "path": "wiki/concepts/patterns/lace-of-country-streets-5.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/lace-of-country-streets-5.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/lace-of-country-streets-5.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Lapped Outside Walls (234)",
+      "path": "wiki/concepts/patterns/lapped-outside-walls-234.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/lapped-outside-walls-234.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/lapped-outside-walls-234.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Life Cycle (26)",
+      "path": "wiki/concepts/patterns/life-cycle-26.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/life-cycle-26.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/life-cycle-26.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Light on Two Sides of Every Room (159)",
+      "path": "wiki/concepts/patterns/light-on-two-sides-of-every-room-159.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/light-on-two-sides-of-every-room-159.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/light-on-two-sides-of-every-room-159.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Local Sports (72)",
+      "path": "wiki/concepts/patterns/local-sports-72.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/local-sports-72.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/local-sports-72.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Local Town Hall (44)",
+      "path": "wiki/concepts/patterns/local-town-hall-44.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/local-town-hall-44.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/local-town-hall-44.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Local Transport Areas (11)",
+      "path": "wiki/concepts/patterns/local-transport-areas-11.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/local-transport-areas-11.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/local-transport-areas-11.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Long Thin House (109)",
+      "path": "wiki/concepts/patterns/long-thin-house-109.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/long-thin-house-109.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/long-thin-house-109.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Looped Local Roads (49)",
+      "path": "wiki/concepts/patterns/looped-local-roads-49.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/looped-local-roads-49.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/looped-local-roads-49.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Low Doorway (224)",
+      "path": "wiki/concepts/patterns/low-doorway-224.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/low-doorway-224.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/low-doorway-224.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Low Sill (222)",
+      "path": "wiki/concepts/patterns/low-sill-222.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/low-sill-222.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/low-sill-222.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Magic of the City (10)",
+      "path": "wiki/concepts/patterns/magic-of-the-city-10.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/magic-of-the-city-10.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/magic-of-the-city-10.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Main Building (99)",
+      "path": "wiki/concepts/patterns/main-building-99.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/main-building-99.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/main-building-99.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Main Entrance (110)",
+      "path": "wiki/concepts/patterns/main-entrance-110.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/main-entrance-110.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/main-entrance-110.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Main Gateways (53)",
+      "path": "wiki/concepts/patterns/main-gateways-53.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/main-gateways-53.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/main-gateways-53.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Market of Many Shops (46)",
+      "path": "wiki/concepts/patterns/market-of-many-shops-46.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/market-of-many-shops-46.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/market-of-many-shops-46.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Marriage Bed (187)",
+      "path": "wiki/concepts/patterns/marriage-bed-187.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/marriage-bed-187.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/marriage-bed-187.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Master and Apprentices (83)",
+      "path": "wiki/concepts/patterns/master-and-apprentices-83.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/master-and-apprentices-83.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/master-and-apprentices-83.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Men and Women (27)",
+      "path": "wiki/concepts/patterns/men-and-women-27.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/men-and-women-27.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/men-and-women-27.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Mini-Buses (20)",
+      "path": "wiki/concepts/patterns/mini-buses-20.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/mini-buses-20.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/mini-buses-20.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Mosaic of Subcultures (8)",
+      "path": "wiki/concepts/patterns/mosaic-of-subcultures-8.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/mosaic-of-subcultures-8.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/mosaic-of-subcultures-8.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Natural Doors and Windows (221)",
+      "path": "wiki/concepts/patterns/natural-doors-and-windows-221.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/natural-doors-and-windows-221.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/natural-doors-and-windows-221.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Necklace of Community Projects (45)",
+      "path": "wiki/concepts/patterns/necklace-of-community-projects-45.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/necklace-of-community-projects-45.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/necklace-of-community-projects-45.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Neighborhood Boundary (15)",
+      "path": "wiki/concepts/patterns/neighborhood-boundary-15.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/neighborhood-boundary-15.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/neighborhood-boundary-15.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Network of Learning (18)",
+      "path": "wiki/concepts/patterns/network-of-learning-18.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/network-of-learning-18.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/network-of-learning-18.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Network of Paths and Cars (52)",
+      "path": "wiki/concepts/patterns/network-of-paths-and-cars-52.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/network-of-paths-and-cars-52.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/network-of-paths-and-cars-52.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Night Life (33)",
+      "path": "wiki/concepts/patterns/night-life-33.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/night-life-33.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/night-life-33.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Nine Per Cent Parking (22)",
+      "path": "wiki/concepts/patterns/nine-per-cent-parking-22.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/nine-per-cent-parking-22.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/nine-per-cent-parking-22.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "North Face (162)",
+      "path": "wiki/concepts/patterns/north-face-162.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/north-face-162.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/north-face-162.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Number of Stories (96)",
+      "path": "wiki/concepts/patterns/number-of-stories-96.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/number-of-stories-96.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/number-of-stories-96.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Office Connections (82)",
+      "path": "wiki/concepts/patterns/office-connections-82.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/office-connections-82.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/office-connections-82.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Old Age Cottage (155)",
+      "path": "wiki/concepts/patterns/old-age-cottage-155.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/old-age-cottage-155.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/old-age-cottage-155.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Old People Everywhere (40)",
+      "path": "wiki/concepts/patterns/old-people-everywhere-40.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/old-people-everywhere-40.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/old-people-everywhere-40.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Open Shelves (200)",
+      "path": "wiki/concepts/patterns/open-shelves-200.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/open-shelves-200.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/open-shelves-200.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Open Stairs (158)",
+      "path": "wiki/concepts/patterns/open-stairs-158.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/open-stairs-158.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/open-stairs-158.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Opening to the Street (165)",
+      "path": "wiki/concepts/patterns/opening-to-the-street-165.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/opening-to-the-street-165.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/opening-to-the-street-165.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Ornament (249)",
+      "path": "wiki/concepts/patterns/ornament-249.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/ornament-249.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/ornament-249.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Outdoor Room (163)",
+      "path": "wiki/concepts/patterns/outdoor-room-163.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/outdoor-room-163.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/outdoor-room-163.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Parallel Roads (23)",
+      "path": "wiki/concepts/patterns/parallel-roads-23.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/parallel-roads-23.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/parallel-roads-23.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Path Shape (121)",
+      "path": "wiki/concepts/patterns/path-shape-121.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/path-shape-121.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/path-shape-121.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Paths and Goals (120)",
+      "path": "wiki/concepts/patterns/paths-and-goals-120.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/paths-and-goals-120.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/paths-and-goals-120.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Paving With Cracks Between the Stones (247)",
+      "path": "wiki/concepts/patterns/paving-with-cracks-between-the-stones-247.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/paving-with-cracks-between-the-stones-247.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/paving-with-cracks-between-the-stones-247.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Pedestrian Density (123)",
+      "path": "wiki/concepts/patterns/pedestrian-density-123.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/pedestrian-density-123.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/pedestrian-density-123.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Pedestrian Street (100)",
+      "path": "wiki/concepts/patterns/pedestrian-street-100.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/pedestrian-street-100.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/pedestrian-street-100.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Perimeter Beams (217)",
+      "path": "wiki/concepts/patterns/perimeter-beams-217.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/perimeter-beams-217.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/perimeter-beams-217.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Pools and Streams (64)",
+      "path": "wiki/concepts/patterns/pools-and-streams-64.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/pools-and-streams-64.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/pools-and-streams-64.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Pools of Light (252)",
+      "path": "wiki/concepts/patterns/pools-of-light-252.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/pools-of-light-252.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/pools-of-light-252.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Positive Outdoor Space (106)",
+      "path": "wiki/concepts/patterns/positive-outdoor-space-106.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/positive-outdoor-space-106.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/positive-outdoor-space-106.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Private Terrace on the Street (140)",
+      "path": "wiki/concepts/patterns/private-terrace-on-the-street-140.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/private-terrace-on-the-street-140.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/private-terrace-on-the-street-140.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Promenade (31)",
+      "path": "wiki/concepts/patterns/promenade-31.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/promenade-31.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/promenade-31.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Public Outdoor Room (69)",
+      "path": "wiki/concepts/patterns/public-outdoor-room-69.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/public-outdoor-room-69.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/public-outdoor-room-69.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Quiet Backs (59)",
+      "path": "wiki/concepts/patterns/quiet-backs-59.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/quiet-backs-59.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/quiet-backs-59.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Radiant Heat (230)",
+      "path": "wiki/concepts/patterns/radiant-heat-230.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/radiant-heat-230.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/radiant-heat-230.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Raised Flowers (245)",
+      "path": "wiki/concepts/patterns/raised-flowers-245.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/raised-flowers-245.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/raised-flowers-245.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Raised Walk (55)",
+      "path": "wiki/concepts/patterns/raised-walk-55.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/raised-walk-55.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/raised-walk-55.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Reception Welcomes You (149)",
+      "path": "wiki/concepts/patterns/reception-welcomes-you-149.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/reception-welcomes-you-149.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/reception-welcomes-you-149.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Ring Roads (17)",
+      "path": "wiki/concepts/patterns/ring-roads-17.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/ring-roads-17.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/ring-roads-17.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Road Crossing (54)",
+      "path": "wiki/concepts/patterns/road-crossing-54.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/road-crossing-54.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/road-crossing-54.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Roof Caps (232)",
+      "path": "wiki/concepts/patterns/roof-caps-232.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/roof-caps-232.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/roof-caps-232.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Roof Garden (118)",
+      "path": "wiki/concepts/patterns/roof-garden-118.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/roof-garden-118.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/roof-garden-118.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Roof Layout (209)",
+      "path": "wiki/concepts/patterns/roof-layout-209.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/roof-layout-209.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/roof-layout-209.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Roof Vaults (220)",
+      "path": "wiki/concepts/patterns/roof-vaults-220.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/roof-vaults-220.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/roof-vaults-220.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Rooms to Rent (153)",
+      "path": "wiki/concepts/patterns/rooms-to-rent-153.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/rooms-to-rent-153.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/rooms-to-rent-153.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Root Foundations (214)",
+      "path": "wiki/concepts/patterns/root-foundations-214.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/root-foundations-214.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/root-foundations-214.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Row Houses (38)",
+      "path": "wiki/concepts/patterns/row-houses-38.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/row-houses-38.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/row-houses-38.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Sacred Sites (24)",
+      "path": "wiki/concepts/patterns/sacred-sites-24.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/sacred-sites-24.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/sacred-sites-24.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Scattered Work (9)",
+      "path": "wiki/concepts/patterns/scattered-work-9.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/scattered-work-9.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/scattered-work-9.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Seat Spots (241)",
+      "path": "wiki/concepts/patterns/seat-spots-241.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/seat-spots-241.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/seat-spots-241.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Secret Place (204)",
+      "path": "wiki/concepts/patterns/secret-place-204.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/secret-place-204.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/secret-place-204.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Self-Governing Workshops and Offices (80)",
+      "path": "wiki/concepts/patterns/self-governing-workshops-and-offices-80.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/self-governing-workshops-and-offices-80.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/self-governing-workshops-and-offices-80.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Sequence of Sitting Spaces (142)",
+      "path": "wiki/concepts/patterns/sequence-of-sitting-spaces-142.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/sequence-of-sitting-spaces-142.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/sequence-of-sitting-spaces-142.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Settled Work (156)",
+      "path": "wiki/concepts/patterns/settled-work-156.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/settled-work-156.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/settled-work-156.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Sheltering Roof (117)",
+      "path": "wiki/concepts/patterns/sheltering-roof-117.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/sheltering-roof-117.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/sheltering-roof-117.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Shielded Parking (97)",
+      "path": "wiki/concepts/patterns/shielded-parking-97.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/shielded-parking-97.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/shielded-parking-97.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Shopfront Schools (85)",
+      "path": "wiki/concepts/patterns/shopfront-schools-85.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/shopfront-schools-85.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/shopfront-schools-85.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Shopping Street (32)",
+      "path": "wiki/concepts/patterns/shopping-street-32.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/shopping-street-32.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/shopping-street-32.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Short Passages (132)",
+      "path": "wiki/concepts/patterns/short-passages-132.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/short-passages-132.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/short-passages-132.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Site Repair (104)",
+      "path": "wiki/concepts/patterns/site-repair-104.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/site-repair-104.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/site-repair-104.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Sitting Circle (185)",
+      "path": "wiki/concepts/patterns/sitting-circle-185.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/sitting-circle-185.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/sitting-circle-185.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Sitting Wall (243)",
+      "path": "wiki/concepts/patterns/sitting-wall-243.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/sitting-wall-243.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/sitting-wall-243.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Six-Foot Balcony (167)",
+      "path": "wiki/concepts/patterns/six-foot-balcony-167.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/six-foot-balcony-167.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/six-foot-balcony-167.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Sleeping in Public (94)",
+      "path": "wiki/concepts/patterns/sleeping-in-public-94.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/sleeping-in-public-94.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/sleeping-in-public-94.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Sleeping to the East (138)",
+      "path": "wiki/concepts/patterns/sleeping-to-the-east-138.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/sleeping-to-the-east-138.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/sleeping-to-the-east-138.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Small Meeting Rooms (151)",
+      "path": "wiki/concepts/patterns/small-meeting-rooms-151.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/small-meeting-rooms-151.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/small-meeting-rooms-151.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Small Panes (239)",
+      "path": "wiki/concepts/patterns/small-panes-239.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/small-panes-239.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/small-panes-239.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Small Parking Lots (103)",
+      "path": "wiki/concepts/patterns/small-parking-lots-103.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/small-parking-lots-103.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/small-parking-lots-103.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Small Public Squares (61)",
+      "path": "wiki/concepts/patterns/small-public-squares-61.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/small-public-squares-61.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/small-public-squares-61.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Small Services Without Red Tape (81)",
+      "path": "wiki/concepts/patterns/small-services-without-red-tape-81.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/small-services-without-red-tape-81.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/small-services-without-red-tape-81.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Small Work Groups (148)",
+      "path": "wiki/concepts/patterns/small-work-groups-148.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/small-work-groups-148.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/small-work-groups-148.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Soft Inside Walls (235)",
+      "path": "wiki/concepts/patterns/soft-inside-walls-235.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/soft-inside-walls-235.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/soft-inside-walls-235.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Soft Tile and Brick (248)",
+      "path": "wiki/concepts/patterns/soft-tile-and-brick-248.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/soft-tile-and-brick-248.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/soft-tile-and-brick-248.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Solid Doors with Glass (237)",
+      "path": "wiki/concepts/patterns/solid-doors-with-glass-237.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/solid-doors-with-glass-237.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/solid-doors-with-glass-237.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Something Roughly in the Middle (126)",
+      "path": "wiki/concepts/patterns/something-roughly-in-the-middle-126.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/something-roughly-in-the-middle-126.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/something-roughly-in-the-middle-126.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "South Facing Outdoors (105)",
+      "path": "wiki/concepts/patterns/south-facing-outdoors-105.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/south-facing-outdoors-105.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/south-facing-outdoors-105.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Stair Seats (125)",
+      "path": "wiki/concepts/patterns/stair-seats-125.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/stair-seats-125.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/stair-seats-125.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Stair Vault (228)",
+      "path": "wiki/concepts/patterns/stair-vault-228.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/stair-vault-228.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/stair-vault-228.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Staircase as a Stage (133)",
+      "path": "wiki/concepts/patterns/staircase-as-a-stage-133.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/staircase-as-a-stage-133.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/staircase-as-a-stage-133.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Staircase Volume (195)",
+      "path": "wiki/concepts/patterns/staircase-volume-195.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/staircase-volume-195.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/staircase-volume-195.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Still Water (71)",
+      "path": "wiki/concepts/patterns/still-water-71.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/still-water-71.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/still-water-71.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Street Cafe (88)",
+      "path": "wiki/concepts/patterns/street-cafe-88.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/street-cafe-88.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/street-cafe-88.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Street Windows (164)",
+      "path": "wiki/concepts/patterns/street-windows-164.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/street-windows-164.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/street-windows-164.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Structure Follows Social Spaces (205)",
+      "path": "wiki/concepts/patterns/structure-follows-social-spaces-205.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/structure-follows-social-spaces-205.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/structure-follows-social-spaces-205.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Subculture Boundary (13)",
+      "path": "wiki/concepts/patterns/subculture-boundary-13.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/subculture-boundary-13.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/subculture-boundary-13.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Sunny Counter (199)",
+      "path": "wiki/concepts/patterns/sunny-counter-199.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/sunny-counter-199.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/sunny-counter-199.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Sunny Place (161)",
+      "path": "wiki/concepts/patterns/sunny-place-161.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/sunny-place-161.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/sunny-place-161.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "T Junctions (50)",
+      "path": "wiki/concepts/patterns/t-junctions-50.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/t-junctions-50.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/t-junctions-50.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Tapestry of Light and Dark (135)",
+      "path": "wiki/concepts/patterns/tapestry-of-light-and-dark-135.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/tapestry-of-light-and-dark-135.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/tapestry-of-light-and-dark-135.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Teenage Society (84)",
+      "path": "wiki/concepts/patterns/teenage-society-84.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/teenage-society-84.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/teenage-society-84.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Teenager's Cottage (154)",
+      "path": "wiki/concepts/patterns/teenagers-cottage-154.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/teenagers-cottage-154.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/teenagers-cottage-154.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Terraced Slope (169)",
+      "path": "wiki/concepts/patterns/terraced-slope-169.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/terraced-slope-169.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/terraced-slope-169.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "The Countryside (7)",
+      "path": "wiki/concepts/patterns/the-countryside-7.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/the-countryside-7.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/the-countryside-7.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "The Distribution of Towns (2)",
+      "path": "wiki/concepts/patterns/the-distribution-of-towns-2.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/the-distribution-of-towns-2.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/the-distribution-of-towns-2.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "The Family (75)",
+      "path": "wiki/concepts/patterns/the-family-75.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/the-family-75.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/the-family-75.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "The Fire (181)",
+      "path": "wiki/concepts/patterns/the-fire-181.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/the-fire-181.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/the-fire-181.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "The Flow Through Rooms (131)",
+      "path": "wiki/concepts/patterns/the-flow-through-rooms-131.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/the-flow-through-rooms-131.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/the-flow-through-rooms-131.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "The Shape of Indoor Space (191)",
+      "path": "wiki/concepts/patterns/the-shape-of-indoor-space-191.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/the-shape-of-indoor-space-191.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/the-shape-of-indoor-space-191.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Thick Walls (197)",
+      "path": "wiki/concepts/patterns/thick-walls-197.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/thick-walls-197.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/thick-walls-197.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Thickening the Outer Walls (211)",
+      "path": "wiki/concepts/patterns/thickening-the-outer-walls-211.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/thickening-the-outer-walls-211.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/thickening-the-outer-walls-211.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Things From Your Life (253)",
+      "path": "wiki/concepts/patterns/things-from-your-life-253.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/things-from-your-life-253.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/things-from-your-life-253.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Traveler's Inn (91)",
+      "path": "wiki/concepts/patterns/travelers-inn-91.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/travelers-inn-91.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/travelers-inn-91.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Tree Places (171)",
+      "path": "wiki/concepts/patterns/tree-places-171.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/tree-places-171.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/tree-places-171.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Trellised Walk (174)",
+      "path": "wiki/concepts/patterns/trellised-walk-174.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/trellised-walk-174.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/trellised-walk-174.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "University as a Marketplace (43)",
+      "path": "wiki/concepts/patterns/university-as-a-marketplace-43.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/university-as-a-marketplace-43.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/university-as-a-marketplace-43.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Vegetable Garden (177)",
+      "path": "wiki/concepts/patterns/vegetable-garden-177.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/vegetable-garden-177.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/vegetable-garden-177.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Waist-High Shelf (201)",
+      "path": "wiki/concepts/patterns/waist-high-shelf-201.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/waist-high-shelf-201.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/waist-high-shelf-201.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Wall Membranes (218)",
+      "path": "wiki/concepts/patterns/wall-membranes-218.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/wall-membranes-218.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/wall-membranes-218.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Warm Colors (250)",
+      "path": "wiki/concepts/patterns/warm-colors-250.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/warm-colors-250.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/warm-colors-250.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Web of Public Transport (16)",
+      "path": "wiki/concepts/patterns/web-of-public-transport-16.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/web-of-public-transport-16.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/web-of-public-transport-16.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Web of Shopping (19)",
+      "path": "wiki/concepts/patterns/web-of-shopping-19.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/web-of-shopping-19.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/web-of-shopping-19.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Window Place (180)",
+      "path": "wiki/concepts/patterns/window-place-180.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/window-place-180.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/window-place-180.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Windows Overlooking Life (192)",
+      "path": "wiki/concepts/patterns/windows-overlooking-life-192.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/windows-overlooking-life-192.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/windows-overlooking-life-192.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Windows Which Open Wide (236)",
+      "path": "wiki/concepts/patterns/windows-which-open-wide-236.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/windows-which-open-wide-236.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/windows-which-open-wide-236.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Wings of Light (107)",
+      "path": "wiki/concepts/patterns/wings-of-light-107.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/wings-of-light-107.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/wings-of-light-107.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Work Community (41)",
+      "path": "wiki/concepts/patterns/work-community-41.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/work-community-41.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/work-community-41.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Workspace Enclosure (183)",
+      "path": "wiki/concepts/patterns/workspace-enclosure-183.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/workspace-enclosure-183.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/workspace-enclosure-183.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Your Own Home (79)",
+      "path": "wiki/concepts/patterns/your-own-home-79.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/your-own-home-79.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/your-own-home-79.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Zen View (134)",
+      "path": "wiki/concepts/patterns/zen-view-134.md",
+      "raw": "/raw/pattern-language/wiki/concepts/patterns/zen-view-134.md",
+      "html": "/wiki/pattern-language/wiki/concepts/patterns/zen-view-134.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Spatial Pattern Constraint Layer",
+      "path": "wiki/concepts/spatial-pattern-constraint-layer.md",
+      "raw": "/raw/pattern-language/wiki/concepts/spatial-pattern-constraint-layer.md",
+      "html": "/wiki/pattern-language/wiki/concepts/spatial-pattern-constraint-layer.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Pattern Language \u2014 Master Index",
+      "path": "wiki/index.md",
+      "raw": "/raw/pattern-language/wiki/index.md",
+      "html": "/wiki/pattern-language/wiki/index.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Pattern Language \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "raw": "/raw/pattern-language/wiki/log.md",
+      "html": "/wiki/pattern-language/wiki/log.md.html",
+      "category": "wiki"
+    },
+    {
+      "title": "For Agents \u2014 Spatial Pattern Retrieval",
+      "path": "wiki/summaries/for-agents-spatial-pattern-retrieval.md",
+      "raw": "/raw/pattern-language/wiki/summaries/for-agents-spatial-pattern-retrieval.md",
+      "html": "/wiki/pattern-language/wiki/summaries/for-agents-spatial-pattern-retrieval.md.html",
+      "category": "summaries"
+    },
+    {
+      "title": "Unreal MCP Worldbuilding Adapter \u2014 Deferred Design Space",
+      "path": "wiki/syntheses/unreal-mcp-worldbuilding-adapter-deferred.md",
+      "raw": "/raw/pattern-language/wiki/syntheses/unreal-mcp-worldbuilding-adapter-deferred.md",
+      "html": "/wiki/pattern-language/wiki/syntheses/unreal-mcp-worldbuilding-adapter-deferred.md.html",
+      "category": "syntheses"
+    }
+  ]
+}

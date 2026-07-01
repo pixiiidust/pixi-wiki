@@ -1,0 +1,42 @@
+---
+title: "Animals (74)"
+created: 2026-07-01
+updated: 2026-07-01
+type: concept
+status: compiled
+namespace: pattern-language
+pattern_number: 74
+pattern_name: "Animals"
+source_repository: https://github.com/zenodotus280/apl-md
+source_url: https://github.com/zenodotus280/apl-md/blob/master/Patterns/Animals%20%2874%29.md
+license_note: Non-commercial reuse with attribution; see namespace README and source LICENSE.md.
+related_patterns:
+  - "Common Land (67)"
+  - "Your Own Home (79)"
+  - "Green Streets (51)"
+  - "Accessible Green (60)"
+  - "Children's Home (86)"
+  - "Compost (178)"
+---
+
+# Animals (74)
+
+> Source pattern from the abridged `apl-md` corpus. Use as a design reference and constraint seed; do not treat as commercial-clean training data.
+
+### Problem
+>Animals are as important a part of nature as the trees and grass and flowers. There is some evidence, in addition, which suggests that contact with animals may play a vital role in a child’s emotional development.
+
+### Solution
+>Make legal provisions which allow people to keep any animals on their private lots or in private stables. Create a piece of fenced and protected common land, where animals are free to graze, with grass, trees, and water in it. Make at least one system of movement in the neighborhood which is entirely asphalt-free—where dung can fall freely without needing to be cleaned up.
+
+### Related Patterns
+... even when there is public land and private land for individual buildings - [[Common Land (67)]], [[Your Own Home (79)]], there is no guarantee that animals can flourish there. This pattern helps to form [[Green Streets (51)]] and [[Common Land (67)]] by giving them the qualities they need to sustain animal life.
+
+Make sure that the green areas - [[Green Streets (51)]], [[Accessible Green (60)]] - are all connected to one another to form a continuous swath throughout the city for domestic and wild animals. Place the animal commons near a children's home and near the local schools, so children can take care of the animals - [[Children's Home (86)]]; if there is a lot of dung, make sure that it can be used as a fertilizer - [[Compost (178)]] ...
+
+---
+
+> [!cite]- Alexander, Christopher. _A Pattern Language: Towns, Buildings, Construction_. Oxford University Press, 1977, p. 371.
+> #APL/confidence/low
+>
+> #APL/Town-Patterns/Local-Recreation
