@@ -11,6 +11,12 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-07-01 create | Agent workflow system summary
+
+- Added compiled summary `wiki/summaries/agent-workflow-system-summary.md` as a compact public summary of Jamie's agent workflow system: skills, tools, scheduling, delegation, Discord/GitHub control surfaces, verification, and durable knowledge routing.
+- Cross-linked Hermes Mission Control, Pixoid Crew Operating Model, Agent Skill Routing, Multi-Agent Multiplayer Boundaries, Agent Capability Route Pattern, Agent Tooling Plan, Markdown-First Agent Memory, Knowledge Pack Routing, Hermes Capability Routing, and Planned Program Intel.
+- Kept the page honest: a summary of hands-on AI-native product work, not a claim of enterprise-scale governance or having established MCP.
+
 ## 2026-07-01 create | Reader-Centered Outreach Asks
 
 - Added compiled concept `wiki/concepts/reader-centered-outreach-asks.md` from the canonical Knowledge page and Jamie's supplied article about asking strangers for help.

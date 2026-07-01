@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-01 — Reader-Centered Outreach Asks added as the cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific low-friction bounded ask, easy no, and no lies. Recent context: Agent Tooling Plan v1.0.1 tightened agent-as-tools planning, and Discord council-mode hardening shipped coordinator-first `@Crew` routing with bounded huddles and post-close suppression.
+2026-07-01 — Added a compact agent workflow system summary linking the namespace's strongest evidence for Discord/Pixi Wiki as a system for building: skills, tools, scheduling, delegation, control surfaces, verification, and durable knowledge routing. Reader-Centered Outreach Asks also added as the cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific low-friction bounded ask, easy no, and no lies.
 
 ## Canonical Source Roots
 

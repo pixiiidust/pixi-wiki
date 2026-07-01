@@ -45,6 +45,7 @@ namespace: agent-workflows
 
 ## Summaries
 
+- [[summaries/agent-workflow-system-summary|Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation]] — Compact summary of Jamie's agent workflow system: skills, tools, scheduling, delegation, control surfaces, verification, and durable knowledge routing.
 - Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Routes external Hermes content between Hermes Agent, Agent Workflows, Local AI Infrastructure, Eval Trace, and Pixi Vault.
 
 ## Syntheses

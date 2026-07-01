@@ -102,7 +102,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
     def test_namespace_pages_have_agentwikis_sidebar_and_readme_card(self) -> None:
         html = (ROOT / "wiki" / "agent-workflows" / "README.md.html").read_text(encoding="utf-8")
         self.assertIn("Agent Workflows Knowledge Base", html)
-        self.assertIn("28 documents", html)
+        self.assertIn("29 documents", html)
         self.assertIn("📄 Agent Workflows Knowledge Base", html)
         self.assertIn("📄 Agent Workflows KB — Master Index", html)
         self.assertIn("<summary>WIKI 1</summary>", html)
@@ -123,6 +123,8 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("📄 Multi-Agent Multiplayer Boundaries", html)
         self.assertIn("📄 Ponytail Minimal Code Discipline", html)
         self.assertIn("<summary>ENTITIES 1</summary>", html)
+        self.assertIn("<summary>SUMMARIES 1</summary>", html)
+        self.assertIn("📄 Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation", html)
         self.assertIn("<summary>SYNTHESES 2</summary>", html)
         self.assertIn("<summary>// FOR AGENTS</summary>", html)
         self.assertIn("/wiki/agent-workflows/llms.txt", html)

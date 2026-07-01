@@ -21,7 +21,7 @@
 ## Agent Workflows
 
 > Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.
-> Current as of: 2026-07-01 — Reader-Centered Outreach Asks added as the cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific low-friction bounded ask, easy no, and no lies. Recent context: Agent Tooling Plan v1.0.1 tightened agent-as-tools planning, and Discord council-mode hardening shipped coordinator-first `@Crew` routing with bounded huddles and post-close suppression.
+> Current as of: 2026-07-01 — Added a compact agent workflow system summary linking the namespace's strongest evidence for Discord/Pixi Wiki as a system for building: skills, tools, scheduling, delegation, control surfaces, verification, and durable knowledge routing. Reader-Centered Outreach Asks also added as the cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific low-friction bounded ask, easy no, and no lies.
 > Agent access: [/wiki/agent-workflows/llms.txt](/wiki/agent-workflows/llms.txt) [/wiki/agent-workflows/llms-full.txt](/wiki/agent-workflows/llms-full.txt) [/wiki/agent-workflows/index.json](/wiki/agent-workflows/index.json)
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
@@ -50,6 +50,7 @@
 - [Hermes Mission Control](/raw/agent-workflows/wiki/entities/hermes-mission-control.md) ([html](/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html))
 - [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md) ([html](/wiki/agent-workflows/wiki/index.md.html))
 - [Agent Workflows — Activity Log](/raw/agent-workflows/wiki/log.md) ([html](/wiki/agent-workflows/wiki/log.md.html))
+- [Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation](/raw/agent-workflows/wiki/summaries/agent-workflow-system-summary.md) ([html](/wiki/agent-workflows/wiki/summaries/agent-workflow-system-summary.md.html))
 - [Markdown-First Agent Memory](/raw/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md) ([html](/wiki/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md.html))
 - [Pixoid Crew Operating Model](/raw/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md) ([html](/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html))
 

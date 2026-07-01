@@ -99,15 +99,15 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-07-01 \u2014 Reader-Centered Outreach Asks added as the cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific low-friction bounded ask, easy no, and no lies. Recent context: Agent Tooling Plan v1.0.1 tightened agent-as-tools planning, and Discord council-mode hardening shipped coordinator-first `@Crew` routing with bounded huddles and post-close suppression."
+        "currentAs": "2026-07-01 \u2014 Added a compact agent workflow system summary linking the namespace's strongest evidence for Discord/Pixi Wiki as a system for building: skills, tools, scheduling, delegation, control surfaces, verification, and durable knowledge routing. Reader-Centered Outreach Asks also added as the cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific low-friction bounded ask, easy no, and no lies."
       },
       "lastUpdated": "2026-07-01",
-      "documentCount": 28,
+      "documentCount": 29,
       "counts": {
         "wiki": 1,
         "concepts": 21,
         "entities": 1,
-        "summaries": 0,
+        "summaries": 1,
         "syntheses": 2
       },
       "llms_txt": "/wiki/agent-workflows/llms.txt",
@@ -297,6 +297,13 @@
           "raw": "/raw/agent-workflows/wiki/log.md",
           "html": "/wiki/agent-workflows/wiki/log.md.html",
           "category": "wiki"
+        },
+        {
+          "title": "Agent Workflow System Summary \u2014 Skills, Tools, Scheduling, Delegation",
+          "path": "wiki/summaries/agent-workflow-system-summary.md",
+          "raw": "/raw/agent-workflows/wiki/summaries/agent-workflow-system-summary.md",
+          "html": "/wiki/agent-workflows/wiki/summaries/agent-workflow-system-summary.md.html",
+          "category": "summaries"
         },
         {
           "title": "Markdown-First Agent Memory",
