@@ -76,6 +76,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 "rl-sim-labs",
                 "curated-tuning-datasets",
                 "local-ai-infrastructure",
+                "pattern-language",
             },
         )
 
@@ -130,6 +131,28 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("view as markdown", html)
         self.assertIn("report a mistake", html)
         self.assertIn("prev-next-card", html)
+
+    def test_pattern_language_namespace_exposes_pattern_corpus_and_agent_guidance(self) -> None:
+        registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}
+        wiki = registry["pattern-language"]
+        self.assertEqual(wiki["title"], "Pattern Language")
+        self.assertGreaterEqual(wiki["documentCount"], 260)
+        doc_paths = {doc["path"] for doc in wiki["documents"]}
+        self.assertIn("wiki/summaries/for-agents-spatial-pattern-retrieval.md", doc_paths)
+        self.assertIn("wiki/syntheses/unreal-mcp-worldbuilding-adapter-deferred.md", doc_paths)
+        self.assertIn("wiki/concepts/patterns/activity-nodes-30.md", doc_paths)
+        self.assertTrue((ROOT / "raw" / "pattern-language" / "wiki" / "concepts" / "patterns" / "activity-nodes-30.md").exists())
+        html = (ROOT / "wiki" / "pattern-language" / "README.md.html").read_text(encoding="utf-8")
+        self.assertIn("Non-commercial reuse with attribution", html)
+        self.assertIn("For Agents", html)
+
+    def test_pattern_language_search_text_includes_problem_solution_and_related_links(self) -> None:
+        text = (ROOT / "raw" / "pattern-language" / "wiki" / "concepts" / "patterns" / "activity-nodes-30.md").read_text(encoding="utf-8")
+        self.assertIn("### Problem", text)
+        self.assertIn("### Solution", text)
+        self.assertIn("### Related Patterns", text)
+        self.assertIn("[[Promenade (31)]]", text)
+        self.assertIn("source_repository: https://github.com/zenodotus280/apl-md", text)
 
     def test_rendered_wiki_page_exposes_metadata_tools_and_prev_next(self) -> None:
         html = (ROOT / "wiki" / "agent-workflows" / "wiki" / "concepts" / "knowledge-pack-routing.md.html").read_text(encoding="utf-8")
