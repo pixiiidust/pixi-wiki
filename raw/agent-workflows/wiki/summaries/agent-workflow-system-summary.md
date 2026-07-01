@@ -70,11 +70,3 @@ For an agents product, the important questions are practical:
 5. How do teams avoid agent noise, duplicate work, and unsafe side effects?
 
 The linked pages are Jamie's working answers to those questions.
-
-## Honest boundary
-
-This is not a claim of enterprise-scale governance, production security certification, or having helped establish MCP. It shows hands-on AI-native product work: designing, operating, and documenting the messy middle where agents call tools, use skills, delegate work, run through schedules/triggers, and produce verified artifacts.
-
-## Related product surface
-
-For a PM-portfolio-style AI-native product example, see [Planned Program Intel](/pixi-wiki/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html): a decision-routing prototype that uses evidence packages, human accept/change/override/escalate controls, and compounding program memory.
