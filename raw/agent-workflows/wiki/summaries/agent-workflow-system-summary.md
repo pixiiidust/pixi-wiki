@@ -59,6 +59,18 @@ This work is not just "using agents." The product judgment is in the boundaries:
 - verification before claiming success;
 - public/wiki surfaces that humans can browse and agents can retrieve.
 
+## Implementation tradeoffs and scaling lessons
+
+The hard parts have been product and systems tradeoffs, not just wiring tools together:
+
+- Coordination vs agent noise — direct multiplayer feels powerful, but it can create duplicate work and noisy threads. The system now favors Pixoid as one visible coordinator, with bounded huddles only when specialist input is useful.
+- Convenience vs trigger precision — role mentions, reply pings, bot-authored chatter, and thread metadata can accidentally wake the wrong agent. The routing layer needs explicit summons, channel controls, and closed-loop suppression before model invocation.
+- Builder speed vs trust — agents can move fast, but outputs only become durable after verification: changed files, tests, links, GitHub state, and source-truth checks.
+- Local knowledge vs shareable surfaces — Pixi Wiki keeps the same knowledge usable by humans and agents through browsable pages, raw Markdown, indexes, and local MCP-style retrieval.
+- Custom workflows vs scale — the repeatable unit is a route, skill, template, or scheduled job: define the trigger, allowed actions, artifact, owner, stop condition, and verification handle so one builder workflow can become a team workflow.
+
+A concrete implementation example is the [Discord council and bot routing hardening PR](https://github.com/NousResearch/hermes-agent/pull/55200), which came from a real product problem: `@Crew` should create coordinated progress, not wake every worker into the same user thread. That work maps directly to [Multi-Agent Multiplayer Boundaries](/pixi-wiki/wiki/agent-workflows/wiki/concepts/multi-agent-multiplayer-boundaries.md.html) and [Hermes Mission Control](/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html).
+
 ## How it maps to a Founding PM, Agents role
 
 For an agents product, the important questions are practical:

@@ -55,6 +55,16 @@
 <li>verification before claiming success;</li>
 <li>public/wiki surfaces that humans can browse and agents can retrieve.</li>
 </ul>
+<h2>Implementation tradeoffs and scaling lessons</h2>
+<p>The hard parts have been product and systems tradeoffs, not just wiring tools together:</p>
+<ul>
+<li>Coordination vs agent noise — direct multiplayer feels powerful, but it can create duplicate work and noisy threads. The system now favors Pixoid as one visible coordinator, with bounded huddles only when specialist input is useful.</li>
+<li>Convenience vs trigger precision — role mentions, reply pings, bot-authored chatter, and thread metadata can accidentally wake the wrong agent. The routing layer needs explicit summons, channel controls, and closed-loop suppression before model invocation.</li>
+<li>Builder speed vs trust — agents can move fast, but outputs only become durable after verification: changed files, tests, links, GitHub state, and source-truth checks.</li>
+<li>Local knowledge vs shareable surfaces — Pixi Wiki keeps the same knowledge usable by humans and agents through browsable pages, raw Markdown, indexes, and local MCP-style retrieval.</li>
+<li>Custom workflows vs scale — the repeatable unit is a route, skill, template, or scheduled job: define the trigger, allowed actions, artifact, owner, stop condition, and verification handle so one builder workflow can become a team workflow.</li>
+</ul>
+<p>A concrete implementation example is the <a href="https://github.com/NousResearch/hermes-agent/pull/55200">Discord council and bot routing hardening PR</a>, which came from a real product problem: <code>@Crew</code> should create coordinated progress, not wake every worker into the same user thread. That work maps directly to <a href="/pixi-wiki/wiki/agent-workflows/wiki/concepts/multi-agent-multiplayer-boundaries.md.html">Multi-Agent Multiplayer Boundaries</a> and <a href="/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html">Hermes Mission Control</a>.</p>
 <h2>How it maps to a Founding PM, Agents role</h2>
 <p>For an agents product, the important questions are practical:</p>
 <p>1. How does a builder go from an idea to a working agent or skill?</p>
@@ -63,7 +73,10 @@
 <p>4. How does useful work become reusable templates, skills, or durable knowledge?</p>
 <p>5. How do teams avoid agent noise, duplicate work, and unsafe side effects?</p>
 <p>The linked pages are Jamie&#x27;s working answers to those questions.</p>
-
+<h2>External links</h2>
+<ul>
+<li><a href="https://github.com/NousResearch/hermes-agent/pull/55200">Discord council and bot routing hardening PR</a></li>
+</ul>
 <nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html"><span class="next-label">← Prev</span><span class="next-title">Hermes Mission Control</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md.html"><span class="next-label">Next</span><span class="next-title">Markdown-First Agent Memory →</span></a></nav>
 </article></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
