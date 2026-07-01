@@ -2,10 +2,10 @@
   "slug": "agent-workflows",
   "title": "Agent Workflows",
   "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
-  "documentCount": 27,
+  "documentCount": 28,
   "counts": {
     "wiki": 1,
-    "concepts": 20,
+    "concepts": 21,
     "entities": 1,
     "summaries": 0,
     "syntheses": 2
@@ -135,6 +135,13 @@
       "path": "wiki/concepts/profile-memory-boundaries.md",
       "raw": "/raw/agent-workflows/wiki/concepts/profile-memory-boundaries.md",
       "html": "/wiki/agent-workflows/wiki/concepts/profile-memory-boundaries.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Reader-Centered Outreach Asks",
+      "path": "wiki/concepts/reader-centered-outreach-asks.md",
+      "raw": "/raw/agent-workflows/wiki/concepts/reader-centered-outreach-asks.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/reader-centered-outreach-asks.md.html",
       "category": "concepts"
     },
     {

@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-06-30
+updated: 2026-07-01
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-01 create | Reader-Centered Outreach Asks
+
+- Added compiled concept `wiki/concepts/reader-centered-outreach-asks.md` from the canonical Knowledge page and Jamie's supplied article about asking strangers for help.
+- Captured the cold outreach drafting contract for future agents: recipient mind first, proof of work over status, tiny context, specific low-friction bounded ask, easy no, and never lie.
+- Updated namespace README and index source roots for public Pixi Wiki rebuild/deploy.
 
 ## 2026-06-30 update | Agent Tooling Plan skill v1.0.1
 

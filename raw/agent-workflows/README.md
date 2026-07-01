@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-06-30
+updated: 2026-07-01
 type: namespace-overview
 status: active
 category: agents
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-06-30 — Agent Tooling Plan v1.0.1 tightened as the agent-as-tools planning playbook for mapping vague or clear requests into live-state checks, task buckets, tools, routing, memory, evaluation, permissions, and smallest proving loops. Previous current state: Discord council-mode hardening shipped: `@Crew` and crew text aliases route to Pixoid as coordinator/final responder; direct `@Boba/@Quill/@Tinker` remains specialist mode in approved channels/threads; worker profiles share Pixoid's room allowlist but require mentions and ignore top-level bot/status chatter; bounded council huddles collect one worker round, close on all-replied-or-timeout, suppress post-close worker chatter at the gateway layer, and return one final Pixoid answer; direct multiplayer is explicit test-only mode.
+2026-07-01 — Reader-Centered Outreach Asks added as the cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific low-friction bounded ask, easy no, and no lies. Recent context: Agent Tooling Plan v1.0.1 tightened agent-as-tools planning, and Discord council-mode hardening shipped coordinator-first `@Crew` routing with bounded huddles and post-close suppression.
 
 ## Canonical Source Roots
 
@@ -40,6 +40,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
 - `Knowledge/concepts/agent-tooling-plan.md`
+- `Knowledge/concepts/reader-centered-outreach-asks.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
 - `Knowledge/concepts/hermes-capability-routing.md`
 - `Knowledge/concepts/high-agency-work-levels.md`
