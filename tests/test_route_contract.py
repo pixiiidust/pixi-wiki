@@ -78,6 +78,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 "local-ai-infrastructure",
                 "pattern-language",
                 "software-architecture-metapatterns",
+                "ui-patterns",
             },
         )
 
@@ -201,6 +202,28 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertNotIn("| --- | --- | --- |", html)
         self.assertNotIn("together\\.", html)
         self.assertNotIn("re\\-integrate", html)
+
+    def test_ui_patterns_namespace_exposes_catalog_and_guardrails(self) -> None:
+        registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}
+        wiki = registry["ui-patterns"]
+        self.assertEqual(wiki["title"], "UI Patterns")
+        self.assertEqual(wiki["category"], "product-design")
+        self.assertGreaterEqual(wiki["documentCount"], 180)
+        doc_paths = {doc["path"] for doc in wiki["documents"]}
+        self.assertIn("wiki/summaries/for-agents-ui-patterns-retrieval.md", doc_paths)
+        self.assertIn("wiki/summaries/provenance-and-copyright-boundary.md", doc_paths)
+        self.assertIn("wiki/entities/source-site-ui-patterns.md", doc_paths)
+        self.assertIn("wiki/concepts/patterns/good-defaults.md", doc_paths)
+        self.assertIn("wiki/entities/categories/user-interface-design-patterns-getting-input.md", doc_paths)
+        text = (ROOT / "raw" / "ui-patterns" / "wiki" / "concepts" / "patterns" / "good-defaults.md").read_text(encoding="utf-8")
+        self.assertIn("Catalog pointer for the UI Patterns source page", text)
+        self.assertIn("source_copyright_note", text)
+        self.assertIn("Example screenshots detected at source: 8", text)
+        self.assertNotIn("The user needs to enter data into the system", text)
+        html = (ROOT / "wiki" / "ui-patterns" / "README.md.html").read_text(encoding="utf-8")
+        self.assertIn("pattern catalog structure", html)
+        self.assertIn("all rights reserved", html)
+        self.assertIn("does not republish full source pattern bodies", html)
 
     def test_rendered_wiki_page_exposes_metadata_tools_and_prev_next(self) -> None:
         html = (ROOT / "wiki" / "agent-workflows" / "wiki" / "concepts" / "knowledge-pack-routing.md.html").read_text(encoding="utf-8")
