@@ -24,99 +24,97 @@
 <h1>Evolutions of a Shared Repository</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of a Shared Repository.md</code>.</blockquote>
-<p>Once a database appears, it is unlikely to go away\. I see the following evolutions to improve performance of the data layer:</p>
+<p>Once a database appears, it is unlikely to go away. I see the following evolutions to improve performance of the data layer:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shard*</a> the database\.</li>
-<li>Use <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Space\-Based Architecture*</a> for dynamic scalability\.</li>
-<li>Divide the data into a private database per service\.</li>
-<li>Deploy specialized databases \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a>\)\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shard*</a> the database.</li>
+<li>Use <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Space-Based Architecture*</a> for dynamic scalability.</li>
+<li>Divide the data into a private database per service.</li>
+<li>Deploy specialized databases (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a>).</li>
 </ul>
 <h2>Shard the database</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database_%20Shard.png" alt="The shared database is sharded so that each database instance holds a subset of data," loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Sharding</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a>\), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>, maybe <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Sharding Proxy</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: increase capacity and performance of the database\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the data is shardable \(consists of independent records\)\.</p>
-<p>If your database is overloaded and the data which it contains describes independent entities \(users, companies, or sales\) you can deploy multiple instances of the database with subsets of the data distributed among them\. You will need to deploy a *Sharding Proxy* or the services will have to find out which database *shard* to access by themselves, likely through hashing the record’s *primary key* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDIA</a>\] or with the help of an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Ambassador*</a>\. There is also a good chance that several smaller tables will have to be replicated to all the shards or moved to a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">dedicated *Shared Database*</a> \(resulting in <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a>\)\.</p>
-<p>Modern distributed databases support sharding out of the box, but an overgrown table may still impact the performance of the database\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Sharding</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a>), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>, maybe <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Sharding Proxy</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: increase capacity and performance of the database.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the data is shardable (consists of independent records).</p>
+<p>If your database is overloaded and the data which it contains describes independent entities (users, companies, or sales) you can deploy multiple instances of the database with subsets of the data distributed among them. You will need to deploy a *Sharding Proxy* or the services will have to find out which database *shard* to access by themselves, likely through hashing the record’s *primary key* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDIA</a>\] or with the help of an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Ambassador*</a>. There is also a good chance that several smaller tables will have to be replicated to all the shards or moved to a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">dedicated *Shared Database*</a> (resulting in <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a>).</p>
+<p>Modern distributed databases support sharding out of the box, but an overgrown table may still impact the performance of the database.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Unlimited scalability\.</li>
-<li>You don’t need to change your database vendor\.</li>
-<li>Failure of a single database instance affects few users\.</li>
+<li>Unlimited scalability.</li>
+<li>You don’t need to change your database vendor.</li>
+<li>Failure of a single database instance affects few users.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>You will need to manage many instances of the database\.</li>
-<li>The application or a custom script may have to synchronize shared tables among the instances\.</li>
-<li>There is no way to do joins or run aggregate functions \(such as *sum* or *count*\) over multiple shards – all that logic moves to the services that use the database\.</li>
+<li>You will need to manage many instances of the database.</li>
+<li>The application or a custom script may have to synchronize shared tables among the instances.</li>
+<li>There is no way to do joins or run aggregate functions (such as *sum* or *count*) over multiple shards – all that logic moves to the services that use the database.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Replicate*</a> each shard to improve fault tolerance and, possibly, read throughput\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*CQRS*</a> describe pre\-calculating aggregates into another analytical database \(<a href="https://martinfowler.com/bliki/ReportingDatabase.html">*Reporting Database*</a>\)\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space\-Based Architecture*</a> may be cheaper as it scales dynamically\. However, in its default and highly performant configuration it is prone to write collisions\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Replicate*</a> each shard to improve fault tolerance and, possibly, read throughput.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*CQRS*</a> describe pre-calculating aggregates into another analytical database (<a href="https://martinfowler.com/bliki/ReportingDatabase.html">*Reporting Database*</a>).</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space-Based Architecture*</a> may be cheaper as it scales dynamically. However, in its default and highly performant configuration it is prone to write collisions.</li>
 </ul>
-<h2>Use Space\-Based Architecture</h2>
+<h2>Use Space-Based Architecture</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database%20to%20Space-Based%20Architecture.png" alt="The shared database is migrated to a Data Grid, resulting in Space-Based Architecture" loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">Space\-Based Architecture</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">Mesh</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: dynamically scale throughput of the database\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: data collisions are acceptable\.</p>
-<p>*Space\-Based Architecture* \(SBA\) duplicates the contents of a persistent database to a distributed in\-memory *cache* co\-located with the services managed by the *SBA*’s *Middleware*\. That makes most data access operations very fast unless one needs to avoid write collisions\. The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Mesh Middleware*</a> autoscales both the services and the associated data cache under load, granting nearly perfect scalability\. However, this architecture is costly because of the amount of traffic and CPU time spent on replicating the data between the *Mesh nodes*\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">Space-Based Architecture</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">Mesh</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: dynamically scale throughput of the database.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: data collisions are acceptable.</p>
+<p>*Space-Based Architecture* (SBA) duplicates the contents of a persistent database to a distributed in-memory *cache* co-located with the services managed by the *SBA*’s *Middleware*. That makes most data access operations very fast unless one needs to avoid write collisions. The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Mesh Middleware*</a> autoscales both the services and the associated data cache under load, granting nearly perfect scalability. However, this architecture is costly because of the amount of traffic and CPU time spent on replicating the data between the *Mesh nodes*.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Nearly unlimited dynamic scalability\.</li>
-<li>Off\-the\-shelf solutions are available\.</li>
-<li>Very high fault tolerance\.</li>
+<li>Nearly unlimited dynamic scalability.</li>
+<li>Off-the-shelf solutions are available.</li>
+<li>Very high fault tolerance.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Choose one: data collisions or mediocre performance\.</li>
-<li>Low latency is guaranteed only when the entire dataset fits in the memory of a node\.</li>
-<li>High operational cost because the nodes will send each other lots of data\.</li>
-<li>No support for analytical queries\.</li>
+<li>Choose one: data collisions or mediocre performance.</li>
+<li>Low latency is guaranteed only when the entire dataset fits in the memory of a node.</li>
+<li>High operational cost because the nodes will send each other lots of data.</li>
+<li>No support for analytical queries.</li>
 </ul>
 <h2>Move the data to private databases of services</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database%20to%20Services.png" alt="The shared database is split into databases dedicated to subdomains, resulting in Layered Services." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: decouple the services, remove the performance bottleneck \(*Shared Database*\)\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the domain data is weakly coupled\.</p>
-<p>If the data clearly follows subdomains, it may be possible to subdivide it accordingly\. The services will become <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/choreography.md.html">*choreographed*</a> \(or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">*orchestrated*</a> if they have an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*integration layer*</a>\) instead of communicating through the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html">shared data</a>\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: decouple the services, remove the performance bottleneck (*Shared Database*).</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the domain data is weakly coupled.</p>
+<p>If the data clearly follows subdomains, it may be possible to subdivide it accordingly. The services will become <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/choreography.md.html">*choreographed*</a> (or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">*orchestrated*</a> if they have an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*integration layer*</a>) instead of communicating through the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html">shared data</a>.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>The services become independent in their persistence and data processing technologies\.</li>
-<li>Performance of the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*data layer*</a>, which tends to limit the scalability of the system, will likely improve thanks to the use of smaller specialized databases\.</li>
+<li>The services become independent in their persistence and data processing technologies.</li>
+<li>Performance of the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*data layer*</a>, which tends to limit the scalability of the system, will likely improve thanks to the use of smaller specialized databases.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>The communication between the services and the synchronization of their data becomes a major issue\.</li>
-<li>Joins of the data from different subdomains will not be available\.</li>
-<li>Costs are likely to increase because of data transfer and duplication between the services\.</li>
-<li>You will have to administrate multiple databases\.</li>
+<li>The communication between the services and the synchronization of their data becomes a major issue.</li>
+<li>Joins of the data from different subdomains will not be available.</li>
+<li>Costs are likely to increase because of data transfer and duplication between the services.</li>
+<li>You will have to administrate multiple databases.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*CQRS Views*</a> or a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Query Service*</a> help a service access and join data that belongs to other services\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*CQRS Views*</a> or a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Query Service*</a> help a service access and join data that belongs to other services.</li>
 </ul>
 <h2>Deploy specialized databases</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database%20to%20Polyglot%20Persistence.png" alt="The shared database is migrated to specialized databases." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">Polyglot Persistence</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: improve performance and maybe fault tolerance of the data layer\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there are diverse data types or patterns of data access\.</p>
-<p>It is very likely that you can either use <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*specialized databases*</a> for various data types or deploy <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*read\-only replicas*</a> of your data for queries\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">Polyglot Persistence</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: improve performance and maybe fault tolerance of the data layer.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there are diverse data types or patterns of data access.</p>
+<p>It is very likely that you can either use <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*specialized databases*</a> for various data types or deploy <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*read-only replicas*</a> of your data for queries.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>You can choose one of the many specialized databases available on the market\.</li>
-<li>There is a good chance to significantly improve performance\.</li>
-<li>Replication improves fault tolerance of your data layer\.</li>
+<li>You can choose one of the many specialized databases available on the market.</li>
+<li>There is a good chance to significantly improve performance.</li>
+<li>Replication improves fault tolerance of your data layer.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>It may take effort to learn the new technologies and use them efficiently\.</li>
-<li>Someone needs to see to the new database\(s\)\.</li>
-<li>You’ll likely need to work around *replication lag* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[MP</a>\]\.</li>
+<li>It may take effort to learn the new technologies and use them efficiently.</li>
+<li>Someone needs to see to the new database(s).</li>
+<li>You’ll likely need to work around *replication lag* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[MP</a>\].</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-middleware.md.html">Evolutions of a Middleware</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-proxy.md.html">Evolutions of a Proxy</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://martinfowler.com/bliki/ReportingDatabase.html">*Reporting Database*</a></li><li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Shared%20Repository">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Shared%20Repository</a></li>

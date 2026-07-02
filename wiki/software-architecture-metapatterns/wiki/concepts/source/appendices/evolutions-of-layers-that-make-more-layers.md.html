@@ -24,37 +24,35 @@
 <h1>Evolutions of Layers that make more layers</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of Layers that make more layers.md</code>.</blockquote>
-<p>Not all the layered architectures are equally layered\. A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> with a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a> or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">database</a> has already stepped into the realm of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> but is still far from reaping all of its benefits\. It may continue its journey in a few ways that <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-result-in-layers.md.html">were earlier discussed</a> for *Monolith*:</p>
+<p>Not all the layered architectures are equally layered. A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> with a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a> or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">database</a> has already stepped into the realm of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> but is still far from reaping all of its benefits. It may continue its journey in a few ways that <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-result-in-layers.md.html">were earlier discussed</a> for *Monolith*:</p>
 <ul>
-<li>Employing a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*database*</a> \(if you don’t use one\) lets you rely on a thoroughly optimized state\-of\-the\-art subsystem for data processing and storage\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a> are similarly reusable generic components to be added at will\.</li>
-<li>Implementing an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> on top of your system may improve the programming experience and runtime performance for your clients\.</li>
+<li>Employing a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*database*</a> (if you don’t use one) lets you rely on a thoroughly optimized state-of-the-art subsystem for data processing and storage.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a> are similarly reusable generic components to be added at will.</li>
+<li>Implementing an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> on top of your system may improve the programming experience and runtime performance for your clients.</li>
 </ul>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Layers.png" alt="A diagram of calls in a layered system. A single request from a client is translated by an Orchestrator into multiple calls to lower layers." loading="lazy"></p>
 <p>It is also common to:</p>
 <ul>
-<li>Segregate the business logic into two <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*layers*</a>\.</li>
+<li>Segregate the business logic into two <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*layers*</a>.</li>
 </ul>
 <h2>Split the business logic into two layers</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Split%20in%20Two.png" alt="A backend is subdivided into application and domain layers." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: let parts of the business logic vary in their qualities, improve the structure of the code\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the high\-level and low\-level parts of the business logic are loosely coupled\.</p>
-<p>It is often possible to split a backend into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">integration</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">orchestration</a>\) and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">domain</a> layers\. That allows for one team to specialize in customer use cases while the other one delves deep into the domain knowledge and infrastructure\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: let parts of the business logic vary in their qualities, improve the structure of the code.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the high-level and low-level parts of the business logic are loosely coupled.</p>
+<p>It is often possible to split a backend into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">integration</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">orchestration</a>) and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">domain</a> layers. That allows for one team to specialize in customer use cases while the other one delves deep into the domain knowledge and infrastructure.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>You get an extra development team\.</li>
-<li>The high\-level use cases may be deployed separately from business rules\.</li>
-<li>The layers may diverge in technologies and styles\.</li>
-<li>The code may <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">become less complex</a>\.</li>
+<li>You get an extra development team.</li>
+<li>The high-level use cases may be deployed separately from business rules.</li>
+<li>The layers may diverge in technologies and styles.</li>
+<li>The code may <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">become less complex</a>.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>There is a small performance penalty\.</li>
-<li>In\-depth debugging becomes harder\.</li>
+<li>There is a small performance penalty.</li>
+<li>In-depth debugging becomes harder.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-logic.md.html">Evolutions of Shards that share logic</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-that-help-large-projects.md.html">Evolutions of Layers that help large projects</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Layers%20that%20make%20more%20layers">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Layers%20that%20make%20more%20layers</a></li>

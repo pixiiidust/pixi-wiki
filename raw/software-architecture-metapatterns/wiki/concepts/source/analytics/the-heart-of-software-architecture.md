@@ -16,13 +16,10 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Analytics/The heart of software architecture/The heart of software architecture.md`.
 
-As the visible world boils down to protons and neutrons which stick together in various combinations, so too does the entirety of software architecture as a field of endeavor grow from an interplay of *cohesion* and *decoupling*\.
+As the visible world boils down to protons and neutrons which stick together in various combinations, so too does the entirety of software architecture as a field of endeavor grow from an interplay of *cohesion* and *decoupling*.
 
 ## Contents:
 
 - [[wiki/concepts/source/analytics/cohesers-and-decouplers|Cohesers and decouplers]]
 - [[wiki/concepts/source/analytics/deconstructing-patterns|Deconstructing patterns]]
 - [[wiki/concepts/source/analytics/choose-your-own-architecture|Choose your own architecture]]
-
-| \<\< [[wiki/concepts/source/analytics/real-world-inspirations-for-architectural-patterns|Real\-world inspirations for architectural patterns]] | ^ [[wiki/concepts/source/analytics/analytics|Analytics]] ^ | [[wiki/concepts/source/analytics/cohesers-and-decouplers|Cohesers and decouplers]] \>\> |
-| --- | --- | --- |

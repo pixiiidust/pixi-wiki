@@ -24,39 +24,37 @@
 <h1>Evolutions of Layers to gain flexibility</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of Layers to gain flexibility.md</code>.</blockquote>
-<p>The last group of evolutions to consider is about making the system more adaptable\. We have <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-rely-on-plugins.md.html">already discussed</a> the following evolutions for <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a>:</p>
+<p>The last group of evolutions to consider is about making the system more adaptable. We have <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-rely-on-plugins.md.html">already discussed</a> the following evolutions for <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a>:</p>
 <ul>
-<li>The behavior of the system may be modified through <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">*Plugins*</a>\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a> protects the business logic from dependencies on libraries and data stores\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Scripts*</a> allow for customization of the system’s logic on a per client basis\.</li>
+<li>The behavior of the system may be modified through <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">*Plugins*</a>.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a> protects the business logic from dependencies on libraries and data stores.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Scripts*</a> allow for customization of the system’s logic on a per client basis.</li>
 </ul>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png" alt="Diagrams of Layers with plugins, Layers with scripts, and Hexagonal Architecture with a layered core." loading="lazy"></p>
-<p>There is also a new evolution that modifies the upper \(orchestration\) layer:</p>
+<p>There is also a new evolution that modifies the upper (orchestration) layer:</p>
 <ul>
-<li>The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*orchestration layer*</a> may be split into <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) to match the needs of several kinds of clients\.</li>
+<li>The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*orchestration layer*</a> may be split into <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) to match the needs of several kinds of clients.</li>
 </ul>
 <h2>Divide the orchestration layer into Backends for Frontends</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Backends%20for%20Frontends.png" alt="The application layer is split into Backends for Frontends." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="&lt;Backends for Frontends (BFF">Backends for Frontends aka BFFs</a>&gt;)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: let each kind of client get a dedicated development team\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: no high\-level logic is shared between client types\.</p>
-<p>It is possible that your system has different kinds of users, e\.g\. buyers, sellers, and admins; or web and mobile applications\. It may be easier to support a separate integration module for each kind of client than to keep all the unrelated code together in a single integration layer\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="&lt;Backends for Frontends (BFF">Backends for Frontends aka BFFs</a>&gt;).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: let each kind of client get a dedicated development team.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: no high-level logic is shared between client types.</p>
+<p>It is possible that your system has different kinds of users, e.g. buyers, sellers, and admins; or web and mobile applications. It may be easier to support a separate integration module for each kind of client than to keep all the unrelated code together in a single integration layer.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Each kind of client gets a dedicated team which may choose best fitting technologies\.</li>
-<li>You get rid of the single large codebase of the integration layer\.</li>
+<li>Each kind of client gets a dedicated team which may choose best fitting technologies.</li>
+<li>You get rid of the single large codebase of the integration layer.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>There is no good way to share code between the *BFFs* \(in the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">naive implementation</a>\)\.</li>
-<li>There are new components to administer\.</li>
+<li>There is no good way to share code between the *BFFs* (in the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">naive implementation</a>).</li>
+<li>There are new components to administer.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li><a href="&lt;Backends for Frontends (BFF">Evolve the *BFFs*</a>#evolutions&gt;) through adding a shared *layer* or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Sidecars*</a> for the common functionality\.</li>
+<li><a href="&lt;Backends for Frontends (BFF">Evolve the *BFFs*</a>#evolutions&gt;) through adding a shared *layer* or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Sidecars*</a> for the common functionality.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-to-improve-performance.md.html">Evolutions of Layers to improve performance</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-services-that-restructure-services.md.html">Evolutions of Services that restructure services</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Layers%20to%20gain%20flexibility">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Layers%20to%20gain%20flexibility</a></li>

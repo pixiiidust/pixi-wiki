@@ -16,7 +16,7 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Analytics/Comparison of architectural patterns/Comparison of architectural patterns.md`.
 
-This chapter is a compilation of small sections, each of which examines one aspect of the [[wiki/concepts/source/appendices/index-of-patterns|architectural patterns included in this book]]\. It shows the value of having the list of metapatterns to iterate over and analyze\.
+This chapter is a compilation of small sections, each of which examines one aspect of the [[wiki/concepts/source/appendices/index-of-patterns|architectural patterns included in this book]]. It shows the value of having the list of metapatterns to iterate over and analyze.
 
 ## Contents:
 
@@ -24,6 +24,3 @@ This chapter is a compilation of small sections, each of which examines one aspe
 - [[wiki/concepts/source/analytics/pipelines-in-architectural-patterns|Pipelines in architectural patterns]]
 - [[wiki/concepts/source/analytics/dependency-inversion-in-architectural-patterns|Dependency inversion in architectural patterns]]
 - [[wiki/concepts/source/analytics/indirection-in-commands-and-queries|Indirection in commands and queries]]
-
-| \<\< [[wiki/concepts/source/analytics/analytics|Analytics]] | ^ [[wiki/concepts/source/analytics/analytics|Analytics]] ^ | [[wiki/concepts/source/analytics/sharing-functionality-or-data-among-services|Sharing functionality or data among services]] \>\> |
-| --- | --- | --- |

@@ -16,13 +16,13 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Foundations of software architecture/Arranging communication/Arranging communication.md`.
 
-As a project grows, it tends to become subdivided into services, modules, or whatever you call the [[wiki/concepts/source/basic-metapatterns/services|components that match its subdomains]] \(or *bounded contexts*, if you prefer the \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\] convention\)\. Still, there remain system\-wide use cases that require collaboration from many or all of the system’s parts – otherwise the components don’t even form a single system\. Let’s see how they can be integrated\.
+As a project grows, it tends to become subdivided into services, modules, or whatever you call the [[wiki/concepts/source/basic-metapatterns/services|components that match its subdomains]] (or *bounded contexts*, if you prefer the \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\] convention). Still, there remain system-wide use cases that require collaboration from many or all of the system’s parts – otherwise the components don’t even form a single system. Let’s see how they can be integrated.
 
 
 ![A monolithic system is subdivided into several services but it is an open question how the resulting components should be integrated.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Communication/Monolith%20to%20Services.png)
 
 
-As integration is not unique to distributed systems – it is present even in smaller programs that need to make data, functions, and classes work together – we’ll take a look at programming and architectural paradigms next\.
+As integration is not unique to distributed systems – it is present even in smaller programs that need to make data, functions, and classes work together – we’ll take a look at programming and architectural paradigms next.
 
 ## Contents:
 
@@ -31,6 +31,3 @@ As integration is not unique to distributed systems – it is present even in sm
 - [[wiki/concepts/source/foundations-of-software-architecture/choreography|Choreography]]
 - [[wiki/concepts/source/foundations-of-software-architecture/shared-data|Shared data]]
 - [[wiki/concepts/source/foundations-of-software-architecture/comparison-of-communication-styles|Comparison of communication styles]]
-
-| \<\< [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|Four kinds of software]] | ^ [[wiki/concepts/source/foundations-of-software-architecture/foundations-of-software-architecture|Foundations of software architecture]] ^ | [[wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms|Programming and architectural paradigms]] \>\> |
-| --- | --- | --- |

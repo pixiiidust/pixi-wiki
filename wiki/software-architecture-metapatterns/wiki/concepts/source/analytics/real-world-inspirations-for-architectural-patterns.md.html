@@ -24,185 +24,183 @@
 <h1>Real world inspirations for architectural patterns</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Analytics/Real-world inspirations for architectural patterns.md</code>.</blockquote>
-<p>As architectural patterns are generally technology\-independent, they must mostly be shaped by the foundational principles of software engineering\. And because the same principles are likely at work at every level of a software system, we may expect similar structures to appear on many levels of software, given similar circumstances – which are not always attainable, for the system\-wide scope \(which means that there are multiple clients and libraries\) and distributed nature \(which deals with faults of individual components\) of many patterns of systems architecture don’t have direct counterparts in smaller single\-process software\. Thus we expect to observe the fractal nature for the more generic patterns while narrowly specialized ones are present at only one or two scopes of software design\.</p>
-<p>Another thought to consider is that it’s not in human nature to invent something entirely new – we are much more adept in imitating and combining whatever we see around us\. That is why it’s so hard to find a genuine xenopsychology in literature or movies – to the extent that the eponymous Alien is just an overgrown <a href="https://en.wikipedia.org/wiki/Parasitoid_wasp">parasitoid wasp</a>\. Hence there is another pathway to pursue – identifying the patterns which we know from software engineering in the world around us, as the authors of \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[POSA2</a>\] did decades ago\.</p>
-<p>Let’s go\!</p>
+<p>As architectural patterns are generally technology-independent, they must mostly be shaped by the foundational principles of software engineering. And because the same principles are likely at work at every level of a software system, we may expect similar structures to appear on many levels of software, given similar circumstances – which are not always attainable, for the system-wide scope (which means that there are multiple clients and libraries) and distributed nature (which deals with faults of individual components) of many patterns of systems architecture don’t have direct counterparts in smaller single-process software. Thus we expect to observe the fractal nature for the more generic patterns while narrowly specialized ones are present at only one or two scopes of software design.</p>
+<p>Another thought to consider is that it’s not in human nature to invent something entirely new – we are much more adept in imitating and combining whatever we see around us. That is why it’s so hard to find a genuine xenopsychology in literature or movies – to the extent that the eponymous Alien is just an overgrown <a href="https://en.wikipedia.org/wiki/Parasitoid_wasp">parasitoid wasp</a>. Hence there is another pathway to pursue – identifying the patterns which we know from software engineering in the world around us, as the authors of \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[POSA2</a>\] did decades ago.</p>
+<p>Let’s go!</p>
 <h2><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/basic-metapatterns.md.html">Basic metapatterns</a></h2>
-<p>The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/basic-metapatterns.md.html">basic topologies</a> lay the foundation for any system by paving ways to *divide* it into components to *conquer* its <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">complexity</a>\. We are going to observe them everywhere around us:</p>
+<p>The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/basic-metapatterns.md.html">basic topologies</a> lay the foundation for any system by paving ways to *divide* it into components to *conquer* its <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">complexity</a>. We are going to observe them everywhere around us:</p>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">Monolith</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Monolith.png" alt="A diagram of Monolith, with explanations." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> stands for encapsulation – we use the thing without looking inside:</p>
 <ul>
-<li>You interact with your dog \(or your smartphone\) through their interface without thinking of their internals\.</li>
-<li>A function exposes its name, arguments and, probably, some comments\. The implementation is hidden from its users\.</li>
-<li>An object has a set of public methods\.</li>
-<li>A module or a library exports several functions for use by its clients\.</li>
-<li>A program is configured through its command line parameters and managed through its <a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a>\. We don’t care how the Linux utilities \(e\.g\. *top* or *cat*\) work – we just run them\.</li>
-<li>A whole distributed system may be <a href="https://comic.browserling.com/full-stack.png">hidden behind</a> a web page in your browser – and you never imagine its complexity unless you have worked on something of a kind\.</li>
+<li>You interact with your dog (or your smartphone) through their interface without thinking of their internals.</li>
+<li>A function exposes its name, arguments and, probably, some comments. The implementation is hidden from its users.</li>
+<li>An object has a set of public methods.</li>
+<li>A module or a library exports several functions for use by its clients.</li>
+<li>A program is configured through its command line parameters and managed through its <a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a>. We don’t care how the Linux utilities (e.g. *top* or *cat*) work – we just run them.</li>
+<li>A whole distributed system may be <a href="https://comic.browserling.com/full-stack.png">hidden behind</a> a web page in your browser – and you never imagine its complexity unless you have worked on something of a kind.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Shards.png" alt="A diagram of Shards, with explanations." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shards*</a> is about having multiple instances of something, which often differ in their data:</p>
 <ul>
-<li>A company employs many programmers to accelerate development of its projects\.</li>
-<li>Carrying two mobile phones from different operators fits this pattern as well\.</li>
-<li>This is how they make modern processors more powerful: by adding more cores, not by clocking them faster\.</li>
-<li>Objects in OOP are the perfect example of having multiple instances that vary in their data\.</li>
-<li>Running several shells in Linux is a kind of sharding\.</li>
-<li>A client application of a multi\-user online game is a shard as well\.</li>
+<li>A company employs many programmers to accelerate development of its projects.</li>
+<li>Carrying two mobile phones from different operators fits this pattern as well.</li>
+<li>This is how they make modern processors more powerful: by adding more cores, not by clocking them faster.</li>
+<li>Objects in OOP are the perfect example of having multiple instances that vary in their data.</li>
+<li>Running several shells in Linux is a kind of sharding.</li>
+<li>A client application of a multi-user online game is a shard as well.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Layers.png" alt="A diagram of Layered Architecture, with explanations." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> is the separation of responsibilities between external and internal components:</p>
 <ul>
-<li>In winter we wear soft clothes on our body, a warm sweater over them, and a wind\-proof jacket as the external layer\.</li>
-<li>An object comprises high\-level public methods, low\-level privates, and data\.</li>
-<li>An OS has a UI which runs over user\-space software over an OS kernel over device drivers over the hardware\.</li>
-<li>Your web browser executes a frontend which communicates to a backend which uses a database\.</li>
+<li>In winter we wear soft clothes on our body, a warm sweater over them, and a wind-proof jacket as the external layer.</li>
+<li>An object comprises high-level public methods, low-level privates, and data.</li>
+<li>An OS has a UI which runs over user-space software over an OS kernel over device drivers over the hardware.</li>
+<li>Your web browser executes a frontend which communicates to a backend which uses a database.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Services.png" alt="A diagram of Services, with explanations." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a> boil down to composition and <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a>:</p>
 <ul>
-<li>We have legs, arms, and other narrowly specialized members\.</li>
-<li>A gadget contains specialized chips for the activities which it supports\.</li>
-<li>\<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] advocates for an object to incorporate smaller, specialized objects \(*composition over inheritance*\)\.</li>
-<li>Applications often delegate parts of their logic to specialized modules or libraries\.</li>
-<li>An OS dedicates a driver for each piece of hardware installed\. Moreover, it provides many tools to its users – instead of tackling all the user needs within the kernel\.</li>
-<li>\<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDD</a>\] describes the way to subdivide a large system into \(hopefully\) loosely coupled components\.</li>
+<li>We have legs, arms, and other narrowly specialized members.</li>
+<li>A gadget contains specialized chips for the activities which it supports.</li>
+<li>\<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] advocates for an object to incorporate smaller, specialized objects (*composition over inheritance*).</li>
+<li>Applications often delegate parts of their logic to specialized modules or libraries.</li>
+<li>An OS dedicates a driver for each piece of hardware installed. Moreover, it provides many tools to its users – instead of tackling all the user needs within the kernel.</li>
+<li>\<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDD</a>\] describes the way to subdivide a large system into (hopefully) loosely coupled components.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">Pipeline</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Pipeline.png" alt="A diagram of Pipeline, with explanations." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Pipeline*</a> is about the stepwise transformation of data:</p>
 <ul>
-<li>The pattern got its name from real\-world plumbing\.</li>
-<li>You’ll see similar arrangements in <a href="https://en.wikipedia.org/wiki/Metabolism">cellular metabolism</a>\.</li>
-<li>It is the foundation of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms.md.html">functional programming</a>\.</li>
-<li>Linux command line tools are often skillfully chained into pipelines\.</li>
-<li>Hardware is full of pipelines: from <a href="https://en.wikipedia.org/wiki/Instruction_pipelining">CPU</a> and <a href="https://en.wikipedia.org/wiki/Graphics_pipeline">GPU</a> to audio and video processing\.</li>
-<li>Finally, a UI wizard passes its users through a series of screens\.</li>
+<li>The pattern got its name from real-world plumbing.</li>
+<li>You’ll see similar arrangements in <a href="https://en.wikipedia.org/wiki/Metabolism">cellular metabolism</a>.</li>
+<li>It is the foundation of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms.md.html">functional programming</a>.</li>
+<li>Linux command line tools are often skillfully chained into pipelines.</li>
+<li>Hardware is full of pipelines: from <a href="https://en.wikipedia.org/wiki/Instruction_pipelining">CPU</a> and <a href="https://en.wikipedia.org/wiki/Graphics_pipeline">GPU</a> to audio and video processing.</li>
+<li>Finally, a UI wizard passes its users through a series of screens.</li>
 </ul>
 <h2><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/extension-metapatterns.md.html">Extension metapatterns</a></h2>
-<p>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/extension-metapatterns.md.html">extension pattern</a> encapsulates one or two aspects of the system’s implementation\. It may appear only at the design levels which have those particular aspects:</p>
+<p>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/extension-metapatterns.md.html">extension pattern</a> encapsulates one or two aspects of the system’s implementation. It may appear only at the design levels which have those particular aspects:</p>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Middleware.png" alt="A diagram of Services with a middleware, with explanations." loading="lazy"></p>
 <p>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> abstracts scaling and/or intercommunication:</p>
 <ul>
-<li>The network of post offices is a middleware – you push a letter into a mailbox and it automagically appears at its destination’s door\.</li>
-<li>A <a href="https://en.wikipedia.org/wiki/Bus_depot">bus depot</a> may mean a bus garage which deploys as many buses as needed to service the traffic or a bus station where people come to have a ride, regardless of the exact vehicle model they’ll take\.</li>
-<li>Hardware is full of another kind of <a href="https://en.wikipedia.org/wiki/Bus_(computing">buses</a>) that unify means of communication\.</li>
-<li>TCP and UDP sockets hide the details of the underlying network\.</li>
-<li>A distributed <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">actor framework</a> allows an actor to address another actor without knowing where it is deployed\.</li>
+<li>The network of post offices is a middleware – you push a letter into a mailbox and it automagically appears at its destination’s door.</li>
+<li>A <a href="https://en.wikipedia.org/wiki/Bus_depot">bus depot</a> may mean a bus garage which deploys as many buses as needed to service the traffic or a bus station where people come to have a ride, regardless of the exact vehicle model they’ll take.</li>
+<li>Hardware is full of another kind of <a href="https://en.wikipedia.org/wiki/Bus_(computing">buses</a>) that unify means of communication.</li>
+<li>TCP and UDP sockets hide the details of the underlying network.</li>
+<li>A distributed <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">actor framework</a> allows an actor to address another actor without knowing where it is deployed.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Shared%20Repository.png" alt="A diagram of Services with a shared repository, with explanations." loading="lazy"></p>
 <p>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Repository*</a> provides data storage and/or data change notifications:</p>
 <ul>
-<li>Everybody in the room may use a ~black~whiteboard to express and exchange their ideas\.</li>
-<li>An Internet forum works in a similar way – people post their arguments there for others to see them and get notified on answers\.</li>
-<li>RAM and CPU caches are kinds of shared repositories\. CPU caches are <a href="https://en.wikipedia.org/wiki/Cache_coherency_protocols_(examples">kept synchronized through notifications</a>)\.</li>
-<li><a href="https://refactoring.guru/design-patterns/observer">*Observer*</a> \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] is about getting notified when a shared object changes\.</li>
-<li>Services or service instances may share a database\.</li>
+<li>Everybody in the room may use a ~black~whiteboard to express and exchange their ideas.</li>
+<li>An Internet forum works in a similar way – people post their arguments there for others to see them and get notified on answers.</li>
+<li>RAM and CPU caches are kinds of shared repositories. CPU caches are <a href="https://en.wikipedia.org/wiki/Cache_coherency_protocols_(examples">kept synchronized through notifications</a>).</li>
+<li><a href="https://refactoring.guru/design-patterns/observer">*Observer*</a> \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] is about getting notified when a shared object changes.</li>
+<li>Services or service instances may share a database.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Proxy.png" alt="A diagram of Services with a proxy, with explanations." loading="lazy"></p>
 <p>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a> isolates a system from its environment by translating between the internal and external protocols and/or implementing generic aspects of communication:</p>
 <ul>
-<li>You may need a translator to understand foreign people or have a secretary to deal with routine tasks\. A local guide combines both roles\.</li>
-<li>An adapter makes several hardware plugs \(or software frameworks\) mutually interoperable\.</li>
-<li>Your Wi\-Fi router is a proxy between your laptop and the Internet\.</li>
-<li>A compiler is a kind of a proxy between source code and bytecode\.</li>
+<li>You may need a translator to understand foreign people or have a secretary to deal with routine tasks. A local guide combines both roles.</li>
+<li>An adapter makes several hardware plugs (or software frameworks) mutually interoperable.</li>
+<li>Your Wi-Fi router is a proxy between your laptop and the Internet.</li>
+<li>A compiler is a kind of a proxy between source code and bytecode.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Orchestrator.png" alt="A diagram of Services with an orchestrator, with explanations." loading="lazy"></p>
-<p>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> integrates several components by implementing high\-level use cases and/or keeping the components in sync:</p>
+<p>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> integrates several components by implementing high-level use cases and/or keeping the components in sync:</p>
 <ul>
-<li>A taxi driver orchestrates their car’s internals\.</li>
-<li>A <a href="https://refactoring.guru/design-patterns/facade">*Facade*</a> \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] provides a high\-level interface for a system while a <a href="https://refactoring.guru/design-patterns/mediator">*Mediator*</a> \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] integrates a system by spreading the changes initiated by the system’s components\.</li>
-<li>A linker composes a working program out of disjunct modules\.</li>
+<li>A taxi driver orchestrates their car’s internals.</li>
+<li>A <a href="https://refactoring.guru/design-patterns/facade">*Facade*</a> \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] provides a high-level interface for a system while a <a href="https://refactoring.guru/design-patterns/mediator">*Mediator*</a> \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] integrates a system by spreading the changes initiated by the system’s components.</li>
+<li>A linker composes a working program out of disjunct modules.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">Sandwich</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Sandwich.png" alt="A diagram of Sandwich Architecture, with explanations." loading="lazy"></p>
 <p>In <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a> a varied and segmented layer with the most valuable code is operated and held in place by other, cohesive layers:</p>
 <ul>
-<li>A sandwich is an obvious example\.</li>
-<li>This is how we make down jackets and thermal insulation in general\.</li>
-<li>A <a href="https://en.wikipedia.org/wiki/Cell_membrane">cell membrane</a> which includes many transporters and receptors looks exactly like that\.</li>
+<li>A sandwich is an obvious example.</li>
+<li>This is how we make down jackets and thermal insulation in general.</li>
+<li>A <a href="https://en.wikipedia.org/wiki/Cell_membrane">cell membrane</a> which includes many transporters and receptors looks exactly like that.</li>
 </ul>
 <h2><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns.md.html">Fragmented metapatterns</a></h2>
-<p>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns.md.html">fragmented topology</a> uses small specialized components to approach a case which is hard to resolve with more generic means\. The high degree of specialization limits the number of available examples:</p>
+<p>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns.md.html">fragmented topology</a> uses small specialized components to approach a case which is hard to resolve with more generic means. The high degree of specialization limits the number of available examples:</p>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">Polyglot Persistence</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Polyglot%20Persistence.png" alt="A diagram of Services with Polyglot Persistence, with explanations." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> is about having multiple containers for data:</p>
 <ul>
-<li>A warehouse or a cargo ship has dedicated storage areas with separate facilities for combustible, toxic, and frozen goods\.</li>
-<li>A computer has CPU caches, RAM, flash, and hard drives for temporary or permanent data storage\.</li>
-<li>There are map, list, and array – each with its pros and cons\. A large class would often use two or three kinds of containers, and not without reason\.</li>
+<li>A warehouse or a cargo ship has dedicated storage areas with separate facilities for combustible, toxic, and frozen goods.</li>
+<li>A computer has CPU caches, RAM, flash, and hard drives for temporary or permanent data storage.</li>
+<li>There are map, list, and array – each with its pros and cons. A large class would often use two or three kinds of containers, and not without reason.</li>
 </ul>
 <h3><a href="&lt;Backends for Frontends (BFF">Backends for Frontends</a>&gt;)</h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Backends%20for%20Frontends.png" alt="A diagram of Services with Backends for Frontends, with explanations." loading="lazy"></p>
 <p><a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) is about treating different kinds of clients individually:</p>
 <ul>
-<li>A bank is likely to reserve a couple of employees to serve rich clients\.</li>
-<li>A Wi\-Fi router has many management interfaces: web, mobile application, CLI, and probably <a href="https://en.wikipedia.org/wiki/TR-069">TR\-069</a>\.</li>
-<li>A multiplayer game may provide both desktop and mobile client applications\.</li>
+<li>A bank is likely to reserve a couple of employees to serve rich clients.</li>
+<li>A Wi-Fi router has many management interfaces: web, mobile application, CLI, and probably <a href="https://en.wikipedia.org/wiki/TR-069">TR-069</a>.</li>
+<li>A multiplayer game may provide both desktop and mobile client applications.</li>
 </ul>
-<h3><a href="&lt;Service-Oriented Architecture (SOA">Service\-Oriented Architecture</a>&gt;)</h3>
+<h3><a href="&lt;Service-Oriented Architecture (SOA">Service-Oriented Architecture</a>&gt;)</h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Service-Oriented%20Architecture.png" alt="A diagram of Service-Oriented Architecture, with explanations." loading="lazy"></p>
 <p><a href="&lt;Service-Oriented Architecture (SOA">*SOA*</a>&gt;) applies OOP techniques, including component reuse, to deal with complex systems:</p>
 <ul>
-<li>That’s what you have inside your car\. Many of its internals rely on the car’s battery for power supply instead of having a small battery installed inside every component\.</li>
-<li>Cities are built in the same way – schools, markets, and railways serve multiple houses\.</li>
-<li>It’s the same with user space of operating systems: there is a shared UI framework which interfaces with as\-many\-as\-needed applications, each of which calls shared libraries \(DLLs\)\.</li>
+<li>That’s what you have inside your car. Many of its internals rely on the car’s battery for power supply instead of having a small battery installed inside every component.</li>
+<li>Cities are built in the same way – schools, markets, and railways serve multiple houses.</li>
+<li>It’s the same with user space of operating systems: there is a shared UI framework which interfaces with as-many-as-needed applications, each of which calls shared libraries (DLLs).</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Hierarchy</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Hierarchy.png" alt="A diagram of Hierarchy, with explanations." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Hierarchy*</a> distributes system’s complexity over multiple levels:</p>
 <ul>
-<li>This is how large companies and armies are managed\.</li>
-<li>Large projects <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/cohesers-and-decouplers.md.html">are made</a> of services which contain modules which contain classes which contain methods\.</li>
+<li>This is how large companies and armies are managed.</li>
+<li>Large projects <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/cohesers-and-decouplers.md.html">are made</a> of services which contain modules which contain classes which contain methods.</li>
 </ul>
 <h2><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/implementation-metapatterns.md.html">Implementation metapatterns</a></h2>
-<p>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/implementation-metapatterns.md.html">implementation metapattern</a> highlights the peculiar internal arrangements of a component\. Such patterns are deeply specialized:</p>
+<p>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/implementation-metapatterns.md.html">implementation metapattern</a> highlights the peculiar internal arrangements of a component. Such patterns are deeply specialized:</p>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">Plugins</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Plugins.png" alt="A diagram of Plugins Architecture, with explanations." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">*Plugins*</a> make a component’s behavior flexible through delegating its parts to small external additions:</p>
 <ul>
-<li>This is how we use tools for our work – a man becomes a digger when given a shovel\.</li>
-<li><a href="https://refactoring.guru/design-patterns/strategy">*Strategy*</a> \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] is the thing\.</li>
+<li>This is how we use tools for our work – a man becomes a digger when given a shovel.</li>
+<li><a href="https://refactoring.guru/design-patterns/strategy">*Strategy*</a> \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] is the thing.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">Hexagonal Architecture</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Hexagonal%20Architecture.png" alt="A diagram of Hexagonal Architecture, with explanations." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a> protects the internals of a system from its environment:</p>
 <ul>
-<li>A drill or a screwdriver has replaceable bits\.</li>
-<li>A living cell is encapsulated by its <a href="https://en.wikipedia.org/wiki/Cell_membrane">membrane</a> and relies on <a href="https://en.wikipedia.org/wiki/Membrane_protein">protein adapters</a> for interactions with its environment\. <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">A kind of *Hexagonal Architecture*</a> was named after it\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*OS Abstraction Layer* and *Hardware Abstraction Layer*</a> in embedded systems or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Anti\-Corruption Layer*</a> in \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDD</a>\] are all about that\.</li>
-<li>The <a href="https://blog.ploeh.dk/2020/03/02/impureim-sandwich/">*impure/pure/impure sandwich*</a> of functional programming is closely related\. Here also, the core of the system cannot change anything outside of itself directly \(any external communication relies on *adapters*\) and it is <a href="http://ithare.com/chapter-vc-modular-architecture-client-side-on-debugging-distributed-systems-deterministic-logic-and-finite-state-machines/">deterministic if single\-threaded</a>\.</li>
+<li>A drill or a screwdriver has replaceable bits.</li>
+<li>A living cell is encapsulated by its <a href="https://en.wikipedia.org/wiki/Cell_membrane">membrane</a> and relies on <a href="https://en.wikipedia.org/wiki/Membrane_protein">protein adapters</a> for interactions with its environment. <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">A kind of *Hexagonal Architecture*</a> was named after it.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*OS Abstraction Layer* and *Hardware Abstraction Layer*</a> in embedded systems or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Anti-Corruption Layer*</a> in \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDD</a>\] are all about that.</li>
+<li>The <a href="https://blog.ploeh.dk/2020/03/02/impureim-sandwich/">*impure/pure/impure sandwich*</a> of functional programming is closely related. Here also, the core of the system cannot change anything outside of itself directly (any external communication relies on *adapters*) and it is <a href="http://ithare.com/chapter-vc-modular-architecture-client-side-on-debugging-distributed-systems-deterministic-logic-and-finite-state-machines/">deterministic if single-threaded</a>.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">Microkernel</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Microkernel.png" alt="A diagram of Microkernel, with explanations." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Microkernel*</a> shares the goods of resource providers among resource users:</p>
 <ul>
-<li>It’s like a bank that takes money from the rich to distribute them among the poor\.</li>
-<li>This is what an OS is for\. Its scheduler shares the CPU, the memory subsystem shares RAM, while the device drivers provide access to the peripherals\.</li>
-<li>Cloud services are based on sharing computational resources among clients\.</li>
+<li>It’s like a bank that takes money from the rich to distribute them among the poor.</li>
+<li>This is what an OS is for. Its scheduler shares the CPU, the memory subsystem shares RAM, while the device drivers provide access to the peripherals.</li>
+<li>Cloud services are based on sharing computational resources among clients.</li>
 </ul>
 <h3><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">Mesh</a></h3>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Mesh.png" alt="A diagram of Services over a mesh, with explanations." loading="lazy"></p>
-<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Mesh*</a> resembles grassroots movements – self\-organization and survival through redundancy:</p>
+<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Mesh*</a> resembles grassroots movements – self-organization and survival through redundancy:</p>
 <ul>
-<li>Ants and bees are small, autonomous, and efficient\. Their strength comes from their numbers\.</li>
-<li>Road networks and power grids don’t collapse if some of their components are damaged as they are highly redundant\.</li>
-<li>Torrents, mobile communications, and the Internet infrastructure are known for their robustness\.</li>
+<li>Ants and bees are small, autonomous, and efficient. Their strength comes from their numbers.</li>
+<li>Road networks and power grids don’t collapse if some of their components are damaged as they are highly redundant.</li>
+<li>Torrents, mobile communications, and the Internet infrastructure are known for their robustness.</li>
 </ul>
 <h2>Summary</h2>
-<p>Architectural patterns have parallels in the natural world, our society and/or different levels of computer hardware and software\. Learning about them helps us feel the driving forces behind the patterns and be more flexible and creative in both using the patterns which we already know and in devising new ones\.</p>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/architecture-and-product-life-cycle.md.html">Architecture and product life cycle</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/analytics.md.html">Analytics</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/the-heart-of-software-architecture.md.html">The heart of software architecture</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
+<p>Architectural patterns have parallels in the natural world, our society and/or different levels of computer hardware and software. Learning about them helps us feel the driving forces behind the patterns and be more flexible and creative in both using the patterns which we already know and in devising new ones.</p>
 <h2>External links</h2>
 <ul>
-<li><a href="https://refactoring.guru/design-patterns/facade">*Facade*</a></li><li><a href="https://blog.ploeh.dk/2020/03/02/impureim-sandwich/">*impure/pure/impure sandwich*</a></li><li><a href="https://refactoring.guru/design-patterns/mediator">*Mediator*</a></li><li><a href="https://refactoring.guru/design-patterns/observer">*Observer*</a></li><li><a href="https://refactoring.guru/design-patterns/strategy">*Strategy*</a></li><li><a href="https://en.wikipedia.org/wiki/Bus_depot">bus depot</a></li><li><a href="https://en.wikipedia.org/wiki/Bus_(computing">buses</a></li><li><a href="https://en.wikipedia.org/wiki/Metabolism">cellular metabolism</a></li><li><a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a></li><li><a href="https://en.wikipedia.org/wiki/Instruction_pipelining">CPU</a></li><li><a href="http://ithare.com/chapter-vc-modular-architecture-client-side-on-debugging-distributed-systems-deterministic-logic-and-finite-state-machines/">deterministic if single\-threaded</a></li><li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Analytics/Real-world%20inspirations%20for%20architectural%20patterns">github.com/denyspoltorak/metapatterns/wiki/Analytics/Real-world%20inspirations%20for%20architectural%20patterns</a></li><li><a href="https://en.wikipedia.org/wiki/Graphics_pipeline">GPU</a></li><li><a href="https://comic.browserling.com/full-stack.png">hidden behind</a></li><li><a href="https://en.wikipedia.org/wiki/Cache_coherency_protocols_(examples">kept synchronized through notifications</a></li><li><a href="https://en.wikipedia.org/wiki/Cell_membrane">membrane</a></li><li><a href="https://en.wikipedia.org/wiki/Parasitoid_wasp">parasitoid wasp</a></li><li><a href="https://en.wikipedia.org/wiki/Membrane_protein">protein adapters</a></li><li><a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a></li><li><a href="https://en.wikipedia.org/wiki/TR-069">TR\-069</a></li>
+<li><a href="https://refactoring.guru/design-patterns/facade">*Facade*</a></li><li><a href="https://blog.ploeh.dk/2020/03/02/impureim-sandwich/">*impure/pure/impure sandwich*</a></li><li><a href="https://refactoring.guru/design-patterns/mediator">*Mediator*</a></li><li><a href="https://refactoring.guru/design-patterns/observer">*Observer*</a></li><li><a href="https://refactoring.guru/design-patterns/strategy">*Strategy*</a></li><li><a href="https://en.wikipedia.org/wiki/Bus_depot">bus depot</a></li><li><a href="https://en.wikipedia.org/wiki/Bus_(computing">buses</a></li><li><a href="https://en.wikipedia.org/wiki/Metabolism">cellular metabolism</a></li><li><a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a></li><li><a href="https://en.wikipedia.org/wiki/Instruction_pipelining">CPU</a></li><li><a href="http://ithare.com/chapter-vc-modular-architecture-client-side-on-debugging-distributed-systems-deterministic-logic-and-finite-state-machines/">deterministic if single-threaded</a></li><li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Analytics/Real-world%20inspirations%20for%20architectural%20patterns">github.com/denyspoltorak/metapatterns/wiki/Analytics/Real-world%20inspirations%20for%20architectural%20patterns</a></li><li><a href="https://en.wikipedia.org/wiki/Graphics_pipeline">GPU</a></li><li><a href="https://comic.browserling.com/full-stack.png">hidden behind</a></li><li><a href="https://en.wikipedia.org/wiki/Cache_coherency_protocols_(examples">kept synchronized through notifications</a></li><li><a href="https://en.wikipedia.org/wiki/Cell_membrane">membrane</a></li><li><a href="https://en.wikipedia.org/wiki/Parasitoid_wasp">parasitoid wasp</a></li><li><a href="https://en.wikipedia.org/wiki/Membrane_protein">protein adapters</a></li><li><a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a></li><li><a href="https://en.wikipedia.org/wiki/TR-069">TR-069</a></li>
 </ul>
 <nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html"><span class="next-label">← Prev</span><span class="next-title">Proxy</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html"><span class="next-label">Next</span><span class="next-title">Sandwich →</span></a></nav>
 </article></main>

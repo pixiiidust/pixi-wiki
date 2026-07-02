@@ -24,66 +24,64 @@
 <h1>Evolutions of a Monolith that rely on Plugins</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of a Monolith that rely on Plugins.md</code>.</blockquote>
-<p>The last group of evolutions which we will review does not really change the monolithic nature of the application\. Instead, its goal is to improve the *customizability* of the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a>:</p>
+<p>The last group of evolutions which we will review does not really change the monolithic nature of the application. Instead, its goal is to improve the *customizability* of the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a>:</p>
 <ul>
-<li>Vanilla <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">*Plugins*</a> are the most direct approach which relies on tailorable bits of logic\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a> is a subtype of *Plugins* which is all about isolating the main code from any third\-party components which it uses\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Scripts*</a> is a kind of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Microkernel*</a> – yet another subtype of *Plugins* – which gives users of the system full control over its behavior\.</li>
+<li>Vanilla <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">*Plugins*</a> are the most direct approach which relies on tailorable bits of logic.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a> is a subtype of *Plugins* which is all about isolating the main code from any third-party components which it uses.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Scripts*</a> is a kind of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Microkernel*</a> – yet another subtype of *Plugins* – which gives users of the system full control over its behavior.</li>
 </ul>
 <h2>Support plugins</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Plugins.png" alt="Plugins customize the monolith&amp;#x27;s behavior." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">Plugins</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the customization of the application’s behavior\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: several aspects need to vary from customer to customer\.</p>
-<p>*Plugins* create points of access to the system that allow engineers to collect data and govern select aspects of the system’s behavior without having to learn the system’s implementation\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">Plugins</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the customization of the application’s behavior.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: several aspects need to vary from customer to customer.</p>
+<p>*Plugins* create points of access to the system that allow engineers to collect data and govern select aspects of the system’s behavior without having to learn the system’s implementation.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>The system’s behavior can be modified by internal and external programmers who don’t know its internal details\.</li>
-<li>Customized versions become much easier to release and support\.</li>
+<li>The system’s behavior can be modified by internal and external programmers who don’t know its internal details.</li>
+<li>Customized versions become much easier to release and support.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Extensive changes in the code may be required to expose the tunable aspects of the system\.</li>
-<li>Testability becomes poor because of the large number of possible variants\.</li>
-<li>Performance is likely to degrade\.</li>
+<li>Extensive changes in the code may be required to expose the tunable aspects of the system.</li>
+<li>Testability becomes poor because of the large number of possible variants.</li>
+<li>Performance is likely to degrade.</li>
 </ul>
 <h2>Isolate dependencies with Hexagonal Architecture</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Hexagonal.png" alt="The database, external libraries, and a protocol support component are separated from the business logic and isolated with adapters." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">Hexagonal Architecture</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">Plugins</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: isolate the business logic from its external dependencies\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there are third\-party or frequently changing components in the system\.</p>
-<p>The main business logic will communicate with any external component through an API or SPI defined in the terms of the business logic itself\. This way it will not depend on anything at all, and any component will be replaceable with another implementation or a <a href="https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub">stub/mock</a>\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">Hexagonal Architecture</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">Plugins</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: isolate the business logic from its external dependencies.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there are third-party or frequently changing components in the system.</p>
+<p>The main business logic will communicate with any external component through an API or SPI defined in the terms of the business logic itself. This way it will not depend on anything at all, and any component will be replaceable with another implementation or a <a href="https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub">stub/mock</a>.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Vendor lock\-in is ruled out\.</li>
-<li>A component may be replaced through to the very end of the system’s life cycle\.</li>
-<li>Stubs and mocks are supported for testing and local or early development\.</li>
-<li>It is possible to provide multiple implementations of a component\.</li>
+<li>Vendor lock-in is ruled out.</li>
+<li>A component may be replaced through to the very end of the system’s life cycle.</li>
+<li>Stubs and mocks are supported for testing and local or early development.</li>
+<li>It is possible to provide multiple implementations of a component.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Some extra effort is required to define and use the interfaces\.</li>
-<li>There is performance degradation, mostly due to lost optimization opportunities\.</li>
+<li>Some extra effort is required to define and use the interfaces.</li>
+<li>There is performance degradation, mostly due to lost optimization opportunities.</li>
 </ul>
-<h2>Add an Interpreter \(support Scripts\)</h2>
+<h2>Add an Interpreter (support Scripts)</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Interpreter.png" alt="The high-level logic is rewritten as scripts which are run by an interpreter." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">Scripts aka Interpreter</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">Microkernel</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">Plugins</a>\)\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: allow the system’s users to implement their own business logic\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the domain is representable in high\-level terms\.</p>
-<p>*Interpreter* lets the users develop high\-level business logic from scratch by programming interactions of pre\-defined building blocks, which are implemented in the core of the system\. That provides unparalleled flexibility at the cost of degraded performance and design complexity\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">Scripts aka Interpreter</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">Microkernel</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">Plugins</a>)).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: allow the system’s users to implement their own business logic.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the domain is representable in high-level terms.</p>
+<p>*Interpreter* lets the users develop high-level business logic from scratch by programming interactions of pre-defined building blocks, which are implemented in the core of the system. That provides unparalleled flexibility at the cost of degraded performance and design complexity.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Perfect flexibility and customizability for every user\.</li>
-<li>The high\-level business logic is written in high\-level terms, making it fast to develop and easy to grasp\.</li>
+<li>Perfect flexibility and customizability for every user.</li>
+<li>The high-level business logic is written in high-level terms, making it fast to develop and easy to grasp.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Requires much effort to design correctly\.</li>
-<li>There may be a heavy performance penalty if the API is overly fine\-grained\.</li>
-<li>Testability may be an issue\.</li>
+<li>Requires much effort to design correctly.</li>
+<li>There may be a heavy performance penalty if the API is overly fine-grained.</li>
+<li>Testability may be an issue.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-make-services.md.html">Evolutions of a Monolith that make Services</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-data.md.html">Evolutions of Shards that share data</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Monolith%20that%20rely%20on%20Plugins">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Monolith%20that%20rely%20on%20Plugins</a></li><li><a href="https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub">stub/mock</a></li>

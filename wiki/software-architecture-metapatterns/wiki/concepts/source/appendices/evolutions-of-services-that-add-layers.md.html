@@ -24,150 +24,148 @@
 <h1>Evolutions of Services that add layers</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of Services that add layers.md</code>.</blockquote>
-<p>The most common modifications to a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">system of *Services*</a> involve supplementary system\-wide *layers* which compensate for the inability of the *services* to share anything among themselves:</p>
+<p>The most common modifications to a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">system of *Services*</a> involve supplementary system-wide *layers* which compensate for the inability of the *services* to share anything among themselves:</p>
 <ul>
-<li>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> knows of all the deployed service <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">instances</a>\. It mediates <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">communication</a> between them and may manage their scaling and failure recovery\.</li>
-<li>The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Sidecars*</a> of a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Service Mesh*</a> make a virtual layer of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md.html">shared libraries</a> for the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Microservices*</a> it hosts\.</li>
-<li>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Database*</a> simplifies the initial phases of development and provides data consistency and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html">interservice communication</a>\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a> stand between the system and its clients and take care of shared aspects that otherwise would need to be implemented by every service\.</li>
-<li>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> is the single place for the high\-level logic of every <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">use case</a>\.</li>
-<li>Transforming *Services* into a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a> greatly simplifies their integration\.</li>
+<li>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> knows of all the deployed service <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">instances</a>. It mediates <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">communication</a> between them and may manage their scaling and failure recovery.</li>
+<li>The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Sidecars*</a> of a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Service Mesh*</a> make a virtual layer of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md.html">shared libraries</a> for the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Microservices*</a> it hosts.</li>
+<li>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Database*</a> simplifies the initial phases of development and provides data consistency and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html">interservice communication</a>.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a> stand between the system and its clients and take care of shared aspects that otherwise would need to be implemented by every service.</li>
+<li>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> is the single place for the high-level logic of every <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">use case</a>.</li>
+<li>Transforming *Services* into a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a> greatly simplifies their integration.</li>
 </ul>
 <h2>Add a Middleware</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20add%20Middleware.png" alt="The communication aspect of services can be covered by a dedicated middleware." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: take care of scaling, recovery, and interservice communication without programming it\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: communication between the services is uniform\.</p>
-<p>Distributed systems may fail in a zillion ways\. You want to ruminate neither on that nor on <a href="https://en.wikipedia.org/wiki/Heisenbug">heisenbugs</a>\. And you probably want to have a framework for scaling the services and restarting them after failure\. Get a third\-party *Middleware*\! Let your programmers write the business logic, not infrastructure\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: take care of scaling, recovery, and interservice communication without programming it.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: communication between the services is uniform.</p>
+<p>Distributed systems may fail in a zillion ways. You want to ruminate neither on that nor on <a href="https://en.wikipedia.org/wiki/Heisenbug">heisenbugs</a>. And you probably want to have a framework for scaling the services and restarting them after failure. Get a third-party *Middleware*! Let your programmers write the business logic, not infrastructure.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>You don&#x27;t invest your time in infrastructure\.</li>
-<li>Scaling and error recovery are made easy\.</li>
+<li>You don&#x27;t invest your time in infrastructure.</li>
+<li>Scaling and error recovery are made easy.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>There may be a performance penalty which becomes worse for uncommon patterns of communication\.</li>
-<li>The *Middleware* may become a single point of failure\.</li>
+<li>There may be a performance penalty which becomes worse for uncommon patterns of communication.</li>
+<li>The *Middleware* may become a single point of failure.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>Use a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Service Mesh*</a> for dynamic scaling and as a way to implement <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md.html">shared aspects</a>\.</li>
+<li>Use a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Service Mesh*</a> for dynamic scaling and as a way to implement <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md.html">shared aspects</a>.</li>
 </ul>
 <h2>Use a Service Mesh</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Multifunctional%20-%20Service%20Mesh.png" alt="Scaled services reside on a shared layer of sidecars which is placed on top of a shared mesh engine. All instances of each service access the service&amp;#x27;s database." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">Service Mesh</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">Mesh</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a>\), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Sidecar</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>\), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: support dynamic scaling and interservice communication out of the box; share libraries among the services\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: service instances are mostly <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">stateless</a>\.</p>
-<p>The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Microservices*</a> architecture boasts dynamic scaling under load thanks to its *Mesh*\-based *Middleware*\. It also allows for the services to share libraries via their *Sidecars* – additional containers co\-located with each service instance – to avoid duplication of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">generic code</a> among the services\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">Service Mesh</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">Mesh</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a>), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Sidecar</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: support dynamic scaling and interservice communication out of the box; share libraries among the services.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: service instances are mostly <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">stateless</a>.</p>
+<p>The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Microservices*</a> architecture boasts dynamic scaling under load thanks to its *Mesh*-based *Middleware*. It also allows for the services to share libraries via their *Sidecars* – additional containers co-located with each service instance – to avoid duplication of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">generic code</a> among the services.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Dynamic scaling and error recovery\.</li>
-<li>Available out of the box\.</li>
-<li>Provides a way to implement shared aspects \(cross\-cutting concerns\) once and use the resulting libraries in every service\.</li>
+<li>Dynamic scaling and error recovery.</li>
+<li>Available out of the box.</li>
+<li>Provides a way to implement shared aspects (cross-cutting concerns) once and use the resulting libraries in every service.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Performance degrades because of the complex distributed infrastructure\.</li>
-<li>You may suffer vendor lock\-in\.</li>
+<li>Performance degrades because of the complex distributed infrastructure.</li>
+<li>You may suffer vendor lock-in.</li>
 </ul>
 <h2>Use a Shared Repository</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20to%20Shared%20Database.png" alt="The data of individual services is merged into a shared repository." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: let the services <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html">share data</a>, don’t invest in operating multiple databases\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the services use a uniform approach to persisting their data\.</p>
-<p>You don’t really need every service to have a private database\. A shared one is enough in many cases\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: let the services <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html">share data</a>, don’t invest in operating multiple databases.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the services use a uniform approach to persisting their data.</p>
+<p>You don’t really need every service to have a private database. A shared one is enough in many cases.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>It is easy for the services to share and synchronize data\.</li>
-<li>Lower operational complexity\.</li>
-<li>No data duplication\.</li>
+<li>It is easy for the services to share and synchronize data.</li>
+<li>Lower operational complexity.</li>
+<li>No data duplication.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>All the services depend on the database schema which becomes hard to alter\.</li>
-<li>The single database will limit performance of the system\.</li>
-<li>It may also become a single point of failure\.</li>
+<li>All the services depend on the database schema which becomes hard to alter.</li>
+<li>The single database will limit performance of the system.</li>
+<li>It may also become a single point of failure.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space\-Based Architecture*</a> scales the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">data layer</a> but it is a simple key\-value store\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> is about having multiple specialized data stores\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space-Based Architecture*</a> scales the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">data layer</a> but it is a simple key-value store.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> is about having multiple specialized data stores.</li>
 </ul>
 <h2>Add a Proxy</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20add%20Proxy.png" alt="Generic aspects of services move to a shared proxy." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: use a standard infrastructure component on behalf of your entire system\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the system serves its clients in a uniform way\.</p>
-<p>Putting a generic component between the system and its clients helps the programmers concentrate on business logic rather than protocols, infrastructure, or even security\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: use a standard infrastructure component on behalf of your entire system.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the system serves its clients in a uniform way.</p>
+<p>Putting a generic component between the system and its clients helps the programmers concentrate on business logic rather than protocols, infrastructure, or even security.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>You get a choice of generic functionality without investing development time\.</li>
-<li>It is an additional layer that isolates your system from both its clients and attackers\.</li>
+<li>You get a choice of generic functionality without investing development time.</li>
+<li>It is an additional layer that isolates your system from both its clients and attackers.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>There is a latency penalty caused by the extra network hop\.</li>
-<li>Each *Proxy* may be a single point of failure, or at least needs some admin oversight\.</li>
+<li>There is a latency penalty caused by the extra network hop.</li>
+<li>Each *Proxy* may be a single point of failure, or at least needs some admin oversight.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>You can always add another kind of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a>\.</li>
-<li>If there are multiple clients that differ in their protocols, you can employ a stack of *Proxies* per client, resulting in <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;)\.</li>
+<li>You can always add another kind of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a>.</li>
+<li>If there are multiple clients that differ in their protocols, you can employ a stack of *Proxies* per client, resulting in <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;).</li>
 </ul>
 <h2>Use an Orchestrator</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20use%20Orchestrator.png" alt="The application logic is extracted from individual services into a shared orchestrator." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: have the high\-level logic of use cases distilled as intelligible code\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the use cases comprise sequences of high\-level steps \(which is very likely to be true for a system of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*subdomain services*</a>\)\.</p>
-<p>When a use case jumps over several services in a dance of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/choreography.md.html">*choreography*</a>, there is no easy way to understand it as there is no single place to see it in the code\. It may be even worse with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Pipelined*</a> systems where the use cases are embodied in the structure of event channels between the components\.</p>
-<p>Extract the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">high\-level business logic</a> from the choreographed services or their interconnections and put it into a dedicated component\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: have the high-level logic of use cases distilled as intelligible code.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the use cases comprise sequences of high-level steps (which is very likely to be true for a system of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*subdomain services*</a>).</p>
+<p>When a use case jumps over several services in a dance of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/choreography.md.html">*choreography*</a>, there is no easy way to understand it as there is no single place to see it in the code. It may be even worse with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Pipelined*</a> systems where the use cases are embodied in the structure of event channels between the components.</p>
+<p>Extract the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">high-level business logic</a> from the choreographed services or their interconnections and put it into a dedicated component.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>You are not limited in the number and complexity of use cases anymore\.</li>
-<li>The global use cases become much easier to debug\.</li>
-<li>You have a new team dedicated to the interaction with customers, freeing the other teams to study their parts of the domain or work on code improvements\.</li>
-<li>Many changes in the high\-level logic can be implemented and deployed without touching the main services\.</li>
-<li>The extra layer decouples the main services from the system’s clients and from each other\.</li>
+<li>You are not limited in the number and complexity of use cases anymore.</li>
+<li>The global use cases become much easier to debug.</li>
+<li>You have a new team dedicated to the interaction with customers, freeing the other teams to study their parts of the domain or work on code improvements.</li>
+<li>Many changes in the high-level logic can be implemented and deployed without touching the main services.</li>
+<li>The extra layer decouples the main services from the system’s clients and from each other.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>There is a performance penalty because the number of messages per use case doubles\.</li>
-<li>The *Orchestrator* may become a single point of failure\.</li>
-<li>Some flexibility is lost as the *Orchestrator* couples the services’ qualities\.</li>
+<li>There is a performance penalty because the number of messages per use case doubles.</li>
+<li>The *Orchestrator* may become a single point of failure.</li>
+<li>Some flexibility is lost as the *Orchestrator* couples the services’ qualities.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>If there are several clients that strongly vary in workflows, you can apply <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) with an *Orchestrator* per client\.</li>
-<li>If the *Orchestrator* grows too large, it <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">can be divided</a> into layers, services, or both; the latter option resulting in a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Top\-Down Hierarchy*</a>\.</li>
-<li>The *Orchestrator* can be <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">scaled</a> and can have its own database\.</li>
+<li>If there are several clients that strongly vary in workflows, you can apply <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) with an *Orchestrator* per client.</li>
+<li>If the *Orchestrator* grows too large, it <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">can be divided</a> into layers, services, or both; the latter option resulting in a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Top-Down Hierarchy*</a>.</li>
+<li>The *Orchestrator* can be <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">scaled</a> and can have its own database.</li>
 </ul>
 <h2>Make a Sandwich</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20to%20Sandwich.png" alt="The application and data parts of services are separated from the domain logic and merged into system-wide layers, resulting in a Sandwich." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">Sandwich</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Database</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>\), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the integration of tightly coupled services\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the services use compatible technologies in their application and data layers\.</p>
-<p>Tightly coupled services waste a lot of programming effort and performance on boilerplate communication and data transfer\. At the same time, their <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*domain* logic</a> remains fairly independent, making full merge into a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> impractical\.</p>
-<p>Try merging only the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*use cases*</a> and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*persistence*</a> while leaving the *domain* layer subdivided\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">Sandwich</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Database</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the integration of tightly coupled services.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the services use compatible technologies in their application and data layers.</p>
+<p>Tightly coupled services waste a lot of programming effort and performance on boilerplate communication and data transfer. At the same time, their <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*domain* logic</a> remains fairly independent, making full merge into a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> impractical.</p>
+<p>Try merging only the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*use cases*</a> and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*persistence*</a> while leaving the *domain* layer subdivided.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>*Use cases* become much easier to debug\.</li>
-<li>No boilerplate code for communication between the services\.</li>
-<li>No data duplication or data transfer among the services\.</li>
-<li>You have a new team dedicated to use cases and interaction with the customers\.</li>
-<li>Many changes in *use cases* can be implemented and deployed without touching the *domain* logic\.</li>
+<li>*Use cases* become much easier to debug.</li>
+<li>No boilerplate code for communication between the services.</li>
+<li>No data duplication or data transfer among the services.</li>
+<li>You have a new team dedicated to use cases and interaction with the customers.</li>
+<li>Many changes in *use cases* can be implemented and deployed without touching the *domain* logic.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>The services are coupled in their properties\.</li>
-<li>There are now single points of failure that leave the system totally inoperational\.</li>
-<li>The *Shared Database* limits the system’s performance\.</li>
+<li>The services are coupled in their properties.</li>
+<li>There are now single points of failure that leave the system totally inoperational.</li>
+<li>The *Shared Database* limits the system’s performance.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space\-Based Architecture*</a> scales the *data* layer\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space-Based Architecture*</a> scales the *data* layer.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-services-that-restructure-services.md.html">Evolutions of Services that restructure services</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-pipeline.md.html">Evolutions of a Pipeline</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Services%20that%20add%20layers">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Services%20that%20add%20layers</a></li><li><a href="https://en.wikipedia.org/wiki/Heisenbug">heisenbugs</a></li>

@@ -24,83 +24,81 @@
 <h1>Evolutions of Layers to improve performance</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of Layers to improve performance.md</code>.</blockquote>
-<p>There are several ways to improve the performance of a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*layered system*</a>\. One we have <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-data.md.html">already discussed</a> for <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shards*</a>:</p>
+<p>There are several ways to improve the performance of a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*layered system*</a>. One we have <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-data.md.html">already discussed</a> for <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shards*</a>:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space\-Based Architecture*</a> co\-locates the data store and business logic and scales both dynamically\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space-Based Architecture*</a> co-locates the data store and business logic and scales both dynamically.</li>
 </ul>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Space-Based%20Architecture.png" alt="The database is migrated to a Data Grid, resulting in a scalable Space-Based Architecture." loading="lazy"></p>
 <p>Others are new and thus deserve more attention:</p>
 <ul>
-<li>Merging several layers improves latency by eliminating the communication overhead\.</li>
-<li>Scaling some of the layers may improve throughput but degrade latency\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> is the name for using multiple specialized data stores\.</li>
+<li>Merging several layers improves latency by eliminating the communication overhead.</li>
+<li>Scaling some of the layers may improve throughput but degrade latency.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> is the name for using multiple specialized data stores.</li>
 </ul>
 <h2>Merge several layers</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Merge.png" alt="The application and domain layers are merged." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a> or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">Monolith</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: improve performance\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the layers share programming language, hardware setup, and qualities\.</p>
-<p>If your system’s development <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/architecture-and-product-life-cycle.md.html">is finished</a> \(no changes are expected\) and you really need that extra 5% performance improvement, then you can try merging everything back into a *Monolith* or a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*3\-Tier*</a> system \(front, back, data\)\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a> or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">Monolith</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: improve performance.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the layers share programming language, hardware setup, and qualities.</p>
+<p>If your system’s development <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/architecture-and-product-life-cycle.md.html">is finished</a> (no changes are expected) and you really need that extra 5% performance improvement, then you can try merging everything back into a *Monolith* or a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*3-Tier*</a> system (front, back, data).</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Enables aggressive performance optimizations\.</li>
-<li>The system may become easier to debug\.</li>
+<li>Enables aggressive performance optimizations.</li>
+<li>The system may become easier to debug.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>The code is frozen – it will be much harder to evolve\.</li>
-<li>Your teams lose the ability to work independently\.</li>
+<li>The code is frozen – it will be much harder to evolve.</li>
+<li>Your teams lose the ability to work independently.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shard*</a> the entire system\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shard*</a> the entire system.</li>
 </ul>
 <h2>Scale individual layers</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers_%20Shard.png" alt="The application and domain layers are independently sharded." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a>, often <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Load Balancer</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: scale the system\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: some layers are <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">stateless</a> or limited to the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">data of a single client</a>\.</p>
-<p>Multiple instances or layers can be created, with their number and deployment <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/forces-asynchronicity-and-distribution.md.html">varying from layer to layer</a>\. That may work seamlessly if each instance of the layer which receives an event which can start a use case knows the instance of the next layer to communicate to\. Otherwise you will need a *Load Balancer*\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a>, often <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Load Balancer</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: scale the system.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: some layers are <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">stateless</a> or limited to the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">data of a single client</a>.</p>
+<p>Multiple instances or layers can be created, with their number and deployment <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/forces-asynchronicity-and-distribution.md.html">varying from layer to layer</a>. That may work seamlessly if each instance of the layer which receives an event which can start a use case knows the instance of the next layer to communicate to. Otherwise you will need a *Load Balancer*.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Flexible scalability\.</li>
-<li>Better fault tolerance\.</li>
-<li>Co\-deployment with clients is possible\.</li>
+<li>Flexible scalability.</li>
+<li>Better fault tolerance.</li>
+<li>Co-deployment with clients is possible.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>More complex operations \(more parts to keep an eye on\)\.</li>
+<li>More complex operations (more parts to keep an eye on).</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Space\-Based Architecture*</a> scales the data layer\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> improves performance of the data layer\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Space-Based Architecture*</a> scales the data layer.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> improves performance of the data layer.</li>
 </ul>
 <h2>Use multiple databases</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Polyglot%20Persistence.png" alt="The database layer is subdivided into specialized databases, resulting in Polyglot Persistence." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">Polyglot Persistence</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: optimize performance of data processing\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there are isolated use cases for or subsets of the data\.</p>
-<p>If you have separated *commands* \(write requests\) from *queries* \(read requests\), you can serve the queries with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">read\-only replicas</a> of the database while the main database is reserved for the commands\.</p>
-<p>If your types of data or data processing algorithms vary, you may deploy several <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">specialized databases</a>, each matching some of your needs\. That lets you achieve the best performance in a wide range of cases\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">Polyglot Persistence</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: optimize performance of data processing.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there are isolated use cases for or subsets of the data.</p>
+<p>If you have separated *commands* (write requests) from *queries* (read requests), you can serve the queries with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">read-only replicas</a> of the database while the main database is reserved for the commands.</p>
+<p>If your types of data or data processing algorithms vary, you may deploy several <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">specialized databases</a>, each matching some of your needs. That lets you achieve the best performance in a wide range of cases.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>The best performance for all the use cases\.</li>
-<li>Specialized data processing algorithms out of the box\.</li>
-<li>Replication may help with error recovery\.</li>
+<li>The best performance for all the use cases.</li>
+<li>Specialized data processing algorithms out of the box.</li>
+<li>Replication may help with error recovery.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Someone will need to learn and administer all those databases\.</li>
-<li>Keeping the databases consistent takes effort and the replication delay may negatively affect the UX\.</li>
+<li>Someone will need to learn and administer all those databases.</li>
+<li>Keeping the databases consistent takes effort and the replication delay may negatively affect the UX.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>Serve the read and write requests with different backends in accordance with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Command\-Query Responsibility Segregation \(CQRS\)*</a>\.</li>
-<li>Separate the backend into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*services*</a> which match the already separated databases\.</li>
+<li>Serve the read and write requests with different backends in accordance with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Command-Query Responsibility Segregation (CQRS)*</a>.</li>
+<li>Separate the backend into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*services*</a> which match the already separated databases.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-that-help-large-projects.md.html">Evolutions of Layers that help large projects</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-to-gain-flexibility.md.html">Evolutions of Layers to gain flexibility</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Layers%20to%20improve%20performance">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Layers%20to%20improve%20performance</a></li>

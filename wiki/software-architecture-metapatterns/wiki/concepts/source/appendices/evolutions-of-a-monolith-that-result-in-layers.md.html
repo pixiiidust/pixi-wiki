@@ -24,141 +24,139 @@
 <h1>Evolutions of a Monolith that result in Layers</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of a Monolith that result in Layers.md</code>.</blockquote>
-<p>Another drawback of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> is its … er … monolithism\. The entire application exposes a single set of qualities and all its parts \(if they ever emerge\) are deployed together\. However, life awards flexibility: parts of a system may benefit from being written in varying languages and styles, and deployed with different frequency and amount of testing, sometimes to specific hardware or end users’ devices\. They may need to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/forces-asynchronicity-and-distribution.md.html">vary in security and scalability</a> as well\. Enter <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> – the subdivision by the *level of abstractness*:</p>
+<p>Another drawback of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> is its … er … monolithism. The entire application exposes a single set of qualities and all its parts (if they ever emerge) are deployed together. However, life awards flexibility: parts of a system may benefit from being written in varying languages and styles, and deployed with different frequency and amount of testing, sometimes to specific hardware or end users’ devices. They may need to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/forces-asynchronicity-and-distribution.md.html">vary in security and scalability</a> as well. Enter <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> – the subdivision by the *level of abstractness*:</p>
 <ul>
-<li>Most *Monoliths* can be divided into three or four <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*layers*</a>\.</li>
-<li>It is common to see the database separated from the main application\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a> \(e\.g\. <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Firewall*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Cache*</a>, and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Reverse Proxy*</a>\) are common additions to the system\.</li>
-<li>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> adds a layer of indirection to simplify the system’s API for its clients\.</li>
+<li>Most *Monoliths* can be divided into three or four <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*layers*</a>.</li>
+<li>It is common to see the database separated from the main application.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a> (e.g. <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Firewall*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Cache*</a>, and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Reverse Proxy*</a>) are common additions to the system.</li>
+<li>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> adds a layer of indirection to simplify the system’s API for its clients.</li>
 </ul>
 <h2>Divide into Layers</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Layers.png" alt="A monolith is split into application, domain and database layers." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: let parts of the system vary in qualities, improve the structure of the code\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there is a natural way to separate the high\-level logic from the low level implementation details and dependencies\.</p>
-<p>Most systems apply *layering* by default as it grants a lot of flexibility at very little cost\. <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Common sets of layers</a> are: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">UI</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">tasks</a> \(orchestration\), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">domain</a> \(detailed business rules\) and infrastructure \(database and libraries\) or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">frontend, backend and data</a>\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: let parts of the system vary in qualities, improve the structure of the code.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there is a natural way to separate the high-level logic from the low level implementation details and dependencies.</p>
+<p>Most systems apply *layering* by default as it grants a lot of flexibility at very little cost. <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Common sets of layers</a> are: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">UI</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">tasks</a> (orchestration), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">domain</a> (detailed business rules) and infrastructure (database and libraries) or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">frontend, backend and data</a>.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>It is a natural way to specialize and decouple two or three development teams\.</li>
+<li>It is a natural way to specialize and decouple two or three development teams.</li>
 <li>The layers may vary in virtually any quality:</li>
 </ul>
-<p>- They are deployed and scaled independently\.</p>
-<p>- They may run on different hardware, including client devices\.</p>
-<p>- They may vary in programming language, paradigm, and release cycle\.</p>
+<p>- They are deployed and scaled independently.</p>
+<p>- They may run on different hardware, including client devices.</p>
+<p>- They may vary in programming language, paradigm, and release cycle.</p>
 <ul>
-<li>Most changes are isolated to a single layer\.</li>
-<li>Layering opens a way to many evolutions of the system\.</li>
-<li>The code <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">becomes easier to read</a>\.</li>
+<li>Most changes are isolated to a single layer.</li>
+<li>Layering opens a way to many evolutions of the system.</li>
+<li>The code <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">becomes easier to read</a>.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Dividing an existing application into *Layers* may take some effort\.</li>
-<li>There is a small performance penalty\.</li>
+<li>Dividing an existing application into *Layers* may take some effort.</li>
+<li>There is a small performance penalty.</li>
 </ul>
 <h2>Use a database</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20add%20Database.png" alt="The data of a monolithic system is moved to a database, leaving the business logic stateless." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Database</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: avoid implementing a database\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the system needs to query \(and maybe also edit\) a large amount of data\.</p>
-<p>A database is non\-trivial to implement\. While ordinary files are good for small volumes of data, as your needs grow so needs to grow your technology\. Deploy a database\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Database</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: avoid implementing a database.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the system needs to query (and maybe also edit) a large amount of data.</p>
+<p>A database is non-trivial to implement. While ordinary files are good for small volumes of data, as your needs grow so needs to grow your technology. Deploy a database.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>A well\-known database is sure to be more reliable than any in\-house implementation\.</li>
-<li>Many databases provide heavily optimized algorithms for querying data\.</li>
-<li>You can choose specific hardware to deploy the database to\.</li>
-<li>Your \(now stateless\) application will be easy to scale\.</li>
+<li>A well-known database is sure to be more reliable than any in-house implementation.</li>
+<li>Many databases provide heavily optimized algorithms for querying data.</li>
+<li>You can choose specific hardware to deploy the database to.</li>
+<li>Your (now stateless) application will be easy to scale.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Databases are complex and require fine\-tuning\.</li>
-<li>You cannot adapt the database engine to your evolving needs\.</li>
-<li>Most databases do not scale\.</li>
-<li>You are stepping right into <a href="https://en.wikipedia.org/wiki/Vendor_lock-in">vendor lock\-in</a>\.</li>
+<li>Databases are complex and require fine-tuning.</li>
+<li>You cannot adapt the database engine to your evolving needs.</li>
+<li>Most databases do not scale.</li>
+<li>You are stepping right into <a href="https://en.wikipedia.org/wiki/Vendor_lock-in">vendor lock-in</a>.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>Deploy multiple <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*instances*</a> of your application behind a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Load Balancer*</a>\.</li>
-<li>Continue the transition to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> by separating the high\-level and low\-level business logic\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> improves performance of the data layer\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*CQRS*</a> handles read and write requests in separate services\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Space\-Based Architecture*</a> has low latency and allows for dynamic scalability of the whole system, including the data layer\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a> will allow you to switch to another database in the future\.</li>
+<li>Deploy multiple <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*instances*</a> of your application behind a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Load Balancer*</a>.</li>
+<li>Continue the transition to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> by separating the high-level and low-level business logic.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> improves performance of the data layer.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*CQRS*</a> handles read and write requests in separate services.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Space-Based Architecture*</a> has low latency and allows for dynamic scalability of the whole system, including the data layer.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a> will allow you to switch to another database in the future.</li>
 </ul>
 <h2>Add a Proxy</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20add%20Proxy.png" alt="A part of generic functionality of a monolith is moved to a proxy." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: avoid implementing generic functionality\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: Your system serves clients \(as opposed to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software.md.html">controlling hardware</a>\)\.</p>
-<p>A *Proxy* is placed between your system and its clients to provide generic functionality that otherwise would have to be implemented by the system\. The kinds of *Proxy* to use with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> are: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Firewall*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Cache*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Reverse Proxy*</a>, and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Adapter*</a>\. Multiple *Proxies* can be deployed\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: avoid implementing generic functionality.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: Your system serves clients (as opposed to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software.md.html">controlling hardware</a>).</p>
+<p>A *Proxy* is placed between your system and its clients to provide generic functionality that otherwise would have to be implemented by the system. The kinds of *Proxy* to use with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> are: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Firewall*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Cache*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Reverse Proxy*</a>, and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Adapter*</a>. Multiple *Proxies* can be deployed.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>You save some time \(and money\) on development\.</li>
-<li>A well\-known *Proxy* is likely to be more secure and reliable than an in\-house implementation\.</li>
-<li>You can choose the hardware to deploy the *Proxy* to\.</li>
+<li>You save some time (and money) on development.</li>
+<li>A well-known *Proxy* is likely to be more secure and reliable than an in-house implementation.</li>
+<li>You can choose the hardware to deploy the *Proxy* to.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Latency degrades, except for <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Response Cache*</a> where it depends on frequency of identical requests\.</li>
-<li>The *Proxy* may fail, which increases the chance of total failure of your system\.</li>
-<li>Beware of <a href="https://en.wikipedia.org/wiki/Vendor_lock-in">vendor lock\-in</a>\.</li>
+<li>Latency degrades, except for <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Response Cache*</a> where it depends on frequency of identical requests.</li>
+<li>The *Proxy* may fail, which increases the chance of total failure of your system.</li>
+<li>Beware of <a href="https://en.wikipedia.org/wiki/Vendor_lock-in">vendor lock-in</a>.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>Another kind of *Proxy* may be added\.</li>
-<li>Some systems employ a *Proxy* per client, leading to <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;)\.</li>
+<li>Another kind of *Proxy* may be added.</li>
+<li>Some systems employ a *Proxy* per client, leading to <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;).</li>
 </ul>
 <h2>Add an Orchestrator</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20add%20Orchestrator.png" alt="An orchestrator is added to a monolithic system, allowing for higher-level client requests." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: provide a high\-level public API with improved developer experience and performance\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the API of your system is fine\-grained and there are common <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">use cases</a> which repeat certain sequences of calls to your API\.</p>
-<p>A well\-designed *Orchestrator* should provide a high\-level API which is intuitive, easy to use, and coarse\-grained to minimize the number of interactions between the system and its clients\. An old way to access the original system’s API may still be maintained for uncommon use cases or legacy client applications \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*open* orchestration</a>\)\. As a matter of fact, you program the common application logic on behalf of your clients\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: provide a high-level public API with improved developer experience and performance.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the API of your system is fine-grained and there are common <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">use cases</a> which repeat certain sequences of calls to your API.</p>
+<p>A well-designed *Orchestrator* should provide a high-level API which is intuitive, easy to use, and coarse-grained to minimize the number of interactions between the system and its clients. An old way to access the original system’s API may still be maintained for uncommon use cases or legacy client applications (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*open* orchestration</a>). As a matter of fact, you program the common application logic on behalf of your clients.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Client applications become easier to write\.</li>
-<li>Latency improves\.</li>
+<li>Client applications become easier to write.</li>
+<li>Latency improves.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>You get yet another moving part to design, test, deploy, and observe; and lots of design meetings between the development teams for a bonus\.</li>
-<li>The new coarse\-grained interface will likely be less powerful than the original one\.</li>
+<li>You get yet another moving part to design, test, deploy, and observe; and lots of design meetings between the development teams for a bonus.</li>
+<li>The new coarse-grained interface will likely be less powerful than the original one.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li><a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) use an *Orchestrator* per client type\.</li>
+<li><a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) use an *Orchestrator* per client type.</li>
 </ul>
 <h2>Further steps</h2>
 <p>Applying one of the evolutions discussed above does not prevent you from following another one of them, or even the same one for a second time:</p>
 <ul>
-<li>A layer can sometimes be split into two layers\.</li>
-<li>A database can be added\.</li>
-<li>Multiple kinds of *Proxies* are OK\.</li>
-<li>If you don’t have an *orchestration layer* yet, you may add one\.</li>
+<li>A layer can sometimes be split into two layers.</li>
+<li>A database can be added.</li>
+<li>Multiple kinds of *Proxies* are OK.</li>
+<li>If you don’t have an *orchestration layer* yet, you may add one.</li>
 </ul>
-<p>Those were evolutions from *Layers* to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a>\.</p>
+<p>Those were evolutions from *Layers* to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a>.</p>
 <p>Another set of evolutions stems from splitting one or more *layers* into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>:</p>
 <ul>
-<li>Splitting a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a> and/or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> yields <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) where requests from each kind of client are processed by a dedicated component\.</li>
-<li>Splitting the layer with the main business logic results in <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>, possibly augmented with layers of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Database*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a> and/or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a>\. If all the other layers beside the business logic layer remain monolithic, it is a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a>\.</li>
-<li>Splitting the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*database layer*</a> leads to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> with specialized storages\.</li>
-<li>If all the layers share the domain dimension and are split along it, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Layered Services*</a> \(or its subtype <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*CQRS*</a>\) emerge\.</li>
-<li>If each layer is split along its own domain, the system follows <a href="&lt;Service-Oriented Architecture (SOA">*Service\-Oriented Architecture*</a>&gt;) that is built around component reuse\.</li>
-<li>Finally, some domains support <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Hierarchy*</a> – a tree\-like architecture where each layer takes a share of the system’s functionality\.</li>
+<li>Splitting a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a> and/or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> yields <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) where requests from each kind of client are processed by a dedicated component.</li>
+<li>Splitting the layer with the main business logic results in <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>, possibly augmented with layers of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Database*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a> and/or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a>. If all the other layers beside the business logic layer remain monolithic, it is a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a>.</li>
+<li>Splitting the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*database layer*</a> leads to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> with specialized storages.</li>
+<li>If all the layers share the domain dimension and are split along it, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Layered Services*</a> (or its subtype <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*CQRS*</a>) emerge.</li>
+<li>If each layer is split along its own domain, the system follows <a href="&lt;Service-Oriented Architecture (SOA">*Service-Oriented Architecture*</a>&gt;) that is built around component reuse.</li>
+<li>Finally, some domains support <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Hierarchy*</a> – a tree-like architecture where each layer takes a share of the system’s functionality.</li>
 </ul>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%201.png" alt="Diagrams of Backends for Frontends over Layers, Service-Oriented Architecture, Sandwich, Layered Services, Hierarchy, and Layers with Polyglot Persistence." loading="lazy"></p>
 <p>In addition,</p>
 <ul>
-<li>Distributed systems usually allow for the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">scaling</a> of one or more layers\.</li>
-<li>A layer may employ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">*Plugins*</a> for better customizability\.</li>
-<li>The UI and infrastructure layers may be split and abstracted according to the rules of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a> \(or its subtype <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Separated Presentation*</a>\)\.</li>
-<li>The system can often be extended with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Scripts*</a>, resulting in a kind of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Microkernel*</a>\.</li>
+<li>Distributed systems usually allow for the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">scaling</a> of one or more layers.</li>
+<li>A layer may employ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">*Plugins*</a> for better customizability.</li>
+<li>The UI and infrastructure layers may be split and abstracted according to the rules of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a> (or its subtype <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Separated Presentation*</a>).</li>
+<li>The system can often be extended with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Scripts*</a>, resulting in a kind of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Microkernel*</a>.</li>
 </ul>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png" alt="Diagrams of Layers with plugins, Layers with scripts, and Hexagonal Architecture with a layered core." loading="lazy"></p>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-lead-to-shards.md.html">Evolutions of a Monolith that lead to Shards</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-make-services.md.html">Evolutions of a Monolith that make Services</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
-<li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Monolith%20that%20result%20in%20Layers">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Monolith%20that%20result%20in%20Layers</a></li><li><a href="https://en.wikipedia.org/wiki/Vendor_lock-in">vendor lock\-in</a></li>
+<li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Monolith%20that%20result%20in%20Layers">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Monolith%20that%20result%20in%20Layers</a></li><li><a href="https://en.wikipedia.org/wiki/Vendor_lock-in">vendor lock-in</a></li>
 </ul>
 <nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-rely-on-plugins.md.html"><span class="next-label">← Prev</span><span class="next-title">Evolutions of a Monolith that rely on Plugins</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-pipeline.md.html"><span class="next-label">Next</span><span class="next-title">Evolutions of a Pipeline →</span></a></nav>
 </article></main>

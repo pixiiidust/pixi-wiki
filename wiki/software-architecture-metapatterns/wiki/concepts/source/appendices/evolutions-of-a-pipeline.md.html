@@ -24,60 +24,58 @@
 <h1>Evolutions of a Pipeline</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of a Pipeline.md</code>.</blockquote>
-<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Pipeline*</a> <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">inherits its set of evolutions from *Services*</a>\. Components can be added, split in two, merged or replaced\. Many systems employ a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> \(pub/sub or pipeline framework\), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Repository*</a> \(which may be a database or file system\), or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a>\.</p>
-<p>There are a couple of *Pipeline*\-specific evolutions:</p>
+<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Pipeline*</a> <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">inherits its set of evolutions from *Services*</a>. Components can be added, split in two, merged or replaced. Many systems employ a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> (pub/sub or pipeline framework), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Repository*</a> (which may be a database or file system), or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a>.</p>
+<p>There are a couple of *Pipeline*-specific evolutions:</p>
 <ul>
-<li>The first service of the *Pipeline* can be promoted to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Front Controller*</a> which tracks status updates for every request it handles\.</li>
-<li>Adding an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> turns a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Pipeline*</a> into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>\. As the high\-level business logic moves to the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">orchestration layer</a>, the services don’t need to interact directly anymore, the interservice communication channels disappear, and the system turns into ordinary <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrated Services*</a>\.</li>
+<li>The first service of the *Pipeline* can be promoted to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Front Controller*</a> which tracks status updates for every request it handles.</li>
+<li>Adding an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> turns a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Pipeline*</a> into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>. As the high-level business logic moves to the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">orchestration layer</a>, the services don’t need to interact directly anymore, the interservice communication channels disappear, and the system turns into ordinary <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrated Services*</a>.</li>
 </ul>
 <h2>Promote a service to Front Controller</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Pipeline%20promote%20Front%20Controller.png" alt="The first service of a pipeline subscribes to notifications from other services and thus becomes a Front Controller." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">Front Controller</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">Polyglot Persistence</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>\), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">Pipeline</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: allow for clients to query the state of their requests\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: request processing steps are slow \(may depend on human action\)\.</p>
-<p>If the request processing steps require heavy calculations or manual action, then clients may want to query the status of their requests, and analysts may want to see bottlenecks in the *Pipeline*\. Let the first service in the *Pipeline* track the state of all the running requests by subscribing to status notifications from other services\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">Front Controller</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">Polyglot Persistence</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">Pipeline</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: allow for clients to query the state of their requests.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: request processing steps are slow (may depend on human action).</p>
+<p>If the request processing steps require heavy calculations or manual action, then clients may want to query the status of their requests, and analysts may want to see bottlenecks in the *Pipeline*. Let the first service in the *Pipeline* track the state of all the running requests by subscribing to status notifications from other services.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>The state of each running request is readily available\.</li>
+<li>The state of each running request is readily available.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>The first service in the pipeline becomes more complex and starts depending on every other service\.</li>
+<li>The first service in the pipeline becomes more complex and starts depending on every other service.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>The *Front Controller* may be further promoted to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> if there is a need to support many complex scenarios\.</li>
+<li>The *Front Controller* may be further promoted to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> if there is a need to support many complex scenarios.</li>
 </ul>
 <h2>Add an Orchestrator</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Pipeline%20use%20Orchestrator.png" alt="Adding an orchestrator transforms a pipeline into Orchestrated Services." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: support many use cases\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: performance degradation is acceptable\.</p>
-<p>When a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/choreography.md.html">*choreographed*</a> system is gradually extended with more and more use cases, it is very likely to fall into integration hell where nobody understands how its components interrelate\. Extract the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">workflow logic</a> into a dedicated service\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: support many use cases.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: performance degradation is acceptable.</p>
+<p>When a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/choreography.md.html">*choreographed*</a> system is gradually extended with more and more use cases, it is very likely to fall into integration hell where nobody understands how its components interrelate. Extract the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">workflow logic</a> into a dedicated service.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>New use cases are easy to add\.</li>
-<li>Complex scenarios are supported\.</li>
-<li>Error handling becomes trivial\.</li>
-<li>The services don’t depend on each other\.</li>
-<li>There is a single client\-facing team, other teams are not under pressure from the business\.</li>
-<li>It is easier to run actions in parallel\.</li>
-<li>Global scenarios become debuggable\.</li>
-<li>The services don’t need to be redeployed when the high\-level logic changes\.</li>
+<li>New use cases are easy to add.</li>
+<li>Complex scenarios are supported.</li>
+<li>Error handling becomes trivial.</li>
+<li>The services don’t depend on each other.</li>
+<li>There is a single client-facing team, other teams are not under pressure from the business.</li>
+<li>It is easier to run actions in parallel.</li>
+<li>Global scenarios become debuggable.</li>
+<li>The services don’t need to be redeployed when the high-level logic changes.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>The number of messages in the system doubles, thus its performance may degrade\.</li>
-<li>The *Orchestrator* may become a development and performance bottleneck, or a single point of failure\.</li>
+<li>The number of messages in the system doubles, thus its performance may degrade.</li>
+<li>The *Orchestrator* may become a development and performance bottleneck, or a single point of failure.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>If there are several clients that strongly vary in their workflows, you can apply <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) with an *Orchestrator* per client\.</li>
-<li>If the *Orchestrator* grows too large, it can be <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">divided</a> into layers, services, or both, with the latter option resulting in a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Top\-Down Hierarchy*</a>\.</li>
-<li>The *Orchestrator* can be <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">scaled</a> and can have its own database\.</li>
+<li>If there are several clients that strongly vary in their workflows, you can apply <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) with an *Orchestrator* per client.</li>
+<li>If the *Orchestrator* grows too large, it can be <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">divided</a> into layers, services, or both, with the latter option resulting in a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Top-Down Hierarchy*</a>.</li>
+<li>The *Orchestrator* can be <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">scaled</a> and can have its own database.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-services-that-add-layers.md.html">Evolutions of Services that add layers</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-middleware.md.html">Evolutions of a Middleware</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Pipeline">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Pipeline</a></li>

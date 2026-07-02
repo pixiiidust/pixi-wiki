@@ -26,84 +26,82 @@
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of a Sandwich.md</code>.</blockquote>
 <p>Unique evolutions of a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a> involve the system’s domain logic or its topology:</p>
 <ul>
-<li>The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*domain\-level*</a> *services* are independent enough to be easily added or removed\.</li>
-<li>In most cases they share technologies, allowing for splitting or merging of the services\.</li>
-<li>If the services are found to be strongly coupled, they can be merged into a monolithic layer, likely to be subdivided in a better way later on\.</li>
-<li>Alternatively, the subdomains can be further decoupled\.</li>
+<li>The <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*domain-level*</a> *services* are independent enough to be easily added or removed.</li>
+<li>In most cases they share technologies, allowing for splitting or merging of the services.</li>
+<li>If the services are found to be strongly coupled, they can be merged into a monolithic layer, likely to be subdivided in a better way later on.</li>
+<li>Alternatively, the subdomains can be further decoupled.</li>
 </ul>
-<h2>Add or remove a domain\-level service</h2>
+<h2>Add or remove a domain-level service</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20add%20remove%20Service.png" alt="One of the domain-level services is removed and another one is added." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">Sandwich</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: maintain effective development\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: a new subdomain emerges or an old one becomes obsolete\.</p>
-<p>Though the *Sandwich* architecture allows for subdomains to be pretty independent in their logic, you should update your system’s high\-level structure whenever there are drastic changes in the domain knowledge or functional requirements\. Creation or deletion of a component often means forming or disbanding a team \(see <a href="https://martinfowler.com/bliki/ConwaysLaw.html">*Inverse Conway Maneuver*</a>\)\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">Sandwich</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: maintain effective development.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: a new subdomain emerges or an old one becomes obsolete.</p>
+<p>Though the *Sandwich* architecture allows for subdomains to be pretty independent in their logic, you should update your system’s high-level structure whenever there are drastic changes in the domain knowledge or functional requirements. Creation or deletion of a component often means forming or disbanding a team (see <a href="https://martinfowler.com/bliki/ConwaysLaw.html">*Inverse Conway Maneuver*</a>).</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>The system’s architecture remains clear as it follows the domain knowledge\.</li>
-<li>The development teams remain narrowly specialized, thus effective\.</li>
-<li>Dead domain\-level code is easily identified and removed\.</li>
+<li>The system’s architecture remains clear as it follows the domain knowledge.</li>
+<li>The development teams remain narrowly specialized, thus effective.</li>
+<li>Dead domain-level code is easily identified and removed.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>You may need to update your database schema\.</li>
-<li>A newly established team takes time to learn its area of responsibility, while disbanding an old team disrupts almost everyone on the project\.</li>
+<li>You may need to update your database schema.</li>
+<li>A newly established team takes time to learn its area of responsibility, while disbanding an old team disrupts almost everyone on the project.</li>
 </ul>
-<h2>Split or merge domain\-level services</h2>
+<h2>Split or merge domain-level services</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20split%20merge%20Services.png" alt="One domain-level service is split in half while two other services are merged together." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">Sandwich</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: maintain effective development\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the business requirements gradually diverge from your original vision\.</p>
-<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">Ideally</a>, each service should be kept cohesive, while the services should be decoupled from each other\. However, business likes to mess up your plans\. If you ignore the results, your teams will be slowed down by mutual dependencies or become overburdened by the size of the components which they maintain\. Therefore, restructure both the system and teams once the divergence between the domain knowledge and system’s architecture starts to negatively impact development\.</p>
-<blockquote>If an architecture is misaligned with the domain which it models, some components implement functions which don’t properly belong to them, while others need a lot of help from their neighbors\. Many unnecessary dependencies emerge between components and that both increases complexity \(you cannot develop a component without knowing other components\) and slows down the system \(calls between components tend to be inefficient\)\.</blockquote>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">Sandwich</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: maintain effective development.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the business requirements gradually diverge from your original vision.</p>
+<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">Ideally</a>, each service should be kept cohesive, while the services should be decoupled from each other. However, business likes to mess up your plans. If you ignore the results, your teams will be slowed down by mutual dependencies or become overburdened by the size of the components which they maintain. Therefore, restructure both the system and teams once the divergence between the domain knowledge and system’s architecture starts to negatively impact development.</p>
+<blockquote>If an architecture is misaligned with the domain which it models, some components implement functions which don’t properly belong to them, while others need a lot of help from their neighbors. Many unnecessary dependencies emerge between components and that both increases complexity (you cannot develop a component without knowing other components) and slows down the system (calls between components tend to be inefficient).</blockquote>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>The system’s architecture is realigned with the domain knowledge\.</li>
-<li>The system components remain internally cohesive and decoupled from each other\.</li>
-<li>The development teams stay narrowly specialized, thus effective\.</li>
+<li>The system’s architecture is realigned with the domain knowledge.</li>
+<li>The system components remain internally cohesive and decoupled from each other.</li>
+<li>The development teams stay narrowly specialized, thus effective.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>You will have to update the database schema and integration logic \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">use cases</a>\)\.</li>
-<li>Splitting or merging teams disrupts them\.</li>
+<li>You will have to update the database schema and integration logic (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">use cases</a>).</li>
+<li>Splitting or merging teams disrupts them.</li>
 </ul>
-<h2>Merge all the domain\-level services together</h2>
+<h2>Merge all the domain-level services together</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20to%20Layers.png" alt="The entire domain layer is merged, resulting in Layers." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: improve the system performance and, possibly, development efficiency\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the project is small but found to be strongly coupled\.</p>
-<p>Often the project grows in an unexpected manner\. If you see that the domain\-level services interact intensely, that likely means that you chose a wrong architecture\. Revert to *Layers* to remove the artificial interfaces\. You may also consider merging the domain\-level teams if there are not too many people in them\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: improve the system performance and, possibly, development efficiency.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the project is small but found to be strongly coupled.</p>
+<p>Often the project grows in an unexpected manner. If you see that the domain-level services interact intensely, that likely means that you chose a wrong architecture. Revert to *Layers* to remove the artificial interfaces. You may also consider merging the domain-level teams if there are not too many people in them.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Less indirection and boilerplate code\.</li>
-<li>Improved performance which can be further optimized\.</li>
+<li>Less indirection and boilerplate code.</li>
+<li>Improved performance which can be further optimized.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Now all the teams face higher system complexity\.</li>
-<li>The teams will share the codebase which means a high level of interdependency\.</li>
+<li>Now all the teams face higher system complexity.</li>
+<li>The teams will share the codebase which means a high level of interdependency.</li>
 </ul>
 <h2>Subdivide both shared layers</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20to%20Layered%20Services.png" alt="The integration and data layers are divided into subdomains, producing Three-Layered Services." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">Three\-Layered Services</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">Layered Services</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: fine\-grained scalability, database performance optimization, and limited fault tolerance\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the subdomains are loosely coupled in both <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">use cases</a> and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">data</a>\.</p>
-<p>It is natural to divide a *Sandwich* into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>, but only if your domain is not <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms.md.html">data\-centric</a> \(built around a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Repository*</a>\) and your use cases are not too complex \(requiring an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a>\)\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">Three-Layered Services</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">Layered Services</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: fine-grained scalability, database performance optimization, and limited fault tolerance.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the subdomains are loosely coupled in both <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">use cases</a> and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">data</a>.</p>
+<p>It is natural to divide a *Sandwich* into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>, but only if your domain is not <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms.md.html">data-centric</a> (built around a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Repository*</a>) and your use cases are not too complex (requiring an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a>).</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Independent scaling and deployment of the services\.</li>
-<li>Database technologies can be chosen on a per service basis\.</li>
-<li>Simpler application and database components\.</li>
-<li>Limited fault tolerance – if one of the services fails, others may still respond to clients\.</li>
+<li>Independent scaling and deployment of the services.</li>
+<li>Database technologies can be chosen on a per service basis.</li>
+<li>Simpler application and database components.</li>
+<li>Limited fault tolerance – if one of the services fails, others may still respond to clients.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Complex use cases are hard to implement or debug\.</li>
-<li>Poor latency for use cases that involve multiple subdomains\.</li>
-<li>Any coupling in the data impairs performance and increases costs\.</li>
-<li>Now you’ll have much more work for your DevOps\.</li>
+<li>Complex use cases are hard to implement or debug.</li>
+<li>Poor latency for use cases that involve multiple subdomains.</li>
+<li>Any coupling in the data impairs performance and increases costs.</li>
+<li>Now you’ll have much more work for your DevOps.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-an-orchestrator.md.html">Evolutions of an Orchestrator</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/format-of-a-metapattern.md.html">Format of a metapattern</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://martinfowler.com/bliki/ConwaysLaw.html">*Inverse Conway Maneuver*</a></li><li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Sandwich">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Sandwich</a></li>

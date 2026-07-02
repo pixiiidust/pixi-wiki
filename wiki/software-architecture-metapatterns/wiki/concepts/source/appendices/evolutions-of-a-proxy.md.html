@@ -24,45 +24,43 @@
 <h1>Evolutions of a Proxy</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of a Proxy.md</code>.</blockquote>
-<p>It usually makes little sense to get rid of a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a> once it is integrated into the system\. Its only real drawback is a slight increase in latency for user requests which may be helped through creation of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">bypass channels</a> between the clients and a service which needs low latency\. The other drawback of the pattern, namely the *Proxy*’s being a single point of failure, is countered by deploying multiple instances of the *Proxy*\.</p>
-<p>As *Proxies* are usually third\-party products, there is very little we can change about them:</p>
+<p>It usually makes little sense to get rid of a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a> once it is integrated into the system. Its only real drawback is a slight increase in latency for user requests which may be helped through creation of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">bypass channels</a> between the clients and a service which needs low latency. The other drawback of the pattern, namely the *Proxy*’s being a single point of failure, is countered by deploying multiple instances of the *Proxy*.</p>
+<p>As *Proxies* are usually third-party products, there is very little we can change about them:</p>
 <ul>
-<li>We can add another kind of a *Proxy* on top of the existing one\.</li>
-<li>We can use a stack of *Proxies* per client, making <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;)\.</li>
+<li>We can add another kind of a *Proxy* on top of the existing one.</li>
+<li>We can use a stack of *Proxies* per client, making <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;).</li>
 </ul>
 <h2>Add another Proxy</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Proxy%20add%20Proxy.png" alt="A proxy is added on top of an existing proxy." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: avoid implementing generic functionality\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: you don&#x27;t have this kind of *Proxy* yet\.</p>
-<p>A system is not limited to a single kind of *Proxies*\. As a *Proxy* represents your system without changing its function, *Proxies* are transparent, thus they are stackable\.</p>
-<p>It often makes sense to colocate software *Proxies* or use a multifunctional *Proxy* to reduce the number of network hops between the clients and the system\. However, in a highly loaded system *Proxies* may be resource\-hungry, thus in some cases colocation strikes back\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: avoid implementing generic functionality.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: you don&#x27;t have this kind of *Proxy* yet.</p>
+<p>A system is not limited to a single kind of *Proxies*. As a *Proxy* represents your system without changing its function, *Proxies* are transparent, thus they are stackable.</p>
+<p>It often makes sense to colocate software *Proxies* or use a multifunctional *Proxy* to reduce the number of network hops between the clients and the system. However, in a highly loaded system *Proxies* may be resource-hungry, thus in some cases colocation strikes back.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>You get another aspect of your system implemented for you\.</li>
+<li>You get another aspect of your system implemented for you.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Latency degrades\.</li>
-<li>More work for admins\.</li>
-<li>Another point of possible failure\.</li>
+<li>Latency degrades.</li>
+<li>More work for admins.</li>
+<li>Another point of possible failure.</li>
 </ul>
 <h2>Deploy a Proxy per client type</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Proxy%20to%20Backends%20for%20Frontends.png" alt="A proxy is subdivided into Backends for Frontends." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>, <a href="&lt;Backends for Frontends (BFF">Backends for Frontends</a>&gt;)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: let the aspects of communication vary among kinds of clients\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: your system serves several kinds of clients\.</p>
-<p>If you have internal and external clients, or admins and users, you may want to vary the setup of *Proxies* for each kind of client, sometimes to the extent of physically separating network communication paths, so that each kind of client is treated according to its bandwidth, priority, and permissions\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>, <a href="&lt;Backends for Frontends (BFF">Backends for Frontends</a>&gt;).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: let the aspects of communication vary among kinds of clients.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: your system serves several kinds of clients.</p>
+<p>If you have internal and external clients, or admins and users, you may want to vary the setup of *Proxies* for each kind of client, sometimes to the extent of physically separating network communication paths, so that each kind of client is treated according to its bandwidth, priority, and permissions.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>It is easy to set up various aspects of communication for a group of clients\.</li>
+<li>It is easy to set up various aspects of communication for a group of clients.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>More work for admins as the *Proxies* are duplicated\.</li>
+<li>More work for admins as the *Proxies* are duplicated.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-shared-repository.md.html">Evolutions of a Shared Repository</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-an-orchestrator.md.html">Evolutions of an Orchestrator</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Proxy">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Proxy</a></li>

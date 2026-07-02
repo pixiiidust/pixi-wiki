@@ -26,70 +26,68 @@
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of Shards that share logic.md</code>.</blockquote>
 <p>Other cases are better solved by extracting the logic that manipulates multiple <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*shards*</a>:</p>
 <ul>
-<li>Splitting a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*service*</a> \(as discussed <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-data.md.html">above</a>\) yields a component that represents both shared data and shared logic\.</li>
-<li>Adding a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> lets the shards communicate with each other without keeping direct connections\. It also may do housekeeping: error recovery, replication, and scaling\.</li>
-<li>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Sharding Proxy*</a> hides the existence of the shards from clients\.</li>
-<li>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> calls \(or messages\) multiple shards to serve a user request\. That relieves the shards of the need to coordinate their states and actions by themselves\.</li>
+<li>Splitting a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*service*</a> (as discussed <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-data.md.html">above</a>) yields a component that represents both shared data and shared logic.</li>
+<li>Adding a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> lets the shards communicate with each other without keeping direct connections. It also may do housekeeping: error recovery, replication, and scaling.</li>
+<li>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Sharding Proxy*</a> hides the existence of the shards from clients.</li>
+<li>An <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> calls (or messages) multiple shards to serve a user request. That relieves the shards of the need to coordinate their states and actions by themselves.</li>
 </ul>
 <h2>Add a Middleware</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20add%20Middleware.png" alt="A middleware manages shards and lets them communicate to each other." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the communication between shards, their deployment, and recovery\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: many shards need to exchange information, some may fail\.</p>
-<p>A *Middleware* transports messages between shards, checks their health, and recovers ones which have crashed\. It may manage data replication and deployment of software updates as well\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the communication between shards, their deployment, and recovery.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: many shards need to exchange information, some may fail.</p>
+<p>A *Middleware* transports messages between shards, checks their health, and recovers ones which have crashed. It may manage data replication and deployment of software updates as well.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>The shards become simpler because they don’t need to track each other\.</li>
-<li>Many good third\-party implementations are readily available\.</li>
+<li>The shards become simpler because they don’t need to track each other.</li>
+<li>Many good third-party implementations are readily available.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Performance may degrade\.</li>
-<li>The components of the *Middleware* are new points of failure\.</li>
+<li>Performance may degrade.</li>
+<li>The components of the *Middleware* are new points of failure.</li>
 </ul>
 <h2>Add a Sharding Proxy</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20add%20Load%20Balancer.png" alt="A sharding proxy relieves clients from the need to find the appropriate shard." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Sharding Proxy</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>\), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the code on the client side, hide your implementation from clients\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: each client connects directly to the shard which owns their data\.</p>
-<p>The client application may know the address of the shard which serves it and connect to it without intermediaries\. That is the fastest means of communication, but it prevents you from changing the number of shards or other details of your implementation without updating all the clients, which may be unachievable\. An intermediary may help\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Sharding Proxy</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">Proxy</a>), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the code on the client side, hide your implementation from clients.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: each client connects directly to the shard which owns their data.</p>
+<p>The client application may know the address of the shard which serves it and connect to it without intermediaries. That is the fastest means of communication, but it prevents you from changing the number of shards or other details of your implementation without updating all the clients, which may be unachievable. An intermediary may help.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Your system becomes isolated from its clients\.</li>
-<li>You can put generic aspects into the *Proxy* instead of implementing them in the shards\.</li>
-<li>*Proxies* are readily available\.</li>
+<li>Your system becomes isolated from its clients.</li>
+<li>You can put generic aspects into the *Proxy* instead of implementing them in the shards.</li>
+<li>*Proxies* are readily available.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>The extra network hop increases latency unless you deploy the *Sharding Proxy* as an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Ambassador*</a> co\-located with every client which, however, brings back the issue of client software updates\.</li>
-<li>The *Sharding Proxy* is a single point of failure unless <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*replicated*</a>\.</li>
+<li>The extra network hop increases latency unless you deploy the *Sharding Proxy* as an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Ambassador*</a> co-located with every client which, however, brings back the issue of client software updates.</li>
+<li>The *Sharding Proxy* is a single point of failure unless <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*replicated*</a>.</li>
 </ul>
 <h2>Move the integration logic into an Orchestrator</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20use%20Orchestrator.png" alt="The high-level logic of shards moves to a shared orchestrator which integrates the data stored within and processed by individual shards." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: isolate the shards and eliminate their awareness of each other\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the shards are coupled through their high\-level logic\.</p>
-<p>When a high\-level scenario uses multiple shards \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Scatter\-Gather* and *MapReduce*</a> are the simplest examples\), the way to follow is to extract all such scenarios into a dedicated stateless component\. That makes the shards independent of each other\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">Shards</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: isolate the shards and eliminate their awareness of each other.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the shards are coupled through their high-level logic.</p>
+<p>When a high-level scenario uses multiple shards (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Scatter-Gather* and *MapReduce*</a> are the simplest examples), the way to follow is to extract all such scenarios into a dedicated stateless component. That makes the shards independent of each other.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>The shards don’t need to be aware of each other\.</li>
-<li>The high\-level logic can be written in a high\-level language by a dedicated team\.</li>
-<li>The high\-level logic can be deployed independently\.</li>
-<li>The main bulk of the code should become much simpler\.</li>
+<li>The shards don’t need to be aware of each other.</li>
+<li>The high-level logic can be written in a high-level language by a dedicated team.</li>
+<li>The high-level logic can be deployed independently.</li>
+<li>The main bulk of the code should become much simpler.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Latency will increase\.</li>
-<li>The *Orchestrator* becomes a single point of failure which has a good chance to corrupt your data\.</li>
+<li>Latency will increase.</li>
+<li>The *Orchestrator* becomes a single point of failure which has a good chance to corrupt your data.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Shard* or *replicate* the *Orchestrator*</a> to support higher load and to remain online if it fails\.</li>
-<li>*Persist* the *Orchestrator* \(give it a dedicated database\) to make sure that it does not leave half\-committed transactions upon failure\.</li>
-<li>*Divide* the *Orchestrator* <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-to-gain-flexibility.md.html">into *Backends for Frontends*</a> or a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*SOA*\-style layer</a> if you have multiple kinds of clients or workflows, respectively\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Shard* or *replicate* the *Orchestrator*</a> to support higher load and to remain online if it fails.</li>
+<li>*Persist* the *Orchestrator* (give it a dedicated database) to make sure that it does not leave half-committed transactions upon failure.</li>
+<li>*Divide* the *Orchestrator* <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-to-gain-flexibility.md.html">into *Backends for Frontends*</a> or a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*SOA*-style layer</a> if you have multiple kinds of clients or workflows, respectively.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-data.md.html">Evolutions of Shards that share data</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-that-make-more-layers.md.html">Evolutions of Layers that make more layers</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Shards%20that%20share%20logic">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Shards%20that%20share%20logic</a></li>

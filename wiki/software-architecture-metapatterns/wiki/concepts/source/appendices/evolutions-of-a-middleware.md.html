@@ -24,43 +24,41 @@
 <h1>Evolutions of a Middleware</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of a Middleware.md</code>.</blockquote>
-<p>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> is unlikely to be removed \(though it still may be replaced\) once it is built into a system\. There are few evolutions as a *Middleware* is a third\-party product and is unlikely to be messed with:</p>
+<p>A <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> is unlikely to be removed (though it still may be replaced) once it is built into a system. There are few evolutions as a *Middleware* is a third-party product and is unlikely to be messed with:</p>
 <ul>
-<li>If the *Middleware* in use does not fit the preferred mode of communication between some of your services, there is an option to deploy a second specialized *Middleware*\.</li>
-<li>If several existing systems need to be merged, that is accomplished by adding yet another layer of *Middleware*, resulting in a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Bottom\-Up Hierarchy \(Bus of Buses\)*</a>\.</li>
+<li>If the *Middleware* in use does not fit the preferred mode of communication between some of your services, there is an option to deploy a second specialized *Middleware*.</li>
+<li>If several existing systems need to be merged, that is accomplished by adding yet another layer of *Middleware*, resulting in a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Bottom-Up Hierarchy (Bus of Buses)*</a>.</li>
 </ul>
 <h2>Add a secondary Middleware</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Middleware%20add%20Middleware.png" alt="A specialized middleware added to a system that already has a generic middleware." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: support specialized communication between <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">scaled</a> services\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the system relies on a *Middleware* for scaling\.</p>
-<p>If the current *Middleware* is too generic for the system’s needs, you can add another one for specialized communication\. The new *Middleware* does not manage the instances of the services\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: support specialized communication between <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">scaled</a> services.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the system relies on a *Middleware* for scaling.</p>
+<p>If the current *Middleware* is too generic for the system’s needs, you can add another one for specialized communication. The new *Middleware* does not manage the instances of the services.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Supports specialized communication with no need to write code for tracking the instances of services\.</li>
+<li>Supports specialized communication with no need to write code for tracking the instances of services.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>You still need to notify the new *Middleware* when an instance of a service is created or dies\.</li>
-<li>There is an extra component to administer\.</li>
+<li>You still need to notify the new *Middleware* when an instance of a service is created or dies.</li>
+<li>There is an extra component to administer.</li>
 </ul>
-<h2>Merge two systems by building a Bottom\-Up Hierarchy</h2>
+<h2>Merge two systems by building a Bottom-Up Hierarchy</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Middleware%20to%20Bus%20of%20Buses.png" alt="A low-level middleware interconnects several higher-level middlewares." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Bottom\-up Hierarchy</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Hierarchy</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: integrate two systems without a heavy refactoring\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: both systems use *Middleware*s\.</p>
-<p>If we cannot change the way each subsystem’s services use its *Middleware*, we should add a new *Middleware* to connect the existing *Middleware*s\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Bottom-up Hierarchy</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Hierarchy</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">Middleware</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: integrate two systems without a heavy refactoring.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: both systems use *Middleware*s.</p>
+<p>If we cannot change the way each subsystem’s services use its *Middleware*, we should add a new *Middleware* to connect the existing *Middleware*s.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>No need to touch anything in the existing services\.</li>
+<li>No need to touch anything in the existing services.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Performance suffers from the double conversion between protocols\.</li>
-<li>There is a new component to fail \(miserably\)\.</li>
+<li>Performance suffers from the double conversion between protocols.</li>
+<li>There is a new component to fail (miserably).</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-pipeline.md.html">Evolutions of a Pipeline</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-shared-repository.md.html">Evolutions of a Shared Repository</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Middleware">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20a%20Middleware</a></li>

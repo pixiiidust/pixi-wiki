@@ -18,15 +18,12 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 ## You’ll find inside
 
-- An atlas of [[wiki/concepts/source/introduction/system-topologies|system topologies]]\.
-- A compendium of [architectural patterns](https://en.wikipedia.org/wiki/Architectural_pattern)\.
-- One of the largest and most cohesive [pattern languages](https://en.wikipedia.org/wiki/Pattern_language)\.
+- An atlas of [[wiki/concepts/source/introduction/system-topologies|system topologies]].
+- A compendium of [architectural patterns](https://en.wikipedia.org/wiki/Architectural_pattern).
+- One of the largest and most cohesive [pattern languages](https://en.wikipedia.org/wiki/Pattern_language).
 
 ## Further chapters:
 
 - [[wiki/concepts/source/introduction/about-this-book|About this book]]
 - [[wiki/concepts/source/introduction/metapatterns|Metapatterns]]
 - [[wiki/concepts/source/introduction/system-topologies|System topologies]]
-
-| \<\< [[wiki/concepts/source/root/home|Home]] | ^ [[wiki/concepts/source/root/home|Home]] ^ | [[wiki/concepts/source/introduction/about-this-book|About this book]] \>\> |
-| --- | --- | --- |

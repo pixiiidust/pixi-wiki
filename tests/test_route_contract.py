@@ -188,6 +188,20 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertNotIn("&lt;img", html)
         self.assertNotIn("raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Monolith.png", html)
 
+    def test_software_architecture_metapatterns_source_artifacts_are_removed(self) -> None:
+        raw = (ROOT / "raw" / "software-architecture-metapatterns" / "wiki" / "concepts" / "source" / "appendices" / "evolutions-of-architectures.md").read_text(encoding="utf-8")
+        self.assertIn("This appendix details dozens of evolutions", raw)
+        self.assertNotIn("| \\<\\<", raw)
+        self.assertNotIn("| --- | --- | --- |", raw)
+        self.assertNotIn("together\\.", raw)
+        self.assertNotIn("re\\-integrate", raw)
+        html = (ROOT / "wiki" / "software-architecture-metapatterns" / "wiki" / "concepts" / "source" / "appendices" / "evolutions-of-architectures.md.html").read_text(encoding="utf-8")
+        self.assertIn("This appendix details dozens of evolutions", html)
+        self.assertNotIn("| \\&lt;\\&lt;", html)
+        self.assertNotIn("| --- | --- | --- |", html)
+        self.assertNotIn("together\\.", html)
+        self.assertNotIn("re\\-integrate", html)
+
     def test_rendered_wiki_page_exposes_metadata_tools_and_prev_next(self) -> None:
         html = (ROOT / "wiki" / "agent-workflows" / "wiki" / "concepts" / "knowledge-pack-routing.md.html").read_text(encoding="utf-8")
         self.assertIn("type</span>: concept", html)

@@ -24,104 +24,102 @@
 <h1>Glossary</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Glossary.md</code>.</blockquote>
-<p>*Abstractness* – the scope of information that a *concept* operates\. Highly abstract *concepts* describe the *system’s* behavior in less words\.</p>
-<p>*Action* – an act of a *system* that changes its environment\.</p>
-<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*API*</a> \(*application programming interface*\) – a set of *methods* or *messages* that a *component* exposes to its *clients*\.</p>
-<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Application*</a> – the most *abstract* layer that usually *integrates components* of a less *abstract* layer\.</p>
-<p>*Architectural pattern* – a way to structure a *system* or a part of a *system* to achieve desirable properties \(address a set of *forces*\)\.</p>
-<p>*Architectural style* – see *architecture*\.</p>
-<p>*Architecture* – the structure \(*components* and their *interactions*\) of a system which follows a certain framework or guidelines\.</p>
-<p>*ASS diagram* – a *structural diagram* with *abstraction*, *subdomain* and *sharding* for coordinates\.</p>
-<p>*Asynchronous communication* – the mode of *communication* when the sender of the *request message* does not stop the execution of its *scenario* to wait for the confirmation message\.</p>
-<p>*Attack surface* – the amount of *components* and functionality that faces an external network \(potentially exposed to hackers\)\.</p>
-<p>*Availability* – the percentage of time that the *system* is operational \(satisfies its *users*\)\.</p>
-<p>*Bounded context* – a subset of *requirements* and code that shares a set of *concepts*\. Usually consists of internals of a *component* and *APIs* of all the *components* it uses\.</p>
-<p>*Business logic* – the thing that *users* pay for\. It is the heart of the business and is usually the largest part of the *project*\. You cannot buy *business logic*, only *implement* it\. *Business logic* comprises *use cases* and *business rules*\.</p>
-<p>*Business rules* – *domain concepts* and their relations\. They make the low\-level half of *business logic*\.</p>
-<p>*Choreography* – a kind of *workflow* in which *components* that belong to the same level of *abstractness* cooperate to implement a *use case*\.</p>
-<p>*Client* – an external *component* or *system* that makes use of a *component* or *system* in question\.</p>
-<p>*Cohesion* – the density of logical connections between entities inside a *component*\.</p>
-<p>*Colocated* – running in the same address space \(process\) on the same hardware\.</p>
-<p>*Communication* – transfer of data or signals in a *system*\.</p>
-<p>*Complexity* – the cognitive load caused by the quantity of entities \(*concepts* or *modules*\) and their relations that a programmer needs to operate\.</p>
-<p>*Component* – an encapsulated part of a *system*\. It exposes an *API* to the system&#x27;s *clients* and/or other *components* of the *system*\.</p>
-<p>*Concept* – a notion of an element of a *system&#x27;s* behavior, usually present in *requirements*\.</p>
-<p>*Contract* – the informal rules for the behavior of a *component* expected by its *clients*\.</p>
-<p>*Control* – a kind of system that supervises physical entities or external programs\.</p>
-<p>*Coupling* – the density of logical connections between *components*\.</p>
-<p>*Cross\-cutting concern* – a functionality that should be present in multiple *components*\.</p>
-<p>*Data store* – anything where data can be placed or retrieved\. Includes *databases*, file systems, and cloud storage\.</p>
-<p>*Database* – a service for storing, retrieving, and analyzing data\.</p>
-<p>*Debugging* – trying to force the *system* to behave correctly from the user’s point of view\.</p>
-<p>*Deployment* – uploading a *component* to the hardware that will execute it\.</p>
-<p>*Design* – planning for the best way to write code\.</p>
-<p>*Design* – see *architecture*\.</p>
-<p>*Design space* – the multitude of possible ways to *design* a given project\.</p>
-<p>*Development* – building a *project* for its *users*\. Usually involves intermixed *design*, *implementation*, *debugging* and *testing* phases\.</p>
-<p>*Distributed* – spread over multiple computers that *communicate* via a network\.</p>
-<p>*Domain* – the whole of knowledge \(including *requirements*\) that is needed to build a *system*\.</p>
-<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Domain*</a> – the middle layer of a *system* that contains its *business rules*\.</p>
-<p>*Event* – a signal that carries some meaning for a *system* or *component*\. *Events* may carry data\.</p>
-<p>*Fault tolerance* – the ability of a *system* to remain \(at least partially\) operational if one or more of its *components* fail \(become inaccessible due to a hang, crash or a hardware failure\)\.</p>
-<p>*Forces* – restrictions on the design and development of a system based on the *qualities* it should meet \(see *non\-functional requirements*\) and organizational limitations \(such as time, budget and skills\)\.</p>
-<p>*Functional requirements* – the *requirements* that describe *inputs* and *outputs* of a *system*, but not its *performance* or stability\.</p>
-<p>*Global use case* – a *use case* that involves most of the *components* of a *system*\. Such *scenarios* are strongly affected by the *system’s* structure\.</p>
-<p>*Implementation* – the process of writing code\.</p>
-<p>*Implementation* – internals of a *component*\.</p>
-<p>*Infrastructure* – the lowest layer of a *system* that provides general\-purpose functionality \(tools\) to its upper layers\.</p>
-<p>*Input* – *events* or data that a *system* reacts to\.</p>
-<p>*Integration* – see *orchestration*\.</p>
-<p>*Integration complexity* – the *complexity* of understanding how individual *components interact* to make a *system*\.</p>
-<p>*Interactions* – the kinds and routes of *communication* between *components* of a *system*\.</p>
-<p>*Interface* – see *API*\.</p>
-<p>*Latency* – the delay between a *system’s* receiving *input* and producing a corresponding *output*\.</p>
-<p>*Layers* – *components* of a *system* partitioned by the level of *abstraction*\.</p>
-<p>*Messaging* – communication by sending short pieces of data\.</p>
-<p>*Method call* – invocation of an *interface* method \(or procedure\) of a *component* by another *component*\.</p>
-<p>*Metapattern* – a cluster of *patterns* that have similar *topologies* and address related issues\.</p>
-<p>*Module* – a *colocated* \(in\-process\) *component*\.</p>
-<p>*Non\-functional requirements* \(*NFR*s\) – expected properties of a *system* \(such as its stability or response time\) which are crucial for the *system* to be built, *deployed*, and used successfully\. Closely related to *qualities* and *forces*\.</p>
-<p>*Notification* – an *event* that one *component* sends to another *component*\(s\) to inform them of some change\.</p>
-<p>*Operational complexity* – see *integration complexity*\.</p>
-<p>*Orchestration* – a kind of *workflow* where a single dedicated *component* \(*Orchestrator*\) makes use of \(usually multiple\) less *abstract components*\. *Facade* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] is a good example\.</p>
-<p>*Output* – *actions* or data that a *system* produces\.</p>
-<p>*Pattern* – a documented approach \(blueprint\) for solving a recurrent programming issue\.</p>
-<p>*Pattern Language* – a set of interrelated *patterns* intended to cover most aspects of *designing systems* in a target *domain*\.</p>
-<p>*Performance* – a measure of a *system*’s *throughput*, *latency* and *resource* consumption\.</p>
-<p>*Persistent data* – data which survives rebooting the software\.</p>
-<p>*Pipeline* – a set of *components* for stepwise *processing* of data\.</p>
-<p>*Processing* – transformation of *input* data into *output* data\.</p>
-<p>*Project* – the process of making a *system*\.</p>
-<p>*Pub/sub \(publish/subscribe\)* – a mode of *communication* when one *component* \(*subscriber*\) receives a subset of *notifications* from another *component* \(*publisher*\)\. It is the *subscriber* that chooses which *notifications* it is interested in\.</p>
-<p>*Qualities* – the properties which a *component* or \(sub\)*system* manifests to satisfy *forces*\.</p>
-<p>*Real\-time* – a *force* that requires the *system* to respond to incoming *events* immediately\.</p>
-<p>*Request/confirmation* – a pair of *messages* between two *components* \(Requestor and Executor\)\. The *request* describes an *action* that the requestor wants the executor to run \(R =\&gt; E\)\. The *confirmation* describes the results of the execution \(R \&lt;= E\)\.</p>
-<p>*Requirements* – a set of rules that describe the correct \(expected\) behavior of the *system*\.</p>
-<p>*Resources* – CPU, memory, network bandwidth and other stuff that costs money\.</p>
-<p>*Scaling* – ability to increase *throughput* of a system by providing it with more *resources*\.</p>
-<p>*Scenario* – see *use case*\.</p>
-<p>*Service* – a *distributed component*\.</p>
-<p>*Services* – *components* of a *system* partitioned by *subdomain*\.</p>
-<p>*Sharding* – deploying multiple instances of a *component*\.</p>
-<p>*Single point of failure* – a software or hardware *component* which if fails makes the entire *system* non\-operational\. High\-*availability systems* should avoid *single points of failure*\.</p>
-<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*SPI*</a> \(*service provider interface*\) – a set of *methods* or *messages* that a *component* expects to be supported by the *components* it uses\.</p>
-<p>*State* – data that a *component* keeps between processing its *inputs*\.</p>
-<p>*Structural diagram* – a graphical representation of the structure of a \(sub\-\)*system* that shows *components* and their *interactions*\.</p>
-<p>*Stub* – a very simple *implementation* of a *module* that allows other *components* that use it to run without starting the original *module*\. *Stubs* are used to *implement modules* concurrently or *test* them in isolation\.</p>
-<p>*Subdomain* – a distinct *cohesive* part of *domain* knowledge\.</p>
-<p>*Synchronous communication* – the mode of communication when the *requesting component* waits for results of its *request* to another *component* before continuing to run its *task*\.</p>
-<p>*System* – a self\-sufficient set of *communicating components* that were brought together or *implemented* to satisfy its *users* \(by running *use cases*\)\.</p>
-<p>*Task* – a high\-level sequence of execution steps\. Similar to *use case* or *scenario*\.</p>
-<p>*Team* – a few programmers and testers that work on a *component*\. Teams of more than 5 members lose productivity to communication overhead\.</p>
-<p>*Testing* – checking how satisfactorily the *system* behaves\.</p>
-<p>*Throughput* – the amount of data a *system* can *process* per unit of time\.</p>
-<p>*Topology* – A map of system components and their relations, similar to a *structural diagram*\.</p>
-<p>*Use case* – a behavior expected by *system*’s users\. A *system* is *implemented* to run *use cases*\. *Use cases* are the high\-level half of *business logic*\.</p>
-<p>*User* – a human that uses a *system* and usually pays well if satisfied with its behavior\.</p>
-<p>*Vendor lock\-in* – a pitfall when a *system* relies on an external provider so much that it is impossible to change the provider\. It is similar to falling prey to a monopoly\.</p>
-<p>*Workflow* – a sequence of actions \(*messages* or *method calls*\) required to *implement* a *use case*\.</p>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/format-of-a-metapattern.md.html">Format of a metapattern</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/appendices.md.html">Appendices</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/history-of-changes.md.html">History of changes</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
+<p>*Abstractness* – the scope of information that a *concept* operates. Highly abstract *concepts* describe the *system’s* behavior in less words.</p>
+<p>*Action* – an act of a *system* that changes its environment.</p>
+<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*API*</a> (*application programming interface*) – a set of *methods* or *messages* that a *component* exposes to its *clients*.</p>
+<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Application*</a> – the most *abstract* layer that usually *integrates components* of a less *abstract* layer.</p>
+<p>*Architectural pattern* – a way to structure a *system* or a part of a *system* to achieve desirable properties (address a set of *forces*).</p>
+<p>*Architectural style* – see *architecture*.</p>
+<p>*Architecture* – the structure (*components* and their *interactions*) of a system which follows a certain framework or guidelines.</p>
+<p>*ASS diagram* – a *structural diagram* with *abstraction*, *subdomain* and *sharding* for coordinates.</p>
+<p>*Asynchronous communication* – the mode of *communication* when the sender of the *request message* does not stop the execution of its *scenario* to wait for the confirmation message.</p>
+<p>*Attack surface* – the amount of *components* and functionality that faces an external network (potentially exposed to hackers).</p>
+<p>*Availability* – the percentage of time that the *system* is operational (satisfies its *users*).</p>
+<p>*Bounded context* – a subset of *requirements* and code that shares a set of *concepts*. Usually consists of internals of a *component* and *APIs* of all the *components* it uses.</p>
+<p>*Business logic* – the thing that *users* pay for. It is the heart of the business and is usually the largest part of the *project*. You cannot buy *business logic*, only *implement* it. *Business logic* comprises *use cases* and *business rules*.</p>
+<p>*Business rules* – *domain concepts* and their relations. They make the low-level half of *business logic*.</p>
+<p>*Choreography* – a kind of *workflow* in which *components* that belong to the same level of *abstractness* cooperate to implement a *use case*.</p>
+<p>*Client* – an external *component* or *system* that makes use of a *component* or *system* in question.</p>
+<p>*Cohesion* – the density of logical connections between entities inside a *component*.</p>
+<p>*Colocated* – running in the same address space (process) on the same hardware.</p>
+<p>*Communication* – transfer of data or signals in a *system*.</p>
+<p>*Complexity* – the cognitive load caused by the quantity of entities (*concepts* or *modules*) and their relations that a programmer needs to operate.</p>
+<p>*Component* – an encapsulated part of a *system*. It exposes an *API* to the system&#x27;s *clients* and/or other *components* of the *system*.</p>
+<p>*Concept* – a notion of an element of a *system&#x27;s* behavior, usually present in *requirements*.</p>
+<p>*Contract* – the informal rules for the behavior of a *component* expected by its *clients*.</p>
+<p>*Control* – a kind of system that supervises physical entities or external programs.</p>
+<p>*Coupling* – the density of logical connections between *components*.</p>
+<p>*Cross-cutting concern* – a functionality that should be present in multiple *components*.</p>
+<p>*Data store* – anything where data can be placed or retrieved. Includes *databases*, file systems, and cloud storage.</p>
+<p>*Database* – a service for storing, retrieving, and analyzing data.</p>
+<p>*Debugging* – trying to force the *system* to behave correctly from the user’s point of view.</p>
+<p>*Deployment* – uploading a *component* to the hardware that will execute it.</p>
+<p>*Design* – planning for the best way to write code.</p>
+<p>*Design* – see *architecture*.</p>
+<p>*Design space* – the multitude of possible ways to *design* a given project.</p>
+<p>*Development* – building a *project* for its *users*. Usually involves intermixed *design*, *implementation*, *debugging* and *testing* phases.</p>
+<p>*Distributed* – spread over multiple computers that *communicate* via a network.</p>
+<p>*Domain* – the whole of knowledge (including *requirements*) that is needed to build a *system*.</p>
+<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Domain*</a> – the middle layer of a *system* that contains its *business rules*.</p>
+<p>*Event* – a signal that carries some meaning for a *system* or *component*. *Events* may carry data.</p>
+<p>*Fault tolerance* – the ability of a *system* to remain (at least partially) operational if one or more of its *components* fail (become inaccessible due to a hang, crash or a hardware failure).</p>
+<p>*Forces* – restrictions on the design and development of a system based on the *qualities* it should meet (see *non-functional requirements*) and organizational limitations (such as time, budget and skills).</p>
+<p>*Functional requirements* – the *requirements* that describe *inputs* and *outputs* of a *system*, but not its *performance* or stability.</p>
+<p>*Global use case* – a *use case* that involves most of the *components* of a *system*. Such *scenarios* are strongly affected by the *system’s* structure.</p>
+<p>*Implementation* – the process of writing code.</p>
+<p>*Implementation* – internals of a *component*.</p>
+<p>*Infrastructure* – the lowest layer of a *system* that provides general-purpose functionality (tools) to its upper layers.</p>
+<p>*Input* – *events* or data that a *system* reacts to.</p>
+<p>*Integration* – see *orchestration*.</p>
+<p>*Integration complexity* – the *complexity* of understanding how individual *components interact* to make a *system*.</p>
+<p>*Interactions* – the kinds and routes of *communication* between *components* of a *system*.</p>
+<p>*Interface* – see *API*.</p>
+<p>*Latency* – the delay between a *system’s* receiving *input* and producing a corresponding *output*.</p>
+<p>*Layers* – *components* of a *system* partitioned by the level of *abstraction*.</p>
+<p>*Messaging* – communication by sending short pieces of data.</p>
+<p>*Method call* – invocation of an *interface* method (or procedure) of a *component* by another *component*.</p>
+<p>*Metapattern* – a cluster of *patterns* that have similar *topologies* and address related issues.</p>
+<p>*Module* – a *colocated* (in-process) *component*.</p>
+<p>*Non-functional requirements* (*NFR*s) – expected properties of a *system* (such as its stability or response time) which are crucial for the *system* to be built, *deployed*, and used successfully. Closely related to *qualities* and *forces*.</p>
+<p>*Notification* – an *event* that one *component* sends to another *component*(s) to inform them of some change.</p>
+<p>*Operational complexity* – see *integration complexity*.</p>
+<p>*Orchestration* – a kind of *workflow* where a single dedicated *component* (*Orchestrator*) makes use of (usually multiple) less *abstract components*. *Facade* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] is a good example.</p>
+<p>*Output* – *actions* or data that a *system* produces.</p>
+<p>*Pattern* – a documented approach (blueprint) for solving a recurrent programming issue.</p>
+<p>*Pattern Language* – a set of interrelated *patterns* intended to cover most aspects of *designing systems* in a target *domain*.</p>
+<p>*Performance* – a measure of a *system*’s *throughput*, *latency* and *resource* consumption.</p>
+<p>*Persistent data* – data which survives rebooting the software.</p>
+<p>*Pipeline* – a set of *components* for stepwise *processing* of data.</p>
+<p>*Processing* – transformation of *input* data into *output* data.</p>
+<p>*Project* – the process of making a *system*.</p>
+<p>*Pub/sub (publish/subscribe)* – a mode of *communication* when one *component* (*subscriber*) receives a subset of *notifications* from another *component* (*publisher*). It is the *subscriber* that chooses which *notifications* it is interested in.</p>
+<p>*Qualities* – the properties which a *component* or (sub)*system* manifests to satisfy *forces*.</p>
+<p>*Real-time* – a *force* that requires the *system* to respond to incoming *events* immediately.</p>
+<p>*Request/confirmation* – a pair of *messages* between two *components* (Requestor and Executor). The *request* describes an *action* that the requestor wants the executor to run (R =\&gt; E). The *confirmation* describes the results of the execution (R \&lt;= E).</p>
+<p>*Requirements* – a set of rules that describe the correct (expected) behavior of the *system*.</p>
+<p>*Resources* – CPU, memory, network bandwidth and other stuff that costs money.</p>
+<p>*Scaling* – ability to increase *throughput* of a system by providing it with more *resources*.</p>
+<p>*Scenario* – see *use case*.</p>
+<p>*Service* – a *distributed component*.</p>
+<p>*Services* – *components* of a *system* partitioned by *subdomain*.</p>
+<p>*Sharding* – deploying multiple instances of a *component*.</p>
+<p>*Single point of failure* – a software or hardware *component* which if fails makes the entire *system* non-operational. High-*availability systems* should avoid *single points of failure*.</p>
+<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*SPI*</a> (*service provider interface*) – a set of *methods* or *messages* that a *component* expects to be supported by the *components* it uses.</p>
+<p>*State* – data that a *component* keeps between processing its *inputs*.</p>
+<p>*Structural diagram* – a graphical representation of the structure of a (sub-)*system* that shows *components* and their *interactions*.</p>
+<p>*Stub* – a very simple *implementation* of a *module* that allows other *components* that use it to run without starting the original *module*. *Stubs* are used to *implement modules* concurrently or *test* them in isolation.</p>
+<p>*Subdomain* – a distinct *cohesive* part of *domain* knowledge.</p>
+<p>*Synchronous communication* – the mode of communication when the *requesting component* waits for results of its *request* to another *component* before continuing to run its *task*.</p>
+<p>*System* – a self-sufficient set of *communicating components* that were brought together or *implemented* to satisfy its *users* (by running *use cases*).</p>
+<p>*Task* – a high-level sequence of execution steps. Similar to *use case* or *scenario*.</p>
+<p>*Team* – a few programmers and testers that work on a *component*. Teams of more than 5 members lose productivity to communication overhead.</p>
+<p>*Testing* – checking how satisfactorily the *system* behaves.</p>
+<p>*Throughput* – the amount of data a *system* can *process* per unit of time.</p>
+<p>*Topology* – A map of system components and their relations, similar to a *structural diagram*.</p>
+<p>*Use case* – a behavior expected by *system*’s users. A *system* is *implemented* to run *use cases*. *Use cases* are the high-level half of *business logic*.</p>
+<p>*User* – a human that uses a *system* and usually pays well if satisfied with its behavior.</p>
+<p>*Vendor lock-in* – a pitfall when a *system* relies on an external provider so much that it is impossible to change the provider. It is similar to falling prey to a monopoly.</p>
+<p>*Workflow* – a sequence of actions (*messages* or *method calls*) required to *implement* a *use case*.</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Glossary">github.com/denyspoltorak/metapatterns/wiki/Appendices/Glossary</a></li>

@@ -24,150 +24,148 @@
 <h1>Deconstructing patterns</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Analytics/The heart of software architecture/Deconstructing patterns.md</code>.</blockquote>
-<p>Imagine a dungeon with dragons\. It is made of halls connected by tunnels\. Each hall is *cohesive*\. Tunnels are narrow interfaces that *decouple* them\. A hall is amorphous – it can have any shape but it cannot open to another hall except through a tunnel – such are the rules of the game\. The tunnels both restrict the freedom of the halls and interconnect them\.</p>
+<p>Imagine a dungeon with dragons. It is made of halls connected by tunnels. Each hall is *cohesive*. Tunnels are narrow interfaces that *decouple* them. A hall is amorphous – it can have any shape but it cannot open to another hall except through a tunnel – such are the rules of the game. The tunnels both restrict the freedom of the halls and interconnect them.</p>
 <h2>SOLID principles</h2>
-<p>If *cohesion* and *decoupling* dictate software architecture, they should surface in its principles\. Let’s take a look at <a href="https://en.wikipedia.org/wiki/SOLID">SOLID</a>:</p>
+<p>If *cohesion* and *decoupling* dictate software architecture, they should surface in its principles. Let’s take a look at <a href="https://en.wikipedia.org/wiki/SOLID">SOLID</a>:</p>
 <ul>
-<li>The *single responsibility principle*, also known as <a href="https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well">*do one thing and do it well*</a>, is a general advice for keeping unrelated functionality decoupled\.</li>
-<li>The *open\-closed principle* and *Liskov substitution principle* decouple the logic of the parent class or the code that uses it, respectively, from the functionality of its subclasses\.</li>
-<li>The *interface segregation principle* decouples independent parts of an object’s interface\.</li>
-<li>The *dependency inversion principle* decouples an object’s users from its implementation\.</li>
+<li>The *single responsibility principle*, also known as <a href="https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well">*do one thing and do it well*</a>, is a general advice for keeping unrelated functionality decoupled.</li>
+<li>The *open-closed principle* and *Liskov substitution principle* decouple the logic of the parent class or the code that uses it, respectively, from the functionality of its subclasses.</li>
+<li>The *interface segregation principle* decouples independent parts of an object’s interface.</li>
+<li>The *dependency inversion principle* decouples an object’s users from its implementation.</li>
 </ul>
-<p>Please beware that each of those principles in and of themselves invokes decoupling which is not free – your software may end up having too many moving parts and strict rules to remain easy to read and support\.</p>
-<blockquote>When we choose between cohesion and decoupling, we choose between a single component and a pair of components connected through a constraint rule\. The more decoupling, the more components and rules we have to handle\. Sooner, rather than later, the number of individual components and rules will overwhelm any developer\.</blockquote>
+<p>Please beware that each of those principles in and of themselves invokes decoupling which is not free – your software may end up having too many moving parts and strict rules to remain easy to read and support.</p>
+<blockquote>When we choose between cohesion and decoupling, we choose between a single component and a pair of components connected through a constraint rule. The more decoupling, the more components and rules we have to handle. Sooner, rather than later, the number of individual components and rules will overwhelm any developer.</blockquote>
 <h2>Gang of Four patterns</h2>
-<p>Let’s now discuss something more practical, namely the \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] <a href="https://en.wikipedia.org/wiki/Design_Patterns#Patterns_by_type">patterns</a> which seem to be ingenious, yet hacky, ways for rearranging the roles in your code\. They override ordinary OOP rules, which is useful when you need extra flexibility\. For example, the *creational patterns* interfere with the normally cohesive *select type – create – initialize – use* sequence of operating an object\.</p>
+<p>Let’s now discuss something more practical, namely the \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] <a href="https://en.wikipedia.org/wiki/Design_Patterns#Patterns_by_type">patterns</a> which seem to be ingenious, yet hacky, ways for rearranging the roles in your code. They override ordinary OOP rules, which is useful when you need extra flexibility. For example, the *creational patterns* interfere with the normally cohesive *select type – create – initialize – use* sequence of operating an object.</p>
 <p>Some patterns provide a basic decoupling:</p>
 <ul>
-<li><a href="https://refactoring.guru/design-patterns/adapter">*Adapter*</a> translates between two interacting components so that they may evolve independently\.</li>
-<li><a href="https://refactoring.guru/design-patterns/observer">*Observer*</a> decouples an event from the reactions which it causes by registering the event handlers at runtime\.</li>
-<li><a href="https://refactoring.guru/design-patterns/chain-of-responsibility">*Chain of Responsibility*</a> separates the method invocation from the method execution\. A client’s calling a method of an object runs the corresponding method of another object\.</li>
+<li><a href="https://refactoring.guru/design-patterns/adapter">*Adapter*</a> translates between two interacting components so that they may evolve independently.</li>
+<li><a href="https://refactoring.guru/design-patterns/observer">*Observer*</a> decouples an event from the reactions which it causes by registering the event handlers at runtime.</li>
+<li><a href="https://refactoring.guru/design-patterns/chain-of-responsibility">*Chain of Responsibility*</a> separates the method invocation from the method execution. A client’s calling a method of an object runs the corresponding method of another object.</li>
 </ul>
 <p>Others break the functionality or data of a class into two or more parts, juggling them at runtime:</p>
 <ul>
-<li><a href="https://refactoring.guru/design-patterns/proxy">*Proxy*</a> separates an object’s representation from its implementation, enabling lazy loading or remote access\.</li>
-<li><a href="https://refactoring.guru/design-patterns/flyweight">*Flyweight*</a> extracts an immutable data member of a class and merges multiple instances of that identical data to save memory\.</li>
-<li><a href="https://refactoring.guru/design-patterns/strategy">*Strategy*</a> and <a href="https://refactoring.guru/design-patterns/decorator">*Decorator*</a> decouple a dimension of an object’s functionality to allow runtime changes in or composition of the object&#x27;s behavior, respectively\.</li>
-<li><a href="https://refactoring.guru/design-patterns/state">*State*</a> separates an object’s behavior into multiple classes based on the object’s current state\.</li>
-<li><a href="https://refactoring.guru/design-patterns/template-method">*Template Method*</a> decouples several aspects of a class’s behavior from its main algorithm and envelops the variations of those aspects into subclasses\.</li>
-<li><a href="https://refactoring.guru/design-patterns/bridge">*Bridge*</a> separates a high\-level hierarchy of classes from their low\-level implementation details which may comprise an orthogonal hierarchy\.</li>
-<li><a href="https://refactoring.guru/design-patterns/memento">*Memento*</a> decouples the lifetime of an object’s state from the object itself\.</li>
+<li><a href="https://refactoring.guru/design-patterns/proxy">*Proxy*</a> separates an object’s representation from its implementation, enabling lazy loading or remote access.</li>
+<li><a href="https://refactoring.guru/design-patterns/flyweight">*Flyweight*</a> extracts an immutable data member of a class and merges multiple instances of that identical data to save memory.</li>
+<li><a href="https://refactoring.guru/design-patterns/strategy">*Strategy*</a> and <a href="https://refactoring.guru/design-patterns/decorator">*Decorator*</a> decouple a dimension of an object’s functionality to allow runtime changes in or composition of the object&#x27;s behavior, respectively.</li>
+<li><a href="https://refactoring.guru/design-patterns/state">*State*</a> separates an object’s behavior into multiple classes based on the object’s current state.</li>
+<li><a href="https://refactoring.guru/design-patterns/template-method">*Template Method*</a> decouples several aspects of a class’s behavior from its main algorithm and envelops the variations of those aspects into subclasses.</li>
+<li><a href="https://refactoring.guru/design-patterns/bridge">*Bridge*</a> separates a high-level hierarchy of classes from their low-level implementation details which may comprise an orthogonal hierarchy.</li>
+<li><a href="https://refactoring.guru/design-patterns/memento">*Memento*</a> decouples the lifetime of an object’s state from the object itself.</li>
 </ul>
 <p>On the other hand, several patterns gather separate components together:</p>
 <ul>
-<li><a href="https://refactoring.guru/design-patterns/command">*Command*</a> collects all the data required to call a method\.</li>
-<li><a href="https://refactoring.guru/design-patterns/mediator">*Mediator*</a> is a cohesive implementation of multi\-object use cases\.</li>
-<li><a href="https://refactoring.guru/design-patterns/composite">*Composite*</a> and <a href="https://refactoring.guru/design-patterns/facade">*Facade*</a> represent multiple objects as a cohesive entity\. A *Composite* broadcasts a call made to its interface to every object which it contains, while a *Facade* <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">orchestrates</a> the subsystem which it wraps\.</li>
-<li><a href="https://refactoring.guru/design-patterns/abstract-factory">*Abstract Factory*</a> and <a href="https://refactoring.guru/design-patterns/builder">*Builder*</a> encapsulate *type selection* and *initialization* for several related hierarchies, so that the client code gets objects from a consistent set of types\. On top of that, a *Builder* cross\-links the objects it creates into a cohesive subsystem, which is then returned to the *builder*’s client as a whole\.</li>
+<li><a href="https://refactoring.guru/design-patterns/command">*Command*</a> collects all the data required to call a method.</li>
+<li><a href="https://refactoring.guru/design-patterns/mediator">*Mediator*</a> is a cohesive implementation of multi-object use cases.</li>
+<li><a href="https://refactoring.guru/design-patterns/composite">*Composite*</a> and <a href="https://refactoring.guru/design-patterns/facade">*Facade*</a> represent multiple objects as a cohesive entity. A *Composite* broadcasts a call made to its interface to every object which it contains, while a *Facade* <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">orchestrates</a> the subsystem which it wraps.</li>
+<li><a href="https://refactoring.guru/design-patterns/abstract-factory">*Abstract Factory*</a> and <a href="https://refactoring.guru/design-patterns/builder">*Builder*</a> encapsulate *type selection* and *initialization* for several related hierarchies, so that the client code gets objects from a consistent set of types. On top of that, a *Builder* cross-links the objects it creates into a cohesive subsystem, which is then returned to the *builder*’s client as a whole.</li>
 </ul>
 <p>The remaining patterns pick an aspect or two of an object’s behavior and move them elsewhere:</p>
 <ul>
-<li><a href="https://refactoring.guru/design-patterns/iterator">*Iterator*</a> moves the code for traversal of a container’s elements from the container’s clients into the container’s implementation, decoupling the clients from the iteration algorithm\.</li>
-<li><a href="https://refactoring.guru/design-patterns/visitor">*Visitor*</a> aggregates the actions that a client needs to perform on each kind of object in a hierarchy, decoupling them from the classes that constitute the hierarchy\.</li>
-<li>*Interpreter* decouples client scenarios from the rest of the system by having them written in a dedicated language and run in a protected environment\.</li>
-<li><a href="https://refactoring.guru/design-patterns/prototype">*Prototype*</a> binds the *type selection* and *initialization* together and decouples them from the object *creation*\.</li>
-<li><a href="https://refactoring.guru/design-patterns/singleton">*Singleton*</a> binds the *creation* and *initialization* of a global object to every call of its methods\.</li>
-<li><a href="https://refactoring.guru/design-patterns/factory-method">*Factory Method*</a> decouples the *initialization* from *type selection* and hides both from the class’s users\.</li>
+<li><a href="https://refactoring.guru/design-patterns/iterator">*Iterator*</a> moves the code for traversal of a container’s elements from the container’s clients into the container’s implementation, decoupling the clients from the iteration algorithm.</li>
+<li><a href="https://refactoring.guru/design-patterns/visitor">*Visitor*</a> aggregates the actions that a client needs to perform on each kind of object in a hierarchy, decoupling them from the classes that constitute the hierarchy.</li>
+<li>*Interpreter* decouples client scenarios from the rest of the system by having them written in a dedicated language and run in a protected environment.</li>
+<li><a href="https://refactoring.guru/design-patterns/prototype">*Prototype*</a> binds the *type selection* and *initialization* together and decouples them from the object *creation*.</li>
+<li><a href="https://refactoring.guru/design-patterns/singleton">*Singleton*</a> binds the *creation* and *initialization* of a global object to every call of its methods.</li>
+<li><a href="https://refactoring.guru/design-patterns/factory-method">*Factory Method*</a> decouples the *initialization* from *type selection* and hides both from the class’s users.</li>
 </ul>
-<p>As we see, every \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] pattern boils down to binding \(making *cohesive*\) and/or separating \(*decoupling*\) some kind of functionality or responsibilities\.</p>
+<p>As we see, every \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[GoF</a>\] pattern boils down to binding (making *cohesive*) and/or separating (*decoupling*) some kind of functionality or responsibilities.</p>
 <h2>Architectural metapatterns</h2>
-<p>Finally, let’s close the book by iterating over the metapatterns and looking into their roots through the lens of unification and separation\.</p>
+<p>Finally, let’s close the book by iterating over the metapatterns and looking into their roots through the lens of unification and separation.</p>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Basic.png" alt="Diagrams of Monolith, Shards, Layers, Services, and Pipeline, with cohesive and decoupled components highlighted." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/basic-metapatterns.md.html">Basic architectures</a>:</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> keeps everything together for quick and dirty projects:</li>
 </ul>
-<p>- Total *cohesiveness* results in low latency, cost\-efficient performance, and easy debugging\.</p>
+<p>- Total *cohesiveness* results in low latency, cost-efficient performance, and easy debugging.</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shards*</a> slice a large\-scale application into multiple instances:</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shards*</a> slice a large-scale application into multiple instances:</li>
 </ul>
-<p>- *Decoupling* the instances enables scaling but sacrifices the consistency of shared data\.</p>
+<p>- *Decoupling* the instances enables scaling but sacrifices the consistency of shared data.</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> separate the high\-level code from the low\-level implementation:</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> separate the high-level code from the low-level implementation:</li>
 </ul>
-<p>- *Cohesion* within a layer makes it easy to implement and debug\.</p>
-<p>- *Decoupled* layers may vary among themselves in technologies and properties, but are somewhat slower and hard to debug in\-depth\.</p>
+<p>- *Cohesion* within a layer makes it easy to implement and debug.</p>
+<p>- *Decoupled* layers may vary among themselves in technologies and properties, but are somewhat slower and hard to debug in-depth.</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a> divide a complex system into subdomains:</li>
 </ul>
-<p>- *Cohesiveness* within a service keeps it simple and efficient when it does not need to consult with other services\.</p>
-<p>- *Decoupling* enables the development of larger codebases by multiple specialized teams but any global use cases become complicated\.</p>
+<p>- *Cohesiveness* within a service keeps it simple and efficient when it does not need to consult with other services.</p>
+<p>- *Decoupling* enables the development of larger codebases by multiple specialized teams but any global use cases become complicated.</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Pipeline*</a> segregates data processing into self\-contained steps:</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Pipeline*</a> segregates data processing into self-contained steps:</li>
 </ul>
-<p>- *Decoupling* simplifies reassembling or expanding the system but increases its latency\.</p>
+<p>- *Decoupling* simplifies reassembling or expanding the system but increases its latency.</p>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Extension.png" alt="Diagrams of Services with a middleware, Services with a shared repository, Services with a proxy, Services with an orchestrator, and Sandwich, with cohesive and decoupled components highlighted." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/extension-metapatterns.md.html">Grouping related functionality</a>:</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> separates the implementation of communication and/or instance management from the business logic:</li>
 </ul>
-<p>- The *cohesive* communication layer is not only reliable, but also uniform, which makes it easy to learn\.</p>
-<p>- *Decoupling* the communication concerns from the business logic simplifies the latter\.</p>
+<p>- The *cohesive* communication layer is not only reliable, but also uniform, which makes it easy to learn.</p>
+<p>- *Decoupling* the communication concerns from the business logic simplifies the latter.</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Repository*</a> dissociates data from code, enabling <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html">data\-centric programming</a>:</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*Shared Repository*</a> dissociates data from code, enabling <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html">data-centric programming</a>:</li>
 </ul>
-<p>- *Cohesive* data is consistent and easy to handle\.</p>
-<p>- *Decoupled* business logic can be scaled or subdivided <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms.md.html">independently</a> of the data\.</p>
+<p>- *Cohesive* data is consistent and easy to handle.</p>
+<p>- *Decoupled* business logic can be scaled or subdivided <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms.md.html">independently</a> of the data.</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a> mediates between a system and its clients, taking care of some aspects of their communication:</li>
 </ul>
-<p>- A *cohesive* edge component is easier to manage and secure\.</p>
-<p>- *Decoupling* generic aspects simplifies the business logic but usually increases latency\.</p>
+<p>- A *cohesive* edge component is easier to manage and secure.</p>
+<p>- *Decoupling* generic aspects simplifies the business logic but usually increases latency.</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> collects a multitude of complex use cases into a dedicated layer:</li>
 </ul>
-<p>- *Cohesive* use cases are easy to comprehend and debug\.</p>
-<p>- *Decoupling* the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">use cases</a> from the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">domain logic</a> allows for variation in technologies but increases latency and complicates in\-depth debugging\.</p>
+<p>- *Cohesive* use cases are easy to comprehend and debug.</p>
+<p>- *Decoupling* the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">use cases</a> from the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">domain logic</a> allows for variation in technologies but increases latency and complicates in-depth debugging.</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a> distantiates both control and data from the domain rules, which become segmented:</li>
 </ul>
-<p>- *Cohesive* use cases and data integrate the system\.</p>
-<p>- *Decoupling* the subdomain components from each other and from the system\-wide layers keeps every part of the system reasonably small and independent\.</p>
+<p>- *Cohesive* use cases and data integrate the system.</p>
+<p>- *Decoupling* the subdomain components from each other and from the system-wide layers keeps every part of the system reasonably small and independent.</p>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Fragmented.png" alt="Diagrams of Layered Services, Services with Polyglot Persistence, Backends for Frontends, Service-Oriented Architecture, and Top-Down Hierarchy, with cohesive and decoupled components highlighted." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns.md.html">Decoupled topologies</a>:</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Layered Services*</a> first decouple the subdomains, and then the layers within each subdomain:</li>
 </ul>
-<p>- *Decoupled* subdomains allow for multi\-team development and large codebases but complicate global use cases\. *Decoupled* layers enable variation in technologies within a subdomain and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">limit interdependencies</a> between subdomains to a single layer\.</p>
+<p>- *Decoupled* subdomains allow for multi-team development and large codebases but complicate global use cases. *Decoupled* layers enable variation in technologies within a subdomain and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">limit interdependencies</a> between subdomains to a single layer.</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a> divides data among multiple data stores:</li>
 </ul>
-<p>- *Decoupling* improves performance through data store specialization at the cost of consistency\.</p>
+<p>- *Decoupling* improves performance through data store specialization at the cost of consistency.</p>
 <ul>
-<li><a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) dedicate one or two components \(a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a> and/or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a>\) to each kind of client\.</li>
+<li><a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;) dedicate one or two components (a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxy*</a> and/or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a>) to each kind of client.</li>
 </ul>
-<p>- *Decoupling* allows for customization on a per\-client\-type basis but makes it hard to share functionality among the clients\.</p>
+<p>- *Decoupling* allows for customization on a per-client-type basis but makes it hard to share functionality among the clients.</p>
 <ul>
-<li><a href="&lt;Service-Oriented Architecture (SOA">*Service\-Oriented Architecture*</a>&gt;) first segregates a large system into layers, then subdivides each layer into services:</li>
+<li><a href="&lt;Service-Oriented Architecture (SOA">*Service-Oriented Architecture*</a>&gt;) first segregates a large system into layers, then subdivides each layer into services:</li>
 </ul>
-<p>- *Decoupling* layers strangely enables reuse as any component of an upper layer can access every component below it\. *Decoupling* services within the layers allows for multi\-team development\. Drawbacks include high latency, system complexity, and interdependencies\.</p>
+<p>- *Decoupling* layers strangely enables reuse as any component of an upper layer can access every component below it. *Decoupling* services within the layers allows for multi-team development. Drawbacks include high latency, system complexity, and interdependencies.</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Hierarchy*</a> recursively separates general and specialized logic, tackling complexity:</li>
 </ul>
-<p>- *Cohesive* general and subdomain\-specific business logic helps readability and debugging\.</p>
-<p>- *Decoupled* layers and subdomains allow for modification and expansion of local functionality at the cost of performance\.</p>
+<p>- *Cohesive* general and subdomain-specific business logic helps readability and debugging.</p>
+<p>- *Decoupled* layers and subdomains allow for modification and expansion of local functionality at the cost of performance.</p>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Implementation.png" alt="Diagrams of Plugins, Hexagonal Architecture, Microkernel, and Mesh, with cohesive and decoupled components highlighted." loading="lazy"></p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/implementation-metapatterns.md.html">Component implementation</a>:</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">*Plugins*</a> separate customizable aspects of a system’s behavior:</li>
 </ul>
-<p>- *Decoupling* several aspects of a system allows for it to be fine\-tuned but requires careful design and may lower performance\.</p>
+<p>- *Decoupling* several aspects of a system allows for it to be fine-tuned but requires careful design and may lower performance.</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a> isolates the business logic from its external dependencies:</li>
 </ul>
-<p>- *Decoupling* protects from vendor lock\-in and supports automatic testing at the cost of lost optimization opportunities\.</p>
+<p>- *Decoupling* protects from vendor lock-in and supports automatic testing at the cost of lost optimization opportunities.</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html">*Microkernel*</a> mediates between resource consumers and resource producers:</li>
 </ul>
-<p>- *Cohesive* resource management optimizes resource usage\.</p>
-<p>- *Decoupling* allows for seamless replacement of resource providers\.</p>
+<p>- *Cohesive* resource management optimizes resource usage.</p>
+<p>- *Decoupling* allows for seamless replacement of resource providers.</p>
 <ul>
 <li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Mesh*</a> aggregates distributed components into a virtual layer:</li>
 </ul>
-<p>- Virtual *cohesion* hides the complexity of distributed communication from the client code\.</p>
-<p>- Actual *decoupling* \(distribution\) of the nodes enables scaling and fault tolerance\.</p>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/cohesers-and-decouplers.md.html">Cohesers and decouplers</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/the-heart-of-software-architecture.md.html">The heart of software architecture</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/choose-your-own-architecture.md.html">Choose your own architecture</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
+<p>- Virtual *cohesion* hides the complexity of distributed communication from the client code.</p>
+<p>- Actual *decoupling* (distribution) of the nodes enables scaling and fault tolerance.</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://refactoring.guru/design-patterns/abstract-factory">*Abstract Factory*</a></li><li><a href="https://refactoring.guru/design-patterns/adapter">*Adapter*</a></li><li><a href="https://refactoring.guru/design-patterns/bridge">*Bridge*</a></li><li><a href="https://refactoring.guru/design-patterns/builder">*Builder*</a></li><li><a href="https://refactoring.guru/design-patterns/chain-of-responsibility">*Chain of Responsibility*</a></li><li><a href="https://refactoring.guru/design-patterns/command">*Command*</a></li><li><a href="https://refactoring.guru/design-patterns/composite">*Composite*</a></li><li><a href="https://refactoring.guru/design-patterns/decorator">*Decorator*</a></li><li><a href="https://en.wikipedia.org/wiki/Unix_philosophy#Do_One_Thing_and_Do_It_Well">*do one thing and do it well*</a></li><li><a href="https://refactoring.guru/design-patterns/facade">*Facade*</a></li><li><a href="https://refactoring.guru/design-patterns/factory-method">*Factory Method*</a></li><li><a href="https://refactoring.guru/design-patterns/flyweight">*Flyweight*</a></li><li><a href="https://refactoring.guru/design-patterns/iterator">*Iterator*</a></li><li><a href="https://refactoring.guru/design-patterns/mediator">*Mediator*</a></li><li><a href="https://refactoring.guru/design-patterns/memento">*Memento*</a></li><li><a href="https://refactoring.guru/design-patterns/observer">*Observer*</a></li><li><a href="https://refactoring.guru/design-patterns/prototype">*Prototype*</a></li><li><a href="https://refactoring.guru/design-patterns/proxy">*Proxy*</a></li><li><a href="https://refactoring.guru/design-patterns/singleton">*Singleton*</a></li><li><a href="https://refactoring.guru/design-patterns/state">*State*</a></li><li><a href="https://refactoring.guru/design-patterns/strategy">*Strategy*</a></li><li><a href="https://refactoring.guru/design-patterns/template-method">*Template Method*</a></li><li><a href="https://refactoring.guru/design-patterns/visitor">*Visitor*</a></li><li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Analytics/The%20heart%20of%20software%20architecture/Deconstructing%20patterns">github.com/denyspoltorak/metapatterns/wiki/Analytics/The%20heart%20of%20software%20architecture/Deconstructing%20patterns</a></li><li><a href="https://en.wikipedia.org/wiki/Design_Patterns#Patterns_by_type">patterns</a></li><li><a href="https://en.wikipedia.org/wiki/SOLID">SOLID</a></li>

@@ -26,65 +26,63 @@
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Format of a metapattern.md</code>.</blockquote>
 <p>The descriptions of most <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/introduction/metapatterns.md.html">metapatterns</a> follow the same format:</p>
 <h3>Diagram</h3>
-<p>The structural diagram \(in *abstractness\-subdomain\-sharding* <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/introduction/metapatterns.md.html">coordinates</a>\) of a typical application of the metapattern\. Please note that in practice the number and types of components and their interactions may vary:</p>
+<p>The structural diagram (in *abstractness-subdomain-sharding* <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/introduction/metapatterns.md.html">coordinates</a>) of a typical application of the metapattern. Please note that in practice the number and types of components and their interactions may vary:</p>
 <ul>
-<li>Even though most diagrams show 3 *layers* or *services*, there are many 2\-layered or 4\-layered systems, while the number of services may often be greater than 10\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/extension-metapatterns.md.html">*Extension metapatterns*</a> add a *layer* \(or a *layer of services*\) to an existing system, which is shown as <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>, but may instead comprise <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shards*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a>, or even a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a>\.</li>
-<li>Subtypes of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Hierarchy*</a> or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Mesh*</a> differ in their <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/introduction/system-topologies.md.html">topologies</a>\. Only one is shown\.</li>
-<li>Components of metapatterns may communicate in various ways that include in\-process calls, RPC, asynchronous messaging, or streams\. Only one of them is shown\. Optional communication pathways may appear as dashed arrows\.</li>
+<li>Even though most diagrams show 3 *layers* or *services*, there are many 2-layered or 4-layered systems, while the number of services may often be greater than 10.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/extension-metapatterns.md.html">*Extension metapatterns*</a> add a *layer* (or a *layer of services*) to an existing system, which is shown as <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>, but may instead comprise <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html">*Shards*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a>, or even a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a>.</li>
+<li>Subtypes of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Hierarchy*</a> or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Mesh*</a> differ in their <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/introduction/system-topologies.md.html">topologies</a>. Only one is shown.</li>
+<li>Components of metapatterns may communicate in various ways that include in-process calls, RPC, asynchronous messaging, or streams. Only one of them is shown. Optional communication pathways may appear as dashed arrows.</li>
 </ul>
 <p>Most diagrams feature the following colors:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Use cases*</a> \(aka integration, orchestration, workflow or application logic\) are shown in green\. Those are high\-level scenarios executed by user actions or signals from hardware which keep the system acting as a whole\. Use cases are *what* your software does\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Domain logic*</a> \(business rules\), shown in blue, is the set of algorithms that models the real\-world system which your software describes\. It is *how* your system solves its tasks\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Generic code*</a> is white\. It stands for tools and libraries unrelated to your business\. Examples include communication protocols, data compression, and common maths\.</li>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Data*</a> is gray\. It includes business\-critical in\-memory state \(e\.g\. user’s session\) and persistent storage \(in a database or files\)\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Use cases*</a> (aka integration, orchestration, workflow or application logic) are shown in green. Those are high-level scenarios executed by user actions or signals from hardware which keep the system acting as a whole. Use cases are *what* your software does.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Domain logic*</a> (business rules), shown in blue, is the set of algorithms that models the real-world system which your software describes. It is *how* your system solves its tasks.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Generic code*</a> is white. It stands for tools and libraries unrelated to your business. Examples include communication protocols, data compression, and common maths.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Data*</a> is gray. It includes business-critical in-memory state (e.g. user’s session) and persistent storage (in a database or files).</li>
 </ul>
-<p>*Use cases* and *domain logic* comprise *business logic* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[PEAA</a>\] – the code that makes your software different from whatever else is available on the market\. It is this part of the system which your customers pay for, and it usually is much larger than the other parts, which makes business logic the primary focus of development\.</p>
-<p>In <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/choreography.md.html">*choreographed*</a> systems use cases are defined by the web of communication channels instead of the code inside the system’s components\. That is represented by green arrows and the overall lack of green areas on the diagrams of system components\.</p>
+<p>*Use cases* and *domain logic* comprise *business logic* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[PEAA</a>\] – the code that makes your software different from whatever else is available on the market. It is this part of the system which your customers pay for, and it usually is much larger than the other parts, which makes business logic the primary focus of development.</p>
+<p>In <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/choreography.md.html">*choreographed*</a> systems use cases are defined by the web of communication channels instead of the code inside the system’s components. That is represented by green arrows and the overall lack of green areas on the diagrams of system components.</p>
 <h3>Abstract</h3>
-<p>*Motto* and the design goal\.</p>
-<p>&lt;ins&gt;Known as:&lt;/ins&gt; the list of aliases for the general metapattern\.</p>
-<p>&lt;ins&gt;Structure:&lt;/ins&gt; a short description of the structure of the metapattern\.</p>
-<p>&lt;ins&gt;Type:&lt;/ins&gt; system topology, extension component, or implementation\.</p>
+<p>*Motto* and the design goal.</p>
+<p>&lt;ins&gt;Known as:&lt;/ins&gt; the list of aliases for the general metapattern.</p>
+<p>&lt;ins&gt;Structure:&lt;/ins&gt; a short description of the structure of the metapattern.</p>
+<p>&lt;ins&gt;Type:&lt;/ins&gt; system topology, extension component, or implementation.</p>
 <ul>
-<li>A *system topology* \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a> and few others derived from them\) makes the backbone of any system\.</li>
-<li>An *extension component* is an addition to a *system topology* which modifies its properties\.</li>
-<li>An *implementation* shows the internal structure of a component, usually hidden from its clients\.</li>
+<li>A *system topology* (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a> and few others derived from them) makes the backbone of any system.</li>
+<li>An *extension component* is an addition to a *system topology* which modifies its properties.</li>
+<li>An *implementation* shows the internal structure of a component, usually hidden from its clients.</li>
 </ul>
-<p>A short *table of benefits and drawbacks*\.</p>
-<p>&lt;ins&gt;References:&lt;/ins&gt; select articles and books that describe the topic\.</p>
-<p>After that, there follow two or three paragraphs of facts and ideas about the metapattern\.</p>
+<p>A short *table of benefits and drawbacks*.</p>
+<p>&lt;ins&gt;References:&lt;/ins&gt; select articles and books that describe the topic.</p>
+<p>After that, there follow two or three paragraphs of facts and ideas about the metapattern.</p>
 <h3>Performance</h3>
-<p>This section discusses the performance of the subject metapattern in scenarios of various scope: simple requests or events that relate to a single subsystem are usually processed much faster than those that touch multiple components\.</p>
-<p>There are two kinds of performance: latency and throughput\. Low latency is possible only if few components are involved because inter\-component communication, especially in distributed systems, increases latency\. Contrariwise, throughput depends on the number of components that work in parallel, thus it scales together with the system\.</p>
-<p>This section may also discuss optimization techniques that apply to the metapattern\.</p>
+<p>This section discusses the performance of the subject metapattern in scenarios of various scope: simple requests or events that relate to a single subsystem are usually processed much faster than those that touch multiple components.</p>
+<p>There are two kinds of performance: latency and throughput. Low latency is possible only if few components are involved because inter-component communication, especially in distributed systems, increases latency. Contrariwise, throughput depends on the number of components that work in parallel, thus it scales together with the system.</p>
+<p>This section may also discuss optimization techniques that apply to the metapattern.</p>
 <h3>Dependencies</h3>
-<p>Some components of the metapattern depend on other components\. If a component changes, everything that depends on it may need to be re\-tested with the updated version\. If a component’s interface changes, all the components that depend on it must be updated\. Therefore, components that evolve quickly should depend on others, not the other way around\.</p>
-<p>Some patterns, such as <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a>, use <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Adapters*</a> to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/indirection-in-commands-and-queries.md.html">break dependencies</a>\. An *Adapter* depends on components on both sides of itself, making those components independent of each other\. The *Adapters* are small enough to update quickly, and may easily be replaced with stubs for testing or running a component in isolation\.</p>
+<p>Some components of the metapattern depend on other components. If a component changes, everything that depends on it may need to be re-tested with the updated version. If a component’s interface changes, all the components that depend on it must be updated. Therefore, components that evolve quickly should depend on others, not the other way around.</p>
+<p>Some patterns, such as <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Hexagonal Architecture*</a>, use <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Adapters*</a> to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/indirection-in-commands-and-queries.md.html">break dependencies</a>. An *Adapter* depends on components on both sides of itself, making those components independent of each other. The *Adapters* are small enough to update quickly, and may easily be replaced with stubs for testing or running a component in isolation.</p>
 <h3>Applicability</h3>
-<p>Here follows a list of types of projects which may benefit from applying the architecture under review, and another list of those which it is more likely to hurt\.</p>
+<p>Here follows a list of types of projects which may benefit from applying the architecture under review, and another list of those which it is more likely to hurt.</p>
 <h3>Relations</h3>
-<p>These are illustrated through an optional sequence of diagrams, showing the \(*extension* or *implementation*\) metapattern applied to various kinds of architectures, followed by a list of relations between the current and other metapatterns\.</p>
+<p>These are illustrated through an optional sequence of diagrams, showing the (*extension* or *implementation*) metapattern applied to various kinds of architectures, followed by a list of relations between the current and other metapatterns.</p>
 <h3>Variants and examples</h3>
-<p>A metapattern usually unites many variations of several patterns\. Here we may have a section per dimension of variability, and often another section with well\-known patterns and architectures that match the metapattern\.</p>
-<p>When a pattern is listed under several metapatterns \(as often seen with *extension components*\), the headers of the multiple pattern descriptions cross\-link to each other\.</p>
-<p>In other cases I had to include several variants that do not properly belong to the metapattern under review, just to avoid confusion with terminology and point the reader to the right chapter\. For example, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Modular Monolith*</a> has a module per subdomain, thus it belongs to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a> rather than <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a>\. Still, when the chapter on *Monolith* was not mentioning it, I was blamed for misunderstanding the *Monolithic Architecture*\. Such patterns are marked as \(misapplied\) or \(inexact\)\.</p>
-<p>I tried to show the difference between synonymous names for every variant or example whenever I could identify one\.</p>
+<p>A metapattern usually unites many variations of several patterns. Here we may have a section per dimension of variability, and often another section with well-known patterns and architectures that match the metapattern.</p>
+<p>When a pattern is listed under several metapatterns (as often seen with *extension components*), the headers of the multiple pattern descriptions cross-link to each other.</p>
+<p>In other cases I had to include several variants that do not properly belong to the metapattern under review, just to avoid confusion with terminology and point the reader to the right chapter. For example, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Modular Monolith*</a> has a module per subdomain, thus it belongs to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a> rather than <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a>. Still, when the chapter on *Monolith* was not mentioning it, I was blamed for misunderstanding the *Monolithic Architecture*. Such patterns are marked as (misapplied) or (inexact).</p>
+<p>I tried to show the difference between synonymous names for every variant or example whenever I could identify one.</p>
 <h3>Evolutions</h3>
-<p>This section covers a brief summary of possible changes to the architecture under review\. Each change leads to a new architecture which usually belongs to another metapattern\.</p>
+<p>This section covers a brief summary of possible changes to the architecture under review. Each change leads to a new architecture which usually belongs to another metapattern.</p>
 <p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Appendix E</a> discusses many evolutions in greater detail:</p>
 <ul>
-<li>A diagram that shows the original and resulting structures\.</li>
-<li>The list of patterns, present in the resulting architecture\. More general forms of each pattern are given in parentheses, i\.e\. Pattern \(Metapattern \(Parent Metapattern\)\)\.</li>
-<li>The goal\(s\) of the transition\.</li>
-<li>The prerequisites that enable the change\.</li>
-<li>A short description of the change and the resulting system\.</li>
-<li>Lists of pros and cons of the evolution\.</li>
-<li>An optional list of metapatterns that the resulting system may evolve into and their benefits in the context of the current evolution\.</li>
+<li>A diagram that shows the original and resulting structures.</li>
+<li>The list of patterns, present in the resulting architecture. More general forms of each pattern are given in parentheses, i.e. Pattern (Metapattern (Parent Metapattern)).</li>
+<li>The goal(s) of the transition.</li>
+<li>The prerequisites that enable the change.</li>
+<li>A short description of the change and the resulting system.</li>
+<li>Lists of pros and cons of the evolution.</li>
+<li>An optional list of metapatterns that the resulting system may evolve into and their benefits in the context of the current evolution.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-sandwich.md.html">Evolutions of a Sandwich</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/appendices.md.html">Appendices</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/glossary.md.html">Glossary</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Format%20of%20a%20metapattern">github.com/denyspoltorak/metapatterns/wiki/Appendices/Format%20of%20a%20metapattern</a></li>

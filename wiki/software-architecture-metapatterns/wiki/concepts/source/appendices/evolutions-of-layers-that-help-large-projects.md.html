@@ -24,86 +24,84 @@
 <h1>Evolutions of Layers that help large projects</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of Layers that help large projects.md</code>.</blockquote>
-<p>The main drawback \(and benefit\) of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> is that much or all of the business logic is kept together in one or two components\. That allows for easy debugging and fast development in the initial stages of the project but slows down and complicates work as the project <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/architecture-and-product-life-cycle.md.html">grows in size</a>\. The only way for a growing project to continue evolving at a reasonable speed is to subdivide its business logic into several smaller, thus less <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">complex</a>, components that match subdomains \(*bounded contexts* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDD</a>\]\)\. There are several options for such a change with their applicability depending on the domain:</p>
+<p>The main drawback (and benefit) of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*Layers*</a> is that much or all of the business logic is kept together in one or two components. That allows for easy debugging and fast development in the initial stages of the project but slows down and complicates work as the project <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/architecture-and-product-life-cycle.md.html">grows in size</a>. The only way for a growing project to continue evolving at a reasonable speed is to subdivide its business logic into several smaller, thus less <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">complex</a>, components that match subdomains (*bounded contexts* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDD</a>\]). There are several options for such a change with their applicability depending on the domain:</p>
 <ul>
-<li>In a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a> the middle layer with the bulk of business logic is divided into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>, leaving the upper <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> and lower <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*database*</a> layers intact for possible future evolutions\.</li>
-<li>Sometimes the business logic can be represented as a set of directed graphs which is known as <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Event\-Driven Architecture*</a>\.</li>
-<li>If you are lucky, your domain is naturally a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Top\-Down Hierarchy*</a>\.</li>
+<li>In a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a> the middle layer with the bulk of business logic is divided into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a>, leaving the upper <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> and lower <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*database*</a> layers intact for possible future evolutions.</li>
+<li>Sometimes the business logic can be represented as a set of directed graphs which is known as <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">*Event-Driven Architecture*</a>.</li>
+<li>If you are lucky, your domain is naturally a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Top-Down Hierarchy*</a>.</li>
 </ul>
 <h2>Divide the domain layer into Services</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Split%20Domain%20to%20Services.png" alt="The domain layer is split into subdomain components, making a Sandwich." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">Sandwich</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Database</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>\), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: make the code simpler and let several teams work on the project efficiently\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the low\-level business logic comprises loosely coupled subdomains\.</p>
-<p>It is very common for a system’s domain to comprise weakly interacting *bounded contexts* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDD</a>\]\. They are integrated through high\-level use cases and/or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html">relations in data</a>\. For such a system it is relatively easy to subdivide the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">domain logic</a> into *Services* while leaving the integration and data layers shared, yielding a *Sandwich*\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">Sandwich</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Database</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: make the code simpler and let several teams work on the project efficiently.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the low-level business logic comprises loosely coupled subdomains.</p>
+<p>It is very common for a system’s domain to comprise weakly interacting *bounded contexts* \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDD</a>\]. They are integrated through high-level use cases and/or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html">relations in data</a>. For such a system it is relatively easy to subdivide the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">domain logic</a> into *Services* while leaving the integration and data layers shared, yielding a *Sandwich*.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>You get multiple specialized development teams\.</li>
-<li>The largest and most complex piece of code is split into several smaller components\.</li>
-<li>There is more flexibility with deployment and scaling\.</li>
+<li>You get multiple specialized development teams.</li>
+<li>The largest and most complex piece of code is split into several smaller components.</li>
+<li>There is more flexibility with deployment and scaling.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Future changes in the overall structure of the domain will be harder to implement\.</li>
-<li>System\-wide use cases become somewhat harder to debug as they span over many components\.</li>
-<li>Performance will degrade as soon as the *Services* and their *Orchestrator* become distributed\.</li>
+<li>Future changes in the overall structure of the domain will be harder to implement.</li>
+<li>System-wide use cases become somewhat harder to debug as they span over many components.</li>
+<li>Performance will degrade as soon as the *Services* and their *Orchestrator* become distributed.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>Continue by subdividing the *Orchestrator* and *database*, turning the system into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Orchestrated Three\-Layered Services*</a>\.</li>
-<li>Divide the *Orchestrator* \(by type of client\) into <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;)\.</li>
-<li>Use multiple databases \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a>\)\.</li>
-<li>Scale well with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space\-Based Architecture*</a>\.</li>
+<li>Continue by subdividing the *Orchestrator* and *database*, turning the system into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Orchestrated Three-Layered Services*</a>.</li>
+<li>Divide the *Orchestrator* (by type of client) into <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;).</li>
+<li>Use multiple databases (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Polyglot Persistence*</a>).</li>
+<li>Scale well with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space-Based Architecture*</a>.</li>
 </ul>
-<h2>Build an Event\-Driven Architecture over a Shared Database</h2>
+<h2>Build an Event-Driven Architecture over a Shared Database</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Split%20to%20Event-Driven%20Architecture.png" alt="A backend is subdivided into a pipeline." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">Event\-Driven Architecture</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">Pipeline</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>\)\), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Database</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: untangle the code, support multiple teams, and improve scalability\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the use cases are trivial sequences of loosely coupled, coarse\-grained steps\.</p>
-<p>If your system features well\-defined and simple workflows for processing every kind of input request, then it can be divided into several <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*subdomain services*</a>, each hosting a few related steps of multiple use cases\. Each service subscribes to inputs from other services and/or system’s clients and publishes output events\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">Event-Driven Architecture</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html">Pipeline</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>)), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Database</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">Shared Repository</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: untangle the code, support multiple teams, and improve scalability.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the use cases are trivial sequences of loosely coupled, coarse-grained steps.</p>
+<p>If your system features well-defined and simple workflows for processing every kind of input request, then it can be divided into several <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*subdomain services*</a>, each hosting a few related steps of multiple use cases. Each service subscribes to inputs from other services and/or system’s clients and publishes output events.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>The code is divided into much smaller \(and simpler\) segments\.</li>
-<li>It is easy to add new steps or use cases as this structure is quite flexible\.</li>
-<li>You open a way to having several almost independent teams, one per service\.</li>
-<li>You can achieve flexible deployment and scaling as the services are stateless, but you need to add a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> for that\.</li>
-<li>This architecture naturally supports event replay as the means of reproducing bugs or testing / benchmarking individual components\.</li>
-<li>There is no need for explicit scheduling or thread synchronization\.</li>
+<li>The code is divided into much smaller (and simpler) segments.</li>
+<li>It is easy to add new steps or use cases as this structure is quite flexible.</li>
+<li>You open a way to having several almost independent teams, one per service.</li>
+<li>You can achieve flexible deployment and scaling as the services are stateless, but you need to add a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> for that.</li>
+<li>This architecture naturally supports event replay as the means of reproducing bugs or testing / benchmarking individual components.</li>
+<li>There is no need for explicit scheduling or thread synchronization.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>The system as a whole is hard to debug\.</li>
-<li>You will have to live with high latency\.</li>
-<li>You may end up with too many components which are interconnected in too many ways\.</li>
+<li>The system as a whole is hard to debug.</li>
+<li>You will have to live with high latency.</li>
+<li>You may end up with too many components which are interconnected in too many ways.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>Add a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> that supports scaling and failure recovery\.</li>
-<li>Split the *Shared Database* by subdomain, yielding <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Choreographed Two\-Layered Services*</a>\.</li>
-<li>Scale with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space\-Based Architecture*</a>\.</li>
-<li>Extract the logic of use cases into an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a>\.</li>
+<li>Add a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html">*Middleware*</a> that supports scaling and failure recovery.</li>
+<li>Split the *Shared Database* by subdomain, yielding <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Choreographed Two-Layered Services*</a>.</li>
+<li>Scale with <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Space-Based Architecture*</a>.</li>
+<li>Extract the logic of use cases into an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a>.</li>
 </ul>
-<h2>Build a Top\-Down Hierarchy</h2>
+<h2>Build a Top-Down Hierarchy</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Hierarchy.png" alt="The lower layers of a system are subdivided, resulting in a hierarchy." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Top\-Down Hierarchy</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Hierarchy</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: untangle the code, support multiple teams, and achieve fine\-grained scalability\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the domain is hierarchical\.</p>
-<p>Splitting the lower layers into independent components with identical interfaces simplifies the managing code and allows the managed components to be deployed, developed, and run independently of each other\. Ideally, the mid\-layer components should participate in decision\-making so that the uppermost component is kept relatively simple\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Top-Down Hierarchy</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Hierarchy</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: untangle the code, support multiple teams, and achieve fine-grained scalability.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the domain is hierarchical.</p>
+<p>Splitting the lower layers into independent components with identical interfaces simplifies the managing code and allows the managed components to be deployed, developed, and run independently of each other. Ideally, the mid-layer components should participate in decision-making so that the uppermost component is kept relatively simple.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Hierarchy is easy to develop and support with multiple teams\.</li>
-<li>Individual components are straightforward to add, modify, or replace\.</li>
-<li>The components scale, deploy, and run independently\.</li>
-<li>The system is quite fault tolerant\.</li>
+<li>Hierarchy is easy to develop and support with multiple teams.</li>
+<li>Individual components are straightforward to add, modify, or replace.</li>
+<li>The components scale, deploy, and run independently.</li>
+<li>The system is quite fault tolerant.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>It takes time and skill to figure out good interfaces\.</li>
-<li>There are many components to administer\.</li>
-<li>Latency is suboptimal for system\-wide use cases\.</li>
+<li>It takes time and skill to figure out good interfaces.</li>
+<li>There are many components to administer.</li>
+<li>Latency is suboptimal for system-wide use cases.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-that-make-more-layers.md.html">Evolutions of Layers that make more layers</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-to-improve-performance.md.html">Evolutions of Layers to improve performance</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Layers%20that%20help%20large%20projects">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Layers%20that%20help%20large%20projects</a></li>

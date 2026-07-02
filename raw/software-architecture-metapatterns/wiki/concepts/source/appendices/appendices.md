@@ -18,12 +18,12 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 Though I don’t think that you should be reading this, this book contains a few useful appendices:
 
-- The [[wiki/concepts/source/appendices/books-referenced|list of books referenced]] in the text\. Many of them are actually good to read\.
-- The [[wiki/concepts/source/appendices/evolutions-of-architectures|list of evolutions]] of architectures\. It is very boring to read and should rather be consulted as need arises\.
-- A short [[wiki/concepts/source/appendices/format-of-a-metapattern|description of the structure of the metapattern chapters]]\.
-- The [[wiki/concepts/source/appendices/glossary|glossary]], probably redundant\.
-- The [[wiki/concepts/source/appendices/history-of-changes|history of changes]] \(revisions\)\.
-- The [[wiki/concepts/source/appendices/index-of-patterns|index of patterns]] described in the book\. This one may be handy\.
+- The [[wiki/concepts/source/appendices/books-referenced|list of books referenced]] in the text. Many of them are actually good to read.
+- The [[wiki/concepts/source/appendices/evolutions-of-architectures|list of evolutions]] of architectures. It is very boring to read and should rather be consulted as need arises.
+- A short [[wiki/concepts/source/appendices/format-of-a-metapattern|description of the structure of the metapattern chapters]].
+- The [[wiki/concepts/source/appendices/glossary|glossary]], probably redundant.
+- The [[wiki/concepts/source/appendices/history-of-changes|history of changes]] (revisions).
+- The [[wiki/concepts/source/appendices/index-of-patterns|index of patterns]] described in the book. This one may be handy.
 
 
 ## Contents:
@@ -55,6 +55,3 @@ Though I don’t think that you should be reading this, this book contains a few
 - [[wiki/concepts/source/appendices/glossary|Glossary]]
 - [[wiki/concepts/source/appendices/history-of-changes|History of changes]]
 - [[wiki/concepts/source/appendices/index-of-patterns|Index of patterns]]
-
-| \<\< [[wiki/concepts/source/analytics/choose-your-own-architecture|Choose your own architecture]] | ^ [[wiki/concepts/source/root/home|Home]] ^ | [[wiki/concepts/source/appendices/acknowledgements|Acknowledgements]] \>\> |
-| --- | --- | --- |

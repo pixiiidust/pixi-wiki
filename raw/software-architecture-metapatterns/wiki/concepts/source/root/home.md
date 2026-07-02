@@ -143,6 +143,3 @@ Any help with the content, including adding new patterns or correcting the ones 
 - [[wiki/concepts/source/appendices/glossary|Glossary]]
 - [[wiki/concepts/source/appendices/history-of-changes|History of changes]]
 - [[wiki/concepts/source/appendices/index-of-patterns|Index of patterns]]
-
-| \<\< [[wiki/concepts/source/appendices/index-of-patterns|Index of patterns]] |  | [[wiki/concepts/source/introduction/introduction|Introduction]] \>\> |
-| --- | --- | --- |

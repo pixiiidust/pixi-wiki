@@ -26,101 +26,99 @@
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of an Orchestrator.md</code>.</blockquote>
 <p>Employing an <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> has two pitfalls:</p>
 <ul>
-<li>The system becomes slower because too much communication is involved\.</li>
-<li>A single *Orchestrator* may be found to be too large and rigid\.</li>
+<li>The system becomes slower because too much communication is involved.</li>
+<li>A single *Orchestrator* may be found to be too large and rigid.</li>
 </ul>
 <p>There is one way to counter the first point and more ways to solve the second one:</p>
 <ul>
-<li>Subdivide the *Orchestrator* by the system’s subdomains, forming <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Layered Services*</a> and minimizing network communication\.</li>
-<li>Subdivide the *Orchestrator* by the type of client, forming <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;)\.</li>
-<li>Add another <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*layer*</a> of orchestration\.</li>
-<li>Build a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Top\-Down Hierarchy*</a>\.</li>
+<li>Subdivide the *Orchestrator* by the system’s subdomains, forming <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Layered Services*</a> and minimizing network communication.</li>
+<li>Subdivide the *Orchestrator* by the type of client, forming <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;).</li>
+<li>Add another <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*layer*</a> of orchestration.</li>
+<li>Build a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Top-Down Hierarchy*</a>.</li>
 </ul>
 <h2>Subdivide to form Layered Services</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20to%20Layered%20Services.png" alt="An orchestrator is subdivided into subdomain components which become the application layers of respective services." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">Orchestrated Three\-Layered Services</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">Layered Services</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\)\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the *Orchestrator*, let the service teams own orchestration, decouple forces for the services, and improve performance\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the high\-level \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">orchestration</a>\) logic is weakly coupled between the subdomains\.</p>
-<p>If the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*orchestration* logic</a> mostly follows the subdomains, it may be possible to partition it accordingly\. Each service gets a part of the *Orchestrator* that mostly deals with its subdomain but may call other services when needed\. As a result, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">each service orchestrates every other service</a>\. Still, a large part of orchestration becomes internal to each service, meaning that fewer calls over the network are involved\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">Orchestrated Three-Layered Services</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">Layered Services</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>)).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the *Orchestrator*, let the service teams own orchestration, decouple forces for the services, and improve performance.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the high-level (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">orchestration</a>) logic is weakly coupled between the subdomains.</p>
+<p>If the <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">*orchestration* logic</a> mostly follows the subdomains, it may be possible to partition it accordingly. Each service gets a part of the *Orchestrator* that mostly deals with its subdomain but may call other services when needed. As a result, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html">each service orchestrates every other service</a>. Still, a large part of orchestration becomes internal to each service, meaning that fewer calls over the network are involved.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>You subdivide the large *Orchestrator* codebase\.</li>
-<li>Performance is improved\.</li>
-<li>The services become more independent in their quality attributes\.</li>
+<li>You subdivide the large *Orchestrator* codebase.</li>
+<li>Performance is improved.</li>
+<li>The services become more independent in their quality attributes.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>You lose the client\-facing *orchestration team* – now each service’s team will need to face its clients\.</li>
-<li>Service teams become interdependent \(while having equal rights\), which may result in slow development and <a href="https://en.wikipedia.org/wiki/Design_by_committee">suboptimal decisions</a>\.</li>
-<li>There is no way to share code between different use cases or even take a look at all of the scenarios at once\.</li>
+<li>You lose the client-facing *orchestration team* – now each service’s team will need to face its clients.</li>
+<li>Service teams become interdependent (while having equal rights), which may result in slow development and <a href="https://en.wikipedia.org/wiki/Design_by_committee">suboptimal decisions</a>.</li>
+<li>There is no way to share code between different use cases or even take a look at all of the scenarios at once.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*CQRS Views*</a> or a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Query Service*</a> help a service access and join data that belongs to other services, further reducing the need for interservice communication\.</li>
+<li><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*CQRS Views*</a> or a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">*Query Service*</a> help a service access and join data that belongs to other services, further reducing the need for interservice communication.</li>
 </ul>
 <h2>Subdivide to form Backends for Frontends</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20to%20Backends%20for%20Frontends.png" alt="An orchestrator is subdivided into Backends for Frontends." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="&lt;Backends for Frontends (BFF">Backends for Frontends</a>&gt;), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the *Orchestrator*, employ a team per client type, and decouple the quality attributes for clients\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: clients vary in workflows and forces\.</p>
-<p>When use cases for clients vary, it makes sense for each kind of client to have a dedicated *Orchestrator*\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="&lt;Backends for Frontends (BFF">Backends for Frontends</a>&gt;), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the *Orchestrator*, employ a team per client type, and decouple the quality attributes for clients.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: clients vary in workflows and forces.</p>
+<p>When use cases for clients vary, it makes sense for each kind of client to have a dedicated *Orchestrator*.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>The smaller *Orchestrators* are independent in qualities, technologies, and teams\.</li>
-<li>The smaller *Orchestrators* are … well, smaller\.</li>
+<li>The smaller *Orchestrators* are independent in qualities, technologies, and teams.</li>
+<li>The smaller *Orchestrators* are … well, smaller.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>There is no good way to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md.html">share code</a> between the *Orchestrators*\.</li>
-<li>There are more system components\.</li>
+<li>There is no good way to <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md.html">share code</a> between the *Orchestrators*.</li>
+<li>There are more system components.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>You may want to add client\-specific <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a> and, maybe, co\-locate them with the *Orchestrators* to avoid the extra network hop\.</li>
-<li>Adding another shared <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> below the ones dedicated to clients creates a place for sharing functionality among the *Orchestrators*\.</li>
-<li>If you are running <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Microservices*</a> over a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Service Mesh*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Sidecars*</a> may help to share <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">generic code</a>\.</li>
+<li>You may want to add client-specific <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Proxies*</a> and, maybe, co-locate them with the *Orchestrators* to avoid the extra network hop.</li>
+<li>Adding another shared <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> below the ones dedicated to clients creates a place for sharing functionality among the *Orchestrators*.</li>
+<li>If you are running <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Microservices*</a> over a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html">*Service Mesh*</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Sidecars*</a> may help to share <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">generic code</a>.</li>
 </ul>
 <h2>Add a layer of orchestration</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20add%20Orchestrator.png" alt="An orchestrator is subdivided into a pair of simple and complex orchestrators." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: implement simple use cases quickly, while still supporting complex ones\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: use cases vary in their complexity\.</p>
-<p>You may use two or three *orchestration frameworks* \(engines\) which differ in complexity\. A simple declarative tool may be enough for the majority of user requests, and falling back to the custom\-tailored code would be needed in rare complex cases\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">Orchestrator</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: implement simple use cases quickly, while still supporting complex ones.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: use cases vary in their complexity.</p>
+<p>You may use two or three *orchestration frameworks* (engines) which differ in complexity. A simple declarative tool may be enough for the majority of user requests, and falling back to the custom-tailored code would be needed in rare complex cases.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Simple scenarios are easy to write\.</li>
-<li>You retain good flexibility with hand\-written code when it is needed\.</li>
+<li>Simple scenarios are easy to write.</li>
+<li>You retain good flexibility with hand-written code when it is needed.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Requires learning multiple technologies\.</li>
-<li>More components mean more failures and more administration\.</li>
-<li>Performance of complex requests may suffer from more indirection\.</li>
+<li>Requires learning multiple technologies.</li>
+<li>More components mean more failures and more administration.</li>
+<li>Performance of complex requests may suffer from more indirection.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>Subdivide one or more of the resulting *orchestration layers* to form <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Layered Services*</a>, <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Hierarchy*</a>, or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Cell\-Based Architecture*</a>\.</li>
+<li>Subdivide one or more of the resulting *orchestration layers* to form <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html">*Layered Services*</a>, <a href="&lt;Backends for Frontends (BFF">*Backends for Frontends*</a>&gt;), <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Hierarchy*</a>, or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">*Cell-Based Architecture*</a>.</li>
 </ul>
 <h2>Form a Hierarchy</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20to%20Hierarchy.png" alt="An orchestrator is subdivided into a hierarchy." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Top\-Down Hierarchy</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Hierarchy</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the *Orchestrator* and, if possible, the services\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the domain is hierarchical\.</p>
-<p>If an *Orchestrator* becomes too complex, some domains \(e\.g\. IIoT or telecom\) encourage the use of a tree of *Orchestrators*\. The most generic functionality is processed by its root and each additional layer takes care of one aspect of the domain\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Top-Down Hierarchy</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html">Hierarchy</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: simplify the *Orchestrator* and, if possible, the services.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the domain is hierarchical.</p>
+<p>If an *Orchestrator* becomes too complex, some domains (e.g. IIoT or telecom) encourage the use of a tree of *Orchestrators*. The most generic functionality is processed by its root and each additional layer takes care of one aspect of the domain.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Multiple specialized teams and technologies\.</li>
-<li>Small codebase per team\.</li>
-<li>Reasonable testability\.</li>
-<li>Some decoupling of quality attributes\.</li>
+<li>Multiple specialized teams and technologies.</li>
+<li>Small codebase per team.</li>
+<li>Reasonable testability.</li>
+<li>Some decoupling of quality attributes.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>Hard to debug\.</li>
-<li>Poor latency in global scenarios unless several layers of the *hierarchy* are colocated\.</li>
+<li>Hard to debug.</li>
+<li>Poor latency in global scenarios unless several layers of the *hierarchy* are colocated.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-proxy.md.html">Evolutions of a Proxy</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-sandwich.md.html">Evolutions of a Sandwich</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20an%20Orchestrator">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20an%20Orchestrator</a></li><li><a href="https://en.wikipedia.org/wiki/Design_by_committee">suboptimal decisions</a></li>

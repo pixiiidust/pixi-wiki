@@ -24,83 +24,81 @@
 <h1>Evolutions of Services that restructure services</h1>
 <div class="page-meta"><div><span>type</span>: source-page</div><div><span>updated</span>: 2026-07-02</div><div><span>status</span>: imported</div><div><span>namespace</span>: software-architecture-metapatterns</div></div>
 <blockquote>Imported source page from Denys Poltorak&#x27;s *Architectural Metapatterns* wiki. Source path: <code>Appendices/Evolutions of architectures/Evolutions of Services that restructure services.md</code>.</blockquote>
-<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a> work well when each service matches a subdomain and is developed by a dedicated team\. If those premises change, you’ll need to restructure the system:</p>
+<p><a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">*Services*</a> work well when each service matches a subdomain and is developed by a dedicated team. If those premises change, you’ll need to restructure the system:</p>
 <ul>
-<li>A new feature request may emerge outside of any of the existing subdomains, creating a new service\.</li>
-<li>A service may grow too large to be developed by a single team, calling for division\.</li>
-<li>Two services may become so strongly coupled that they fare better when merged together\.</li>
-<li>The entire system may need to be glued back into a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> if the domain knowledge changes or interservice communication strongly degrades performance\.</li>
-<li>Alternatively, coupled services may be clustered into co\-deployed <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Cells*</a> to reduce operational complexity\.</li>
+<li>A new feature request may emerge outside of any of the existing subdomains, creating a new service.</li>
+<li>A service may grow too large to be developed by a single team, calling for division.</li>
+<li>Two services may become so strongly coupled that they fare better when merged together.</li>
+<li>The entire system may need to be glued back into a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">*Monolith*</a> if the domain knowledge changes or interservice communication strongly degrades performance.</li>
+<li>Alternatively, coupled services may be clustered into co-deployed <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">*Cells*</a> to reduce operational complexity.</li>
 </ul>
 <h2>Add or split a service</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services_%20Split.png" alt="A service is split in half." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: get one more team to work on the project, decrease the size of an existing service\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there is a loosely coupled \(new or existing\) subdomain that does not have a dedicated service \(yet\)\.</p>
-<p>If you need to add a new functionality that does not naturally fit into one of the existing services, you may create a new service and, maybe, get a new team for it\.</p>
-<p>If one of your services has grown too large, you should look for a way to subdivide it \(likely through a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a> stage with a shared <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*database*</a>\) to decrease the size and, correspondingly, complexity of its code and get multiple teams to work on the resulting \(sub\)services\. However, that makes sense only if the old service is not highly cohesive – otherwise <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">the resulting subsystem may be more complex</a> than the original service\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: get one more team to work on the project, decrease the size of an existing service.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there is a loosely coupled (new or existing) subdomain that does not have a dedicated service (yet).</p>
+<p>If you need to add a new functionality that does not naturally fit into one of the existing services, you may create a new service and, maybe, get a new team for it.</p>
+<p>If one of your services has grown too large, you should look for a way to subdivide it (likely through a <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwich*</a> stage with a shared <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html">*Orchestrator*</a> and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">*database*</a>) to decrease the size and, correspondingly, complexity of its code and get multiple teams to work on the resulting (sub)services. However, that makes sense only if the old service is not highly cohesive – otherwise <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html">the resulting subsystem may be more complex</a> than the original service.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>You get an extra development team\.</li>
-<li>The complexity of the code decreases \(splitting an existing service\) or does not increase \(adding a new one\)\.</li>
-<li>The new service is independently scalable\.</li>
+<li>You get an extra development team.</li>
+<li>The complexity of the code decreases (splitting an existing service) or does not increase (adding a new one).</li>
+<li>The new service is independently scalable.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>You add to the operations complexity by creating a new system component and several inter\-component dependencies\.</li>
-<li>There is a new point of failure, which means that bugs and outages become more likely\.</li>
-<li>Performance \(or at least the latency and cost efficiency\) of the system will deteriorate because interservice communication is slow\.</li>
-<li>You may have a hard time debugging use cases that involve both the old and new service\.</li>
+<li>You add to the operations complexity by creating a new system component and several inter-component dependencies.</li>
+<li>There is a new point of failure, which means that bugs and outages become more likely.</li>
+<li>Performance (or at least the latency and cost efficiency) of the system will deteriorate because interservice communication is slow.</li>
+<li>You may have a hard time debugging use cases that involve both the old and new service.</li>
 </ul>
 <h2>Merge services</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services_%20Merge.png" alt="Two services are merged." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">Monolith</a> or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: accept the coupling of subdomains and improve performance\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the services use compatible technologies\.</p>
-<p>If you see that several services communicate with each other almost as intensely as they call their internal methods, then they probably belong together\.</p>
-<p>If your use cases have too high a latency or you pay too much for CPU and traffic, the issue may originate with the interservice communication, and merging the services should help\. No services, no headache\.</p>
-<p>Alternatively, as the domain knowledge changes \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDD</a>\], you may have to merge much of the code together only to subdivide it later along the updated subdomain boundaries\. Which means that you face <a href="https://martinfowler.com/bliki/MonolithFirst.html">lots of work for no reason</a>\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html">Monolith</a> or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html">Layers</a>.</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: accept the coupling of subdomains and improve performance.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: the services use compatible technologies.</p>
+<p>If you see that several services communicate with each other almost as intensely as they call their internal methods, then they probably belong together.</p>
+<p>If your use cases have too high a latency or you pay too much for CPU and traffic, the issue may originate with the interservice communication, and merging the services should help. No services, no headache.</p>
+<p>Alternatively, as the domain knowledge changes \<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html">[DDD</a>\], you may have to merge much of the code together only to subdivide it later along the updated subdomain boundaries. Which means that you face <a href="https://martinfowler.com/bliki/MonolithFirst.html">lots of work for no reason</a>.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Improved performance\.</li>
-<li>It becomes easy for parts of the merged code to access each other and share data\.</li>
-<li>The new merged *service* or *Monolith* is easier to debug than the original *Services*\.</li>
+<li>Improved performance.</li>
+<li>It becomes easy for parts of the merged code to access each other and share data.</li>
+<li>The new merged *service* or *Monolith* is easier to debug than the original *Services*.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>The development teams become even more interdependent\.</li>
-<li>There is no good way to vary qualities by subdomain\.</li>
-<li>You lose granular scalability by subdomain\.</li>
-<li>The merged codebase may be too large for comfortable development\.</li>
-<li>If anything fails, everything fails\.</li>
+<li>The development teams become even more interdependent.</li>
+<li>There is no good way to vary qualities by subdomain.</li>
+<li>You lose granular scalability by subdomain.</li>
+<li>The merged codebase may be too large for comfortable development.</li>
+<li>If anything fails, everything fails.</li>
 </ul>
 <h2>Cluster services</h2>
 <p><img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services_%20Cluster.png" alt="Services are grouped into Cells, reducing their interdependencies." loading="lazy"></p>
-<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">Cell</a> \(<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">Hexagonal Architecture</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>\)\.</p>
-<p>&lt;ins&gt;Goal&lt;/ins&gt;: reduce operational complexity, decouple subdomains, and improve performance\.</p>
-<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there are distinct subdomains\.</p>
-<p>When there are too many services, none sees the big picture: which components are involved in a use case and why the system works the way it does\. Moreover, managing tens to hundreds of different services with their databases is hard and error\-prone\.</p>
-<p>Therefore, cluster the services which share a subdomain into a co\-deployed cohesive *Cell*\.</p>
+<p>&lt;ins&gt;Patterns&lt;/ins&gt;: <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">Cell</a> (<a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html">Hexagonal Architecture</a>, <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html">Services</a>).</p>
+<p>&lt;ins&gt;Goal&lt;/ins&gt;: reduce operational complexity, decouple subdomains, and improve performance.</p>
+<p>&lt;ins&gt;Prerequisite&lt;/ins&gt;: there are distinct subdomains.</p>
+<p>When there are too many services, none sees the big picture: which components are involved in a use case and why the system works the way it does. Moreover, managing tens to hundreds of different services with their databases is hard and error-prone.</p>
+<p>Therefore, cluster the services which share a subdomain into a co-deployed cohesive *Cell*.</p>
 <p>&lt;ins&gt;Pros&lt;/ins&gt;:</p>
 <ul>
-<li>Managing ten *Cells* is much easier than managing a hundred services\.</li>
-<li>More clear and independent subdomains as their interdependencies become explicit\.</li>
-<li>Lower traffic because the closely communicating services are now co\-located\.</li>
-<li>Lower data storage requirements as the contents of the *Cell* may <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">share a database</a>\.</li>
-<li>No boilerplate code for versioning or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">data views</a> inside the *Cell*\.</li>
+<li>Managing ten *Cells* is much easier than managing a hundred services.</li>
+<li>More clear and independent subdomains as their interdependencies become explicit.</li>
+<li>Lower traffic because the closely communicating services are now co-located.</li>
+<li>Lower data storage requirements as the contents of the *Cell* may <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html">share a database</a>.</li>
+<li>No boilerplate code for versioning or <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html">data views</a> inside the *Cell*.</li>
 </ul>
 <p>&lt;ins&gt;Cons&lt;/ins&gt;:</p>
 <ul>
-<li>The development teams that work on services that belong to a single *Cell* need to synchronize their actions\.</li>
-<li>A *Cell* is usually scaled as a whole\.</li>
+<li>The development teams that work on services that belong to a single *Cell* need to synchronize their actions.</li>
+<li>A *Cell* is usually scaled as a whole.</li>
 </ul>
 <p>&lt;ins&gt;Further steps&lt;/ins&gt;:</p>
 <ul>
-<li>Complete the *Cell* encapsulation through the use of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Adapters*</a> and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">*Ambassador Plugins*</a>\.</li>
-<li>Transform any strongly coupled *Cells* into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwiches*</a>\.</li>
+<li>Complete the *Cell* encapsulation through the use of <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html">*Adapters*</a> and <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html">*Ambassador Plugins*</a>.</li>
+<li>Transform any strongly coupled *Cells* into <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html">*Sandwiches*</a>.</li>
 </ul>
-<p>| \&lt;\&lt; <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-to-gain-flexibility.md.html">Evolutions of Layers to gain flexibility</a> | ^ <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html">Evolutions of architectures</a> ^ | <a href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-services-that-add-layers.md.html">Evolutions of Services that add layers</a> \&gt;\&gt; |</p>
-<p>| --- | --- | --- |</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Services%20that%20restructure%20services">github.com/denyspoltorak/metapatterns/wiki/Appendices/Evolutions%20of%20architectures/Evolutions%20of%20Services%20that%20restructure%20services</a></li><li><a href="https://martinfowler.com/bliki/MonolithFirst.html">lots of work for no reason</a></li>
