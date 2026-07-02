@@ -57,7 +57,7 @@ class PixiWikiMcpStoreTest(unittest.TestCase):
         self.assertIn("document_id", payload["results"][0])
 
     def test_search_all_kbs_returns_cross_namespace_results(self) -> None:
-        payload = self.store.search_all_kbs("Pixi Wiki", max_results=10)
+        payload = self.store.search_all_kbs("namespace compiler", max_results=20)
         self.assertGreater(payload["result_count"], 0)
         kb_ids = {result["kb_id"] for result in payload["results"]}
         self.assertIn("pixi-vault", kb_ids)

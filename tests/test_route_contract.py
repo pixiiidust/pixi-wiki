@@ -77,6 +77,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 "curated-tuning-datasets",
                 "local-ai-infrastructure",
                 "pattern-language",
+                "software-architecture-metapatterns",
             },
         )
 
@@ -156,6 +157,25 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("### Related Patterns", text)
         self.assertIn("[[Promenade (31)]]", text)
         self.assertIn("source_repository: https://github.com/zenodotus280/apl-md", text)
+
+    def test_software_architecture_metapatterns_namespace_exposes_corpus_and_guidance(self) -> None:
+        registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}
+        wiki = registry["software-architecture-metapatterns"]
+        self.assertEqual(wiki["title"], "Software Architecture Metapatterns")
+        self.assertEqual(wiki["category"], "knowledge-systems")
+        self.assertGreaterEqual(wiki["documentCount"], 80)
+        doc_paths = {doc["path"] for doc in wiki["documents"]}
+        self.assertIn("wiki/summaries/for-agents-software-architecture-retrieval.md", doc_paths)
+        self.assertIn("wiki/summaries/license-and-provenance.md", doc_paths)
+        self.assertIn("wiki/syntheses/architecture-metapatterns-fit-for-pixi.md", doc_paths)
+        self.assertIn("wiki/concepts/source/introduction/metapatterns.md", doc_paths)
+        self.assertIn("wiki/concepts/source/basic-metapatterns/services.md", doc_paths)
+        text = (ROOT / "raw" / "software-architecture-metapatterns" / "wiki" / "summaries" / "for-agents-software-architecture-retrieval.md").read_text(encoding="utf-8")
+        self.assertIn("Retrieve 3–8 relevant pages", text)
+        self.assertIn("source is attributed external reference material", text)
+        html = (ROOT / "wiki" / "software-architecture-metapatterns" / "README.md.html").read_text(encoding="utf-8")
+        self.assertIn("Knowledge Systems", html)
+        self.assertIn("Creative Commons", html)
 
     def test_rendered_wiki_page_exposes_metadata_tools_and_prev_next(self) -> None:
         html = (ROOT / "wiki" / "agent-workflows" / "wiki" / "concepts" / "knowledge-pack-routing.md.html").read_text(encoding="utf-8")

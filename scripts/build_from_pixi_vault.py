@@ -30,6 +30,7 @@ DEFAULT_SEED_SLUGS = [
     "curated-tuning-datasets",
     "local-ai-infrastructure",
     "pattern-language",
+    "software-architecture-metapatterns",
 ]
 GENERATED_ROOT_FILES = ["index.html", "index.json", "llms.txt", "llms-full.txt"]
 LEGACY_ROOT_PATTERNS = ["concept-*.html", "projects-*.html", "knowledge.html", "projects.html", "maps-of-content.html", "root.html"]

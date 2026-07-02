@@ -2749,6 +2749,638 @@
           "category": "syntheses"
         }
       ]
+    },
+    {
+      "slug": "software-architecture-metapatterns",
+      "title": "Software Architecture Metapatterns",
+      "description": "The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependenc",
+      "tags": [
+        "knowledge-systems"
+      ],
+      "category": "knowledge-systems",
+      "scope": {
+        "covers": "The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, and architecture evolution paths.",
+        "notCovered": "This namespace does not cover every design pattern or programming idiom, prescribe architecture by fashion, replace project-specific code review, or establish commercial-clean training-data clearance. It is a reference and reasoning aid for architecture review, migration planning, and agent retrieval.",
+        "currentAs": "2026-07-02 \u2014 Initial namespace release imports the public GitHub wiki Markdown corpus, preserves source URLs/provenance, adds an agent retrieval contract, and classifies the namespace under Knowledge Systems because it organizes software architecture knowledge into a navigable pattern language."
+      },
+      "lastUpdated": "2026-07-02",
+      "documentCount": 86,
+      "counts": {
+        "wiki": 1,
+        "concepts": 79,
+        "entities": 0,
+        "summaries": 2,
+        "syntheses": 1
+      },
+      "llms_txt": "/wiki/software-architecture-metapatterns/llms.txt",
+      "llms_full_txt": "/wiki/software-architecture-metapatterns/llms-full.txt",
+      "index_json": "/wiki/software-architecture-metapatterns/index.json",
+      "raw_base": "/raw/software-architecture-metapatterns/",
+      "html_base": "/wiki/software-architecture-metapatterns/",
+      "documents": [
+        {
+          "title": "Software Architecture Metapatterns Namespace Instructions",
+          "path": "CLAUDE.md",
+          "raw": "/raw/software-architecture-metapatterns/CLAUDE.md",
+          "html": "/wiki/software-architecture-metapatterns/CLAUDE.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Software Architecture Metapatterns",
+          "path": "README.md",
+          "raw": "/raw/software-architecture-metapatterns/README.md",
+          "html": "/wiki/software-architecture-metapatterns/README.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Ambiguous patterns",
+          "path": "wiki/concepts/source/analytics/ambiguous-patterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/ambiguous-patterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/ambiguous-patterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Analytics",
+          "path": "wiki/concepts/source/analytics/analytics.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/analytics.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/analytics.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Architecture and product life cycle",
+          "path": "wiki/concepts/source/analytics/architecture-and-product-life-cycle.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/architecture-and-product-life-cycle.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/architecture-and-product-life-cycle.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Choose your own architecture",
+          "path": "wiki/concepts/source/analytics/choose-your-own-architecture.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/choose-your-own-architecture.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/choose-your-own-architecture.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Cohesers and decouplers",
+          "path": "wiki/concepts/source/analytics/cohesers-and-decouplers.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/cohesers-and-decouplers.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/cohesers-and-decouplers.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Comparison of architectural patterns",
+          "path": "wiki/concepts/source/analytics/comparison-of-architectural-patterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/comparison-of-architectural-patterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/comparison-of-architectural-patterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Deconstructing patterns",
+          "path": "wiki/concepts/source/analytics/deconstructing-patterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/deconstructing-patterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/deconstructing-patterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Dependency inversion in architectural patterns",
+          "path": "wiki/concepts/source/analytics/dependency-inversion-in-architectural-patterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/dependency-inversion-in-architectural-patterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/dependency-inversion-in-architectural-patterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Indirection in commands and queries",
+          "path": "wiki/concepts/source/analytics/indirection-in-commands-and-queries.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/indirection-in-commands-and-queries.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/indirection-in-commands-and-queries.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Pipelines in architectural patterns",
+          "path": "wiki/concepts/source/analytics/pipelines-in-architectural-patterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/pipelines-in-architectural-patterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/pipelines-in-architectural-patterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Real world inspirations for architectural patterns",
+          "path": "wiki/concepts/source/analytics/real-world-inspirations-for-architectural-patterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/real-world-inspirations-for-architectural-patterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/real-world-inspirations-for-architectural-patterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Sharing functionality or data among services",
+          "path": "wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "The heart of software architecture",
+          "path": "wiki/concepts/source/analytics/the-heart-of-software-architecture.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/the-heart-of-software-architecture.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/the-heart-of-software-architecture.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Acknowledgements",
+          "path": "wiki/concepts/source/appendices/acknowledgements.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/acknowledgements.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/acknowledgements.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Appendices",
+          "path": "wiki/concepts/source/appendices/appendices.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/appendices.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/appendices.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Books referenced",
+          "path": "wiki/concepts/source/appendices/books-referenced.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/books-referenced.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Copyright",
+          "path": "wiki/concepts/source/appendices/copyright.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/copyright.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/copyright.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Disclaimer",
+          "path": "wiki/concepts/source/appendices/disclaimer.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/disclaimer.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/disclaimer.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of a Middleware",
+          "path": "wiki/concepts/source/appendices/evolutions-of-a-middleware.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-middleware.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-middleware.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of a Monolith that lead to Shards",
+          "path": "wiki/concepts/source/appendices/evolutions-of-a-monolith-that-lead-to-shards.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-lead-to-shards.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-lead-to-shards.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of a Monolith that make Services",
+          "path": "wiki/concepts/source/appendices/evolutions-of-a-monolith-that-make-services.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-make-services.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-make-services.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of a Monolith that rely on Plugins",
+          "path": "wiki/concepts/source/appendices/evolutions-of-a-monolith-that-rely-on-plugins.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-rely-on-plugins.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-rely-on-plugins.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of a Monolith that result in Layers",
+          "path": "wiki/concepts/source/appendices/evolutions-of-a-monolith-that-result-in-layers.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-result-in-layers.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-monolith-that-result-in-layers.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of a Pipeline",
+          "path": "wiki/concepts/source/appendices/evolutions-of-a-pipeline.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-pipeline.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-pipeline.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of a Proxy",
+          "path": "wiki/concepts/source/appendices/evolutions-of-a-proxy.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-proxy.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-proxy.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of a Sandwich",
+          "path": "wiki/concepts/source/appendices/evolutions-of-a-sandwich.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-sandwich.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-sandwich.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of a Shared Repository",
+          "path": "wiki/concepts/source/appendices/evolutions-of-a-shared-repository.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-shared-repository.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-a-shared-repository.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of an Orchestrator",
+          "path": "wiki/concepts/source/appendices/evolutions-of-an-orchestrator.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-an-orchestrator.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-an-orchestrator.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of architectures",
+          "path": "wiki/concepts/source/appendices/evolutions-of-architectures.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-architectures.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of Layers that help large projects",
+          "path": "wiki/concepts/source/appendices/evolutions-of-layers-that-help-large-projects.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-that-help-large-projects.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-that-help-large-projects.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of Layers that make more layers",
+          "path": "wiki/concepts/source/appendices/evolutions-of-layers-that-make-more-layers.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-that-make-more-layers.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-that-make-more-layers.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of Layers to gain flexibility",
+          "path": "wiki/concepts/source/appendices/evolutions-of-layers-to-gain-flexibility.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-to-gain-flexibility.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-to-gain-flexibility.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of Layers to improve performance",
+          "path": "wiki/concepts/source/appendices/evolutions-of-layers-to-improve-performance.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-to-improve-performance.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-layers-to-improve-performance.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of Services that add layers",
+          "path": "wiki/concepts/source/appendices/evolutions-of-services-that-add-layers.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-services-that-add-layers.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-services-that-add-layers.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of Services that restructure services",
+          "path": "wiki/concepts/source/appendices/evolutions-of-services-that-restructure-services.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-services-that-restructure-services.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-services-that-restructure-services.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of Shards that share data",
+          "path": "wiki/concepts/source/appendices/evolutions-of-shards-that-share-data.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-data.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-data.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Evolutions of Shards that share logic",
+          "path": "wiki/concepts/source/appendices/evolutions-of-shards-that-share-logic.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-logic.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/evolutions-of-shards-that-share-logic.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Format of a metapattern",
+          "path": "wiki/concepts/source/appendices/format-of-a-metapattern.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/format-of-a-metapattern.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/format-of-a-metapattern.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Glossary",
+          "path": "wiki/concepts/source/appendices/glossary.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/glossary.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/glossary.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "History of changes",
+          "path": "wiki/concepts/source/appendices/history-of-changes.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/history-of-changes.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/history-of-changes.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Index of patterns",
+          "path": "wiki/concepts/source/appendices/index-of-patterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/appendices/index-of-patterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/appendices/index-of-patterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Basic metapatterns",
+          "path": "wiki/concepts/source/basic-metapatterns/basic-metapatterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/basic-metapatterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/basic-metapatterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Layers",
+          "path": "wiki/concepts/source/basic-metapatterns/layers.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/layers.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Monolith",
+          "path": "wiki/concepts/source/basic-metapatterns/monolith.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/monolith.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Pipeline",
+          "path": "wiki/concepts/source/basic-metapatterns/pipeline.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/pipeline.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Services",
+          "path": "wiki/concepts/source/basic-metapatterns/services.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/services.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Shards",
+          "path": "wiki/concepts/source/basic-metapatterns/shards.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/basic-metapatterns/shards.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Extension metapatterns",
+          "path": "wiki/concepts/source/extension-metapatterns/extension-metapatterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/extension-metapatterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/extension-metapatterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Middleware",
+          "path": "wiki/concepts/source/extension-metapatterns/middleware.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/middleware.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Orchestrator",
+          "path": "wiki/concepts/source/extension-metapatterns/orchestrator.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/orchestrator.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Proxy",
+          "path": "wiki/concepts/source/extension-metapatterns/proxy.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/proxy.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Sandwich",
+          "path": "wiki/concepts/source/extension-metapatterns/sandwich.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/sandwich.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Shared Repository",
+          "path": "wiki/concepts/source/extension-metapatterns/shared-repository.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/extension-metapatterns/shared-repository.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Arranging communication",
+          "path": "wiki/concepts/source/foundations-of-software-architecture/arranging-communication.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/arranging-communication.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/arranging-communication.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Choreography",
+          "path": "wiki/concepts/source/foundations-of-software-architecture/choreography.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/choreography.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/choreography.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Comparison of communication styles",
+          "path": "wiki/concepts/source/foundations-of-software-architecture/comparison-of-communication-styles.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/comparison-of-communication-styles.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/comparison-of-communication-styles.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Forces, asynchronicity, and distribution",
+          "path": "wiki/concepts/source/foundations-of-software-architecture/forces-asynchronicity-and-distribution.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/forces-asynchronicity-and-distribution.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/forces-asynchronicity-and-distribution.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Foundations of software architecture",
+          "path": "wiki/concepts/source/foundations-of-software-architecture/foundations-of-software-architecture.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/foundations-of-software-architecture.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/foundations-of-software-architecture.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Four kinds of software",
+          "path": "wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Modules and complexity",
+          "path": "wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/modules-and-complexity.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Orchestration",
+          "path": "wiki/concepts/source/foundations-of-software-architecture/orchestration.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/orchestration.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Programming and architectural paradigms",
+          "path": "wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Shared data",
+          "path": "wiki/concepts/source/foundations-of-software-architecture/shared-data.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/foundations-of-software-architecture/shared-data.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Backends for Frontends (BFF)",
+          "path": "wiki/concepts/source/fragmented-metapatterns/backends-for-frontends-bff.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/backends-for-frontends-bff.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/backends-for-frontends-bff.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Fragmented metapatterns",
+          "path": "wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Hierarchy",
+          "path": "wiki/concepts/source/fragmented-metapatterns/hierarchy.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/hierarchy.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Layered Services",
+          "path": "wiki/concepts/source/fragmented-metapatterns/layered-services.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/layered-services.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Polyglot Persistence",
+          "path": "wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/polyglot-persistence.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Service Oriented Architecture (SOA)",
+          "path": "wiki/concepts/source/fragmented-metapatterns/service-oriented-architecture-soa.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/service-oriented-architecture-soa.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/fragmented-metapatterns/service-oriented-architecture-soa.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Hexagonal Architecture",
+          "path": "wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/hexagonal-architecture.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Implementation metapatterns",
+          "path": "wiki/concepts/source/implementation-metapatterns/implementation-metapatterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/implementation-metapatterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/implementation-metapatterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Mesh",
+          "path": "wiki/concepts/source/implementation-metapatterns/mesh.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/mesh.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Microkernel",
+          "path": "wiki/concepts/source/implementation-metapatterns/microkernel.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/microkernel.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Plugins",
+          "path": "wiki/concepts/source/implementation-metapatterns/plugins.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/implementation-metapatterns/plugins.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "About this book",
+          "path": "wiki/concepts/source/introduction/about-this-book.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/introduction/about-this-book.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/introduction/about-this-book.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Introduction",
+          "path": "wiki/concepts/source/introduction/introduction.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/introduction/introduction.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/introduction/introduction.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Metapatterns",
+          "path": "wiki/concepts/source/introduction/metapatterns.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/introduction/metapatterns.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/introduction/metapatterns.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "System topologies",
+          "path": "wiki/concepts/source/introduction/system-topologies.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/introduction/system-topologies.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/introduction/system-topologies.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Source Wiki Home",
+          "path": "wiki/concepts/source/root/home.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/root/home.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/root/home.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Software Architecture Metapatterns \u2014 Master Index",
+          "path": "wiki/index.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/index.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/index.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Software Architecture Metapatterns \u2014 Activity Log",
+          "path": "wiki/log.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/log.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/log.md.html",
+          "category": "wiki"
+        },
+        {
+          "title": "For Agents \u2014 Software Architecture Retrieval",
+          "path": "wiki/summaries/for-agents-software-architecture-retrieval.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/summaries/for-agents-software-architecture-retrieval.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/summaries/for-agents-software-architecture-retrieval.md.html",
+          "category": "summaries"
+        },
+        {
+          "title": "License and Provenance",
+          "path": "wiki/summaries/license-and-provenance.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/summaries/license-and-provenance.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/summaries/license-and-provenance.md.html",
+          "category": "summaries"
+        },
+        {
+          "title": "Architecture Metapatterns \u2014 Fit for Pixi",
+          "path": "wiki/syntheses/architecture-metapatterns-fit-for-pixi.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/syntheses/architecture-metapatterns-fit-for-pixi.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/syntheses/architecture-metapatterns-fit-for-pixi.md.html",
+          "category": "syntheses"
+        }
+      ]
     }
   ],
   "comingSoon": []
