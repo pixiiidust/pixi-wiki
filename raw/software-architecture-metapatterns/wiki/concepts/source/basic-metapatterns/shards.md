@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Basic metapatterns/Shards.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Shards.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Shards.png" alt="A diagram for Shards, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Shards, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Shards.png)
+
 
 *Attack of the clones\.* Solve scalability in the most straightforward manner\.
 
@@ -46,11 +44,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 A *shard* retains the performance of the original subsystem \(a [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] in the simplest case\) as long as it runs independently\. Any task that involves intershard communication has its performance degraded by data serialization and network latency\. And as soon as multiple shards need to synchronize their states you find yourself on the horns of a dilemma: accept the possibility of  data inconsistency caused by  [write conflicts](https://en.wikipedia.org/wiki/Write%E2%80%93write_conflict) or else kill performance with distributed transactions \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Shards.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Shards.png" alt="Performance of Shards is the best when the request is limited to a single shard and the worst when the state of several shards needs to be synchronized." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Performance of Shards is the best when the request is limited to a single shard and the worst when the state of several shards needs to be synchronized.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Shards.png)
+
 
 A [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]] \(or its derivation, the [[wiki/concepts/source/extension-metapatterns/shared-repository|*Space\-Based Architecture*]]\) is a common solution to let multiple shards access the same dataset\. However, it does not solve the performance vs consistency conflict \(which is rooted in the [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem)\) but only encapsulates its complexity inside a ready\-made third\-party component, making your life easier\.
 
@@ -78,11 +74,9 @@ A *sharded* system features properties of the pattern it replicates \(a single\-
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Shards.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Shards.png" alt="Scaling a single service or the entire system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Scaling a single service or the entire system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Shards.png)
+
 
 *Shards*:
 
@@ -140,11 +134,9 @@ There are several subtypes of sharding that differ in the way they handle state:
 
 ### Persistent slice: Sharding, Shards, Partitions, Multitenancy, Cells \(Amazon definition\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Shards%20-%20Sharding.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Shards%20-%20Sharding.png" alt="A sharding proxy connects a new client to a shard that contains data for the first letter of the client's name." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A sharding proxy connects a new client to a shard that contains data for the first letter of the client's name.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Shards%20-%20Sharding.png)
+
 
 *Shards* \[[wiki/concepts/source/appendices/books-referenced|[DDS]]\] own non\-overlapping slices of the system’s state\. For example, a sharded phonebook \(or DNS\) would use one shard for all contacts with initial “A”, another shard for contacts with initial “B”, and so on \(in reality they use hashes \[[wiki/concepts/source/appendices/books-referenced|[DDIA]]\]\)\. A large wiki or forum may run several servers, each storing a subset of the articles\. This is proper [*sharding*](https://learn.microsoft.com/en-us/azure/architecture/patterns/sharding), which is also called *partitioning* \[[wiki/concepts/source/appendices/books-referenced|[DDIA]]\] in the world of databases\.
 
@@ -165,11 +157,9 @@ It usually takes a stand\-alone [[wiki/concepts/source/extension-metapatterns/pr
 
 ### Persistent copy: Replica
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Shards%20-%20Replica.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Shards%20-%20Replica.png" alt="A load balancer connects a new client to a free replica which propagates the changes made by the client to other replicas." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A load balancer connects a new client to a free replica which propagates the changes made by the client to other replicas.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Shards%20-%20Replica.png)
+
 
 *Replicas* \[[wiki/concepts/source/appendices/books-referenced|[DDS]]\] are identical copies of a stateful \(sub\)system\. Replication improves the system’s throughput \(as each replica serves client requests\) and its stability \(as a fault in one replica does not affect others which may quickly take up the failed replica’s clients\)\. Replicas may also be used to improve tail latency through [*Request Hedging*](https://grpc.io/docs/guides/request-hedging/): each request is sent to several replicas in parallel and the first response received is returned to the client\. Mission\-critical hardware [runs as three copies](https://en.wikipedia.org/wiki/Triple_modular_redundancy) and relies on majority voting for computation results\.
 
@@ -183,11 +173,9 @@ Finally, you can mix sharding and replication to make sure that the data of each
 
 ### Stateless: Pool, Instances, [[wiki/concepts/source/extension-metapatterns/sandwich|Replicated Load\-Balanced Services]], Work Queue, Lambdas
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Shards%20-%20Pool.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Shards%20-%20Pool.png" alt="A load balancer connects a new client to a free instance of a stateless backend that accesses a database shared among all the backend instances." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A load balancer connects a new client to a free instance of a stateless backend that accesses a database shared among all the backend instances.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Shards%20-%20Pool.png)
+
 
 A predefined number \(*pool* \[[wiki/concepts/source/appendices/books-referenced|[POSA3]]\]\) of instances \(*workers*\) is created during the initialization of the system \(sometimes called a *Work Queue* \[[wiki/concepts/source/appendices/books-referenced|[DDS]]\]\)\. When the system receives a task, a [[wiki/concepts/source/extension-metapatterns/proxy|*Load Balancer*]] assigns it to one of the idle instances, called *Replicated Load\-Balanced Services* \[[wiki/concepts/source/appendices/books-referenced|[DDS]]\], from the pool\. As soon as the instance finishes processing its task it returns to the pool and its state is reset\. A well\-known example of this pattern is [FastCGI](https://en.wikipedia.org/wiki/FastCGI)\.
 
@@ -197,11 +185,9 @@ Many cloud services implement *dynamic* pools, the number of instances \([*lambd
 
 ### Temporary state: Create on Demand, [[wiki/concepts/source/basic-metapatterns/services|Actors]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Shards%20-%20Create%20on%20Demand.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Shards%20-%20Create%20on%20Demand.png" alt="A new stateful instance is created when a new client connects to the system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A new stateful instance is created when a new client connects to the system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Shards%20-%20Create%20on%20Demand.png)
+
 
 An instance is created for supporting an incoming client session and is destroyed when the session is closed\. Upon creation it is initialized with all the client\-related data which makes the instance able to interact with its client without much help from the backend\. Examples include web applications that run in users’ browsers and user\-dedicated [[wiki/concepts/source/basic-metapatterns/services|*actors*]] in backends of instant messengers\.
 
@@ -220,11 +206,9 @@ When *Shards* are applied to a single component, which is a [[wiki/concepts/sour
 - [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] and its subtypes, namely [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Hexagonal Architecture*]] and [[wiki/concepts/source/implementation-metapatterns/microkernel|*Scripts*]], make the system more adaptable\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20-%20General.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20-%20General.png" alt="Diagrams of scaled Layers, Services with a middleware, Pipeline, Plugins, Hexagonal Architecture, and Scripts." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of scaled Layers, Services with a middleware, Pipeline, Plugins, Hexagonal Architecture, and Scripts.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20-%20General.png)
+
 
 There is a benefit of such transformations which is important in the context of *Shards*: in many cases the resulting components can be scaled independently, arranging for a better resource utilization by the system when compared to scaling a *Monolith*\. However, scaling individual services usually requires a [[wiki/concepts/source/extension-metapatterns/proxy|*Load Balancer*]] or [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] to distribute requests among the scaled instances\.
 
@@ -235,38 +219,30 @@ The issue peculiar to *Shards* is that of coordinating deployed instances, espec
 - If the whole dataset needs to be shared, it can be split into a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]] layer\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20to%20Shared%20DB.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20to%20Shared%20DB.png" alt="The data of shards moves to a shared database. The shards become stateless and are deployed behind a load balancer." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The data of shards moves to a shared database. The shards become stateless and are deployed behind a load balancer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20to%20Shared%20DB.png)
+
 
 - If data collisions are tolerated, [[wiki/concepts/source/extension-metapatterns/shared-repository|*Space\-Based Architecture*]] promises low latency and dynamic scalability\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20to%20Space-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20to%20Space-Based%20Architecture.png" alt="The data of the shards moves to a Data Grid, resulting in a Space-Based Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The data of the shards moves to a Data Grid, resulting in a Space-Based Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20to%20Space-Based%20Architecture.png)
+
 
 - If a part of the system’s data becomes coupled, only that part can be moved to a *Shared Repository*, making each instance manage [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|two stores of data: private and shared]]\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Shared%20DB.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Shared%20DB.png" alt="A coupled subset of the system's data is stored in a shared repository, while the bulk of the data is sharded." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A coupled subset of the system's data is stored in a shared repository, while the bulk of the data is sharded.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20add%20Shared%20DB.png)
+
 
 - Another possible option is to split a [[wiki/concepts/source/basic-metapatterns/services|service]] that owns the coupled data and is always deployed as a single instance\. The remaining parts of the system become coupled to that service, not to each other\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20split%20Shared%20Service.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20split%20Shared%20Service.png" alt="Coupled business logic and data is separated from shards into a shared singletone service." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Coupled business logic and data is separated from shards into a shared singletone service.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20split%20Shared%20Service.png)
+
 
 ### [[wiki/concepts/source/appendices/evolutions-of-shards-that-share-logic|Evolutions that share logic]]
 
@@ -276,29 +252,23 @@ Other cases are better solved by extracting the logic that couples the shards:
 - Adding a [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] lets the shards communicate with each other without maintaining direct connections\. It also may do housekeeping: error recovery, replication, and scaling\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Middleware.png" alt="A middleware manages shards and lets them communicate to each other." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A middleware manages shards and lets them communicate to each other.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20add%20Middleware.png)
+
 
 - A [[wiki/concepts/source/extension-metapatterns/proxy|*Sharding Proxy*]] hides the shards from the system’s clients\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Load%20Balancer.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Load%20Balancer.png" alt="A sharding proxy relieves clients from the need to find the appropriate shard." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A sharding proxy relieves clients from the need to find the appropriate shard.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20add%20Load%20Balancer.png)
+
 
 - An [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] calls multiple shards to serve a user request\. That relieves the shards of the need to coordinate their states and actions by themselves\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20use%20Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20use%20Orchestrator.png" alt="The high-level logic of shards moves to a shared orchestrator which integrates the data stored within and processed by individual shards." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The high-level logic of shards moves to a shared orchestrator which integrates the data stored within and processed by individual shards.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20use%20Orchestrator.png)
+
 
 ## Summary
 

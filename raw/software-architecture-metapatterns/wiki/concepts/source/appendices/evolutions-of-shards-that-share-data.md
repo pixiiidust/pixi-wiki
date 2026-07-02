@@ -26,11 +26,9 @@ One issue peculiar to [[wiki/concepts/source/basic-metapatterns/shards|*Shards*]
 
 ## Move all the data to a Shared Repository
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20to%20Shared%20DB.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20to%20Shared%20DB.png" alt="The data of shards moves to a shared database. The shards become stateless and are deployed behind a load balancer." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The data of shards moves to a shared database. The shards become stateless and are deployed behind a load balancer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20to%20Shared%20DB.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/shards|Pool]] \([[wiki/concepts/source/basic-metapatterns/shards|Shards]]\), [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Database]] \([[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]]\), [[wiki/concepts/source/extension-metapatterns/proxy|Load Balancer]] \([[wiki/concepts/source/extension-metapatterns/proxy|Proxy]]\), [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -64,11 +62,9 @@ In case a shard needs to access data owned by any other shard, the prerequisite 
 
 ## Use Space\-Based Architecture
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20to%20Space-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20to%20Space-Based%20Architecture.png" alt="The data of the shards moves to a Data Grid, resulting in a Space-Based Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The data of the shards moves to a Data Grid, resulting in a Space-Based Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20to%20Space-Based%20Architecture.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/implementation-metapatterns/mesh|Space\-Based Architecture]] \([[wiki/concepts/source/implementation-metapatterns/mesh|Mesh]], [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]]\), [[wiki/concepts/source/basic-metapatterns/shards|Shards]], [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -97,11 +93,9 @@ Though *Space\-Based Architecture* may provide several modes of action, includin
 
 ## Use a Shared Repository for the coupled subset of data
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Shared%20DB.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Shared%20DB.png" alt="A coupled subset of the system's data is stored in a shared repository, while the bulk of the data is sharded." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A coupled subset of the system's data is stored in a shared repository, while the bulk of the data is sharded.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20add%20Shared%20DB.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/shards|Shards]], [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|Private and Shared Databases]] \([[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|Polyglot Persistence]]\), [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Database]] \([[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]]\), [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -125,11 +119,9 @@ This approach resembles [*Shared Kernel*](https://ddd-practitioners.com/home/glo
 
 ## Split a service with the coupled data
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20split%20Shared%20Service.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20split%20Shared%20Service.png" alt="Coupled business logic and data is separated from shards into a shared singletone service." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Coupled business logic and data is separated from shards into a shared singletone service.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20split%20Shared%20Service.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/services|Services]], [[wiki/concepts/source/basic-metapatterns/shards|Shards]]\.
 

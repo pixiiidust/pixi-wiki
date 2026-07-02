@@ -78,11 +78,9 @@ As we see, every \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\] pa
 
 Finally, let’s close the book by iterating over the metapatterns and looking into their roots through the lens of unification and separation\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Basic.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Basic.png" alt="Diagrams of Monolith, Shards, Layers, Services, and Pipeline, with cohesive and decoupled components highlighted." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Monolith, Shards, Layers, Services, and Pipeline, with cohesive and decoupled components highlighted.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Basic.png)
+
 
 [[wiki/concepts/source/basic-metapatterns/basic-metapatterns|Basic architectures]]:
 
@@ -100,11 +98,9 @@ Finally, let’s close the book by iterating over the metapatterns and looking i
   - *Decoupling* simplifies reassembling or expanding the system but increases its latency\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Extension.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Extension.png" alt="Diagrams of Services with a middleware, Services with a shared repository, Services with a proxy, Services with an orchestrator, and Sandwich, with cohesive and decoupled components highlighted." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Services with a middleware, Services with a shared repository, Services with a proxy, Services with an orchestrator, and Sandwich, with cohesive and decoupled components highlighted.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Extension.png)
+
 
 [[wiki/concepts/source/extension-metapatterns/extension-metapatterns|Grouping related functionality]]:
 
@@ -125,11 +121,9 @@ Finally, let’s close the book by iterating over the metapatterns and looking i
   - *Decoupling* the subdomain components from each other and from the system\-wide layers keeps every part of the system reasonably small and independent\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Fragmented.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Fragmented.png" alt="Diagrams of Layered Services, Services with Polyglot Persistence, Backends for Frontends, Service-Oriented Architecture, and Top-Down Hierarchy, with cohesive and decoupled components highlighted." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Layered Services, Services with Polyglot Persistence, Backends for Frontends, Service-Oriented Architecture, and Top-Down Hierarchy, with cohesive and decoupled components highlighted.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Fragmented.png)
+
 
 [[wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns|Decoupled topologies]]:
 
@@ -146,11 +140,9 @@ Finally, let’s close the book by iterating over the metapatterns and looking i
   - *Decoupled* layers and subdomains allow for modification and expansion of local functionality at the cost of performance\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Implementation.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Implementation.png" alt="Diagrams of Plugins, Hexagonal Architecture, Microkernel, and Mesh, with cohesive and decoupled components highlighted." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Plugins, Hexagonal Architecture, Microkernel, and Mesh, with cohesive and decoupled components highlighted.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Implementation.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/implementation-metapatterns|Component implementation]]:
 

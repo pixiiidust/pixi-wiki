@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Implementation metapatterns/Mesh.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Mesh.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Mesh.png" alt="A diagram for Services over a mesh, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Services over a mesh, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Mesh.png)
+
 
 *Hive mind\.* Go decentralized\.
 
@@ -121,11 +119,9 @@ The diversity of *Meshes* can be seen in the following examples:
 
 ### Peer\-to\-Peer Networks
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/P2P.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/P2P.png" alt="Each application is connected to a node of a mesh. The nodes find each other's addresses in a registry and then communicate directly." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each application is connected to a node of a mesh. The nodes find each other's addresses in a registry and then communicate directly.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/P2P.png)
+
 
 [*Peer to Peer*](https://en.wikipedia.org/wiki/Peer-to-peer) \(*P2P*\) networks are intended for massive resource sharing over unstable connections\. The *resource* in question may be data \(torrents, blockchain, [P2PTV](https://en.wikipedia.org/wiki/P2PTV)\), CPU time \([volunteer computing](https://en.wikipedia.org/wiki/Volunteer_computing), [distributed compilation](https://en.wikipedia.org/wiki/Distcc)\), or Internet access \([Tor](https://en.wikipedia.org/wiki/Tor_(network)), [I2P](https://en.wikipedia.org/wiki/I2P)\)\. In most cases it is shared over an *unstructured* \(as participants join and leave\) *2\-layer* \(there are dedicated servers that register and coordinate users\) network which is [*overlaid*](https://en.wikipedia.org/wiki/Overlay_network) on top of the Internet\. All the leaf nodes run identical narrowly specialized software \(i\.e\. either file sharing or blockchain, but not both at once\) which provides the clients with access to resources of other nodes, making a kind of distributed [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] or [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]]\.
 
@@ -133,31 +129,25 @@ Examples: torrent, onion routing \(Tor\), blockchain\.
 
 ### Leaf\-Spine Architecture, Spine\-Leaf Architecture
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Leaf-Spine.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Leaf-Spine.png" alt="Each server of a datacenter is connected to a leaf node. Each leaf communicates with every spine node." loading="lazy" width=81%/>
-</a>
-</div>
+
+![Each server of a datacenter is connected to a leaf node. Each leaf communicates with every spine node.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Leaf-Spine.png)
+
 
 This [datacenter network architecture](https://www.geeksforgeeks.org/spine-leaf-architecture/) is a rare example of a *structured fully connected Mesh*\. It consists of client\-facing \(*leaf*\) and internal \(*spine*\) network switches\. Each *leaf* is connected to every *spine*, allowing for very high bandwidth \(by distributing the traffic over multiple routes\) that is almost insensitive to failures of individual hardware as there are always many parallel connections\.
 
 ### [[wiki/concepts/source/basic-metapatterns/shards|Actors]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Actors.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Actors.png" alt="Each actor reads from its message queue and writes to other actors' message queues." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each actor reads from its message queue and writes to other actors' message queues.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Actors.png)
+
 
 A system of *Actors* may be classified as a *fully connected Mesh* with the actors’ message queues being the nodes of the *Mesh*\. Any actor can post messages to the queue of any other actor which it knows about, as all the actors share a virtual namespace or physical address space\.
 
 ### [[wiki/concepts/source/extension-metapatterns/middleware|Service Mesh]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Service%20Mesh.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Service%20Mesh.png" alt="A service mesh comprises services each of which is connected to a sidecar connected to a mesh node. The mesh nodes communicate with a monitoring and control infrastructure." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A service mesh comprises services each of which is connected to a sidecar connected to a mesh node. The mesh nodes communicate with a monitoring and control infrastructure.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Service%20Mesh.png)
+
 
 A [*Service Mesh*](https://buoyant.io/service-mesh-manifesto) \[[wiki/concepts/source/appendices/books-referenced|[FSA]], [[wiki/concepts/source/appendices/books-referenced|MP]]\] is a distributed [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] for running [[wiki/concepts/source/basic-metapatterns/services|*Microservices*]]\. It is a 2\-layer *Mesh* which contains one or a few management nodes \(*control plane*\) and many user nodes \(*data plane*\)\. Each data plane node colocates:
 
@@ -174,11 +164,9 @@ Ready\-to\-use *Service Mesh* frameworks are popular with the [[wiki/concepts/so
 
 ### [[wiki/concepts/source/extension-metapatterns/sandwich|Space\-Based Architecture]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Space-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Space-Based%20Architecture.png" alt="Each processing unit is connected to a node of a data grid. The nodes directly exchange data updates and store them into a persistent database via a writer. There is also a reader to initiate nodes." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each processing unit is connected to a node of a data grid. The nodes directly exchange data updates and store them into a persistent database via a writer. There is also a reader to initiate nodes.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Space-Based%20Architecture.png)
+
 
 [*Space\-Based Architecture*](https://en.wikipedia.org/wiki/Space-based_architecture) \[[wiki/concepts/source/appendices/books-referenced|[SAP]], [[wiki/concepts/source/appendices/books-referenced|FSA]]\] is a kind of [*Service Mesh*](#service-mesh) with an integrated [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]] \(a [*tuple space*](https://en.wikipedia.org/wiki/Tuple_space) – shared dictionary – called [[wiki/concepts/source/extension-metapatterns/shared-repository|*Data Grid*]]\) and an [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] \(called *Processing Grid*\)\. The user services are called *Processing Units*\. They may be identical \(making [[wiki/concepts/source/basic-metapatterns/shards|*Shards*]]\) or different \(resulting in [[wiki/concepts/source/basic-metapatterns/services|*Services*]]\)\. This architecture is used for:
 

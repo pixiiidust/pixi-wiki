@@ -23,11 +23,9 @@ The last group of evolutions to consider is about making the system more adaptab
 - [[wiki/concepts/source/implementation-metapatterns/microkernel|*Scripts*]] allow for customization of the system’s logic on a per client basis\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png" alt="Diagrams of Layers with plugins, Layers with scripts, and Hexagonal Architecture with a layered core." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Layers with plugins, Layers with scripts, and Hexagonal Architecture with a layered core.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png)
+
 
 There is also a new evolution that modifies the upper \(orchestration\) layer:
 
@@ -36,11 +34,9 @@ There is also a new evolution that modifies the upper \(orchestration\) layer:
 
 ## Divide the orchestration layer into Backends for Frontends
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Backends%20for%20Frontends.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Backends%20for%20Frontends.png" alt="The application layer is split into Backends for Frontends." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The application layer is split into Backends for Frontends.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Backends%20for%20Frontends.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/layers|Layers]], [Backends for Frontends aka BFFs](<Backends for Frontends (BFF)>)\.
 

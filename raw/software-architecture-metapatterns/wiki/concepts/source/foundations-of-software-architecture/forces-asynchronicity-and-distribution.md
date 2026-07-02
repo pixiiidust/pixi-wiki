@@ -50,11 +50,9 @@ We see that forces influence architecture\. That becomes way more interesting wh
 
 Remember how old Windows used to freeze on formatting a floppy or when it encountered one with a bad cluster? Let’s see how such things could have happened \(though [the real cause was a bit different](https://sudonull.com/post/124038-Why-did-Windows-95-freeze-when-formatting-a-floppy-disk), it also came from the modules’ sharing a context\)\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Floppy-Sync.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Floppy-Sync.png" alt="Synchronous communication freezes the system UI and format windows while a driver formats a floppy." loading="lazy" width=80%/>
-</a>
-</div>
+
+![Synchronous communication freezes the system UI and format windows while a driver formats a floppy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Floppy-Sync.png)
+
 
 The system implements the function it was made for – it formats floppies\. However, while the low\-level module is busy interacting with the hardware, all the modules above it have no chance to run because they have called the driver and are waiting for it to return\. The modules are there, with the code separated into bounded contexts \(the UI does not need to care about sectors and FATs\) but all of them share non\-functional qualities – latency in this case\. Either the UI is responsive or the floppy driver runs a long\-running action\. We need the UI and the driver to execute independently\.
 
@@ -62,11 +60,9 @@ The system implements the function it was made for – it formats floppies\. How
 
 If the components cannot communicate directly \(call each other and wait for the results returned\) how should they interact? Through an intermediary where one of them leaves a message for another\. Such an intermediary may be a message queue, a pub/sub channel, or even a data record in [[wiki/concepts/source/extension-metapatterns/shared-repository|shared memory]]\. The sender posts its message and continues its routine tasks\. The receiver checks for incoming messages whenever it has a free time slot\. Behold multithreading in action\!
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Floppy-Async.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Floppy-Async.png" alt="Asynchronous communication unblocks the system UI and format windows while a driver formats a floppy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Asynchronous communication unblocks the system UI and format windows while a driver formats a floppy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Floppy-Async.png)
+
 
 ## Distribution
 
@@ -81,11 +77,9 @@ Consider a web site\. Most of them follow [*Three\-Tier Architecture*](https://e
 
 This common division makes quite a lot of sense:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/3-Tier.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/3-Tier.png" alt="Frontend, backend, and database layers differ in their scalability, security, and operational costs." loading="lazy" width=72%/>
-</a>
-</div>
+
+![Frontend, backend, and database layers differ in their scalability, security, and operational costs.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/3-Tier.png)
+
 
 Websites are accessed by many users simultaneously\. Any business owner wants to pay less for his servers, thus as much work as possible is offloaded to the users’ web browsers which provide unlimited resources for free \(from the business owner’s viewpoint\)\. Here we have a nearly perfect scalability – the business owner pays only for the traffic\.
 
@@ -106,11 +100,9 @@ Sensors and actuators are cheap and energy\-efficient but too dumb to act on the
 
 Here reliability conflicts with accuracy: a human operator makes an accurate estimate of the threat and chooses an appropriate action, but it is not granted that we can always reach the operator\. Thus to be reliable we add an inaccurate but trustworthy fallback reaction\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Field%20Gateway.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Field%20Gateway.png" alt="Normal and autonomous operation of a field gateway of a fire alarm system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Normal and autonomous operation of a field gateway of a fire alarm system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Field%20Gateway.png)
+
 
 A similar pattern can be found with robotics, drones or even computer hardware \(e\.g\. a HDD\): dedicated peripheral controllers supervise their managed devices in real time while a more powerful but less interactive central processor drives the system as a whole\.
 

@@ -18,11 +18,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 Let’s take a look at the simplest possible [[wiki/concepts/source/introduction/metapatterns|metapattern]] – *Monolith* – and see what it can teach us\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Monolith.png" alt="A diagram for Monolith, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Monolith, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Monolith.png)
+
 
 *Keep it simple, stupid\!* If you don’t need a modular design, why bother?
 
@@ -82,11 +80,9 @@ Even though a *Monolith* is a single module, meaning that there are no dependenc
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Monolith.png" alt="Intermediary architectures between Monolith and distributed Shards, Layers, and Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Intermediary architectures between Monolith and distributed Shards, Layers, and Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Monolith.png)
+
 
 *Monolith*:
 
@@ -99,11 +95,9 @@ Even though a *Monolith* is a single module, meaning that there are no dependenc
 
 *Monoliths* are the atoms to create more complex architectures from, the opaque building blocks, each of which satisfies a consistent set of [[wiki/concepts/source/foundations-of-software-architecture/forces-asynchronicity-and-distribution|forces]]\. Any individual component of a more complex architecture either is monolithic or encapsulates another architectural pattern, decomposable into *Monoliths*, and any architecture looks monolithic to its clients\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/MonolithAsUnzoomed.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/MonolithAsUnzoomed.png" alt="A Sandwich Architecture looks like a monolith when the details of its internal structure are omitted." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A Sandwich Architecture looks like a monolith when the details of its internal structure are omitted.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/MonolithAsUnzoomed.png)
+
 
 There is a misunderstanding because *software architecture* inspects the internals of *applications* at the level of *modules* or even classes while *systems architecture* deals with *distributed systems* and operates *deployment units* which tend to incorporate multiple modules or even applications\. Each branch of the architecture [[wiki/concepts/source/analytics/ambiguous-patterns|calls]] its atomic unit a *Monolith*, leading to the term sticking both to a *module that cannot be subdivided*, as in \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\] and \[[wiki/concepts/source/extension-metapatterns/shared-repository|[POSA1]]\], and to a *\(sub\)system which must be deployed as a whole*, as per present\-day literature\.
 
@@ -111,61 +105,49 @@ As we aspire to build a unified classification for both distributed and local sy
 
 ### True Monolith, Big Ball of Mud
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/True%20Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/True%20Monolith.png" alt="A square that represents a non-modular monolith." loading="lazy" width=83%/>
-</a>
-</div>
+
+![A square that represents a non-modular monolith.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/True%20Monolith.png)
+
 
 A true *Monolith* features [no clear internal structure](http://laputan.org/mud/)\. If it has any components, they are so tightly coupled that the entire thing behaves as a single cohesive module\. This is the subject of the current chapter\.
 
 ### \(inexact\) Lambda Monolith, Monolambda, [[wiki/concepts/source/basic-metapatterns/shards|Lambdalith]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Lambdalith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Lambdalith.png" alt="Instances of a stateless component between a load balancer and a database." loading="lazy" width=80%/>
-</a>
-</div>
+
+![Instances of a stateless component between a load balancer and a database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Lambdalith.png)
+
 
 A [*Monolambda*](https://jesseduffield.com/Notes-On-Lambda/) or [*Lambdalith*](https://theburningmonk.com/2025/03/the-pros-and-cons-of-lambdalith/) is a dynamic [[wiki/concepts/source/basic-metapatterns/shards|*Pool* of stateless instances]] of a system\. Though each instance may contain [[wiki/concepts/source/basic-metapatterns/layers|*layers*]] or [[wiki/concepts/source/basic-metapatterns/services|*subdomain modules*]], the whole is often called a *Monolith* [[wiki/concepts/source/analytics/ambiguous-patterns|because it is deployed as a single unit]]\.
 
 ### \(misapplied\) [[wiki/concepts/source/basic-metapatterns/layers|Layered Monolith]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Layered%20Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Layered%20Monolith.png" alt="Application, domain, and infrastructure layers." loading="lazy" width=81%/>
-</a>
-</div>
+
+![Application, domain, and infrastructure layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Layered%20Monolith.png)
+
 
 When they say [[wiki/concepts/source/basic-metapatterns/layers|*Layered Monolith*]] \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\], that refers to a non\-distributed application with a layered structure, which is a proper [[wiki/concepts/source/basic-metapatterns/layers|*Layers*]] architecture and will be discussed in the corresponding chapter\. It is called a *Monolith* for the [[wiki/concepts/source/analytics/ambiguous-patterns|sole reason that it is not distributed]]\. Nevertheless, *Layers* resemble *Monolith* in many aspects, including easy debugging and the risk of outgrowing the comfort zone of developers\.
 
 ### \(misapplied\) [[wiki/concepts/source/basic-metapatterns/services|Modular Monolith]] \(Modulith\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Modular%20Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Modular%20Monolith.png" alt="A diagram of subdomain services." loading="lazy" width=88%/>
-</a>
-</div>
+
+![A diagram of subdomain services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Modular%20Monolith.png)
+
 
 A [[wiki/concepts/source/basic-metapatterns/services|*Modular Monolith*]] \(*Modulith*\) \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] is a single\-process application subdivided into modules that correspond to subdomains\. If the modules communicate via in\-process messaging, the architecture is nearly identical to coarse\-grained [[wiki/concepts/source/basic-metapatterns/services|*Actors*]], thus it is a *Monolith* only in name\. *Modulith* [is a kind of](https://en.wikipedia.org/wiki/Duck_typing) [[wiki/concepts/source/basic-metapatterns/services|*Services*]] – it supports development by multiple teams and its asynchronous variant is hard to debug\. The relation to *Monolith* is mostly limited to the inability to scale individual parts of the system\.
 
 ### \(misapplied\) [Distributed Monolith](<Service-Oriented Architecture (SOA)#distributed-monolith>)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Distributed%20Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Distributed%20Monolith.png" alt="A distributed monolith as three layers of services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A distributed monolith as three layers of services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Distributed%20Monolith.png)
+
 
 A [*Distributed Monolith*](<Service-Oriented Architecture (SOA)#distributed-monolith>) \[[wiki/concepts/source/appendices/books-referenced|[MP]]\] is a highly distributed system \(usually [*Service\-Oriented Architecture*](<Service-Oriented Architecture (SOA)>) or [[wiki/concepts/source/basic-metapatterns/services|*Services*]]\) where all the components still need to be deployed together because of their interdependencies\. It is said to have the drawbacks of both *Monolith* \(low fault tolerance and coupled release cycles\) and *Services* \(poor debuggability, high latency, and operational complexity\)\.
 
 ### \(inexact\) [[wiki/concepts/source/implementation-metapatterns/plugins|Plugins]] and [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Hexagonal Architecture]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Hexagonal%20Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Hexagonal%20Monolith.png" alt="Hexagonal Architecture with adapters between its core and each component the core interacts with." loading="lazy" width=93%/>
-</a>
-</div>
+
+![Hexagonal Architecture with adapters between its core and each component the core interacts with.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Hexagonal%20Monolith.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] and [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Hexagonal Architecture*]] extend a \(sub\)system with external components\. These architectures can be applied to a *Monolith* without drastically changing its properties – it still remains relatively easy to write and debug but hard to support when it has grown large\. Therefore, we will not currently discuss these modifications, mainly because each of them has a dedicated chapter\.
 
@@ -175,11 +157,9 @@ Let’s take a look inside a *Monolith*\.
 
 Any software module reacts to incoming events or data and produces outgoing events or data\. But there are a few basic ways to implement that cycle:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Subtypes%20of%20Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Subtypes%20of%20Monolith.png" alt="Control flow diagrams for Reactor, Proactor, and Half-Sync/Half-Async." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Control flow diagrams for Reactor, Proactor, and Half-Sync/Half-Async.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Subtypes%20of%20Monolith.png)
+
 
 - *Reactor* runs each request in a separate thread:
   - A [single\-threaded version](#single-threaded-reactor-one-thread-one-task) is used to serialize access to a hardware device\.
@@ -191,11 +171,9 @@ Any software module reacts to incoming events or data and produces outgoing even
 
 ### Single\-threaded Reactor \(one thread, one task\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Reactor%20-%20Single%20Thread.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Reactor%20-%20Single%20Thread.png" alt="A single thread that blocks on calls to an operating system executes a request and then another request which has to wait in a queue." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A single thread that blocks on calls to an operating system executes a request and then another request which has to wait in a queue.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Reactor%20-%20Single%20Thread.png)
+
 
 In a [*Reactor*](https://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf) \[[wiki/concepts/source/appendices/books-referenced|[POSA2]]\] a single thread waits for an incoming event, request, or data packet, processes it with blocking calls to the underlying OS, hardware, and external dependencies, and returns the result, rinse and repeat\.
 
@@ -203,11 +181,9 @@ That makes sense when the module wraps a hardware component which cannot do seve
 
 ### Multi\-threaded Reactor \(a thread per task\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Reactor%20-%20Multiple%20Threads.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Reactor%20-%20Multiple%20Threads.png" alt="Two threads, each runs a single request and blocks on accessing an operating system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Two threads, each runs a single request and blocks on accessing an operating system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Reactor%20-%20Multiple%20Threads.png)
+
 
 A [*Reactor*](https://www.dre.vanderbilt.edu/~schmidt/PDF/reactor-siemens.pdf) \[[wiki/concepts/source/appendices/books-referenced|[POSA2]]\] may employ multiple threads by having a [[wiki/concepts/source/basic-metapatterns/shards|*pool*]] of them waiting for a request or data to arrive\. The incoming event activates one of the waiting threads, which thereby becomes dedicated to processing it, makes several blocking calls and, finally, sends back a response\. When the request processing is complete, the thread returns to the pool of idle threads to wait for the next event to process\.
 
@@ -215,11 +191,9 @@ This is the default [simple & stupid](https://en.wikipedia.org/wiki/KISS_princip
 
 ### Proactor \(one thread, many tasks\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Proactor.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Proactor.png" alt="A single thread handles messages that belong to several use cases in an interleaved manner." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A single thread handles messages that belong to several use cases in an interleaved manner.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Proactor.png)
+
 
 In [*Proactor*](https://hillside.net/plop/plop97/Proceedings/pyarali.proactor.pdf) \[[wiki/concepts/source/appendices/books-referenced|[POSA2]]\] a single thread processes all of the incoming events, both from the module’s clients and from the hardware or dependencies which it manages\. When an event is received, the thread goes through a short piece of corresponding business logic \(*event handler*\) which usually does one or more non\-blocking actions, such as sending messages to other components, writing to registers of the managed hardware, or initiating an async I/O\. As soon as the event handler returns, the thread becomes ready to process further events\. As the thread never blocks, it is resource\-efficient \(does not hold anything for a noticeable amount of time\) and can serve many interleaved tasks\.
 
@@ -227,11 +201,9 @@ This approach is good for real\-time systems where thread synchronization is lar
 
 ### \(inexact\) Half\-Sync/Half\-Async \(coroutines or fibers\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Half-Sync%20Half-Async.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Half-Sync%20Half-Async.png" alt="A system subdivided into two layers: the upper one with a coroutine per request and the lower one with a generic event handling thread." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A system subdivided into two layers: the upper one with a coroutine per request and the lower one with a generic event handling thread.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Half-Sync%20Half-Async.png)
+
 
 [*Half\-Sync/Half\-Async*](https://www.dre.vanderbilt.edu/~schmidt/PDF/PLoP-95.pdf) \[[wiki/concepts/source/appendices/books-referenced|[POSA2]]\] originally described the interaction between user space and kernel threads in operating systems which is not much different from what happens under the hood in coroutines or fibers\. A single thread \(or a thread pool with one thread per CPU core\) handles all the incoming events and switches its call stack in the process\.
 
@@ -247,11 +219,9 @@ Moreover, people [[wiki/concepts/source/analytics/ambiguous-patterns|often call]
 
 ### \(inexact\) \(Re\)Actor\-with\-Extractors \(phased processing\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Reactor%20with%20Extractors.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Reactor%20with%20Extractors.png" alt="In the extraction phase components call each other and add actions to their queues. In the reaction phase they execute the actions from their queues but don't interact. The phases alternate." loading="lazy" width=100%/>
-</a>
-</div>
+
+![In the extraction phase components call each other and add actions to their queues. In the reaction phase they execute the actions from their queues but don't interact. The phases alternate.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Reactor%20with%20Extractors.png)
+
 
 As a bonus, let’s review an [unconventional execution model](http://ithare.com/multi-coring-and-non-blocking-instead-of-multi-threading-with-a-script/3/) that fits game development and other kinds of simulations with many interacting objects\.
 
@@ -284,38 +254,30 @@ One of the main drawbacks of the *Monolithic Architecture* is its lack of scalab
 - Self\-managed [[wiki/concepts/source/basic-metapatterns/shards|*Shards*]] – each instance owns a part of the system’s data and may communicate with all the other instances \(forming a [[wiki/concepts/source/implementation-metapatterns/mesh|*Mesh*]]\)\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Mesh%20of%20Shards.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Mesh%20of%20Shards.png" alt="Several instances of a monolith are run as intercommunicating shards, each of which holds a subset of the system's data." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Several instances of a monolith are run as intercommunicating shards, each of which holds a subset of the system's data.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Mesh%20of%20Shards.png)
+
 
 - *Shards* with a [[wiki/concepts/source/extension-metapatterns/proxy|*Sharding Proxy*]] – each instance owns a part of the system’s data and relies on an external component to choose a shard for a client\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Isolated%20Shards%20with%20Load%20Balancer.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Isolated%20Shards%20with%20Load%20Balancer.png" alt="Multiple instances of a monolith, each a subset of the system's data, are run behind a sharding proxy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Multiple instances of a monolith, each a subset of the system's data, are run behind a sharding proxy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Isolated%20Shards%20with%20Load%20Balancer.png)
+
 
 - A [[wiki/concepts/source/basic-metapatterns/shards|*Pool*]] of stateless instances with a [[wiki/concepts/source/extension-metapatterns/proxy|*Load Balancer*]] and a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]] – any instance can process any request, but the shared database or file system limits the throughput\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Stateless%20Shards%20with%20Shared%20DB.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Stateless%20Shards%20with%20Shared%20DB.png" alt="A monolith is transformed into stateless instances which run behind a load balancer and access a shared database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A monolith is transformed into stateless instances which run behind a load balancer and access a shared database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Stateless%20Shards%20with%20Shared%20DB.png)
+
 
 - A [[wiki/concepts/source/basic-metapatterns/shards|*Stateful Instance*]] per client with an external persistent storage – each instance owns the data related to its client and runs in a virtual environment \(i\.e\. web browser or an [[wiki/concepts/source/implementation-metapatterns/microkernel|*Actor Framework*]]\)\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Instance%20per%20Client.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Instance%20per%20Client.png" alt="Each user is allocated a temporary instance of a subsystem which loads their data at the start of the session and persists any changes to the database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each user is allocated a temporary instance of a subsystem which loads their data at the start of the session and persists any changes to the database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Instance%20per%20Client.png)
+
 
 ### [[wiki/concepts/source/appendices/evolutions-of-a-monolith-that-result-in-layers|Evolutions to Layers]]
 
@@ -324,38 +286,30 @@ Another drawback of *Monolith* is its… er… monolithism\. The entire applicat
 - Most *Monoliths* can be divided into 3 or 4 layers of different abstractness\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers.png" alt="A monolith is split into application, domain and database layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A monolith is split into application, domain and database layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Layers.png)
+
 
 - It is common to see the database separated from the main application\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Database.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Database.png" alt="The data of a monolithic system is moved to a database, leaving the business logic stateless." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The data of a monolithic system is moved to a database, leaving the business logic stateless.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20add%20Database.png)
+
 
 - [[wiki/concepts/source/extension-metapatterns/proxy|*Proxies*]] \(e\.g\. [[wiki/concepts/source/extension-metapatterns/proxy|*Firewall*]], [[wiki/concepts/source/extension-metapatterns/proxy|*Cache*]], [[wiki/concepts/source/extension-metapatterns/proxy|*Reverse Proxy*]]\) are common additions to the system\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Proxy.png" alt="A part of generic functionality of a monolith is moved to a proxy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A part of generic functionality of a monolith is moved to a proxy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20add%20Proxy.png)
+
 
 - An [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] adds a layer of indirection to make the system’s external API more user\-friendly\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Orchestrator.png" alt="An orchestrator is added to a monolithic system, allowing for higher-level client requests." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An orchestrator is added to a monolithic system, allowing for higher-level client requests.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20add%20Orchestrator.png)
+
 
 ### [[wiki/concepts/source/appendices/evolutions-of-a-monolith-that-make-services|Evolutions to Services]]
 
@@ -364,29 +318,23 @@ The final major drawback of *Monolith* is the cohesiveness of its code\. The rap
 - A *Monolith* can be split into [[wiki/concepts/source/basic-metapatterns/services|*Services*]] right away\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Services.png" alt="A monolith is subdivided into services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A monolith is subdivided into services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Services.png)
+
 
 - A feature may be added or a weakly coupled part of the Monolith separated into a new service\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20Split%20Service.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20Split%20Service.png" alt="A service is split from a monolith." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A service is split from a monolith.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20Split%20Service.png)
+
 
 - Some domains allow for sequential data processing best described by [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipelines*]]\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Pipeline.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Pipeline.png" alt="A Monolith is transformed into a pipeline." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A Monolith is transformed into a pipeline.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Pipeline.png)
+
 
 ### [[wiki/concepts/source/appendices/evolutions-of-a-monolith-that-rely-on-plugins|Evolutions with Plugins]]
 
@@ -395,29 +343,23 @@ The last group of evolutions does not really change the monolithic nature of the
 - Vanilla [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] is the most direct approach which relies on replaceable bits of logic\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Plugins.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Plugins.png" alt="Plugins customize the monolith's behavior." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Plugins customize the monolith's behavior.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Plugins.png)
+
 
 - [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Hexagonal Architecture*]] is a subtype of *Plugins* which is all about isolating the main code from any third\-party components which it uses\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Hexagonal.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Hexagonal.png" alt="The database, external libraries, and a protocol support component are separated from the business logic and isolated with adapters." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The database, external libraries, and a protocol support component are separated from the business logic and isolated with adapters.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Hexagonal.png)
+
 
 - [[wiki/concepts/source/implementation-metapatterns/microkernel|*Scripts*]] is a kind of [[wiki/concepts/source/implementation-metapatterns/microkernel|*Microkernel*]] – yet another subtype of *Plugins* – which gives users of the system full control over its behavior\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Interpreter.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Interpreter.png" alt="The high-level logic is rewritten as scripts which are run by an interpreter." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The high-level logic is rewritten as scripts which are run by an interpreter.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Interpreter.png)
+
 
 ## Summary
 

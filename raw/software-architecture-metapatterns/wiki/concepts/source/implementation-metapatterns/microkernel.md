@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Implementation metapatterns/Microkernel.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Microkernel.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Microkernel.png" alt="A diagram for Microkernel, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Microkernel, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Microkernel.png)
+
 
 *Communism\.* Share resources among consumers\.
 
@@ -55,11 +53,9 @@ It is common to see system components communicate directly via shared memory or 
 
 The *applications* depend on the *API* of the *microkernel* while the *providers* depend on its *SPIs*\. On one hand, that isolates the applications and providers from each other, letting them develop independently\. On the other hand, the microkernel’s API and SPIs should be very stable to support older versions of the components which the microkernel integrates\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Microkernel.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Microkernel.png" alt="Applications depend on the API of the microkernel. Providers depend on its SPIs." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Applications depend on the API of the microkernel. Providers depend on its SPIs.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Microkernel.png)
+
 
 ### Applicability
 
@@ -77,11 +73,9 @@ The *applications* depend on the *API* of the *microkernel* while the *providers
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Microkernel.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Microkernel.png" alt="Microkernel as a middleware and as an orchestrator; applications of Microkernel Architecture as Backends for Frontends." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Microkernel as a middleware and as an orchestrator; applications of Microkernel Architecture as Backends for Frontends.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Microkernel.png)
+
 
 *Microkernel*:
 
@@ -107,71 +101,57 @@ The *applications* depend on the *API* of the *microkernel* while the *providers
 
 ### Operating System
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/OS.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/OS.png" alt="Each application communicates with its runtime interfacing the shared operating system kernel which communicates with device drivers that adapt hardware components." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each application communicates with its runtime interfacing the shared operating system kernel which communicates with device drivers that adapt hardware components.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/OS.png)
+
 
 The original inspiration for *Microkernel*, namely *operating systems*, provides an almost perfect example of the pattern, even though their kernels are not that “micro\-” \(unless you are running [MINIX](https://en.wikipedia.org/wiki/Minix_3#Architecture) or [QNX](https://en.wikipedia.org/wiki/QNX#Technology)\)\. [[wiki/concepts/source/basic-metapatterns/services|Device *drivers*]] \(*internal services*\) encapsulate available hardware resources \(see [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Pedestal*]]\) and make them accessible to user\-space *applications* \(*external services*\) via an OS *kernel*\. *Drivers* for a given kind of subsystem \(e\.g\. network adapter or disk drive\) are polymorphic towards the kernel and match the hardware installed\.
 
 ### Software Framework, Pluggable Component Framework
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Framework.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Framework.png" alt="A framework is a facade between a user application and several lower-level components." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A framework is a facade between a user application and several lower-level components.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Framework.png)
+
 
 In a *Software Framework* or *Pluggable Component Framework* \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\] the *microkernel* \(*abstract core* \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\]\) is a [[wiki/concepts/source/extension-metapatterns/orchestrator|*Facade*]] \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\] that integrates a set of libraries and exposes a user\-friendly high\-level interface\. [PAM](https://docs.oracle.com/cd/E23824_01/html/819-2145/pam-01.html) looks like a reasonably good example\.
 
 ### Virtualizer, Hypervisor, Container Orchestrator, [[wiki/concepts/source/basic-metapatterns/services|Distributed Runtime]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Virtualizer.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Virtualizer.png" alt="A virtualizer stands between user applications and several instances of an operating system each running on a separate computer." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A virtualizer stands between user applications and several instances of an operating system each running on a separate computer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Virtualizer.png)
+
 
 *Hypervisors* \(Xen\), PaaS and [FaaS](https://shivangsnewsletter.com/p/why-doesnt-cloudflare-use-containers), *container orchestrators* \(Kubernetes\) \[[wiki/concepts/source/appendices/books-referenced|[DDS]]\], and distributed *actor frameworks* \(Akka, Erlang/Elixir/OTP\) use resources of the underlying computer\(s\) to run guest applications\. A hypervisor virtualizes the resources of a single computer while a distributed runtime manages those of multiple servers – in the last case there are several instances of the same kind of an *internal server* which abstracts a host system\.
 
 ### Interpreter, Script, Domain\-Specific Language \(DSL\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Interpreter.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Interpreter.png" alt="Each script runs over its instance of an interprester. All the interpreters share a set of libraries." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each script runs over its instance of an interprester. All the interpreters share a set of libraries.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Interpreter.png)
+
 
 User\-provided *scripts* are run by an *Interpreter* \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\] which also allows them to access a set of installed libraries\. The *Interpreter* is a microkernel, and the syntax of the script or [*DSL*](https://en.wikipedia.org/wiki/Domain-specific_language) which it interprets is the microkernel’s API\.
 
 ### Configurator, Configuration File
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Config%20file.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Config%20file.png" alt="A configurator runs at a system's startup, reads a configuration file, and sets up a system of services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A configurator runs at a system's startup, reads a configuration file, and sets up a system of services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Config%20file.png)
+
 
 *Configuration files* may be regarded as short\-lived [*scripts*](#interpreter-script-domain-specific-language-dsl) that configure the underlying modules at the start of the system\. The parser of the configuration file is a transient *microkernel*\.
 
 ### [[wiki/concepts/source/extension-metapatterns/orchestrator|Saga]] Engine
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Saga%20engine.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Saga%20engine.png" alt="A saga engine calls several services while executing multiple short-lived sagas." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A saga engine calls several services while executing multiple short-lived sagas.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Saga%20engine.png)
+
 
 A [[wiki/concepts/source/extension-metapatterns/orchestrator|*Saga*]] \[[wiki/concepts/source/appendices/books-referenced|[MP]]\] orchestrates distributed transactions\. It may be written in a [*DSL*](https://en.wikipedia.org/wiki/Domain-specific_language) which requires a compiler or [interpreter](#interpreter-script-domain-specific-language-dsl), which is a *microkernel*, to execute\.
 
 ### AUTOSAR Classic Platform
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/AUTOSAR%20classic.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/AUTOSAR%20classic.png" alt="AUTOSAR Classic defines three segmented layers: applications, runtime environment with a shared Virtual Functional Bus, and basic software with generic and hardware-specific services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![AUTOSAR Classic defines three segmented layers: applications, runtime environment with a shared Virtual Functional Bus, and basic software with generic and hardware-specific services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/AUTOSAR%20classic.png)
+
 
 The [notorious](https://www.reddit.com/r/embedded/comments/leq366/comment/gmiq6d0/) [automotive standard](https://www.autosar.org/fileadmin/standards/R20-11/CP/AUTOSAR_EXP_VFB.pdf), though inspired by [*SOA*](<Service-Oriented Architecture (SOA)#misapplied-automotive-soa>), is structured as a distributed / virtualized *Microkernel*\. The application layer comprises a network of *software components* spread out over hundreds of chips which are, for some secret reason, called *electronic control units* \(*ECU*s\)\. Both communication paths between the software components and much of the system’s code are static \(auto\-generated at compilation time\)\. A software component may access hardware of its ECU via standard interfaces\.
 

@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Basic metapatterns/Layers.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Layers.png" alt="A diagram for Layered Architecture, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Layered Architecture, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Layers.png)
+
 
 *Yet another layer of indirection\.* Separate business logic from implementation details\.
 
@@ -49,11 +47,9 @@ Splitting a system into layers tends to resolve conflicts of forces between its 
 
 Many patterns have one or more of their layers split into subdomains, resulting in a layer of *services*\. That causes no penalties as long as the services are completely independent \(when the original layer had zero coupling between its subdomains\), which happens if each of the services deals with a separate subset of requests \(as in [*Backends for Frontends*](<Backends for Frontends (BFF)>)\) or is choreographed by an upper layer \(as in [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Polyglot Persistence*]], [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Hexagonal Architecture*]], or [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Hierarchy*]]\) which boils down to the same “separate subset of subrequests” under the hood\. However, if the services which form a layer need to intercommunicate, you immediately get a whole set of troubles with debugging, sharing data, and performance characteristic of the [[wiki/concepts/source/basic-metapatterns/services|*Services*]] architecture\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Misc/Layers%20of%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Misc/Layers%20of%20Services.png" alt="Diagrams of Backends for Frontends and Services with Polyglot Persistence." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Backends for Frontends and Services with Polyglot Persistence.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Misc/Layers%20of%20Services.png)
+
 
 > Thanks to its substantial benefits and minor drawbacks, and the many evolutions it supports, *Layers* became the default architecture for starting new projects\.
 
@@ -69,35 +65,27 @@ The performance of a layered system is shaped by two factors:
 
 There is a number of optimizations to reduce interlayer calls:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Layers-caching.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Layers-caching.png" alt="Caching the latest known state of the system in its highest layer." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Caching the latest known state of the system in its highest layer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Layers-caching.png)
+
 
 *Caching*: an upper layer tends to *model* \(cache last known state of\) the layers below it\. This way it can behave as if it knew the state of the whole system without querying the actual state from the hardware present at the bottom of the system’s stack of layers\. Such an approach is universal for [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|*control software*]]\. For example, a network monitoring suite shows you the last known state of all the components it observes without actually querying them – it is subscribed to various notifications and remembers what and when each device has previously reported\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Layers-aggregation.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Layers-aggregation.png" alt="Aggregation of events from hardware by the lowest layer of a layered system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Aggregation of events from hardware by the lowest layer of a layered system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Layers-aggregation.png)
+
 
 *Aggregation*: a lower layer collects multiple events before notifying the layer above it to avoid being overly chatty\. An example is an [IIoT](https://en.wikipedia.org/wiki/Industrial_internet_of_things) field gateway that collects data from all the sensors in the building and sends it in a single report to the server\. Or consider a data transfer over a network where a low\-level driver collects multiple data packets that come from the hardware and sends an acknowledgement for each of them while waiting for a datagram or file transfer to complete\. It notifies its client software only once when all the data has been collected and its integrity confirmed\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Layers-batching.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Layers-batching.png" alt="Sending a batch of commands all the way down to the lowest layer of a system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Sending a batch of commands all the way down to the lowest layer of a system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Layers-batching.png)
+
 
 *Batching*: an upper layer forms a queue of commands and sends it as a single job to the layer below it\. This takes place in drivers for complex low\-level hardware, like printers, or in database access as *stored procedures*\. \[[wiki/concepts/source/appendices/books-referenced|[POSA4]]\] describes variants of this approach as the *Combined Method*, *Enumeration Method*, and *Batch Method* patterns\. Programming languages and frameworks may implement *foreach* and *MapReduce* which allow for a single command to operate on multiple pieces of data\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Layers-injection.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Layers-injection.png" alt="Moving a part of the business logic from the highest layer to the lowest layer of the system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Moving a part of the business logic from the highest layer to the lowest layer of the system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Layers-injection.png)
+
 
 *Strategy injection*: an upper layer installs an event handler \(hook or [[wiki/concepts/source/implementation-metapatterns/plugins|*Ambassador Plugin*]]\) into the lower layer\. The goal is for the hook to do basic pre\-processing, filtering, aggregation, and decision making to process the majority of events autonomously while escalating to the upper layer in exceptional or important cases\. That may help in such time\-critical domains as [high\-frequency trading](https://en.wikipedia.org/wiki/High-frequency_trading)\.
 
@@ -111,27 +99,21 @@ Some domains, including embedded systems and telecom, require their lower layers
 
 There may also be an [[wiki/concepts/source/extension-metapatterns/proxy|*Adapter*]] layer between your system’s SPI and an external API\. It is called *Anticorruption Layer* \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\], [*Database Abstraction Layer*](https://en.wikipedia.org/wiki/Database_abstraction_layer) / *Database Access Layer* \[[wiki/concepts/source/appendices/books-referenced|[POSA4]]\] / *Data Mapper* \[[wiki/concepts/source/appendices/books-referenced|[PEAA]]\], *OS Abstraction Layer*, or *Platform Abstraction Layer / Hardware Abstraction Layer*, depending on what kind of component it adapts\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Layers-1.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Layers-1.png" alt="Individual layers may depend on other layers' APIs, SPIs, or both. In the last case the layer between the SPI and API is an adapter." loading="lazy" width=89%/>
-</a>
-</div>
+
+![Individual layers may depend on other layers' APIs, SPIs, or both. In the last case the layer between the SPI and API is an adapter.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Layers-1.png)
+
 
 A layer can be *closed* \(*strict*\) or *open* \(*relaxed*\)\. A layer above a closed layer depends only on the closed layer right below it – it does not see through it\. Conversely, a layer above an open layer may depend on both the open layer and the layer below it – the open layer is transparent\. That helps keep a layer which encapsulates only one or two subdomains small: if such a layer were closed, it would have to copy much of the interface of the layer below it just to pass the incoming requests which it does not know how to handle through to the layer below\. The size optimization of open layers has a cost: the team that works on the layer above an open layer needs to learn APIs of both layers below it, which may even differ in their terminologies\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Layers-2.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Layers-2.png" alt="Dependencies for open and closed layers." loading="lazy" width=93%/>
-</a>
-</div>
+
+![Dependencies for open and closed layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Layers-2.png)
+
 
 If you ever need to *scale* \(run multiple instances of\) a layer, you may notice that a layer which sends requests naturally supports multiple instances, either through the use of communication channels or with the instance address being appended to each request so that its destination layer knows where to send the response\. On the other hand, if there are multiple instances of a layer you call into, you need a kind of [[wiki/concepts/source/extension-metapatterns/proxy|*Load Balancer*]] to dispatch requests among the instances\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Layers-3.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Layers-3.png" alt="A load balancer helps access multiple instances of a layer directly below it." loading="lazy" width=93%/>
-</a>
-</div>
+
+![A load balancer helps access multiple instances of a layer directly below it.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Layers-3.png)
+
 
 ### Applicability
 
@@ -152,11 +134,9 @@ If you ever need to *scale* \(run multiple instances of\) a layer, you may notic
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Layers.png" alt="Splitting a layer into services and splitting a service into layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Splitting a layer into services and splitting a service into layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Layers.png)
+
 
 *Layers*:
 
@@ -235,11 +215,9 @@ That clarity of design, which separates technically different pieces, is opposed
 
 Balancing the [[wiki/concepts/source/analytics/cohesers-and-decouplers|cohesers and decouplers]] listed above usually results in coarse\-grained system components each of which covers several concerns, with some real\-world system compositions shown in the [Examples section](#examples) later in this chapter\. However, first we need to see which kinds of roles a system layer may incorporate:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Layer%20Roles.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Layer%20Roles.png" alt="A stack of layers: client or user, interface, application, domain, generic code, communication, data, and operating system and hardware." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A stack of layers: client or user, interface, application, domain, generic code, communication, data, and operating system and hardware.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Layer%20Roles.png)
+
 
 ### Interface \(API or UI\)
 
@@ -257,21 +235,17 @@ There are also other kinds of *Proxies* which adapt a system to foreign interfac
 - A [[wiki/concepts/source/extension-metapatterns/proxy|*Hardware Abstraction Layer* or *Operating System Abstraction Layer*]] stands between a system and an underlying hardware or OS, respectively, to make the system portable\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Interface%20-%20Kinds.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Interface%20-%20Kinds.png" alt="A service wrapped with: a gateway with its API, a user interface, an Anticorruption Layer, a plugin and an Open Host Service with a Published Language." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A service wrapped with: a gateway with its API, a user interface, an Anticorruption Layer, a plugin and an Open Host Service with a Published Language.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Interface%20-%20Kinds.png)
+
 
 A *Proxy* that implements an interface may reside in a dedicated layer \(and there may be multiple *Proxies* stacked together, for example, a *Gateway* behind a [[wiki/concepts/source/extension-metapatterns/proxy|*Firewall*]]\) or be merged with a neighboring layer: for example, an [[wiki/concepts/source/extension-metapatterns/proxy|*API Gateway*]] fills the roles of both interface and [*application*](#application-use-cases-or-integration)\.
 
 An interface layer can contain multiple components \(services, modules, or high\-level classes\) when the system below it supports several kinds of clients: a bank is likely to provide a web interface, a mobile application, and a SWIFT endpoint\. See [*Backends for Frontends*](<Backends for Frontends (BFF)>) for a detailed description\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Interface%20-%20Derived.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Interface%20-%20Derived.png" alt="Diagrams of an API Gateway and Backends for Frontends." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of an API Gateway and Backends for Frontends.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Interface%20-%20Derived.png)
+
 
 ### Application \(use cases or integration\)
 
@@ -294,11 +268,9 @@ When an application resides in a dedicated layer, it is called an [[wiki/concept
 
 Some systems lack the application role – they are structured as [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipelines*]], so that whatever enters one end of the system passes through all its components and pops out, digested, at the other end\. In that case it is the very structure of the system – the connections between its components – that drive its workflow\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Application%20-%20Derived.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Application%20-%20Derived.png" alt="Backends for Frontends between a gateway and a monolithic service; a pipeline with use case logic hardwired into the graph of connections." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Backends for Frontends between a gateway and a monolithic service; a pipeline with use case logic hardwired into the graph of connections.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Application%20-%20Derived.png)
+
 
 ### Domain \(business rules or model\)
 
@@ -323,11 +295,9 @@ As the largest layer, the domain is often the first among them to be subdivided:
 - Last but not least, we can use separate models for making changes \(executing *commands*\) and for analytics \(running *queries*\), giving rise to [[wiki/concepts/source/fragmented-metapatterns/layered-services|*Command Query Responsibility Segregation* \(*CQRS*\)]]\. This makes sense because a command usually involves many fields of a single record \(database row\) while a query runs over select rows of all the records – they vary in how they access and treat the data, which is why it is common to have a record wrapped into an OOP class in the command model, while the query model, if it is not omitted completely, provides for direct access to the database\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Domain%20-%20Derived.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Domain%20-%20Derived.png" alt="Diagrams of Services, Sandwich, Hierarchy, and Command-Query Responsibility Segregation." loading="lazy" width=74%/>
-</a>
-</div>
+
+![Diagrams of Services, Sandwich, Hierarchy, and Command-Query Responsibility Segregation.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Domain%20-%20Derived.png)
+
 
 ### Generic code \(libraries and utilities\)
 
@@ -342,21 +312,17 @@ In most cases generic code stays together with the [*domain*\-level code](#domai
   - Copied into the codebases of the services to allow each team to change it independently from other teams – see *Separate Ways* in \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\]\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Generic%20Code%20-%20Derived.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Generic%20Code%20-%20Derived.png" alt="Diagrams of Services, Service-Oriented Architecture, and Microservices with sidecars, with components that carry generic code highlighted." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Services, Service-Oriented Architecture, and Microservices with sidecars, with components that carry generic code highlighted.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Generic%20Code%20-%20Derived.png)
+
 
 ### Communication \(middleware\)
 
 If your system is made of multiple components, they need a way to communicate, which may be as simple as in\-process method calls or as complex as a [distributed consensus protocol](https://en.wikipedia.org/wiki/Paxos_(computer_science))\. The *communication infrastructure*, when used consistently throughout a system, makes a distinct virtual \(conjoining separately deployed nodes\) system layer, called [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] and often implemented with a [[wiki/concepts/source/implementation-metapatterns/mesh|*Mesh*]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Communication%20-%20Derived.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Communication%20-%20Derived.png" alt="Multiple instances of a communication library represented as a virtual middleware layer." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Multiple instances of a communication library represented as a virtual middleware layer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Communication%20-%20Derived.png)
+
 
 ### Data \(persistence\)
 
@@ -367,19 +333,15 @@ Most systems but the simplest [[wiki/concepts/source/basic-metapatterns/pipeline
 - Complex distributed frameworks that implement [[wiki/concepts/source/basic-metapatterns/services|*Actors*]] or [[wiki/concepts/source/implementation-metapatterns/mesh|*Space\-Based Architecture*]] both keep each service’s data inside the service’s memory for fast access and back all the changes to a persistent data store to support failure recovery\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Data%20-%20Derived.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Data%20-%20Derived.png" alt="Diagrams of a three-tier system, hierarchical control system, and Space-Based Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of a three-tier system, hierarchical control system, and Space-Based Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Data%20-%20Derived.png)
+
 
 If the persistence layer becomes a system’s performance bottleneck, as it often does, one of [[wiki/concepts/source/extension-metapatterns/shared-repository|the cures]] is using several specialized data stores, leading to [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Polyglot Persistence*]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Data%20-%20Evolutions.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Data%20-%20Evolutions.png" alt="A load-balanced service over a database evolves into a monolith with two specialized databases or into a load-balanced stateless service over database replicas with a single leader." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A load-balanced service over a database evolves into a monolith with two specialized databases or into a load-balanced stateless service over database replicas with a single leader.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Data%20-%20Evolutions.png)
+
 
 ### Operating system and hardware
 
@@ -387,11 +349,9 @@ All software always runs on *hardware* and usually relies on an *operating syste
 
 Integrating multiple pieces of hardware into an intelligently behaving system is usually what [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|*control software*]] is written for\. Such systems [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|often follow]] the [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Pedestal*]], [[wiki/concepts/source/basic-metapatterns/services|*Actors*]], or [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Hierarchy*]] architectures\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Control%20-%20variants.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Control%20-%20variants.png" alt="Diagrams of control systems with the following architectures: monolithic, actors, Pedestal, hierarchical." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of control systems with the following architectures: monolithic, actors, Pedestal, hierarchical.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/Control%20-%20variants.png)
+
 
 ## Examples
 
@@ -405,11 +365,9 @@ The notion of layering seems to be so natural to our minds that most known archi
 
 ### Entity\-Control\-Boundary \(ECB\), Entity\-Boundary\-Control \(EBC\), Boundary\-Control\-Entity \(BCE\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/ECB.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/ECB.png" alt="The boundary, control and entity layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The boundary, control and entity layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/ECB.png)
+
 
 [*Entity\-Control\-Boundary*](https://en.wikipedia.org/wiki/Entity%E2%80%93control%E2%80%93boundary) \(*ECB*\) or other combinations of these words \(*EBC* and *BCE*\) designate a system composed of the following layers:
 
@@ -420,19 +378,15 @@ The notion of layering seems to be so natural to our minds that most known archi
 
 A closer look at an *ECB* system may reveal a finer\-grained structure that resembles [*Backends for Frontends*](<Backends for Frontends (BFF)>) or [*Service\-Oriented Architecture*](<Service-Oriented Architecture (SOA)>) as each layer is composed of modules or objects:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/ECB%20as%20SOA.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/ECB%20as%20SOA.png" alt="The boundary, control and entity layers, each subdivided into several services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The boundary, control and entity layers, each subdivided into several services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/ECB%20as%20SOA.png)
+
 
 ### Domain\-Driven Design \(DDD\) Layers
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/DDD.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/DDD.png" alt="The four layers of Domain-Driven Design: presentation, application, domain, and infrastructure." loading="lazy" width=86%/>
-</a>
-</div>
+
+![The four layers of Domain-Driven Design: presentation, application, domain, and infrastructure.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/DDD.png)
+
 
 *Domain\-Driven Design* \(*DDD*\), as given in \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\], is a methodology for enterprise\-scale backend development which extends the more generic [*Entity\-Control\-Boundary*](#entity-control-boundary-ecb-entity-boundary-control-ebc-boundary-control-entity-bce) with a new *Infrastructure* layer responsible for [*communication*](#communication-middleware) and [*persistence*](#data-persistence) roles which don’t exist in most desktop applications\. Its layers are called:
 
@@ -454,11 +408,9 @@ However, in practice you are much more likely to encounter the derived [[wiki/co
 
 ### Three\-Tier Architecture
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Three-Tier.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Three-Tier.png" alt="Four instances of the presentation layer accessing two instances of the logic layer accessing a single database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Four instances of the presentation layer accessing two instances of the logic layer accessing a single database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Three-Tier.png)
+
 
 Here the focus lies with the distribution of the components over heterogeneous hardware \(*Tiers*\):
 
@@ -473,11 +425,9 @@ In this case the division into layers resolves the conflict between scalability,
 
 ### Embedded systems
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Embedded.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Embedded.png" alt="An embedded system with the following pairs of layers: user interface and human-machine interface, software development kit and hardware abstraction layer, firmware and hardware." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An embedded system with the following pairs of layers: user interface and human-machine interface, software development kit and hardware abstraction layer, firmware and hardware.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Embedded.png)
+
 
 Bare metal and micro\-OS systems which run on low\-end chips use a different terminology, which is not unified across domains\. A generic example involves:
 
@@ -506,22 +456,18 @@ Not all the layered architectures are equally layered\. A [[wiki/concepts/source
 - Implementing an [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] on top of your system may improve programming experience and runtime performance for your clients\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Layers.png" alt="A diagram of calls in a layered system. A single request from a client is translated by an Orchestrator into multiple calls to lower layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of calls in a layered system. A single request from a client is translated by an Orchestrator into multiple calls to lower layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Layers.png)
+
 
 It is also common to:
 
 - Have the business logic divided into two layers\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20in%20Two.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20in%20Two.png" alt="A backend is subdivided into application and domain layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A backend is subdivided into application and domain layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Split%20in%20Two.png)
+
 
 ### [[wiki/concepts/source/appendices/evolutions-of-layers-that-help-large-projects|Evolutions that help large projects]]
 
@@ -530,29 +476,23 @@ The main drawback \(and benefit as well\) of *Layers* is that much or all of the
 - In a [[wiki/concepts/source/extension-metapatterns/sandwich|*Sandwich*]] the middle layer with the main business logic is divided into [[wiki/concepts/source/basic-metapatterns/services|*Services*]], leaving the upper [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] and lower [[wiki/concepts/source/extension-metapatterns/shared-repository|*database*]] layers intact for future evolutions\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20Domain%20to%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20Domain%20to%20Services.png" alt="The domain layer is split into subdomain components, making a Sandwich." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The domain layer is split into subdomain components, making a Sandwich.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Split%20Domain%20to%20Services.png)
+
 
 - Sometimes the business logic can be represented as a set of directed graphs which is known as [[wiki/concepts/source/basic-metapatterns/pipeline|*Event\-Driven Architecture*]]\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20to%20Event-Driven%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20to%20Event-Driven%20Architecture.png" alt="A backend is subdivided into a pipeline." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A backend is subdivided into a pipeline.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Split%20to%20Event-Driven%20Architecture.png)
+
 
 - If you are lucky, your domain makes a [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Top\-Down Hierarchy*]]\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Hierarchy.png" alt="The lower layers of a system are subdivided, resulting in a hierarchy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The lower layers of a system are subdivided, resulting in a hierarchy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Hierarchy.png)
+
 
 ### [[wiki/concepts/source/appendices/evolutions-of-layers-to-improve-performance|Evolutions that improve performance]]
 
@@ -561,40 +501,32 @@ There are several ways to improve the performance of a layered system\. One we h
 - [[wiki/concepts/source/implementation-metapatterns/mesh|*Space\-Based Architecture*]] co\-locates the data store and business logic and scales both dynamically\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Space-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Space-Based%20Architecture.png" alt="The database is migrated to a Data Grid, resulting in a scalable Space-Based Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The database is migrated to a Data Grid, resulting in a scalable Space-Based Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Space-Based%20Architecture.png)
+
 
 Others are new:
 
 - Merging several layers improves latency by eliminating the communication overhead\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Merge.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Merge.png" alt="The application and domain layers are merged." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The application and domain layers are merged.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Merge.png)
+
 
 - [[wiki/concepts/source/basic-metapatterns/shards|Scaling]] some of the layers may improve throughput\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers_%20Shard.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers_%20Shard.png" alt="The application and domain layers are independently sharded." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The application and domain layers are independently sharded.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers_%20Shard.png)
+
 
 - [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Polyglot Persistence*]] is the name for using multiple specialized data stores\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Polyglot%20Persistence.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Polyglot%20Persistence.png" alt="The database layer is subdivided into specialized databases, resulting in Polyglot Persistence." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The database layer is subdivided into specialized databases, resulting in Polyglot Persistence.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Polyglot%20Persistence.png)
+
 
 ### [[wiki/concepts/source/appendices/evolutions-of-layers-to-gain-flexibility|Evolutions to gain flexibility]]
 
@@ -605,22 +537,18 @@ The last group of evolutions to consider is about making the system more adaptab
 - [[wiki/concepts/source/implementation-metapatterns/microkernel|*Scripts*]] allow for customization of the system’s logic on a per client basis\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png" alt="Diagrams of Layers with plugins, Layers with scripts, and Hexagonal Architecture with a layered core." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Layers with plugins, Layers with scripts, and Hexagonal Architecture with a layered core.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png)
+
 
 There is also one new evolution which modifies the upper \(*orchestration*\) layer:
 
 - The [[wiki/concepts/source/extension-metapatterns/orchestrator|orchestration layer]] may be split into [*Backends for Frontends*](<Backends for Frontends (BFF)>) to match the individual needs of several kinds of clients\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Backends%20for%20Frontends.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Backends%20for%20Frontends.png" alt="The application layer is split into Backends for Frontends." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The application layer is split into Backends for Frontends.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Backends%20for%20Frontends.png)
+
 
 ## Summary
 

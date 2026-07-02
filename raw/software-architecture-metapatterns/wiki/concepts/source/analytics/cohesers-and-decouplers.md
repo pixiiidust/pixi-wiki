@@ -22,11 +22,9 @@ Any project carries many constraints \(*forces*\), some of which want for certai
 
 Let’s explore how a force influences the structure of a project\. Consider the *clarity of code* which determines *development velocity*:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Pain.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Pain.png" alt="A chart that shows that unstructured code is the least painful solution for a tiny project while something large is unbearable if not decomposed into services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A chart that shows that unstructured code is the least painful solution for a tiny project while something large is unbearable if not decomposed into services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Pain.png)
+
 
 When you have 10 lines of business logic, you are likely to write them down as a simple script\. Separating them into classes or deploying 5 services, each running 2 lines of code, is an overkill which would make the complexity of your infrastructure much higher than that of the task on hand\.
 
@@ -42,11 +40,9 @@ As we see from the example above, code clarity favors *cohesiveness* \(everythin
 
 Such a behavior is common for architectural forces and, by the way, it is also the case with editing sorted data\. Array is the most efficient data structure for a small collection \(up to about 1 000 elements\) while anything larger requires a hash map or [B\-tree](https://en.wikipedia.org/wiki/B-tree) \(hierarchy of arrays\)\. Just as a database splits oversized arrays because they are too slow to edit, the human mind is inefficient with large collections of similar items and wants them to be restructured into a hierarchy\. When we look into a service, we see only the classes it contains\. When we examine a class, we check the list of its methods, not those of surrounding classes\. And when we open a method, we try to understand how its lines of code work together\. This is the way humans fight complexity – by selecting a segment at one level of abstraction and ignoring everything around\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Hierarchy.png" alt="The hierarchical decomposition of logic into methods of classes in a service is compared to that of data in a B-tree." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The hierarchical decomposition of logic into methods of classes in a service is compared to that of data in a B-tree.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Hierarchy.png)
+
 
 A hierarchy inherently adds some inconvenience – traversing levels of a B\-tree slows down operations, and a project with many files takes time to grasp – which is why we avoid deep hierarchies in smaller projects \(or datasets\) – yet that is still a very low cost for having every individual component \(a method, class, or module in a project; an array in a B\-tree\) stay reasonably small and simple thanks to the distribution of the overall complexity \(or data\) over the hierarchy\.
 
@@ -81,11 +77,9 @@ And there can be forces which try to keep your code fragmented:
 
 ## Expansion and contraction
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Lifecycle.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Heart/Lifecycle.png" alt="A monolith transforming into Layered Services, whose application layers partially merge and domain layers split, only to finally glue into Layers with multiple databases." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A monolith transforming into Layered Services, whose application layers partially merge and domain layers split, only to finally glue into Layers with multiple databases.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Heart/Lifecycle.png)
+
 
 As was [[wiki/concepts/source/analytics/architecture-and-product-life-cycle|discussed previously]], when you start a project by building a [PoC](https://en.wikipedia.org/wiki/Proof_of_concept#Software_development) or prototype, you have little code and must move quickly\. Most of the *decouplers* are not there and the *bidirectional forces* favor cohesion, thus you don’t waste your time on extra interfaces or fine\-grained services\. You don’t have multiple teams to fall prey to Conway’s law\.
 

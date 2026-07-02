@@ -28,11 +28,9 @@ The [[wiki/concepts/source/basic-metapatterns/basic-metapatterns|basic topologie
 
 ### [[wiki/concepts/source/basic-metapatterns/monolith|Monolith]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Monolith.png" alt="A diagram of Monolith, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Monolith, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Monolith.png)
+
 
 [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] stands for encapsulation – we use the thing without looking inside:
 
@@ -46,11 +44,9 @@ The [[wiki/concepts/source/basic-metapatterns/basic-metapatterns|basic topologie
 
 ### [[wiki/concepts/source/basic-metapatterns/shards|Shards]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Shards.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Shards.png" alt="A diagram of Shards, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Shards, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Shards.png)
+
 
 [[wiki/concepts/source/basic-metapatterns/shards|*Shards*]] is about having multiple instances of something, which often differ in their data:
 
@@ -64,11 +60,9 @@ The [[wiki/concepts/source/basic-metapatterns/basic-metapatterns|basic topologie
 
 ### [[wiki/concepts/source/basic-metapatterns/layers|Layers]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Layers.png" alt="A diagram of Layered Architecture, with explanations." loading="lazy" width=95%/>
-</a>
-</div>
+
+![A diagram of Layered Architecture, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Layers.png)
+
 
 [[wiki/concepts/source/basic-metapatterns/layers|*Layers*]] is the separation of responsibilities between external and internal components:
 
@@ -80,11 +74,9 @@ The [[wiki/concepts/source/basic-metapatterns/basic-metapatterns|basic topologie
 
 ### [[wiki/concepts/source/basic-metapatterns/services|Services]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Services.png" alt="A diagram of Services, with explanations." loading="lazy" width=95%/>
-</a>
-</div>
+
+![A diagram of Services, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Services.png)
+
 
 [[wiki/concepts/source/basic-metapatterns/services|*Services*]] boil down to composition and [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns):
 
@@ -98,11 +90,9 @@ The [[wiki/concepts/source/basic-metapatterns/basic-metapatterns|basic topologie
 
 ### [[wiki/concepts/source/basic-metapatterns/pipeline|Pipeline]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Pipeline.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Pipeline.png" alt="A diagram of Pipeline, with explanations." loading="lazy" width=95%/>
-</a>
-</div>
+
+![A diagram of Pipeline, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Pipeline.png)
+
 
 [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipeline*]] is about the stepwise transformation of data:
 
@@ -120,11 +110,9 @@ An [[wiki/concepts/source/extension-metapatterns/extension-metapatterns|extensio
 
 ### [[wiki/concepts/source/extension-metapatterns/middleware|Middleware]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Middleware.png" alt="A diagram of Services with a middleware, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with a middleware, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Middleware.png)
+
 
 A [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] abstracts scaling and/or intercommunication:
 
@@ -137,11 +125,9 @@ A [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] abstra
 
 ### [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Shared%20Repository.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Shared%20Repository.png" alt="A diagram of Services with a shared repository, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with a shared repository, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Shared%20Repository.png)
+
 
 A [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]] provides data storage and/or data change notifications:
 
@@ -154,11 +140,9 @@ A [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Reposi
 
 ### [[wiki/concepts/source/extension-metapatterns/proxy|Proxy]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Proxy.png" alt="A diagram of Services with a proxy, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with a proxy, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Proxy.png)
+
 
 A [[wiki/concepts/source/extension-metapatterns/proxy|*Proxy*]] isolates a system from its environment by translating between the internal and external protocols and/or implementing generic aspects of communication:
 
@@ -170,11 +154,9 @@ A [[wiki/concepts/source/extension-metapatterns/proxy|*Proxy*]] isolates a syste
 
 ### [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Orchestrator.png" alt="A diagram of Services with an orchestrator, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with an orchestrator, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Orchestrator.png)
+
 
 An [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] integrates several components by implementing high\-level use cases and/or keeping the components in sync:
 
@@ -185,11 +167,9 @@ An [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] i
 
 ### [[wiki/concepts/source/extension-metapatterns/sandwich|Sandwich]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Sandwich.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Sandwich.png" alt="A diagram of Sandwich Architecture, with explanations." loading="lazy" width=91%/>
-</a>
-</div>
+
+![A diagram of Sandwich Architecture, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Sandwich.png)
+
 
 In [[wiki/concepts/source/extension-metapatterns/sandwich|*Sandwich*]] a varied and segmented layer with the most valuable code is operated and held in place by other, cohesive layers:
 
@@ -204,11 +184,9 @@ A [[wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns|fragmen
 
 ### [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|Polyglot Persistence]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Polyglot%20Persistence.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Polyglot%20Persistence.png" alt="A diagram of Services with Polyglot Persistence, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with Polyglot Persistence, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Polyglot%20Persistence.png)
+
 
 [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Polyglot Persistence*]] is about having multiple containers for data:
 
@@ -219,11 +197,9 @@ A [[wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns|fragmen
 
 ### [Backends for Frontends](<Backends for Frontends (BFF)>)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Backends%20for%20Frontends.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Backends%20for%20Frontends.png" alt="A diagram of Services with Backends for Frontends, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with Backends for Frontends, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Backends%20for%20Frontends.png)
+
 
 [*Backends for Frontends*](<Backends for Frontends (BFF)>) is about treating different kinds of clients individually:
 
@@ -234,11 +210,9 @@ A [[wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns|fragmen
 
 ### [Service\-Oriented Architecture](<Service-Oriented Architecture (SOA)>)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Service-Oriented%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Service-Oriented%20Architecture.png" alt="A diagram of Service-Oriented Architecture, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Service-Oriented Architecture, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Service-Oriented%20Architecture.png)
+
 
 [*SOA*](<Service-Oriented Architecture (SOA)>) applies OOP techniques, including component reuse, to deal with complex systems:
 
@@ -249,11 +223,9 @@ A [[wiki/concepts/source/fragmented-metapatterns/fragmented-metapatterns|fragmen
 
 ### [[wiki/concepts/source/fragmented-metapatterns/hierarchy|Hierarchy]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Hierarchy.png" alt="A diagram of Hierarchy, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Hierarchy, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Hierarchy.png)
+
 
 [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Hierarchy*]] distributes system’s complexity over multiple levels:
 
@@ -267,11 +239,9 @@ An [[wiki/concepts/source/implementation-metapatterns/implementation-metapattern
 
 ### [[wiki/concepts/source/implementation-metapatterns/plugins|Plugins]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Plugins.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Plugins.png" alt="A diagram of Plugins Architecture, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Plugins Architecture, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Plugins.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] make a component’s behavior flexible through delegating its parts to small external additions:
 
@@ -281,11 +251,9 @@ An [[wiki/concepts/source/implementation-metapatterns/implementation-metapattern
 
 ### [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Hexagonal Architecture]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Hexagonal%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Hexagonal%20Architecture.png" alt="A diagram of Hexagonal Architecture, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Hexagonal Architecture, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Hexagonal%20Architecture.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Hexagonal Architecture*]] protects the internals of a system from its environment:
 
@@ -297,11 +265,9 @@ An [[wiki/concepts/source/implementation-metapatterns/implementation-metapattern
 
 ### [[wiki/concepts/source/implementation-metapatterns/microkernel|Microkernel]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Microkernel.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Microkernel.png" alt="A diagram of Microkernel, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Microkernel, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Microkernel.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/microkernel|*Microkernel*]] shares the goods of resource providers among resource users:
 
@@ -312,11 +278,9 @@ An [[wiki/concepts/source/implementation-metapatterns/implementation-metapattern
 
 ### [[wiki/concepts/source/implementation-metapatterns/mesh|Mesh]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Mesh.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Mesh.png" alt="A diagram of Services over a mesh, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services over a mesh, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Mesh.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/mesh|*Mesh*]] resembles grassroots movements – self\-organization and survival through redundancy:
 

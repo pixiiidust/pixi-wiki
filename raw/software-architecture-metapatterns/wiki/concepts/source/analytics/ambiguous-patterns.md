@@ -20,11 +20,9 @@ We’ve seen a single pattern come under many names, as happens with [[wiki/conc
 
 ### Monolith
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-Monolith.png" alt="Diagrams of a Monolith as a single component, a co-deployed system, a synchronous distributed system, a Layered Architecture, and modules with a shared database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of a Monolith as a single component, a co-deployed system, a synchronous distributed system, a Layered Architecture, and modules with a shared database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Ambiguous-Monolith.png)
+
 
 The old books, namely \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\] and \[[wiki/concepts/source/appendices/books-referenced|[POSA1]]\], described a *tightly coupled* [[wiki/concepts/source/basic-metapatterns/monolith|*unstructured* system]], where everything depends on everything, as *monolithic*, which matched the meaning of the word in Latin – “single stone”\.
 
@@ -36,11 +34,9 @@ The novel misnomers, [[wiki/concepts/source/basic-metapatterns/layers|*Layered M
 
 ### Reactor
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Subtypes%20of%20Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Subtypes%20of%20Monolith.png" alt="Control flow diagrams for Reactor, Proactor, and Half-Sync/Half-Async." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Control flow diagrams for Reactor, Proactor, and Half-Sync/Half-Async.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Subtypes%20of%20Monolith.png)
+
 
 People [tend to call](http://ithare.com/category/reactors/) any event\-driven service a *Reactor*\. In fact, there are three patterns that describe different threading models for an event\-handling system:
 
@@ -53,11 +49,9 @@ In most cases we’ll hear of *Proactor* being called *Reactor* – probably bec
 
 ### Microkernel
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-Microkernel.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-Microkernel.png" alt="Diagrams of Microkernel according to Pattern-Oriented Software Architecture and of Plugins Architecture" loading="lazy" width=80%/>
-</a>
-</div>
+
+![Diagrams of Microkernel according to Pattern-Oriented Software Architecture and of Plugins Architecture](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Ambiguous-Microkernel.png)
+
 
 *Microkernel* is another notable case\. The confusion over it goes all the way back to \[[wiki/concepts/source/appendices/books-referenced|[POSA1]]\] which used [[wiki/concepts/source/implementation-metapatterns/microkernel|operating systems]] as examples of [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugin Architecture*]]\. I believe that it was a mismatch:
 
@@ -69,11 +63,9 @@ Thus, here we have two architectural patterns of arguably similar structure \([[
 
 ### Domain Services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-DomainServices.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-DomainServices.png" alt="Diagrams of domain services according to Domain-Driven Design and Fundamentals of Software Architecture." loading="lazy" width=74%/>
-</a>
-</div>
+
+![Diagrams of domain services according to Domain-Driven Design and Fundamentals of Software Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Ambiguous-DomainServices.png)
+
 
 I was told that [[wiki/concepts/source/basic-metapatterns/services|*Domain Services*]] of \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] are an incorrect term – because a *domain service* is always limited to the [[wiki/concepts/source/basic-metapatterns/layers|*domain* layer]] of \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\] while those of \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] also cover the [[wiki/concepts/source/basic-metapatterns/layers|*application*]] and, maybe, *infrastructure*\.
 
@@ -81,11 +73,9 @@ I believe that both definitions are technically correct, if the difference in th
 
 ### Service\-Based Architecture
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-ServiceBasedArchitecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-ServiceBasedArchitecture.png" alt="Diagrams of Service-Based Architecture, Microservices, and Service-Oriented Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Service-Based Architecture, Microservices, and Service-Oriented Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Ambiguous-ServiceBasedArchitecture.png)
+
 
 \[[wiki/concepts/source/appendices/books-referenced|[DEDS]]\] calls anything made of services a *service\-based architecture*\.
 
@@ -95,11 +85,9 @@ Both definitions are technically correct\. One is wider than the other\.
 
 ### Front Controller
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-FrontController.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-FrontController.png" alt="Diagrams of Front Controller according to Patterns of Enterprise Application Architecture and Software Architecture: the Hard Parts." loading="lazy" width=70%/>
-</a>
-</div>
+
+![Diagrams of Front Controller according to Patterns of Enterprise Application Architecture and Software Architecture: the Hard Parts.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Ambiguous-FrontController.png)
+
 
 \[[wiki/concepts/source/appendices/books-referenced|[PEAA]] and [[wiki/concepts/source/appendices/books-referenced|POSA4]]\] define [*Front Controller*](https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648617(v=pandp.10)?redirectedfrom=MSDN) as an [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*MVC*]] \(or, more likely, a [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*MVP*]]\) derivative for backend programming\. In this pattern multiple web pages share a request processing component which turns the incoming requests into commands and forwards them to appropriate page classes\.
 
@@ -107,11 +95,9 @@ The definition from \[[wiki/concepts/source/appendices/books-referenced|[SAHP]]\
 
 ### Cells
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-Cells.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-Cells.png" alt="Diagrams of WSO2 Cells and Amazon Cells." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of WSO2 Cells and Amazon Cells.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Ambiguous-Cells.png)
+
 
 The fresh *Cell\-Based Architecture* also has multiple definitions\.
 
@@ -123,11 +109,9 @@ This case looks like Amazon’s hijacking and redefining a popular emerging tech
 
 ### Nanoservices
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-Nanoservices.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Ambiguous-Nanoservices.png" alt="Diagrams of Nanoservices as an API layer over a shared database, a pipeline, a Space-Based Architecture, actors, and a Service-Based Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Nanoservices as an API layer over a shared database, a pipeline, a Space-Based Architecture, actors, and a Service-Based Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Ambiguous-Nanoservices.png)
+
 
 The *Nanoservices* pattern is another emerging technology and it seems to have never been strictly defined\. Most sources agree that a [[wiki/concepts/source/basic-metapatterns/services|*nanoservice*]] is a cloud\-based function \([*FaaS*](https://en.wikipedia.org/wiki/Function_as_a_service)\), similar to a *service* with a single API method but, just as with the old good [[wiki/concepts/source/basic-metapatterns/services|*services*]], they differ in the ways to use the novel technology:
 

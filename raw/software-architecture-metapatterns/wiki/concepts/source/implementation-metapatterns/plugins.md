@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Implementation metapatterns/Plugins.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Plugins.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Plugins.png" alt="A diagram for Plugins Architecture, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Plugins Architecture, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Plugins.png)
+
 
 *Overspecialize, and you breed in weakness\.* Customize the system through attachable modules\.
 
@@ -52,21 +50,17 @@ The only case for a plugin to improve performance of a system that I can think o
 - Customization of a supplier [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Cell*]] for varying needs of its client *Cells* in [*Domain\-Oriented Microservice Architecture*](<Service-Oriented Architecture (SOA)#domain-oriented-microservice-architecture-doma>)\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Plugins-injection.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Plugins-injection.png" alt="Business logic injection in Layers and Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Business logic injection in Layers and Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Plugins-injection.png)
+
 
 ### Dependencies
 
 Each *plugin* depends on the *core*’s *API* \(for *Addons*\) or *SPI* \(for *Plugins*\) for the functionality it extends\. That makes the APIs and SPIs nearly impossible to modify, only to extend, as there tend to be many plugins in the field, some of them out of active development, that rely on any given method of the already published interfaces\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Plugins.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Plugins.png" alt="Each plugin depends on an interface of the core." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each plugin depends on an interface of the core.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Plugins.png)
+
 
 ### Applicability
 
@@ -84,11 +78,9 @@ Each *plugin* depends on the *core*’s *API* \(for *Addons*\) or *SPI* \(for *P
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Plugins.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Plugins.png" alt="A monolith with plugins; layers with plugins; a Cell with a plugin." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A monolith with plugins; layers with plugins; a Cell with a plugin.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Plugins.png)
+
 
 *Plugins*:
 
@@ -160,11 +152,9 @@ Plugins may be:
 
 ### True Plugin \(or Plug\-in\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Plugins.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Plugins.png" alt="Several low-level plugins are called by a use case running in a system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Several low-level plugins are called by a use case running in a system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Plugins.png)
+
 
 A true *Plugin* is registered with and called by the system’s *core* to provide \(as an algorithm\) or extend \(as a custom step\) a specific low\-level functionality\. It is usually made by a third party\.
 
@@ -174,11 +164,9 @@ Examples: codecs in a video player, country\-specific tax calculation rules in a
 
 ### [[wiki/concepts/source/extension-metapatterns/proxy|Ambassador]] Plugin, Logic Extension
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Ambassador%20Plugin.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Ambassador%20Plugin.png" alt="An ambassador plugin is a part of one service hosted inside another service. When called, it may consult its origin service or make independent decisions." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An ambassador plugin is a part of one service hosted inside another service. When called, it may consult its origin service or make independent decisions.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Ambassador%20Plugin.png)
+
 
 A service may accept *Plugins* that [act on behalf of peer services](https://www.uber.com/en-UA/blog/microservice-architecture/) \(are are their [[wiki/concepts/source/extension-metapatterns/proxy|*Ambassadors*]]\) and are implemented by their teams\. That [[wiki/concepts/source/analytics/dependency-inversion-in-architectural-patterns|inverts dependencies]]: whoever wants to affect the behavior of your service uses your SPI to inject their code into your service which apart from that remains self\-contained\. As a result, whatever used to be a system\-wide workflow becomes limited to a single subdomain\.
 
@@ -188,11 +176,9 @@ Though an *Ambassador Plugin* \(aka Uber’s [*Logic Extension*](https://www.ube
 
 ### Extension
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Extension.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Extension.png" alt="An extension is called as a high-level part of a system's use case." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An extension is called as a high-level part of a system's use case.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Extension.png)
+
 
 An *Extension* changes use cases by modifying the application’s business logic, but it is still called by the application’s *core*\. An *Extension* may install a group of low\-level *Plugins* which add to the system’s low\-level functionality whatever tools the *Extension* relies on\.
 
@@ -200,11 +186,9 @@ Examples: IDE customization\.
 
 ### Addin \(or Add\-in\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Addin.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Addin.png" alt="An addin is hosted inside a system and implements a part of its control flow." loading="lazy" width=94%/>
-</a>
-</div>
+
+![An addin is hosted inside a system and implements a part of its control flow.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Addin.png)
+
 
 An *Add\-in* is deeply integrated with the *core* – the system has been originally designed to provide it thorough access to its internals\. It comes from the system’s creators or external teams that commit to the system *core*’s codebase\.
 
@@ -212,11 +196,9 @@ Examples: complex extensions for web browsers or static website generators\.
 
 ### \(inexact\) Addon \(or Add\-on\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Addon.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Addon.png" alt="An addon is a layer between a system and its client. It translates a single client request into multiple calls to the underlying system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An addon is a layer between a system and its client. It translates a single client request into multiple calls to the underlying system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Addon.png)
+
 
 Though any of the variants of *Plugins* described above may sometimes be called an *addon*, there is a kind of system extension which perfectly matches the meaning of the word\.
 

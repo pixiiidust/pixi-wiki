@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Extension metapatterns/Middleware.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Middleware.png" alt="A diagram for Services with a middleware, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Services with a middleware, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Middleware.png)
+
 
 *The line between disorder and order lies in logistics\.* Use a shared transport\.
 
@@ -58,11 +56,9 @@ A more subtle drawback is that transports which a *Middleware* supports or uses 
 
 Each service depends both on the *Middleware* and on the API of every service it communicates with\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Middleware.png" alt="Each service depends on the middleware and on every service which it uses." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each service depends on the middleware and on every service which it uses.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Middleware.png)
+
 
 You may decide to use an [[wiki/concepts/source/extension-metapatterns/proxy|*Anticorruption Layer*]] over your *Middleware* just in case you may need to change its vendor in the future\. That will trade performance for flexibility\.
 
@@ -83,11 +79,9 @@ You may decide to use an [[wiki/concepts/source/extension-metapatterns/proxy|*An
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Middleware.png" alt="Middleware for Services, Shards, and Service-Oriented Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Middleware for Services, Shards, and Service-Oriented Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Middleware.png)
+
 
 *Middleware*:
 
@@ -143,11 +137,9 @@ If the messages are stored indefinitely, the *Middleware* [becomes](#persistent-
 
 ### By structure \([[wiki/concepts/source/implementation-metapatterns/microkernel|Microkernel]], [[wiki/concepts/source/implementation-metapatterns/mesh|Mesh]], Broker\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Middleware%20-%20Structure.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Middleware%20-%20Structure.png" alt="In middleware each service is co-located with a generic component which may either be a node of a mesh or forward the service's requests to a centralized broker as a proxy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![In middleware each service is co-located with a generic component which may either be a node of a mesh or forward the service's requests to a centralized broker as a proxy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Middleware%20-%20Structure.png)
+
 
 A *Middleware* may be:
 
@@ -171,21 +163,17 @@ There are several patterns which extend *Middleware* with other functions:
 
 ### [[wiki/concepts/source/extension-metapatterns/shared-repository|Persistent Event Log, Shared Event Store]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Middleware%20-%20Shared%20Event%20Store.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Middleware%20-%20Shared%20Event%20Store.png" alt="Both persistent event log and shared event store merge the functionality of middleware and shared repository." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Both persistent event log and shared event store merge the functionality of middleware and shared repository.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Middleware%20-%20Shared%20Event%20Store.png)
+
 
 When a *Middleware* persists messages, it takes on the function \(and drawbacks\) of a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]]\. A *Persistent Event Log* allows to replay events incoming to a given service \(to help a debug session or fix data corrupted by a bug\) while a *Shared Event Store* also captures changes of the internal states of the services \[[wiki/concepts/source/appendices/books-referenced|[DEDS]]\], thus [replacing their private databases](https://cloudnative.ly/event-driven-architectures-edas-vs-event-sourcing-c8582578e87)\. However, with either approach, changing an event field impacts all the services that use the event and may involve rewriting the entire event log \(the system’s history\) \[[wiki/concepts/source/appendices/books-referenced|[DEDS]]\]\.
 
 ### [[wiki/concepts/source/implementation-metapatterns/mesh|Service Mesh]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Microservices.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Microservices.png" alt="Multiple instances of several services connected to their sidecars which are connected to a shared mesh engine. Instances of each service access its single database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Multiple instances of several services connected to their sidecars which are connected to a shared mesh engine. Instances of each service access its single database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Microservices.png)
+
 
 *Service Mesh* \[[wiki/concepts/source/appendices/books-referenced|[FSA]], [[wiki/concepts/source/appendices/books-referenced|MP]]\] is a smart [[wiki/concepts/source/implementation-metapatterns/mesh|*Mesh*]]\-based *Middleware* that manages service instances and employs at least one co\-located [[wiki/concepts/source/extension-metapatterns/proxy|*Proxy*]] \(called [[wiki/concepts/source/extension-metapatterns/proxy|*Sidecar*]]\) per service instance deployed\. The *Sidecars* may provide protocol translation and cover cross\-cutting concerns such as encryption or logging\. They make a good place for shared libraries\.
 
@@ -193,21 +181,17 @@ The internals of [[wiki/concepts/source/implementation-metapatterns/mesh|*Servic
 
 ### Message Bus
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Message%20Bus.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Message%20Bus.png" alt="A message bus has an adapter per service to allow each service to use its own protocol." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A message bus has an adapter per service to allow each service to use its own protocol.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Message%20Bus.png)
+
 
 A *Message Bus* \[[wiki/concepts/source/appendices/books-referenced|[EIP]]\] employs one or more [[wiki/concepts/source/extension-metapatterns/proxy|*Adapters*]] per service to let the services intercommunicate even if they differ in protocols\. That helps to integrate legacy services without major changes to their code but it degrades the overall performance as up to two protocol translations per message are involved\.
 
 ### [[wiki/concepts/source/extension-metapatterns/orchestrator|Event Mediator]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Event%20Mediator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Event%20Mediator.png" alt="An event mediator calls event processors one by one." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An event mediator calls event processors one by one.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Event%20Mediator.png)
+
 
 *Event Mediator* \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\], which pervades both [[wiki/concepts/source/basic-metapatterns/pipeline|*Event\-Driven Architecture*s]] and [[wiki/concepts/source/basic-metapatterns/pipeline|*Nanoservices*]], combines a *Middleware* \(used for the delivery of messages\) and an [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] \(that coordinates high\-level use cases\)\. A message arrives to a service and is responded to without any explicit support on the service’s side – it appears *out of thin Middleware* which implements the entire integration logic\.
 
@@ -215,11 +199,9 @@ Slightly more details on the *Event Mediator* are [[wiki/concepts/source/extensi
 
 ### [[wiki/concepts/source/extension-metapatterns/orchestrator|Enterprise Service Bus]] \(ESB\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Enterprise%20Service%20Bus.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Enterprise%20Service%20Bus.png" alt="An Enterprise Service Bus is between the fragmented task and entity layers of Service-Oriented Architecture. It mediates all calls and messages between the system components." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An Enterprise Service Bus is between the fragmented task and entity layers of Service-Oriented Architecture. It mediates all calls and messages between the system components.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Enterprise%20Service%20Bus.png)
+
 
 [*Enterprise Service Bus*](https://www.confluent.io/learn/enterprise-service-bus/) \(*ESB*\) \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] is a mixture of *Message Bus* and *Event Mediator*\. A *ESB* blends a *Middleware* and an [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] and adds an [[wiki/concepts/source/extension-metapatterns/proxy|*Adapter*]] per service as a topping\. It emerged to connect components that originated in incompatible networks of organizations that had been acquired by a corporation\.
 
@@ -232,20 +214,16 @@ A *Middleware* is unlikely to be removed \(though it may be replaced\) once it i
 - If the *Middleware* in use does not fit the preferred mode of communication between some of your services, there is the option to deploy a second, specialized *Middleware*\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Middleware%20add%20Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Middleware%20add%20Middleware.png" alt="A specialized middleware added to a system that already has a generic middleware." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A specialized middleware added to a system that already has a generic middleware.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Middleware%20add%20Middleware.png)
+
 
 - If several existing systems need to be merged, that is accomplished by adding yet another layer of *Middleware*, resulting in a [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Bottom\-up Hierarchy*]] *\(Bus of Buses\)*\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Middleware%20to%20Bus%20of%20Buses.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Middleware%20to%20Bus%20of%20Buses.png" alt="A low-level middleware interconnects several higher-level middlewares." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A low-level middleware interconnects several higher-level middlewares.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Middleware%20to%20Bus%20of%20Buses.png)
+
 
 ## Summary
 

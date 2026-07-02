@@ -28,14 +28,12 @@ In code high\-level concepts are embodied as services, modules, or directories w
 
 Concepts are important because it is their quantity \(or the number of the corresponding classes and methods\) that defines the *complexity* of a system – the cognitive load which developers of the system face\. If the programmers grasp the behavior of a component they work on in detail they tend to [become extremely productive](https://www.quora.com/What-are-some-habits-of-10x-programmers) and are often able to find [simple solutions for seemingly complex tasks](https://realmensch.org/2017/08/25/the-parable-of-the-two-programmers/)\. Otherwise the development is slow and requires extensive testing because the programmers are [unsure of how their changes affect the system’s behavior](https://news.ycombinator.com/item?id=18442941)\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-1.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-1.png" alt="Complexity represented as the number of interconnected nodes." loading="lazy" width=52%/>
-</a>
+
+![Complexity represented as the number of interconnected nodes.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Modules-1.png)
 
 Figure 1: Complexity correlates with the number of entities\.
 
-</div>
+
 
 ## Modules, encapsulation and bounded context
 
@@ -43,14 +41,12 @@ Let’s return to our example\. As you implement the phonebook you find out that
 
 Enter *modules*\. A module wraps several concepts, effectively hiding them from external users, and exposes a simplified view of its contents \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\]\. Introducing modules splits a complex system into several, usually less complex, parts\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-2.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-2.png" alt="A module hides a cluster of the original nodes but creates new interface nodes which add to the complexity of the modules that use them." loading="lazy" width=66%/>
-</a>
+
+![A module hides a cluster of the original nodes but creates new interface nodes which add to the complexity of the modules that use them.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Modules-2.png)
 
 Figure 2: Dividing a system into modules, bounded contexts highlighted\.
 
-</div>
+
 
 This diagram has several important points to note:
 
@@ -72,14 +68,12 @@ Apart from dividing the problem into simpler subproblems, modules open the path 
 - *High\-level concepts*\. Some cases allow for merging several concepts of the original problem into higher\-level aggregates, further reducing the complexity:
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-3.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-3.png" alt="Some of the interface nodes are grouped to lower the complexity." loading="lazy" width=64%/>
-</a>
+
+![Some of the interface nodes are grouped to lower the complexity.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Modules-3.png)
 
 Figure 3: Merged two API concepts in the green module\.
 
-</div>
+
 
 For example, the original definition of a phonebook contained *first name* and *last name*\. Once we separate the language support into a dedicated module, we may find out that various locales differ in the way they represent contacts: some \(USA\) use ‘first name \+ last name’ while others \(Japan\) need ‘last name \+ first name’\. If we want to abstract ourselves from that detail, we should use a new concept of *full name* which conjoins first and last names in a locale\-specific way\. Such a change actually simplifies some of the phonebook’s representation logic and code as it replaces two concepts with one\.
 
@@ -93,25 +87,21 @@ We need to learn a couple of new concepts in order to use modules efficiently:
 
 The rule of thumb is to aim for *low coupling and high cohesion*, meaning that each module should encapsulate a cluster of related \(intensely interacting\) concepts \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\]\. This is how we have split the system in figures 2 and 3\. Now let’s see what happens if we violate the rules:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-4.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-4.png" alt="Subdividing a complex module with many internal connections results in two complex modules because many new interface nodes are created." loading="lazy" width=75%/>
-</a>
+
+![Subdividing a complex module with many internal connections results in two complex modules because many new interface nodes are created.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Modules-4.png)
 
 Figure 4: The upper modules are tightly coupled\.
 
-</div>
+
 
 Splitting a cohesive module \(a cluster of concepts that interact with each other\) yields two strongly coupled modules\. That’s what we wanted, except that each of the new modules is nearly as complex as the original one\. Meaning, that we now face two hard tasks instead of one\. Also, the system’s performance may be poor because communication between modules is rarely optimal, and we’ve got too much of that\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-5.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-5.png" alt="Merging loosely coupled modules only marginally reduces the overall number of nodes in the system." loading="lazy" width=64%/>
-</a>
+
+![Merging loosely coupled modules only marginally reduces the overall number of nodes in the system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Modules-5.png)
 
 Figure 5: The lower module has low cohesion\.
 
-</div>
+
 
 What happens if we put several clusters of concepts into the same module? Nothing too evil if the clusters are small – the module acquires a higher complexity than each of its constituents, but lower overall than their sum\. In practice, multiple unrelated functions are often gathered in a ‘utils’ or ‘tools’ file or directory to alleviate *operational complexity*\.
 
@@ -135,38 +125,32 @@ When there are hundreds or thousands of modules deployed nobody knows the answer
 
 A module may encapsulate not only individual concepts, but even other modules\. That is not surprising as an OOP class is a kind of module – it also has public methods and private members\. Hiding a module inside another one removes it from the global scope, decreasing the operational complexity of the system – now it is not the system’s architect but the maintainer of the outer module who cares about the inner module\. On one hand, that builds a manageable hierarchy in both the organization and the code\. On the other hand, code reuse and many optimizations become nearly impossible as internal modules are hardly known organization\-wide:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-6.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-6.png" alt="When a module is hidden inside another module, there is no clear way to expose it to external clients." loading="lazy" width=58%/>
-</a>
+
+![When a module is hidden inside another module, there is no clear way to expose it to external clients.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Modules-6.png)
 
 Figure 6: Composition of modules prevents reuse\.
 
-</div>
+
 
 If the functionality of our internal module is needed by our clients, we have two bad options to choose from:
 
 ## Forwarding and duplication
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-7.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-7.png" alt="The interface of the internal module is duplicated in the interface of the wrapping module." loading="lazy" width=59%/>
-</a>
+
+![The interface of the internal module is duplicated in the interface of the wrapping module.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Modules-7.png)
 
 Figure 7: Forwarding the API of an internal module\.
 
-</div>
+
 
 We can add the API of a module which we encapsulate to our public API and forward its calls to the internal module\. However, that increases the complexity and lowers the cohesion of our own module – now each client of our module is also exposed to the details of the methods of the module which we have encapsulated whether they are used or not\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-8.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Modules-8.png" alt="The internal module itself is duplicated outside of the module which wraps it." loading="lazy" width=78%/>
-</a>
+
+![The internal module itself is duplicated outside of the module which wraps it.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Modules-8.png)
 
 Figure 8: Duplicating an internal module\.
 
-</div>
+
 
 Another bad option is to let the clients that need a module which we encapsulate duplicate it and own the copies as their own submodules\. This relieves us of any shared responsibility, lets us modify and misuse our internals in any way we like, but violates [a couple](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)) [of rules](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) of common sense\.
 

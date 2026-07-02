@@ -26,11 +26,9 @@ If we want for each module or service to continue with a model that fits its nee
 
 ## Command \(OLTP\) systems
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Indirection-Command.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Indirection-Command.png" alt="Dependency diagrams for Anticorruption Layer, Open Host Service, and Orchestrated Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Dependency diagrams for Anticorruption Layer, Open Host Service, and Orchestrated Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Indirection-Command.png)
+
 
 More often than not our system consists of services that command each other: via [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call)s, requests, or even notifications – no matter how, one component makes a call to action which other\(s\) should obey\.
 
@@ -43,11 +41,9 @@ In such a case we employ an [[wiki/concepts/source/extension-metapatterns/proxy|
 
 ## Query \(OLAP\) systems
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Indirection-Query.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Indirection-Query.png" alt="Dependency diagrams for CQRS View, Reporting Database, and Query Service." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Dependency diagrams for CQRS View, Reporting Database, and Query Service.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Indirection-Query.png)
+
 
 There is often another aspect of communication in a system, namely, information collection and analysis\. And it runs into a different set of issues which cannot be helped by mere interface translation\.
 
@@ -62,11 +58,9 @@ The solution employs an intermediate database as a translator from the provider�
 
 ## A mixed case
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Indirection-Plugin.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Indirection-Plugin.png" alt="A service which injects a plugin into another service and streams data for use by the plugin." loading="lazy" width=93%/>
-</a>
-</div>
+
+![A service which injects a plugin into another service and streams data for use by the plugin.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Indirection-Plugin.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/plugins|*Ambassador Plugins*]] \([called *Extensions* by Uber](https://www.uber.com/en-UA/blog/microservice-architecture/)\) employ both logic and data indirection\. When a service needs to modify the behavior of another service, it both writes a *Plugin* for the target service and extends its domain events stream with opaque data fields which the newly created *Plugin* can operate without consulting its origin service\. The host \(*Plugin*’s target\) service passes the extra data fields to the *Plugin* which processes them and stores the data it needs in a dedicated table in its host’s database\.
 

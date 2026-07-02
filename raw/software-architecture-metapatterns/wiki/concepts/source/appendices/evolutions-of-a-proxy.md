@@ -26,11 +26,9 @@ As *Proxies* are usually third\-party products, there is very little we can chan
 
 ## Add another Proxy
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Proxy%20add%20Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Proxy%20add%20Proxy.png" alt="A proxy is added on top of an existing proxy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A proxy is added on top of an existing proxy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Proxy%20add%20Proxy.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/proxy|Proxy]], [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -56,11 +54,9 @@ It often makes sense to colocate software *Proxies* or use a multifunctional *Pr
 
 ## Deploy a Proxy per client type
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Proxy%20to%20Backends%20for%20Frontends.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Proxy%20to%20Backends%20for%20Frontends.png" alt="A proxy is subdivided into Backends for Frontends." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A proxy is subdivided into Backends for Frontends.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Proxy%20to%20Backends%20for%20Frontends.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/proxy|Proxy]], [Backends for Frontends](<Backends for Frontends (BFF)>)\.
 

@@ -23,11 +23,9 @@ Not all the layered architectures are equally layered\. A [[wiki/concepts/source
 - Implementing an [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] on top of your system may improve the programming experience and runtime performance for your clients\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Layers.png" alt="A diagram of calls in a layered system. A single request from a client is translated by an Orchestrator into multiple calls to lower layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of calls in a layered system. A single request from a client is translated by an Orchestrator into multiple calls to lower layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Layers.png)
+
 
 It is also common to:
 
@@ -36,11 +34,9 @@ It is also common to:
 
 ## Split the business logic into two layers
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20in%20Two.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20in%20Two.png" alt="A backend is subdivided into application and domain layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A backend is subdivided into application and domain layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Split%20in%20Two.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 

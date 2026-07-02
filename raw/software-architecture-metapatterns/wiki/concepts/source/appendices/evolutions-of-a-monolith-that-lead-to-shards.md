@@ -26,11 +26,9 @@ One of the main drawbacks of the monolithic architecture is its lack of scalabil
 
 ## Implement a Mesh of self\-managed shards
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Mesh%20of%20Shards.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Mesh%20of%20Shards.png" alt="Several instances of a monolith are run as intercommunicating shards, each of which holds a subset of the system's data." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Several instances of a monolith are run as intercommunicating shards, each of which holds a subset of the system's data.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Mesh%20of%20Shards.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/shards|Sharding]] \([[wiki/concepts/source/basic-metapatterns/shards|Shards]]\), [[wiki/concepts/source/implementation-metapatterns/mesh|Mesh]]\.
 
@@ -56,11 +54,9 @@ It is possible to run several instances of an application \(*shards*\), with eac
 
 ## Split the data into isolated shards and add a Sharding Proxy
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Isolated%20Shards%20with%20Load%20Balancer.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Isolated%20Shards%20with%20Load%20Balancer.png" alt="Multiple instances of a monolith, each a subset of the system's data, are run behind a sharding proxy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Multiple instances of a monolith, each a subset of the system's data, are run behind a sharding proxy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Isolated%20Shards%20with%20Load%20Balancer.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/shards|Sharding]] \([[wiki/concepts/source/basic-metapatterns/shards|Shards]]\), [[wiki/concepts/source/extension-metapatterns/proxy|Sharding Proxy]] \([[wiki/concepts/source/extension-metapatterns/proxy|Proxy]]\), [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -84,11 +80,9 @@ If all the data a user operates on, directly or indirectly, is never accessed by
 
 ## Separate the data layer and add a Load Balancer
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Stateless%20Shards%20with%20Shared%20DB.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Stateless%20Shards%20with%20Shared%20DB.png" alt="A monolith is transformed into stateless instances which run behind a load balancer and access a shared database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A monolith is transformed into stateless instances which run behind a load balancer and access a shared database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Stateless%20Shards%20with%20Shared%20DB.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/shards|Pool]] \([[wiki/concepts/source/basic-metapatterns/shards|Shards]]\), [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]], [[wiki/concepts/source/extension-metapatterns/proxy|Load Balancer]] \([[wiki/concepts/source/extension-metapatterns/proxy|Proxy]]\), [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -114,11 +108,9 @@ As data moves into a dedicated layer \([[wiki/concepts/source/extension-metapatt
 
 ## Dedicate an instance to each client
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Instance%20per%20Client.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Instance%20per%20Client.png" alt="Each user is allocated a temporary instance of a subsystem which loads their data at the start of the session and persists any changes to the database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each user is allocated a temporary instance of a subsystem which loads their data at the start of the session and persists any changes to the database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Instance%20per%20Client.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/shards|Create on Demand]] \([[wiki/concepts/source/basic-metapatterns/shards|Shards]]\), [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]], [[wiki/concepts/source/implementation-metapatterns/microkernel|Virtualizer]] \([[wiki/concepts/source/implementation-metapatterns/microkernel|Microkernel]]\), [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -152,11 +144,9 @@ In most cases *sharding* does not change much inside the application, thus the c
 - Granular scaling also applies to [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipelines*]], but in many cases it does not make much sense because pipeline components tend to be lightweight and stateless, making it easy to scale the pipeline as a whole\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Shards%20-%20Further%201.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Shards%20-%20Further%201.png" alt="Diagrams of Layers with individual scaling, Services with a middleware and individual scaling, and pipeline scaled as a whole." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Layers with individual scaling, Services with a middleware and individual scaling, and pipeline scaled as a whole.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Shards%20-%20Further%201.png)
+
 
 A few specific evolutions of [[wiki/concepts/source/basic-metapatterns/shards|*Shards*]] deal with the drawbacks:
 
@@ -164,11 +154,9 @@ A few specific evolutions of [[wiki/concepts/source/basic-metapatterns/shards|*S
 - [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]], a mirror image of [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Database*]], is another option for implementing use cases that deal with data of multiple shards without the need for the shards to intercommunicate\. Stateless *Orchestrators* scale perfectly but may corrupt the data if two of them write to an overlapping set of records\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Shards%20-%20Further%202.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Shards%20-%20Further%202.png" alt="Diagrams of Space-Based Architecture that replicates data and Shards with multiple orchestrators." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Space-Based Architecture that replicates data and Shards with multiple orchestrators.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Shards%20-%20Further%202.png)
+
 
 | \<\< [[wiki/concepts/source/appendices/evolutions-of-architectures|Evolutions of architectures]] | ^ [[wiki/concepts/source/appendices/evolutions-of-architectures|Evolutions of architectures]] ^ | [[wiki/concepts/source/appendices/evolutions-of-a-monolith-that-result-in-layers|Evolutions of a Monolith that result in Layers]] \>\> |
 | --- | --- | --- |

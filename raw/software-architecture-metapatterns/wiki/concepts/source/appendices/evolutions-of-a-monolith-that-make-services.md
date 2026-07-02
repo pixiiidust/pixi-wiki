@@ -24,19 +24,15 @@ The final major drawback of [[wiki/concepts/source/basic-metapatterns/monolith|*
 - Some domains allow for sequential [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|data processing]] best described by [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipelines*]]\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith_%20Services%20and%20Pipeline.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith_%20Services%20and%20Pipeline.png" alt="In Services a single component executes a client request while in Pipeline there is no use case owner." loading="lazy" width=100%/>
-</a>
-</div>
+
+![In Services a single component executes a client request while in Pipeline there is no use case owner.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith_%20Services%20and%20Pipeline.png)
+
 
 ## Divide into Services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Services.png" alt="A monolith is subdivided into services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A monolith is subdivided into services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Services.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/services|Services]]\.
 
@@ -67,11 +63,9 @@ Splitting a [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] into
 
 ## Add or split a service
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20Split%20Service.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20Split%20Service.png" alt="A service is split from a monolith." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A service is split from a monolith.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20Split%20Service.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/services|Services]]\.
 
@@ -107,11 +101,9 @@ If you are not adding a new feature but need to change an old one – use the ch
 
 ## Divide into a Pipeline
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Pipeline.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Pipeline.png" alt="A Monolith is transformed into a pipeline." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A Monolith is transformed into a pipeline.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Pipeline.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/pipeline|Pipeline]] \([[wiki/concepts/source/basic-metapatterns/services|Services]]\)\.
 
@@ -149,11 +141,9 @@ Systems of [[wiki/concepts/source/basic-metapatterns/services|*Services*]] or [[
 - [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] encapsulates [[wiki/concepts/source/basic-metapatterns/layers|use cases]] that involve multiple services, so that the services don’t need to know about each other\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Services%20-%20Further%201.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Services%20-%20Further%201.png" alt="Diagrams of Services with a proxy, Services with an orchestrator, Services with a middleware, and Services with a shared database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Services with a proxy, Services with an orchestrator, Services with a middleware, and Services with a shared database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Services%20-%20Further%201.png)
+
 
 Each service, being a smaller *Monolith*, may evolve on its own\. Most of the evolutions of [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] are applicable\. The most common examples include:
 
@@ -163,11 +153,9 @@ Each service, being a smaller *Monolith*, may evolve on its own\. Most of the ev
 - [[wiki/concepts/source/basic-metapatterns/services|*Hexagonal Service*]] to escape vendor lock\-in\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Services%20-%20Further%202.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Services%20-%20Further%202.png" alt="Diagrams of a scaled service, layered service, Cell, and a service that implements Hexagonal Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of a scaled service, layered service, Cell, and a service that implements Hexagonal Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Services%20-%20Further%202.png)
+
 
 | \<\< [[wiki/concepts/source/appendices/evolutions-of-a-monolith-that-result-in-layers|Evolutions of a Monolith that result in Layers]] | ^ [[wiki/concepts/source/appendices/evolutions-of-architectures|Evolutions of architectures]] ^ | [[wiki/concepts/source/appendices/evolutions-of-a-monolith-that-rely-on-plugins|Evolutions of a Monolith that rely on Plugins]] \>\> |
 | --- | --- | --- |

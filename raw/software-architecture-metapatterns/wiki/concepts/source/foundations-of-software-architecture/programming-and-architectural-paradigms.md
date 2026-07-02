@@ -45,49 +45,39 @@ We have heard a lot about keeping *logic and data* together: an object \(or [[wi
 
 Adding *control* to the blend is more subtle, but no less crucial than the encapsulation discussed above\. If an object commands another thing to do something, it must receive the result of the delegated action to know how to proceed with its own task\. Returning control after the action is conducted enables separation of high\-level supervising \(orchestration, integration\) logic from low\-level algorithms which it drives, adding depth to the structure\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Object-oriented.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Object-oriented.png" alt="A diagram of an object-oriented system built through composition." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of an object-oriented system built through composition.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Communication/Paradigms%20-%20Object-oriented.png)
+
 
 The ability to address complex domains by reducing the whole to self\-contained pieces makes object\-oriented design ubiquitous\. This paradigm, when applied to distributed systems, gives birth to [[wiki/concepts/source/basic-metapatterns/services|*Microservices*]], [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrated Services*]], and [*Service\-Oriented Architecture*](<Service-Oriented Architecture (SOA)>)\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Object-oriented%20-%20Variants.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Object-oriented%20-%20Variants.png" alt="Diagrams of: Microservices, Orchestrated Services, and Service-Oriented Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of: Microservices, Orchestrated Services, and Service-Oriented Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Communication/Paradigms%20-%20Object-oriented%20-%20Variants.png)
+
 
 ## Functional \(decentralized, streaming\) paradigm – choreography
 
 Sometimes you don’t need that level of fine\-tuning for the behavior of the system you build – it operates as an [assembly line](https://en.wikipedia.org/wiki/Assembly_line) with high throughput and little variance: its logic is made of steps that resemble work stations along a [conveyor belt](https://en.wikipedia.org/wiki/Conveyor_belt) through which identically structured pieces of data flow\. In that case there is very little to control: if an item is good, it goes further, otherwise it just falls off the line\. Here the *control* resides in the graph of connections*,* the [[wiki/concepts/source/basic-metapatterns/layers|domain *logic*]] is subdivided, while the *data* is copied \(or, more rarely, moved\) between the components\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Functional.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Functional.png" alt="A diagram of a pipeline with components implementing steps of data processing." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of a pipeline with components implementing steps of data processing.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Communication/Paradigms%20-%20Functional.png)
+
 
 Functional or pipelined design is famous for its simplicity and high performance as the majority of processing steps can be scaled\. However, its straightforward application lacks the depth needed for handling complex processes, which would translate into webs of relations between hundreds of functions present at the same level of design\. It is also inefficient for choose\-your\-own\-adventure\-style \([[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|*control*]]\) systems where too many too short conveyor belts would be required, negating the paradigm’s benefits\. And it may not be the right tool for making small changes in large sets of data as you’ll likely need to copy the whole dataset between the constituent functions\.
 
 In distributed systems the functional paradigm is disguised as [[wiki/concepts/source/basic-metapatterns/pipeline|*Choreographed Event\-Driven Architecture*]], [[wiki/concepts/source/basic-metapatterns/pipeline|*Data Mesh*]], and various [[wiki/concepts/source/basic-metapatterns/pipeline|batch or stream]] processing \[[wiki/concepts/source/appendices/books-referenced|[DDIA]]\] [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipelines*]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Functional%20-%20Variants.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Functional%20-%20Variants.png" alt="Diagrams of Event-Driven Architecture and Data Mesh." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Event-Driven Architecture and Data Mesh.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Communication/Paradigms%20-%20Functional%20-%20Variants.png)
+
 
 ## Procedural \(data\-centric\) paradigm – shared data
 
 The final approach is integration through data\. There are cases where the domain data and business logic differ in structure – you cannot divide your project into objects because each of the many pieces of its logic needs to access several \(seemingly unrelated\) parts of its data\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Data-centric.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Data-centric.png" alt="A diagram of a procedural system where logic and data make independent hierarchies." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of a procedural system where logic and data make independent hierarchies.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Communication/Paradigms%20-%20Data-centric.png)
+
 
 In the data\-centric paradigm *logic* and *data* are orthogonal\. There are two ways to deal with the control:
 
@@ -95,19 +85,15 @@ In the data\-centric paradigm *logic* and *data* are orthogonal\. There are two 
 - Another, much less common, option relies on [*Observer*](https://refactoring.guru/design-patterns/observer) \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\] to provide data change notifications, resulting in decentralized \([[wiki/concepts/source/foundations-of-software-architecture/choreography|*choreographed*]]\) application logic, as shown below\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Data-centric%20-%20Notifications.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Data-centric%20-%20Notifications.png" alt="Components of a data-centric system rely on data change notifications." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Components of a data-centric system rely on data change notifications.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Communication/Paradigms%20-%20Data-centric%20-%20Notifications.png)
+
 
 The data\-centric approach works well for moderately\-sized projects with a stable data model \(like reservation of seats in trains or the game of chess\)\. The best\-known distributed data\-centric architectures include [[wiki/concepts/source/extension-metapatterns/shared-repository|*Services with a Shared Database*]] and [[wiki/concepts/source/extension-metapatterns/sandwich|*Space\-Based Architecture*]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Data-centric%20-%20Variants.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Paradigms%20-%20Data-centric%20-%20Variants.png" alt="Diagrams for Services with a shared database and Space-Based Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams for Services with a shared database and Space-Based Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Communication/Paradigms%20-%20Data-centric%20-%20Variants.png)
+
 
 ## Composite cases
 

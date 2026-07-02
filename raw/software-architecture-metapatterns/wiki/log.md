@@ -14,3 +14,4 @@ namespace: software-architecture-metapatterns
 - Created the `software-architecture-metapatterns` namespace under Knowledge Systems.
 - Imported 79 Markdown source pages from `denyspoltorak/metapatterns.wiki`.
 - Added provenance/license guardrails and agent-facing software architecture retrieval guidance.
+- Mirrored source diagrams into namespace-local `assets/images/` and rewrote raw GitHub `<img>` HTML into Markdown image links for Pixi Wiki rendering.

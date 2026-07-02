@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Extension metapatterns/Orchestrator.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Orchestrator.png" alt="A diagram for Services with an orchestrator, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Services with an orchestrator, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Orchestrator.png)
+
 
 *One ring to rule them all\.* Make a component to integrate other components\.
 
@@ -46,11 +44,9 @@ An *Orchestrator* fulfills two closely related roles:
 - As a [*Facade*](https://refactoring.guru/design-patterns/facade) \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\] it builds high\-level scenarios out of smaller steps provided by the services or modules it controls\. This role is obvious for [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|*processing* systems]] where clients communicate with the *Facade*, but it is also featured in *control* software, because sometimes a simple event may trigger a complex multi\-component scenario managed by the system’s *Orchestrator*\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Misc/Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Misc/Orchestrator.png" alt="Control flows in a facade and mediator." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Control flows in a facade and mediator.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Misc/Orchestrator.png)
+
 
 [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|Data *processing*]] systems, such as backends, may deploy multiple [[wiki/concepts/source/basic-metapatterns/shards|instances]] of stateless *Orchestrators* to improve stability and performance\. In contrast, an *Orchestrator* in [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|*control* software]] incorporates a high\-level view of the system’s state thus it cannot be easily replicated \(as any replicated state must be kept synchronized, introducing delay or inconsistency in decision\-making\)\.
 
@@ -64,11 +60,9 @@ When compared to [[wiki/concepts/source/foundations-of-software-architecture/cho
 - In a highly loaded or latency\-critical system, orchestrated services may establish direct data streams that bypass the *Orchestrator*\. A classic example is [VoIP](https://en.wikipedia.org/wiki/Voice_over_IP) where the call establishment logic \(SIP\) goes through an orchestrating server while the voice or video \(RTP\) streams directly between the clients\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Orchestrator.png" alt="Caching, early response, parallel execution, and direct communication between services as optimization techniques for Orchestrated Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Caching, early response, parallel execution, and direct communication between services as optimization techniques for Orchestrated Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Orchestrator.png)
+
 
 I don’t see how orchestration can affect throughput as in most cases the *Orchestrator* can be scaled\. However, scaling weakens consistency \(or requires centralized locking, with a chance for a locked use case to hang if the *Orchestrator* instance which has locked it crashes\) as then no instance of the *Orchestrator* has exclusive control over the system’s state\.
 
@@ -76,11 +70,9 @@ I don’t see how orchestration can affect throughput as in most cases the *Orch
 
 An *Orchestrator* may depend on the *APIs* of the services it orchestrates or define *SPIs* for them to implement, with the first mode being natural for its [*Facade*](https://refactoring.guru/design-patterns/facade) \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\] aspect and the second one for the [*Mediator*](https://refactoring.guru/design-patterns/mediator) \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\]:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Orchestrator.png" alt="A facade depends on every service. Contrariwise, every service depends on a mediator." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A facade depends on every service. Contrariwise, every service depends on a mediator.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Orchestrator.png)
+
 
 If an *Orchestrator* is added to integrate existing components, it will use their APIs\.
 
@@ -108,11 +100,9 @@ Likewise, [[wiki/concepts/source/foundations-of-software-architecture/four-kinds
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Orchestrator.png" alt="Orchestrator for a monolith, layers, shards and services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Orchestrator for a monolith, layers, shards and services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Orchestrator.png)
+
 
 *Orchestrator*:
 
@@ -129,21 +119,17 @@ It seems that an *Orchestrator*, just like a [[wiki/concepts/source/basic-metapa
 
 ### Closed or strict
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Closed.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Closed.png" alt="An orchestrator mediates every request from every client." loading="lazy" width=90%/>
-</a>
-</div>
+
+![An orchestrator mediates every request from every client.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Orchestrator%20-%20Closed.png)
+
 
 A *strict* or *closed Orchestrator* isolates the orchestrated services from their users – all the requests go through the *Orchestrator*, and the services don’t need to intercommunicate\.
 
 ### Open or relaxed
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Open.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Open.png" alt="An orchestrator mediates a multi-step client request while it is transparent to simpler requests." loading="lazy" width=92%/>
-</a>
-</div>
+
+![An orchestrator mediates a multi-step client request while it is transparent to simpler requests.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Orchestrator%20-%20Open.png)
+
 
 An *open Orchestrator* implements a subset of system\-wide scenarios that require strict data consistency while less demanding requests go from the clients directly to the underlying services, which rely on [[wiki/concepts/source/foundations-of-software-architecture/choreography|*choreography*]] or [[wiki/concepts/source/foundations-of-software-architecture/shared-data|*shared data*]] for communication\. Such a system sacrifices the clarity of design to avoid some of the drawbacks of both *choreography* and *orchestration*:
 
@@ -159,21 +145,17 @@ The orchestration \([[wiki/concepts/source/basic-metapatterns/layers|application
 
 ### [[wiki/concepts/source/basic-metapatterns/monolith|Monolithic]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Monolythic.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Monolythic.png" alt="An orchestrator communicates with several services." loading="lazy" width=42%/>
-</a>
-</div>
+
+![An orchestrator communicates with several services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Orchestrator%20-%20Monolythic.png)
+
 
 A single *Orchestrator* is deployed\. This option fits ordinary medium\-sized projects but fails for anything more demanding as the *Orchestrator* limits throughput, becomes a single point of failure, and may grow too complex for comfortable development\.
 
 ### [[wiki/concepts/source/basic-metapatterns/shards|Scaled]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Scaled.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Scaled.png" alt="Multiple instances of a stateless orchestrator are behind a load balancer and they persist their actions into a dedicated shared database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Multiple instances of a stateless orchestrator are behind a load balancer and they persist their actions into a dedicated shared database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Orchestrator%20-%20Scaled.png)
+
 
 High availability requires multiple [[wiki/concepts/source/basic-metapatterns/shards|instances]] of a stateless *Orchestrator* to be deployed\. A *Mediator* \([*Saga*](#orchestrated-saga-saga-orchestrator-saga-execution-component-transaction-script-coordinator), writing *Orchestrator*\) may store the current transaction’s state in a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Database*]] to assure that if it crashes there is always another instance ready to take up its job\.
 
@@ -183,11 +165,9 @@ High load systems also require multiple instances of *Orchestrators* because a s
 
 ### [[wiki/concepts/source/basic-metapatterns/layers|Layered]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Layered.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Layered.png" alt="A simple orchestrator calls services or a complex orchestrator, which also calls the same services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A simple orchestrator calls services or a complex orchestrator, which also calls the same services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Orchestrator%20-%20Layered.png)
+
 
 \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] describes an option of a layered [*Event Mediator*](#event-mediator)\. A client’s request comes to the topmost layer of the *Orchestrator* which uses the simplest \(and least flexible\) framework\. If the request is found to be complex, it is forwarded to the second layer which is based on a more powerful technology\. And if it fails or requires a human decision then it is forwarded again to the even more complex custom\-tailored orchestration layer\.
 
@@ -197,11 +177,9 @@ A similar example is using an [*API Composer*](#api-composer-remote-facade-gatew
 
 ### A service per client type \([Backends for Frontends](<Backends for Frontends (BFF)>)\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20BFF.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20BFF.png" alt="Each client communicates with its own orchestrator." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each client communicates with its own orchestrator.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Orchestrator%20-%20BFF.png)
+
 
 If your clients strongly differ in workflows \(e\.g\. [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing) and [OLTP](https://en.wikipedia.org/wiki/Online_transaction_processing), or user and admin interfaces\), implementing dedicated *Orchestrators* is an option to consider\. That both makes each client\-specific *Orchestrator* smaller and more cohesive than the unified implementation would be and gives more independence to the teams responsible for different kinds of clients\.
 
@@ -209,11 +187,9 @@ This pattern is known as [*Backends for Frontends*](<Backends for Frontends (BFF
 
 ### A service per subdomain \([[wiki/concepts/source/fragmented-metapatterns/hierarchy|Hierarchy]]\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20Hierarchy.png" alt="A top-level orchestrator communicates with lower-level Orchestrators each of which manages a group of services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A top-level orchestrator communicates with lower-level Orchestrators each of which manages a group of services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Orchestrator%20-%20Hierarchy.png)
+
 
 In a large system a single *Orchestrator* is very likely to become overgrown and turn into a development bottleneck \(see [*Enterprise Service Bus*](#enterprise-service-bus-esb)\)\. Building a [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*hierarchy*]] of *Orchestrators* may help \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\], but that requires the domain itself to be hierarchical\.
 
@@ -221,11 +197,9 @@ The top\-level component may even be a [[wiki/concepts/source/extension-metapatt
 
 ### A service per use case \([SOA](<Service-Oriented Architecture (SOA)>)\-style\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20SOA.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Orchestrator%20-%20SOA.png" alt="There are several orchestrators which use the same set of services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![There are several orchestrators which use the same set of services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Orchestrator%20-%20SOA.png)
+
 
 \[[wiki/concepts/source/appendices/books-referenced|[SAHP]]\] advises for single\-purpose *Orchestrators* in [[wiki/concepts/source/basic-metapatterns/services|*Microservices*]]: each *Orchestrator* manages one use case\. This enables fine\-grained scalability but will quickly lead to integration hell as new scenarios keep getting added to the system\. Overall, such a use of *Orchestrators* resembles the [*task layer*](<Service-Oriented Architecture (SOA)#enterprise-soa>) of [*SOA*](<Service-Oriented Architecture (SOA)>)\.
 
@@ -249,11 +223,9 @@ There are also several patterns that have other functions in addition to orchest
 
 ### API Composer, Remote Facade, Gateway Aggregation, Composed Message Processor, Scatter\-Gather, MapReduce
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/API%20Composer.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/API%20Composer.png" alt="An API Composer calls services in parallel. A Scatter/Gather or MapReduce calls shards in parallel." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An API Composer calls services in parallel. A Scatter/Gather or MapReduce calls shards in parallel.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/API%20Composer.png)
+
 
 *API Composer* \[[wiki/concepts/source/appendices/books-referenced|[MP]]\] is a kind of [*Facade*](https://refactoring.guru/design-patterns/facade) \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\] which decreases the system’s latency by translating a high\-level incoming message into a set of lower\-level internal messages, sending them to the corresponding [[wiki/concepts/source/basic-metapatterns/services|services]] in parallel, waiting for results, and collecting the latter into a response to the original message\. Such a logic may often be defined declaratively in a third\-party tool without writing any low\-level code\. *Remote Facade* \[[wiki/concepts/source/appendices/books-referenced|[PEAA]]\] is a similar pattern which makes synchronous calls to the underlying components – its goal is implementing a coarse\-grained protocol for the system’s clients, so that a client may achieve whatever it needs through a single request\. [*Gateway Aggregation*](https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation) is a generalization of these patterns\.
 
@@ -267,11 +239,9 @@ Example: Microsoft has an [article](https://learn.microsoft.com/en-us/azure/arch
 
 ### Process Manager, Orchestrator
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Process%20Manager.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Process%20Manager.png" alt="The orchestrator calls several services one by one." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The orchestrator calls several services one by one.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Process%20Manager.png)
+
 
 *Process Manager* \[[wiki/concepts/source/appendices/books-referenced|[EIP]], [[wiki/concepts/source/appendices/books-referenced|LDDD]]\] \(referred to simply as *Orchestrator* in \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\]\) is a kind of *Facade* that translates high\-level tasks into sequences of lower\-level steps\. This subtype of *Orchestrator* receives a client request, stores its state, runs pre\-programmed request processing steps, and returns a response\. Each of the steps of a *Process Manager* is similar to a whole task of an *API Composer* in that it generates a set of parallel requests to internal services, waits for the results, and stores them for the future use in the following steps or final response\. The scenarios it runs may branch on conditions\.
 
@@ -283,11 +253,9 @@ Example: \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] provides s
 
 ### \(Orchestrated\) Saga, Saga Orchestrator, [[wiki/concepts/source/implementation-metapatterns/microkernel|Saga Execution Component]], Transaction Script, Coordinator
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Saga.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Saga.png" alt="An atomically consistent saga rolls back changes after a failed write. An eventually consistent saga retries the failed write till it succeeds." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An atomically consistent saga rolls back changes after a failed write. An eventually consistent saga retries the failed write till it succeeds.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Saga.png)
+
 
 *\(Orchestrated* \[[wiki/concepts/source/appendices/books-referenced|[SAHP]]\]*\) Saga* \[[wiki/concepts/source/appendices/books-referenced|[LDDD]]\], *Saga Orchestrator* \[[wiki/concepts/source/appendices/books-referenced|[MP]]\] or [*Saga Execution Component*](https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf) is a subtype of *Process Manager* which is specialized in *distributed transactions*\. Its name comes from epic stories woven from multiple episodes\.
 
@@ -307,11 +275,9 @@ Example: \[[wiki/concepts/source/appendices/books-referenced|[SAHP]]\] investiga
 
 ### Integration \(Micro\-\)Service, Application Service
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Integration%20Service.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Integration%20Service.png" alt="An integration service is a full-featured service that stands between the client and the remaining services of the system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An integration service is a full-featured service that stands between the client and the remaining services of the system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Integration%20Service.png)
+
 
 An [*Integration Service*](https://github.com/wso2/reference-architecture/blob/master/event-driven-api-architecture.md) is a full\-scale service \(often with a dedicated database\) that runs high\-level scenarios while delegating the bulk of the work to several other services \(remarkably, delegating to a single component forms [[wiki/concepts/source/basic-metapatterns/layers|*Layers*]]\)\. Though an *Integration Service* usually features both functions of *Orchestrator*, in a [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|*control* system]] its *Mediator* role is more prominent while in [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|*processing* software]] it is going to behave more like the *Facade*\. A system with an *Integration Service* often resembles a shallow [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Top\-Down Hierarchy*]]\.
 
@@ -319,21 +285,17 @@ Example: Order Service in \[[wiki/concepts/source/appendices/books-referenced|[M
 
 ### \(inexact\) [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|Front Controller]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Front%20Controller.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Front%20Controller.png" alt="A Front Controller is the first service of a pipeline which receives status notifications from every other service and responds to the client's get status query." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A Front Controller is the first service of a pipeline which receives status notifications from every other service and responds to the client's get status query.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Front%20Controller.png)
+
 
 *Front Controller* \[[wiki/concepts/source/appendices/books-referenced|[SAHP]] [[wiki/concepts/source/analytics/ambiguous-patterns|but not]] [[wiki/concepts/source/appendices/books-referenced|PEAA]]\] is the name for the first \(client\-facing\) service of a [[wiki/concepts/source/basic-metapatterns/pipeline|*pipeline*]] in [[wiki/concepts/source/basic-metapatterns/pipeline|*Choreographed Event\-Driven Architecture*]] when that service collects information about the status of each request it has processed and forwarded down the *pipeline\.* The status is received by listening for notifications from the downstream services and is readily available for the *Front Controller*’s clients, which makes *Front Controller* resemble [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Query Service*]] \([[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Polyglot Persistence*]]\) and [*Application Service*](#integration-micro-service-application-service)\.
 
 ### [[wiki/concepts/source/extension-metapatterns/proxy|API Gateway]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/API%20Gateway.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/API%20Gateway.png" alt="An API Gateway both translates from the client's to the system's protocol and calls services in parallel." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An API Gateway both translates from the client's to the system's protocol and calls services in parallel.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/API%20Gateway.png)
+
 
 An *API Gateway* \[[wiki/concepts/source/appendices/books-referenced|[MP]]\] is a component that not only processes client requests \(and encapsulates an implementation of a client protocol\(s\)\) as a [[wiki/concepts/source/extension-metapatterns/proxy|*Gateway*]] \(a kind of [[wiki/concepts/source/extension-metapatterns/proxy|*Proxy*]]\) but also splits every client request into multiple requests to internal services as an [*API Composer*](#api-composer-remote-facade-gateway-aggregation-composed-message-processor-scatter-gather-mapreduce) or [*Process Manager*](#process-manager-orchestrator) \(which are *Orchestrators*\)\. It is a common pattern for backend solutions as it does everything necessary to isolate the stable core of the system’s implementation from its fickle clients\. Usually a third\-party framework implements and colocates both its aspects, namely *Proxy* and *Orchestrator*, thus simplifying deployment and improving latency\.
 
@@ -341,11 +303,9 @@ Example: a thorough article from [Microsoft](https://learn.microsoft.com/en-us/a
 
 ### [[wiki/concepts/source/extension-metapatterns/middleware|Event Mediator]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Event%20Mediator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Event%20Mediator.png" alt="An event mediator calls event processors one by one." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An event mediator calls event processors one by one.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Event%20Mediator.png)
+
 
 *Event Mediator* \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] is an *orchestrating* [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]]\. It not only receives requests from clients and turns each request into a multistep use case \(as a [*Process Manager*](#process-manager-orchestrator)\) but it also manages the deployed instances of services and acts as a medium which calls them\. Moreover, unlike an ordinary *Middleware*, it seems to be aware of all of the kinds of messages in the system and which service each message must be forwarded to, resulting in overwhelming complexity concentrated in a single component which does not even follow the principle of separation of concerns\. \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] recommends [building a stack of *Event Mediators*](#layered) from several vendors, further complicating this architecture\.
 
@@ -353,11 +313,9 @@ Example: Mediator Topology in the chapter of \[[wiki/concepts/source/appendices/
 
 ### [[wiki/concepts/source/extension-metapatterns/middleware|Enterprise Service Bus]] \(ESB\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Enterprise%20Service%20Bus.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Enterprise%20Service%20Bus.png" alt="An Enterprise Service Bus is between the fragmented task and entity layers of Service-Oriented Architecture. It mediates all calls and messages between the system components." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An Enterprise Service Bus is between the fragmented task and entity layers of Service-Oriented Architecture. It mediates all calls and messages between the system components.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Enterprise%20Service%20Bus.png)
+
 
 [*Enterprise Service Bus*](https://www.confluent.io/learn/enterprise-service-bus/) \(*ESB*\) \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] is an overgrown [*Event Mediator*](#event-mediator) that incorporates lots of [*cross\-cutting concerns*](https://en.wikipedia.org/wiki/Cross-cutting_concern), including protocol translation for which it utilizes at least one [[wiki/concepts/source/extension-metapatterns/proxy|*Adapter*]] per service \(just as a [[wiki/concepts/source/extension-metapatterns/middleware|*Message Bus*]] does\)\. The combination of a central role in organizations and its complexity was among the main reasons for the demise of [*Enterprise Service\-Oriented Architecture*](<Service-Oriented Architecture (SOA)#enterprise-soa>)\.
 
@@ -376,38 +334,30 @@ There is [[wiki/concepts/source/appendices/evolutions-of-an-orchestrator|one way
 - Subdivide the *Orchestrator* by the system’s subdomains, forming [[wiki/concepts/source/fragmented-metapatterns/layered-services|*Layered Services*]] and minimizing network communication\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Layered%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Layered%20Services.png" alt="An orchestrator is subdivided into subdomain components which become the application layers of respective services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An orchestrator is subdivided into subdomain components which become the application layers of respective services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20to%20Layered%20Services.png)
+
 
 - Subdivide the *Orchestrator* by the type of client, forming [*Backends for Frontends*](<Backends for Frontends (BFF)>)\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Backends%20for%20Frontends.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Backends%20for%20Frontends.png" alt="An orchestrator is subdivided into Backends for Frontends." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An orchestrator is subdivided into Backends for Frontends.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20to%20Backends%20for%20Frontends.png)
+
 
 - Add another [[wiki/concepts/source/basic-metapatterns/layers|*layer*]] of orchestration\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20add%20Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20add%20Orchestrator.png" alt="An orchestrator is subdivided into a pair of simple and complex orchestrators." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An orchestrator is subdivided into a pair of simple and complex orchestrators.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20add%20Orchestrator.png)
+
 
 - Build a [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Top\-Down Hierarchy*]]\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Hierarchy.png" alt="An orchestrator is subdivided into a hierarchy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An orchestrator is subdivided into a hierarchy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20to%20Hierarchy.png)
+
 
 ## Summary
 

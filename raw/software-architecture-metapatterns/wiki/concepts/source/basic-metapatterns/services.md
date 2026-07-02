@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Basic metapatterns/Services.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Services.png" alt="A diagram for Services, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Services, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Services.png)
+
 
 *Divide and conquer\.* Scale development through decoupling subdomains\.
 
@@ -48,11 +46,9 @@ Splitting a [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] by *
 
 Interservice communication is relatively slow and resource\-consuming, therefore it should be kept to a minimum\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Services.png" alt="Performance of Services is the best when the request is limited to a single service and the worst when the state of several services needs to be synchronized." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Performance of Services is the best when the request is limited to a single service and the worst when the state of several services needs to be synchronized.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Services.png)
+
 
 The perfect case is when a single service has enough authority to answer a client’s request or process an event\. That case should not be that rare as a service often covers a whole subdomain while subdomains are expected to be loosely coupled \(by definition\)\.
 
@@ -66,35 +62,27 @@ Multiple [[wiki/concepts/source/basic-metapatterns/shards|instances]] of an indi
 
 When we see a service to *request* help from other services and then receive the results \(in a *confirmation* message\), that service [[wiki/concepts/source/foundations-of-software-architecture/orchestration|*orchestrates*]] the services it uses\. Services often orchestrate each other because the subdomain a service is dedicated to is not independent of other subdomains\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Services-1.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Services-1.png" alt="With request/confirm a service depends on whatever it uses." loading="lazy" width=100%/>
-</a>
-</div>
+
+![With request/confirm a service depends on whatever it uses.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Services-1.png)
+
 
 Another way for services to communicate is [[wiki/concepts/source/foundations-of-software-architecture/choreography|*choreography*]] – when a service sends a *command* or publishes a *notification* and does not expect any response\. This is characteristic of [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipelines*]] which are covered in the next chapter\. Right now we should note that orchestration and choreography may be intermixed, in which case a service depends on all the services it uses or subscribes to\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Services-2.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Services-2.png" alt="With pub/sub a service depends on its notification sources." loading="lazy" width=100%/>
-</a>
-</div>
+
+![With pub/sub a service depends on its notification sources.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Services-2.png)
+
 
 If the system relies on notifications \(services publish *domain events*\), it is possible to avoid interservice *queries* \(pairs of a *read* request and confirmation with the data retrieved\) by aggregating data from notifications in a [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*CQRS* \(or *materialized*\) *View*]], which can reside [in memory](https://martinfowler.com/bliki/MemoryImage.html) or in a database\. Views can be planted inside every service that needs data owned by other services or can be gathered into a dedicated [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Query Service*]]\. Though the main goal of *CQRS Views* is to resolve distributed joins from databases of multiple services, they also help [[wiki/concepts/source/analytics/indirection-in-commands-and-queries|remove dependencies]] in the code of services and optimize out interservice queries, simplifying APIs and improving performance\. Further examples will be discussed in the chapter on [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Polyglot Persistence*]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Services-3.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Services-3.png" alt="A CQRS view breaks dependencies between services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A CQRS view breaks dependencies between services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Services-3.png)
+
 
 In general, a large service should wrap its dependencies with an [[wiki/concepts/source/extension-metapatterns/proxy|*Anticorruption Layer*]], following the ideas of [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Hexagonal Architecture*]]\. The layer consists of [*Adapters*](https://refactoring.guru/design-patterns/adapter) \[[wiki/concepts/source/appendices/books-referenced|[GoF]]\] between the internal domain model of the service and the APIs of the components it uses\. The *Adapters* isolate the business logic from the external environment, granting that no change in the interface of an external service or library may ever take much work to support on the side of the team that writes its own business logic as all the ensuing updates are limited to a small adapter\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Services-4.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Services-4.png" alt="Adapters isolate a service from its dependencies." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Adapters isolate a service from its dependencies.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Services-4.png)
+
 
 ### Applicability
 
@@ -116,11 +104,9 @@ In general, a large service should wrap its dependencies with an [[wiki/concepts
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Services.png" alt="Splitting an Orchestrator into Backends for Frontends." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Splitting an Orchestrator into Backends for Frontends.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Services.png)
+
 
 - Division by subdomain can be applied to [[wiki/concepts/source/basic-metapatterns/layers|*Layers*]] to form [[wiki/concepts/source/extension-metapatterns/sandwich|*Sandwich*]] \(partial subdivision\) or [*Service\-Oriented Architecture*](<Service-Oriented Architecture (SOA)>) \(layers of services\); to [[wiki/concepts/source/extension-metapatterns/proxy|*Proxy*]], [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]], or [[wiki/concepts/source/extension-metapatterns/orchestrator|*API Gateway*]] to make [*Backends for Frontends*](<Backends for Frontends (BFF)>); to a [[wiki/concepts/source/extension-metapatterns/shared-repository|\(shared\) database]] resulting in [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Polyglot Persistence*]]\.
 - Services can be extended with a [[wiki/concepts/source/extension-metapatterns/proxy|*Proxy*]], [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]], [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]], or [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]]\.
@@ -251,29 +237,23 @@ A [*nanoservice*](https://medium.com/@ido.vapner/unlocking-the-power-of-nano-ser
 
 A service is not necessarily monolithic inside\. Because a service is encapsulated from its users by its interface, it can have any kind of internal structure\. The most common cases, which can be intermixed together, are:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Subtypes%20of%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Subtypes%20of%20Services.png" alt="A monolithic service, layered service, hexagonal services, scaled service, and a Cell interconnected into a single system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A monolithic service, layered service, hexagonal services, scaled service, and a Cell interconnected into a single system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Subtypes%20of%20Services.png)
+
 
 ### [[wiki/concepts/source/basic-metapatterns/monolith|Monolithic]] service
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service%20-%20Monolithic.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service%20-%20Monolithic.png" alt="A diagram of a monolithic component." loading="lazy" width=27%/>
-</a>
-</div>
+
+![A diagram of a monolithic component.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Service%20-%20Monolithic.png)
+
 
 A *monolithic service* is a service with no definite internal structure, probably small enough to allow for complete rewrite instead of refactoring – the ideal of proponents of [*Microservices*](#microservices)\. It is [simple & stupid](https://en.wikipedia.org/wiki/KISS_principle) to implement but relies on external sources of persistent data\. For example, *device drivers* and [*actors*](#actors) usually get their \(persisted\) configuration during initialization\. A monolithic backend service may receive all the data it needs in incoming requests, via a query to another service, or by reading it from a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Database*]]\.
 
 ### [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Hexagonal]] service
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service%20-%20Hexagonal.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service%20-%20Hexagonal.png" alt="A core connected to: a protocol adapter, a Database Abstraction Layer with a database behind it, and an adapter with a library behind it." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A core connected to: a protocol adapter, a Database Abstraction Layer with a database behind it, and an adapter with a library behind it.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Service%20-%20Hexagonal.png)
+
 
 A *hexagonal service* has its external dependencies isolated behind vendor\-agnostic interfaces\.
 
@@ -281,21 +261,17 @@ This is a real\-world application of [[wiki/concepts/source/implementation-metap
 
 ### [[wiki/concepts/source/basic-metapatterns/shards|Scaled]] service
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service%20-%20Scaled.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service%20-%20Scaled.png" alt="Stateless instances between a load balancer and a database; stateful shards behind a sharding proxy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Stateless instances between a load balancer and a database; stateful shards behind a sharding proxy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Service%20-%20Scaled.png)
+
 
 With *scaled services* there are multiple [[wiki/concepts/source/basic-metapatterns/shards|*instances*]] of a service\. In most cases they [[wiki/concepts/source/extension-metapatterns/shared-repository|*share a database*]] \(though sometimes the database may be [[wiki/concepts/source/basic-metapatterns/shards|*sharded*]] or [[wiki/concepts/source/basic-metapatterns/shards|*replicated*]] together with the service that uses it\) and get their requests through a [[wiki/concepts/source/extension-metapatterns/proxy|*Load Balancer* or *Sharding Proxy*]], making [[wiki/concepts/source/extension-metapatterns/sandwich|a kind of *Sandwich*]]\.
 
 ### [[wiki/concepts/source/basic-metapatterns/layers|Layered]] service
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service%20-%20Layered.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service%20-%20Layered.png" alt="The integration, core and database layers." loading="lazy" width=84%/>
-</a>
-</div>
+
+![The integration, core and database layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Service%20-%20Layered.png)
+
 
 A *layered service* is [[wiki/concepts/source/fragmented-metapatterns/layered-services|divided into *layers*]]\. This approach is very common both with backend *\(micro\-\)services*, where at least the database is separated from the business logic, and with *device drivers* in system programming, where hardware\-specific low\-level interrupt handlers and register access are separated from the main logic and high\-level OS interface\.
 
@@ -305,11 +281,9 @@ Another benefit comes from the existence of the upper integration layer which ma
 
 ### [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Cell]] \(WSO2 definition\) \(service of services\), Domain \(Uber definition\), Cluster
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service%20-%20Cell.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service%20-%20Cell.png" alt="Three subservices behind a Cell gateway. Two of them share a database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Three subservices behind a Cell gateway. Two of them share a database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Service%20-%20Cell.png)
+
 
 When a service is split into a set of subservices, it makes [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|a kind of *Hexagonal Architecture*]] called [*Cell*](https://github.com/wso2/reference-architecture/blob/master/reference-architecture-cell-based.md) \(WSO2 name\), [*Domain*](https://www.uber.com/blog/microservice-architecture/) \(Uber name\), or *Cluster* \[[wiki/concepts/source/appendices/books-referenced|[DEDS]]\]\. All the incoming communication passes through a [[wiki/concepts/source/extension-metapatterns/proxy|*Cell Gateway*]] which encapsulates the *Cell* from its environment\. Outgoing communication may involve the *Cell Gateway* or dedicated [[wiki/concepts/source/extension-metapatterns/proxy|*Adapters*]] \(which constitute an *Anticorruption Layer* \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\]\) A *Cell* may deploy its own [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] and/or [[wiki/concepts/source/extension-metapatterns/shared-repository|*share a database*]] among its components\.
 
@@ -332,21 +306,17 @@ Examples of *Services* include:
 
 ### [[wiki/concepts/source/extension-metapatterns/sandwich|Service\-Based Architecture]] \(SBA\), [Macroservices](#whole-subdomain-sub-domain-services-macroservices)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Service-Based%20Architecture.png" alt="Three interconnected services, two of which share a database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Three interconnected services, two of which share a database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Service-Based%20Architecture.png)
+
 
 Being the simplest use of *Services* where each subdomain gets a dedicated component, a *Service\-Based Architecture* \(*SBA*\) \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] \(aka *Macroservices*\) tends to consist of a few coarse\-grained services, some of which may [[wiki/concepts/source/extension-metapatterns/shared-repository|*share a database*]] and thus have little direct communication\. An [[wiki/concepts/source/extension-metapatterns/orchestrator|*API Gateway*]] is often present as well, making the *SBA* into a kind of [[wiki/concepts/source/extension-metapatterns/sandwich|*Sandwich*]]\.
 
 ### Microservices
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Microservices.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Microservices.png" alt="Multiple instances of several services connected to their sidecars which are connected to a shared mesh engine. Instances of each service access its single database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Multiple instances of several services connected to their sidecars which are connected to a shared mesh engine. Instances of each service access its single database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Microservices.png)
+
 
 *Microservices* \[[wiki/concepts/source/appendices/books-referenced|[MP]], [[wiki/concepts/source/appendices/books-referenced|FSA]]\] are usually smaller than components in *Service\-Based Architecture* and feature multiple services per subdomain with strict decoupling: they never use a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Database*]] and are scaled and deployed independently \(and often dynamically\)\. Even [[wiki/concepts/source/foundations-of-software-architecture/orchestration|*orchestration*]] and distributed transactions \([[wiki/concepts/source/extension-metapatterns/orchestrator|*Sagas*]]\) are considered to be a smell of bad design\.
 
@@ -360,11 +330,9 @@ This architecture usually relies on a [[wiki/concepts/source/extension-metapatte
 
 ### [[wiki/concepts/source/implementation-metapatterns/mesh|Actors]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Actors.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Actors.png" alt="Actors running over an actor framework." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Actors running over an actor framework.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Actors.png)
+
 
 An [*actor*](https://volodymyrpavlyshyn.medium.com/actors-actor-systems-as-massively-distributed-scalability-architecture-5e40f5ea9e86) is an entity with private data and a public message queue\. They are like objects with the difference that actors communicate only by sending each other asynchronous messages\. The fact that a single execution thread may serve thousands of actors makes actor systems an extremely lightweight approach to asynchronous programming\. As an actor is usually single\-threaded, there is no place for *mutexes* and *deadlocks* in the code and it is possible to [replay events](https://martinfowler.com/eaaDev/EventSourcing.html)\. Non\-blocking [[wiki/concepts/source/basic-metapatterns/monolith|*Proactors*]] are often found in [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|real\-time systems]]\.
 
@@ -376,21 +344,17 @@ If we apply a bit of generalization, we can deduce that any server or backend se
 
 ### \(inexact\) [[wiki/concepts/source/basic-metapatterns/pipeline|Nanoservices]] \(API layer\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Nanoservices%20-%20API%20Layer.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Nanoservices%20-%20API%20Layer.png" alt="Nanoservices dedicated to Get and Post methods between a client and a shared database." loading="lazy" width=82%/>
-</a>
-</div>
+
+![Nanoservices dedicated to Get and Post methods between a client and a shared database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Nanoservices%20-%20API%20Layer.png)
+
 
 Though *Nanoservices* are defined by their size \(a single function\), not system topology, I want to mention a specific application from Diego Zanon’s book *Building Serverless Web Applications*\. That example is interesting because it comprises a single layer of isolated functions \(each providing one API method\) which may share functionality by including code from a common repository\. As nanoservices of this kind never interact directly \([[wiki/concepts/source/foundations-of-software-architecture/shared-data|they rely]] on a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Database*]] instead\) the common drawbacks of *Services* \(poor debugging and high latency\) don’t apply to them\.
 
 ### \(inexact\) [[wiki/concepts/source/extension-metapatterns/proxy|Device Drivers]], [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Pedestal]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Drivers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Drivers.png" alt="Applications call a System Call Interface which dispatches their requests to device drivers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Applications call a System Call Interface which dispatches their requests to device drivers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Drivers.png)
+
 
 An operating system must run efficiently with an unpredictable combination of hardware components, any of which can come from different manufacturers\. It is impossible to know all the combinations beforehand\. Thus it builds a [*Pedestal*](https://alistair.cockburn.us/hexagonal-architecture) by employing one service \(called [[wiki/concepts/source/extension-metapatterns/proxy|*driver*]]\) per hardware device\. A driver *adapts* a manufacturer\- and model\-specific hardware interface to the generic interface of the OS *kernel*, allowing for the kernel to operate the hardware it controls without the detailed knowledge of the model\. Internally, a driver is usually [[wiki/concepts/source/basic-metapatterns/layers|*layered*]]:
 
@@ -412,29 +376,23 @@ The whole system of kernel, drivers, and user applications comprises the [[wiki/
 - A new feature request may emerge outside of any of the existing subdomains, creating a new service, or a service may grow too large to be developed by a single team, calling for division\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Split.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Split.png" alt="A service is split in half." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A service is split in half.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services_%20Split.png)
+
 
 - Two services may become so strongly coupled that they fare better if merged together, or the entire system may need to be glued back into a [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] if the domain knowledge changes or if interservice communication strongly degrades performance\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Merge.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Merge.png" alt="Two services are merged." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Two services are merged.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services_%20Merge.png)
+
 
 - Alternatively, coupled services may be clustered into co\-deployed [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Cells*]] to reduce operational complexity\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Cluster.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Cluster.png" alt="Services are grouped into Cells, reducing their interdependencies." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Services are grouped into Cells, reducing their interdependencies.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services_%20Cluster.png)
+
 
 ### [[wiki/concepts/source/appendices/evolutions-of-services-that-add-layers|Evolutions that add layers]]
 
@@ -443,56 +401,44 @@ The most common modifications of a system of *Services* involve supplementary sy
 - A [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] tracks all the deployed service instances\. It mediates the [[wiki/concepts/source/basic-metapatterns/layers|communication]] between them and may manage their scaling and failure recovery\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20add%20Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20add%20Middleware.png" alt="The communication aspect of services can be covered by a dedicated middleware." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The communication aspect of services can be covered by a dedicated middleware.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20add%20Middleware.png)
+
 
 - [[wiki/concepts/source/extension-metapatterns/proxy|*Sidecars*]] of a [[wiki/concepts/source/extension-metapatterns/middleware|*Service Mesh*]] make a virtual layer of [[wiki/concepts/source/basic-metapatterns/layers|shared libraries]] for the [*Microservices*](#microservices) it hosts\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Multifunctional%20-%20Service%20Mesh.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Multifunctional%20-%20Service%20Mesh.png" alt="Scaled services reside on a shared layer of sidecars which is placed on top of a shared mesh engine. All instances of each service access the service's database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Scaled services reside on a shared layer of sidecars which is placed on top of a shared mesh engine. All instances of each service access the service's database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Multifunctional%20-%20Service%20Mesh.png)
+
 
 - A [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Database*]] simplifies the initial phases of development and interservice communication and enables the use of *Services* in [[wiki/concepts/source/foundations-of-software-architecture/shared-data|data\-centric domains]]\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20to%20Shared%20Database.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20to%20Shared%20Database.png" alt="The data of individual services is merged into a shared repository." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The data of individual services is merged into a shared repository.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20to%20Shared%20Database.png)
+
 
 - [[wiki/concepts/source/extension-metapatterns/proxy|*Proxies*]] stand between the system and its clients and take care of shared aspects that otherwise would need to be implemented by every service\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20add%20Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20add%20Proxy.png" alt="Generic aspects of services move to a shared proxy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Generic aspects of services move to a shared proxy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20add%20Proxy.png)
+
 
 - An [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] is the single place where the high\-level logic of all [[wiki/concepts/source/basic-metapatterns/layers|use cases]] resides\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20use%20Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20use%20Orchestrator.png" alt="The application logic is extracted from individual services into a shared orchestrator." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The application logic is extracted from individual services into a shared orchestrator.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20use%20Orchestrator.png)
+
 
 - Transforming *Services* into a [[wiki/concepts/source/extension-metapatterns/sandwich|*Sandwich*]] greatly simplifies their integration\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20to%20Sandwich.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20to%20Sandwich.png" alt="The application and data parts of services are separated from the domain logic and merged into system-wide layers, resulting in a Sandwich." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The application and data parts of services are separated from the domain logic and merged into system-wide layers, resulting in a Sandwich.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20to%20Sandwich.png)
+
 
 ### Evolutions of individual services
 

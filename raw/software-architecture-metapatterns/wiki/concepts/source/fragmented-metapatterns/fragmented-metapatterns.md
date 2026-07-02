@@ -20,11 +20,9 @@ There are several [[wiki/concepts/source/introduction/system-topologies|topologi
 
 ### [[wiki/concepts/source/fragmented-metapatterns/layered-services|Layered Services]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Layered%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Layered%20Services.png" alt="A diagram of Layered Services, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Layered Services, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Layered%20Services.png)
+
 
 [[wiki/concepts/source/fragmented-metapatterns/layered-services|*Layered Services*]] is an umbrella metapattern which highlights implementation details of [[wiki/concepts/source/basic-metapatterns/services|*Services*]], [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipeline*]], or [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]]\.
 
@@ -32,11 +30,9 @@ There are several [[wiki/concepts/source/introduction/system-topologies|topologi
 
 ### [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|Polyglot Persistence]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Polyglot%20Persistence.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Polyglot%20Persistence.png" alt="A diagram of Services with Polyglot Persistence, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with Polyglot Persistence, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Polyglot%20Persistence.png)
+
 
 [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Polyglot Persistence*]] is about using multiple data stores which differ in roles or technologies\. Each of the upper\-level components may have access to any data store\. Each data store is a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]]\.
 
@@ -44,11 +40,9 @@ There are several [[wiki/concepts/source/introduction/system-topologies|topologi
 
 ### [Backends for Frontends](<Backends for Frontends (BFF)>)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Backends%20for%20Frontends.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Backends%20for%20Frontends.png" alt="A diagram of Services with Backends for Frontends, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with Backends for Frontends, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Backends%20for%20Frontends.png)
+
 
 [*Backends for Frontends*](<Backends for Frontends (BFF)>) feature a service \(*BFF*\) for each kind of the system’s client\. A *BFF* may be a [[wiki/concepts/source/extension-metapatterns/proxy|*Proxy*]], [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]], or both\. Each *BFF* communicates with all the components below it\. The pattern looks like multiple *Proxies* or *Orchestrators* deployed in parallel\.
 
@@ -56,11 +50,9 @@ There are several [[wiki/concepts/source/introduction/system-topologies|topologi
 
 ### [Service\-Oriented Architecture](<Service-Oriented Architecture (SOA)>)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Service-Oriented%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Service-Oriented%20Architecture.png" alt="A diagram of Service-Oriented Architecture, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Service-Oriented Architecture, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Service-Oriented%20Architecture.png)
+
 
 [*SOA*](<Service-Oriented Architecture (SOA)>) comprises three or four layers of services, with each layer making a domain\. The upper layer contains [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrators*]] which are often client\-specific, just like [*BFF*](<Backends for Frontends (BFF)>)*s*\. The second layer incorporates business rules and is divided into business subdomains\. The lower layer\(s\) are libraries and utilities, grouped by functionality and technologies\. Any component may use \(orchestrate\) anything below it\.
 
@@ -68,11 +60,9 @@ There are several [[wiki/concepts/source/introduction/system-topologies|topologi
 
 ### [[wiki/concepts/source/fragmented-metapatterns/hierarchy|Hierarchy]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Hierarchy.png" alt="A diagram of Hierarchy, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Hierarchy, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Hierarchy.png)
+
 
 Some domains allow for [[wiki/concepts/source/fragmented-metapatterns/hierarchy|hierarchical composition]] where the functionality is spread over a tree of components\.
 

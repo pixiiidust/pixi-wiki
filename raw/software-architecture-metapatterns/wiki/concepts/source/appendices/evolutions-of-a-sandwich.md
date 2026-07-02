@@ -26,11 +26,9 @@ Unique evolutions of a [[wiki/concepts/source/extension-metapatterns/sandwich|*S
 
 ## Add or remove a domain\-level service
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20add%20remove%20Service.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20add%20remove%20Service.png" alt="One of the domain-level services is removed and another one is added." loading="lazy" width=100%/>
-</a>
-</div>
+
+![One of the domain-level services is removed and another one is added.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20add%20remove%20Service.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/sandwich|Sandwich]]\.
 
@@ -55,11 +53,9 @@ Though the *Sandwich* architecture allows for subdomains to be pretty independen
 
 ## Split or merge domain\-level services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20split%20merge%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20split%20merge%20Services.png" alt="One domain-level service is split in half while two other services are merged together." loading="lazy" width=100%/>
-</a>
-</div>
+
+![One domain-level service is split in half while two other services are merged together.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20split%20merge%20Services.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/sandwich|Sandwich]]\.
 
@@ -86,11 +82,9 @@ Though the *Sandwich* architecture allows for subdomains to be pretty independen
 
 ## Merge all the domain\-level services together
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20to%20Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20to%20Layers.png" alt="The entire domain layer is merged, resulting in Layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The entire domain layer is merged, resulting in Layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20to%20Layers.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -114,11 +108,9 @@ Often the project grows in an unexpected manner\. If you see that the domain\-le
 
 ## Subdivide both shared layers
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20to%20Layered%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20to%20Layered%20Services.png" alt="The integration and data layers are divided into subdomains, producing Three-Layered Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The integration and data layers are divided into subdomains, producing Three-Layered Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20to%20Layered%20Services.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/fragmented-metapatterns/layered-services|Three\-Layered Services]] \([[wiki/concepts/source/fragmented-metapatterns/layered-services|Layered Services]]\)\.
 

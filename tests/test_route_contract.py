@@ -177,6 +177,17 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("Knowledge Systems", html)
         self.assertIn("Creative Commons", html)
 
+    def test_software_architecture_metapatterns_diagrams_are_local_assets(self) -> None:
+        raw = (ROOT / "raw" / "software-architecture-metapatterns" / "wiki" / "concepts" / "source" / "basic-metapatterns" / "basic-metapatterns.md").read_text(encoding="utf-8")
+        self.assertIn("![A diagram of Monolith, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Monolith.png)", raw)
+        self.assertNotIn("raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Monolith.png", raw)
+        self.assertNotIn("<img", raw)
+        self.assertTrue((ROOT / "wiki" / "software-architecture-metapatterns" / "assets" / "images" / "Contents" / "Monolith.png").is_file())
+        html = (ROOT / "wiki" / "software-architecture-metapatterns" / "wiki" / "concepts" / "source" / "basic-metapatterns" / "basic-metapatterns.md.html").read_text(encoding="utf-8")
+        self.assertIn('<img src="/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Monolith.png"', html)
+        self.assertNotIn("&lt;img", html)
+        self.assertNotIn("raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Monolith.png", html)
+
     def test_rendered_wiki_page_exposes_metadata_tools_and_prev_next(self) -> None:
         html = (ROOT / "wiki" / "agent-workflows" / "wiki" / "concepts" / "knowledge-pack-routing.md.html").read_text(encoding="utf-8")
         self.assertIn("type</span>: concept", html)

@@ -32,19 +32,15 @@ Other programs are not that time\-constrained – they run a single task for a l
 
 Those dimensions make four corner cases that vary in architectural styles:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/4%20Kinds.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/4%20Kinds.png" alt="Diagrams of control, interactive, streaming, and computational systems." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of control, interactive, streaming, and computational systems.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/4%20Kinds.png)
+
 
 ## Control \(real\-time, hardware input\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Control%20-%20main.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Control%20-%20main.png" alt="A control system receives an event from a hardware component, processes it with a hardware driver, passes the result to a mediator, which calls another driver, which activates another hardware." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A control system receives an event from a hardware component, processes it with a hardware driver, passes the result to a mediator, which calls another driver, which activates another hardware.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/Control%20-%20main.png)
+
 
 A *control* application supervises several hardware or software interfaces with the goal of keeping a certain system\-wide *invariant*:
 
@@ -86,11 +82,9 @@ At the architectural level, control systems are [event\-driven](https://en.wikip
 - A [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Hierarchical Orchestrator*]] can manage even more complex systems\. The *Orchestrator* may run synchronously with polymorphic specialized components or asynchronously\. In the last case each sub\-orchestrator reacts independently based on its own model but also sends a notification to the high\-level component which builds a global strategy and configures the smaller models of sub\-orchestrators\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Control%20-%20variants.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Control%20-%20variants.png" alt="Diagrams of control systems with the following architectures: monolithic, actors, Pedestal, hierarchical." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of control systems with the following architectures: monolithic, actors, Pedestal, hierarchical.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/Control%20-%20variants.png)
+
 
 ### Patterns
 
@@ -115,11 +109,9 @@ Messages may be dispatched through multilevel index arrays or [*Visitors*](https
 
 ## Interactive \(soft real\-time, user input\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Interactive%20-%20main.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Interactive%20-%20main.png" alt="An interactive system workflow with an event coming from the presentation layer to the model and back." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An interactive system workflow with an event coming from the presentation layer to the model and back.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/Interactive%20-%20main.png)
+
 
 An *interactive* software deals with users who expect it to provide immediate feedback to their actions\. Examples include:
 
@@ -137,20 +129,16 @@ Interactive systems vary in a couple of ways:
 - The presentation layer may wait for the business logic to execute the user’s action, blocking further user input and screen updates \(air conditioner controller\), or it may asynchronously pass the command to the lower layer and continue processing new user input and showing progress of the already running tasks \(many games\) while the main program is busy with the command\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Interactive%20-%20variants%201.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Interactive%20-%20variants%201.png" alt="With blocking interaction between the presentation and model layers the user interface is frozen for the duration of processing. With non-blocking it is mostly active." loading="lazy" width=100%/>
-</a>
-</div>
+
+![With blocking interaction between the presentation and model layers the user interface is frozen for the duration of processing. With non-blocking it is mostly active.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/Interactive%20-%20variants%201.png)
+
 
 - There may be dedicated modules for processing user input and output \([[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*MVC* family]] of patterns\) or both may pass through the same stack of components \([[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*MVP* family]]\)\. The asymmetric approach deals with raw controller input, which is what most games need, while the bidirectional flow operates UI widgets provided by the host OS or GUI framework\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Interactive%20-%20variants%202.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Interactive%20-%20variants%202.png" alt="Model-View-Controller features separate components for input and output. In Model-View-Presenter both layers above its model participate in both input and output." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Model-View-Controller features separate components for input and output. In Model-View-Presenter both layers above its model participate in both input and output.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/Interactive%20-%20variants%202.png)
+
 
 ### Patterns
 
@@ -174,11 +162,9 @@ The presentation would usually receive \(subscribe to\) updates from the busines
 
 ## Streaming \(continuous, raw data input\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Streaming%20-%20main.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Streaming%20-%20main.png" alt="A streaming system is a pipeline of data processing steps." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A streaming system is a pipeline of data processing steps.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/Streaming%20-%20main.png)
+
 
 A *streaming* system processes a long sequence of similar events or data packets, usually by transforming individual items in a predetermined way:
 
@@ -214,11 +200,9 @@ Every component is likely to run in its own thread or process and be unaware of 
 
 ## Computational \(single run, user input\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Computational%20-%20main.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Computational%20-%20main.png" alt="A computational system makes multiple calls to the underlying OS during a single run." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A computational system makes multiple calls to the underlying OS during a single run.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/Computational%20-%20main.png)
+
 
 Finally, there is a large group of applications created to process long\-running commands:
 
@@ -255,11 +239,9 @@ Most real\-life software is too complex to fit the classification outlined above
 
 ### Camera
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Camera.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Camera.png" alt="Internal components of a camera with interactive, control, and streaming communication highlighted." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Internal components of a camera with interactive, control, and streaming communication highlighted.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/Camera.png)
+
 
 A digital camera incorporates subsystems of different kinds:
 
@@ -270,21 +252,17 @@ A digital camera incorporates subsystems of different kinds:
 
 ### 3D action game
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/3D%20action.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/3D%20action.png" alt="A game framework receives data from hardware and sends an event to the business logic which updates multiple game objects. Finally, the framework sends updates to the hardware." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A game framework receives data from hardware and sends an event to the business logic which updates multiple game objects. Finally, the framework sends updates to the hardware.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/3D%20action.png)
+
 
 Games with 3D graphics often bypass the host OS’ [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment) and access the underlying hardware drivers to achieve fine control and improved performance\. Such applications, though pretending to be interactive software driven by user input, strongly resemble control systems by polling hardware with fixed frequency \(the game’s frame rate\)\.
 
 ### SQL database
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Database.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/4Kinds/Database.png" alt="Internals of a database with the following groups of components: session, parser, task, metadata manager, and tables." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Internals of a database with the following groups of components: session, parser, task, metadata manager, and tables.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/4Kinds/Database.png)
+
 
 SQL databases support several kinds of user commands:
 

@@ -24,11 +24,9 @@ A [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] is unl
 
 ## Add a secondary Middleware
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Middleware%20add%20Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Middleware%20add%20Middleware.png" alt="A specialized middleware added to a system that already has a generic middleware." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A specialized middleware added to a system that already has a generic middleware.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Middleware%20add%20Middleware.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/middleware|Middleware]]\.
 
@@ -51,11 +49,9 @@ If the current *Middleware* is too generic for the system’s needs, you can add
 
 ## Merge two systems by building a Bottom\-Up Hierarchy
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Middleware%20to%20Bus%20of%20Buses.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Middleware%20to%20Bus%20of%20Buses.png" alt="A low-level middleware interconnects several higher-level middlewares." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A low-level middleware interconnects several higher-level middlewares.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Middleware%20to%20Bus%20of%20Buses.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/fragmented-metapatterns/hierarchy|Bottom\-up Hierarchy]] \([[wiki/concepts/source/fragmented-metapatterns/hierarchy|Hierarchy]], [[wiki/concepts/source/extension-metapatterns/middleware|Middleware]]\)\.
 

@@ -21,11 +21,9 @@ There are several ways to improve the performance of a [[wiki/concepts/source/ba
 - [[wiki/concepts/source/implementation-metapatterns/mesh|*Space\-Based Architecture*]] co\-locates the data store and business logic and scales both dynamically\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Space-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Space-Based%20Architecture.png" alt="The database is migrated to a Data Grid, resulting in a scalable Space-Based Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The database is migrated to a Data Grid, resulting in a scalable Space-Based Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Space-Based%20Architecture.png)
+
 
 Others are new and thus deserve more attention:
 
@@ -36,11 +34,9 @@ Others are new and thus deserve more attention:
 
 ## Merge several layers
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Merge.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Merge.png" alt="The application and domain layers are merged." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The application and domain layers are merged.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Merge.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/layers|Layers]] or [[wiki/concepts/source/basic-metapatterns/monolith|Monolith]]\.
 
@@ -69,11 +65,9 @@ If your system’s development [[wiki/concepts/source/analytics/architecture-and
 
 ## Scale individual layers
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers_%20Shard.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers_%20Shard.png" alt="The application and domain layers are independently sharded." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The application and domain layers are independently sharded.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers_%20Shard.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/layers|Layers]], [[wiki/concepts/source/basic-metapatterns/shards|Shards]], often [[wiki/concepts/source/extension-metapatterns/proxy|Load Balancer]] \([[wiki/concepts/source/extension-metapatterns/proxy|Proxy]]\)\.
 
@@ -103,11 +97,9 @@ Multiple instances or layers can be created, with their number and deployment [[
 
 ## Use multiple databases
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Polyglot%20Persistence.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Polyglot%20Persistence.png" alt="The database layer is subdivided into specialized databases, resulting in Polyglot Persistence." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The database layer is subdivided into specialized databases, resulting in Polyglot Persistence.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Polyglot%20Persistence.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/layers|Layers]], [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|Polyglot Persistence]]\.
 

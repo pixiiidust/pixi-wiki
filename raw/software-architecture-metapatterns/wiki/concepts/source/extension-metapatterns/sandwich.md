@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Extension metapatterns/Sandwich.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Sandwich.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Sandwich.png" alt="A diagram for Sandwich Architecture, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Sandwich Architecture, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Sandwich.png)
+
 
 *Follow the line of least resistance\.* Divide where it is loosely coupled\.
 
@@ -51,21 +49,17 @@ A *Sandwich*, named after the shape of its diagram, includes the following compo
 
 As [[wiki/concepts/source/basic-metapatterns/layers|*domain*\-level]] services rarely interact among themselves, the performance of a *Sandwich* is similar to that of [[wiki/concepts/source/basic-metapatterns/layers|*Layers*]] with the same kind of deployment \(components of a *Sandwich* may or may not be colocated\)\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Sandwich.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Sandwich.png" alt="Control and data flow is identical in Sandwich and Layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Control and data flow is identical in Sandwich and Layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Sandwich.png)
+
 
 ### Dependencies
 
 The *Sandwich*’s [[wiki/concepts/source/basic-metapatterns/layers|*integration* layer]] depends on every service inside the *Sandwich*\. The services themselves depend on the [[wiki/concepts/source/basic-metapatterns/layers|*data* layer]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Sandwich.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Sandwich.png" alt="The integration layer depends on every service. Every service depends on the data layer." loading="lazy" width=87%/>
-</a>
-</div>
+
+![The integration layer depends on every service. Every service depends on the data layer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Sandwich.png)
+
 
 Having two shared layers provides three options for invoking the [[wiki/concepts/source/basic-metapatterns/layers|*domain*]] components:
 
@@ -95,11 +89,9 @@ Having two shared layers provides three options for invoking the [[wiki/concepts
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Sandwich.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Sandwich.png" alt="Transitions between Layers, a Sandwich, a Service-Based Architecture, and Layered Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Transitions between Layers, a Sandwich, a Service-Based Architecture, and Layered Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Sandwich.png)
+
 
 *Sandwich*:
 
@@ -126,11 +118,9 @@ Though most real\-world *Sandwiches* stay beneath the radar as non\-standard arc
 
 ### [[wiki/concepts/source/extension-metapatterns/shared-repository|Blackboard]] System
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Blackboard.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Blackboard.png" alt="A Blackboard System includes a control which orchestrates knowledge sources which access a blackboard with shared data." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A Blackboard System includes a control which orchestrates knowledge sources which access a blackboard with shared data.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Blackboard.png)
+
 
 Some domains are [complex and ill\-structured](http://i.stanford.edu/pub/cstr/reports/cs/tr/86/1123/CS-TR-86-1123.pdf): there is only a vague understanding of how the inputs relate to outputs, therefore you cannot write a single algorithm to solve it\. If you are lucky to have a huge labeled dataset, you can attempt training a neural network\. If there are not so many examples, you are in trouble\.
 
@@ -152,11 +142,9 @@ This architecture makes best use of every system layer:
 
 ### [[wiki/concepts/source/implementation-metapatterns/mesh|Space\-Based Architecture]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Multifunctional%20-%20Space-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Multifunctional%20-%20Space-Based%20Architecture.png" alt="Space-Based Architecture comprises the following layers: a messaging grid, a processing grid, scaled processing units, a data grid, a deployment manager, and a persistent database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Space-Based Architecture comprises the following layers: a messaging grid, a processing grid, scaled processing units, a data grid, a deployment manager, and a persistent database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Multifunctional%20-%20Space-Based%20Architecture.png)
+
 
 *Space\-Based Architecture* \[[wiki/concepts/source/appendices/books-referenced|[SAP]], [[wiki/concepts/source/appendices/books-referenced|FSA]]\] is an extremely elastic alternative to [[wiki/concepts/source/basic-metapatterns/services|*Microservices*]] which works well for [[wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms|data\-centric]] domains\. Each *processing unit* – a [[wiki/concepts/source/basic-metapatterns/layers|domain\-level]] service – is co\-located with an in\-memory replica of the entire system’s data, which makes both data access and creation of new instances of *processing units* blazingly fast\. As is common for *Sandwiches*, *processing units* can be [[wiki/concepts/source/foundations-of-software-architecture/orchestration|*orchestrated*]] by the [[wiki/concepts/source/extension-metapatterns/orchestrator|*processing grid*]] or they can [[wiki/concepts/source/foundations-of-software-architecture/shared-data|*subscribe to changes*]] in the shared [[wiki/concepts/source/extension-metapatterns/shared-repository|*data grid*]], this architecture being flexible enough to allow for choosing a [[wiki/concepts/source/foundations-of-software-architecture/arranging-communication|communication paradigm]] on per request basis\.
 
@@ -172,27 +160,21 @@ As *Space\-Based Architecture* runs every component in a [[wiki/concepts/source/
 
 ### [[wiki/concepts/source/basic-metapatterns/services|Service\-Based Architecture]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Service-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Service-Based%20Architecture.png" alt="A Sandwich-like topology with user interface, a layer of domain services, and a shared database." loading="lazy" width=95%/>
-</a>
-</div>
+
+![A Sandwich-like topology with user interface, a layer of domain services, and a shared database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Service-Based%20Architecture.png)
+
 
 *Service\-Based Architecture* \[[wiki/concepts/source/appendices/books-referenced|[FSA]] [[wiki/concepts/source/analytics/ambiguous-patterns|but not]] [[wiki/concepts/source/appendices/books-referenced|DEDS]]\] is the most pragmatic and loosely defined of topologies based on *Services* \(hence the name\)\. In a basic *Service\-Based Architecture* the [[wiki/concepts/source/basic-metapatterns/services|*subdomain services*]] are integrated by a [[wiki/concepts/source/extension-metapatterns/proxy|*User Interface*]] layer, usually a *Frontend*, and there is a single [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Database*]]\. However, as there are no written rules for *Service\-Based Architecture*, multiple databases or finer\-grained *GUI*s may be used for programmers’ convenience, disintegrating the *Sandwich* topology for the sake of less coupled [[wiki/concepts/source/fragmented-metapatterns/layered-services|*Layered Service*s]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Service-Based%20to%20Layered%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Service-Based%20to%20Layered%20Services.png" alt="A Sandwich-like topology with shared user interface and database is gradually transformed into layered services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A Sandwich-like topology with shared user interface and database is gradually transformed into layered services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Service-Based%20to%20Layered%20Services.png)
+
 
 ### [[wiki/concepts/source/basic-metapatterns/services|Nanoservices]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Nanoservices.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Nanoservices.png" alt="Nanoservices form a Sandwich-shaped architecture. The upper layer is an API Gateway for an orchestrated system or a gateway for pipelined Nanoservices. The lower layer is a shared datastore." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Nanoservices form a Sandwich-shaped architecture. The upper layer is an API Gateway for an orchestrated system or a gateway for pipelined Nanoservices. The lower layer is a shared datastore.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Nanoservices.png)
+
 
 *Nanoservices* is another loosely defined architecture built of single\-purpose *functions* \([FaaS](https://en.wikipedia.org/wiki/Function_as_a_service)\) individually deployed to the cloud\. It is highly elastic and relies on a cloud provider for operational support, saving costs for small businesses\.
 
@@ -204,29 +186,23 @@ Please note how a fine\-grained decomposition of business logic necessarily resu
 
 ### [[wiki/concepts/source/fragmented-metapatterns/layered-services|Command Query Responsibility Segregation]] \(CQRS\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/CQRS.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/CQRS.png" alt="A large read and smaller write models between a user interface and database." loading="lazy" width=84%/>
-</a>
-</div>
+
+![A large read and smaller write models between a user interface and database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/CQRS.png)
+
 
 [*Command Query Responsibility Segregation*](https://martinfowler.com/bliki/CQRS.html) \(*CQRS*\) is a principle which calls for separation of components that process *commands* \(requests that change the system’s data\) and *queries* \(requests that analyze the data\)\. The subdivision necessarily happens at the [[wiki/concepts/source/basic-metapatterns/layers|*domain*]] \(*model*\) level, resulting in separate [*Write Model*](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs) \([*Command Model*](https://martinfowler.com/bliki/CQRS.html)\) and [*Read Model*](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs) \([*Query Model*](https://martinfowler.com/bliki/CQRS.html), [*Thin Read Layer*](https://cqrs.wordpress.com/wp-content/uploads/2010/11/cqrs_documents.pdf)\)\. In the simplest case the [[wiki/concepts/source/basic-metapatterns/layers|*data* layer]] is kept monolithic, as shown in the diagram above\.
 
 *CQRS* helps decouple the logic\-heavy object\-oriented code which maintains data consistency and business constraints during editing data records from the search and aggregation code that needs direct database access to run complex SQL queries\. If that is not enough, it is possible to trade complexity for performance by employing specialized databases: [*OLTP*](https://en.wikipedia.org/wiki/Online_transaction_processing) for use with the *Write Model* and [*OLAP*](https://en.wikipedia.org/wiki/Online_analytical_processing) for the *Read Model*, as described in the [[wiki/concepts/source/fragmented-metapatterns/layered-services|corresponding section of the *Layered Services* chapter]]:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/CQRS%20to%20Layered%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/CQRS%20to%20Layered%20Services.png" alt="The single database of a Sandwich-like CQRS with a shared database is subdivided into OLTP and OLAP databases, forming Layered Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The single database of a Sandwich-like CQRS with a shared database is subdivided into OLTP and OLAP databases, forming Layered Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/CQRS%20to%20Layered%20Services.png)
+
 
 ### \(inexact\) [[wiki/concepts/source/basic-metapatterns/shards|Replicated Load\-Balanced Services]], Lambdas
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Shards%20-%20Pool.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Shards%20-%20Pool.png" alt="A load balancer connects a new client to a free instance of a stateless backend that accesses a database shared among all the backend instances." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A load balancer connects a new client to a free instance of a stateless backend that accesses a database shared among all the backend instances.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Shards%20-%20Pool.png)
+
 
 Replicating a system’s [[wiki/concepts/source/basic-metapatterns/layers|*domain*]] [[wiki/concepts/source/basic-metapatterns/layers|*tier*]] along the [[wiki/concepts/source/introduction/metapatterns|*sharding* axis]] also results in a *Sandwich*\-like [[wiki/concepts/source/introduction/system-topologies|topology]], albeit with altered properties: while the original *Sandwich*’s subdivision of the codebase along the [[wiki/concepts/source/introduction/metapatterns|*subdomain* axis]] allows for multiteam development and easy integration of new functionality, replication along the *sharding* axis only makes it simple to add or remove instances of the middle tier as the system load changes\.
 
@@ -243,38 +219,30 @@ The components of a *Sandwich* provide plenty of ways to alter the system, with 
 - The *domain\-level services* are independent enough to be easily added or removed\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20add%20remove%20Service.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20add%20remove%20Service.png" alt="One of the domain-level services is removed and another one is added." loading="lazy" width=100%/>
-</a>
-</div>
+
+![One of the domain-level services is removed and another one is added.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20add%20remove%20Service.png)
+
 
 - In most cases they share technologies, allowing for splitting or merging of the services\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20split%20merge%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20split%20merge%20Services.png" alt="One domain-level service is split in half while two other services are merged together." loading="lazy" width=100%/>
-</a>
-</div>
+
+![One domain-level service is split in half while two other services are merged together.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20split%20merge%20Services.png)
+
 
 - If the services are found to be strongly coupled, they can be merged into a monolithic layer, likely to be subdivided in a better way later on\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20to%20Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20to%20Layers.png" alt="The entire domain layer is merged, resulting in Layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The entire domain layer is merged, resulting in Layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20to%20Layers.png)
+
 
 - Alternatively, the subdomains can be further decoupled\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20to%20Layered%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Sandwich%20to%20Layered%20Services.png" alt="The integration and data layers are divided into subdomains, producing Three-Layered Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The integration and data layers are divided into subdomains, producing Three-Layered Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Sandwich%20to%20Layered%20Services.png)
+
 
 ### [[wiki/concepts/source/appendices/evolutions-of-a-shared-repository|Evolutions of the data layer]]
 

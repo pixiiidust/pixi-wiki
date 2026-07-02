@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Fragmented metapatterns/Backends for Frontends (BFF).md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Backends%20for%20Frontends.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Backends%20for%20Frontends.png" alt="A diagram for Services with Backends for Frontends, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Services with Backends for Frontends, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Backends%20for%20Frontends.png)
+
 
 *Hire a local guide\.* Dedicate a service for every kind of client\.
 
@@ -48,11 +46,9 @@ As the multiple *Orchestrators* of *BFF* donâ€™t intercommunicate, the patternâ€
 
 Each *BFF* depends on all the services which it uses \(usually every service in the system\)\. The services themselves are likely to be independent, as is common in [[wiki/concepts/source/foundations-of-software-architecture/orchestration|*orchestrated* systems]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Backends%20for%20Frontends.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Backends%20for%20Frontends.png" alt="Each Backend for Frontend depends on every service which it calls." loading="lazy" width=91%/>
-</a>
-</div>
+
+![Each Backend for Frontend depends on every service which it calls.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Backends%20for%20Frontends.png)
+
 
 ### Applicability
 
@@ -70,11 +66,9 @@ Each *BFF* depends on all the services which it uses \(usually every service in 
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/BFF.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/BFF.png" alt="Diagrams of Backends for Frontends over a monolith, layers, shards, and services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Backends for Frontends over a monolith, layers, shards, and services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/BFF.png)
+
 
 *Backends for Frontends*:
 
@@ -93,41 +87,33 @@ Each *BFF* depends on all the services which it uses \(usually every service in 
 
 ### [[wiki/concepts/source/extension-metapatterns/proxy|Proxies]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/BFF%20-%20Gateways.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/BFF%20-%20Gateways.png" alt="Each gateway in the Backends for Frontends layer adapts its client's protocol and calls the services of the domain layer." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each gateway in the Backends for Frontends layer adapts its client's protocol and calls the services of the domain layer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/BFF%20-%20Gateways.png)
+
 
 Dedicating a [[wiki/concepts/source/extension-metapatterns/proxy|*Gateway*]] per client is useful when the clients differ in the mode of access to the system \(protocols / encryption / authorization\) but not in workflows\.
 
 ### [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrators]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/BFF%20-%20Orchestrators.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/BFF%20-%20Orchestrators.png" alt="Each orchestrator in the Backends for Frontends layer calls the services of the domain layer." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each orchestrator in the Backends for Frontends layer calls the services of the domain layer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/BFF%20-%20Orchestrators.png)
+
 
 An [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] per client makes sense if the clients use the system in completely unrelated ways, e\.g\. a shopâ€™s customers have little to share with its administrators\.
 
 ### [[wiki/concepts/source/extension-metapatterns/proxy|Proxy]] \+ [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]] pairs
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/BFF%20-%20Gateways%20+%20Orchestrators.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/BFF%20-%20Gateways%20+%20Orchestrators.png" alt="In each pair in the Backends for Frontends layer the gateway adapts its client's protocol while the orchestrator calls the services of the domain layer." loading="lazy" width=100%/>
-</a>
-</div>
+
+![In each pair in the Backends for Frontends layer the gateway adapts its client's protocol while the orchestrator calls the services of the domain layer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/BFF%20-%20Gateways%20%2B%20Orchestrators.png)
+
 
 Clients vary in both access mode \(protocol\) and workflow\. [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrators*]] or [[wiki/concepts/source/extension-metapatterns/proxy|*Proxies*]] may be reused if some kinds of clients share only the protocol or [[wiki/concepts/source/basic-metapatterns/layers|*application logic*]]\.
 
 ### [[wiki/concepts/source/extension-metapatterns/orchestrator|API Gateways]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/BFF%20-%20API%20gateways.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/BFF%20-%20API%20gateways.png" alt="Each API Gateway in the Backends for Frontends layer both adapts its client's protocol and orchestrates the services of the domain layer." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each API Gateway in the Backends for Frontends layer both adapts its client's protocol and orchestrates the services of the domain layer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/BFF%20-%20API%20gateways.png)
+
 
 Clients vary in access mode \(protocol\) and workflow and there is a third\-party [[wiki/concepts/source/extension-metapatterns/orchestrator|*API Gateway*]] framework which seems to fit your requirements off the shelf\.
 
@@ -135,11 +121,9 @@ Multiple *API Gateways* match the literal meaning of *Backends for Frontends* â€
 
 ### [[wiki/concepts/source/extension-metapatterns/orchestrator|Event Mediators]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/BFF%20-%20Event%20mediators.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/BFF%20-%20Event%20mediators.png" alt="Each event mediator in the Backends for Frontends layer orchestrates the services of the domain layer." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each event mediator in the Backends for Frontends layer orchestrates the services of the domain layer.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/BFF%20-%20Event%20mediators.png)
+
 
 \[[wiki/concepts/source/appendices/books-referenced|[FSA]]\] mentions that multiple [[wiki/concepts/source/extension-metapatterns/orchestrator|*Event Mediators*]] may be deployed in [[wiki/concepts/source/basic-metapatterns/pipeline|*Event\-Driven Architecture*]] to split the codebase and improve stability\.
 
@@ -153,11 +137,9 @@ Multiple *API Gateways* match the literal meaning of *Backends for Frontends* â€
 - [[wiki/concepts/source/extension-metapatterns/proxy|*Sidecars*]] \(of [[wiki/concepts/source/implementation-metapatterns/mesh|*Service Mesh*]]\) are a way to share libraries among the *BFF*s\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/3/BFF.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/3/BFF.png" alt="Backends for Frontends can be merged into an Orchestrator, can share code via sidecars, or put shared functionality into a dedicated orchestration layer or into Cell gateways." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Backends for Frontends can be merged into an Orchestrator, can share code via sidecars, or put shared functionality into a dedicated orchestration layer or into Cell gateways.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/3/BFF.png)
+
 
 ## Summary
 

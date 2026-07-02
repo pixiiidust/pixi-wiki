@@ -26,11 +26,9 @@ Other cases are better solved by extracting the logic that manipulates multiple 
 
 ## Add a Middleware
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Middleware.png" alt="A middleware manages shards and lets them communicate to each other." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A middleware manages shards and lets them communicate to each other.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20add%20Middleware.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/shards|Shards]], [[wiki/concepts/source/extension-metapatterns/middleware|Middleware]], [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -54,11 +52,9 @@ A *Middleware* transports messages between shards, checks their health, and reco
 
 ## Add a Sharding Proxy
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Load%20Balancer.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20add%20Load%20Balancer.png" alt="A sharding proxy relieves clients from the need to find the appropriate shard." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A sharding proxy relieves clients from the need to find the appropriate shard.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20add%20Load%20Balancer.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/shards|Shards]], [[wiki/concepts/source/extension-metapatterns/proxy|Sharding Proxy]] \([[wiki/concepts/source/extension-metapatterns/proxy|Proxy]]\), [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -83,11 +79,9 @@ The client application may know the address of the shard which serves it and con
 
 ## Move the integration logic into an Orchestrator
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20use%20Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Shards/Shards%20use%20Orchestrator.png" alt="The high-level logic of shards moves to a shared orchestrator which integrates the data stored within and processed by individual shards." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The high-level logic of shards moves to a shared orchestrator which integrates the data stored within and processed by individual shards.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Shards/Shards%20use%20Orchestrator.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/shards|Shards]], [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]], [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 

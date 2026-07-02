@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Extension metapatterns/Shared Repository.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Shared%20Repository.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Shared%20Repository.png" alt="A diagram for Services with a shared repository, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Services with a shared repository, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Shared%20Repository.png)
+
 
 *Knowledge itself is power\.* Sharing data is simple \(& stupid\)\.
 
@@ -61,19 +59,15 @@ Non\-transactional distributed data stores may be very fast when colocated with 
 
 Normally, every service depends on the repository\. If the repository does not provide notifications on changes to the data, the services may need to communicate directly, in which case they will also depend on each other through [[wiki/concepts/source/foundations-of-software-architecture/choreography|*choreography*]] or *mutual* [[wiki/concepts/source/foundations-of-software-architecture/orchestration|*orchestration*]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/SharedRepository-1.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/SharedRepository-1.png" alt="If the shared repository supports notifications, services depend only on the repository. Otherwise each service also depends on its event sources." loading="lazy" width=100%/>
-</a>
-</div>
+
+![If the shared repository supports notifications, services depend only on the repository. Otherwise each service also depends on its event sources.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/SharedRepository-1.png)
+
 
 Any dependencies on the repository technology and the data schema are dangerous for long\-running projects as both of them may need to change sooner or later\. Decoupling the code from the data storage is done with [yet another layer of indirection](https://en.wikipedia.org/wiki/Fundamental_theorem_of_software_engineering) which is called a [[wiki/concepts/source/extension-metapatterns/proxy|*Database Abstraction Layer*]] \(*DAL*\), a *Database Access Layer* \[[wiki/concepts/source/appendices/books-referenced|[POSA4]]\], or a *Data Mapper* \[[wiki/concepts/source/appendices/books-referenced|[PEAA]]\]\. The DAL, which translates between the data schema and database’s API on one side and the business logic’s SPI on the other side, may reside inside each service or wrap the database:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/SharedRepository-2.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/SharedRepository-2.png" alt="Each service may have a private Database Abstraction Layer, or there may be one shared Database Abstraction Layer colocated with the shared repository." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Each service may have a private Database Abstraction Layer, or there may be one shared Database Abstraction Layer colocated with the shared repository.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/SharedRepository-2.png)
+
 
 Still, the DAL does not remove shared dependencies and only adds some flexibility\. It seems that there is a peculiar kind of coupling through shared components: if one of the services needs to change the database schema or technology to better suit its needs, it is unable to do so because other components rely on \(and exploit\) the old schema and technology\. Even deploying a second database, private to the service, is often not an option, as there is no convenient way to keep the databases in sync\.
 
@@ -96,11 +90,9 @@ Still, the DAL does not remove shared dependencies and only adds some flexibilit
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Shared%20Repository.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Shared%20Repository.png" alt="A shared repository for Services, Shards, and Service-Oriented Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A shared repository for Services, Shards, and Service-Oriented Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Shared%20Repository.png)
+
 
 *Shared Repository*:
 
@@ -125,41 +117,33 @@ A *Shared Repository* may provide a generic interface \(e\.g\. SQL\) or a custom
 
 ### Shared Database, Integration Database, Data Domain, Database of [[wiki/concepts/source/extension-metapatterns/sandwich|Service\-Based Architecture]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Shared%20Database.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Shared%20Database.png" alt="Several services access a shared database and optionally communicate with each other directly." loading="lazy" width=93%/>
-</a>
-</div>
+
+![Several services access a shared database and optionally communicate with each other directly.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Shared%20Database.png)
+
 
 *Shared Database* \[[wiki/concepts/source/appendices/books-referenced|[EIP]]\], [*Integration Database*](https://martinfowler.com/bliki/IntegrationDatabase.html)*,* or *Data Domain* \[[wiki/concepts/source/appendices/books-referenced|[SAHP]]\] is a single database available to several [[wiki/concepts/source/basic-metapatterns/services|services]]\. The services may subscribe to data change triggers in the database itself or notify each other directly about domain events\. The latter is often the case with [[wiki/concepts/source/basic-metapatterns/services|*Service\-Based Architecture*]] which consists of large services dedicated to subdomains\.
 
 ### Shared File System
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Shared%20files.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Shared%20files.png" alt="An algorithm processes a batch of input files and writes output files. Its output becomes an input for another algorithm. The algorithms make a pipeline." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An algorithm processes a batch of input files and writes output files. Its output becomes an input for another algorithm. The algorithms make a pipeline.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Shared%20files.png)
+
 
 As a file system is a kind of shared dictionary, writing and reading files can be used to transfer data between applications\. A [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|data processing]] [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipeline*]] which stores intermediate results in files benefits from the ability to restart its calculation from the last successful step because files are persistent \[[wiki/concepts/source/appendices/books-referenced|[DDIA]]\]\.
 
 ### Shared Memory
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Shared%20memory.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Shared%20memory.png" alt="Areas of shared memory (ring buffers) between two processes make a pair of event channels." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Areas of shared memory (ring buffers) between two processes make a pair of event channels.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Shared%20memory.png)
+
 
 Several actors \(processes, modules, device drivers\) communicate through one or more mutually accessible data structures \(arrays, trees, or dictionaries\)\. Accessing a shared object may require some kind of synchronization \(e\.g\. taking a *mutex*\) or employ [*atomic variables*](https://codescoddler.medium.com/concurrency-made-simple-the-role-of-atomic-variables-8327b9b35023)\. Notwithstanding that communication via *shared memory* is the archenemy of \([*shared\-nothing*](https://www.scylladb.com/glossary/shared-nothing-architecture/)\) messaging it is actually used to implement messaging: high\-load multi\-process systems \(web browsers and high\-frequency trading\) rely on shared memory *mailboxes* for messaging between their [[wiki/concepts/source/basic-metapatterns/services|constituent processes]]\.
 
 ### [[wiki/concepts/source/extension-metapatterns/sandwich|Blackboard]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Blackboard.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Blackboard.png" alt="A Blackboard System includes a control which orchestrates knowledge sources which access a blackboard with shared data." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A Blackboard System includes a control which orchestrates knowledge sources which access a blackboard with shared data.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Blackboard.png)
+
 
 [*Blackboard*](https://hillside.net/plop/plop97/Proceedings/lalanda.pdf) \[[wiki/concepts/source/appendices/books-referenced|[POSA1]], [[wiki/concepts/source/appendices/books-referenced|POSA4]]\] was used for non\-deterministic calculations where several algorithms were concurring and collaborating to gradually build a solution from incomplete inputs\. The *control* \([[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]]\) component schedules the work of several *knowledge sources* \([[wiki/concepts/source/basic-metapatterns/services|*Services*]]\) which encapsulate algorithms for processing the data stored in the *blackboard* \(*Shared Repository*\) named after the well\-known collaborative tool used for a brainstorming session\. This approach has mostly been superseded by convolutional neural networks\.
 
@@ -167,11 +151,9 @@ Examples: several use cases are [mentioned on Wikipedia](https://en.wikipedia.or
 
 ### Data Grid of [[wiki/concepts/source/extension-metapatterns/sandwich|Space\-Based Architecture]] \(SBA\), [[wiki/concepts/source/extension-metapatterns/proxy|Replicated Cache, Distributed Cache]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Data%20Grid.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Data%20Grid.png" alt="A layer of scaled processing units each connected to a node of an in-memory database over a data replication engine which communicates with a persistent database through readers and writers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A layer of scaled processing units each connected to a node of an in-memory database over a data replication engine which communicates with a persistent database through readers and writers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Data%20Grid.png)
+
 
 The [*Space\-Based Architecture*](https://en.wikipedia.org/wiki/Space-based_architecture) \(*SBA*\) \[[wiki/concepts/source/appendices/books-referenced|[SAP]], [[wiki/concepts/source/appendices/books-referenced|FSA]]\] is a [[wiki/concepts/source/implementation-metapatterns/mesh|*Service Mesh*]] \(a [[wiki/concepts/source/implementation-metapatterns/mesh|*Mesh*]]\-based [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] with at least one [[wiki/concepts/source/extension-metapatterns/proxy|*Proxy*]] per service instance\) which also implements an in\-memory [*tuple space*](https://en.wikipedia.org/wiki/Tuple_space) \(shared dictionary\)\. Although it does not provide a full\-featured database interface it has very good performance, elasticity, and fault tolerance, while some implementations allow for dealing with datasets which are much larger than anything digestible by ordinary databases\. Its drawbacks include write collisions and high operating costs \(huge traffic for data replication and lots of RAM to store the [[wiki/concepts/source/basic-metapatterns/shards|replicas]]\)\.
 
@@ -196,21 +178,17 @@ The drawbacks of this architecture include:
 
 ### [[wiki/concepts/source/extension-metapatterns/middleware|Persistent Event Log, Shared Event Store]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Shared%20Database%20-%20Event%20Log.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Shared%20Database%20-%20Event%20Log.png" alt="A service posts a message to a shared event log which both persists the message to a shared event store and forwards the message to other services." loading="lazy" width=95%/>
-</a>
-</div>
+
+![A service posts a message to a shared event log which both persists the message to a shared event store and forwards the message to other services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Shared%20Database%20-%20Event%20Log.png)
+
 
 A data store for events \(an *event log* for interservice events or an *event store* for internal state changes\) [[wiki/concepts/source/foundations-of-software-architecture/shared-data|can be used]] as a [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]]: an event producer writes its events to a topic in the repository while the event consumers get notified as soon as a new record appears\.
 
 ### \(inexact\) Stamp Coupling
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Stamp%20Coupling.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Stamp%20Coupling.png" alt="A message collects pieces of data while passing through a pipeline." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A message collects pieces of data while passing through a pipeline.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Stamp%20Coupling.png)
+
 
 *Stamp Coupling* \[[wiki/concepts/source/appendices/books-referenced|[SAHP]]\] happens when a single data structure passes through an entire [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipeline*]], with separate fields of the data structure matching individual processing steps\.
 
@@ -223,38 +201,30 @@ Once a database appears, it is unlikely to go away\. I see the [[wiki/concepts/s
 - [[wiki/concepts/source/basic-metapatterns/shards|Shard]] the database\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database_%20Shard.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database_%20Shard.png" alt="The shared database is sharded so that each database instance holds a subset of data," loading="lazy" width=100%/>
-</a>
-</div>
+
+![The shared database is sharded so that each database instance holds a subset of data,](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database_%20Shard.png)
+
 
 - Use [[wiki/concepts/source/implementation-metapatterns/mesh|*Space\-Based Architecture*]] for dynamic scalability\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Space-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Space-Based%20Architecture.png" alt="The shared database is migrated to a Data Grid, resulting in Space-Based Architecture" loading="lazy" width=100%/>
-</a>
-</div>
+
+![The shared database is migrated to a Data Grid, resulting in Space-Based Architecture](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database%20to%20Space-Based%20Architecture.png)
+
 
 - Divide the data into private databases\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Services.png" alt="The shared database is split into databases dedicated to subdomains, resulting in Layered Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The shared database is split into databases dedicated to subdomains, resulting in Layered Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database%20to%20Services.png)
+
 
 - Deploy specialized data stores \([[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Polyglot Persistence*]]\)\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Polyglot%20Persistence.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Polyglot%20Persistence.png" alt="The shared database is migrated to specialized databases." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The shared database is migrated to specialized databases.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database%20to%20Polyglot%20Persistence.png)
+
 
 ## Summary
 

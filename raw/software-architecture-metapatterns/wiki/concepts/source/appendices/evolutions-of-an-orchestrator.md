@@ -32,11 +32,9 @@ There is one way to counter the first point and more ways to solve the second on
 
 ## Subdivide to form Layered Services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Layered%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Layered%20Services.png" alt="An orchestrator is subdivided into subdomain components which become the application layers of respective services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An orchestrator is subdivided into subdomain components which become the application layers of respective services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20to%20Layered%20Services.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/fragmented-metapatterns/layered-services|Orchestrated Three\-Layered Services]] \([[wiki/concepts/source/fragmented-metapatterns/layered-services|Layered Services]] \([[wiki/concepts/source/basic-metapatterns/services|Services]], [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\)\)\.
 
@@ -67,11 +65,9 @@ If the [[wiki/concepts/source/basic-metapatterns/layers|*orchestration* logic]] 
 
 ## Subdivide to form Backends for Frontends
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Backends%20for%20Frontends.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Backends%20for%20Frontends.png" alt="An orchestrator is subdivided into Backends for Frontends." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An orchestrator is subdivided into Backends for Frontends.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20to%20Backends%20for%20Frontends.png)
+
 
 <ins>Patterns</ins>: [Backends for Frontends](<Backends for Frontends (BFF)>), [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]]\.
 
@@ -102,11 +98,9 @@ When use cases for clients vary, it makes sense for each kind of client to have 
 
 ## Add a layer of orchestration
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20add%20Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20add%20Orchestrator.png" alt="An orchestrator is subdivided into a pair of simple and complex orchestrators." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An orchestrator is subdivided into a pair of simple and complex orchestrators.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20add%20Orchestrator.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]], [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -136,11 +130,9 @@ You may use two or three *orchestration frameworks* \(engines\) which differ in 
 
 ## Form a Hierarchy
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Orchestrator%20to%20Hierarchy.png" alt="An orchestrator is subdivided into a hierarchy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An orchestrator is subdivided into a hierarchy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Orchestrator%20to%20Hierarchy.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/fragmented-metapatterns/hierarchy|Top\-Down Hierarchy]] \([[wiki/concepts/source/fragmented-metapatterns/hierarchy|Hierarchy]]\)\.
 

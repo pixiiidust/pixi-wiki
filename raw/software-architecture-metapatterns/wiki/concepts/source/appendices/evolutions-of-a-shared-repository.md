@@ -26,11 +26,9 @@ Once a database appears, it is unlikely to go away\. I see the following evoluti
 
 ## Shard the database
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database_%20Shard.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database_%20Shard.png" alt="The shared database is sharded so that each database instance holds a subset of data," loading="lazy" width=100%/>
-</a>
-</div>
+
+![The shared database is sharded so that each database instance holds a subset of data,](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database_%20Shard.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/shards|Sharding]] \([[wiki/concepts/source/basic-metapatterns/shards|Shards]]\), [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]], maybe [[wiki/concepts/source/extension-metapatterns/proxy|Sharding Proxy]]\.
 
@@ -65,11 +63,9 @@ Modern distributed databases support sharding out of the box, but an overgrown t
 
 ## Use Space\-Based Architecture
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Space-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Space-Based%20Architecture.png" alt="The shared database is migrated to a Data Grid, resulting in Space-Based Architecture" loading="lazy" width=100%/>
-</a>
-</div>
+
+![The shared database is migrated to a Data Grid, resulting in Space-Based Architecture](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database%20to%20Space-Based%20Architecture.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/implementation-metapatterns/mesh|Space\-Based Architecture]] \([[wiki/concepts/source/implementation-metapatterns/mesh|Mesh]], [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]]\)\.
 
@@ -96,11 +92,9 @@ Modern distributed databases support sharding out of the box, but an overgrown t
 
 ## Move the data to private databases of services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Services.png" alt="The shared database is split into databases dedicated to subdomains, resulting in Layered Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The shared database is split into databases dedicated to subdomains, resulting in Layered Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database%20to%20Services.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/services|Services]], [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -131,11 +125,9 @@ If the data clearly follows subdomains, it may be possible to subdivide it accor
 
 ## Deploy specialized databases
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Polyglot%20Persistence.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Shared%20Database%20to%20Polyglot%20Persistence.png" alt="The shared database is migrated to specialized databases." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The shared database is migrated to specialized databases.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Shared%20Database%20to%20Polyglot%20Persistence.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|Polyglot Persistence]]\.
 

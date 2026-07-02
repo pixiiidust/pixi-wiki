@@ -26,11 +26,9 @@ Another drawback of [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith
 
 ## Divide into Layers
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers.png" alt="A monolith is split into application, domain and database layers." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A monolith is split into application, domain and database layers.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Layers.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -60,11 +58,9 @@ Most systems apply *layering* by default as it grants a lot of flexibility at ve
 
 ## Use a database
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Database.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Database.png" alt="The data of a monolithic system is moved to a database, leaving the business logic stateless." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The data of a monolithic system is moved to a database, leaving the business logic stateless.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20add%20Database.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/layers|Layers]], [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Database]] \([[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]]\)\.
 
@@ -102,11 +98,9 @@ A database is non\-trivial to implement\. While ordinary files are good for smal
 
 ## Add a Proxy
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Proxy.png" alt="A part of generic functionality of a monolith is moved to a proxy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A part of generic functionality of a monolith is moved to a proxy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20add%20Proxy.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/layers|Layers]], [[wiki/concepts/source/extension-metapatterns/proxy|Proxy]]\.
 
@@ -138,11 +132,9 @@ A *Proxy* is placed between your system and its clients to provide generic funct
 
 ## Add an Orchestrator
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20add%20Orchestrator.png" alt="An orchestrator is added to a monolithic system, allowing for higher-level client requests." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An orchestrator is added to a monolithic system, allowing for higher-level client requests.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20add%20Orchestrator.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/layers|Layers]], [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]]\.
 
@@ -191,11 +183,9 @@ Another set of evolutions stems from splitting one or more *layers* into [[wiki/
 - Finally, some domains support [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Hierarchy*]] – a tree\-like architecture where each layer takes a share of the system’s functionality\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%201.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%201.png" alt="Diagrams of Backends for Frontends over Layers, Service-Oriented Architecture, Sandwich, Layered Services, Hierarchy, and Layers with Polyglot Persistence." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Backends for Frontends over Layers, Service-Oriented Architecture, Sandwich, Layered Services, Hierarchy, and Layers with Polyglot Persistence.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%201.png)
+
 
 In addition,
 
@@ -205,11 +195,9 @@ In addition,
 - The system can often be extended with [[wiki/concepts/source/implementation-metapatterns/microkernel|*Scripts*]], resulting in a kind of [[wiki/concepts/source/implementation-metapatterns/microkernel|*Microkernel*]]\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png" alt="Diagrams of Layers with plugins, Layers with scripts, and Hexagonal Architecture with a layered core." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Layers with plugins, Layers with scripts, and Hexagonal Architecture with a layered core.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Layers%20-%20Further%202.png)
+
 
 | \<\< [[wiki/concepts/source/appendices/evolutions-of-a-monolith-that-lead-to-shards|Evolutions of a Monolith that lead to Shards]] | ^ [[wiki/concepts/source/appendices/evolutions-of-architectures|Evolutions of architectures]] ^ | [[wiki/concepts/source/appendices/evolutions-of-a-monolith-that-make-services|Evolutions of a Monolith that make Services]] \>\> |
 | --- | --- | --- |

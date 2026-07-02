@@ -20,11 +20,9 @@ A few architectures focus on implementation of components:
 
 ### [[wiki/concepts/source/implementation-metapatterns/plugins|Plugins]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Plugins.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Plugins.png" alt="A diagram of Plugins Architecture, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Plugins Architecture, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Plugins.png)
+
 
 The [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] family of patterns is about separating a system’s main logic from the customizable details of its behavior\. That allows for the same codebase to be used for multiple flavors or customers\.
 
@@ -32,11 +30,9 @@ The [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] famil
 
 ### [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Hexagonal Architecture]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Hexagonal%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Hexagonal%20Architecture.png" alt="A diagram of Hexagonal Architecture, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Hexagonal Architecture, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Hexagonal%20Architecture.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Hexagonal Architecture*]] is a specialization of [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] where every external dependency is isolated behind an [[wiki/concepts/source/extension-metapatterns/proxy|*Adapter*]], making it easy to update or replace third\-party components\.
 
@@ -44,11 +40,9 @@ The [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] famil
 
 ### [[wiki/concepts/source/implementation-metapatterns/microkernel|Microkernel]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Microkernel.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Microkernel.png" alt="A diagram of Microkernel, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Microkernel, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Microkernel.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/microkernel|*Microkernel*]] is another derivation of [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]], featuring a rudimentary *core* component which mediates between resource *consumers* \(*applications*\) and resource *providers*\. The *microkernel* is a [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] to the *applications* and an [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] to the *providers*\.
 
@@ -56,11 +50,9 @@ The [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] famil
 
 ### [[wiki/concepts/source/implementation-metapatterns/mesh|Mesh]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Mesh.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Mesh.png" alt="A diagram of Services over a mesh, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services over a mesh, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Mesh.png)
+
 
 A [[wiki/concepts/source/implementation-metapatterns/mesh|*Mesh*]] consists of intercommunicating shards, each of which may host an application\. The shards coalesce into a fault\-tolerant distributed [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]]\.
 

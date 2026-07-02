@@ -26,11 +26,9 @@ There are a couple of *Pipeline*\-specific evolutions:
 
 ## Promote a service to Front Controller
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Pipeline%20promote%20Front%20Controller.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Pipeline%20promote%20Front%20Controller.png" alt="The first service of a pipeline subscribes to notifications from other services and thus becomes a Front Controller." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The first service of a pipeline subscribes to notifications from other services and thus becomes a Front Controller.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Pipeline%20promote%20Front%20Controller.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|Front Controller]] \([[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|Polyglot Persistence]], [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]]\), [[wiki/concepts/source/basic-metapatterns/pipeline|Pipeline]] \([[wiki/concepts/source/basic-metapatterns/services|Services]]\)\.
 
@@ -57,11 +55,9 @@ If the request processing steps require heavy calculations or manual action, the
 
 ## Add an Orchestrator
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Pipeline%20use%20Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Pipeline%20use%20Orchestrator.png" alt="Adding an orchestrator transforms a pipeline into Orchestrated Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Adding an orchestrator transforms a pipeline into Orchestrated Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Pipeline%20use%20Orchestrator.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]], [[wiki/concepts/source/basic-metapatterns/services|Services]]\.
 

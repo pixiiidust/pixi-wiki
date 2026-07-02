@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Implementation metapatterns/Hexagonal Architecture.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Hexagonal%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Hexagonal%20Architecture.png" alt="A diagram for Hexagonal Architecture, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Hexagonal Architecture, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Hexagonal%20Architecture.png)
+
 
 *Trust no one\.* Protect your code from external dependencies\.
 
@@ -49,21 +47,17 @@ Though various kinds of *Hexagonal Architecture* are de facto industry standards
 
 Occasionally, the system may benefit from direct communication between the *adapters*\. However, that requires several of them to be compatible or polymorphic, in which case your *Hexagonal Architecture* may in fact be a kind of a shallow [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Hierarchy*]]\. Examples include a service which uses several databases which are kept in sync through [*Change Data Capture*](https://www.dremio.com/wiki/change-data-capture/) \(*CDC*\) or a telephony gateway that interconnects various kinds of voice devices\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Hexagonal%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Hexagonal%20Architecture.png" alt="A data stream between adapters of Hexagonal Architecture." loading="lazy" width=92%/>
-</a>
-</div>
+
+![A data stream between adapters of Hexagonal Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Hexagonal%20Architecture.png)
+
 
 ### Dependencies
 
 Each [[wiki/concepts/source/extension-metapatterns/proxy|*adapter*]] breaks the dependency between the *core* that contains business logic and an adapted component\. This makes all the system’s components mutually independent – and easily interchangeable and evolvable – except for the *adapters* themselves, which are small enough to be rewritten as need arises\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Hexagonal%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Hexagonal%20Architecture.png" alt="In Hexagonal Architecture each adapter depends on the core and the component or protocol it adapts." loading="lazy" width=88%/>
-</a>
-</div>
+
+![In Hexagonal Architecture each adapter depends on the core and the component or protocol it adapts.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Hexagonal%20Architecture.png)
+
 
 Still, there is a hidden pitfall of designing a [*leaky abstraction*](https://en.wikipedia.org/wiki/Leaky_abstraction) – an interface that looks generic but whose contract matches that of the component it encapsulates, making it much harder than expected to change the external component’s vendor\.
 
@@ -89,11 +83,9 @@ Still, there is a hidden pitfall of designing a [*leaky abstraction*](https://en
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Hexagonal%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Hexagonal%20Architecture.png" alt="Diagrams of Hexagonal Architecture with a monolithic core, with a layered core, and Cell." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Hexagonal Architecture with a monolithic core, with a layered core, and Cell.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Hexagonal%20Architecture.png)
+
 
 *Hexagonal Architecture*:
 
@@ -110,21 +102,17 @@ There is a variation in a distributed or asynchronous *Hexagonal Architecture* r
 
 ### Adapters on the external component side
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Adapters%20with%20Components.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Adapters%20with%20Components.png" alt="Adapters co-located with external components translate a single message from the core into multiple calls to the adapted components." loading="lazy" width=93%/>
-</a>
-</div>
+
+![Adapters co-located with external components translate a single message from the core into multiple calls to the adapted components.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Hexagonal%20-%20Adapters%20with%20Components.png)
+
 
 If your team owns the component adapted, the *adapter* may be placed next to it\. That usually makes sense because a single domain message \(designed in the terms of your business logic\) tends to unroll into a series of calls to an external component\. The fewer messages you send, the faster your system is\.
 
 ### Adapters on the core side
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Adapters%20with%20the%20Core.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Adapters%20with%20the%20Core.png" alt="Adapters for external services and a shared database are co-located with the core." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Adapters for external services and a shared database are co-located with the core.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Hexagonal%20-%20Adapters%20with%20the%20Core.png)
+
 
 Sometimes you need to adapt an external service which you don’t control\. In that case the only real option is to place its *adapter* together with your *core* logic\. For a monolithic *core* \([*Ports and Adapters*](#ports-and-adapters-hexagonal-architecture)\) the *adapters* may run in the core’s process as ordinary modules\. A distributed *core* \([*Cell*](#cell-cluster-domain)\) requires the *adapters* to be stand\-alone components, which however can be co\-located and co\-deployed with the *core* as [[wiki/concepts/source/extension-metapatterns/proxy|*Sidecars*]]\.
 
@@ -136,11 +124,9 @@ In most cases a component or subsystem is involved in two kinds of communication
 - The activities and calls initiated by the component itself while executing a use case\. They usually target the infrastructure or external services, are called [*secondary* or *driven*](https://alistair.cockburn.us/hexagonal-architecture), and are drawn on the lower side\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Driving%20and%20Driven.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Driving%20and%20Driven.png" alt="The system's core is isolated with adapters for the following communication: data stream, REST, and SSH inputs; database and library access; publish/subscribe output stream." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The system's core is isolated with adapters for the following communication: data stream, REST, and SSH inputs; database and library access; publish/subscribe output stream.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Hexagonal%20-%20Driving%20and%20Driven.png)
+
 
 > Client output *adapters*, such as the *view* in [*MVC*](#model-view-controller-mvc-action-domain-responder-adr-resource-method-representation-rmr-model-2-mvc2-game-development-engine) or *responder* in [*ADR*](#model-view-controller-mvc-action-domain-responder-adr-resource-method-representation-rmr-model-2-mvc2-game-development-engine), are treated as *primary* even though they are called by the business logic\. The reason is that such an *adapter* is a part of the client feedback loop which *drives* the system’s behavior\.
 
@@ -148,11 +134,9 @@ We can protect a component from its environment by inserting *adapters* into its
 
 ### Upper half: [[wiki/concepts/source/extension-metapatterns/proxy|Separated Presentation]], [[wiki/concepts/source/extension-metapatterns/proxy|Open Host Service]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Driving.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Driving.png" alt="A component provides an API which is called by a GUI adapter for a system's user, a REST adapter for a web application, and a gRPC adapter for a software client." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A component provides an API which is called by a GUI adapter for a system's user, a REST adapter for a web application, and a gRPC adapter for a software client.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Hexagonal%20-%20Driving.png)
+
 
 Isolation on the input \([*primary*, *driving*](https://alistair.cockburn.us/hexagonal-architecture)\) side is achieved by designing an *Application Programming Interface* \(*API*\) that provides access to your component’s use cases which your software exists to implement and writing *adapters* that translate your *API* into something convenient for every kind of communication used by your clients\. For example, you may need a desktop GUI, mobile GUI, CLI, web application \(REST\), and customer \(JSON or gRPC\) *adapters* all of which are built on top of your component’s API\.
 
@@ -173,11 +157,9 @@ Input side isolation allows for your system to be used in different environments
 
 ### Lower half: [[wiki/concepts/source/basic-metapatterns/services|Pedestal]], [[wiki/concepts/source/extension-metapatterns/proxy|Abstraction Layer, Anticorruption Layer]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Driven.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Driven.png" alt="The core uses adapters to call a database, a library, and an external service." loading="lazy" width=93%/>
-</a>
-</div>
+
+![The core uses adapters to call a database, a library, and an external service.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Hexagonal%20-%20Driven.png)
+
 
 In many cases you need to protect your component from its dependencies\. If the bulk of your code depends on a certain external service provider or component, you face a major risk, called [*vendor lock\-in*](https://en.wikipedia.org/wiki/Vendor_lock-in), of that provider going out of business, being [acquired and killed by a larger company](https://killedbygoogle.com/), or greatly increasing the price of its services\. Therefore you better define a *Service Provider Interface* \(*SPI*\) in terms of your business logic and write an *adapter* between it and the external provider’s *API*\. This way you will be able to change the external provider by merely rewriting the *adapter*\. It will also be easy to upgrade to new versions of the provider’s API\. The set of *adapters* to the services used by a component is called *Anticorruption Layer* \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\] because it protects the component from any external changes\.
 
@@ -193,11 +175,9 @@ The extra benefit of the isolation from infrastructure and external services by 
 
 ### Full encapsulation: [Ports and Adapters](#ports-and-adapters-hexagonal-architecture)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Full%20Isolation.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Hexagonal%20-%20Full%20Isolation.png" alt="A system with its core fully isolated by adapters from both inputs and outputs. The core depends only on its own interfaces." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A system with its core fully isolated by adapters from both inputs and outputs. The core depends only on its own interfaces.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Hexagonal%20-%20Full%20Isolation.png)
+
 
 Complete isolation of business logic – when both *driving* and *driven* communication is mediated by *adapters* – not only reaps the benefits of both approaches described above but also simplifies the main codebase because the entire business logic is written in its own terms, called *ubiquitous language* \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\]\. It also lowers the cognitive complexity which its programmers face because they don’t need to learn any external technology, and [allows for event replay to reproduce bugs](http://ithare.com/chapter-vc-modular-architecture-client-side-on-debugging-distributed-systems-deterministic-logic-and-finite-state-machines/) \(*any reproducible bug is a dead bug*\) if the business logic is deterministic\.
 
@@ -217,11 +197,9 @@ Several patterns apply the principles of *Hexagonal Architecture* to different e
 
 ### Model\-View\-Presenter \(MVP\), Model\-View\-Adapter \(MVA\), Model\-View\-ViewModel \(MVVM\), Model 1 \(MVC1\), Document\-View
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/MVP.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/MVP.png" alt="The control flow of Model-View-Presenter is a loop that starts with an OS GUI, is handled by the view, passes to the presenter, then down to the model, and all the way back to the OS." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The control flow of Model-View-Presenter is a loop that starts with an OS GUI, is handled by the view, passes to the presenter, then down to the model, and all the way back to the OS.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/MVP.png)
+
 
 *MVP*\-style patterns pass user input and output through one or more [[wiki/concepts/source/extension-metapatterns/proxy|*Presentation Layers*]]\. Each pattern includes:
 
@@ -240,19 +218,15 @@ A [*Model\-View\-ViewModel*](https://herbertograca.com/2017/08/17/mvc-and-its-va
 
 All those patterns exploit modern OS or GUI frameworks’ widgets which handle and process mouse and keyboard input, thus [removing](https://mvc.givan.se/papers/Twisting_the_Triad.pdf) the need for a separate \(input\) *controller* \(see [below](#model-view-controller-mvc-action-domain-responder-adr-resource-method-representation-rmr-model-2-mvc2-game-development-engine)\)\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/MVP%20-%20subtypes.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/MVP%20-%20subtypes.png" alt="Diagrams of MVP with a view-presenter pair for each screen, MVA with different adapters for different kinds of users, MVVM with data in ViewModel, and simple Document-View and Model 1." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of MVP with a view-presenter pair for each screen, MVA with different adapters for different kinds of users, MVVM with data in ViewModel, and simple Document-View and Model 1.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/MVP%20-%20subtypes.png)
+
 
 ### Model\-View\-Controller \(MVC\), Action\-Domain\-Responder \(ADR\), Resource\-Method\-Representation \(RMR\), Model 2 \(MVC2\), Game Development Engine
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/MVC.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/MVC.png" alt="The control flow in Model-View-Controller starts with mouse events handled by the controller which calls the model which calls the view which updates the display." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The control flow in Model-View-Controller starts with mouse events handled by the controller which calls the model which calls the view which updates the display.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/MVC.png)
+
 
 When your presentation’s input and output are of different natures \(raw mouse movement vs 3D graphics in UI, HTTP requests vs HTML pages in websites\), it makes sense to separate the [[wiki/concepts/source/extension-metapatterns/proxy|*Presentation Layer*]] into dedicated components for input and output\.
 
@@ -277,19 +251,15 @@ A [*game development engine*](https://slideplayer.com/slide/12426213/) creates a
 
 Another difference is that while *MVC* provides for changing target platforms by rewriting its minor components \(the *view* and *controller*\), you are very unlikely to change your game framework – instead, it is the framework itself that makes all the platforms look identical to your code\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/MVC%20-%20subtypes.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/MVC%20-%20subtypes.png" alt="Diagrams of MVC with a dedicated view-controller pair for each widget, ADR and RMR where the action calls the responder, Model 2 with an orchestrating controller, and a game development engine." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of MVC with a dedicated view-controller pair for each widget, ADR and RMR where the action calls the responder, Model 2 with an orchestrating controller, and a game development engine.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/MVC%20-%20subtypes.png)
+
 
 ### [[wiki/concepts/source/basic-metapatterns/services|Pedestal]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Pedestal.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Pedestal.png" alt="A Pedestal has a control layer mediating hardware drivers which wrap each hardware component. An operating system adds a kernel between the drivers and an application that uses them." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A Pedestal has a control layer mediating hardware drivers which wrap each hardware component. An operating system adds a kernel between the drivers and an application that uses them.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Pedestal.png)
+
 
 [*Pedestal*](https://alistair.cockburn.us/hexagonal-architecture) is named after the shape of its diagram and describes a system that operates multiple hardware components\. On one hand, *software* takes years to write and stabilize\. On the other hand, there are many versions and even vendors for each kind of *hardware* component, and they change over years\. Therefore, the bulk of the *software* that contains the system logic \(called [[wiki/concepts/source/extension-metapatterns/orchestrator|*control*]]\) is decoupled from the *hardware* which it manages through the use of *hardware*\-specific [[wiki/concepts/source/extension-metapatterns/proxy|*drivers*]]\. As a result, changes in *hardware* require updates only to the matching *drivers*, the business logic remaining intact\.
 
@@ -297,11 +267,9 @@ A similar pattern is in use with [[wiki/concepts/source/implementation-metapatte
 
 ### [Ports and Adapters](#full-encapsulation-ports-and-adapters), Hexagonal Architecture
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Monolithic%20Hexagonal.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Monolithic%20Hexagonal.png" alt="Adapters of the Hexagonal Architecture translate between the interfaces of its core and those of the adapted external components." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Adapters of the Hexagonal Architecture translate between the interfaces of its core and those of the adapted external components.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Monolithic%20Hexagonal.png)
+
 
 [*Ports and Adapters*](https://alistair.cockburn.us/hexagonal-architecture/) – the original *Hexagonal Architecture* – provides full isolation for its business logic \(*core*\) by injecting *adapters* in all its [communication pathways](#variants-by-encapsulation)\. As a result, the *core* depends only on the interfaces, called *ports* \(hence the name of the pattern\), which it defines, with the benefits discussed [earlier in this chapter](#full-encapsulation-ports-and-adapters)\.
 
@@ -309,11 +277,9 @@ Just like [*MVC*](#model-view-controller-mvc-action-domain-responder-adr-resourc
 
 ### DDD\-Style Hexagonal Architecture, Onion Architecture, Clean Architecture
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Layered%20Hexagonal.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Layered%20Hexagonal.png" alt="Control flows for changing an entity in puristic Domain-Driven Design, pragmatic Domain-Driven Design, and Onion Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Control flows for changing an entity in puristic Domain-Driven Design, pragmatic Domain-Driven Design, and Onion Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Layered%20Hexagonal.png)
+
 
 As *Hexagonal Architecture* built upon the [*Domain\-Driven Design*](https://en.wikipedia.org/wiki/Domain-driven_design)’s \(*DDD*\) idea of isolating business logic with [[wiki/concepts/source/extension-metapatterns/proxy|*Adapters*]] \(see the [[wiki/concepts/source/extension-metapatterns/proxy|*Anticorruption Layer* and *Open Host Service*]] patterns\), it was quickly integrated back into DDD \[[wiki/concepts/source/appendices/books-referenced|[LDDD]]\]\. However, as *Ports and Adapters* appeared later than the original DDD book, namely \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\], there is no universal agreement on how this architecture should work:
 
@@ -325,21 +291,17 @@ As *Hexagonal Architecture* built upon the [*Domain\-Driven Design*](https://en.
 
 ### Cell, Cluster, Domain
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Cell.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Cell.png" alt="Several intercommunicating subservices are wrapped with a cell gateway that receives client requests, adapters for outgoing communication, and a plugin." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Several intercommunicating subservices are wrapped with a cell gateway that receives client requests, adapters for outgoing communication, and a plugin.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Cell.png)
+
 
 A [*Cell*](https://github.com/wso2/reference-architecture/blob/master/reference-architecture-cell-based.md) \(WSO2 name\), *Cluster* \[[wiki/concepts/source/appendices/books-referenced|[DEDS]]\], or [*Domain*](https://www.uber.com/en-UA/blog/microservice-architecture/) \(Uber’s name\) is an encapsulated cluster of [[wiki/concepts/source/basic-metapatterns/services|*services*]] which implements a subdomain and is usually deployed as a single unit\. It is modeled after a living cell whose contents are isolated with a membrane\. [As a rule of thumb](https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography) \[[wiki/concepts/source/appendices/books-referenced|[DEDS]]\], the communication inside a *Cell* is synchronous, allowing for complex [[wiki/concepts/source/foundations-of-software-architecture/orchestration|*orchestrated*]] use cases that involve the tightly coupled *Cell* components\. Contrariwise, *Cells* are usually loosely coupled among themselves and the communications between them tend to be asynchronous \([[wiki/concepts/source/foundations-of-software-architecture/choreography|*choreography*]]\)\.
 
  A *Cell* may naturally emerge when a [[wiki/concepts/source/basic-metapatterns/services|*subdomain service*]] becomes too large for comfortable development, which usually means that at least its [[wiki/concepts/source/basic-metapatterns/layers|*domain* layer]] \(already limited to a single subdomain\) is to be subdivided into sub\-subdomain components\. If other layers remain intact, this leads to a [[wiki/concepts/source/extension-metapatterns/sandwich|*Sandwich*]], otherwise the result is a subsystem of [[wiki/concepts/source/basic-metapatterns/services|*Services*]] or a [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipeline*]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Cell%20-%20Basic%20-%20Subtypes.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Cell%20-%20Basic%20-%20Subtypes.png" alt="Diagrams for: a Cell with a Sandwich, a Cell with services, and a Cell with a pipeline." loading="lazy" width=88%/>
-</a>
-</div>
+
+![Diagrams for: a Cell with a Sandwich, a Cell with services, and a Cell with a pipeline.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Cell%20-%20Basic%20-%20Subtypes.png)
+
 
 Another way a *Cell* can arise is when architects have overcommitted themselves to [[wiki/concepts/source/basic-metapatterns/services|*Microservices*]], gradually [introducing hundreds of them](https://www.uber.com/en-UA/blog/microservice-architecture/) and turning their project into a [*Microservice Hell*](https://www.reddit.com/r/programming/comments/10xvltx/microservice_hell/)\. Now they need to group their services to:
 
@@ -348,11 +310,9 @@ Another way a *Cell* can arise is when architects have overcommitted themselves 
 - Improve latency by co\-locating the services that interact intensely\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Cell%20-%20Basic%20-%20Evolutions.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Cell%20-%20Basic%20-%20Evolutions.png" alt="A layered system transforms into a Sandwich-based Cell. A group of stand-alone services is aggregated into a cell behind a Cell gateway." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A layered system transforms into a Sandwich-based Cell. A group of stand-alone services is aggregated into a cell behind a Cell gateway.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Cell%20-%20Basic%20-%20Evolutions.png)
+
 
 In the simplest implementation, the *Cell*’s contents are hidden from its clients by a [[wiki/concepts/source/extension-metapatterns/proxy|*Cell Gateway*]] which acts as an [[wiki/concepts/source/extension-metapatterns/proxy|*Open Host Service*]], allowing for anything inside the *Cell* to be changed at will with no effect on the outside world\.
 
@@ -362,11 +322,9 @@ Better developed *Cells* employ [[wiki/concepts/source/extension-metapatterns/pr
 
 Another improvement, popularized by Uber’s [*Domains*](https://www.uber.com/en-UA/blog/microservice-architecture/), is the use of [[wiki/concepts/source/implementation-metapatterns/plugins|*Ambassador Plugins*]] which run pieces of business logic that belong to other *Cells* inside a host *Cell*\. That both avoids slow intercell calls and boosts the system’s fault tolerance as each *Cell* can now operate independently\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Cell%20-%20Full-Featured%20-%20Plugins.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Cell%20-%20Full-Featured%20-%20Plugins.png" alt="Injecting a part of a Cell's business logic into another Cell as an ambassador plugin improves performance by avoiding expensive intercell calls." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Injecting a part of a Cell's business logic into another Cell as an ambassador plugin improves performance by avoiding expensive intercell calls.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Cell%20-%20Full-Featured%20-%20Plugins.png)
+
 
 > [In Uber](https://www.uber.com/en-UA/blog/microservice-architecture/), the service responsible for a driver’s status accepts *Plugins* from other services, such as safety checks or compliance, which can block the driver from appearing in the system and responding to ride requests\.
 

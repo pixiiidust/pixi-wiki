@@ -25,11 +25,9 @@ The last group of evolutions which we will review does not really change the mon
 
 ## Support plugins
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Plugins.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Plugins.png" alt="Plugins customize the monolith's behavior." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Plugins customize the monolith's behavior.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Plugins.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/implementation-metapatterns/plugins|Plugins]]\.
 
@@ -54,11 +52,9 @@ The last group of evolutions which we will review does not really change the mon
 
 ## Isolate dependencies with Hexagonal Architecture
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Hexagonal.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Hexagonal.png" alt="The database, external libraries, and a protocol support component are separated from the business logic and isolated with adapters." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The database, external libraries, and a protocol support component are separated from the business logic and isolated with adapters.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Hexagonal.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Hexagonal Architecture]] \([[wiki/concepts/source/implementation-metapatterns/plugins|Plugins]]\)\.
 
@@ -84,11 +80,9 @@ The main business logic will communicate with any external component through an 
 
 ## Add an Interpreter \(support Scripts\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Interpreter.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Monolith/Monolith%20to%20Interpreter.png" alt="The high-level logic is rewritten as scripts which are run by an interpreter." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The high-level logic is rewritten as scripts which are run by an interpreter.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Monolith/Monolith%20to%20Interpreter.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/implementation-metapatterns/microkernel|Scripts aka Interpreter]] \([[wiki/concepts/source/implementation-metapatterns/microkernel|Microkernel]] \([[wiki/concepts/source/implementation-metapatterns/plugins|Plugins]]\)\)\.
 

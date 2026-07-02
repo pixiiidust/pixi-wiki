@@ -28,11 +28,9 @@ The most common modifications to a [[wiki/concepts/source/basic-metapatterns/ser
 
 ## Add a Middleware
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20add%20Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20add%20Middleware.png" alt="The communication aspect of services can be covered by a dedicated middleware." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The communication aspect of services can be covered by a dedicated middleware.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20add%20Middleware.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/middleware|Middleware]], [[wiki/concepts/source/basic-metapatterns/services|Services]]\.
 
@@ -61,11 +59,9 @@ Distributed systems may fail in a zillion ways\. You want to ruminate neither on
 
 ## Use a Service Mesh
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Multifunctional%20-%20Service%20Mesh.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Multifunctional%20-%20Service%20Mesh.png" alt="Scaled services reside on a shared layer of sidecars which is placed on top of a shared mesh engine. All instances of each service access the service's database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Scaled services reside on a shared layer of sidecars which is placed on top of a shared mesh engine. All instances of each service access the service's database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Multifunctional%20-%20Service%20Mesh.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/implementation-metapatterns/mesh|Service Mesh]] \([[wiki/concepts/source/implementation-metapatterns/mesh|Mesh]], [[wiki/concepts/source/extension-metapatterns/middleware|Middleware]]\), [[wiki/concepts/source/extension-metapatterns/proxy|Sidecar]] \([[wiki/concepts/source/extension-metapatterns/proxy|Proxy]]\), [[wiki/concepts/source/basic-metapatterns/services|Services]]\.
 
@@ -90,11 +86,9 @@ The [[wiki/concepts/source/basic-metapatterns/services|*Microservices*]] archite
 
 ## Use a Shared Repository
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20to%20Shared%20Database.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20to%20Shared%20Database.png" alt="The data of individual services is merged into a shared repository." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The data of individual services is merged into a shared repository.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20to%20Shared%20Database.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]], [[wiki/concepts/source/basic-metapatterns/services|Services]]\.
 
@@ -126,11 +120,9 @@ You don’t really need every service to have a private database\. A shared one 
 
 ## Add a Proxy
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20add%20Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20add%20Proxy.png" alt="Generic aspects of services move to a shared proxy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Generic aspects of services move to a shared proxy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20add%20Proxy.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/proxy|Proxy]], [[wiki/concepts/source/basic-metapatterns/services|Services]]\.
 
@@ -160,11 +152,9 @@ Putting a generic component between the system and its clients helps the program
 
 ## Use an Orchestrator
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20use%20Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20use%20Orchestrator.png" alt="The application logic is extracted from individual services into a shared orchestrator." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The application logic is extracted from individual services into a shared orchestrator.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20use%20Orchestrator.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]], [[wiki/concepts/source/basic-metapatterns/services|Services]]\.
 
@@ -201,11 +191,9 @@ Extract the [[wiki/concepts/source/basic-metapatterns/layers|high\-level busines
 
 ## Make a Sandwich
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20to%20Sandwich.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services%20to%20Sandwich.png" alt="The application and data parts of services are separated from the domain logic and merged into system-wide layers, resulting in a Sandwich." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The application and data parts of services are separated from the domain logic and merged into system-wide layers, resulting in a Sandwich.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services%20to%20Sandwich.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/sandwich|Sandwich]] \([[wiki/concepts/source/basic-metapatterns/layers|Layers]], [[wiki/concepts/source/basic-metapatterns/services|Services]], [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Database]] \([[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]]\), [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]]\)\.
 

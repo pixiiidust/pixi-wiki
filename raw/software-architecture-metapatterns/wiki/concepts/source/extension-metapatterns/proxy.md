@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Extension metapatterns/Proxy.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Proxy.png" alt="A diagram for Services with a proxy, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Services with a proxy, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Proxy.png)
+
 
 *Should I build the wall?* A layer of indirection between your system and its clients\.
 
@@ -81,11 +79,9 @@ In fact, because *Proxies* tend to be configurable \(on startup or through their
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Proxy.png" alt="A proxy for a monolith, shards, layers, and services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A proxy for a monolith, shards, layers, and services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Proxy.png)
+
 
 *Proxy*:
 
@@ -102,21 +98,17 @@ A *Proxy* [may either fully isolate the system which it represents or merely hel
 
 ### Full Proxy
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Full%20Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Full%20Proxy.png" alt="A full proxy mediates all messages between a client and a server." loading="lazy" width=94%/>
-</a>
-</div>
+
+![A full proxy mediates all messages between a client and a server.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Full%20Proxy.png)
+
 
 A *Full Proxy* processes every message between the system and its clients\. It completely isolates the system and may meddle with the protocols but it is resource\-heavy and adds to latency\. [*Adapters*](#adapter-anticorruption-layer-abstraction-layer-open-host-service-gateway-message-translator-api-service-cell-gateway-inexact-backend-for-frontend-database-access-layer-data-mapper-repository-driver) and [*Response Caches*](#response-cache-read-through-cache-write-through-cache-write-behind-cache-cache-caching-layer-distributed-cache-replicated-cache) are always *Full Proxies*\.
 
 ### Half\-Proxy
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Half%20Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Half%20Proxy.png" alt="A half-proxy intercepts only the session establishment request and is transparent to the following in-session communication between the client and server." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A half-proxy intercepts only the session establishment request and is transparent to the following in-session communication between the client and server.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Half%20Proxy.png)
+
 
 A *Half\-Proxy* intercepts, analyzes, and routes the session establishment request from a client but then goes out of the loop\. It may still forward the subsequent messages without looking into their content or it may even help connect the client and server directly, which is known as [*direct server return*](https://www.haproxy.com/glossary/what-is-direct-server-return-dsr) *\(DSR\)*\. This approach is faster and much less resource\-hungry but is also less secure and less flexible than that of *Full Proxy*\. A [*Firewall*](#firewall-api-rate-limiter-api-throttling), [*Load Balancer*](#load-balancer-sharding-proxy-cell-router-messaging-grid-scheduler), or [*Reverse Proxy*](#dispatcher-reverse-proxy-ingress-controller-edge-service-microgateway) may act as a *Half\-Proxy*\. IP telephony servers often use *DSR*: the server helps call parties find each other and then establish direct media communication\.
 
@@ -126,11 +118,9 @@ As a *Proxy* stands between a \(sub\)system and its client\(s\), we can imagine 
 
 ### Separate deployment: Standalone
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Proxy%20placement%20-%20Standalone.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Proxy%20placement%20-%20Standalone.png" alt="A standalone proxy is placed between a client and a layer of services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A standalone proxy is placed between a client and a layer of services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Proxy%20placement%20-%20Standalone.png)
+
 
 We can deploy a *Proxy* as a separate system component\. This has the downside of an extra network hop \(higher latency\) in the way of every client request to the system and back but that is unavoidable in the following cases:
 
@@ -140,11 +130,9 @@ We can deploy a *Proxy* as a separate system component\. This has the downside o
 
 ### On the system side: Sidecar
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Proxy%20placement%20-%20Sidecar.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Proxy%20placement%20-%20Sidecar.png" alt="A sidecar is co-located with the services and translates from the client's protocol to the service's API." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A sidecar is co-located with the services and translates from the client's protocol to the service's API.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Proxy%20placement%20-%20Sidecar.png)
+
 
 We can often co\-locate a *Proxy* with our system when the latter is not distributed\. That avoids the extra network delay, traffic, and operational complexity and does not add any new hardware which can fail at the most untimely moments\. Such a placement is called *Sidecar* \[[wiki/concepts/source/appendices/books-referenced|[DDS]]\] \(after the motorcycle add\-on\) and it is mostly applicable to [*Adapters*](#adapter-anticorruption-layer-abstraction-layer-open-host-service-gateway-message-translator-api-service-cell-gateway-inexact-backend-for-frontend-database-access-layer-data-mapper-repository-driver)\.
 
@@ -156,21 +144,17 @@ It should be noted that *Sidecar* – co\-locating a generic component and busin
 - As an *Adapter* for [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]]\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Sidecars.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Sidecars.png" alt="A proxy between a service and its client; one between a service and a middleware; an extension aside of a service; a utility layer below a service." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A proxy between a service and its client; one between a service and a middleware; an extension aside of a service; a utility layer below a service.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Sidecars.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/mesh|*Service Mesh*]] \(the [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] for [[wiki/concepts/source/basic-metapatterns/services|*Microservices*]]\) makes heavy use of *Sidecars* for co\-locating any kind of generic code with every instance of a *Microservice*\.
 
 ### On the client side: Ambassador
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Proxy%20placement%20-%20Ambassador.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Proxy%20placement%20-%20Ambassador.png" alt="An ambassador runs on the client side and translates the client's protocol into the one in use with the service." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An ambassador runs on the client side and translates the client's protocol into the one in use with the service.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Proxy%20placement%20-%20Ambassador.png)
+
 
 Finally, a *Proxy* may be co\-located with a component’s clients, making it an *Ambassador*  \[[wiki/concepts/source/appendices/books-referenced|[DDS]]\], which is good for:
 
@@ -180,11 +164,9 @@ Finally, a *Proxy* may be co\-located with a component’s clients, making it an
 
 Notably, a [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugin*]] may act as an *Ambassador* for its origin subsystem\. It makes local decisions in some scenarios while others cause it to communicate with the service it represents\. See [[wiki/concepts/source/implementation-metapatterns/plugins|*Ambassador Plugin*]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Ambassador%20Plugin.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Ambassador%20Plugin.png" alt="An ambassador plugin is a part of one service hosted inside another service. When called, it may consult its origin service or make independent decisions." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An ambassador plugin is a part of one service hosted inside another service. When called, it may consult its origin service or make independent decisions.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Ambassador%20Plugin.png)
+
 
 ## Examples
 
@@ -205,11 +187,9 @@ As *Proxies* are used for many purposes, there are a variety of their specializa
 
 ### Firewall, \(API\) Rate Limiter, API Throttling
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Firewall.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Firewall.png" alt="A firewall lets a request from a good client pass through while requests from a malicious client are blocked." loading="lazy" width=92%/>
-</a>
-</div>
+
+![A firewall lets a request from a good client pass through while requests from a malicious client are blocked.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Firewall.png)
+
 
 The *Firewall* is a component for white\- and black\-listing network traffic, mostly to protect against attacks\. It is possible to use both generic hardware *Firewalls* on the external perimeter for brute force \(D\)DoS protection and more complex access rules at a second layer of software *Firewalls* to protect critical data and services from unauthorized access\.
 
@@ -219,11 +199,9 @@ The *Firewall* is a component for white\- and black\-listing network traffic, mo
 
 ### Response Cache, Read\-Through Cache, Write\-Through Cache, Write\-Behind Cache, Cache, Caching Layer, [[wiki/concepts/source/extension-metapatterns/shared-repository|Distributed Cache, Replicated Cache]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Cache.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Cache.png" alt="A cache proxies requests and remembers responses to shortcircuit the processing of future requests." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A cache proxies requests and remembers responses to shortcircuit the processing of future requests.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Cache.png)
+
 
 If a system often receives identical requests, it is possible to remember its responses to most frequent of them and return the cached response without fully re\-processing the request\. The real thing is more complicated because users tend to change the data which the system stores, necessitating a variety of *cache refresh policies*\. A *Response Cache* may be co\-located with a [*Load Balancer*](#load-balancer-sharding-proxy-cell-router-messaging-grid-scheduler) or it may be \[[wiki/concepts/source/appendices/books-referenced|[DDS]]\] [[wiki/concepts/source/basic-metapatterns/shards|*sharded*]] \(each *Cache* processes a unique subset of requests\) and/or [[wiki/concepts/source/basic-metapatterns/shards|*replicated*]] \(all the *Caches* are similar\) and thus require a *Load Balancer* of its own\.
 
@@ -245,11 +223,9 @@ It is possible to combine multiple servers into a virtual *Caching Layer* \[[wik
 
 ### Load Balancer, Sharding Proxy, Cell Router, Messaging Grid, Scheduler
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Load%20Balancer.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Load%20Balancer.png" alt="A load balancer forwards a client's request to any idle instance of a stateless service. A sharding proxy forwards a client's request to the shard that contains the client's data." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A load balancer forwards a client's request to any idle instance of a stateless service. A sharding proxy forwards a client's request to the shard that contains the client's data.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Load%20Balancer.png)
+
 
 Here we have a hardware or software component which distributes user traffic among multiple [[wiki/concepts/source/basic-metapatterns/shards|instances]] of a service:
 
@@ -263,11 +239,9 @@ Here we have a hardware or software component which distributes user traffic amo
 
 ### Dispatcher, Reverse Proxy, Ingress Controller, Edge Service, Microgateway
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Dispatcher.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Dispatcher.png" alt="A dispatcher exposes an interface which merges the interfaces of the services below the dispatcher." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A dispatcher exposes an interface which merges the interfaces of the services below the dispatcher.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Dispatcher.png)
+
 
 A [*Reverse Proxy*, *Ingress Controller*](https://traefik.io/blog/reverse-proxy-vs-ingress-controller-vs-api-gateway/), [*Edge Service*](https://medium.com/knerd/api-infrastructure-at-knewton-whats-in-an-edge-service-51a3777aeb41), or [*Microgateway*](https://github.com/wso2/reference-architecture/blob/master/event-driven-api-architecture.md) is a router that stands between the Internet and the organization’s internal network\. It allows clients to use a public address for the system without knowing how and where their requests are processed\. It parses user requests and forwards them to an internal server based on the requests’ bodies\. A *Reverse Proxy* can be extended with a [*firewall*](#firewall-api-rate-limiter-api-throttling), *SSL termination*, [*load balancing*](#load-balancer-sharding-proxy-cell-router-messaging-grid-scheduler), and [*caching*](#response-cache-read-through-cache-write-through-cache-write-behind-cache-cache-caching-layer-distributed-cache-replicated-cache) functionality\. Examples include Nginx\.
 
@@ -277,11 +251,9 @@ You could have noticed that *Dispatcher* or *Reverse Proxy* is quite similar to 
 
 ### Adapter, [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Anticorruption Layer, Abstraction Layer]], [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Open Host Service]], Gateway, Message Translator, API Service, Cell Gateway, \(inexact\) Backend for Frontend, Database Access Layer, Data Mapper, Repository, [[wiki/concepts/source/basic-metapatterns/services|Driver]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Adapter.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/Adapter.png" alt="An adapter between a client and a service provider translates between their protocols." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An adapter between a client and a service provider translates between their protocols.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/Adapter.png)
+
 
 An [*Adapter*](https://refactoring.guru/design-patterns/adapter) \[[wiki/concepts/source/appendices/books-referenced|[GoF]], [[wiki/concepts/source/appendices/books-referenced|DDS]]\] is a mostly stateless *Proxy* that translates between an internal and public protocol and API formats\. It may often be co\-located with a [*Reverse Proxy*](#dispatcher-reverse-proxy-ingress-controller-edge-service-microgateway)\. When it adapts messages, it is called a *Message Translator* \[[wiki/concepts/source/appendices/books-referenced|[EIP]], [[wiki/concepts/source/appendices/books-referenced|POSA4]]\]\.
 
@@ -309,11 +281,9 @@ There is also a whole bunch of *Abstraction Layers* that aim to protect the busi
 
 ### [[wiki/concepts/source/extension-metapatterns/orchestrator|API Gateway]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/API%20Gateway.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/API%20Gateway.png" alt="An API Gateway both translates from the client's to the system's protocol and calls services in parallel." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An API Gateway both translates from the client's to the system's protocol and calls services in parallel.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/API%20Gateway.png)
+
 
 *API Gateway* \[[wiki/concepts/source/appendices/books-referenced|[MP]]\] is a fusion of [*Gateway*](#adapter-anticorruption-layer-abstraction-layer-open-host-service-gateway-message-translator-api-service-cell-gateway-inexact-backend-for-frontend-database-access-layer-data-mapper-repository-driver) \(*Proxy*\) and [[wiki/concepts/source/extension-metapatterns/orchestrator|*API Composer*]] \([[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]]\)\. The *Gateway* aspect encapsulates the external \(public\) protocol while the *API Compose*r translates the system’s high\-level public API methods into multiple \(usually parallel\) calls to the APIs of internal components, collects the results, and conjoins them into a response\.
 
@@ -321,11 +291,9 @@ There is also a whole bunch of *Abstraction Layers* that aim to protect the busi
 
 ### User Interface, Presentation Layer, [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Separated Presentation]], Command Line Interface \(CLI\), Graphical User Interface \(GUI\), Frontend, Human\-Machine Interface \(HMI\), Man\-Machine Interface \(MMI\), Operator Interface
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/User%20Interface.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/2/User%20Interface.png" alt="A user interface stands between a human and software. It receives mouse input and produces output on a display." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A user interface stands between a human and software. It receives mouse input and produces output on a display.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/2/User%20Interface.png)
+
 
 An *Adapter* between a human and a computer system is called a [[wiki/concepts/source/basic-metapatterns/layers|*User Interface*]] \(*UI*\) or *Presentation Layer* \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\]\. Though a *UI* mainly translates user actions into commands to the underlying system and presents the results which the system returns and other information supposedly important to the user, it may also include [[wiki/concepts/source/basic-metapatterns/layers|*integration logic*]] \(use cases\) which are occasionally tightly coupled to the visual behavior\. *UI* comes in several flavors:
 
@@ -347,20 +315,16 @@ As *Proxies* are usually third\-party products, there is not much that [[wiki/co
 - We can add another kind of a *Proxy* on top of an existing one\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Proxy%20add%20Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Proxy%20add%20Proxy.png" alt="A proxy is added on top of an existing proxy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A proxy is added on top of an existing proxy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Proxy%20add%20Proxy.png)
+
 
 - We can use a stack of *Proxies* per client, making [*Backends for Frontends*](<Backends for Frontends (BFF)>)\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Proxy%20to%20Backends%20for%20Frontends.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/2/Proxy%20to%20Backends%20for%20Frontends.png" alt="A proxy is subdivided into Backends for Frontends." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A proxy is subdivided into Backends for Frontends.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/2/Proxy%20to%20Backends%20for%20Frontends.png)
+
 
 ## Summary
 

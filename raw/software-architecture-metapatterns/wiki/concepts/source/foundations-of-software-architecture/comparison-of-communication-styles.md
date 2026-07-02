@@ -25,11 +25,9 @@ We have briefly discussed three approaches to communication: orchestration, chor
 
 There is advice [from Microsoft](https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography) and \[[wiki/concepts/source/appendices/books-referenced|[DEDS]]\] which makes perfect sense: use choreography for communication between *bounded contexts* \(subdomains\) \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\] but revert to orchestration \(or maybe shared data\) inside each context\. Indeed, subdomains are likely to be loosely coupled while most user requests don’t traverse subdomain boundaries – which kindles hope that their interactions are few and not time\-critical\. If we follow the advice, we get [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Cell\-Based Architecture*]] \([WSO2 definition](https://github.com/wso2/reference-architecture/blob/master/reference-architecture-cell-based.md)\), which collects the best of two worlds: orchestration and/or shared data for strongly coupled parts and choreography between them\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Cell-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Communication/Cell-Based%20Architecture.png" alt="A diagram of the Cell-Based Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of the Cell-Based Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Communication/Cell-Based%20Architecture.png)
+
 
 By the way, you could have noticed a few odd cases:
 

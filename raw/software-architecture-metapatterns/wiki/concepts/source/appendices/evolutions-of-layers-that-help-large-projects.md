@@ -25,11 +25,9 @@ The main drawback \(and benefit\) of [[wiki/concepts/source/basic-metapatterns/l
 
 ## Divide the domain layer into Services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20Domain%20to%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20Domain%20to%20Services.png" alt="The domain layer is split into subdomain components, making a Sandwich." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The domain layer is split into subdomain components, making a Sandwich.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Split%20Domain%20to%20Services.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/extension-metapatterns/sandwich|Sandwich]] \([[wiki/concepts/source/basic-metapatterns/layers|Layers]], [[wiki/concepts/source/basic-metapatterns/services|Services]], [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Database]] \([[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]]\), [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]]\)\.
 
@@ -63,11 +61,9 @@ It is very common for a system’s domain to comprise weakly interacting *bounde
 
 ## Build an Event\-Driven Architecture over a Shared Database
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20to%20Event-Driven%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20Split%20to%20Event-Driven%20Architecture.png" alt="A backend is subdivided into a pipeline." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A backend is subdivided into a pipeline.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20Split%20to%20Event-Driven%20Architecture.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/pipeline|Event\-Driven Architecture]] \([[wiki/concepts/source/basic-metapatterns/pipeline|Pipeline]] \([[wiki/concepts/source/basic-metapatterns/services|Services]]\)\), [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Database]] \([[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]]\)\.
 
@@ -104,11 +100,9 @@ If your system features well\-defined and simple workflows for processing every 
 
 ## Build a Top\-Down Hierarchy
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Layers/Layers%20to%20Hierarchy.png" alt="The lower layers of a system are subdivided, resulting in a hierarchy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The lower layers of a system are subdivided, resulting in a hierarchy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Layers/Layers%20to%20Hierarchy.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/fragmented-metapatterns/hierarchy|Top\-Down Hierarchy]] \([[wiki/concepts/source/fragmented-metapatterns/hierarchy|Hierarchy]]\)\.
 

@@ -44,11 +44,9 @@ This book makes heavy use of diagrams to the extent that it can be treated as a 
 
 The diagrams are *NoUML* \(boxes and arrows\) and most of them belong to one of the following kinds:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Misc/Diagrams.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Misc/Diagrams.png" alt="A structural, sequence, and dependency diagrams in NoSQL notation as used throughout the Architectural Metapatterns book." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A structural, sequence, and dependency diagrams in NoSQL notation as used throughout the Architectural Metapatterns book.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Misc/Diagrams.png)
+
 
 Components in the diagrams are colored according to the kind of code they contain:
 

@@ -22,11 +22,9 @@ Let’s see how dependency inversion is used at the system level\.
 
 ## Patterns that build around it
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/DI-1.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/DI-1.png" alt="Plugins depend on the core's SPIs. There are multiple versions of plugins. Adapters of Hexagonal Architecture depend on both the core's SPIs and APIs of the adapted components." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Plugins depend on the core's SPIs. There are multiple versions of plugins. Adapters of Hexagonal Architecture depend on both the core's SPIs and APIs of the adapted components.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/DI-1.png)
+
 
 Both [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] and the derived [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Hexagonal Architecture*]] rely on dependency inversion for the same reason – to protect the *core*, which contains the bulk of the code, from variability in the external components it uses\. The *core* operates interfaces \([*SPI*](https://en.wikipedia.org/wiki/Service_provider_interface)s\) which it defines so that it may not care exactly what  is behind the interface\.
 
@@ -38,11 +36,9 @@ It is the nature of the polymorphic components that distinguishes those patterns
 
 ## Patterns that often rely on it
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/DI-2.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/DI-2.png" alt="In an operating system, device drivers depend on the kernel's SPIs. In a hierarchy, child nodes depend on their parent's SPI. Cell-Based Architecture uses adapters to break dependencies between Cells." loading="lazy" width=100%/>
-</a>
-</div>
+
+![In an operating system, device drivers depend on the kernel's SPIs. In a hierarchy, child nodes depend on their parent's SPI. Cell-Based Architecture uses adapters to break dependencies between Cells.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/DI-2.png)
+
 
 A few more patterns tend to use this approach to earn its benefits, even though dependency inversion is not among their integral features:
 
@@ -53,11 +49,9 @@ A few more patterns tend to use this approach to earn its benefits, even though 
 
 ## Patterns that may use it
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/DI-3.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/DI-3.png" alt="Standard APIs are used between frontend and backend, and backend and database. CQRS views and adapters protect a service from dependencies on other services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Standard APIs are used between frontend and backend, and backend and database. CQRS views and adapters protect a service from dependencies on other services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/DI-3.png)
+
 
 Finally, two basic architectures, [[wiki/concepts/source/basic-metapatterns/layers|*Layers*]] and [[wiki/concepts/source/basic-metapatterns/services|*Services*]], may resort to something similar to dependency inversion to decouple their constituents:
 

@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Fragmented metapatterns/Service-Oriented Architecture (SOA).md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Service-Oriented%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Service-Oriented%20Architecture.png" alt="A diagram for Service-Oriented Architecture, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Service-Oriented Architecture, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Service-Oriented%20Architecture.png)
+
 
 *The whole is equal to the sum of the parts\.* Distributed [Object\-Oriented Design](https://en.wikipedia.org/wiki/Object-oriented_design)\.
 
@@ -54,11 +52,9 @@ Nevertheless, this pattern allows for good throughput as its stateless component
 
 Each service of each layer depends on everything it uses\. As a result, development of a low\-level \(utility\) component may be paralyzed because too many services already use it, thus no changes are welcome\. Hence, the team writes a new version of their utility as a new service, which defeats the very idea of component reuse which *SOA* was based on\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Service-Oriented%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Service-Oriented%20Architecture.png" alt="Tasks depend on entities. Entities depend on utilities and libraries. The many dependencies make it hard to change almost any component." loading="lazy" width=88%/>
-</a>
-</div>
+
+![Tasks depend on entities. Entities depend on utilities and libraries. The many dependencies make it hard to change almost any component.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Service-Oriented%20Architecture.png)
+
 
 ### Applicability
 
@@ -97,21 +93,17 @@ This architecture was hyped at the time when enterprises were expanding by acqui
 
 ### Distributed Monolith
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/Distributed%20Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/Distributed%20Monolith.png" alt="There are three segmented layers: tasks, services and infrastructure. Each component of a layer accesses multiple components in layers below it." loading="lazy" width=100%/>
-</a>
-</div>
+
+![There are three segmented layers: tasks, services and infrastructure. Each component of a layer accesses multiple components in layers below it.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/Distributed%20Monolith.png)
+
 
 If a [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] gets too complex and resource\-hungry, the most simple & stupid way out of the trouble is to deploy each of its component modules to a separate, dedicated hardware\. The resulting services still communicate synchronously and are subject to domino effect on failure\. Such an architecture may be seen as a \(hopefully\) intermediate [[wiki/concepts/source/introduction/system-topologies|topology]] in transition to more independent and stable event\-driven [[wiki/concepts/source/basic-metapatterns/services|*Services*]] \(or [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Cells*]]\)\.
 
 ### Enterprise SOA
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/Enterprise%20SOA.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/Enterprise%20SOA.png" alt="An Enterprise Service Bus interconnects multilayered segmented subsystems each using its own protocol." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An Enterprise Service Bus interconnects multilayered segmented subsystems each using its own protocol.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/Enterprise%20SOA.png)
+
 
 Multiple systems of [[wiki/concepts/source/basic-metapatterns/services|*Services*]], each featuring an [[wiki/concepts/source/extension-metapatterns/orchestrator|*API Gateway*]] and sometimes a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Database*]], are integrated, resulting in new cross\-connections\. Much of the orchestration logic is removed from the *API Gateways* and reimplemented in an [[wiki/concepts/source/extension-metapatterns/orchestrator|*orchestrating*]] [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] called [[wiki/concepts/source/extension-metapatterns/orchestrator|*Enterprise Service Bus*]] \(*ESB*\)\. This option allows for fast and only moderately intrusive integration \(as no changes to the services, which implement the mass of the domain logic, are required\), but the single [[wiki/concepts/source/foundations-of-software-architecture/orchestration|orchestrating]] component \(*ESB*\) often becomes the bottleneck for future development of the system due to its size and complexity\. It is likely that if the orchestration were encapsulated in the individual *API Gateways*, the system would be easier to deal with \(making what is now [marketed by WSO2](https://github.com/wso2/reference-architecture/blob/master/reference-architecture-cell-based.md) as [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Cell\-Based Architecture*]]\)\.
 
@@ -124,11 +116,9 @@ The layers of *SOA* are:
 
 ### Domain\-Oriented Microservice Architecture \(DOMA\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/DOMA.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/DOMA.png" alt="There are five layers: segmented gateways, segmented presentation, segmented product made of cells, segmented business made of cells, and monolithic infrastructure." loading="lazy" width=100%/>
-</a>
-</div>
+
+![There are five layers: segmented gateways, segmented presentation, segmented product made of cells, segmented business made of cells, and monolithic infrastructure.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/DOMA.png)
+
 
 A huge business may build a *SOA* of [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Cells*]] \(called *Domains*\) instead of plain [[wiki/concepts/source/basic-metapatterns/services|*Services*]]\. That greatly simplifies:
 
@@ -141,11 +131,9 @@ Uber’s *DOMA* also [makes heavy use](https://www.uber.com/blog/microservice-ar
 
 ### \(misapplied\) [[wiki/concepts/source/implementation-metapatterns/microkernel|Automotive SOA]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/SOA%20-%20AUTOSAR.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/SOA%20-%20AUTOSAR.png" alt="User applications run on top of a system-wide Virtual Functional Bus which communicates to various services that run on different chips in the system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![User applications run on top of a system-wide Virtual Functional Bus which communicates to various services that run on different chips in the system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/SOA%20-%20AUTOSAR.png)
+
 
 *Automotive* architectures were inspired by *SOA*, but the old [[wiki/concepts/source/implementation-metapatterns/microkernel|*AUTOSAR Classic*]] looks more like [[wiki/concepts/source/implementation-metapatterns/microkernel|*Microkernel*]] \(which indeed is similar to a 2\-layered *SOA* with an [[wiki/concepts/source/extension-metapatterns/orchestrator|*ESB*]]\) while the newer system diagrams resemble a [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Hierarchy*]]\. Therefore, they are addressed in the corresponding chapters\.
 
@@ -160,20 +148,16 @@ It seems that some proponents of [[wiki/concepts/source/basic-metapatterns/servi
 - Into every *service* that uses it, giving the developers who write the business logic full control over all the code which they use\. Now they have several projects to support on their own \(instead of asking other teams to make changes to their components\)\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/3/SOA%20-%201.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/3/SOA%20-%201.png" alt="The shared components are replicated into services which use them." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The shared components are replicated into services which use them.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/3/SOA%20-%201.png)
+
 
 - Or into [[wiki/concepts/source/extension-metapatterns/proxy|*Sidecars*]] if you employ a [[wiki/concepts/source/implementation-metapatterns/mesh|*Service Mesh*]], resulting in much fewer network hops \(thus lower latency\) in request processing, but retaining the inter\-team dependencies\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/3/SOA%20-%202.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/3/SOA%20-%202.png" alt="The shared components are replicated into sidecars." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The shared components are replicated into sidecars.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/3/SOA%20-%202.png)
+
 
 That removes the largest and most obvious part of the fragmentation, making the [[wiki/concepts/source/extension-metapatterns/orchestrator|*ESB*]] \(if you use one\) [[wiki/concepts/source/foundations-of-software-architecture/orchestration|*orchestrate*]] only the *entity* layer\.
 
@@ -185,11 +169,9 @@ Afterwards you may deal with the remaining orchestration\. The idea is to move t
 - Or a combination of the above\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/3/SOA%20-%203.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/3/SOA%20-%203.png" alt="Diagrams for Services with an orchestrator, Backends for Frontends, and Cell-Based Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams for Services with an orchestrator, Backends for Frontends, and Cell-Based Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/3/SOA%20-%203.png)
+
 
 Still another step is unbundling the [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]], which supports multiple protocols via [[wiki/concepts/source/extension-metapatterns/proxy|*Adapters*]]:
 

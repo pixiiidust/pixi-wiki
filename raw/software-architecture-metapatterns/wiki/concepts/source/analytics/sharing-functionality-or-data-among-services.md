@@ -24,21 +24,17 @@ The simplest way to use a shared functionality \(an *aspect*\) is to call the mo
 
 Sharing data inside a process is similar, but usually requires some kind of protection, such as an [RW lock](https://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock), around it to serialize access from multiple threads\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Sharing-DirectCall.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Sharing-DirectCall.png" alt="A logger and counter accessible for direct calls inside a monolith or in an infrastructure layer of Layered Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A logger and counter accessible for direct calls inside a monolith or in an infrastructure layer of Layered Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Sharing-DirectCall.png)
+
 
 ## Make a dedicated service
 
 In a distributed system you can place the functionality or data to share into a separate service to be accessed over the network, yielding [*Service\-Oriented Architecture*](<Service-Oriented Architecture (SOA)>) for shared utilities or a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]] / [[wiki/concepts/source/fragmented-metapatterns/polyglot-persistence|*Polyglot Persistence*]] for shared data\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Sharing-DedicatedService.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Sharing-DedicatedService.png" alt="A shared logger deployed as a service in Service-Oriented Architecture. A shared counter deployed as a stand-alone shared database in Polyglot Persistence." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A shared logger deployed as a service in Service-Oriented Architecture. A shared counter deployed as a stand-alone shared database in Polyglot Persistence.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Sharing-DedicatedService.png)
+
 
 ## Delegate the aspect
 
@@ -46,11 +42,9 @@ A less obvious solution is [delegating](https://datatracker.ietf.org/doc/html/rf
 
 In a similar way a service may [[wiki/concepts/source/foundations-of-software-architecture/programming-and-architectural-paradigms|behave as a function]]: receive all the data it needs in an input message and send back all its work as an output – and let the database access remain the responsibility of its caller\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Sharing-Delegate.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Sharing-Delegate.png" alt="Message loggers in a proxy and middleware. A request counter in a gateway of a pipeline." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Message loggers in a proxy and middleware. A request counter in a gateway of a pipeline.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Sharing-Delegate.png)
+
 
 ## Replicate it
 
@@ -58,11 +52,9 @@ Finally, each user of a component can get its own replica\. This is done implici
 
 Another case of replication is importing the same code in multiple services, which happens in [[wiki/concepts/source/basic-metapatterns/services|single\-layer *Nanoservices*]]\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Sharing-Duplicate.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Conclusion/Sharing-Duplicate.png" alt="Replicated loggers in each instance of a service in Shards, in code imported by every Nanoservice, and in sidecars of Microservices. A replicated counter in a Data Grid." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Replicated loggers in each instance of a service in Shards, in code imported by every Nanoservice, and in sidecars of Microservices. A replicated counter in a Data Grid.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Conclusion/Sharing-Duplicate.png)
+
 
 ## Summary
 

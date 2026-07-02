@@ -20,11 +20,9 @@ Basic [[wiki/concepts/source/introduction/metapatterns|metapatterns]] are both c
 
 ### [[wiki/concepts/source/basic-metapatterns/monolith|Monolith]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Monolith.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Monolith.png" alt="A diagram of Monolith, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Monolith, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Monolith.png)
+
 
 A [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] is a single\-component system, the simplest possible architecture\. It is easy to write but hard to evolve and maintain\.
 
@@ -32,11 +30,9 @@ A [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] is a single\-c
 
 ### [[wiki/concepts/source/basic-metapatterns/shards|Shards]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Shards.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Shards.png" alt="A diagram of Shards, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Shards, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Shards.png)
+
 
 [[wiki/concepts/source/basic-metapatterns/shards|*Shards*]] are multiple instances of a [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]]\. They are scalable but usually require an external component for coordination\.
 
@@ -44,11 +40,9 @@ A [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] is a single\-c
 
 ### [[wiki/concepts/source/basic-metapatterns/layers|Layers]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Layers.png" alt="A diagram of Layered Architecture, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Layered Architecture, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Layers.png)
+
 
 [[wiki/concepts/source/basic-metapatterns/layers|*Layers*]] contain one component per level of abstraction\. The layers may vary in technologies and qualities and scale individually\.
 
@@ -56,11 +50,9 @@ A [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] is a single\-c
 
 ### [[wiki/concepts/source/basic-metapatterns/services|Services]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Services.png" alt="A diagram of Services, with explanations." loading="lazy" width=93%/>
-</a>
-</div>
+
+![A diagram of Services, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Services.png)
+
 
 [[wiki/concepts/source/basic-metapatterns/services|*Services*]] organize a system into subdomains, often resulting in parts of comparable size which can be assigned to dedicated teams\. However, a system of *Services* is hard to synchronize or debug\.
 
@@ -68,11 +60,9 @@ A [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] is a single\-c
 
 ### [[wiki/concepts/source/basic-metapatterns/pipeline|Pipeline]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Pipeline.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Pipeline.png" alt="A diagram of Pipeline, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Pipeline, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Pipeline.png)
+
 
 A [[wiki/concepts/source/basic-metapatterns/pipeline|*Pipeline*]] is a kind of [[wiki/concepts/source/basic-metapatterns/services|*Services*]] with unidirectional flow\. Each service implements a single step of data processing\. The system is flexible but may grow out of control\.
 

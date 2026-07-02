@@ -20,11 +20,9 @@ These patterns extend [[wiki/concepts/source/basic-metapatterns/services|*Servic
 
 ### [[wiki/concepts/source/extension-metapatterns/middleware|Middleware]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Middleware.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Middleware.png" alt="A diagram of Services with a middleware, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with a middleware, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Middleware.png)
+
 
 A [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] is a layer which provides communication with instances of the system’s components and it may also manage those instances\. This way each instance is relieved of the need to track the other instances which it accesses\.
 
@@ -32,11 +30,9 @@ A [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] is a l
 
 ### [[wiki/concepts/source/extension-metapatterns/shared-repository|Shared Repository]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Shared%20Repository.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Shared%20Repository.png" alt="A diagram of Services with a shared repository, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with a shared repository, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Shared%20Repository.png)
+
 
 A [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Repository*]] stores the system’s data, maintains its integrity through transactions, and may support subscriptions to changes in subsets of the data\. That lets other system components concentrate on implementing the business logic\.
 
@@ -44,11 +40,9 @@ A [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Reposi
 
 ### [[wiki/concepts/source/extension-metapatterns/proxy|Proxy]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Proxy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Proxy.png" alt="A diagram of Services with a proxy, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with a proxy, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Proxy.png)
+
 
 A [[wiki/concepts/source/extension-metapatterns/proxy|*Proxy*]] mediates between a system and its clients, transparently taking care of some generic functionality\.
 
@@ -56,11 +50,9 @@ A [[wiki/concepts/source/extension-metapatterns/proxy|*Proxy*]] mediates between
 
 ### [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Orchestrator.png" alt="A diagram of Services with an orchestrator, with explanations." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of Services with an orchestrator, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Orchestrator.png)
+
 
 An [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] implements use cases as sequences of calls to the underlying components which are usually left unaware of each other’s existence\.
 
@@ -68,11 +60,9 @@ An [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] i
 
 ### [[wiki/concepts/source/extension-metapatterns/sandwich|Sandwich]]
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Sandwich.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Contents/Sandwich.png" alt="A diagram of Sandwich Architecture, with explanations." loading="lazy" width=93%/>
-</a>
-</div>
+
+![A diagram of Sandwich Architecture, with explanations.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Contents/Sandwich.png)
+
 
 [[wiki/concepts/source/extension-metapatterns/sandwich|*Sandwich*]] subdivides the largest and loosely coupled [[wiki/concepts/source/basic-metapatterns/layers|*domain* layer]] into modules or services while the other layers remain monolithic\.
 

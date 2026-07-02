@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Basic metapatterns/Pipeline.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Pipeline.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Pipeline.png" alt="A diagram for Pipeline, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Pipeline, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Pipeline.png)
+
 
 *Never return\.* Push your data through a chain of processors\.
 
@@ -57,11 +55,9 @@ There are three ways to build communication in a pipeline, each with different d
 - Services may share a *message schema*, in which case all of them depend on it, not on each other\. That allows for reshuffling the services\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Pipeline.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Pipeline.png" alt="Commands cause downstream dependencies. Notifications cause upstream dependencies. If a shared message schema is used, every component depends on the shared message." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Commands cause downstream dependencies. Notifications cause upstream dependencies. If a shared message schema is used, every component depends on the shared message.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Pipeline.png)
+
 
 See the [[wiki/concepts/source/foundations-of-software-architecture/choreography|*Choreography* chapter]] for a more detailed discussion\.
 
@@ -116,11 +112,9 @@ Such a variety of options enables the use of pipelines in a wide range of domain
 
 ### Pipes and Filters, Workflow System
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Pipes%20and%20Filters.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Pipes%20and%20Filters.png" alt="A pipeline chaining: source, three filters, and sink." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A pipeline chaining: source, three filters, and sink.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Pipes%20and%20Filters.png)
+
 
 *Pipes and Filters* \[[wiki/concepts/source/appendices/books-referenced|[POSA1]], [[wiki/concepts/source/appendices/books-referenced|POSA4]], [[wiki/concepts/source/appendices/books-referenced|EIP]]\] usually name a linear local system which obtains data with its *source*, passes the data through a chain of *filters*, connected by *pipes*, and outputs it via a *sink*\. The entire *pipeline* may run as a single process to avoid the overhead of data serialization\. It may range from a Unix shell script which passes file contents through a series of utilities to a hardware pipeline for image processing in a video [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|camera]]\. The filters tend to be single\-purpose \(handling only one type of payload\) and nearly stateless\. In some cases a filter may use dedicated hardware \(e\.g\. for encryption or audio/video processing\)\. The entire pipeline often operates a single data format \([[wiki/concepts/source/extension-metapatterns/shared-repository|*Stamp Coupling*]]\)\.
 
@@ -132,11 +126,9 @@ Examples: Unix shell pipes, processing of video streams, many types of hardware\
 
 ### Choreographed \(Broker Topology\) Event\-Driven Architecture \(EDA\), Event Collaboration
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Event-Driven%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Event-Driven%20Architecture.png" alt="Event-Driven Architecture as a branched pipeline built from a group of services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Event-Driven Architecture as a branched pipeline built from a group of services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Event-Driven%20Architecture.png)
+
 
 *Event\-Driven Architecture* \(*EDA*\) means that the system is built of services which use events to communicate in a non\-blocking way\. The idea is similar to the [actor model](https://en.wikipedia.org/wiki/Actor_model) of telecom and embedded programming\. Thus, *EDA* itself does not define anything about the structure of the system \(except that it is not [[wiki/concepts/source/basic-metapatterns/monolith|*monolithic*]]\)\.
 
@@ -165,11 +157,9 @@ Examples: high performance web services\.
 
 ### Data Mesh
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Data%20Mesh.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Data%20Mesh.png" alt="Data Mesh builds an extra graph of services that stream and process analytical data." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Data Mesh builds an extra graph of services that stream and process analytical data.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Data%20Mesh.png)
+
 
 First and foremost, [*Data Mesh*](https://martinfowler.com/articles/data-mesh-principles.html) \[[wiki/concepts/source/appendices/books-referenced|[LDDD]], [[wiki/concepts/source/appendices/books-referenced|SAHP]]\] is not a [[wiki/concepts/source/implementation-metapatterns/mesh|*Mesh*]], but rather a *Pipeline*\. This architecture applies [*CQRS*](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs) on the system level: it separates the interfaces and channels through which the services change their state \(matching *commands* of *CQRS* or [*OLTP*](https://en.wikipedia.org/wiki/Online_transaction_processing)\) and the ones used to retrieve their data \(similar to *queries* or [*OLAP*](https://en.wikipedia.org/wiki/Online_analytical_processing)\)\. That results in two overlapping subsystems, *operational* and *analytical*, that share most of their nodes\.
 
@@ -186,11 +176,9 @@ There is a pragmatic option to allow an operational service to resort to the ana
 
 ### Function as a Service \(FaaS\), [[wiki/concepts/source/extension-metapatterns/sandwich|Nanoservices]] \(pipelined\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Nanoservices.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/1/Nanoservices.png" alt="Many Nanoservices access a shared database to implement CRUD functionality." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Many Nanoservices access a shared database to implement CRUD functionality.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/1/Nanoservices.png)
+
 
 A [[wiki/concepts/source/basic-metapatterns/services|*nanoservice*]] is literally a [function as a service](https://en.wikipedia.org/wiki/Function_as_a_service) \(*FaaS*\) \[[wiki/concepts/source/appendices/books-referenced|[DDS]]\] – a stateless \(thus perfectly scalable\) component whose API comprises a single input method\. *Nanoservices* run in proprietary cloud [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] over a [[wiki/concepts/source/extension-metapatterns/shared-repository|*Shared Database*]] and are [chained into pipelines](https://increment.com/software-architecture/the-rise-of-nanoservices/) dedicated to specific use cases\. The code complexity stays low, but as the project grows, the integration will quickly turn into a nightmare of hundreds or thousands of interconnected nanoservices\.
 
@@ -205,20 +193,16 @@ There are a couple of [[wiki/concepts/source/appendices/evolutions-of-a-pipeline
 - The first service of the *Pipeline* can be promoted to a [[wiki/concepts/source/extension-metapatterns/orchestrator|*Front Controller*]] which tracks the status updates for every request it handles\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Pipeline%20promote%20Front%20Controller.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Pipeline%20promote%20Front%20Controller.png" alt="The first service of a pipeline subscribes to notifications from other services and thus becomes a Front Controller." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The first service of a pipeline subscribes to notifications from other services and thus becomes a Front Controller.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Pipeline%20promote%20Front%20Controller.png)
+
 
 - Adding an [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]] turns a *Pipeline* into normal [[wiki/concepts/source/basic-metapatterns/services|*Services*]]\. As the high\-level business logic moves into the orchestration layer, the domain\-level filters don’t need to interact directly, therefore the inter\-filter communication channels disappear and the system becomes identical to *Orchestrated Services*\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Pipeline%20use%20Orchestrator.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Pipeline%20use%20Orchestrator.png" alt="Adding an orchestrator transforms a pipeline into Orchestrated Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Adding an orchestrator transforms a pipeline into Orchestrated Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Pipeline%20use%20Orchestrator.png)
+
 
 ## Summary
 

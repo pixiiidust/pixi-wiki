@@ -67,11 +67,9 @@ Inventing a generic coordinate system to fit any pattern’s representation, fro
 
 We’ll draw the abstractness axis vertically with higher\-level components positioned towards the upper side of the diagram, the subdomain axis horizontally, and sharding diagonally\. Here is an \(arbitrary\) example of such a diagram:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/CQRS%20with%20notes.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/CQRS%20with%20notes.png" alt="A diagram of a CQRS system in abstractness-subdomain-sharding coordinates with a detailed legend." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram of a CQRS system in abstractness-subdomain-sharding coordinates with a detailed legend.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/CQRS%20with%20notes.png)
+
 
 \(A structural diagram for [[wiki/concepts/source/fragmented-metapatterns/layered-services|*CQRS*]], adapted from [Udi Dahan’s article](https://udidahan.com/2009/12/09/clarified-cqrs/), to introduce the notation\)
 
@@ -89,11 +87,9 @@ Godspeed\!
 
 Let’s consider the following structure:
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Example-Undefined.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Example-Undefined.png" alt="Two high-level components interact with one low-level component." loading="lazy" width=93%/>
-</a>
-</div>
+
+![Two high-level components interact with one low-level component.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Example-Undefined.png)
+
 
 It features two \(or more in real life\) high\-level modules that communicate with/via a lower\-level module\. Which patterns does it match?
 
@@ -102,11 +98,9 @@ It features two \(or more in real life\) high\-level modules that communicate wi
 - [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Model\-View\-Controller*]] – a platform\-agnostic business logic with customized means of input and output\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Example-Defined.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Intro/Example-Defined.png" alt="Diagrams for Services with a Middleware, Services with a shared database and Model-View-Controller." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams for Services with a Middleware, Services with a shared database and Model-View-Controller.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Intro/Example-Defined.png)
+
 
 My idea of grouping patterns by structure seems to have backfired – we got three distinct patterns that have similar structural diagrams\. The first two of them are related – both implement indirect communication, and their distinction is fading as a *Middleware* may feature a persistent storage for messages while a table in a *Shared Database* may be used to orchestrate services\. The third one is very different – primarily because the bulk of its code, that is its *business logic*, resides in the lower layer, leaving the upper\-level components a minor role\.
 

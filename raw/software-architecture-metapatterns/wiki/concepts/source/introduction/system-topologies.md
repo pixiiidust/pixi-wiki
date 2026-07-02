@@ -27,11 +27,9 @@ We will rely on our finding that any system has a characteristic representation 
 - *Sharding* is about running multiple instances \([[wiki/concepts/source/basic-metapatterns/shards|*shards*]] or [[wiki/concepts/source/basic-metapatterns/shards|*replicas*]]\) of a component\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Partitioning.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Partitioning.png" alt="Technical partitioning into Layers, domain partitioning into Services, and multiple instances of a system." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Technical partitioning into Layers, domain partitioning into Services, and multiple instances of a system.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Partitioning.png)
+
 
 ### From theory to practice
 
@@ -54,11 +52,9 @@ As a result, the following adjustments were necessary to make the map of system 
 
 ## The map of system topologies
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Topologies%20Map.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Topologies%20Map.png" alt="A map of system topologies arranged according to the amount of their partitioning into layers and services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A map of system topologies arranged according to the amount of their partitioning into layers and services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Topologies%20Map.png)
+
 
 The map contains only basic architectures which are easy to apprehend and name\. Any complex system is very likely to be a combination of these simple topologies\.
 
@@ -79,11 +75,9 @@ In the simplest cases a project is too small for any internal structure to be ju
 
 ### True Monoliths
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/True%20Monoliths.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/True%20Monoliths.png" alt="Diagrams of Monolith, Shards, and Replicas." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Monolith, Shards, and Replicas.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/True%20Monoliths.png)
+
 
 Few system topologies are truly monolithic with one kind of system components:
 
@@ -99,11 +93,9 @@ Few system topologies are truly monolithic with one kind of system components:
 
 ### Monoliths with auxiliary layers
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Monoliths%20with%20Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Monoliths%20with%20Layers.png" alt="Diagrams of Monolith with Backends for Frontends, Managed Shards, Peer-to-Peer Mesh, Monolith with a database, and Monolith with Polyglot Persistence." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Monolith with Backends for Frontends, Managed Shards, Peer-to-Peer Mesh, Monolith with a database, and Monolith with Polyglot Persistence.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Monoliths%20with%20Layers.png)
+
 
 In other kinds of systems, common in server\-side programming, some functionality moves to a dedicated layer while the business logic remains monolithic:
 
@@ -116,11 +108,9 @@ In other kinds of systems, common in server\-side programming, some functionalit
 
 ### Monoliths with Plugins
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Monoliths%20with%20Plugins.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Monoliths%20with%20Plugins.png" alt="Diagrams of Monolith with Plugins, Model-View-Controller, and Hexagonal Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Monolith with Plugins, Model-View-Controller, and Hexagonal Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Monoliths%20with%20Plugins.png)
+
 
 A monolithic core can be extended with disposable additions:
 
@@ -131,11 +121,9 @@ A monolithic core can be extended with disposable additions:
 
 ### Underdeveloped Moduliths
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Underdeveloped%20Moduliths.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Underdeveloped%20Moduliths.png" alt="Diagrams of Monolith with libraries and Modulith with shared code." loading="lazy" width=72%/>
-</a>
-</div>
+
+![Diagrams of Monolith with libraries and Modulith with shared code.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Underdeveloped%20Moduliths.png)
+
 
 If a [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] evolves for a long time, it will likely become segmented into subdomain components, yielding a [[wiki/concepts/source/basic-metapatterns/services|*Modulith*]]\. As that process is not instantaneous, there are a couple of transitional architectures:
 
@@ -149,11 +137,9 @@ Layering enables the use of specialized technologies and third\-party components
 
 ### Ordinary Layers
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Ordinary%20Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Ordinary%20Layers.png" alt="Diagrams of DDD-Style Layers, Layers with Polyglot Persistence, Layers with Backends for Frontends, and Monolith with a database." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of DDD-Style Layers, Layers with Polyglot Persistence, Layers with Backends for Frontends, and Monolith with a database.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Ordinary%20Layers.png)
+
 
 Typical layered architectures include:
 
@@ -168,11 +154,9 @@ Typical layered architectures include:
 
 ### Scaled Layers
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Scaled%20Layers.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Scaled%20Layers.png" alt="Diagrams of Three-Tier System, MapReduce, Managed Shards, Scaled Service, and Peer-to-Peer Mesh." loading="lazy" width=87%/>
-</a>
-</div>
+
+![Diagrams of Three-Tier System, MapReduce, Managed Shards, Scaled Service, and Peer-to-Peer Mesh.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Scaled%20Layers.png)
+
 
 Several layered architectures build around scalability:
 
@@ -185,11 +169,9 @@ Several layered architectures build around scalability:
 
 ### Other layered systems
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Other%20Layered.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Other%20Layered.png" alt="Diagrams of Model-View-Presenter, Onion Architecture, and Sandwich." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Model-View-Presenter, Onion Architecture, and Sandwich.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Other%20Layered.png)
+
 
 Besides that, there are a few peculiar layered systems:
 
@@ -204,21 +186,17 @@ Some architectures specialize in separating complex core logic from miscellaneou
 
 ### Plugin Architecture
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Plugin%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Plugin%20Architecture.png" alt="A plugin, library, and extension called by a core." loading="lazy" width=84%/>
-</a>
-</div>
+
+![A plugin, library, and extension called by a core.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Plugin%20Architecture.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins*]] are external components which supply predefined parts of a host component’s workflow\. They may be created by the company that makes the product, often for the sake of selling several flavors with limited or specialized functionality\. Or they may come from external programmers, as codecs in video players or customizations for accounting software, to extend the usefulness of a product without overburdening its core codebase\.
 
 ### Separated Presentation
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Separated%20Presentation.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Separated%20Presentation.png" alt="Diagrams of Model-View-Presenter and Model-View-Controller." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Model-View-Presenter and Model-View-Controller.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Separated%20Presentation.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Separated Presentation*]] extracts the [[wiki/concepts/source/basic-metapatterns/layers|user or network interface]] functionality into a dedicated layer which is often further subdivided\. This makes the main codebase reusable in different environments:
 
@@ -228,11 +206,9 @@ Some architectures specialize in separating complex core logic from miscellaneou
 
 ### Control patterns
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Control%20Patterns.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Control%20Patterns.png" alt="Diagrams of Pedestal and Microkernel." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Pedestal and Microkernel.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Control%20Patterns.png)
+
 
 A couple of topologies originate with embedded or systems programming where it is important to abstract the business logic from the hardware components which tend to quickly go out of production and thus need to be replaced with incompatible models:
 
@@ -246,11 +222,9 @@ A couple of topologies originate with embedded or systems programming where it i
 
 ### Hexagonal Architecture
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Hexagonal%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Hexagonal%20Architecture.png" alt="Diagrams of Ports and Adapters and Onion Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Ports and Adapters and Onion Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Hexagonal%20Architecture.png)
+
 
 A few architectures fully isolate business logic from its environment, resulting in great portability, simpler automated testing and improved separation of concerns:
 
@@ -260,11 +234,9 @@ A few architectures fully isolate business logic from its environment, resulting
 
 ### Cell
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Cell.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/4/Cell.png" alt="Several intercommunicating subservices are wrapped with a cell gateway that receives client requests, adapters for outgoing communication, and a plugin." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Several intercommunicating subservices are wrapped with a cell gateway that receives client requests, adapters for outgoing communication, and a plugin.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/4/Cell.png)
+
 
 [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Cell*]] is a building block of huge systems that follow [*Domain\-Oriented Microservice Architecture*](<Service-Oriented Architecture (SOA)#domain-oriented-microservice-architecture-doma>) or [[wiki/concepts/source/fragmented-metapatterns/hierarchy|*Cell\-Based Architecture*]]\. It is a kind of [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Hexagonal Architecture*]] with a modular and often distributed core\. The internals of a *Cell* are hidden behind a [[wiki/concepts/source/extension-metapatterns/proxy|*Cell Gateway*]] which implements the *Cell*’s public interface\. Any outgoing communication, initiated from inside the *Cell*, goes through its [[wiki/concepts/source/extension-metapatterns/proxy|*Adapters*]] or through [[wiki/concepts/source/implementation-metapatterns/plugins|*Plugins* supplied by peer *Cells*]]\.
 
@@ -276,11 +248,9 @@ However, full domain partitioning \[[wiki/concepts/source/appendices/books-refer
 
 ### Barebone services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Barebone%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Barebone%20Services.png" alt="Diagrams of Services, Three-Layered Services, Pipeline, and Two-Layered Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Services, Three-Layered Services, Pipeline, and Two-Layered Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Barebone%20Services.png)
+
 
 A few architectures are completely segmented into subdomains:
 
@@ -299,11 +269,9 @@ A few architectures are completely segmented into subdomains:
 
 ### Services with extensions
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Services%20with%20Extensions.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Services%20with%20Extensions.png" alt="Diagrams of Services with a Gateway; Orchestrated Services; Services with: an API Gateway, Backends for Frontends, Shared Repository, Middleware, and Pplyglot Persistence; and of Service Mesh." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Services with a Gateway; Orchestrated Services; Services with: an API Gateway, Backends for Frontends, Shared Repository, Middleware, and Pplyglot Persistence; and of Service Mesh.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Services%20with%20Extensions.png)
+
 
 [[wiki/concepts/source/basic-metapatterns/services|*Services*]] become simpler when common aspects are extracted to a dedicated layer:
 
@@ -326,11 +294,9 @@ A few architectures are completely segmented into subdomains:
 
 ### Hierarchies of services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Hierarchies%20of%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Hierarchies%20of%20Services.png" alt="Diagrams of Cell-Based Architecture and Hierarchical Middleware." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Cell-Based Architecture and Hierarchical Middleware.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Hierarchies%20of%20Services.png)
+
 
 Services are building blocks for a couple of hierarchical architectures used in huge projects:
 
@@ -340,11 +306,9 @@ Services are building blocks for a couple of hierarchical architectures used in 
 
 ### Partially merged services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Partially%20Merged%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Partially%20Merged%20Services.png" alt="Diagrams of Sandwich and Modulith with shared code." loading="lazy" width=73%/>
-</a>
-</div>
+
+![Diagrams of Sandwich and Modulith with shared code.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Partially%20Merged%20Services.png)
+
 
 There are systems in\-between [[wiki/concepts/source/basic-metapatterns/services|*Services*]] and [[wiki/concepts/source/basic-metapatterns/monolith|*Monolith*]] or [[wiki/concepts/source/basic-metapatterns/layers|*Layers*]]:
 
@@ -362,11 +326,9 @@ Finally, some architectures are subdivided into both layers of abstraction and s
 
 ### Layers of services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Layers%20of%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Layers%20of%20Services.png" alt="Diagrams of Services with Polyglot Persistence, Services with Backends for Frontends, and Service-Oriented Architecture." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Services with Polyglot Persistence, Services with Backends for Frontends, and Service-Oriented Architecture.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Layers%20of%20Services.png)
+
 
 A few topologies are made of layers, each of which is subdivided into services:
 
@@ -377,11 +339,9 @@ A few topologies are made of layers, each of which is subdivided into services:
 
 ### Layered services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Layered%20Services.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Topologies/Layered%20Services.png" alt="Diagrams of Orchestrated Three-Layered Services and Choreographed Two-Layered Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Orchestrated Three-Layered Services and Choreographed Two-Layered Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Topologies/Layered%20Services.png)
+
 
 More often than not, services are layered internally:
 
@@ -391,11 +351,9 @@ More often than not, services are layered internally:
 
 ### Hierarchies
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Hierarchy.png" alt="Diagrams of Orchestrator of Orchestrators, Middleware of Middlewares, and Services of Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Orchestrator of Orchestrators, Middleware of Middlewares, and Services of Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Hierarchy.png)
+
 
 Finally, there are [[wiki/concepts/source/fragmented-metapatterns/hierarchy|hierarchical]] topologies with recursive partitioning:
 

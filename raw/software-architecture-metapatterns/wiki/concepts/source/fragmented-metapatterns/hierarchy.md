@@ -16,11 +16,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 > Imported source page from Denys Poltorak's *Architectural Metapatterns* wiki. Source path: `Fragmented metapatterns/Hierarchy.md`.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Main/Hierarchy.png" alt="A diagram for Hierarchy, in abstractness-subdomain-sharding coordinates." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A diagram for Hierarchy, in abstractness-subdomain-sharding coordinates.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Main/Hierarchy.png)
+
 
 *Command and conquer\.* Build a tree of responsibilities\.
 
@@ -46,11 +44,9 @@ This architecture is not ubiquitous because few domains are truly hierarchical\.
 
 No kind of distributed hierarchy is latency\-friendly as many use cases involve several network hops\. The fewer layers of the hierarchy are involved in a task, the better its performance\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Hierarchy%20-%20speed.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Hierarchy%20-%20speed.png" alt="Comparison of latency for decision-making at various levels of a hierarchy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Comparison of latency for decision-making at various levels of a hierarchy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Hierarchy%20-%20speed.png)
+
 
 Maintaining high throughput usually requires deployment of multiple instances of the root component, which is not possible if it is stateful \(as in [[wiki/concepts/source/foundations-of-software-architecture/four-kinds-of-software|*control systems*]]\) and the state cannot be split into [[wiki/concepts/source/basic-metapatterns/shards|*Shards*]]\. The following tricks may help unloading the root:
 
@@ -59,21 +55,17 @@ Maintaining high throughput usually requires deployment of multiple instances of
 - *Direct communication channels* \([[wiki/concepts/source/extension-metapatterns/orchestrator|previously described]] for [[wiki/concepts/source/extension-metapatterns/orchestrator|*Orchestrator*]]\): if the low\-level nodes need to exchange data, their communication should not always go through the higher\-level nodes\. Instead, they may negotiate a direct link \(open a socket\) that bypasses the root of the hierarchy\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Hierarchy%20-%20optimizations.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Performance/Hierarchy%20-%20optimizations.png" alt="Aggregation of data in mid-level nodes; autonomous decision-making by mid-level nodes; direct communication between low-level nodes of a hierarchy." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Aggregation of data in mid-level nodes; autonomous decision-making by mid-level nodes; direct communication between low-level nodes of a hierarchy.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Performance/Hierarchy%20-%20optimizations.png)
+
 
 ### Dependencies
 
 A parent node would usually define one \(for polymorphic children\) or more \(otherwise\) [*SPIs*](https://en.wikipedia.org/wiki/Service_provider_interface) for its child nodes to implement\. The interfaces reside on the parent side because low\-level nodes tend to be less stable \(new types of them are often added and old ones replaced\) therefore we don’t want our main business logic to depend on them\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Dependencies/Hierarchy.png" alt="In Hierarchy a child component depends on an SPI of its parent component. If the children are polymorphic, their parent has a single SPI." loading="lazy" width=100%/>
-</a>
-</div>
+
+![In Hierarchy a child component depends on an SPI of its parent component. If the children are polymorphic, their parent has a single SPI.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Dependencies/Hierarchy.png)
+
 
 ### Applicability
 
@@ -94,11 +86,9 @@ A parent node would usually define one \(for polymorphic children\) or more \(ot
 
 ### Relations
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Hierarchy.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Relations/Hierarchy.png" alt="Diagrams of Orchestrator of Orchestrators, Middleware of Middlewares, and Services of Services." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Diagrams of Orchestrator of Orchestrators, Middleware of Middlewares, and Services of Services.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Relations/Hierarchy.png)
+
 
 *Hierarchy*:
 
@@ -127,11 +117,9 @@ A *Hierarchy* may have its root [at the top](#top-down-hierarchy-orchestrator-of
 
 ### Top\-Down Hierarchy: [[wiki/concepts/source/extension-metapatterns/orchestrator|Orchestrator]] of Orchestrators, Presentation\-Abstraction\-Control \(PAC\), Hierarchical [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Model\-View\-Controller]] \(HMVC\)
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/Hierarchy%20-%20Top-down.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/Hierarchy%20-%20Top-down.png" alt="A single component calls two components in the layer below it, each of which calls two or three lower-level leaf components." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A single component calls two components in the layer below it, each of which calls two or three lower-level leaf components.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/Hierarchy%20-%20Top-down.png)
+
 
 In the most common case *Hierarchy* is applied to business logic to build a layered system which grows from a single generic high\-level root into a swarm of specialized low\-level pieces\. The most obvious applications are protocol parsers, decision trees, [IIoT](https://en.wikipedia.org/wiki/Industrial_internet_of_things) \(e\.g\. a fire alarm system of a building\), and [modern automotive](https://semiengineering.com/managing-todays-advanced-vehicle-networks-design-challenges/) networks\. A marketplace that allows for customized search and marketing algorithms within each category of its goods may also be powered by a hierarchy of category\-specific services\.
 
@@ -139,19 +127,15 @@ In the most common case *Hierarchy* is applied to business logic to build a laye
 
 [*Hierarchical Model\-View\-Controller*](https://herbertograca.com/2017/08/17/mvc-and-its-variants/#hierarchical-model-view-controller) \(*HMVC*\) is similar, but its *views* access *models* directly, like in [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*MVC*]], and every model synchronizes with the global data\. This pattern [was used](https://web.archive.org/web/20060319064042/http://www.javaworld.com/javaworld/jw-09-2000/jw-0908-letters.html) in [rich clients](https://en.wikipedia.org/wiki/Rich_client)\.
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/PAC.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/PAC.png" alt="Both Presentation-Abstraction-Control and Hierarchical Model-View-Controller are top-down hierarchies with three-component nodes, which share a database in the second pattern." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Both Presentation-Abstraction-Control and Hierarchical Model-View-Controller are top-down hierarchies with three-component nodes, which share a database in the second pattern.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/PAC.png)
+
 
 ### Bottom\-Up Hierarchy: [[wiki/concepts/source/extension-metapatterns/middleware|Bus]] of Buses, Network of Networks, Hierarchical Middleware
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/Hierarchy%20-%20Bottom-up.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/Hierarchy%20-%20Bottom-up.png" alt="An integration middleware interconnects the middlewares of two systems." loading="lazy" width=100%/>
-</a>
-</div>
+
+![An integration middleware interconnects the middlewares of two systems.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/Hierarchy%20-%20Bottom-up.png)
+
 
 Other cases require building a common base for intercommunication between several networks which vary in their protocols \(and often their hardware\)\. The root of such a *Hierarchy* is a [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]] generic and powerful enough to cover the needs of all the specialized networks which it interconnects\.
 
@@ -159,11 +143,9 @@ Example: [Automotive networks](https://www.mdpi.com/1424-8220/21/23/7917), integ
 
 ### In\-Depth Hierarchy: [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Cell]]\-Based \(Microservice\) Architecture \(WSO2 version\), Segmented Microservice Architecture, [[wiki/concepts/source/basic-metapatterns/services|Services]] of Services, Clusters of Services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/Cell-Based%20Architecture.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Variants/3/Cell-Based%20Architecture.png" alt="Cells of different kinds communicate with each other through cell gateways." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Cells of different kinds communicate with each other through cell gateways.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Variants/3/Cell-Based%20Architecture.png)
+
 
 When several [[wiki/concepts/source/basic-metapatterns/services|*services*]] in a system grow large, in some cases it is possible to divide each of them into *subservices*\. Each group of the resulting subservices \(known as a [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|*Cell*]], [*Domain*](https://www.uber.com/blog/microservice-architecture/) or *Cluster* \[[wiki/concepts/source/appendices/books-referenced|[DEDS]]\]\) usually implements a *bounded context* \[[wiki/concepts/source/appendices/books-referenced|[DDD]]\]\. It is hidden behind its own [[wiki/concepts/source/extension-metapatterns/proxy|*Cell Gateway*]] and may even use its own [[wiki/concepts/source/extension-metapatterns/middleware|*Middleware*]]\. Subservices of a *Cell* may [[wiki/concepts/source/extension-metapatterns/shared-repository|*share a database*]] and may be deployed as a single unit\. This keeps the system’s integration complexity \(the length of its APIs and the number of deployable units\) reasonable while still scaling development among many teams or individuals, each owning a service\. If each instance of a *Cell* owns a [[wiki/concepts/source/basic-metapatterns/shards|*shard*]] of its database, the system [becomes more stable](https://docs.aws.amazon.com/wellarchitected/latest/reducing-scope-of-impact-with-cell-based-architecture/what-is-a-cell-based-architecture.html) as there is no single point of failure \(except for the [[wiki/concepts/source/extension-metapatterns/proxy|*Load Balancer*]] called *Cell Router*\)\. Another benefit is that *Cells* can be deployed to regional data centers to improve locality for users of the system\. However, that will likely cause data synchronization traffic between the data centers\.
 
@@ -176,11 +158,9 @@ Uber [compacted](https://www.uber.com/blog/microservice-architecture/) 2200 [[wi
 - The upper component of a *Top\-Down Hierarchy* can be split into [*Backends for Frontends*](<Backends for Frontends (BFF)>)\.
 
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/3/Hierarchy%20-%201.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/3/Hierarchy%20-%201.png" alt="The upper layer of a top-down hierarchy is subdivided into Backends for Frontends." loading="lazy" width=100%/>
-</a>
-</div>
+
+![The upper layer of a top-down hierarchy is subdivided into Backends for Frontends.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/3/Hierarchy%20-%201.png)
+
 
 ## Summary
 

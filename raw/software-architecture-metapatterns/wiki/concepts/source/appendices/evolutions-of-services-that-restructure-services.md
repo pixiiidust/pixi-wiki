@@ -27,11 +27,9 @@ source_license_note: "See namespace README; preserve attribution and source link
 
 ## Add or split a service
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Split.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Split.png" alt="A service is split in half." loading="lazy" width=100%/>
-</a>
-</div>
+
+![A service is split in half.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services_%20Split.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/services|Services]]\.
 
@@ -60,11 +58,9 @@ If one of your services has grown too large, you should look for a way to subdiv
 
 ## Merge services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Merge.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Merge.png" alt="Two services are merged." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Two services are merged.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services_%20Merge.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/basic-metapatterns/services|Services]], [[wiki/concepts/source/basic-metapatterns/monolith|Monolith]] or [[wiki/concepts/source/basic-metapatterns/layers|Layers]]\.
 
@@ -96,11 +92,9 @@ Alternatively, as the domain knowledge changes \[[wiki/concepts/source/appendice
 
 ## Cluster services
 
-<div align="center">
-<a href="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Cluster.png">
-<img src="https://raw.githubusercontent.com/denyspoltorak/metapatterns/main/ArchitecturalMetapatterns/Evolutions/Services/Services_%20Cluster.png" alt="Services are grouped into Cells, reducing their interdependencies." loading="lazy" width=100%/>
-</a>
-</div>
+
+![Services are grouped into Cells, reducing their interdependencies.](/pixi-wiki/wiki/software-architecture-metapatterns/assets/images/Evolutions/Services/Services_%20Cluster.png)
+
 
 <ins>Patterns</ins>: [[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Cell]] \([[wiki/concepts/source/implementation-metapatterns/hexagonal-architecture|Hexagonal Architecture]], [[wiki/concepts/source/basic-metapatterns/services|Services]]\)\.
 
