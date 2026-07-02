@@ -1,0 +1,205 @@
+---
+title: "UI Patterns KB — Master Index"
+created: "2026-07-02"
+updated: "2026-07-02"
+type: "wiki"
+status: "active"
+category: "product-design"
+namespace: "ui-patterns"
+source_url: "https://ui-patterns.com/patterns"
+---
+# UI Patterns KB — Master Index
+
+## Start Here
+
+- [[summaries/for-agents-ui-patterns-retrieval|For Agents — UI Patterns Retrieval]]
+- [[summaries/provenance-and-copyright-boundary|Provenance and Copyright Boundary]]
+- [[summaries/source-taxonomy|Source Taxonomy]]
+- [[entities/source-site-ui-patterns|Source Site — UI Patterns]]
+
+## Category Maps
+
+- [[entities/categories/persuasive-design-patterns-cognition|Cognition — Persuasive Design Patterns]]
+- [[entities/categories/persuasive-design-patterns-feedback|Feedback — Persuasive Design Patterns]]
+- [[entities/categories/persuasive-design-patterns-game-mechanics|Game mechanics — Persuasive Design Patterns]]
+- [[entities/categories/persuasive-design-patterns-perception-and-memory|Perception and memory — Persuasive Design Patterns]]
+- [[entities/categories/persuasive-design-patterns-social|Social — Persuasive Design Patterns]]
+- [[entities/categories/user-interface-design-patterns-dealing-with-data|Dealing with data — User Interface Design Patterns]]
+- [[entities/categories/user-interface-design-patterns-getting-input|Getting input — User Interface Design Patterns]]
+- [[entities/categories/user-interface-design-patterns-miscellaneous|Miscellaneous — User Interface Design Patterns]]
+- [[entities/categories/user-interface-design-patterns-navigation|Navigation — User Interface Design Patterns]]
+- [[entities/categories/user-interface-design-patterns-onboarding|Onboarding — User Interface Design Patterns]]
+- [[entities/categories/user-interface-design-patterns-social|Social — User Interface Design Patterns]]
+
+## Pattern Catalog
+
+- [[concepts/patterns/accordion-menu|Accordion Menu]] — User Interface Design Patterns / Navigation / Menus
+- [[concepts/patterns/account-registration|Account Registration]] — User Interface Design Patterns / Onboarding / Registration
+- [[concepts/patterns/achievements|Achievements]] — Persuasive Design Patterns / Game mechanics / Gameplay rewards
+- [[concepts/patterns/activity-stream|Activity Stream]] — User Interface Design Patterns / Social / Social interactions
+- [[concepts/patterns/adaptable-view|Adaptable View]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/alternating-row-colors|Alternating Row Colors]] — User Interface Design Patterns / Dealing with data / Tables
+- [[concepts/patterns/anchoring|Anchoring]] — Persuasive Design Patterns / Perception and memory / Comprehension
+- [[concepts/patterns/appointment-dynamic|Appointment Dynamic]] — Persuasive Design Patterns / Game mechanics / Gameplay rewards
+- [[concepts/patterns/appropriate-challenge|Appropriate Challenge]] — Persuasive Design Patterns / Game mechanics / Gameplay design
+- [[concepts/patterns/archive|Archive]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/article-list|Article List]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/authority-bias|Authority Bias]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/auto-sharing|Auto-sharing]] — User Interface Design Patterns / Social / Social interactions
+- [[concepts/patterns/autocomplete|Autocomplete]] — User Interface Design Patterns / Dealing with data / Search
+- [[concepts/patterns/autonomy|Autonomy]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/autosave|Autosave]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/blank-slate|Blank Slate]] — User Interface Design Patterns / Onboarding / Guidance
+- [[concepts/patterns/breadcrumbs|Breadcrumbs]] — User Interface Design Patterns / Navigation / Jumping in hierarchy
+- [[concepts/patterns/calendar-picker|Calendar Picker]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/captcha|Captcha]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/cards|Cards]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/carousel|Carousel]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/cashless-effect|Cashless Effect]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/categorization|Categorization]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/chat|Chat]] — User Interface Design Patterns / Social / Social interactions
+- [[concepts/patterns/choice-closure|Choice Closure]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/chunking|Chunking]] — Persuasive Design Patterns / Perception and memory / Comprehension
+- [[concepts/patterns/coachmarks|Coachmarks]] — User Interface Design Patterns / Onboarding / Guidance
+- [[concepts/patterns/cognitive-dissonance|Cognitive Dissonance]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/collectible-achievements|Collectible Achievements]] — User Interface Design Patterns / Social / Reputation
+- [[concepts/patterns/commitment-and-consistency|Commitment & Consistency]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/competition|Competition]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/completeness-meter|Completeness meter]] — User Interface Design Patterns / Getting input / Explaining the process
+- [[concepts/patterns/conceptual-metaphor|Conceptual Metaphor]] — Persuasive Design Patterns / Perception and memory / Comprehension
+- [[concepts/patterns/continuous-scrolling|Continuous Scrolling]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/copy-box|Copy Box]] — User Interface Design Patterns / Dealing with data / Formatting data
+- [[concepts/patterns/coupon|Coupon]] — User Interface Design Patterns / Miscellaneous / Shopping
+- [[concepts/patterns/curiosity|Curiosity]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/dashboard|Dashboard]] — User Interface Design Patterns / Dealing with data / Formatting data
+- [[concepts/patterns/decoy-effect|Decoy Effect]] — Persuasive Design Patterns / Cognition / Loss Aversion
+- [[concepts/patterns/delay-discounting|Delay Discounting]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/delighters|Delighters]] — Persuasive Design Patterns / Game mechanics / Gameplay rewards
+- [[concepts/patterns/drag-and-drop|Drag and drop]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/endowment-effect|Endowment Effect]] — Persuasive Design Patterns / Cognition / Loss Aversion
+- [[concepts/patterns/event-calendar|Event Calendar]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/expandable-input|Expandable Input]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/fat-footer|Fat Footer]] — User Interface Design Patterns / Navigation / Jumping in hierarchy
+- [[concepts/patterns/favorites|Favorites]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/feedback-loops|Feedback Loops]] — Persuasive Design Patterns / Feedback / Timing
+- [[concepts/patterns/fill-in-the-blanks|Fill in the Blanks]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/fixed-rewards|Fixed rewards]] — Persuasive Design Patterns / Game mechanics / Fundamentals of rewards
+- [[concepts/patterns/flagging-and-reporting|Flagging & Reporting]] — User Interface Design Patterns / Getting input / Community driven
+- [[concepts/patterns/follow|Follow]] — User Interface Design Patterns / Social / Social interactions
+- [[concepts/patterns/forgiving-format|Forgiving Format]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/framing|Framing]] — Persuasive Design Patterns / Cognition / Loss Aversion
+- [[concepts/patterns/frequently-asked-questions-faq|Frequently Asked Questions (FAQ)]] — User Interface Design Patterns / Dealing with data / Formatting data
+- [[concepts/patterns/fresh-start-effect|Fresh Start Effect]] — Persuasive Design Patterns / Feedback / Timing
+- [[concepts/patterns/friend|Friend]] — User Interface Design Patterns / Social / Social interactions
+- [[concepts/patterns/friend-list|Friend list]] — User Interface Design Patterns / Social / Social interactions
+- [[concepts/patterns/gallery|Gallery]] — User Interface Design Patterns / Dealing with data / Images
+- [[concepts/patterns/goal-gradient-effect|Goal-Gradient Effect]] — Persuasive Design Patterns / Game mechanics / Gameplay rewards
+- [[concepts/patterns/good-defaults|Good Defaults]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/guided-tour|Guided Tour]] — User Interface Design Patterns / Onboarding / Guidance
+- [[concepts/patterns/halo-effect|Halo Effect]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/hedonic-adaptation|Hedonic Adaptation]] — Persuasive Design Patterns / Game mechanics / Gameplay design
+- [[concepts/patterns/home-link|Home Link]] — User Interface Design Patterns / Navigation / Jumping in hierarchy
+- [[concepts/patterns/horizontal-dropdown-menu|Horizontal Dropdown Menu]] — User Interface Design Patterns / Navigation / Menus
+- [[concepts/patterns/ikea-effect|IKEA effect]] — Persuasive Design Patterns / Cognition / Loss Aversion
+- [[concepts/patterns/illusion-of-control|Illusion of control]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/image-zoom|Image Zoom]] — User Interface Design Patterns / Dealing with data / Images
+- [[concepts/patterns/inaction-inertia-effect|Inaction Inertia Effect]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/inline-help-box|Inline Help Box]] — User Interface Design Patterns / Getting input / Explaining the process
+- [[concepts/patterns/inline-hints|Inline Hints]] — User Interface Design Patterns / Onboarding / Guidance
+- [[concepts/patterns/inplace-editor|Inplace Editor]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/input-feedback|Input Feedback]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/input-prompt|Input Prompt]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/intentional-gaps|Intentional Gaps]] — Persuasive Design Patterns / Game mechanics / Gameplay design
+- [[concepts/patterns/investment-loops|Investment Loops]] — Persuasive Design Patterns / Game mechanics / Gameplay design
+- [[concepts/patterns/invite-friends|Invite friends]] — User Interface Design Patterns / Social / Social interactions
+- [[concepts/patterns/isolation-effect|Isolation Effect]] — Persuasive Design Patterns / Perception and memory / Attention
+- [[concepts/patterns/kairos|Kairos]] — Persuasive Design Patterns / Feedback / Timing
+- [[concepts/patterns/keyboard-shortcuts|Keyboard Shortcuts]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/lazy-registration|Lazy Registration]] — User Interface Design Patterns / Onboarding / Registration
+- [[concepts/patterns/leaderboard|Leaderboard]] — User Interface Design Patterns / Social / Reputation
+- [[concepts/patterns/levels|Levels]] — Persuasive Design Patterns / Game mechanics / Gameplay design
+- [[concepts/patterns/liking|Liking]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/limited-choice|Limited Choice]] — Persuasive Design Patterns / Cognition / Scarcity
+- [[concepts/patterns/limited-duration|Limited duration]] — Persuasive Design Patterns / Cognition / Scarcity
+- [[concepts/patterns/loss-aversion|Loss Aversion]] — Persuasive Design Patterns / Cognition / Loss Aversion
+- [[concepts/patterns/modal|Modal]] — User Interface Design Patterns / Navigation / Jumping in hierarchy
+- [[concepts/patterns/module-tabs|Module Tabs]] — User Interface Design Patterns / Navigation / Tabs
+- [[concepts/patterns/morphing-controls|Morphing Controls]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/navigation-tabs|Navigation Tabs]] — User Interface Design Patterns / Navigation / Tabs
+- [[concepts/patterns/need-for-closure|Need for Closure]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/negativity-bias|Negativity bias]] — Persuasive Design Patterns / Cognition / Loss Aversion
+- [[concepts/patterns/noble-edge-effect|Noble Edge Effect]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/nostalgia-effect|Nostalgia Effect]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/notifications|Notifications]] — User Interface Design Patterns / Navigation / Jumping in hierarchy
+- [[concepts/patterns/optimism-bias|Optimism Bias]] — Persuasive Design Patterns / Cognition / Loss Aversion
+- [[concepts/patterns/pagination|Pagination]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/password-strength-meter|Password Strength Meter]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/pattern-recognition|Pattern Recognition]] — Persuasive Design Patterns / Perception and memory / Comprehension
+- [[concepts/patterns/pay-to-promote|Pay To Promote]] — User Interface Design Patterns / Getting input / Community driven
+- [[concepts/patterns/paywall|Paywall]] — User Interface Design Patterns / Onboarding / Registration
+- [[concepts/patterns/peak-end-rule|Peak-end rule]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/periodic-events|Periodic Events]] — Persuasive Design Patterns / Game mechanics / Gameplay design
+- [[concepts/patterns/picture-superiority-effect|Picture Superiority Effect]] — Persuasive Design Patterns / Perception and memory / Attention
+- [[concepts/patterns/playthrough|Playthrough]] — User Interface Design Patterns / Onboarding / Guidance
+- [[concepts/patterns/positive-mimicry|Positive Mimicry]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/praise|Praise]] — Persuasive Design Patterns / Game mechanics / Gameplay rewards
+- [[concepts/patterns/present-bias|Present Bias]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/preview|Preview]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/pricing-table|Pricing table]] — User Interface Design Patterns / Miscellaneous / Shopping
+- [[concepts/patterns/priming-effect|Priming Effect]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/privileges|Privileges]] — Persuasive Design Patterns / Game mechanics / Gameplay rewards
+- [[concepts/patterns/product-page|Product page]] — User Interface Design Patterns / Miscellaneous / Shopping
+- [[concepts/patterns/progressive-disclosure|Progressive Disclosure]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/prolonged-play|Prolonged Play]] — Persuasive Design Patterns / Game mechanics / Gameplay rewards
+- [[concepts/patterns/pull-to-refresh|Pull to refresh]] — User Interface Design Patterns / Navigation / Gestures
+- [[concepts/patterns/rate-content|Rate Content]] — User Interface Design Patterns / Getting input / Community driven
+- [[concepts/patterns/reaction|Reaction]] — User Interface Design Patterns / Social / Social interactions
+- [[concepts/patterns/reciprocation|Reciprocation]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/recognition-over-recall|Recognition over Recall]] — Persuasive Design Patterns / Perception and memory / Comprehension
+- [[concepts/patterns/reduction|Reduction]] — Persuasive Design Patterns / Perception and memory / Attention
+- [[concepts/patterns/reputation|Reputation]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/retaliation|Retaliation]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/role-playing|Role Playing]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/rule-builder|Rule Builder]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/scarcity|Scarcity]] — Persuasive Design Patterns / Cognition / Scarcity
+- [[concepts/patterns/search-filters|Search Filters]] — User Interface Design Patterns / Dealing with data / Search
+- [[concepts/patterns/self-expression|Self-Expression]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/self-monitoring|Self-Monitoring]] — Persuasive Design Patterns / Game mechanics / Gameplay design
+- [[concepts/patterns/sequencing|Sequencing]] — Persuasive Design Patterns / Perception and memory / Comprehension
+- [[concepts/patterns/serial-positioning-effect|Serial Positioning Effect]] — Persuasive Design Patterns / Perception and memory / Comprehension
+- [[concepts/patterns/set-completion|Set Completion]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/settings|Settings]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/shaping|Shaping]] — Persuasive Design Patterns / Game mechanics / Fundamentals of rewards
+- [[concepts/patterns/shopping-cart|Shopping Cart]] — User Interface Design Patterns / Miscellaneous / Shopping
+- [[concepts/patterns/shortcut-dropdown|Shortcut Dropdown]] — User Interface Design Patterns / Navigation / Jumping in hierarchy
+- [[concepts/patterns/simulation|Simulation]] — Persuasive Design Patterns / Feedback / Timing
+- [[concepts/patterns/slideshow|Slideshow]] — User Interface Design Patterns / Dealing with data / Images
+- [[concepts/patterns/social-proof|Social Proof]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/sort-by-column|Sort By Column]] — User Interface Design Patterns / Dealing with data / Tables
+- [[concepts/patterns/status|Status]] — Persuasive Design Patterns / Social / Social biases
+- [[concepts/patterns/status-quo-bias|Status-Quo Bias]] — Persuasive Design Patterns / Cognition / Loss Aversion
+- [[concepts/patterns/steps-left|Steps Left]] — User Interface Design Patterns / Getting input / Explaining the process
+- [[concepts/patterns/storytelling|Storytelling]] — Persuasive Design Patterns / Game mechanics / Gameplay design
+- [[concepts/patterns/structured-format|Structured Format]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/sunk-cost-effect|Sunk Cost Effect]] — Persuasive Design Patterns / Cognition / Loss Aversion
+- [[concepts/patterns/table-filter|Table Filter]] — User Interface Design Patterns / Dealing with data / Tables
+- [[concepts/patterns/tag-cloud|Tag Cloud]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/tagging|Tagging]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/tailoring|Tailoring]] — Persuasive Design Patterns / Feedback / Timing
+- [[concepts/patterns/temptation-bundling|Temptation Bundling]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/testimonials|Testimonials]] — User Interface Design Patterns / Social / Reputation
+- [[concepts/patterns/thumbnail|Thumbnail]] — User Interface Design Patterns / Navigation / Content
+- [[concepts/patterns/tip-a-friend|Tip A Friend]] — User Interface Design Patterns / Miscellaneous / Increasing frequency
+- [[concepts/patterns/trigger|Trigger]] — Persuasive Design Patterns / Feedback / Timing
+- [[concepts/patterns/tunnelling|Tunnelling]] — Persuasive Design Patterns / Perception and memory / Attention
+- [[concepts/patterns/undo|Undo]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/unlock-features|Unlock Features]] — Persuasive Design Patterns / Game mechanics / Gameplay rewards
+- [[concepts/patterns/value-attribution|Value Attribution]] — Persuasive Design Patterns / Cognition / Other cognitive biases
+- [[concepts/patterns/variable-rewards|Variable Rewards]] — Persuasive Design Patterns / Game mechanics / Fundamentals of rewards
+- [[concepts/patterns/vertical-dropdown-menu|Vertical Dropdown Menu]] — User Interface Design Patterns / Navigation / Menus
+- [[concepts/patterns/vote-to-promote|Vote To Promote]] — User Interface Design Patterns / Getting input / Community driven
+- [[concepts/patterns/walkthrough|Walkthrough]] — User Interface Design Patterns / Onboarding / Guidance
+- [[concepts/patterns/wiki|Wiki]] — User Interface Design Patterns / Getting input / Community driven
+- [[concepts/patterns/wizard|Wizard]] — User Interface Design Patterns / Getting input / Explaining the process
+- [[concepts/patterns/wysiwyg|WYSIWYG]] — User Interface Design Patterns / Getting input / Forms
+- [[concepts/patterns/zeigarnik-effect|Zeigarnik Effect]] — Persuasive Design Patterns / Perception and memory / Attention
