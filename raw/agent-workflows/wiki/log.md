@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-01
+updated: 2026-07-03
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-03 create | Effective State Load
+
+- Added compiled concept `wiki/concepts/effective-state-load.md` from the canonical Knowledge page and private `effective-state-load` research repo.
+- Captured the ToolDAG/variable-graph experiment: measure when model-agent harnesses stop reliably maintaining typed tool variables and dependencies.
+- Linked ESL to future task slicing/statechart orchestration while preserving no-public-deploy boundary for this update.
 
 ## 2026-07-01 create | Agent workflow system summary
 

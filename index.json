@@ -91,21 +91,21 @@
     {
       "slug": "agent-workflows",
       "title": "Agent Workflows",
-      "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
+      "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.",
       "tags": [
         "agents"
       ],
       "category": "agents",
       "scope": {
-        "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.",
+        "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-07-01 \u2014 Added a compact agent workflow system summary linking the namespace's strongest evidence for Discord/Pixi Wiki as a system for building: skills, tools, scheduling, delegation, control surfaces, verification, and durable knowledge routing. Reader-Centered Outreach Asks also added as the cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific low-friction bounded ask, easy no, and no lies."
+        "currentAs": "2026-07-03 \u2014 Added Effective State Load as an agent reliability concept and research scaffold: ToolDAG synthetic experiments should measure when a model-agent harness stops maintaining the variable graph needed for correct tool use, then inform ESL-aware task slicing/statechart orchestration."
       },
-      "lastUpdated": "2026-07-01",
-      "documentCount": 29,
+      "lastUpdated": "2026-07-03",
+      "documentCount": 30,
       "counts": {
         "wiki": 1,
-        "concepts": 21,
+        "concepts": 22,
         "entities": 1,
         "summaries": 1,
         "syntheses": 2
@@ -177,6 +177,13 @@
           "path": "wiki/concepts/creative-ideation-routing.md",
           "raw": "/raw/agent-workflows/wiki/concepts/creative-ideation-routing.md",
           "html": "/wiki/agent-workflows/wiki/concepts/creative-ideation-routing.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Effective State Load",
+          "path": "wiki/concepts/effective-state-load.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/effective-state-load.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/effective-state-load.md.html",
           "category": "concepts"
         },
         {

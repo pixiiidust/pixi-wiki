@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-07-01
+updated: 2026-07-03
 type: namespace-overview
 status: active
 category: agents
@@ -35,7 +35,7 @@ confidence: medium
 
 ### Covers
 
-Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, and workflow reliability practices.
+Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.
 
 ### Not Covered
 
@@ -43,10 +43,11 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-01 — Added a compact agent workflow system summary linking the namespace's strongest evidence for Discord/Pixi Wiki as a system for building: skills, tools, scheduling, delegation, control surfaces, verification, and durable knowledge routing. Reader-Centered Outreach Asks also added as the cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific low-friction bounded ask, easy no, and no lies.
+2026-07-03 — Added Effective State Load as an agent reliability concept and research scaffold: ToolDAG synthetic experiments should measure when a model-agent harness stops maintaining the variable graph needed for correct tool use, then inform ESL-aware task slicing/statechart orchestration.
 
 ## Canonical Source Roots
 
+- `Projects/Effective State Load/Index.md`
 - `Projects/Hermes Mission Control/Index.md`
 - `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing.md`
 - `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md`
@@ -58,6 +59,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
 - `Knowledge/concepts/agent-tooling-plan.md`
+- `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
 - `Knowledge/concepts/hermes-capability-routing.md`
@@ -665,6 +667,79 @@ Bad output is unrouted LLM slop: generic lists, vague app nouns, no method, no m
 Canonical source: `Knowledge/concepts/creative-ideation-routing.md`.
 
 Reusable Hermes skill: `~/.hermes/skills/creative/creative-ideation/SKILL.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/effective-state-load.md ===== -->
+
+---
+title: Effective State Load
+created: 2026-07-03
+updated: 2026-07-03
+type: concept
+status: compiled
+namespace: agent-workflows
+source: Knowledge/concepts/effective-state-load.md
+confidence: medium
+---
+
+# Effective State Load
+
+**Effective state load** is the live structured-state burden an agent must maintain while acting. It is a proposed reliability metric for predicting when an agent will stop maintaining the variable graph needed for correct tool use.
+
+Starting formula:
+
+```txt
+ESL = SC × DD × U × H × O_penalty
+```
+
+- `SC`: state cardinality — active variables/entities.
+- `DD`: dependency density — required inputs, relations, or preconditions.
+- `U`: update burden — variables/facts created, invalidated, renamed, or transformed per step.
+- `H`: horizon — steps the state must remain correct.
+- `O_penalty`: observation difficulty — clean, distractor, ambiguous, or partial.
+
+## Why this matters
+
+Context length says what an agent can see. Effective state load says how much live structured state the agent must keep correctly bound, updated, and actionable.
+
+A model may have a huge context window and still collapse if the active variable/dependency/update burden exceeds the harness's state-management capacity.
+
+## ToolDAG experiment
+
+The proposed experiment uses synthetic ToolDAG episodes. Tool outputs become typed variables; variables feed later tools; the evaluator compares the agent-believed variable graph against the deterministic gold graph after each step.
+
+Measured failures include:
+
+- missing arguments,
+- wrong variable types,
+- stale variables,
+- fabricated variables,
+- skipped dependencies,
+- invalid tool order,
+- final goal failure.
+
+Primary question:
+
+> At what effective state load does an agent stop reliably maintaining the variable graph needed to use tools correctly?
+
+## Orchestration implication
+
+If ESL boundaries can be measured per model-agent harness, a runtime orchestrator can ingest a task spec, estimate ESL, and slice work into state-machine/statechart stages below the safe boundary.
+
+Statechart guards can enforce:
+
+- split again when `slice_ESL` exceeds safe budget,
+- re-ground when state fidelity drops,
+- require human review for high-risk transitions,
+- continue only after verifier-backed state updates.
+
+## Related pages
+
+- [[agent-tooling-plan]]
+- [[world-model-control-surfaces]]
+- [[self-improving-agent-systems]]
+- [[context-overfitting]]
+- [[visual-plan-review-surfaces]]
 
 
 <!-- ===== agent-workflows/wiki/concepts/hermes-soul-md-wiring.md ===== -->
@@ -1822,7 +1897,7 @@ Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operati
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-07-01
+updated: 2026-07-03
 type: index
 status: compiled
 namespace: agent-workflows
@@ -1834,6 +1909,7 @@ namespace: agent-workflows
 
 ## Concepts
 
+- [[concepts/effective-state-load|Effective State Load]] — Boundary metric for agent reliability based on live structured state load, ToolDAG variable-graph evaluation, and ESL-aware task slicing.
 - [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
@@ -1876,6 +1952,7 @@ namespace: agent-workflows
 
 ## Source Roots
 
+- `Projects/Effective State Load/Index.md`
 - `Projects/Hermes Mission Control/Index.md`
 - `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing.md`
 - `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md`
@@ -1887,6 +1964,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
 - `Knowledge/concepts/agent-tooling-plan.md`
+- `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
 - `Knowledge/concepts/hermes-capability-routing.md`
@@ -1911,7 +1989,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-01
+updated: 2026-07-03
 type: log
 status: compiled
 namespace: agent-workflows
@@ -1920,6 +1998,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-03 create | Effective State Load
+
+- Added compiled concept `wiki/concepts/effective-state-load.md` from the canonical Knowledge page and private `effective-state-load` research repo.
+- Captured the ToolDAG/variable-graph experiment: measure when model-agent harnesses stop reliably maintaining typed tool variables and dependencies.
+- Linked ESL to future task slicing/statechart orchestration while preserving no-public-deploy boundary for this update.
 
 ## 2026-07-01 create | Agent workflow system summary
 

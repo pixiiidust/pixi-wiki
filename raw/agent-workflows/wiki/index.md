@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-07-01
+updated: 2026-07-03
 type: index
 status: compiled
 namespace: agent-workflows
@@ -13,6 +13,7 @@ namespace: agent-workflows
 
 ## Concepts
 
+- [[concepts/effective-state-load|Effective State Load]] — Boundary metric for agent reliability based on live structured state load, ToolDAG variable-graph evaluation, and ESL-aware task slicing.
 - [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
@@ -55,6 +56,7 @@ namespace: agent-workflows
 
 ## Source Roots
 
+- `Projects/Effective State Load/Index.md`
 - `Projects/Hermes Mission Control/Index.md`
 - `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing.md`
 - `Projects/Hermes Mission Control/PRD - Knowledge Pack Routing V2.md`
@@ -66,6 +68,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
 - `Knowledge/concepts/agent-tooling-plan.md`
+- `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
 - `Knowledge/concepts/hermes-capability-routing.md`
