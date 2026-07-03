@@ -11,6 +11,12 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-07-03 update | Effective State Load repo-based ESL experiment
+
+- Refreshed compiled concept `wiki/concepts/effective-state-load.md` from the updated project and Knowledge notes.
+- Replaced the old `SC × DD × U × H × O_penalty` starting formula with the current first-test hypothesis: `ESL = SC × DD`.
+- Captured the current run path: official `world-model-collapse` harness, OpenRouter smoke/grid, SC/DD heatmaps, ESL contour/bucket analysis, then ToolDAG transfer.
+
 ## 2026-07-03 create | Effective State Load
 
 - Added compiled concept `wiki/concepts/effective-state-load.md` from the canonical Knowledge page and private `effective-state-load` research repo.

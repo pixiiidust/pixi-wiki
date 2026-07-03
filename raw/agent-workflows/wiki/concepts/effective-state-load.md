@@ -11,43 +11,57 @@ confidence: medium
 
 # Effective State Load
 
-**Effective state load** is the live structured-state burden an agent must maintain while acting. It is a proposed reliability metric for predicting when an agent will stop maintaining the variable graph needed for correct tool use.
+**Effective State Load** is a practical metric for estimating when an LLM agent is carrying too much structured state to keep its world model reliable.
 
-Starting formula:
+Current first-test hypothesis:
 
 ```txt
-ESL = SC × DD × U × H × O_penalty
+ESL = SC × DD
 ```
 
-- `SC`: state cardinality — active variables/entities.
-- `DD`: dependency density — required inputs, relations, or preconditions.
-- `U`: update burden — variables/facts created, invalidated, renamed, or transformed per step.
-- `H`: horizon — steps the state must remain correct.
-- `O_penalty`: observation difficulty — clean, distractor, ambiguous, or partial.
+- `SC`: state cardinality — live entities/state variables the agent must keep jointly addressable.
+- `DD`: dependency density — preconditions or constraints that must hold at once.
+
+The project first measures the two-dimensional SC/DD collapse surface, then tests whether `SC × DD` compresses that surface well enough to guide task slicing.
 
 ## Why this matters
 
-Context length says what an agent can see. Effective state load says how much live structured state the agent must keep correctly bound, updated, and actionable.
+Context length says what an agent can see. Effective State Load asks what the model-agent harness can **hold correctly**: live, mutually dependent state that must survive updates across a long-horizon task.
 
-A model may have a huge context window and still collapse if the active variable/dependency/update burden exceeds the harness's state-management capacity.
+The key failure mode is fluent reasoning over a corrupted world model. The official paper frames SC and DD as governing control parameters, task success as the order parameter, and world-state fidelity as the precursor signal. ESL is the orchestration-facing attempt to turn that boundary into a usable state-load budget.
 
-## ToolDAG experiment
+## Experiment shape
 
-The proposed experiment uses synthetic ToolDAG episodes. Tool outputs become typed variables; variables feed later tools; the evaluator compares the agent-believed variable graph against the deterministic gold graph after each step.
+The current repo reuses the official `Hik289/world-model-collapse` implementation rather than starting from a custom ToolDAG simulator.
 
-Measured failures include:
+### Phase 1 — Measure the SC/DD surface
 
-- missing arguments,
-- wrong variable types,
-- stale variables,
-- fabricated variables,
-- skipped dependencies,
-- invalid tool order,
-- final goal failure.
+Run `stateful_puzzle` through OpenRouter and collect:
 
-Primary question:
+- final success,
+- world-state accuracy,
+- action validity,
+- collapse onset (`tau_w`, `tau_a`, lag),
+- token and cost telemetry,
+- sample traces where world-state failure precedes invalid action.
 
-> At what effective state load does an agent stop reliably maintaining the variable graph needed to use tools correctly?
+### Phase 2 — Test simple ESL
+
+Evaluate whether:
+
+- equal-ESL cells such as `(SC=5, DD=4)`, `(SC=10, DD=2)`, and `(SC=20, DD=1)` behave similarly,
+- collapse cliffs follow constant `SC × DD` contour lines,
+- `SC × DD` predicts collapse better than SC alone, DD alone, token count, or `SC + DD`.
+
+Fallback only if simple ESL fails:
+
+```txt
+ESL_weighted = SC^a × DD^b
+```
+
+### Phase 3 — Transfer to ToolDAG
+
+After StatefulPuzzle works, reuse the official repo's `tool_dag` environment to test whether `ESL = SC × DD` transfers to typed tool-use workflows.
 
 ## Orchestration implication
 
