@@ -99,7 +99,7 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-07-03 \u2014 Refreshed Effective State Load around the official `world-model-collapse` harness: measure the SC/DD collapse surface in StatefulPuzzle, test whether `ESL = SC \u00d7 DD` compresses it, then transfer to ToolDAG for typed tool-use workflows."
+        "currentAs": "2026-07-03 \u2014 Refreshed Effective State Load around the official `world-model-collapse` harness: measure the SC/DD collapse surface in StatefulPuzzle, test whether `ESL = SC \u00d7 DD` compresses it, then transfer to ToolDAG-B for provenance-checked typed tool-use workflows."
       },
       "lastUpdated": "2026-07-03",
       "documentCount": 30,

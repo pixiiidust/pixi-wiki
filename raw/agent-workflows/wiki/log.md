@@ -11,11 +11,17 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-07-03 update | Effective State Load ToolDAG-B transfer
+
+- Refreshed compiled concept `wiki/concepts/effective-state-load.md` after the repo docs re-based Phase 3 on ToolDAG-B.
+- Preserved the current transfer decision: upstream `tool_dag` stays as an optional control, but the main transfer environment checks exact variable provenance/identity bindings because type-only validation is too weak a dependency stress.
+- Added the ToolDAG-B DD-sweep gate before full Phase 3 grid spend.
+
 ## 2026-07-03 update | Effective State Load repo-based ESL experiment
 
 - Refreshed compiled concept `wiki/concepts/effective-state-load.md` from the updated project and Knowledge notes.
-- Replaced the old `SC × DD × U × H × O_penalty` starting formula with the current first-test hypothesis: `ESL = SC × DD`.
-- Captured the current run path: official `world-model-collapse` harness, OpenRouter smoke/grid, SC/DD heatmaps, ESL contour/bucket analysis, then ToolDAG transfer.
+- Replaced the old five-factor starting formula with the current first-test hypothesis: `ESL = SC × DD`.
+- Captured the current run path: official `world-model-collapse` harness, OpenRouter smoke/grid, SC/DD heatmaps, ESL contour/bucket analysis, then ToolDAG-B transfer.
 
 ## 2026-07-03 create | Effective State Load
 

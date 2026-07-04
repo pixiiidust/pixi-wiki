@@ -34,6 +34,7 @@
 <h2>Why this matters</h2>
 <p>Context length says what an agent can see. Effective State Load asks what the model-agent harness can **hold correctly**: live, mutually dependent state that must survive updates across a long-horizon task.</p>
 <p>The key failure mode is fluent reasoning over a corrupted world model. The official paper frames SC and DD as governing control parameters, task success as the order parameter, and world-state fidelity as the precursor signal. ESL is the orchestration-facing attempt to turn that boundary into a usable state-load budget.</p>
+<p>The product-relevant tool-transfer phase now focuses on provenance binding: in real workflows, the dangerous error is often a right-type but wrong-identity variable, such as the wrong customer, file, ticket, or tool output.</p>
 <h2>Experiment shape</h2>
 <p>The current repo reuses the official <code>Hik289/world-model-collapse</code> implementation rather than starting from a custom ToolDAG simulator.</p>
 <h3>Phase 1 — Measure the SC/DD surface</h3>
@@ -51,12 +52,14 @@
 <ul>
 <li>equal-ESL cells such as <code>(SC=5, DD=4)</code>, <code>(SC=10, DD=2)</code>, and <code>(SC=20, DD=1)</code> behave similarly,</li>
 <li>collapse cliffs follow constant <code>SC × DD</code> contour lines,</li>
-<li><code>SC × DD</code> predicts collapse better than SC alone, DD alone, token count, or <code>SC + DD</code>.</li>
+<li><code>SC × DD</code> predicts collapse better than SC alone, DD alone, token count, or <code>SC + DD</code>,</li>
+<li>label ESL and realized ESL agree enough to support a simple orchestration metric.</li>
 </ul>
 <p>Fallback only if simple ESL fails:</p>
 <pre><code>ESL_weighted = SC^a × DD^b</code></pre>
-<h3>Phase 3 — Transfer to ToolDAG</h3>
-<p>After StatefulPuzzle works, reuse the official repo&#x27;s <code>tool_dag</code> environment to test whether <code>ESL = SC × DD</code> transfers to typed tool-use workflows.</p>
+<h3>Phase 3 — Transfer to ToolDAG-B</h3>
+<p>After StatefulPuzzle works, use <code>tool_dag_b</code>, a provenance-checked binding variant of upstream <code>tool_dag</code>, to test whether <code>ESL = SC × DD</code> transfers to typed tool-use workflows.</p>
+<p>Upstream <code>tool_dag</code> remains an optional control, but is no longer the main transfer environment: it checks type presence, not exact variable identity. ToolDAG-B requires named variable bindings, exact provenance checks, explicit finish variables, same-type distractors, and a locked DD-sweep trigger gate before full grid spend.</p>
 <h2>Orchestration implication</h2>
 <p>If ESL boundaries can be measured per model-agent harness, a runtime orchestrator can ingest a task spec, estimate ESL, and slice work into state-machine/statechart stages below the safe boundary.</p>
 <p>Statechart guards can enforce:</p>

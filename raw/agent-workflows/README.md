@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-03 — Refreshed Effective State Load around the official `world-model-collapse` harness: measure the SC/DD collapse surface in StatefulPuzzle, test whether `ESL = SC × DD` compresses it, then transfer to ToolDAG for typed tool-use workflows.
+2026-07-03 — Refreshed Effective State Load around the official `world-model-collapse` harness: measure the SC/DD collapse surface in StatefulPuzzle, test whether `ESL = SC × DD` compresses it, then transfer to ToolDAG-B for provenance-checked typed tool-use workflows.
 
 ## Canonical Source Roots
 
