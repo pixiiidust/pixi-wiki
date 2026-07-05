@@ -21,7 +21,7 @@
 ## Agent Workflows
 
 > Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.
-> Current as of: 2026-07-03 — Refreshed Effective State Load around the official `world-model-collapse` harness: measure the SC/DD collapse surface in StatefulPuzzle, test whether `ESL = SC × DD` compresses it, then transfer to ToolDAG-B for provenance-checked typed tool-use workflows.
+> Current as of: 2026-07-05 — Effective State Load Phase 3 complete: no portable universal formula; ESL is a per-workload metric family plus measurement recipe. Full HTML/PDF report mirrored under this namespace assets.
 > Agent access: [/wiki/agent-workflows/llms.txt](/wiki/agent-workflows/llms.txt) [/wiki/agent-workflows/llms-full.txt](/wiki/agent-workflows/llms-full.txt) [/wiki/agent-workflows/index.json](/wiki/agent-workflows/index.json)
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
@@ -52,6 +52,7 @@
 - [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md) ([html](/wiki/agent-workflows/wiki/index.md.html))
 - [Agent Workflows — Activity Log](/raw/agent-workflows/wiki/log.md) ([html](/wiki/agent-workflows/wiki/log.md.html))
 - [Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation](/raw/agent-workflows/wiki/summaries/agent-workflow-system-summary.md) ([html](/wiki/agent-workflows/wiki/summaries/agent-workflow-system-summary.md.html))
+- [Effective State Load Full Report](/raw/agent-workflows/wiki/summaries/effective-state-load-full-report.md) ([html](/wiki/agent-workflows/wiki/summaries/effective-state-load-full-report.md.html))
 - [Markdown-First Agent Memory](/raw/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md) ([html](/wiki/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md.html))
 - [Pixoid Crew Operating Model](/raw/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md) ([html](/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html))
 

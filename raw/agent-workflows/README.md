@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-07-03
+updated: 2026-07-05
 type: namespace-overview
 status: active
 category: agents
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-03 — Refreshed Effective State Load around the official `world-model-collapse` harness: measure the SC/DD collapse surface in StatefulPuzzle, test whether `ESL = SC × DD` compresses it, then transfer to ToolDAG-B for provenance-checked typed tool-use workflows.
+2026-07-05 — Effective State Load Phase 3 complete: no portable universal formula; ESL is a per-workload metric family plus measurement recipe. Full HTML/PDF report mirrored under this namespace assets.
 
 ## Canonical Source Roots
 
@@ -70,6 +70,7 @@ When published to `pixi-wiki`, this namespace should expose:
 /raw/agent-workflows/wiki/index.md
 /wiki/agent-workflows/README.md.html
 /wiki/agent-workflows/wiki/index.md.html
+/wiki/agent-workflows/assets/reports/esl-full-report.html
 ```
 
 ## Maintenance

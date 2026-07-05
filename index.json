@@ -99,15 +99,15 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-07-03 \u2014 Refreshed Effective State Load around the official `world-model-collapse` harness: measure the SC/DD collapse surface in StatefulPuzzle, test whether `ESL = SC \u00d7 DD` compresses it, then transfer to ToolDAG-B for provenance-checked typed tool-use workflows."
+        "currentAs": "2026-07-05 \u2014 Effective State Load Phase 3 complete: no portable universal formula; ESL is a per-workload metric family plus measurement recipe. Full HTML/PDF report mirrored under this namespace assets."
       },
-      "lastUpdated": "2026-07-03",
-      "documentCount": 30,
+      "lastUpdated": "2026-07-05",
+      "documentCount": 31,
       "counts": {
         "wiki": 1,
         "concepts": 22,
         "entities": 1,
-        "summaries": 1,
+        "summaries": 2,
         "syntheses": 2
       },
       "llms_txt": "/wiki/agent-workflows/llms.txt",
@@ -310,6 +310,13 @@
           "path": "wiki/summaries/agent-workflow-system-summary.md",
           "raw": "/raw/agent-workflows/wiki/summaries/agent-workflow-system-summary.md",
           "html": "/wiki/agent-workflows/wiki/summaries/agent-workflow-system-summary.md.html",
+          "category": "summaries"
+        },
+        {
+          "title": "Effective State Load Full Report",
+          "path": "wiki/summaries/effective-state-load-full-report.md",
+          "raw": "/raw/agent-workflows/wiki/summaries/effective-state-load-full-report.md",
+          "html": "/wiki/agent-workflows/wiki/summaries/effective-state-load-full-report.md.html",
           "category": "summaries"
         },
         {

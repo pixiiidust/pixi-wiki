@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-07-03
+updated: 2026-07-05
 type: namespace-overview
 status: active
 category: agents
@@ -43,7 +43,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-03 — Refreshed Effective State Load around the official `world-model-collapse` harness: measure the SC/DD collapse surface in StatefulPuzzle, test whether `ESL = SC × DD` compresses it, then transfer to ToolDAG-B for provenance-checked typed tool-use workflows.
+2026-07-05 — Effective State Load Phase 3 complete: no portable universal formula; ESL is a per-workload metric family plus measurement recipe. Full HTML/PDF report mirrored under this namespace assets.
 
 ## Canonical Source Roots
 
@@ -88,6 +88,7 @@ When published to `pixi-wiki`, this namespace should expose:
 /raw/agent-workflows/wiki/index.md
 /wiki/agent-workflows/README.md.html
 /wiki/agent-workflows/wiki/index.md.html
+/wiki/agent-workflows/assets/reports/esl-full-report.html
 ```
 
 ## Maintenance
@@ -674,83 +675,87 @@ Reusable Hermes skill: `~/.hermes/skills/creative/creative-ideation/SKILL.md`.
 ---
 title: Effective State Load
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 type: concept
 status: compiled
 namespace: agent-workflows
 source: Knowledge/concepts/effective-state-load.md
-confidence: medium
+confidence: high
 ---
 
 # Effective State Load
 
-**Effective State Load** is a practical metric for estimating when an LLM agent is carrying too much structured state to keep its world model reliable.
-
-Current first-test hypothesis:
+**Effective State Load (ESL)** is workflow-specific load testing for LLM agents: define state/dependency load for a workflow, map where the model-agent harness loses track of reality, then keep future runs inside the safe operating band.
 
 ```txt
-ESL = SC × DD
+SC = state cardinality   # live things the agent must track
+DD = dependency density  # simultaneous bindings/preconditions per action
+ESL = SC × DD            # metric family; not a universal threshold/formula
 ```
 
-- `SC`: state cardinality — live entities/state variables the agent must keep jointly addressable.
-- `DD`: dependency density — preconditions or constraints that must hold at once.
+## Current verdict
 
-The project first measures the two-dimensional SC/DD collapse surface, then tests whether `SC × DD` compresses that surface well enough to guide task slicing.
+`ESL = SC × DD` is **environment-general as a metric family and measurement recipe, not as a portable formula**.
 
-## Why this matters
-
-Context length says what an agent can see. Effective State Load asks what the model-agent harness can **hold correctly**: live, mutually dependent state that must survive updates across a long-horizon task.
-
-The key failure mode is fluent reasoning over a corrupted world model. The official paper frames SC and DD as governing control parameters, task success as the order parameter, and world-state fidelity as the precursor signal. ESL is the orchestration-facing attempt to turn that boundary into a usable state-load budget.
-
-The product-relevant tool-transfer phase now focuses on provenance binding: in real workflows, the dangerous error is often a right-type but wrong-identity variable, such as the wrong customer, file, ticket, or tool output.
-
-## Experiment shape
-
-The current repo reuses the official `Hik289/world-model-collapse` implementation rather than starting from a custom ToolDAG simulator.
-
-### Phase 1 — Measure the SC/DD surface
-
-Run `stateful_puzzle` through OpenRouter and collect:
-
-- final success,
-- world-state accuracy,
-- action validity,
-- collapse onset (`tau_w`, `tau_a`, lag),
-- token and cost telemetry,
-- sample traces where world-state failure precedes invalid action.
-
-### Phase 2 — Test simple ESL
-
-Evaluate whether:
-
-- equal-ESL cells such as `(SC=5, DD=4)`, `(SC=10, DD=2)`, and `(SC=20, DD=1)` behave similarly,
-- collapse cliffs follow constant `SC × DD` contour lines,
-- `SC × DD` predicts collapse better than SC alone, DD alone, token count, or `SC + DD`,
-- label ESL and realized ESL agree enough to support a simple orchestration metric.
-
-Fallback only if simple ESL fails:
+The durable recipe is:
 
 ```txt
-ESL_weighted = SC^a × DD^b
+cheap grid → SC/DD surface → calibrated frontier → operating margin → routing/guardrails
 ```
 
-### Phase 3 — Transfer to ToolDAG-B
+Boundary location and axis weights are workload-specific. The useful answer is not “one formula ships in a library”; it is “calibrate the collapse frontier for this model/tool/workflow setup.”
 
-After StatefulPuzzle works, use `tool_dag_b`, a provenance-checked binding variant of upstream `tool_dag`, to test whether `ESL = SC × DD` transfers to typed tool-use workflows.
+## Evidence summary
 
-Upstream `tool_dag` remains an optional control, but is no longer the main transfer environment: it checks type presence, not exact variable identity. ToolDAG-B requires named variable bindings, exact provenance checks, explicit finish variables, same-type distractors, and a locked DD-sweep trigger gate before full grid spend.
+### Phase 1 — StatefulPuzzle
 
-## Orchestration implication
+- 240 deduped episodes over SC `{5,10,15,20,25,40}` × DD `{1,2,4,6}`.
+- StatefulPuzzle is SC-dominant: SC=40 collapses even at DD=1.
+- Weighted fallback after simple ESL underperformed: **SC¹ × DD^0.48**.
+- Token count was a tough baseline: calibrated ESL Spearman 0.858 vs token count 0.857.
 
-If ESL boundaries can be measured per model-agent harness, a runtime orchestrator can ingest a task spec, estimate ESL, and slice work into state-machine/statechart stages below the safe boundary.
+### Phase 3 — ToolDAG-B
 
-Statechart guards can enforce:
+- 160 transfer-grid episodes after a 60-episode gate PASS.
+- ToolDAG-B tests provenance-checked binding: right type is not enough; the variable/object must come from the correct producer.
+- Surface is binary-sharp: every cell is 10/10 or 0/10.
+- Dominant axis flips: SC=40 DD=1 passes 10/10; SC=20 DD=4 and SC=40 DD=2 fail 0/10.
+- Simple `SC × DD` is the top predictor here: Spearman 0.810 vs token count 0.804, with perfect label separation at ESL≤60 pass / ESL≥80 fail.
+- Failure mode: 2,655 wrong-provenance/binding errors vs 1 parse error in 2,811 steps.
 
-- split again when `slice_ESL` exceeds safe budget,
-- re-ground when state fidelity drops,
-- require human review for high-risk transitions,
-- continue only after verifier-backed state updates.
+## What “world-model collapse” means
+
+The agent can still produce fluent, valid-looking output, but its internal picture of the workflow state has drifted from reality. In production this can show up as:
+
+- valid customer ID, wrong customer;
+- valid file path, wrong file;
+- valid ticket ID, wrong ticket;
+- stale tool output treated as fresh;
+- a write action whose arguments came from mismatched upstream contexts.
+
+## Measuring SC/DD in practice
+
+There are three practical scenarios:
+
+1. **Count** from a system of record when objects and rules are already structured: CRM, ERP, PLM, data lineage, ticketing, cloud graphs.
+2. **Measure** through tool middleware when every tool call and object ID passes through an interception layer. SC is active provenance nodes; DD is required correct bindings per action.
+3. **Estimate** for plain-language tasks using a plan DAG, cheap classifier, or historical template, then correct with realized runtime load.
+
+The key rule: SC/DD units can be arbitrary, but they must be counted the same way during calibration and runtime sizing.
+
+## Product implication
+
+The first product wedge is **object-provenance verification for AI-agent writes**, not a standalone metric dashboard.
+
+> Schema validation checks that it is a customer ID. Provenance guardrails check that it is the right customer for this task.
+
+The same provenance graph then becomes the ESL measurement instrument: it can block or flag wrong-object writes today, then learn which workflows can safely reduce human review or need slicing/routing tomorrow.
+
+## Full report
+
+- [Read the full ESL report as a standalone HTML artifact](/pixi-wiki/wiki/agent-workflows/assets/reports/esl-full-report.html)
+- [Download the PDF](/pixi-wiki/wiki/agent-workflows/assets/reports/esl-full-report.pdf)
+- [[../summaries/effective-state-load-full-report|Report summary and reading guide]]
 
 ## Related pages
 
@@ -1916,7 +1921,7 @@ Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operati
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-07-03
+updated: 2026-07-05
 type: index
 status: compiled
 namespace: agent-workflows
@@ -1928,7 +1933,7 @@ namespace: agent-workflows
 
 ## Concepts
 
-- [[concepts/effective-state-load|Effective State Load]] — Tests whether `ESL = SC × DD` predicts world-state collapse from the SC/DD surface and transfers to ToolDAG-B provenance-binding workflows for safer task slicing.
+- [[concepts/effective-state-load|Effective State Load]] — Workflow-specific agent load testing: calibrate SC/DD collapse frontiers, detect world-model collapse, and route from provenance guardrails toward capacity management.
 - [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
@@ -1962,6 +1967,7 @@ namespace: agent-workflows
 ## Summaries
 
 - [[summaries/agent-workflow-system-summary|Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation]] — Compact summary of Jamie's agent workflow system: skills, tools, scheduling, delegation, control surfaces, verification, and durable knowledge routing.
+- [[summaries/effective-state-load-full-report|Effective State Load Full Report]] — Reading guide for the full ESL HTML/PDF report: Phase 1/2/3 evidence, environment-generality verdict, and provenance-guardrail product path.
 - Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Routes external Hermes content between Hermes Agent, Agent Workflows, Local AI Infrastructure, Eval Trace, and Pixi Vault.
 
 ## Syntheses
@@ -2008,7 +2014,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-03
+updated: 2026-07-05
 type: log
 status: compiled
 namespace: agent-workflows
@@ -2017,6 +2023,13 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-05 update | Effective State Load full report + Phase 3 verdict
+
+- Refreshed compiled concept `wiki/concepts/effective-state-load.md` after the `effective-state-load` repo reached commit `5fa535d` with Phase 3 complete.
+- Added compiled summary `wiki/summaries/effective-state-load-full-report.md` and mirrored the standalone full report under `assets/reports/esl-full-report.html` plus PDF.
+- Captured the current verdict: ESL generalizes as a metric family and calibration recipe, not as a portable formula; the product wedge is provenance guardrails for right-object writes.
+
 
 ## 2026-07-03 update | Effective State Load ToolDAG-B transfer
 
@@ -2276,6 +2289,51 @@ For an agents product, the important questions are practical:
 5. How do teams avoid agent noise, duplicate work, and unsafe side effects?
 
 The linked pages are Jamie's working answers to those questions.
+
+
+<!-- ===== agent-workflows/wiki/summaries/effective-state-load-full-report.md ===== -->
+
+---
+title: Effective State Load Full Report
+created: 2026-07-05
+updated: 2026-07-05
+type: summaries
+status: compiled
+namespace: agent-workflows
+source: effective-state-load/docs/reports/esl-full-report.html
+confidence: high
+---
+
+# Effective State Load Full Report
+
+This page routes to the full ESL project report compiled from `pixiiidust/effective-state-load` after Phase 3 completed.
+
+## Read directly
+
+- [Open the standalone HTML report](/pixi-wiki/wiki/agent-workflows/assets/reports/esl-full-report.html)
+- [Download the PDF](/pixi-wiki/wiki/agent-workflows/assets/reports/esl-full-report.pdf)
+
+## What the report covers
+
+- Problem: long-horizon agents fail when their internal workflow state drifts from reality, not only when context windows fill.
+- Method: stress one model-agent harness across state cardinality (SC) and dependency density (DD).
+- Phase 1: StatefulPuzzle shows an SC-led state wall.
+- Phase 2: simple `SC × DD` is only partially useful in StatefulPuzzle; weighted calibration ties token count.
+- Phase 3: ToolDAG-B shows a DD/provenance-led coupling cliff, where simple `SC × DD` beats token count and separates pass/fail cells cleanly.
+- Verdict: ESL is a metric family and measurement recipe, not a portable universal formula.
+- Product path: start with provenance guardrails for agent writes, then use the same graph for capacity/load measurement.
+
+## Short verdict
+
+There is no universal ESL exponent or threshold to ship. What transfers is the operating method: define SC/DD for a workflow class, run a cheap calibration grid, map the collapse frontier, operate with margin, and use provenance/binding errors as leading indicators.
+
+## Product one-liner
+
+> Schema validation checks that an ID is valid. Provenance guardrails check that it is the right ID for this task; ESL uses the same provenance graph to learn how much state/dependency load each workflow can safely carry.
+
+## Related page
+
+- [[../concepts/effective-state-load|Effective State Load]]
 
 
 <!-- ===== agent-workflows/wiki/syntheses/markdown-first-agent-memory.md ===== -->

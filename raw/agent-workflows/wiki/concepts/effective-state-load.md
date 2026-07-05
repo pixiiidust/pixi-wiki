@@ -1,83 +1,87 @@
 ---
 title: Effective State Load
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-05
 type: concept
 status: compiled
 namespace: agent-workflows
 source: Knowledge/concepts/effective-state-load.md
-confidence: medium
+confidence: high
 ---
 
 # Effective State Load
 
-**Effective State Load** is a practical metric for estimating when an LLM agent is carrying too much structured state to keep its world model reliable.
-
-Current first-test hypothesis:
+**Effective State Load (ESL)** is workflow-specific load testing for LLM agents: define state/dependency load for a workflow, map where the model-agent harness loses track of reality, then keep future runs inside the safe operating band.
 
 ```txt
-ESL = SC × DD
+SC = state cardinality   # live things the agent must track
+DD = dependency density  # simultaneous bindings/preconditions per action
+ESL = SC × DD            # metric family; not a universal threshold/formula
 ```
 
-- `SC`: state cardinality — live entities/state variables the agent must keep jointly addressable.
-- `DD`: dependency density — preconditions or constraints that must hold at once.
+## Current verdict
 
-The project first measures the two-dimensional SC/DD collapse surface, then tests whether `SC × DD` compresses that surface well enough to guide task slicing.
+`ESL = SC × DD` is **environment-general as a metric family and measurement recipe, not as a portable formula**.
 
-## Why this matters
-
-Context length says what an agent can see. Effective State Load asks what the model-agent harness can **hold correctly**: live, mutually dependent state that must survive updates across a long-horizon task.
-
-The key failure mode is fluent reasoning over a corrupted world model. The official paper frames SC and DD as governing control parameters, task success as the order parameter, and world-state fidelity as the precursor signal. ESL is the orchestration-facing attempt to turn that boundary into a usable state-load budget.
-
-The product-relevant tool-transfer phase now focuses on provenance binding: in real workflows, the dangerous error is often a right-type but wrong-identity variable, such as the wrong customer, file, ticket, or tool output.
-
-## Experiment shape
-
-The current repo reuses the official `Hik289/world-model-collapse` implementation rather than starting from a custom ToolDAG simulator.
-
-### Phase 1 — Measure the SC/DD surface
-
-Run `stateful_puzzle` through OpenRouter and collect:
-
-- final success,
-- world-state accuracy,
-- action validity,
-- collapse onset (`tau_w`, `tau_a`, lag),
-- token and cost telemetry,
-- sample traces where world-state failure precedes invalid action.
-
-### Phase 2 — Test simple ESL
-
-Evaluate whether:
-
-- equal-ESL cells such as `(SC=5, DD=4)`, `(SC=10, DD=2)`, and `(SC=20, DD=1)` behave similarly,
-- collapse cliffs follow constant `SC × DD` contour lines,
-- `SC × DD` predicts collapse better than SC alone, DD alone, token count, or `SC + DD`,
-- label ESL and realized ESL agree enough to support a simple orchestration metric.
-
-Fallback only if simple ESL fails:
+The durable recipe is:
 
 ```txt
-ESL_weighted = SC^a × DD^b
+cheap grid → SC/DD surface → calibrated frontier → operating margin → routing/guardrails
 ```
 
-### Phase 3 — Transfer to ToolDAG-B
+Boundary location and axis weights are workload-specific. The useful answer is not “one formula ships in a library”; it is “calibrate the collapse frontier for this model/tool/workflow setup.”
 
-After StatefulPuzzle works, use `tool_dag_b`, a provenance-checked binding variant of upstream `tool_dag`, to test whether `ESL = SC × DD` transfers to typed tool-use workflows.
+## Evidence summary
 
-Upstream `tool_dag` remains an optional control, but is no longer the main transfer environment: it checks type presence, not exact variable identity. ToolDAG-B requires named variable bindings, exact provenance checks, explicit finish variables, same-type distractors, and a locked DD-sweep trigger gate before full grid spend.
+### Phase 1 — StatefulPuzzle
 
-## Orchestration implication
+- 240 deduped episodes over SC `{5,10,15,20,25,40}` × DD `{1,2,4,6}`.
+- StatefulPuzzle is SC-dominant: SC=40 collapses even at DD=1.
+- Weighted fallback after simple ESL underperformed: **SC¹ × DD^0.48**.
+- Token count was a tough baseline: calibrated ESL Spearman 0.858 vs token count 0.857.
 
-If ESL boundaries can be measured per model-agent harness, a runtime orchestrator can ingest a task spec, estimate ESL, and slice work into state-machine/statechart stages below the safe boundary.
+### Phase 3 — ToolDAG-B
 
-Statechart guards can enforce:
+- 160 transfer-grid episodes after a 60-episode gate PASS.
+- ToolDAG-B tests provenance-checked binding: right type is not enough; the variable/object must come from the correct producer.
+- Surface is binary-sharp: every cell is 10/10 or 0/10.
+- Dominant axis flips: SC=40 DD=1 passes 10/10; SC=20 DD=4 and SC=40 DD=2 fail 0/10.
+- Simple `SC × DD` is the top predictor here: Spearman 0.810 vs token count 0.804, with perfect label separation at ESL≤60 pass / ESL≥80 fail.
+- Failure mode: 2,655 wrong-provenance/binding errors vs 1 parse error in 2,811 steps.
 
-- split again when `slice_ESL` exceeds safe budget,
-- re-ground when state fidelity drops,
-- require human review for high-risk transitions,
-- continue only after verifier-backed state updates.
+## What “world-model collapse” means
+
+The agent can still produce fluent, valid-looking output, but its internal picture of the workflow state has drifted from reality. In production this can show up as:
+
+- valid customer ID, wrong customer;
+- valid file path, wrong file;
+- valid ticket ID, wrong ticket;
+- stale tool output treated as fresh;
+- a write action whose arguments came from mismatched upstream contexts.
+
+## Measuring SC/DD in practice
+
+There are three practical scenarios:
+
+1. **Count** from a system of record when objects and rules are already structured: CRM, ERP, PLM, data lineage, ticketing, cloud graphs.
+2. **Measure** through tool middleware when every tool call and object ID passes through an interception layer. SC is active provenance nodes; DD is required correct bindings per action.
+3. **Estimate** for plain-language tasks using a plan DAG, cheap classifier, or historical template, then correct with realized runtime load.
+
+The key rule: SC/DD units can be arbitrary, but they must be counted the same way during calibration and runtime sizing.
+
+## Product implication
+
+The first product wedge is **object-provenance verification for AI-agent writes**, not a standalone metric dashboard.
+
+> Schema validation checks that it is a customer ID. Provenance guardrails check that it is the right customer for this task.
+
+The same provenance graph then becomes the ESL measurement instrument: it can block or flag wrong-object writes today, then learn which workflows can safely reduce human review or need slicing/routing tomorrow.
+
+## Full report
+
+- [Read the full ESL report as a standalone HTML artifact](/pixi-wiki/wiki/agent-workflows/assets/reports/esl-full-report.html)
+- [Download the PDF](/pixi-wiki/wiki/agent-workflows/assets/reports/esl-full-report.pdf)
+- [[../summaries/effective-state-load-full-report|Report summary and reading guide]]
 
 ## Related pages
 

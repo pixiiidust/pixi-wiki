@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-07-03
+updated: 2026-07-05
 type: index
 status: compiled
 namespace: agent-workflows
@@ -13,7 +13,7 @@ namespace: agent-workflows
 
 ## Concepts
 
-- [[concepts/effective-state-load|Effective State Load]] — Tests whether `ESL = SC × DD` predicts world-state collapse from the SC/DD surface and transfers to ToolDAG-B provenance-binding workflows for safer task slicing.
+- [[concepts/effective-state-load|Effective State Load]] — Workflow-specific agent load testing: calibrate SC/DD collapse frontiers, detect world-model collapse, and route from provenance guardrails toward capacity management.
 - [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]] — Explicit trigger-to-profile route contract covering authorization, execution bounds, artifacts, verification, observability, and profile seam proof.
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
@@ -47,6 +47,7 @@ namespace: agent-workflows
 ## Summaries
 
 - [[summaries/agent-workflow-system-summary|Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation]] — Compact summary of Jamie's agent workflow system: skills, tools, scheduling, delegation, control surfaces, verification, and durable knowledge routing.
+- [[summaries/effective-state-load-full-report|Effective State Load Full Report]] — Reading guide for the full ESL HTML/PDF report: Phase 1/2/3 evidence, environment-generality verdict, and provenance-guardrail product path.
 - Cross-namespace summary: [[../../hermes-agent/wiki/summaries/external-hermes-wikis-import-review|External Hermes Wikis Import Review]] — Routes external Hermes content between Hermes Agent, Agent Workflows, Local AI Infrastructure, Eval Trace, and Pixi Vault.
 
 ## Syntheses

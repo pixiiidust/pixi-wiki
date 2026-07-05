@@ -30,5 +30,6 @@
 - [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md) ([html](/wiki/agent-workflows/wiki/index.md.html))
 - [Agent Workflows — Activity Log](/raw/agent-workflows/wiki/log.md) ([html](/wiki/agent-workflows/wiki/log.md.html))
 - [Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation](/raw/agent-workflows/wiki/summaries/agent-workflow-system-summary.md) ([html](/wiki/agent-workflows/wiki/summaries/agent-workflow-system-summary.md.html))
+- [Effective State Load Full Report](/raw/agent-workflows/wiki/summaries/effective-state-load-full-report.md) ([html](/wiki/agent-workflows/wiki/summaries/effective-state-load-full-report.md.html))
 - [Markdown-First Agent Memory](/raw/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md) ([html](/wiki/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md.html))
 - [Pixoid Crew Operating Model](/raw/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md) ([html](/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html))

@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-03
+updated: 2026-07-05
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,13 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-05 update | Effective State Load full report + Phase 3 verdict
+
+- Refreshed compiled concept `wiki/concepts/effective-state-load.md` after the `effective-state-load` repo reached commit `5fa535d` with Phase 3 complete.
+- Added compiled summary `wiki/summaries/effective-state-load-full-report.md` and mirrored the standalone full report under `assets/reports/esl-full-report.html` plus PDF.
+- Captured the current verdict: ESL generalizes as a metric family and calibration recipe, not as a portable formula; the product wedge is provenance guardrails for right-object writes.
+
 
 ## 2026-07-03 update | Effective State Load ToolDAG-B transfer
 
