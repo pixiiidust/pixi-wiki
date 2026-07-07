@@ -182,8 +182,10 @@ def test_search_script_is_lazy_and_null_safe(tmp_path: Path) -> None:
     assert "DOMContentLoaded" in js
     # Failure path renders a single non-crashing row, not an exception.
     assert "Search unavailable" in js
-    # AND-token substring filter capped at 20 results.
-    assert "res.length<20" in js
+    # AND-token substring filter; the dropdown renders at most CAP (8) rows and
+    # is no longer hard-capped at 20 in the filter itself.
+    assert "var CAP=8" in js
+    assert "res.length<20" not in js
     # Results are role=listbox options with a namespace badge.
     assert "role" in js
     assert "search-badge" in js
