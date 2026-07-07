@@ -296,11 +296,22 @@ def site_css() -> str:
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"IBM Plex Mono","JetBrains Mono","Roboto Mono",ui-monospace,monospace;font-size:14px;line-height:1.7}a{color:var(--accent);text-decoration:none;border-bottom:1px dotted currentColor}a:hover{color:var(--accent2)}code{background:var(--panel2);border:1px solid var(--border);color:var(--accent2);padding:1px 5px;border-radius:4px}pre{background:var(--panel2);border:1px solid var(--border);padding:14px;overflow:auto}.table-wrap{overflow-x:auto;margin:20px 0;border:1px solid var(--border)}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid var(--border);padding:8px 12px;text-align:left;vertical-align:top}thead th{background:var(--panel2);color:var(--heading);font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:12px}.article img{max-width:100%;height:auto;display:block;margin:18px auto;border:1px solid var(--border);border-radius:8px;background:var(--panel)}.site-header{height:66px;border-bottom:1px solid var(--border);background:var(--header)}.header-inner{max-width:1180px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 20px}.logo{color:var(--heading);font-weight:800;letter-spacing:.04em;border:0}.header-nav{display:flex;align-items:center;gap:24px}.nav{display:flex;align-items:center;gap:24px}.nav a{color:var(--muted);border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.nav a:hover{color:var(--heading)}.nav-menu{display:none;position:relative}.nav-menu summary{list-style:none;cursor:pointer;color:var(--muted);border:1px solid var(--border);background:var(--panel);padding:8px 12px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.nav-menu summary::-webkit-details-marker{display:none}.nav-menu summary::before{content:"≡";margin-right:8px;color:var(--accent)}.nav-menu summary:hover{border-color:var(--accent);color:var(--accent)}.nav-panel{position:absolute;right:0;top:calc(100% + 10px);z-index:30;display:flex;flex-direction:column;gap:2px;min-width:190px;padding:10px;background:var(--panel);border:1px solid var(--border);border-radius:10px}.nav-panel a{color:var(--muted);border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:8px 10px;border-radius:6px}.nav-panel a:hover{color:var(--heading);background:var(--panel2)}.theme-toggle{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 10px;border-radius:999px;font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}.category-bar{border-bottom:1px solid var(--border);background:var(--panel)}.category-inner{max-width:1180px;margin:0 auto;display:flex;gap:22px;min-height:46px;align-items:center;padding:0 20px;flex-wrap:wrap}.category-inner a{color:var(--muted);border:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.category-inner a:first-child{color:var(--muted)}.page{max-width:1180px;margin:40px auto 90px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:0 20px}.sidebar{color:var(--muted)}.sidebar-block{border-left:1px solid var(--border);padding-left:12px;margin-bottom:24px}.sidebar-title{color:var(--heading);font-weight:800;margin-bottom:4px}.sidebar-count{color:var(--muted);font-size:11px;margin-bottom:16px}.sidebar a{display:block;padding:6px 10px;color:var(--muted);border:0;font-size:13px}.sidebar a.active{background:var(--active-bg);color:var(--accent2);border-left:2px solid var(--accent);margin-left:-13px;padding-left:11px;font-weight:800}.sidebar-section-title{margin:12px 0 6px;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.sidebar-section{margin:10px 0}.sidebar-section summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:6px 10px;border-radius:8px}.sidebar-section summary::-webkit-details-marker{display:none}.sidebar-section summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent);transition:transform .12s ease}.sidebar-section[open] summary::before{transform:rotate(90deg)}.sidebar-section summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-section-body{margin:2px 0 6px 12px;border-left:1px solid var(--border);padding-left:4px}.sidebar-empty{padding:6px 10px;color:var(--muted);font-size:12px;font-style:italic}.article{min-width:0}.content-header{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:18px;color:var(--muted);font-size:13px}.breadcrumbs a,.markdown-link{color:var(--accent)}h1{margin:0 0 10px;color:var(--heading);font-size:36px;line-height:1.1;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}h2{margin:48px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--heading);font-size:22px;line-height:1.2;font-weight:900;text-transform:uppercase}h2::before{content:"// ";color:var(--accent2)}h3{margin:26px 0 8px;color:var(--heading);text-transform:uppercase;font-size:15px;letter-spacing:.08em}.updated{color:var(--muted);font-size:13px;margin-bottom:18px}.info-card{border:1px solid var(--border);background:var(--panel);padding:20px 22px;margin:24px 0}.info-row{display:grid;grid-template-columns:136px 1fr;gap:18px;margin-bottom:12px}.info-row:last-child{margin-bottom:0}.info-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}.green{color:var(--green)}.yellow{color:var(--accent2)}.white{color:var(--heading)}.agent-card{margin:24px 0 22px;padding:14px 18px;background:var(--active-bg);border:1px solid var(--border);border-left:2px solid var(--accent);color:var(--text)}.agent-card a{font-weight:800;margin-right:12px}.hero-copy{max-width:860px;color:var(--text);font-size:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 18px}.button-link{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:999px;padding:9px 14px;background:var(--panel);color:var(--heading);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.button-link.primary{background:var(--active-bg);border-color:var(--accent);color:var(--accent2)}.button-link:hover{border-color:var(--accent);color:var(--accent2)}.agent-setup-callout{max-width:860px;margin:18px 0 34px;padding:16px 18px;background:var(--panel);border:1px solid var(--border);border-left:2px solid var(--accent)}.agent-setup-callout h2{font-size:16px;margin:0 0 6px;padding:0;border:0}.agent-setup-callout h2::before{content:""}.agent-setup-callout p{margin:0;color:var(--muted)}.wiki-nav{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 8px}.wiki-group{margin-top:34px;padding-top:8px}.group-header{max-width:760px;border-left:3px solid var(--active-bg);padding-left:14px;margin-bottom:14px}.group-header h2{margin:2px 0 4px}.group-header p{margin:0;color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2)!important;font-weight:800}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}.card{border:1px solid var(--border);border-radius:14px;padding:18px;background:var(--panel)}.card h2{border:0;margin:0 0 8px;padding:0;font-size:18px}.card h2::before{content:""}.meta{color:var(--muted);font-size:.9rem}.page-meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 22px;color:var(--muted);font-size:13px}.page-meta span{color:var(--heading);font-weight:800}.page-tools{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.prev-next{margin-top:54px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.prev-next-card{border:1px solid var(--border);border-bottom:1px dotted var(--accent);background:var(--panel);padding:18px 20px;text-decoration:none;display:block}.prev-card{text-align:left}.next-card{text-align:right}.next-label{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}.next-title{color:var(--heading);font-weight:800}.footer{border-top:1px solid var(--border);background:var(--header);color:var(--muted)}.footer-inner{max-width:1180px;margin:0 auto;padding:28px 20px;display:flex;justify-content:space-between;gap:20px}.footer a{margin-left:12px}@media(max-width:820px){.page{grid-template-columns:1fr}.article{order:1}.sidebar{order:2}.nav{display:none}.nav-menu{display:block}.info-row{grid-template-columns:1fr}.footer-inner{display:block}}
 .heading-anchor{margin-left:.4em;color:var(--muted);border:0;font-weight:400;opacity:0;transition:opacity .12s ease}h1:hover .heading-anchor,h2:hover .heading-anchor,h3:hover .heading-anchor,.heading-anchor:focus{opacity:1}.heading-anchor:hover{color:var(--accent)}
 .page-toc{border-left:2px solid var(--border);padding:2px 0 2px 16px;margin:0 0 32px}.page-toc-title{color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;margin-bottom:8px}.page-toc ul{list-style:none;margin:0;padding:0}.page-toc li{margin:4px 0}.page-toc a{color:var(--muted);border:0;font-size:13px}.page-toc a:hover{color:var(--accent)}.page-toc-h3{padding-left:16px}.page-toc-h3 a{color:var(--muted);font-size:12px}
-"""
+.sidebar-subgroup{margin:2px 0}.sidebar-subgroup summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;padding:4px 10px;border-radius:8px}.sidebar-subgroup summary::-webkit-details-marker{display:none}.sidebar-subgroup summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent2);transition:transform .12s ease}.sidebar-subgroup[open] summary::before{transform:rotate(90deg)}.sidebar-subgroup summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-filter{display:block;width:100%;margin:2px 0 6px;padding:6px 10px;background:var(--panel);border:1px solid var(--border);border-radius:8px;color:var(--text);font:inherit;font-size:12px}.sidebar-filter:focus{outline:none;border-color:var(--accent)}"""
 
 
 def theme_script() -> str:
     return """<script>(function(){const key='pixi-wiki-theme';const root=document.documentElement;const saved=localStorage.getItem(key)||'light';root.dataset.theme=saved;function label(){const b=document.querySelector('[data-theme-toggle]');if(b)b.textContent=root.dataset.theme==='dark'?'☀':'☾';}document.addEventListener('DOMContentLoaded',function(){label();const b=document.querySelector('[data-theme-toggle]');if(b)b.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem(key,root.dataset.theme);label();});});})();</script>"""
+
+
+def sidebar_filter_script() -> str:
+    """Progressive-enhancement filter for large sidebar sections.
+
+    Wires every ``.sidebar-filter`` input: typing hides links whose text does
+    not contain the query (case-insensitive) and auto-opens subgroups so
+    matches deeper in the tree stay visible; clearing restores the original
+    view. Without JavaScript the input is inert and the full list renders.
+    """
+    return """<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.sidebar-filter').forEach(function(input){var section=input.closest('.sidebar-section');if(!section)return;var links=[].slice.call(section.querySelectorAll('a'));var groups=[].slice.call(section.querySelectorAll('.sidebar-subgroup'));var opened=groups.map(function(g){return g.open;});input.addEventListener('input',function(){var q=input.value.trim().toLowerCase();links.forEach(function(a){a.style.display=(!q||a.textContent.toLowerCase().indexOf(q)>-1)?'':'none';});groups.forEach(function(g,i){g.open=q?true:opened[i];});});});});</script>"""
 
 
 # Header navigation link sets. Wiki/doc pages share WIKI_NAV_LINKS; the homepage
@@ -379,16 +390,41 @@ def make_sidebar(slug: str, title: str, doc_count: int, counts: Counter[str], ac
     def cls(rel: str) -> str:
         return ' class="active"' if rel == active_rel else ""
 
+    def link(doc: dict[str, str]) -> str:
+        return f'<a{cls(doc["path"])} href="/pixi-wiki/wiki/{slug}/{html.escape(doc["path"])}.html">📄 {html.escape(doc["title"])}</a>'
+
     def section(label: str, category: str) -> str:
         docs = sorted((doc for doc in sidebar_docs if doc["category"] == category), key=lambda doc: doc["title"].lower())
         count = len(docs)
         open_attr = " open" if any(doc["path"] == active_rel for doc in docs) else ""
-        links = "".join(
-            f'<a{cls(doc["path"])} href="/pixi-wiki/wiki/{slug}/{html.escape(doc["path"])}.html">📄 {html.escape(doc["title"])}</a>'
-            for doc in docs
-        )
+
+        # Split docs into those directly under wiki/<category>/ (or living
+        # elsewhere via frontmatter) and those nested one folder deeper, which
+        # group by their first subfolder. The disk layout already encodes the
+        # grouping, so a flat namespace produces byte-identical markup to before.
+        prefix = f"wiki/{category}/"
+        ungrouped: list[dict[str, str]] = []
+        groups: dict[str, list[dict[str, str]]] = {}
+        for doc in docs:
+            path = doc["path"]
+            if path.startswith(prefix) and "/" in path[len(prefix):]:
+                subfolder = path[len(prefix):].split("/", 1)[0]
+                groups.setdefault(subfolder, []).append(doc)
+            else:
+                ungrouped.append(doc)
+
+        ungrouped_links = "".join(link(doc) for doc in ungrouped)
+        subgroups = ""
+        for subfolder in sorted(groups):
+            sub_docs = groups[subfolder]
+            sub_open = " open" if any(doc["path"] == active_rel for doc in sub_docs) else ""
+            sub_label = subfolder.replace("-", " ").replace("_", " ").upper()
+            sub_links = "".join(link(doc) for doc in sub_docs)
+            subgroups += f'<details class="sidebar-subgroup"{sub_open}><summary>{sub_label} {len(sub_docs)}</summary><div class="sidebar-section-body">{sub_links}</div></details>'
+
+        filter_box = '<input class="sidebar-filter" type="search" placeholder="Filter…" aria-label="Filter pages">' if count > 25 else ""
         empty = '<div class="sidebar-empty">No pages yet</div>' if not docs else ""
-        return f'<details class="sidebar-section"{open_attr}><summary>{label} {count}</summary><div class="sidebar-section-body">{links}{empty}</div></details>'
+        return f'<details class="sidebar-section"{open_attr}><summary>{label} {count}</summary><div class="sidebar-section-body">{filter_box}{ungrouped_links}{subgroups}{empty}</div></details>'
 
     rows = [
         f'<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-title">{html.escape(title)}</div><div class="sidebar-count">{doc_count} documents</div>',
@@ -413,7 +449,7 @@ def page_shell(slug: str, namespace_title: str, doc_count: int, counts: Counter[
     return f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(page_title)} — {html.escape(namespace_title)} — Pixi Wiki</title>
-<style>{site_css()}</style>{theme_script()}</head><body>
+<style>{site_css()}</style>{theme_script()}{sidebar_filter_script()}</head><body>
 {site_header(WIKI_NAV_LINKS)}
 <main class="page">{sidebar}<article class="article">{article}</article></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
