@@ -12,8 +12,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class CleanRootContractTest(unittest.TestCase):
     def test_only_registry_html_lives_at_root(self) -> None:
-        root_html = sorted(path.name for path in ROOT.glob("*.html"))
-        self.assertEqual(root_html, ["index.html"])
+        # Allowed root HTML pages. recent.html joins index.html once the #65
+        # regeneration lands, but the committed tree won't contain it until then,
+        # so assert the present set is a subset of the allowlist (and still
+        # includes index.html) rather than an exact match.
+        allowed = {"index.html", "recent.html"}
+        root_html = {path.name for path in ROOT.glob("*.html")}
+        self.assertTrue(root_html.issubset(allowed), root_html)
+        self.assertIn("index.html", root_html)
 
     def test_legacy_flat_root_pages_are_absent(self) -> None:
         forbidden = [
