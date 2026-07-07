@@ -320,6 +320,7 @@ def site_css() -> str:
 .page-toc{border-left:2px solid var(--border);padding:2px 0 2px 16px;margin:0 0 32px}.page-toc-title{color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;margin-bottom:8px}.page-toc ul{list-style:none;margin:0;padding:0}.page-toc li{margin:4px 0}.page-toc a{color:var(--muted);border:0;font-size:13px}.page-toc a:hover{color:var(--accent)}.page-toc-h3{padding-left:16px}.page-toc-h3 a{color:var(--muted);font-size:12px}
 .sidebar-subgroup{margin:2px 0}.sidebar-subgroup summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;padding:4px 10px;border-radius:8px}.sidebar-subgroup summary::-webkit-details-marker{display:none}.sidebar-subgroup summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent2);transition:transform .12s ease}.sidebar-subgroup[open] summary::before{transform:rotate(90deg)}.sidebar-subgroup summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-filter{display:block;width:100%;margin:2px 0 6px;padding:6px 10px;background:var(--panel);border:1px solid var(--border);border-radius:8px;color:var(--text);font:inherit;font-size:12px}.sidebar-filter:focus{outline:none;border-color:var(--accent)}
 .recent-group{margin-top:34px}.recent-list{list-style:none;margin:14px 0 0;padding:0}.recent-item{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid var(--border)}.recent-title{font-weight:800;border-bottom:1px dotted currentColor}.namespace-badge{border:1px solid var(--border);background:var(--panel2);color:var(--accent2);border-radius:999px;padding:2px 10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.recent-raw{color:var(--muted);font-size:12px}
+.site-search{position:relative;flex:1 1 auto;max-width:420px;margin:0 24px}.search-input{width:100%;padding:8px 16px;background:var(--panel);border:1px solid var(--border);border-radius:999px;color:var(--text);font:inherit;font-size:13px;letter-spacing:.02em}.search-input::placeholder{color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:11px}.search-input:focus{outline:none;border-color:var(--accent)}.search-results{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:40;max-height:64vh;overflow-y:auto;display:flex;flex-direction:column;gap:2px;padding:8px;background:var(--panel);border:1px solid var(--border);border-radius:10px}.search-result{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:8px 10px;border:0;border-radius:6px;color:var(--muted)}.search-result:hover,.search-result.active{background:var(--panel2);color:var(--heading)}.search-result-title{color:var(--heading);font-weight:800}.search-badge{border:1px solid var(--border);background:var(--panel2);color:var(--accent2);border-radius:999px;padding:2px 9px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;flex:0 0 auto}.search-empty{padding:8px 10px;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-style:italic}@media(max-width:820px){.site-search{max-width:190px;margin:0 12px}}
 """
 
 def theme_script() -> str:
@@ -335,6 +336,22 @@ def sidebar_filter_script() -> str:
     view. Without JavaScript the input is inert and the full list renders.
     """
     return """<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.sidebar-filter').forEach(function(input){var section=input.closest('.sidebar-section');if(!section)return;var links=[].slice.call(section.querySelectorAll('a'));var groups=[].slice.call(section.querySelectorAll('.sidebar-subgroup'));var opened=groups.map(function(g){return g.open;});input.addEventListener('input',function(){var q=input.value.trim().toLowerCase();links.forEach(function(a){a.style.display=(!q||a.textContent.toLowerCase().indexOf(q)>-1)?'':'none';});groups.forEach(function(g,i){g.open=q?true:opened[i];});});});});</script>"""
+
+
+def search_script() -> str:
+    """Progressive-enhancement client search over the root registry.
+
+    On DOMContentLoaded this builds a search input plus a hidden results panel
+    inside the empty ``.site-search`` placeholder that ``site_header`` emits. The
+    237 KB registry named by ``data-registry`` is fetched lazily on the FIRST
+    focus/keystroke only (never on page load) and cached; results filter with
+    case-insensitive AND-token substring matching, capped at 20. Keyboard: ``/``
+    focuses search from anywhere (unless already typing), Arrow keys move the
+    active option, Enter opens it, Escape clears/closes, outside clicks close.
+    With JavaScript disabled the placeholder stays empty, so the no-JS reading
+    promise holds with zero server-rendered search markup.
+    """
+    return """<script>(function(){document.addEventListener('DOMContentLoaded',function(){var box=document.querySelector('.site-search');if(!box)return;var url=box.getAttribute('data-registry');var input=document.createElement('input');input.type='search';input.placeholder='Search… ( / )';input.setAttribute('aria-label','Search all pages');input.className='search-input';var panel=document.createElement('div');panel.className='search-results';panel.setAttribute('role','listbox');panel.hidden=true;box.appendChild(input);box.appendChild(panel);var entries=null,loading=false,failed=false,active=-1,rows=[];function flatten(data){var out=[];if(!data||!data.wikis)return out;for(var i=0;i<data.wikis.length;i++){var w=data.wikis[i]||{};var docs=w.documents||[];for(var j=0;j<docs.length;j++){var d=docs[j]||{};out.push({title:String(d.title||d.path||''),path:String(d.path||''),category:String(d.category||''),nsSlug:String(w.slug||''),nsTitle:String(w.title||''),url:String(d.html||'')});}}return out;}function load(cb){if(entries){cb();return;}if(failed){cb();return;}if(loading)return;loading=true;try{fetch(url).then(function(r){return r.json();}).then(function(data){entries=flatten(data);loading=false;cb();}).catch(function(){failed=true;loading=false;cb();});}catch(e){failed=true;loading=false;cb();}}function filter(q){var tokens=q.toLowerCase().split(/\\s+/).filter(Boolean);if(!tokens.length)return [];var res=[];for(var i=0;i<entries.length&&res.length<20;i++){var e=entries[i];var hay=(e.title+' '+e.path+' '+e.category+' '+e.nsSlug+' '+e.nsTitle).toLowerCase();var ok=true;for(var t=0;t<tokens.length;t++){if(hay.indexOf(tokens[t])<0){ok=false;break;}}if(ok)res.push(e);}return res;}function close(){panel.hidden=true;panel.innerHTML='';rows=[];active=-1;}function render(list){panel.innerHTML='';rows=[];active=-1;if(failed){var f=document.createElement('div');f.className='search-empty';f.textContent='Search unavailable';panel.appendChild(f);panel.hidden=false;return;}if(!list.length){var n=document.createElement('div');n.className='search-empty';n.textContent='No matches';panel.appendChild(n);panel.hidden=false;return;}for(var i=0;i<list.length;i++){var e=list[i];var a=document.createElement('a');a.className='search-result';a.setAttribute('role','option');a.setAttribute('aria-selected','false');a.href=e.url;var ttl=document.createElement('span');ttl.className='search-result-title';ttl.textContent=e.title;a.appendChild(ttl);var badge=document.createElement('span');badge.className='search-badge';badge.textContent=e.nsTitle||e.nsSlug;a.appendChild(badge);panel.appendChild(a);rows.push(a);}panel.hidden=false;}function update(){var q=input.value.trim();if(!q){close();return;}load(function(){if(failed){render([]);return;}if(!entries)return;render(filter(q));});}function setActive(i){if(!rows.length)return;if(active>=0&&rows[active]){rows[active].classList.remove('active');rows[active].setAttribute('aria-selected','false');}active=(i+rows.length)%rows.length;rows[active].classList.add('active');rows[active].setAttribute('aria-selected','true');if(rows[active].scrollIntoView)rows[active].scrollIntoView({block:'nearest'});}input.addEventListener('focus',function(){load(function(){});});input.addEventListener('input',update);input.addEventListener('keydown',function(ev){if(ev.key==='ArrowDown'){ev.preventDefault();setActive(active+1);}else if(ev.key==='ArrowUp'){ev.preventDefault();setActive(active-1);}else if(ev.key==='Enter'){var target=active>=0?rows[active]:rows[0];if(target){ev.preventDefault();window.location.href=target.href;}}else if(ev.key==='Escape'){input.value='';close();input.blur();}});document.addEventListener('keydown',function(ev){if(ev.key!=='/')return;var el=document.activeElement;var tag=el&&el.tagName?el.tagName.toLowerCase():'';if(tag==='input'||tag==='textarea'||(el&&el.isContentEditable))return;ev.preventDefault();input.focus();});document.addEventListener('click',function(ev){if(!box.contains(ev.target))panel.hidden=true;});});})();</script>"""
 
 
 # Header navigation link sets. Wiki/doc pages share WIKI_NAV_LINKS; the homepage
@@ -366,6 +383,7 @@ def site_header(nav_links: list[tuple[str, str]]) -> str:
     return (
         '<header class="site-header"><div class="header-inner">'
         '<a class="logo" href="/pixi-wiki/">Pixi Wiki</a>'
+        '<div class="site-search" data-registry="/pixi-wiki/index.json"></div>'
         '<div class="header-nav">'
         f'<nav class="nav">{links}</nav>'
         '<details class="nav-menu"><summary aria-label="Open menu">Menu</summary>'
@@ -474,7 +492,7 @@ def page_shell(slug: str, namespace_title: str, doc_count: int, counts: Counter[
     return f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(page_title)} — {html.escape(namespace_title)} — Pixi Wiki</title>
-<style>{site_css()}</style>{theme_script()}{sidebar_filter_script()}</head><body>
+<style>{site_css()}</style>{theme_script()}{sidebar_filter_script()}{search_script()}</head><body>
 {site_header(WIKI_NAV_LINKS)}
 <main class="page">{sidebar}<article class="article">{article}</article></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
@@ -887,7 +905,7 @@ python3 scripts/pixi_wiki_mcp.py --self-test</code></pre>
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Agent Setup — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
+<title>Agent Setup — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}{search_script()}</head><body>
 {site_header(WIKI_NAV_LINKS)}
 <main>{body}</main>
 <footer class=\"footer\"><div class=\"footer-inner\"><p>Plain static HTML. Agents read Markdown through <code>llms.txt</code> and MCP.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
@@ -927,7 +945,7 @@ def write_replicate_page(output_root: Path) -> None:
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Replicate the Approach — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
+<title>Replicate the Approach — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}{search_script()}</head><body>
 {site_header(WIKI_NAV_LINKS)}
 <main>{body}</main>
 <footer class=\"footer\"><div class=\"footer-inner\"><p>Copy the pattern. Keep your source files canonical.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
@@ -956,7 +974,7 @@ graphify cluster-only . --graph graphify-out/graph.json --no-label</code></pre>
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Signal Graph — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
+<title>Signal Graph — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}{search_script()}</head><body>
 {site_header(HOME_NAV_LINKS)}
 <main>{body}</main>
 <footer class=\"footer\"><div class=\"footer-inner\"><p>Generated graph artifacts stay local unless intentionally shared.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
@@ -1000,7 +1018,7 @@ def write_recent_page(output_root: Path, entries: list[dict[str, str]]) -> None:
     )
     page = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Recent Updates — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
+<title>Recent Updates — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}{search_script()}</head><body>
 {site_header(HOME_NAV_LINKS)}
 <main>{body}</main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
@@ -1121,7 +1139,7 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
 
     index_html = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
+<title>Pixi Wiki</title><style>{site_css()}</style>{theme_script()}{search_script()}</head><body>
 {site_header(HOME_NAV_LINKS)}
 <main style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="/pixi-wiki/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal graph sidecar</a></div><section class="agent-setup-callout"><h2>Agents start here</h2><pre><code>$ curl https://pixiiidust.github.io/pixi-wiki/llms.txt</code></pre><p>Use <code>llms.txt</code> as the first routing map, then follow links to raw Markdown, namespace files, or MCP setup.</p></section><nav class="wiki-nav" aria-label="Wiki categories"><a class="button-link" href="#agent-ops">Agent Operations</a><a class="button-link" href="#knowledge-systems">Knowledge Systems</a><a class="button-link" href="#labs-products">Labs & Product Surfaces</a></nav><div id="wikis">{grouped_index}</div></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. No JavaScript is required to read any page — agents welcome.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a><a href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal Graph</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a><a href="/pixi-wiki/docs/REPLICATE_APPROACH.html">Copy this approach</a></p></div></footer>
