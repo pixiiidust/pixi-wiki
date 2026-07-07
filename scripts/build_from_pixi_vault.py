@@ -38,7 +38,7 @@ DEFAULT_SEED_SLUGS = [
     "software-architecture-metapatterns",
     "ui-patterns",
 ]
-GENERATED_ROOT_FILES = ["404.html", "index.html", "index.json", "llms.txt", "llms-full.txt", "recent.html", "recent.json", "sitemap.xml"]
+GENERATED_ROOT_FILES = ["404.html", "index.html", "index.json", "llms.txt", "llms-full.txt", "recent.html", "recent.json", "site.css", "sitemap.xml"]
 
 # Public origin the site is served from. A future issue makes this configurable;
 # for now it is a fixed constant used to build absolute canonical/OpenGraph URLs
@@ -456,7 +456,7 @@ def sidebar_category(rel: Path, fm: dict[str, Any]) -> str:
     return "other"
 
 
-def make_sidebar(slug: str, title: str, doc_count: int, counts: Counter[str], active_rel: str, sidebar_docs: list[dict[str, str]]) -> str:
+def make_sidebar(slug: str, title: str, doc_count: int, active_rel: str, sidebar_docs: list[dict[str, str]]) -> str:
     def cls(rel: str) -> str:
         return ' class="active" aria-current="page"' if rel == active_rel else ""
 
@@ -553,14 +553,14 @@ def head_meta(title: str, description: str, canonical_path: str, og_type: str = 
     )
 
 
-def page_shell(slug: str, namespace_title: str, doc_count: int, counts: Counter[str], active_rel: str, sidebar_docs: list[dict[str, str]], article: str, page_title: str, description: str) -> str:
-    sidebar = make_sidebar(slug, namespace_title, doc_count, counts, active_rel, sidebar_docs)
+def page_shell(slug: str, namespace_title: str, doc_count: int, active_rel: str, sidebar_docs: list[dict[str, str]], article: str, page_title: str, description: str) -> str:
+    sidebar = make_sidebar(slug, namespace_title, doc_count, active_rel, sidebar_docs)
     canonical_path = f"/pixi-wiki/wiki/{slug}/{active_rel}.html"
     meta = head_meta(f"{page_title} — {namespace_title}", description, canonical_path, og_type="article")
     return f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(page_title)} — {html.escape(namespace_title)} — Pixi Wiki</title>{meta}
-<style>{site_css()}</style>{theme_script()}{sidebar_filter_script()}{search_script()}{copy_button_script()}</head><body>
+<link rel="stylesheet" href="/pixi-wiki/site.css">{theme_script()}{sidebar_filter_script()}{search_script()}{copy_button_script()}</head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 {site_header(WIKI_NAV_LINKS)}
 <main class="page">{sidebar}<article class="article" id="main-content">{article}</article></main>
@@ -893,7 +893,7 @@ def collect_namespace(
             content_source = body if page_fm else text
             article = render_page(slug, str(title), rel_posix, str(page_title), page_fm, content_source, prev_doc, next_doc, resolve_wikilink)
             page_description = first_paragraph(content_source) or description
-        html_output.write_text(page_shell(slug, str(title), len(md_files), counts, rel_posix, sidebar_docs, article, str(page_title), page_description), encoding="utf-8", newline="\n")
+        html_output.write_text(page_shell(slug, str(title), len(md_files), rel_posix, sidebar_docs, article, str(page_title), page_description), encoding="utf-8", newline="\n")
         # Sitemap entry for this generated page. lastmod is emitted only when the
         # frontmatter `updated` is a strict YYYY-MM-DD date (deterministic; never
         # the wall clock), matching the Recent Updates date contract.
@@ -988,7 +988,7 @@ python3 scripts/pixi_wiki_mcp.py --self-test</code></pre>
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Agent Setup — Pixi Wiki</title>{head_meta("Agent Setup", AGENT_SETUP_DESCRIPTION, "/pixi-wiki/docs/AGENT_SETUP.html")}<style>{site_css()}</style>{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<title>Agent Setup — Pixi Wiki</title>{head_meta("Agent Setup", AGENT_SETUP_DESCRIPTION, "/pixi-wiki/docs/AGENT_SETUP.html")}<link rel="stylesheet" href="/pixi-wiki/site.css">{theme_script()}{search_script()}{copy_button_script()}</head><body>
 <a class=\"skip-link\" href=\"#main-content\">Skip to content</a>
 {site_header(WIKI_NAV_LINKS)}
 <main id=\"main-content\">{body}</main>
@@ -1029,7 +1029,7 @@ def write_replicate_page(output_root: Path) -> None:
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Replicate the Approach — Pixi Wiki</title>{head_meta("Replicate the Approach", REPLICATE_DESCRIPTION, "/pixi-wiki/docs/REPLICATE_APPROACH.html")}<style>{site_css()}</style>{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<title>Replicate the Approach — Pixi Wiki</title>{head_meta("Replicate the Approach", REPLICATE_DESCRIPTION, "/pixi-wiki/docs/REPLICATE_APPROACH.html")}<link rel="stylesheet" href="/pixi-wiki/site.css">{theme_script()}{search_script()}{copy_button_script()}</head><body>
 <a class=\"skip-link\" href=\"#main-content\">Skip to content</a>
 {site_header(WIKI_NAV_LINKS)}
 <main id=\"main-content\">{body}</main>
@@ -1059,7 +1059,7 @@ graphify cluster-only . --graph graphify-out/graph.json --no-label</code></pre>
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Signal Graph — Pixi Wiki</title>{head_meta("Signal Graph", SIGNAL_GRAPH_DESCRIPTION, "/pixi-wiki/docs/SIGNAL_GRAPH.html")}<style>{site_css()}</style>{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<title>Signal Graph — Pixi Wiki</title>{head_meta("Signal Graph", SIGNAL_GRAPH_DESCRIPTION, "/pixi-wiki/docs/SIGNAL_GRAPH.html")}<link rel="stylesheet" href="/pixi-wiki/site.css">{theme_script()}{search_script()}{copy_button_script()}</head><body>
 <a class=\"skip-link\" href=\"#main-content\">Skip to content</a>
 {site_header(HOME_NAV_LINKS)}
 <main id=\"main-content\">{body}</main>
@@ -1104,7 +1104,7 @@ def write_recent_page(output_root: Path, entries: list[dict[str, str]]) -> None:
     )
     page = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Recent Updates — Pixi Wiki</title>{head_meta("Recent Updates", RECENT_DESCRIPTION, "/pixi-wiki/recent.html")}<style>{site_css()}</style>{theme_script()}{search_script()}</head><body>
+<title>Recent Updates — Pixi Wiki</title>{head_meta("Recent Updates", RECENT_DESCRIPTION, "/pixi-wiki/recent.html")}<link rel="stylesheet" href="/pixi-wiki/site.css">{theme_script()}{search_script()}</head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 {site_header(HOME_NAV_LINKS)}
 <main id="main-content">{body}</main>
@@ -1160,7 +1160,7 @@ def write_404_page(output_root: Path) -> None:
     )
     page = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Page not found — Pixi Wiki</title>{head_meta("Page not found", "The page you requested does not exist in Pixi Wiki. Return to the homepage or browse the namespace list.", "/pixi-wiki/404.html")}<style>{site_css()}</style>{theme_script()}</head><body>
+<title>Page not found — Pixi Wiki</title>{head_meta("Page not found", "The page you requested does not exist in Pixi Wiki. Return to the homepage or browse the namespace list.", "/pixi-wiki/404.html")}<link rel="stylesheet" href="/pixi-wiki/site.css">{theme_script()}</head><body>
 {site_header(HOME_NAV_LINKS)}
 <main>{body}</main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
@@ -1176,6 +1176,12 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
         raise SystemExit(f"Missing namespace source dirs: {', '.join(missing)}")
 
     clean_generated_output(output_root)
+
+    # One shared stylesheet for every page. Pages link this file instead of
+    # inlining the full CSS, so the byte-identical `site_css()` output lives in a
+    # single cacheable resource. The theme-boot script stays inline per page to
+    # avoid a flash of the wrong theme.
+    (output_root / "site.css").write_text(site_css(), encoding="utf-8", newline="\n")
 
     global_link_targets = build_global_link_targets(source_dir, slugs)
 
@@ -1283,7 +1289,7 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
 
     index_html = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pixi Wiki</title>{head_meta("Pixi Wiki", HOME_DESCRIPTION, "/pixi-wiki/")}<style>{site_css()}</style>{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<title>Pixi Wiki</title>{head_meta("Pixi Wiki", HOME_DESCRIPTION, "/pixi-wiki/")}<link rel="stylesheet" href="/pixi-wiki/site.css">{theme_script()}{search_script()}{copy_button_script()}</head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 {site_header(HOME_NAV_LINKS)}
 <main id="main-content" style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="/pixi-wiki/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal graph sidecar</a></div><section class="agent-setup-callout"><h2>Agents start here</h2><pre><code>$ curl https://pixiiidust.github.io/pixi-wiki/llms.txt</code></pre><p>Use <code>llms.txt</code> as the first routing map, then follow links to raw Markdown, namespace files, or MCP setup.</p></section><nav class="wiki-nav" aria-label="Wiki categories"><a class="button-link" href="#agent-ops">Agent Operations</a><a class="button-link" href="#knowledge-systems">Knowledge Systems</a><a class="button-link" href="#labs-products">Labs & Product Surfaces</a></nav><div id="wikis">{grouped_index}</div></main>

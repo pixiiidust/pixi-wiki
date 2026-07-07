@@ -251,22 +251,38 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 self.assertTrue((ROOT / "wiki" / slug / "index.json").is_file())
 
     def test_light_theme_is_default_with_dark_toggle(self) -> None:
+        # State-aware CSS assertion. The CSS tokens (dark-theme variables) moved
+        # out of every page's inline <style> and into a shared /pixi-wiki/site.css
+        # in #61. Page regeneration lands in #65, so the committed tree may still
+        # inline the CSS today: if site.css exists the pages must <link> it and the
+        # tokens live in that stylesheet; otherwise assert the legacy inline tokens.
+        # The theme markup and boot script (data-theme, toggle, localStorage) stay
+        # inline in every page in both worlds.
+        site_css = ROOT / "site.css"
+        linked = site_css.exists()
+        css_source = site_css.read_text(encoding="utf-8") if linked else None
         for path in [ROOT / "index.html", ROOT / "wiki" / "agent-workflows" / "README.md.html", ROOT / "docs" / "AGENT_SETUP.html", ROOT / "docs" / "REPLICATE_APPROACH.html"]:
             html = path.read_text(encoding="utf-8")
             with self.subTest(path=path):
                 self.assertIn('data-theme="light"', html)
                 self.assertIn('data-theme-toggle', html)
                 self.assertIn('>☾</button>', html)
-                self.assertIn('[data-theme=dark]', html)
-                self.assertIn('--bg:#0d1117', html)
-                self.assertIn('--panel:#161b22', html)
-                self.assertIn('--text:#e6edf3', html)
-                self.assertIn('--accent:#58a6ff', html)
-                self.assertIn('--active-bg:#1f6feb33', html)
-                self.assertNotIn('--accent:#f59e0b', html)
-                self.assertNotIn('--accent2:#fbdc92', html)
-                self.assertNotIn('--active-bg:#8b4356', html)
                 self.assertIn('localStorage.getItem', html)
+                if linked:
+                    self.assertIn('<link rel="stylesheet" href="/pixi-wiki/site.css">', html)
+                    css = css_source
+                else:
+                    self.assertIn('<style>', html)
+                    css = html
+                self.assertIn('[data-theme=dark]', css)
+                self.assertIn('--bg:#0d1117', css)
+                self.assertIn('--panel:#161b22', css)
+                self.assertIn('--text:#e6edf3', css)
+                self.assertIn('--accent:#58a6ff', css)
+                self.assertIn('--active-bg:#1f6feb33', css)
+                self.assertNotIn('--accent:#f59e0b', css)
+                self.assertNotIn('--accent2:#fbdc92', css)
+                self.assertNotIn('--active-bg:#8b4356', css)
 
     def test_agent_setup_page_has_subagent_usage_contract(self) -> None:
         html = (ROOT / "docs" / "AGENT_SETUP.html").read_text(encoding="utf-8")
