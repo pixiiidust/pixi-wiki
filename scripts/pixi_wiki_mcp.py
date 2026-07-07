@@ -16,6 +16,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+try:  # Runs both as `python scripts/...` (scripts/ on path) and as `scripts.*` import.
+    from scripts.markdown_meta import first_heading, first_paragraph, parse_frontmatter
+except ImportError:  # pragma: no cover - direct-script execution fallback
+    from markdown_meta import first_heading, first_paragraph, parse_frontmatter
+
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MAX_RESULTS = 20
 MAX_READ_BYTES = 1_000_000
@@ -35,65 +40,6 @@ class PixiWikiError(Exception):
 
 def _slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
-
-
-def _parse_frontmatter(markdown: str) -> tuple[dict[str, Any], str]:
-    if not markdown.startswith("---\n"):
-        return {}, markdown
-    end = markdown.find("\n---\n", 4)
-    if end == -1:
-        return {}, markdown
-    raw = markdown[4:end]
-    body = markdown[end + 5 :]
-    data: dict[str, Any] = {}
-    current_key: str | None = None
-    for line in raw.splitlines():
-        if not line.strip():
-            continue
-        if line.startswith("  - ") and current_key:
-            data.setdefault(current_key, [])
-            if isinstance(data[current_key], list):
-                data[current_key].append(line[4:].strip().strip('"\''))
-            continue
-        if ":" not in line:
-            continue
-        key, value = line.split(":", 1)
-        key = key.strip()
-        value = value.strip()
-        if value == "":
-            data[key] = []
-            current_key = key
-        elif value.startswith("[") and value.endswith("]"):
-            data[key] = [part.strip().strip('"\'') for part in value[1:-1].split(",") if part.strip()]
-            current_key = key
-        else:
-            data[key] = value.strip('"\'')
-            current_key = key
-    return data, body
-
-
-def _first_heading(markdown: str) -> str | None:
-    match = re.search(r"^#\s+(.+)$", markdown, flags=re.MULTILINE)
-    return match.group(1).strip() if match else None
-
-
-def _first_paragraph(markdown: str) -> str:
-    _frontmatter, body = _parse_frontmatter(markdown)
-    lines: list[str] = []
-    in_code = False
-    for line in body.splitlines():
-        stripped = line.strip()
-        if stripped.startswith("```"):
-            in_code = not in_code
-            continue
-        if in_code or not stripped or stripped.startswith(("#", ">", "- ", "---")):
-            if lines:
-                break
-            continue
-        lines.append(stripped)
-        if len(" ".join(lines)) >= 260:
-            break
-    return " ".join(lines)[:300]
 
 
 def _safe_document_id(document_id: str) -> str:
@@ -238,11 +184,11 @@ class PixiWikiStore:
         if path.stat().st_size > MAX_READ_BYTES:
             raise PixiWikiError("DOCUMENT_TOO_LARGE", f"Document exceeds {MAX_READ_BYTES} bytes: {ref.document_id}.")
         content = path.read_text(encoding="utf-8")
-        frontmatter, body = _parse_frontmatter(content)
+        frontmatter, body = parse_frontmatter(content)
         return {
             "kb_id": kb_id,
             "document_id": ref.document_id,
-            "title": frontmatter.get("title") or _first_heading(body) or ref.title,
+            "title": frontmatter.get("title") or first_heading(body) or ref.title,
             "category": ref.category,
             "raw": ref.raw,
             "html": ref.html,
@@ -329,7 +275,10 @@ class PixiWikiStore:
             if any(term in normalized for term in terms):
                 stripped = re.sub(r"\s+", " ", line).strip()
                 return stripped[:260]
-        paragraph = _first_paragraph(content)
+        # first_paragraph operates on body text; strip frontmatter here (the MCP
+        # copy used to do this internally).
+        _frontmatter, body = parse_frontmatter(content)
+        paragraph = first_paragraph(body)
         return paragraph[:260] if paragraph else "Match found in document metadata."
 
 
