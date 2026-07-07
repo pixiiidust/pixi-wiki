@@ -119,9 +119,9 @@ def test_flat_namespace_renders_identically(tmp_path: Path) -> None:
     expected_section = (
         '<details class="sidebar-section"><summary>CONCEPTS 3</summary>'
         '<div class="sidebar-section-body">'
-        f'<a href="/pixi-wiki/wiki/{slug}/wiki/concepts/alpha-concept.md.html">📄 Alpha Concept</a>'
-        f'<a href="/pixi-wiki/wiki/{slug}/wiki/concepts/beta-concept.md.html">📄 Beta Concept</a>'
-        f'<a href="/pixi-wiki/wiki/{slug}/wiki/concepts/gamma-concept.md.html">📄 Gamma Concept</a>'
+        f'<a href="/pixi-wiki/wiki/{slug}/wiki/concepts/alpha-concept.md.html"><span aria-hidden="true">📄 </span>Alpha Concept</a>'
+        f'<a href="/pixi-wiki/wiki/{slug}/wiki/concepts/beta-concept.md.html"><span aria-hidden="true">📄 </span>Beta Concept</a>'
+        f'<a href="/pixi-wiki/wiki/{slug}/wiki/concepts/gamma-concept.md.html"><span aria-hidden="true">📄 </span>Gamma Concept</a>'
         '</div></details>'
     )
     assert expected_section in html
@@ -162,7 +162,7 @@ def test_grouped_namespace_has_subgroups_filter_and_total(tmp_path: Path) -> Non
     assert '<input class="sidebar-filter" type="search" placeholder="Filter…" aria-label="Filter pages">' in html
 
     # Direct files list before the subgroups.
-    direct_index = html.index("📄 Aaa Direct")
+    direct_index = html.index(">Aaa Direct</a>")
     other_index = html.index("<summary>OTHER 5</summary>")
     patterns_index = html.index("<summary>PATTERNS 20</summary>")
     assert direct_index < other_index < patterns_index
@@ -180,7 +180,7 @@ def test_active_page_inside_subgroup_expands_section_and_group(tmp_path: Path) -
     assert '<details class="sidebar-subgroup" open><summary>PATTERNS 20</summary>' in html
     # ...and the active class lands on the active page's link.
     assert (
-        '<a class="active" href="/pixi-wiki/wiki/ns-b/wiki/concepts/patterns/pattern-05.md.html">📄 Pattern 05</a>'
+        '<a class="active" aria-current="page" href="/pixi-wiki/wiki/ns-b/wiki/concepts/patterns/pattern-05.md.html"><span aria-hidden="true">📄 </span>Pattern 05</a>'
         in html
     )
     # A sibling subgroup with no active member stays closed.

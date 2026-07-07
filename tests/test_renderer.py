@@ -253,7 +253,7 @@ def render_syntax_html(tmp_path: Path) -> str:
 
 
 def _article_body(html_text: str) -> str:
-    match = re.search(r'<article class="article">(.*)</article>', html_text, re.DOTALL)
+    match = re.search(r'<article class="article"[^>]*>(.*)</article>', html_text, re.DOTALL)
     assert match
     return match.group(1)
 

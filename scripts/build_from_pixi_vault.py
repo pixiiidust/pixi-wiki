@@ -334,6 +334,8 @@ def site_css() -> str:
 .sidebar-subgroup{margin:2px 0}.sidebar-subgroup summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;padding:4px 10px;border-radius:8px}.sidebar-subgroup summary::-webkit-details-marker{display:none}.sidebar-subgroup summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent2);transition:transform .12s ease}.sidebar-subgroup[open] summary::before{transform:rotate(90deg)}.sidebar-subgroup summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-filter{display:block;width:100%;margin:2px 0 6px;padding:6px 10px;background:var(--panel);border:1px solid var(--border);border-radius:8px;color:var(--text);font:inherit;font-size:12px}.sidebar-filter:focus{outline:none;border-color:var(--accent)}
 .recent-group{margin-top:34px}.recent-list{list-style:none;margin:14px 0 0;padding:0}.recent-item{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid var(--border)}.recent-title{font-weight:800;border-bottom:1px dotted currentColor}.namespace-badge{border:1px solid var(--border);background:var(--panel2);color:var(--accent2);border-radius:999px;padding:2px 10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.recent-raw{color:var(--muted);font-size:12px}
 .site-search{position:relative;flex:1 1 auto;max-width:420px;margin:0 24px}.search-input{width:100%;padding:8px 16px;background:var(--panel);border:1px solid var(--border);border-radius:999px;color:var(--text);font:inherit;font-size:13px;letter-spacing:.02em}.search-input::placeholder{color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:11px}.search-input:focus{outline:none;border-color:var(--accent)}.search-results{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:40;max-height:64vh;overflow-y:auto;display:flex;flex-direction:column;gap:2px;padding:8px;background:var(--panel);border:1px solid var(--border);border-radius:10px}.search-result{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:8px 10px;border:0;border-radius:6px;color:var(--muted)}.search-result:hover,.search-result.active{background:var(--panel2);color:var(--heading)}.search-result-title{color:var(--heading);font-weight:800}.search-badge{border:1px solid var(--border);background:var(--panel2);color:var(--accent2);border-radius:999px;padding:2px 9px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;flex:0 0 auto}.search-empty{padding:8px 10px;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-style:italic}@media(max-width:820px){.site-search{max-width:190px;margin:0 12px}}
+.skip-link{position:absolute;width:1px;height:1px;padding:0;margin:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}.skip-link:focus{position:fixed;top:12px;left:12px;width:auto;height:auto;padding:8px 14px;clip:auto;clip-path:none;background:var(--accent);color:var(--header);border-radius:999px;z-index:100;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+pre{position:relative}.copy-button{position:absolute;top:8px;right:8px;padding:4px 10px;background:var(--panel);color:var(--muted);border:1px solid var(--border);border-radius:6px;font:inherit;font-size:11px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.copy-button:hover,.copy-button:focus{border-color:var(--accent);color:var(--accent)}
 """
 
 def theme_script() -> str:
@@ -365,6 +367,18 @@ def search_script() -> str:
     promise holds with zero server-rendered search markup.
     """
     return """<script>(function(){document.addEventListener('DOMContentLoaded',function(){var box=document.querySelector('.site-search');if(!box)return;var url=box.getAttribute('data-registry');var base=url.replace(/\/index\.json$/,'');var input=document.createElement('input');input.type='search';input.placeholder='Search… ( / )';input.setAttribute('aria-label','Search all pages');input.className='search-input';var panel=document.createElement('div');panel.className='search-results';panel.setAttribute('role','listbox');panel.hidden=true;box.appendChild(input);box.appendChild(panel);var entries=null,loading=false,failed=false,active=-1,rows=[];function flatten(data){var out=[];if(!data||!data.wikis)return out;for(var i=0;i<data.wikis.length;i++){var w=data.wikis[i]||{};var docs=w.documents||[];for(var j=0;j<docs.length;j++){var d=docs[j]||{};out.push({title:String(d.title||d.path||''),path:String(d.path||''),category:String(d.category||''),nsSlug:String(w.slug||''),nsTitle:String(w.title||''),url:String(d.html||'')});}}return out;}function load(cb){if(entries){cb();return;}if(failed){cb();return;}if(loading)return;loading=true;try{fetch(url).then(function(r){return r.json();}).then(function(data){entries=flatten(data);loading=false;cb();}).catch(function(){failed=true;loading=false;cb();});}catch(e){failed=true;loading=false;cb();}}function filter(q){var tokens=q.toLowerCase().split(/\\s+/).filter(Boolean);if(!tokens.length)return [];var res=[];for(var i=0;i<entries.length&&res.length<20;i++){var e=entries[i];var hay=(e.title+' '+e.path+' '+e.category+' '+e.nsSlug+' '+e.nsTitle).toLowerCase();var ok=true;for(var t=0;t<tokens.length;t++){if(hay.indexOf(tokens[t])<0){ok=false;break;}}if(ok)res.push(e);}return res;}function close(){panel.hidden=true;panel.innerHTML='';rows=[];active=-1;}function render(list){panel.innerHTML='';rows=[];active=-1;if(failed){var f=document.createElement('div');f.className='search-empty';f.textContent='Search unavailable';panel.appendChild(f);panel.hidden=false;return;}if(!list.length){var n=document.createElement('div');n.className='search-empty';n.textContent='No matches';panel.appendChild(n);panel.hidden=false;return;}for(var i=0;i<list.length;i++){var e=list[i];var a=document.createElement('a');a.className='search-result';a.setAttribute('role','option');a.setAttribute('aria-selected','false');a.href=base+e.url;var ttl=document.createElement('span');ttl.className='search-result-title';ttl.textContent=e.title;a.appendChild(ttl);var badge=document.createElement('span');badge.className='search-badge';badge.textContent=e.nsTitle||e.nsSlug;a.appendChild(badge);panel.appendChild(a);rows.push(a);}panel.hidden=false;}function update(){var q=input.value.trim();if(!q){close();return;}load(function(){if(failed){render([]);return;}if(!entries)return;render(filter(q));});}function setActive(i){if(!rows.length)return;if(active>=0&&rows[active]){rows[active].classList.remove('active');rows[active].setAttribute('aria-selected','false');}active=(i+rows.length)%rows.length;rows[active].classList.add('active');rows[active].setAttribute('aria-selected','true');if(rows[active].scrollIntoView)rows[active].scrollIntoView({block:'nearest'});}input.addEventListener('focus',function(){load(function(){});});input.addEventListener('input',update);input.addEventListener('keydown',function(ev){if(ev.key==='ArrowDown'){ev.preventDefault();setActive(active+1);}else if(ev.key==='ArrowUp'){ev.preventDefault();setActive(active-1);}else if(ev.key==='Enter'){var target=active>=0?rows[active]:rows[0];if(target){ev.preventDefault();window.location.href=target.href;}}else if(ev.key==='Escape'){input.value='';close();input.blur();}});document.addEventListener('keydown',function(ev){if(ev.key!=='/')return;var el=document.activeElement;var tag=el&&el.tagName?el.tagName.toLowerCase():'';if(tag==='input'||tag==='textarea'||(el&&el.isContentEditable))return;ev.preventDefault();input.focus();});document.addEventListener('click',function(ev){if(!box.contains(ev.target))panel.hidden=true;});});})();</script>"""
+
+
+def copy_button_script() -> str:
+    """Progressive-enhancement copy buttons for code blocks.
+
+    On DOMContentLoaded, injects a ``.copy-button`` into every ``<pre>`` and
+    captures the block's text before the button is appended, so the copied
+    payload never includes the button label. Copying prefers the async
+    Clipboard API and falls back to a hidden-textarea ``execCommand('copy')``.
+    Without JavaScript no button exists and the code block reads normally.
+    """
+    return """<script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('pre').forEach(function(pre){if(pre.querySelector('.copy-button'))return;var text=pre.innerText;var btn=document.createElement('button');btn.type='button';btn.className='copy-button';btn.setAttribute('aria-label','Copy code');btn.textContent='copy';btn.addEventListener('click',function(){function done(){btn.textContent='copied';setTimeout(function(){btn.textContent='copy';},1200);}function fallback(){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,fallback);}else{fallback();}});pre.appendChild(btn);});});</script>"""
 
 
 # Header navigation link sets. Wiki/doc pages share WIKI_NAV_LINKS; the homepage
@@ -401,7 +415,7 @@ def site_header(nav_links: list[tuple[str, str]]) -> str:
         f'<nav class="nav">{links}</nav>'
         '<details class="nav-menu"><summary aria-label="Open menu">Menu</summary>'
         f'<nav class="nav-panel">{links}</nav></details>'
-        '<button class="theme-toggle" data-theme-toggle type="button">☾</button>'
+        '<button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle color theme">☾</button>'
         '</div></div></header>'
     )
 
@@ -444,10 +458,10 @@ def sidebar_category(rel: Path, fm: dict[str, Any]) -> str:
 
 def make_sidebar(slug: str, title: str, doc_count: int, counts: Counter[str], active_rel: str, sidebar_docs: list[dict[str, str]]) -> str:
     def cls(rel: str) -> str:
-        return ' class="active"' if rel == active_rel else ""
+        return ' class="active" aria-current="page"' if rel == active_rel else ""
 
     def link(doc: dict[str, str]) -> str:
-        return f'<a{cls(doc["path"])} href="/pixi-wiki/wiki/{slug}/{html.escape(doc["path"])}.html">📄 {html.escape(doc["title"])}</a>'
+        return f'<a{cls(doc["path"])} href="/pixi-wiki/wiki/{slug}/{html.escape(doc["path"])}.html"><span aria-hidden="true">📄 </span>{html.escape(doc["title"])}</a>'
 
     def section(label: str, category: str) -> str:
         docs = sorted((doc for doc in sidebar_docs if doc["category"] == category), key=lambda doc: doc["title"].lower())
@@ -484,8 +498,8 @@ def make_sidebar(slug: str, title: str, doc_count: int, counts: Counter[str], ac
 
     rows = [
         f'<aside class="sidebar"><div class="sidebar-block"><div class="sidebar-title">{html.escape(title)}</div><div class="sidebar-count">{doc_count} documents</div>',
-        f'<a{cls("README.md")} href="/pixi-wiki/wiki/{slug}/README.md.html">📄 {html.escape(title)} Knowledge Base</a>',
-        f'<a{cls("wiki/index.md")} href="/pixi-wiki/wiki/{slug}/wiki/index.md.html">📄 {html.escape(title)} KB — Master Index</a>',
+        f'<a{cls("README.md")} href="/pixi-wiki/wiki/{slug}/README.md.html"><span aria-hidden="true">📄 </span>{html.escape(title)} Knowledge Base</a>',
+        f'<a{cls("wiki/index.md")} href="/pixi-wiki/wiki/{slug}/wiki/index.md.html"><span aria-hidden="true">📄 </span>{html.escape(title)} KB — Master Index</a>',
         section("WIKI", "wiki"),
         section("CONCEPTS", "concepts"),
         section("ENTITIES", "entities"),
@@ -546,8 +560,10 @@ def page_shell(slug: str, namespace_title: str, doc_count: int, counts: Counter[
     return f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(page_title)} — {html.escape(namespace_title)} — Pixi Wiki</title>{meta}
-<style>{site_css()}</style>{theme_script()}{sidebar_filter_script()}{search_script()}</head><body>{site_header(WIKI_NAV_LINKS)}
-<main class="page">{sidebar}<article class="article">{article}</article></main>
+<style>{site_css()}</style>{theme_script()}{sidebar_filter_script()}{search_script()}{copy_button_script()}</head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+{site_header(WIKI_NAV_LINKS)}
+<main class="page">{sidebar}<article class="article" id="main-content">{article}</article></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
 </body></html>"""
 
@@ -691,7 +707,7 @@ def render_readme(
 {metadata_block(fm)}
 <div class="updated">updated: <strong>{html.escape(str(updated))}</strong></div>
 <section class="info-card"><div class="info-row"><div class="info-label green">Covers</div><div>{inline_markdown(covers, link_resolver)}</div></div><div class="info-row"><div class="info-label yellow">Not Covered</div><div>{inline_markdown(not_covered or "Out-of-scope or stale material; verify with source notes and live tools.", link_resolver)}</div></div><div class="info-row"><div class="info-label white">Current As Of</div><div>{html.escape(current_as or str(updated))}</div></div></section>
-<div class="agent-card">🤖 Agent access: <a href="/pixi-wiki/wiki/{slug}/llms.txt">/wiki/{slug}/llms.txt</a> <a href="/pixi-wiki/wiki/{slug}/llms-full.txt">/wiki/{slug}/llms-full.txt</a> <a href="/pixi-wiki/wiki/{slug}/index.json">/wiki/{slug}/index.json</a></div>
+<div class="agent-card"><span aria-hidden="true">🤖 </span>Agent access: <a href="/pixi-wiki/wiki/{slug}/llms.txt">/wiki/{slug}/llms.txt</a> <a href="/pixi-wiki/wiki/{slug}/llms-full.txt">/wiki/{slug}/llms-full.txt</a> <a href="/pixi-wiki/wiki/{slug}/index.json">/wiki/{slug}/index.json</a></div>
 <p>{inline_markdown(description, link_resolver)}</p>
 <h2>Structure</h2><ul><li><code>raw/</code> — raw Markdown provenance mirror for agents and source inspection.</li><li><code>wiki/</code> — synthesized knowledge pages: concepts, entities, summaries, and syntheses.</li><li>Schema and maintenance rules: see <code>CLAUDE.md</code>.</li></ul>
 <h2>Usage</h2><ul><li><strong>Add new sources:</strong> update canonical source notes in <code>pixi-vault</code>, then compile into this namespace.</li><li><strong>Ask questions:</strong> agents read this wiki and cite raw/source paths.</li><li><strong>Publish:</strong> regenerate <code>pixi-wiki</code>, run tests, then live-verify raw and HTML routes.</li></ul>
@@ -972,8 +988,10 @@ python3 scripts/pixi_wiki_mcp.py --self-test</code></pre>
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Agent Setup — Pixi Wiki</title>{head_meta("Agent Setup", AGENT_SETUP_DESCRIPTION, "/pixi-wiki/docs/AGENT_SETUP.html")}<style>{site_css()}</style>{theme_script()}{search_script()}</head><body>{site_header(WIKI_NAV_LINKS)}
-<main>{body}</main>
+<title>Agent Setup — Pixi Wiki</title>{head_meta("Agent Setup", AGENT_SETUP_DESCRIPTION, "/pixi-wiki/docs/AGENT_SETUP.html")}<style>{site_css()}</style>{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<a class=\"skip-link\" href=\"#main-content\">Skip to content</a>
+{site_header(WIKI_NAV_LINKS)}
+<main id=\"main-content\">{body}</main>
 <footer class=\"footer\"><div class=\"footer-inner\"><p>Plain static HTML. Agents read Markdown through <code>llms.txt</code> and MCP.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
 </body></html>"""
     (docs_dir / "AGENT_SETUP.html").write_text(page, encoding="utf-8", newline="\n")
@@ -1011,8 +1029,10 @@ def write_replicate_page(output_root: Path) -> None:
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Replicate the Approach — Pixi Wiki</title>{head_meta("Replicate the Approach", REPLICATE_DESCRIPTION, "/pixi-wiki/docs/REPLICATE_APPROACH.html")}<style>{site_css()}</style>{theme_script()}{search_script()}</head><body>{site_header(WIKI_NAV_LINKS)}
-<main>{body}</main>
+<title>Replicate the Approach — Pixi Wiki</title>{head_meta("Replicate the Approach", REPLICATE_DESCRIPTION, "/pixi-wiki/docs/REPLICATE_APPROACH.html")}<style>{site_css()}</style>{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<a class=\"skip-link\" href=\"#main-content\">Skip to content</a>
+{site_header(WIKI_NAV_LINKS)}
+<main id=\"main-content\">{body}</main>
 <footer class=\"footer\"><div class=\"footer-inner\"><p>Copy the pattern. Keep your source files canonical.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
 </body></html>"""
     (docs_dir / "REPLICATE_APPROACH.html").write_text(page, encoding="utf-8", newline="\n")
@@ -1039,8 +1059,10 @@ graphify cluster-only . --graph graphify-out/graph.json --no-label</code></pre>
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Signal Graph — Pixi Wiki</title>{head_meta("Signal Graph", SIGNAL_GRAPH_DESCRIPTION, "/pixi-wiki/docs/SIGNAL_GRAPH.html")}<style>{site_css()}</style>{theme_script()}{search_script()}</head><body>{site_header(HOME_NAV_LINKS)}
-<main>{body}</main>
+<title>Signal Graph — Pixi Wiki</title>{head_meta("Signal Graph", SIGNAL_GRAPH_DESCRIPTION, "/pixi-wiki/docs/SIGNAL_GRAPH.html")}<style>{site_css()}</style>{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<a class=\"skip-link\" href=\"#main-content\">Skip to content</a>
+{site_header(HOME_NAV_LINKS)}
+<main id=\"main-content\">{body}</main>
 <footer class=\"footer\"><div class=\"footer-inner\"><p>Generated graph artifacts stay local unless intentionally shared.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
 </body></html>"""
     (docs_dir / "SIGNAL_GRAPH.html").write_text(page, encoding="utf-8", newline="\n")
@@ -1082,8 +1104,10 @@ def write_recent_page(output_root: Path, entries: list[dict[str, str]]) -> None:
     )
     page = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Recent Updates — Pixi Wiki</title>{head_meta("Recent Updates", RECENT_DESCRIPTION, "/pixi-wiki/recent.html")}<style>{site_css()}</style>{theme_script()}{search_script()}</head><body>{site_header(HOME_NAV_LINKS)}
-<main>{body}</main>
+<title>Recent Updates — Pixi Wiki</title>{head_meta("Recent Updates", RECENT_DESCRIPTION, "/pixi-wiki/recent.html")}<style>{site_css()}</style>{theme_script()}{search_script()}</head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+{site_header(HOME_NAV_LINKS)}
+<main id="main-content">{body}</main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
 </body></html>"""
     (output_root / "recent.html").write_text(page, encoding="utf-8", newline="\n")
@@ -1259,8 +1283,10 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
 
     index_html = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pixi Wiki</title>{head_meta("Pixi Wiki", HOME_DESCRIPTION, "/pixi-wiki/")}<style>{site_css()}</style>{theme_script()}{search_script()}</head><body>{site_header(HOME_NAV_LINKS)}
-<main style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="/pixi-wiki/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal graph sidecar</a></div><section class="agent-setup-callout"><h2>Agents start here</h2><pre><code>$ curl https://pixiiidust.github.io/pixi-wiki/llms.txt</code></pre><p>Use <code>llms.txt</code> as the first routing map, then follow links to raw Markdown, namespace files, or MCP setup.</p></section><nav class="wiki-nav" aria-label="Wiki categories"><a class="button-link" href="#agent-ops">Agent Operations</a><a class="button-link" href="#knowledge-systems">Knowledge Systems</a><a class="button-link" href="#labs-products">Labs & Product Surfaces</a></nav><div id="wikis">{grouped_index}</div></main>
+<title>Pixi Wiki</title>{head_meta("Pixi Wiki", HOME_DESCRIPTION, "/pixi-wiki/")}<style>{site_css()}</style>{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+{site_header(HOME_NAV_LINKS)}
+<main id="main-content" style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="/pixi-wiki/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal graph sidecar</a></div><section class="agent-setup-callout"><h2>Agents start here</h2><pre><code>$ curl https://pixiiidust.github.io/pixi-wiki/llms.txt</code></pre><p>Use <code>llms.txt</code> as the first routing map, then follow links to raw Markdown, namespace files, or MCP setup.</p></section><nav class="wiki-nav" aria-label="Wiki categories"><a class="button-link" href="#agent-ops">Agent Operations</a><a class="button-link" href="#knowledge-systems">Knowledge Systems</a><a class="button-link" href="#labs-products">Labs & Product Surfaces</a></nav><div id="wikis">{grouped_index}</div></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. No JavaScript is required to read any page — agents welcome.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a><a href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal Graph</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a><a href="/pixi-wiki/docs/REPLICATE_APPROACH.html">Copy this approach</a></p></div></footer>
 </body></html>"""
     (output_root / "index.html").write_text(index_html, encoding="utf-8", newline="\n")
