@@ -12,11 +12,12 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class CleanRootContractTest(unittest.TestCase):
     def test_only_registry_html_lives_at_root(self) -> None:
-        # Allowed root HTML pages. updates.html (the reworked surface, #81) and
-        # recent.html (now a redirect stub) join index.html and 404.html. Assert
-        # the present set is a subset of the allowlist (and still includes
-        # index.html) rather than an exact match.
-        allowed = {"404.html", "index.html", "recent.html", "updates.html"}
+        # Allowed root HTML pages. updates.html (the reworked surface, #81),
+        # recent.html (now a redirect stub), and search.html (the #85 client
+        # search results page) join index.html and 404.html. Assert the present
+        # set is a subset of the allowlist (and still includes index.html)
+        # rather than an exact match.
+        allowed = {"404.html", "index.html", "recent.html", "search.html", "updates.html"}
         root_html = {path.name for path in ROOT.glob("*.html")}
         self.assertTrue(root_html.issubset(allowed), root_html)
         self.assertIn("index.html", root_html)

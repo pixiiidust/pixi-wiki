@@ -46,7 +46,7 @@ DEFAULT_SEED_SLUGS = [
     "software-architecture-metapatterns",
     "ui-patterns",
 ]
-GENERATED_ROOT_FILES = ["404.html", "index.html", "index.json", "llms.txt", "llms-full.txt", "recent.html", "recent.json", "site.css", "sitemap.xml", "updates.html", "updates.json"]
+GENERATED_ROOT_FILES = ["404.html", "index.html", "index.json", "llms.txt", "llms-full.txt", "recent.html", "recent.json", "search.html", "site.css", "sitemap.xml", "updates.html", "updates.json"]
 
 # Live deployment coordinates, set per build call from ``build()`` (normalized)
 # so every f-string template reads the active values. ``BASE_PATH`` is the
@@ -75,6 +75,7 @@ UPDATES_DESCRIPTION = "Browse every updated page across every Pixi Wiki namespac
 AGENT_SETUP_DESCRIPTION = "Connect AI agents to Pixi Wiki so they can list, search, and read the same Markdown knowledge bases behind the human wiki."
 REPLICATE_DESCRIPTION = "Use Pixi Wiki as a reusable pattern for turning your own Markdown notes, research, docs, or vault into a human wiki plus agent-readable context layer."
 SIGNAL_GRAPH_DESCRIPTION = "A local analysis sidecar for mapping Pixi Wiki's Markdown corpus before edits, fit-checks, and agent orientation."
+SEARCH_DESCRIPTION = "Search across every Pixi Wiki namespace by title, path, category, and namespace. Results are ranked by relevance and highlighted; agents can retrieve the same corpus through llms.txt and index.json."
 LEGACY_ROOT_PATTERNS = ["concept-*.html", "projects-*.html", "knowledge.html", "projects.html", "maps-of-content.html", "root.html"]
 GENERATED_DIRS = ["raw", "wiki", "agent", "legacy", "updates"]
 CONTENT_DIRS = {"concepts", "entities", "summaries", "syntheses"}
@@ -366,6 +367,7 @@ def site_css() -> str:
 pre{position:relative}.copy-button{position:absolute;top:8px;right:8px;padding:4px 10px;background:var(--panel);color:var(--muted);border:1px solid var(--border);border-radius:6px;font:inherit;font-size:11px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.copy-button:hover,.copy-button:focus{border-color:var(--accent);color:var(--accent)}
 .updates-filter{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}.updates-chip{border:1px solid var(--border);background:var(--panel);color:var(--muted);border-radius:999px;padding:6px 14px;font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.updates-chip:hover{border-color:var(--accent);color:var(--accent)}.updates-chip[aria-pressed=true]{background:var(--active-bg);border-color:var(--accent);color:var(--accent2);font-weight:800}.updates-empty{width:100%;padding:8px 2px;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-style:italic}.updates-months{display:flex;flex-wrap:wrap;gap:6px 10px;margin:14px 0 6px;color:var(--muted);font-size:12px;letter-spacing:.06em}.updates-months a{color:var(--muted);border:0}.updates-months a:hover{color:var(--accent)}.updates-month-anchor{display:block;height:0;overflow:hidden}.updates-group{margin-top:34px}.updates-group[hidden]{display:none}.updates-ns{margin:10px 0}.updates-ns summary{list-style:none;cursor:pointer;color:var(--heading);font-weight:800;font-size:13px;letter-spacing:.04em;padding:6px 0}.updates-ns summary::-webkit-details-marker{display:none}.updates-ns summary::before{content:"▸";display:inline-block;width:16px;color:var(--accent);transition:transform .12s ease}.updates-ns[open] summary::before{transform:rotate(90deg)}.updates-list{list-style:none;margin:4px 0 0;padding:0 0 0 16px}.updates-item{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px solid var(--border)}.updates-title{font-weight:800;border-bottom:1px dotted currentColor}.updates-raw{color:var(--muted);font-size:12px}
 .pagination{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:54px 0 0;padding-top:24px;border-top:1px solid var(--border)}.pagination a,.pagination span{border:1px solid var(--border);background:var(--panel);color:var(--muted);border-radius:999px;padding:7px 13px;font-size:12px;letter-spacing:.06em;min-width:38px;text-align:center}.pagination a{text-decoration:none}.pagination a:hover{border-color:var(--accent);color:var(--accent)}.pagination .pagination-current{background:var(--active-bg);border-color:var(--accent);color:var(--accent2);font-weight:800}.pagination .pagination-ellipsis{border:0;background:transparent;color:var(--muted);min-width:auto;padding:7px 4px}.pagination-prev,.pagination-next{text-transform:uppercase;letter-spacing:.1em}
+.search-page{margin:26px 0 0}.search-page-form{margin:0}.search-page-label{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;margin-bottom:8px}.search-page-input{width:100%;max-width:640px;padding:12px 20px;background:var(--panel);border:1px solid var(--border);border-radius:999px;color:var(--text);font:inherit;font-size:15px}.search-page-input:focus{outline:none;border-color:var(--accent)}.search-page-results{margin-top:20px}.search-count{color:var(--muted);font-size:13px;letter-spacing:.04em;margin:6px 0 14px}.search-list{display:flex;flex-direction:column}.search-result-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;padding:12px 2px;border:0;border-bottom:1px solid var(--border);color:var(--muted)}.search-result-row:hover{color:var(--heading)}.search-result-row .search-result-title{color:var(--heading);font-weight:800}.search-result-meta{color:var(--muted);font-size:12px;width:100%}.search-page-results mark{background:var(--active-bg);color:var(--accent2);border-radius:3px;padding:0 2px}.search-pagination{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:26px 0 0}.search-pagination-item{border:1px solid var(--border);background:var(--panel);color:var(--muted);border-radius:8px;padding:6px 12px;font:inherit;font-size:12px;letter-spacing:.06em;cursor:pointer}.search-pagination-item:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}.search-pagination-item:disabled{opacity:.4;cursor:default}.search-pagination-current{background:var(--active-bg);border-color:var(--accent);color:var(--accent2);font-weight:800}.search-see-all{justify-content:center;color:var(--accent2)!important;font-weight:800}
 """
 
 # Content hash of the shared stylesheet, computed once at import time. Every
@@ -402,13 +404,36 @@ def search_script() -> str:
     inside the empty ``.site-search`` placeholder that ``site_header`` emits. The
     237 KB registry named by ``data-registry`` is fetched lazily on the FIRST
     focus/keystroke only (never on page load) and cached; results filter with
-    case-insensitive AND-token substring matching, capped at 20. Keyboard: ``/``
-    focuses search from anywhere (unless already typing), Arrow keys move the
-    active option, Enter opens it, Escape clears/closes, outside clicks close.
-    With JavaScript disabled the placeholder stays empty, so the no-JS reading
-    promise holds with zero server-rendered search markup.
+    case-insensitive AND-token substring matching. The dropdown renders at most
+    ``CAP`` (8) rows and, whenever there are matches, appends a keyboard-reachable
+    ``See all N results →`` row linking the dedicated ``search.html`` page.
+    Keyboard: ``/`` focuses search from anywhere (unless already typing), Arrow
+    keys move the active option, Enter opens the arrow-selected option or (with
+    none selected) navigates to the results page for the current query, Escape
+    clears/closes, outside clicks close. With JavaScript disabled the placeholder
+    stays empty, so the no-JS reading promise holds with zero server-rendered
+    search markup.
     """
-    return """<script>(function(){document.addEventListener('DOMContentLoaded',function(){var box=document.querySelector('.site-search');if(!box)return;var url=box.getAttribute('data-registry');var base=url.replace(/\\/index\\.json$/,'');var input=document.createElement('input');input.type='search';input.placeholder='Search… ( / )';input.setAttribute('aria-label','Search all pages');input.className='search-input';var panel=document.createElement('div');panel.className='search-results';panel.setAttribute('role','listbox');panel.hidden=true;box.appendChild(input);box.appendChild(panel);var entries=null,loading=false,failed=false,active=-1,rows=[];function flatten(data){var out=[];if(!data||!data.wikis)return out;for(var i=0;i<data.wikis.length;i++){var w=data.wikis[i]||{};var docs=w.documents||[];for(var j=0;j<docs.length;j++){var d=docs[j]||{};out.push({title:String(d.title||d.path||''),path:String(d.path||''),category:String(d.category||''),nsSlug:String(w.slug||''),nsTitle:String(w.title||''),url:String(d.html||'')});}}return out;}function load(cb){if(entries){cb();return;}if(failed){cb();return;}if(loading)return;loading=true;try{fetch(url).then(function(r){return r.json();}).then(function(data){entries=flatten(data);loading=false;cb();}).catch(function(){failed=true;loading=false;cb();});}catch(e){failed=true;loading=false;cb();}}function filter(q){var tokens=q.toLowerCase().split(/\\s+/).filter(Boolean);if(!tokens.length)return [];var res=[];for(var i=0;i<entries.length&&res.length<20;i++){var e=entries[i];var hay=(e.title+' '+e.path+' '+e.category+' '+e.nsSlug+' '+e.nsTitle).toLowerCase();var ok=true;for(var t=0;t<tokens.length;t++){if(hay.indexOf(tokens[t])<0){ok=false;break;}}if(ok)res.push(e);}return res;}function close(){panel.hidden=true;panel.innerHTML='';rows=[];active=-1;}function render(list){panel.innerHTML='';rows=[];active=-1;if(failed){var f=document.createElement('div');f.className='search-empty';f.textContent='Search unavailable';panel.appendChild(f);panel.hidden=false;return;}if(!list.length){var n=document.createElement('div');n.className='search-empty';n.textContent='No matches';panel.appendChild(n);panel.hidden=false;return;}for(var i=0;i<list.length;i++){var e=list[i];var a=document.createElement('a');a.className='search-result';a.setAttribute('role','option');a.setAttribute('aria-selected','false');a.href=base+e.url;var ttl=document.createElement('span');ttl.className='search-result-title';ttl.textContent=e.title;a.appendChild(ttl);var badge=document.createElement('span');badge.className='search-badge';badge.textContent=e.nsTitle||e.nsSlug;a.appendChild(badge);panel.appendChild(a);rows.push(a);}panel.hidden=false;}function update(){var q=input.value.trim();if(!q){close();return;}load(function(){if(failed){render([]);return;}if(!entries)return;render(filter(q));});}function setActive(i){if(!rows.length)return;if(active>=0&&rows[active]){rows[active].classList.remove('active');rows[active].setAttribute('aria-selected','false');}active=(i+rows.length)%rows.length;rows[active].classList.add('active');rows[active].setAttribute('aria-selected','true');if(rows[active].scrollIntoView)rows[active].scrollIntoView({block:'nearest'});}input.addEventListener('focus',function(){load(function(){});});input.addEventListener('input',update);input.addEventListener('keydown',function(ev){if(ev.key==='ArrowDown'){ev.preventDefault();setActive(active+1);}else if(ev.key==='ArrowUp'){ev.preventDefault();setActive(active-1);}else if(ev.key==='Enter'){var target=active>=0?rows[active]:rows[0];if(target){ev.preventDefault();window.location.href=target.href;}}else if(ev.key==='Escape'){input.value='';close();input.blur();}});document.addEventListener('keydown',function(ev){if(ev.key!=='/')return;var el=document.activeElement;var tag=el&&el.tagName?el.tagName.toLowerCase():'';if(tag==='input'||tag==='textarea'||(el&&el.isContentEditable))return;ev.preventDefault();input.focus();});document.addEventListener('click',function(ev){if(!box.contains(ev.target))panel.hidden=true;});});})();</script>"""
+    return """<script>(function(){document.addEventListener('DOMContentLoaded',function(){var box=document.querySelector('.site-search');if(!box)return;var url=box.getAttribute('data-registry');var base=url.replace(/\\/index\\.json$/,'');var input=document.createElement('input');input.type='search';input.placeholder='Search… ( / )';input.setAttribute('aria-label','Search all pages');input.className='search-input';var panel=document.createElement('div');panel.className='search-results';panel.setAttribute('role','listbox');panel.hidden=true;box.appendChild(input);box.appendChild(panel);var CAP=8;var entries=null,loading=false,failed=false,active=-1,rows=[];function flatten(data){var out=[];if(!data||!data.wikis)return out;for(var i=0;i<data.wikis.length;i++){var w=data.wikis[i]||{};var docs=w.documents||[];for(var j=0;j<docs.length;j++){var d=docs[j]||{};out.push({title:String(d.title||d.path||''),path:String(d.path||''),category:String(d.category||''),nsSlug:String(w.slug||''),nsTitle:String(w.title||''),url:String(d.html||'')});}}return out;}function load(cb){if(entries){cb();return;}if(failed){cb();return;}if(loading)return;loading=true;try{fetch(url).then(function(r){return r.json();}).then(function(data){entries=flatten(data);loading=false;cb();}).catch(function(){failed=true;loading=false;cb();});}catch(e){failed=true;loading=false;cb();}}function filter(q){var tokens=q.toLowerCase().split(/\\s+/).filter(Boolean);if(!tokens.length)return [];var res=[];for(var i=0;i<entries.length;i++){var e=entries[i];var hay=(e.title+' '+e.path+' '+e.category+' '+e.nsSlug+' '+e.nsTitle).toLowerCase();var ok=true;for(var t=0;t<tokens.length;t++){if(hay.indexOf(tokens[t])<0){ok=false;break;}}if(ok)res.push(e);}return res;}function close(){panel.hidden=true;panel.innerHTML='';rows=[];active=-1;}function render(list,q){panel.innerHTML='';rows=[];active=-1;if(failed){var f=document.createElement('div');f.className='search-empty';f.textContent='Search unavailable';panel.appendChild(f);panel.hidden=false;return;}if(!list.length){var n=document.createElement('div');n.className='search-empty';n.textContent='No matches';panel.appendChild(n);panel.hidden=false;return;}for(var i=0;i<list.length&&i<CAP;i++){var e=list[i];var a=document.createElement('a');a.className='search-result';a.setAttribute('role','option');a.setAttribute('aria-selected','false');a.href=base+e.url;var ttl=document.createElement('span');ttl.className='search-result-title';ttl.textContent=e.title;a.appendChild(ttl);var badge=document.createElement('span');badge.className='search-badge';badge.textContent=e.nsTitle||e.nsSlug;a.appendChild(badge);panel.appendChild(a);rows.push(a);}var see=document.createElement('a');see.className='search-result search-see-all';see.setAttribute('role','option');see.setAttribute('aria-selected','false');see.href=base+'/search.html?q='+encodeURIComponent(q);see.textContent='See all '+list.length+' results →';panel.appendChild(see);rows.push(see);panel.hidden=false;}function update(){var q=input.value.trim();if(!q){close();return;}load(function(){if(failed){render([],q);return;}if(!entries)return;render(filter(q),q);});}function setActive(i){if(!rows.length)return;if(active>=0&&rows[active]){rows[active].classList.remove('active');rows[active].setAttribute('aria-selected','false');}active=(i+rows.length)%rows.length;rows[active].classList.add('active');rows[active].setAttribute('aria-selected','true');if(rows[active].scrollIntoView)rows[active].scrollIntoView({block:'nearest'});}input.addEventListener('focus',function(){load(function(){});});input.addEventListener('input',update);input.addEventListener('keydown',function(ev){if(ev.key==='ArrowDown'){ev.preventDefault();setActive(active+1);}else if(ev.key==='ArrowUp'){ev.preventDefault();setActive(active-1);}else if(ev.key==='Enter'){ev.preventDefault();if(active>=0&&rows[active]){window.location.href=rows[active].href;}else{var qq=input.value.trim();if(qq)window.location.href=base+'/search.html?q='+encodeURIComponent(qq);}}else if(ev.key==='Escape'){input.value='';close();input.blur();}});document.addEventListener('keydown',function(ev){if(ev.key!=='/')return;var el=document.activeElement;var tag=el&&el.tagName?el.tagName.toLowerCase():'';if(tag==='input'||tag==='textarea'||(el&&el.isContentEditable))return;ev.preventDefault();input.focus();});document.addEventListener('click',function(ev){if(!box.contains(ev.target))panel.hidden=true;});});})();</script>"""
+
+
+def search_page_script() -> str:
+    """Full-page client search results, injected only on ``search.html``.
+
+    On DOMContentLoaded this reads ``q`` and ``page`` from the URL query
+    (``URLSearchParams``), builds a labelled query input plus a live results
+    region inside the empty ``.search-page`` placeholder, and lazily fetches the
+    same registry the header dropdown uses (``data-registry``). Matching is the
+    identical case-insensitive AND-token substring rule; results are RANKED by
+    ``3×(token hits in the title) + 1×(token hits in path/category/namespace)``
+    then title ASC, with matched tokens wrapped in ``<mark>`` via DOM text nodes
+    (never innerHTML with user input). Results paginate at 20/page with
+    ``search-pagination`` controls, and the active ``q``/``page`` is mirrored to
+    the URL via ``history.replaceState``. Typing re-runs the search debounced
+    (~150ms) and resets to page 1. With JavaScript disabled the placeholder stays
+    empty and the page's ``<noscript>`` block points at the Markdown entrypoints.
+    """
+    return """<script>(function(){document.addEventListener('DOMContentLoaded',function(){var box=document.querySelector('.search-page');if(!box)return;var url=box.getAttribute('data-registry');var base=url.replace(/\\/index\\.json$/,'');var params=new URLSearchParams(window.location.search);var rawQ=params.get('q')||'';var page=parseInt(params.get('page'),10);if(!page||page<1)page=1;var q=rawQ.trim();var PER=20;var entries=null,loading=false,failed=false,timer=null;var form=document.createElement('form');form.className='search-page-form';form.setAttribute('role','search');var label=document.createElement('label');label.className='search-page-label';label.setAttribute('for','search-page-input');label.textContent='Search all pages';var input=document.createElement('input');input.type='search';input.id='search-page-input';input.className='search-page-input';input.setAttribute('aria-label','Search all pages');input.placeholder='Search all pages…';input.value=rawQ;form.appendChild(label);form.appendChild(input);var region=document.createElement('div');region.className='search-page-results';region.setAttribute('aria-live','polite');box.appendChild(form);box.appendChild(region);function flatten(data){var out=[];if(!data||!data.wikis)return out;for(var i=0;i<data.wikis.length;i++){var w=data.wikis[i]||{};var docs=w.documents||[];for(var j=0;j<docs.length;j++){var d=docs[j]||{};out.push({title:String(d.title||d.path||''),path:String(d.path||''),category:String(d.category||''),nsSlug:String(w.slug||''),nsTitle:String(w.title||''),url:String(d.html||'')});}}return out;}function load(cb){if(entries){cb();return;}if(failed){cb();return;}if(loading)return;loading=true;try{fetch(url).then(function(r){return r.json();}).then(function(data){entries=flatten(data);loading=false;cb();}).catch(function(){failed=true;loading=false;cb();});}catch(e){failed=true;loading=false;cb();}}function tokenize(s){return s.toLowerCase().split(/\\s+/).filter(Boolean);}function search(tokens){var res=[];for(var i=0;i<entries.length;i++){var e=entries[i];var title=e.title.toLowerCase();var rest=(e.path+' '+e.category+' '+e.nsSlug+' '+e.nsTitle).toLowerCase();var hay=title+' '+rest;var ok=true,score=0;for(var t=0;t<tokens.length;t++){if(hay.indexOf(tokens[t])<0){ok=false;break;}if(title.indexOf(tokens[t])>=0)score+=3;if(rest.indexOf(tokens[t])>=0)score+=1;}if(ok)res.push({e:e,score:score});}res.sort(function(a,b){if(b.score!==a.score)return b.score-a.score;var at=a.e.title.toLowerCase(),bt=b.e.title.toLowerCase();return at<bt?-1:(at>bt?1:0);});var out=[];for(var k=0;k<res.length;k++)out.push(res[k].e);return out;}function highlight(el,text,tokens){var lower=text.toLowerCase();var i=0;while(i<text.length){var best=-1,bestLen=0;for(var t=0;t<tokens.length;t++){if(!tokens[t])continue;var idx=lower.indexOf(tokens[t],i);if(idx>=0&&(best<0||idx<best)){best=idx;bestLen=tokens[t].length;}}if(best<0){el.appendChild(document.createTextNode(text.slice(i)));break;}if(best>i)el.appendChild(document.createTextNode(text.slice(i,best)));var m=document.createElement('mark');m.textContent=text.slice(best,best+bestLen);el.appendChild(m);i=best+bestLen;}}function sync(){if(!history.replaceState)return;var qs=base+'/search.html?q='+encodeURIComponent(q);if(page>1)qs+='&page='+page;history.replaceState(null,'',qs);}function note(msg){var d=document.createElement('div');d.className='search-empty';d.textContent=msg;region.appendChild(d);}function render(){region.innerHTML='';if(failed){note('Search unavailable');return;}if(!q){note('Type to search across every namespace.');return;}var tokens=tokenize(q);var list=search(tokens);var count=document.createElement('p');count.className='search-count';count.textContent=list.length+(list.length===1?' result for ':' results for ')+'\\u201c'+q+'\\u201d';region.appendChild(count);if(!list.length){note('No matches');sync();return;}var pages=Math.ceil(list.length/PER);if(page>pages)page=pages;if(page<1)page=1;var start=(page-1)*PER;var slice=list.slice(start,start+PER);var listEl=document.createElement('div');listEl.className='search-list';for(var i=0;i<slice.length;i++){var e=slice[i];var a=document.createElement('a');a.className='search-result-row';a.href=base+e.url;var ttl=document.createElement('span');ttl.className='search-result-title';highlight(ttl,e.title,tokens);a.appendChild(ttl);var badge=document.createElement('span');badge.className='search-badge';badge.textContent=e.nsTitle||e.nsSlug;a.appendChild(badge);var meta=document.createElement('span');meta.className='search-result-meta';meta.textContent=(e.category?e.category+' · ':'')+e.path;a.appendChild(meta);listEl.appendChild(a);}region.appendChild(listEl);if(pages>1)region.appendChild(pager(pages));sync();}function pager(pages){var nav=document.createElement('nav');nav.className='search-pagination';nav.setAttribute('aria-label','Search results pages');function pill(txt,target,disabled,current){var b=document.createElement('button');b.type='button';b.className='search-pagination-item';b.textContent=txt;if(current){b.className+=' search-pagination-current';b.setAttribute('aria-current','page');}if(disabled){b.disabled=true;}else{b.addEventListener('click',function(){page=target;render();if(region.scrollIntoView)region.scrollIntoView({block:'start'});});}return b;}nav.appendChild(pill('Prev',page-1,page<=1,false));for(var p=1;p<=pages;p++)nav.appendChild(pill(String(p),p,false,p===page));nav.appendChild(pill('Next',page+1,page>=pages,false));return nav;}form.addEventListener('submit',function(ev){ev.preventDefault();q=input.value.trim();page=1;load(render);});input.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(function(){q=input.value.trim();page=1;load(render);},150);});load(render);if(!q)input.focus();});})();</script>"""
 
 
 def copy_button_script() -> str:
@@ -582,18 +607,21 @@ def truncate_description(text: str, limit: int = 200) -> str:
     return clipped.rstrip() + "…"
 
 
-def head_meta(title: str, description: str, canonical_path: str, og_type: str = "website") -> str:
+def head_meta(title: str, description: str, canonical_path: str, og_type: str = "website", noindex: bool = False) -> str:
     """Return the SEO/social ``<head>`` block for one page.
 
     Emits a meta description, canonical link, OpenGraph title/description/url/
     type/site_name, and a Twitter summary card. ``canonical_path`` is a
     site-absolute path (e.g. ``/pixi-wiki/wiki/<slug>/<rel>.html``); the absolute
     URL is ``SITE_ORIGIN`` + that path. The description is collapsed, truncated
-    to a word boundary, and HTML-escaped.
+    to a word boundary, and HTML-escaped. When ``noindex`` is set a
+    ``robots: noindex`` meta is appended, so JS-dependent enhancement surfaces
+    (e.g. the client search results page) stay out of the crawl index.
     """
     desc = html.escape(truncate_description(description), quote=True)
     title_attr = html.escape(title, quote=True)
     url = html.escape(SITE_ORIGIN + canonical_path, quote=True)
+    robots = '<meta name="robots" content="noindex">' if noindex else ""
     return (
         f'<meta name="description" content="{desc}">'
         f'<link rel="canonical" href="{url}">'
@@ -603,6 +631,7 @@ def head_meta(title: str, description: str, canonical_path: str, og_type: str = 
         f'<meta property="og:type" content="{og_type}">'
         f'<meta property="og:site_name" content="{html.escape(SITE_NAME, quote=True)}">'
         f'<meta name="twitter:card" content="summary">'
+        f'{robots}'
     )
 
 
@@ -1434,8 +1463,10 @@ def write_sitemap(
     a site-absolute ``path`` and a possibly-empty ``lastmod``). The homepage,
     every paginated Updates page in ``updates_paths``, and the three docs pages
     are added here as undated chrome. The ``recent.html`` redirect stub is
-    intentionally excluded. Ordering is deterministic: the homepage first, then
-    all other URLs sorted by path, so an unchanged corpus rebuilds byte-identically.
+    intentionally excluded, as is ``search.html`` (a ``robots: noindex``
+    JS-dependent enhancement surface with no crawlable content of its own).
+    Ordering is deterministic: the homepage first, then all other URLs sorted by
+    path, so an unchanged corpus rebuilds byte-identically.
     """
     chrome_paths = list(updates_paths) + [
         f"{BASE_PATH}/docs/AGENT_SETUP.html",
@@ -1480,6 +1511,46 @@ def write_404_page(output_root: Path) -> None:
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="{BASE_PATH}/llms.txt">/llms.txt</a><a href="{BASE_PATH}/llms-full.txt">/llms-full.txt</a><a href="{BASE_PATH}/index.json">/index.json</a></p></div></footer>
 </body></html>"""
     (output_root / "404.html").write_text(page, encoding="utf-8", newline="\n")
+
+
+def write_search_page(output_root: Path) -> None:
+    """Emit the JavaScript-enhanced ``search.html`` results page.
+
+    The page ships an empty ``.search-page`` placeholder that
+    ``search_page_script`` fills on DOMContentLoaded with a prominent query
+    input, a ranked/highlighted result list, and client-side pagination. Because
+    search is a deliberate JS-dependent enhancement surface, the page carries a
+    ``robots: noindex`` meta and is intentionally excluded from ``sitemap.xml``
+    (see ``write_sitemap``); its ``<noscript>`` block says so and routes agents
+    and no-JS readers to the Markdown entrypoints (``llms.txt``/``index.json``)
+    for retrieval. Standard chrome (header dropdown search included) still loads.
+    """
+    body = (
+        '<article class="article" style="max-width:900px;margin:44px auto 90px;padding:0 20px">'
+        f'<div class="content-header"><div class="breadcrumbs"><a href="{BASE_PATH}/">wikis</a> / Search</div>'
+        f'<span class="page-tools"><a class="markdown-link" href="{BASE_PATH}/index.json">index.json</a></span></div>'
+        '<h1>Search</h1>'
+        '<p class="hero-copy">Search every Pixi Wiki namespace by title, path, category, and namespace. '
+        'Results are ranked by relevance and matched terms are highlighted.</p>'
+        f'<div class="search-page" data-registry="{BASE_PATH}/index.json"></div>'
+        '<noscript>'
+        '<p class="hero-copy">Search is a JavaScript enhancement layered over the page registry, so it needs '
+        f'JavaScript enabled. Without it, browse the namespaces from the <a href="{BASE_PATH}/">homepage</a>, '
+        'or retrieve pages the way agents do: read '
+        f'<a href="{BASE_PATH}/llms.txt">llms.txt</a> for the routing map and '
+        f'<a href="{BASE_PATH}/index.json">index.json</a> for the full machine-readable index.</p>'
+        '</noscript>'
+        '</article>'
+    )
+    page = f"""<!doctype html>
+<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Search — Pixi Wiki</title>{head_meta("Search", SEARCH_DESCRIPTION, BASE_PATH + "/search.html", noindex=True)}{stylesheet_link()}{theme_script()}{search_script()}{search_page_script()}</head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+{site_header(HOME_NAV_LINKS)}
+<main id="main-content">{body}</main>
+<footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="{BASE_PATH}/llms.txt">/llms.txt</a><a href="{BASE_PATH}/llms-full.txt">/llms-full.txt</a><a href="{BASE_PATH}/index.json">/index.json</a></p></div></footer>
+</body></html>"""
+    (output_root / "search.html").write_text(page, encoding="utf-8", newline="\n")
 
 
 def build(
@@ -1629,6 +1700,7 @@ def build(
 
     write_sitemap(output_root, all_sitemap_docs, updates_paths)
     write_404_page(output_root)
+    write_search_page(output_root)
 
 
 def main() -> None:
