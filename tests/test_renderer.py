@@ -47,6 +47,21 @@ def test_inline_emphasis_does_not_cross_into_links() -> None:
     assert "<strong>bold</strong>" in out
 
 
+def test_inline_em_does_not_cross_link_href() -> None:
+    # Regression: a '*' inside an href plus a lone '*' later in the line must
+    # not let the em pattern match across the attribute and corrupt the tag.
+    generator = load_generator()
+    out = generator.inline_markdown("see [x](https://example.com/a*b) and *word*")
+    assert '<a href="https://example.com/a*b">x</a>' in out
+    assert "<em>word</em>" in out
+
+
+def test_inline_emphasis_inside_link_label() -> None:
+    generator = load_generator()
+    out = generator.inline_markdown("[**Title**](https://example.com/doc)")
+    assert '<a href="https://example.com/doc"><strong>Title</strong></a>' in out
+
+
 def test_ordered_list_renders_ol() -> None:
     generator = load_generator()
     out = generator.markdown_fragment("1. first\n2. second\n3. third")

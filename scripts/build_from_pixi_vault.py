@@ -98,11 +98,20 @@ def inline_markdown(value: str, link_resolver: LinkResolver | None = None) -> st
     escaped = re.sub(r"\[\[([^\]]+)\]\]", replace_wikilink, escaped)
     escaped = re.sub(r"(?<!!)\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', escaped)
 
-    # Emphasis is applied after link/wikilink/image substitution so URLs and link
-    # labels containing '*' behave sanely. Strong is matched before em so the em
-    # pattern never consumes the inner asterisks of a strong run.
+    # Emphasis runs last, but the generated tags must be hidden from it first:
+    # an asterisk inside an href plus a lone '*' later in the line would let the
+    # em pattern match across the attribute and corrupt the markup. Stash every
+    # tag produced above, apply emphasis to plain text only, then restore.
+    tags: list[str] = []
+
+    def stash_tag(match: re.Match[str]) -> str:
+        tags.append(match.group(0))
+        return f"\x01{len(tags) - 1}\x01"
+
+    escaped = re.sub(r"<[^>]+>", stash_tag, escaped)
     escaped = re.sub(r"\*\*([^*]+?)\*\*", r"<strong>\1</strong>", escaped)
     escaped = re.sub(r"(?<!\*)\*([^*\s][^*]*?)\*(?!\*)", r"<em>\1</em>", escaped)
+    escaped = re.sub(r"\x01(\d+)\x01", lambda m: tags[int(m.group(1))], escaped)
 
     # Restore protected code spans now that emphasis/link passes are done.
     escaped = re.sub(r"\x00(\d+)\x00", lambda m: code_spans[int(m.group(1))], escaped)
