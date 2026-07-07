@@ -1,7 +1,7 @@
 ---
 title: Pixi Vault — Master Index
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-07
 type: index
 status: compiled
 namespace: pixi-vault
@@ -17,7 +17,7 @@ namespace: pixi-vault
 
 ## Entities
 
-- [[entities/pixi-wiki|Pixi Wiki]] — Publishing surface for maintained knowledge bases: human wiki plus agent-readable raw Markdown, `llms.txt`, `llms-full.txt`, `index.json`, local read-only MCP, Agent Setup, and reusable approach guide.
+- [[entities/pixi-wiki|Pixi Wiki]] — Hardened publishing surface for maintained knowledge bases: human wiki with search/Updates/navigation plus agent-readable raw Markdown, `llms.txt`, `llms-full.txt`, `index.json`, local read-only MCP, Agent Setup, and reusable approach guide.
 
 ## Summaries
 

@@ -7,7 +7,7 @@
 ## Pixi Vault
 
 > Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.
-> Current as of: 2026-06-16 — Pixi Wiki public artifact recorded; content pack v1 plus generated-site UX contract now compiled.
+> Current as of: 2026-07-07 — Pixi Wiki hardening and feature delivery recorded: CI, browser-verified deploys, human search, Updates, rendering correctness, mobile navigation, SEO, shared CSS, MCP performance, and route contract tests are now part of the public artifact.
 > Agent access: [/wiki/pixi-vault/llms.txt](/wiki/pixi-vault/llms.txt) [/wiki/pixi-vault/llms-full.txt](/wiki/pixi-vault/llms-full.txt) [/wiki/pixi-vault/index.json](/wiki/pixi-vault/index.json)
 
 - [Pixi Vault Namespace Instructions](/raw/pixi-vault/CLAUDE.md) ([html](/wiki/pixi-vault/CLAUDE.md.html))

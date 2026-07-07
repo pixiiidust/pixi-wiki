@@ -1,7 +1,7 @@
 ---
 title: Pixi Vault
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-07
 type: namespace-overview
 status: compiled
 category: knowledge-systems
@@ -11,7 +11,7 @@ confidence: medium
 
 # Pixi Vault
 
-> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+> Namespace for the private `pixi-vault` source system and its generated `pixi-wiki` public publishing surface.
 
 ## Scope
 
@@ -25,7 +25,7 @@ General agent workflow behavior unless it changes vault/compiler architecture; p
 
 ### Current As
 
-2026-06-16 — Pixi Wiki public artifact recorded; content pack v1 plus generated-site UX contract now compiled.
+2026-07-07 — Pixi Wiki hardening and feature delivery recorded: CI, browser-verified deploys, human search, Updates, rendering correctness, mobile navigation, SEO, shared CSS, MCP performance, and route contract tests are now part of the public artifact.
 
 ## Canonical Source Roots
 

@@ -1,7 +1,7 @@
 ---
 title: Pixi Wiki
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-07
 type: entity
 status: active
 namespace: pixi-vault
@@ -27,7 +27,8 @@ Pixi Wiki turns each compiled knowledge base into:
 - `llms-full.txt` files for full-corpus agent context;
 - `index.json` registries for tools, tests, and retrieval pipelines;
 - a local read-only MCP server so agents can list, search, and read the same KB Markdown files;
-- an Agent Setup page and replication guide that explain how agents and other users connect to or copy the pattern.
+- an Agent Setup page and replication guide that explain how agents and other users connect to or copy the pattern;
+- client-side search, a shareable search results page, an Updates history, heading anchors/TOCs, sitemap/404, and browser-tested responsive navigation for human use.
 
 ## Why it exists
 
@@ -50,17 +51,21 @@ Its retrieval use case cross-links to `local-ai-infrastructure`, especially [[..
 
 ## Current milestone
 
-As of 2026-06-18, the public mirror has:
+As of 2026-07-07, the public mirror has moved from a useful generated surface into a hardened wiki product:
 
 - compiled namespace pages for project/domain clusters;
-- collapsible namespace sidebars with page lists;
-- rendered Markdown pages with metadata, raw Markdown links, report-a-mistake links, and previous/next navigation;
+- correct Markdown rendering for emphasis, tables, ordered lists, blockquotes, code spans, and link attributes;
+- collapsible grouped namespace sidebars, mobile navigation, visible theme toggle, skip links, and labeled controls;
+- rendered Markdown pages with metadata, raw Markdown links, report-a-mistake links, heading anchors, table of contents, and previous/next navigation;
+- client-side header search, `/` keyboard shortcut, shareable `search.html?q=...` results, title-weighted ranking, highlighting, namespace badges, and result pagination;
+- `updates.html`, `updates.json`, date-section pagination, month strip, namespace dropdowns, and recent-page redirect;
+- shared hash-versioned `site.css`, SEO metadata, sitemap, and 404 page;
 - a repository README and GitHub About description that frame Pixi Wiki as a publishing surface for human and agent KB access;
 - a simplified homepage IA: `WIKIS`, `AGENT SETUP`, `GITHUB`, dark toggle, and an “Agents start here” command using `curl https://pixiiidust.github.io/pixi-wiki/llms.txt`;
 - a reusable approach guide at `docs/REPLICATE_APPROACH.html` for adapting the pattern to other Markdown KBs;
-- a reading-focused dark palette based on near-black, muted teal, `#8b4356` reddish-purple, and pale gold;
 - MCP setup docs at `docs/MCP_SERVER.md`;
-- a local read-only MCP server with `list_kbs`, `list_documents`, `read_document`, `search_kb`, `search_all_kbs`, and `get_kb_summary`.
+- a local read-only MCP server with `list_kbs`, `list_documents`, `read_document`, `search_kb`, `search_all_kbs`, and `get_kb_summary`;
+- CI running the full pytest suite on pushes/PRs, route-contract tests over committed artifacts, and browser-level verification for live deploys.
 
 ## Public handles
 
@@ -71,4 +76,6 @@ As of 2026-06-18, the public mirror has:
 - Machine registry: https://pixiiidust.github.io/pixi-wiki/index.json
 - Agent setup: https://pixiiidust.github.io/pixi-wiki/docs/AGENT_SETUP.html
 - Replication guide: https://pixiiidust.github.io/pixi-wiki/docs/REPLICATE_APPROACH.html
+- Search page: https://pixiiidust.github.io/pixi-wiki/search.html
+- Updates history: https://pixiiidust.github.io/pixi-wiki/updates.html
 - MCP guide: https://pixiiidust.github.io/pixi-wiki/docs/MCP_SERVER.md

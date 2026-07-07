@@ -20,9 +20,9 @@
       "scope": {
         "covers": "Vault architecture, Wiki Compiler Maps, AgentWikis compatibility, namespace compiler logic, source/output repo boundaries, and pixi-wiki publication model.",
         "notCovered": "General agent workflow behavior unless it changes vault/compiler architecture; project-specific implementation details unless they affect the namespace compiler.",
-        "currentAs": "2026-06-16 \u2014 Pixi Wiki public artifact recorded; content pack v1 plus generated-site UX contract now compiled."
+        "currentAs": "2026-07-07 \u2014 Pixi Wiki hardening and feature delivery recorded: CI, browser-verified deploys, human search, Updates, rendering correctness, mobile navigation, SEO, shared CSS, MCP performance, and route contract tests are now part of the public artifact."
       },
-      "lastUpdated": "2026-06-16",
+      "lastUpdated": "2026-07-07",
       "documentCount": 7,
       "counts": {
         "wiki": 1,

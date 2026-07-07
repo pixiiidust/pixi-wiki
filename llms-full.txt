@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/pixi-vault/`.
 ---
 title: Pixi Vault
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-07
 type: namespace-overview
 status: compiled
 category: knowledge-systems
@@ -29,7 +29,7 @@ confidence: medium
 
 # Pixi Vault
 
-> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+> Namespace for the private `pixi-vault` source system and its generated `pixi-wiki` public publishing surface.
 
 ## Scope
 
@@ -43,7 +43,7 @@ General agent workflow behavior unless it changes vault/compiler architecture; p
 
 ### Current As
 
-2026-06-16 — Pixi Wiki public artifact recorded; content pack v1 plus generated-site UX contract now compiled.
+2026-07-07 — Pixi Wiki hardening and feature delivery recorded: CI, browser-verified deploys, human search, Updates, rendering correctness, mobile navigation, SEO, shared CSS, MCP performance, and route contract tests are now part of the public artifact.
 
 ## Canonical Source Roots
 
@@ -133,7 +133,7 @@ Compiled from `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` and `Projects/
 ---
 title: Pixi Wiki
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-07
 type: entity
 status: active
 namespace: pixi-vault
@@ -159,7 +159,8 @@ Pixi Wiki turns each compiled knowledge base into:
 - `llms-full.txt` files for full-corpus agent context;
 - `index.json` registries for tools, tests, and retrieval pipelines;
 - a local read-only MCP server so agents can list, search, and read the same KB Markdown files;
-- an Agent Setup page and replication guide that explain how agents and other users connect to or copy the pattern.
+- an Agent Setup page and replication guide that explain how agents and other users connect to or copy the pattern;
+- client-side search, a shareable search results page, an Updates history, heading anchors/TOCs, sitemap/404, and browser-tested responsive navigation for human use.
 
 ## Why it exists
 
@@ -182,17 +183,21 @@ Its retrieval use case cross-links to `local-ai-infrastructure`, especially [[..
 
 ## Current milestone
 
-As of 2026-06-18, the public mirror has:
+As of 2026-07-07, the public mirror has moved from a useful generated surface into a hardened wiki product:
 
 - compiled namespace pages for project/domain clusters;
-- collapsible namespace sidebars with page lists;
-- rendered Markdown pages with metadata, raw Markdown links, report-a-mistake links, and previous/next navigation;
+- correct Markdown rendering for emphasis, tables, ordered lists, blockquotes, code spans, and link attributes;
+- collapsible grouped namespace sidebars, mobile navigation, visible theme toggle, skip links, and labeled controls;
+- rendered Markdown pages with metadata, raw Markdown links, report-a-mistake links, heading anchors, table of contents, and previous/next navigation;
+- client-side header search, `/` keyboard shortcut, shareable `search.html?q=...` results, title-weighted ranking, highlighting, namespace badges, and result pagination;
+- `updates.html`, `updates.json`, date-section pagination, month strip, namespace dropdowns, and recent-page redirect;
+- shared hash-versioned `site.css`, SEO metadata, sitemap, and 404 page;
 - a repository README and GitHub About description that frame Pixi Wiki as a publishing surface for human and agent KB access;
 - a simplified homepage IA: `WIKIS`, `AGENT SETUP`, `GITHUB`, dark toggle, and an “Agents start here” command using `curl https://pixiiidust.github.io/pixi-wiki/llms.txt`;
 - a reusable approach guide at `docs/REPLICATE_APPROACH.html` for adapting the pattern to other Markdown KBs;
-- a reading-focused dark palette based on near-black, muted teal, `#8b4356` reddish-purple, and pale gold;
 - MCP setup docs at `docs/MCP_SERVER.md`;
-- a local read-only MCP server with `list_kbs`, `list_documents`, `read_document`, `search_kb`, `search_all_kbs`, and `get_kb_summary`.
+- a local read-only MCP server with `list_kbs`, `list_documents`, `read_document`, `search_kb`, `search_all_kbs`, and `get_kb_summary`;
+- CI running the full pytest suite on pushes/PRs, route-contract tests over committed artifacts, and browser-level verification for live deploys.
 
 ## Public handles
 
@@ -203,6 +208,8 @@ As of 2026-06-18, the public mirror has:
 - Machine registry: https://pixiiidust.github.io/pixi-wiki/index.json
 - Agent setup: https://pixiiidust.github.io/pixi-wiki/docs/AGENT_SETUP.html
 - Replication guide: https://pixiiidust.github.io/pixi-wiki/docs/REPLICATE_APPROACH.html
+- Search page: https://pixiiidust.github.io/pixi-wiki/search.html
+- Updates history: https://pixiiidust.github.io/pixi-wiki/updates.html
 - MCP guide: https://pixiiidust.github.io/pixi-wiki/docs/MCP_SERVER.md
 
 
@@ -211,7 +218,7 @@ As of 2026-06-18, the public mirror has:
 ---
 title: Pixi Vault — Master Index
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-07
 type: index
 status: compiled
 namespace: pixi-vault
@@ -227,7 +234,7 @@ namespace: pixi-vault
 
 ## Entities
 
-- [[entities/pixi-wiki|Pixi Wiki]] — Publishing surface for maintained knowledge bases: human wiki plus agent-readable raw Markdown, `llms.txt`, `llms-full.txt`, `index.json`, local read-only MCP, Agent Setup, and reusable approach guide.
+- [[entities/pixi-wiki|Pixi Wiki]] — Hardened publishing surface for maintained knowledge bases: human wiki with search/Updates/navigation plus agent-readable raw Markdown, `llms.txt`, `llms-full.txt`, `index.json`, local read-only MCP, Agent Setup, and reusable approach guide.
 
 ## Summaries
 
@@ -248,7 +255,7 @@ namespace: pixi-vault
 ---
 title: Pixi Vault — Activity Log
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-07
 type: log
 status: compiled
 namespace: pixi-vault
@@ -304,13 +311,20 @@ namespace: pixi-vault
 - Added cross-namespace pointer to the Hermes Agent external wiki import review as a concrete instance of Pixi Vault namespace-routing/import triage.
 - No Daily Notes were copied or compiled.
 
+## 2026-07-07 update | Record Pixi Wiki hardening and feature delivery
+
+- Captured the shipped hardening pass: 18 issues closed through 20 merged PRs, live on GitHub Pages and browser-verified.
+- Recorded the user-facing features now in the public artifact: correct Markdown rendering, mobile navigation, heading anchors/TOC, client search, `search.html`, Updates history, pagination, SEO/sitemap/404, and shared hash-versioned CSS.
+- Recorded the agent/ops features now in the public artifact: CI running 207 tests, route-contract tests over committed artifacts, MCP search performance improvements, and browser-level deploy verification for CSS/JS/runtime issues that HTTP checks miss.
+- No Daily Notes were copied or compiled; this log entry summarizes verified repo/live-site milestone state.
+
 
 <!-- ===== pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md ===== -->
 
 ---
 title: Pixi Vault to Pixi Wiki Publishing Model
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-07
 type: synthesis
 status: compiled
 namespace: pixi-vault
@@ -344,13 +358,18 @@ pixi-wiki/
 ├── llms.txt
 ├── llms-full.txt
 ├── index.json
+├── search.html
+├── updates.html
+├── updates.json
+├── sitemap.xml
+├── site.css
 ├── raw/<slug>/...
 └── wiki/<slug>/...
 ```
 
-`llms.txt` is the compact agent registry. `llms-full.txt` is the full concatenated corpus. `index.json` is the machine-readable registry. `raw/<slug>/` preserves Markdown, `wiki/<slug>/` exposes human-readable HTML, and the local MCP server exposes read/search tools over the same KB files.
+`llms.txt` is the compact agent registry. `llms-full.txt` is the full concatenated corpus. `index.json` is the machine-readable registry. `raw/<slug>/` preserves Markdown, `wiki/<slug>/` exposes human-readable HTML, `search.html`/`updates.html` provide human retrieval and freshness surfaces, and the local MCP server exposes read/search tools over the same KB files.
 
-Human pages render Markdown with breadcrumbs, visible frontmatter metadata, raw Markdown links, report-a-mistake links, namespace sidebars, and previous/next navigation. The goal is a two-surface publication model: humans browse the web wiki, while agents use raw Markdown, `llms.txt`, `index.json`, and local MCP tools over the same KBs.
+Human pages render Markdown with breadcrumbs, visible frontmatter metadata, raw Markdown links, report-a-mistake links, namespace sidebars, heading anchors, table of contents, and previous/next navigation. The goal is a two-surface publication model: humans browse/search the web wiki and update history, while agents use raw Markdown, `llms.txt`, `index.json`, and local MCP tools over the same KBs.
 
 ## Publication workflow
 
@@ -360,12 +379,13 @@ Human pages render Markdown with breadcrumbs, visible frontmatter metadata, raw 
 4. Run the `pixi-wiki` generator.
 5. Run public-output tests.
 6. Push both repos as needed.
-7. Verify live GitHub Pages URLs with HTTP 200 checks.
-8. For local MCP changes, run the MCP self-test and a real stdio client smoke test.
+7. Verify live GitHub Pages URLs with HTTP 200 and expected content tokens.
+8. Run browser-level verification for pages affected by CSS, layout, navigation, or JavaScript. HTTP checks alone miss computed-style and runtime failures.
+9. For local MCP changes, run the MCP self-test and a real stdio client smoke test.
 
 ## Clean rebuild policy
 
-Old root flat pages in `pixi-wiki` are removed from the canonical public contract. The clean mirror should have only root registry files plus `/raw/<slug>/...` and `/wiki/<slug>/...` namespace trees.
+Old root flat pages in `pixi-wiki` are removed from the canonical public contract. The clean mirror should keep root-level global surfaces such as the homepage, registries, search, Updates, sitemap, shared assets, and docs, plus `/raw/<slug>/...` and `/wiki/<slug>/...` namespace trees.
 
 No old `concept-*.html`, `projects-*.html`, `knowledge.html`, `projects.html`, `maps-of-content.html`, `root.html`, `agent/`, or `legacy/` surface should reappear without a deliberate compatibility policy and regression coverage.
 

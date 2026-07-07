@@ -48,6 +48,51 @@
       "html": "/wiki/agent-workflows/wiki/summaries/effective-state-load-full-report.md.html"
     },
     {
+      "title": "Pixi Vault",
+      "path": "README.md",
+      "namespace": "pixi-vault",
+      "namespace_title": "Pixi Vault",
+      "updated": "2026-07-07",
+      "raw": "/raw/pixi-vault/README.md",
+      "html": "/wiki/pixi-vault/README.md.html"
+    },
+    {
+      "title": "Pixi Vault to Pixi Wiki Publishing Model",
+      "path": "wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md",
+      "namespace": "pixi-vault",
+      "namespace_title": "Pixi Vault",
+      "updated": "2026-07-07",
+      "raw": "/raw/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md",
+      "html": "/wiki/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md.html"
+    },
+    {
+      "title": "Pixi Vault \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "pixi-vault",
+      "namespace_title": "Pixi Vault",
+      "updated": "2026-07-07",
+      "raw": "/raw/pixi-vault/wiki/log.md",
+      "html": "/wiki/pixi-vault/wiki/log.md.html"
+    },
+    {
+      "title": "Pixi Vault \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "pixi-vault",
+      "namespace_title": "Pixi Vault",
+      "updated": "2026-07-07",
+      "raw": "/raw/pixi-vault/wiki/index.md",
+      "html": "/wiki/pixi-vault/wiki/index.md.html"
+    },
+    {
+      "title": "Pixi Wiki",
+      "path": "wiki/entities/pixi-wiki.md",
+      "namespace": "pixi-vault",
+      "namespace_title": "Pixi Vault",
+      "updated": "2026-07-07",
+      "raw": "/raw/pixi-vault/wiki/entities/pixi-wiki.md",
+      "html": "/wiki/pixi-vault/wiki/entities/pixi-wiki.md.html"
+    },
+    {
       "title": "About this book",
       "path": "wiki/concepts/source/introduction/about-this-book.md",
       "namespace": "software-architecture-metapatterns",
@@ -5250,42 +5295,6 @@
       "html": "/wiki/local-ai-infrastructure/wiki/concepts/local-retrieval-agent-infrastructure.md.html"
     },
     {
-      "title": "Pixi Vault to Pixi Wiki Publishing Model",
-      "path": "wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md",
-      "namespace": "pixi-vault",
-      "namespace_title": "Pixi Vault",
-      "updated": "2026-06-18",
-      "raw": "/raw/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md",
-      "html": "/wiki/pixi-vault/wiki/syntheses/pixi-vault-to-pixi-wiki-publishing-model.md.html"
-    },
-    {
-      "title": "Pixi Vault \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "pixi-vault",
-      "namespace_title": "Pixi Vault",
-      "updated": "2026-06-18",
-      "raw": "/raw/pixi-vault/wiki/log.md",
-      "html": "/wiki/pixi-vault/wiki/log.md.html"
-    },
-    {
-      "title": "Pixi Vault \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "pixi-vault",
-      "namespace_title": "Pixi Vault",
-      "updated": "2026-06-18",
-      "raw": "/raw/pixi-vault/wiki/index.md",
-      "html": "/wiki/pixi-vault/wiki/index.md.html"
-    },
-    {
-      "title": "Pixi Wiki",
-      "path": "wiki/entities/pixi-wiki.md",
-      "namespace": "pixi-vault",
-      "namespace_title": "Pixi Vault",
-      "updated": "2026-06-18",
-      "raw": "/raw/pixi-vault/wiki/entities/pixi-wiki.md",
-      "html": "/wiki/pixi-vault/wiki/entities/pixi-wiki.md.html"
-    },
-    {
       "title": "PufferLib Fast Environment Loop",
       "path": "wiki/concepts/pufferlib-fast-environment-loop.md",
       "namespace": "rl-sim-labs",
@@ -5500,15 +5509,6 @@
       "updated": "2026-06-16",
       "raw": "/raw/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md",
       "html": "/wiki/local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md.html"
-    },
-    {
-      "title": "Pixi Vault",
-      "path": "README.md",
-      "namespace": "pixi-vault",
-      "namespace_title": "Pixi Vault",
-      "updated": "2026-06-16",
-      "raw": "/raw/pixi-vault/README.md",
-      "html": "/wiki/pixi-vault/README.md.html"
     },
     {
       "title": "Wiki Compiler Map and Source Classes",

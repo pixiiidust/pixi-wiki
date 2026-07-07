@@ -19,7 +19,7 @@
 </div></details></div></aside><article class="article" id="main-content">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/pixi-vault/README.md.html">Pixi Vault</a> / wiki/entities/pixi-wiki.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/pixi-vault/wiki/entities/pixi-wiki.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+pixi-vault%2Fwiki%2Fentities%2Fpixi-wiki.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fpixi-vault%2Fwiki%2Fentities%2Fpixi-wiki.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1 id="pixi-wiki">Pixi Wiki<a class="heading-anchor" href="#pixi-wiki" aria-label="Link to this section">¶</a></h1>
-<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-18</div><div><span>status</span>: active</div><div><span>namespace</span>: pixi-vault</div><div><span>sources</span>: 3</div></div>
+<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-07-07</div><div><span>status</span>: active</div><div><span>namespace</span>: pixi-vault</div><div><span>sources</span>: 3</div></div>
 <p><code>pixi-wiki</code> publishes Jamie&#x27;s notes, project docs, and research as maintained knowledge bases so humans can browse a clean wiki and agents can read, search, and cite the same Markdown corpus.</p>
 <nav class="page-toc"><div class="page-toc-title">On this page</div><ul><li class="page-toc-h2"><a href="#what-it-does">What it does</a></li><li class="page-toc-h2"><a href="#why-it-exists">Why it exists</a></li><li class="page-toc-h2"><a href="#potential-uses">Potential uses</a></li><li class="page-toc-h2"><a href="#namespace-classification">Namespace classification</a></li><li class="page-toc-h2"><a href="#current-milestone">Current milestone</a></li><li class="page-toc-h2"><a href="#public-handles">Public handles</a></li></ul></nav>
 <h2 id="what-it-does">What it does<a class="heading-anchor" href="#what-it-does" aria-label="Link to this section">¶</a></h2>
@@ -31,7 +31,8 @@
 <li><code>llms-full.txt</code> files for full-corpus agent context;</li>
 <li><code>index.json</code> registries for tools, tests, and retrieval pipelines;</li>
 <li>a local read-only MCP server so agents can list, search, and read the same KB Markdown files;</li>
-<li>an Agent Setup page and replication guide that explain how agents and other users connect to or copy the pattern.</li>
+<li>an Agent Setup page and replication guide that explain how agents and other users connect to or copy the pattern;</li>
+<li>client-side search, a shareable search results page, an Updates history, heading anchors/TOCs, sitemap/404, and browser-tested responsive navigation for human use.</li>
 </ul>
 <h2 id="why-it-exists">Why it exists<a class="heading-anchor" href="#why-it-exists" aria-label="Link to this section">¶</a></h2>
 <p>The project turns messy private knowledge work into a shareable publishing surface. Humans browse the web wiki; agents consume the raw Markdown, routing files, registry, and local MCP tools. The private vault remains the source of truth.</p>
@@ -48,17 +49,21 @@
 <p>Pixi Wiki is primarily an <strong>entity/project artifact</strong> inside the <code>pixi-vault</code> namespace because it is the generated public output of the vault compiler system.</p>
 <p>Its retrieval use case cross-links to <code>local-ai-infrastructure</code>, especially <a href="/pixi-wiki/wiki/../local-ai-infrastructure/wiki/concepts/rag-over-agent-wikis.md.html">RAG over Agent Wikis</a>. Its workflow/use-contract side cross-links to <a href="/pixi-wiki/wiki/../agent-workflows/README.md.html">Agent Workflows</a>.</p>
 <h2 id="current-milestone">Current milestone<a class="heading-anchor" href="#current-milestone" aria-label="Link to this section">¶</a></h2>
-<p>As of 2026-06-18, the public mirror has:</p>
+<p>As of 2026-07-07, the public mirror has moved from a useful generated surface into a hardened wiki product:</p>
 <ul>
 <li>compiled namespace pages for project/domain clusters;</li>
-<li>collapsible namespace sidebars with page lists;</li>
-<li>rendered Markdown pages with metadata, raw Markdown links, report-a-mistake links, and previous/next navigation;</li>
+<li>correct Markdown rendering for emphasis, tables, ordered lists, blockquotes, code spans, and link attributes;</li>
+<li>collapsible grouped namespace sidebars, mobile navigation, visible theme toggle, skip links, and labeled controls;</li>
+<li>rendered Markdown pages with metadata, raw Markdown links, report-a-mistake links, heading anchors, table of contents, and previous/next navigation;</li>
+<li>client-side header search, <code>/</code> keyboard shortcut, shareable <code>search.html?q=...</code> results, title-weighted ranking, highlighting, namespace badges, and result pagination;</li>
+<li><code>updates.html</code>, <code>updates.json</code>, date-section pagination, month strip, namespace dropdowns, and recent-page redirect;</li>
+<li>shared hash-versioned <code>site.css</code>, SEO metadata, sitemap, and 404 page;</li>
 <li>a repository README and GitHub About description that frame Pixi Wiki as a publishing surface for human and agent KB access;</li>
 <li>a simplified homepage IA: <code>WIKIS</code>, <code>AGENT SETUP</code>, <code>GITHUB</code>, dark toggle, and an “Agents start here” command using <code>curl https://pixiiidust.github.io/pixi-wiki/llms.txt</code>;</li>
 <li>a reusable approach guide at <code>docs/REPLICATE_APPROACH.html</code> for adapting the pattern to other Markdown KBs;</li>
-<li>a reading-focused dark palette based on near-black, muted teal, <code>#8b4356</code> reddish-purple, and pale gold;</li>
 <li>MCP setup docs at <code>docs/MCP_SERVER.md</code>;</li>
-<li>a local read-only MCP server with <code>list_kbs</code>, <code>list_documents</code>, <code>read_document</code>, <code>search_kb</code>, <code>search_all_kbs</code>, and <code>get_kb_summary</code>.</li>
+<li>a local read-only MCP server with <code>list_kbs</code>, <code>list_documents</code>, <code>read_document</code>, <code>search_kb</code>, <code>search_all_kbs</code>, and <code>get_kb_summary</code>;</li>
+<li>CI running the full pytest suite on pushes/PRs, route-contract tests over committed artifacts, and browser-level verification for live deploys.</li>
 </ul>
 <h2 id="public-handles">Public handles<a class="heading-anchor" href="#public-handles" aria-label="Link to this section">¶</a></h2>
 <ul>
@@ -69,6 +74,8 @@
 <li>Machine registry: https://pixiiidust.github.io/pixi-wiki/index.json</li>
 <li>Agent setup: https://pixiiidust.github.io/pixi-wiki/docs/AGENT_SETUP.html</li>
 <li>Replication guide: https://pixiiidust.github.io/pixi-wiki/docs/REPLICATE_APPROACH.html</li>
+<li>Search page: https://pixiiidust.github.io/pixi-wiki/search.html</li>
+<li>Updates history: https://pixiiidust.github.io/pixi-wiki/updates.html</li>
 <li>MCP guide: https://pixiiidust.github.io/pixi-wiki/docs/MCP_SERVER.md</li>
 </ul>
 <h2>External links</h2>

@@ -1,7 +1,7 @@
 ---
 title: Pixi Vault to Pixi Wiki Publishing Model
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-07
 type: synthesis
 status: compiled
 namespace: pixi-vault
@@ -35,13 +35,18 @@ pixi-wiki/
 ├── llms.txt
 ├── llms-full.txt
 ├── index.json
+├── search.html
+├── updates.html
+├── updates.json
+├── sitemap.xml
+├── site.css
 ├── raw/<slug>/...
 └── wiki/<slug>/...
 ```
 
-`llms.txt` is the compact agent registry. `llms-full.txt` is the full concatenated corpus. `index.json` is the machine-readable registry. `raw/<slug>/` preserves Markdown, `wiki/<slug>/` exposes human-readable HTML, and the local MCP server exposes read/search tools over the same KB files.
+`llms.txt` is the compact agent registry. `llms-full.txt` is the full concatenated corpus. `index.json` is the machine-readable registry. `raw/<slug>/` preserves Markdown, `wiki/<slug>/` exposes human-readable HTML, `search.html`/`updates.html` provide human retrieval and freshness surfaces, and the local MCP server exposes read/search tools over the same KB files.
 
-Human pages render Markdown with breadcrumbs, visible frontmatter metadata, raw Markdown links, report-a-mistake links, namespace sidebars, and previous/next navigation. The goal is a two-surface publication model: humans browse the web wiki, while agents use raw Markdown, `llms.txt`, `index.json`, and local MCP tools over the same KBs.
+Human pages render Markdown with breadcrumbs, visible frontmatter metadata, raw Markdown links, report-a-mistake links, namespace sidebars, heading anchors, table of contents, and previous/next navigation. The goal is a two-surface publication model: humans browse/search the web wiki and update history, while agents use raw Markdown, `llms.txt`, `index.json`, and local MCP tools over the same KBs.
 
 ## Publication workflow
 
@@ -51,12 +56,13 @@ Human pages render Markdown with breadcrumbs, visible frontmatter metadata, raw 
 4. Run the `pixi-wiki` generator.
 5. Run public-output tests.
 6. Push both repos as needed.
-7. Verify live GitHub Pages URLs with HTTP 200 checks.
-8. For local MCP changes, run the MCP self-test and a real stdio client smoke test.
+7. Verify live GitHub Pages URLs with HTTP 200 and expected content tokens.
+8. Run browser-level verification for pages affected by CSS, layout, navigation, or JavaScript. HTTP checks alone miss computed-style and runtime failures.
+9. For local MCP changes, run the MCP self-test and a real stdio client smoke test.
 
 ## Clean rebuild policy
 
-Old root flat pages in `pixi-wiki` are removed from the canonical public contract. The clean mirror should have only root registry files plus `/raw/<slug>/...` and `/wiki/<slug>/...` namespace trees.
+Old root flat pages in `pixi-wiki` are removed from the canonical public contract. The clean mirror should keep root-level global surfaces such as the homepage, registries, search, Updates, sitemap, shared assets, and docs, plus `/raw/<slug>/...` and `/wiki/<slug>/...` namespace trees.
 
 No old `concept-*.html`, `projects-*.html`, `knowledge.html`, `projects.html`, `maps-of-content.html`, `root.html`, `agent/`, or `legacy/` surface should reappear without a deliberate compatibility policy and regression coverage.
 

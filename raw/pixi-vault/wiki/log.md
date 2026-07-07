@@ -1,7 +1,7 @@
 ---
 title: Pixi Vault — Activity Log
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-07
 type: log
 status: compiled
 namespace: pixi-vault
@@ -56,3 +56,10 @@ namespace: pixi-vault
 
 - Added cross-namespace pointer to the Hermes Agent external wiki import review as a concrete instance of Pixi Vault namespace-routing/import triage.
 - No Daily Notes were copied or compiled.
+
+## 2026-07-07 update | Record Pixi Wiki hardening and feature delivery
+
+- Captured the shipped hardening pass: 18 issues closed through 20 merged PRs, live on GitHub Pages and browser-verified.
+- Recorded the user-facing features now in the public artifact: correct Markdown rendering, mobile navigation, heading anchors/TOC, client search, `search.html`, Updates history, pagination, SEO/sitemap/404, and shared hash-versioned CSS.
+- Recorded the agent/ops features now in the public artifact: CI running 207 tests, route-contract tests over committed artifacts, MCP search performance improvements, and browser-level deploy verification for CSS/JS/runtime issues that HTTP checks miss.
+- No Daily Notes were copied or compiled; this log entry summarizes verified repo/live-site milestone state.
