@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -40,6 +41,10 @@ class PixiWikiError(Exception):
 
 def _slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+
+
+def _tokenize(value: str) -> list[str]:
+    return re.findall(r"[a-z0-9]+", value.lower())
 
 
 def _safe_document_id(document_id: str) -> str:
@@ -80,20 +85,29 @@ class PixiWikiStore:
             raise PixiWikiError("REGISTRY_NOT_FOUND", f"No Pixi Wiki registry found at {self.index_path}.")
         self.registry: dict[str, Any] = {}
         self._kbs: dict[str, dict[str, Any]] = {}
+        self._raw_roots: dict[str, Path] = {}
         self._load_registry()
 
     def _load_registry(self) -> None:
-        self.registry = json.loads(self.index_path.read_text(encoding="utf-8"))
+        # Public methods call this exactly once at entry to take a fresh snapshot
+        # (the registry is small and external rewrites must be picked up between
+        # calls). Internal lookups then operate on self._kbs without reloading.
+        try:
+            raw = self.index_path.read_text(encoding="utf-8")
+        except OSError as exc:
+            raise PixiWikiError(
+                "REGISTRY_INVALID", f"Could not read Pixi Wiki registry at {self.index_path}: {exc}."
+            ) from exc
+        try:
+            self.registry = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            raise PixiWikiError(
+                "REGISTRY_INVALID", f"Pixi Wiki registry at {self.index_path} is not valid JSON: {exc}."
+            ) from exc
         self._kbs = {wiki["slug"]: wiki for wiki in self.registry.get("wikis", [])}
 
-    def _refresh_if_changed(self) -> None:
-        # The registry is small, and tests/users can rewrite it faster than some
-        # filesystems update mtimes. Reload on access instead of relying on a
-        # timestamp cache.
-        self._load_registry()
-
     def list_kbs(self) -> dict[str, Any]:
-        self._refresh_if_changed()
+        self._load_registry()
         kbs = []
         for wiki in self.registry.get("wikis", []):
             kbs.append(
@@ -118,7 +132,6 @@ class PixiWikiStore:
         }
 
     def _get_kb(self, kb_id: str) -> dict[str, Any]:
-        self._refresh_if_changed()
         kb = self._kbs.get(kb_id)
         if not kb:
             available = ", ".join(sorted(self._kbs)) or "none"
@@ -142,6 +155,7 @@ class PixiWikiStore:
         return refs
 
     def list_documents(self, kb_id: str) -> dict[str, Any]:
+        self._load_registry()
         kb = self._get_kb(kb_id)
         documents = [
             {
@@ -161,6 +175,26 @@ class PixiWikiStore:
             "documents": documents,
         }
 
+    def _raw_root(self, kb_id: str) -> Path:
+        # The resolved raw directory only depends on (root, kb_id); cache it so
+        # search does not re-resolve it for every candidate document.
+        raw_root = self._raw_roots.get(kb_id)
+        if raw_root is None:
+            raw_root = (self.root / "raw" / kb_id).resolve()
+            self._raw_roots[kb_id] = raw_root
+        return raw_root
+
+    def _resolve_ref_path(self, ref: DocumentRef) -> Path:
+        # Resolve and validate the raw path for an already-known ref, without
+        # rebuilding the KB ref list (keeps search O(n) over the snapshot).
+        path = (self.root / ref.raw.lstrip("/")).resolve()
+        raw_root = self._raw_root(ref.kb_id)
+        if raw_root not in path.parents and path != raw_root:
+            raise PixiWikiError("INVALID_DOCUMENT_PATH", "Resolved document path is outside the KB raw directory.")
+        if not path.is_file():
+            raise PixiWikiError("DOCUMENT_FILE_NOT_FOUND", f"Registry points to missing Markdown file: {ref.raw}.")
+        return path
+
     def _resolve_document(self, kb_id: str, document_id: str) -> tuple[DocumentRef, Path]:
         self._get_kb(kb_id)
         safe_id = _safe_document_id(document_id)
@@ -171,15 +205,10 @@ class PixiWikiStore:
                 "DOCUMENT_NOT_FOUND",
                 f"No document '{safe_id}' exists in KB '{kb_id}'. Use list_documents to see available documents.",
             )
-        path = (self.root / ref.raw.lstrip("/")).resolve()
-        raw_root = (self.root / "raw" / kb_id).resolve()
-        if raw_root not in path.parents and path != raw_root:
-            raise PixiWikiError("INVALID_DOCUMENT_PATH", "Resolved document path is outside the KB raw directory.")
-        if not path.is_file():
-            raise PixiWikiError("DOCUMENT_FILE_NOT_FOUND", f"Registry points to missing Markdown file: {ref.raw}.")
-        return ref, path
+        return ref, self._resolve_ref_path(ref)
 
     def read_document(self, kb_id: str, document_id: str) -> dict[str, Any]:
+        self._load_registry()
         ref, path = self._resolve_document(kb_id, document_id)
         if path.stat().st_size > MAX_READ_BYTES:
             raise PixiWikiError("DOCUMENT_TOO_LARGE", f"Document exceeds {MAX_READ_BYTES} bytes: {ref.document_id}.")
@@ -198,6 +227,7 @@ class PixiWikiStore:
         }
 
     def get_kb_summary(self, kb_id: str) -> dict[str, Any]:
+        self._load_registry()
         kb = self._get_kb(kb_id)
         try:
             readme = self.read_document(kb_id, "README.md")
@@ -217,11 +247,13 @@ class PixiWikiStore:
         }
 
     def search_kb(self, kb_id: str, query: str, max_results: int = DEFAULT_MAX_RESULTS) -> dict[str, Any]:
+        self._load_registry()
         self._get_kb(kb_id)
         results = self._search_refs(self._document_refs(kb_id), query, max_results)
         return {"query": query, "kb_id": kb_id, "result_count": len(results), "results": results}
 
     def search_all_kbs(self, query: str, max_results: int = DEFAULT_MAX_RESULTS) -> dict[str, Any]:
+        self._load_registry()
         refs: list[DocumentRef] = []
         for kb_id in self._kbs:
             refs.extend(self._document_refs(kb_id))
@@ -232,20 +264,22 @@ class PixiWikiStore:
         cleaned = query.strip()
         if not cleaned:
             raise PixiWikiError("EMPTY_QUERY", "Search query must not be empty.")
-        terms = [_slugify(term) for term in re.findall(r"[\w-]+", cleaned)]
-        terms = [term for term in terms if term]
+        # Hyphens/underscores in a query term split into their component tokens,
+        # matching how hyphenated haystack text tokenizes (e.g. "agent-workflows"
+        # -> "agent", "workflows"). This keeps scoring on whole-token boundaries.
+        terms = _tokenize(cleaned)
         if not terms:
             raise PixiWikiError("EMPTY_QUERY", "Search query must include searchable text.")
         max_results = max(1, min(int(max_results), 50))
         scored: list[tuple[int, dict[str, Any]]] = []
         for ref in refs:
             try:
-                _resolved_ref, path = self._resolve_document(ref.kb_id, ref.document_id)
+                path = self._resolve_ref_path(ref)
             except PixiWikiError:
                 continue
             content = path.read_text(encoding="utf-8", errors="replace")
-            haystack = _slugify(" ".join([ref.title, ref.document_id, content]))
-            score = sum(haystack.count(term) for term in terms)
+            token_counts = Counter(_tokenize(" ".join([ref.title, ref.document_id, content])))
+            score = sum(token_counts[term] for term in terms)
             if score <= 0:
                 continue
             snippet = self._snippet(content, terms)
@@ -282,14 +316,6 @@ class PixiWikiStore:
         return paragraph[:260] if paragraph else "Match found in document metadata."
 
 
-def _call_safely(method: str, **kwargs: Any) -> dict[str, Any]:
-    try:
-        store = PixiWikiStore(ROOT)
-        return getattr(store, method)(**kwargs)
-    except PixiWikiError as exc:
-        return exc.as_dict()
-
-
 def create_mcp_server(root: Path = ROOT):
     try:
         from mcp.server.fastmcp import FastMCP
@@ -302,7 +328,10 @@ def create_mcp_server(root: Path = ROOT):
     @mcp.tool()
     def list_kbs() -> dict[str, Any]:
         """Return available Pixi Wiki knowledge bases and metadata."""
-        return store.list_kbs()
+        try:
+            return store.list_kbs()
+        except PixiWikiError as exc:
+            return exc.as_dict()
 
     @mcp.tool()
     def list_documents(kb_id: str) -> dict[str, Any]:

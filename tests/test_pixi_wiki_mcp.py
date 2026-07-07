@@ -116,6 +116,73 @@ class PixiWikiMcpStoreTest(unittest.TestCase):
             payload = store.read_document("demo", "new.md")
             self.assertEqual(payload["document_id"], "new.md")
 
+    @staticmethod
+    def _write_store(root: Path, docs: list[tuple[str, str]]) -> None:
+        raw_dir = root / "raw" / "demo"
+        raw_dir.mkdir(parents=True)
+        documents = []
+        for path, content in docs:
+            (raw_dir / path).write_text(content, encoding="utf-8")
+            documents.append(
+                {"path": path, "title": path, "category": "other", "raw": f"/raw/demo/{path}"}
+            )
+        registry = {
+            "name": "Test Wiki",
+            "schema_version": "pixi-agentwikis-registry-v1",
+            "wikis": [{"slug": "demo", "title": "Demo", "documents": documents}],
+        }
+        (root / "index.json").write_text(json.dumps(registry), encoding="utf-8")
+
+    def test_search_reads_registry_once_per_call(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            docs = [
+                (f"doc{i}.md", f"---\ntitle: Doc {i}\n---\n\n# Doc {i}\n\nalpha content here.\n")
+                for i in range(5)
+            ]
+            self._write_store(root, docs)
+            store = PixiWikiStore(root)
+
+            original = store._load_registry
+            calls = {"n": 0}
+
+            def counting_load() -> None:
+                calls["n"] += 1
+                original()
+
+            store._load_registry = counting_load
+            payload = store.search_all_kbs("alpha")
+
+            self.assertEqual(calls["n"], 1)
+            self.assertGreater(payload["result_count"], 1)
+
+    def test_search_matches_only_whole_words(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self._write_store(
+                root,
+                [
+                    ("maintain.md", "---\ntitle: Maintain\n---\n\n# Maintain\n\nWe maintain systems.\n"),
+                    ("agent.md", "---\ntitle: Agent\n---\n\n# Agent\n\nSee agent-workflows here.\n"),
+                ],
+            )
+            store = PixiWikiStore(root)
+
+            ai_hits = {r["document_id"] for r in store.search_all_kbs("ai")["results"]}
+            self.assertNotIn("maintain.md", ai_hits)
+
+            agent_hits = {r["document_id"] for r in store.search_all_kbs("agent")["results"]}
+            self.assertIn("agent.md", agent_hits)
+
+    def test_corrupt_registry_raises_structured_error(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "raw" / "demo").mkdir(parents=True)
+            (root / "index.json").write_text("{ not valid json", encoding="utf-8")
+            with self.assertRaises(PixiWikiError) as ctx:
+                PixiWikiStore(root)
+            self.assertEqual(ctx.exception.code, "REGISTRY_INVALID")
+
 
 if __name__ == "__main__":
     unittest.main()
