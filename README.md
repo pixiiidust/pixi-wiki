@@ -89,10 +89,14 @@ See the replication guide: [`docs/REPLICATE_APPROACH.html`](docs/REPLICATE_APPRO
 - `pixi-vault` — vault architecture, Wiki Compiler Maps, source/output boundary, publishing model.
 - `agent-workflows` — Pixoid crew workflows, routing, memory boundaries, KPR, agent operations.
 - `eval-trace` — evals, traces, workflow quality, context-overfitting checks.
+- `hermes-agent` — Hermes agent setup and configuration, MCP integration, profiles, skills, memory, subagents/delegation, session traces, and Jamie-specific operating reference.
 - `ai-native-product-surfaces` — AI-native product framing and project surfaces such as Planned Program Intel and myAbode.
 - `rl-sim-labs` — reinforcement-learning simulation projects such as Critical Ranger FFM.
 - `curated-tuning-datasets` — source inventories and readiness maps for future tuning datasets, including LKY archive work.
 - `local-ai-infrastructure` — local LLMs, retrieval, RAG over AgentWikis, local-first AI setup.
+- `pattern-language` — the abridged Alexander pattern corpus: 253 built-environment patterns, their problem/solution framing, related-pattern graph, provenance, and retrieval guidance for spatial design and worldbuilding.
+- `software-architecture-metapatterns` — software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal/SOA, and architectural forces.
+- `ui-patterns` — the public UI Patterns catalog structure: pattern titles, source URLs, UI/persuasive taxonomy, example counts, provenance, and agent-facing retrieval guidance for product/design review.
 
 ## Local development
 
@@ -149,6 +153,36 @@ Build command:
 
 ```bash
 python3 scripts/build_from_pixi_vault.py --source /root/ObsidianVault/wikis --output /root/pixi-wiki
+```
+
+### Configuring for your own deployment
+
+The generator exposes three flags so you can replicate this repo without hand-editing the script:
+
+- `--source` — path to your vault's `wikis/` directory. The default (`/root/ObsidianVault/wikis`) is the author's own vault path; replicators **must** pass their own.
+- `--base-path` — the site-root-relative path prefix the site is served under. Defaults to `/pixi-wiki` (this repo's GitHub Pages project site). Pass `""` for a user/org root site. It must be empty or start with `/`; a trailing slash is stripped.
+- `--site-origin` — the absolute origin (scheme + host) used for canonical/OpenGraph URLs and sitemap `<loc>` entries. Defaults to `https://pixiiidust.github.io`.
+
+Registry values in `index.json` and `llms.txt` (`/raw/<slug>/…`, `/wiki/<slug>/….html`) stay site-root-relative by contract and never gain the base path; only HTML chrome, canonical/OG URLs, sitemap locs, the stylesheet link, and `data-registry` carry it.
+
+Worked example — a repo published at `https://you.github.io/my-wiki/`:
+
+```bash
+python3 scripts/build_from_pixi_vault.py \
+  --source /path/to/your-vault/wikis \
+  --output /path/to/my-wiki \
+  --base-path /my-wiki \
+  --site-origin https://you.github.io
+```
+
+Worked example — a user/org **root** site published at `https://you.github.io/`:
+
+```bash
+python3 scripts/build_from_pixi_vault.py \
+  --source /path/to/your-vault/wikis \
+  --output /path/to/you.github.io \
+  --base-path "" \
+  --site-origin https://you.github.io
 ```
 
 Verification:
