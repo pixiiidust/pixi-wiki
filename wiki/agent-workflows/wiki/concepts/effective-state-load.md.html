@@ -22,7 +22,7 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/agent-workflows/README.md.html">Agent Workflows</a> / wiki/concepts/effective-state-load.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/agent-workflows/wiki/concepts/effective-state-load.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+agent-workflows%2Fwiki%2Fconcepts%2Feffective-state-load.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fagent-workflows%2Fwiki%2Fconcepts%2Feffective-state-load.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>Effective State Load</h1>
-<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-07-05</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div></div>
+<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-07-07</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div></div>
 <p>**Effective State Load (ESL)** is workflow-specific load testing for LLM agents: define state/dependency load for a workflow, map where the model-agent harness loses track of reality, then keep future runs inside the safe operating band.</p>
 <pre><code>SC = state cardinality   # live things the agent must track
 DD = dependency density  # simultaneous bindings/preconditions per action
@@ -68,6 +68,12 @@ ESL = SC × DD            # metric family; not a universal threshold/formula</co
 <p>The first product wedge is **object-provenance verification for AI-agent writes**, not a standalone metric dashboard.</p>
 <blockquote>Schema validation checks that it is a customer ID. Provenance guardrails check that it is the right customer for this task.</blockquote>
 <p>The same provenance graph then becomes the ESL measurement instrument: it can block or flag wrong-object writes today, then learn which workflows can safely reduce human review or need slicing/routing tomorrow.</p>
+<h2>Current implementation bridge</h2>
+<p>The next build slice is a shadow-mode provenance auditor MVP. It starts with a deterministic checker over ToolDAG-B research traces, hiding gold labels during checking and scoring precision/recall afterward. Only after that passes should the work move to entity-mapping UX and real-trace audits.</p>
+<p>Public-safe milestone sequence:</p>
+<p>1. Validate provenance/binding checks on gold-labeled research traces.</p>
+<p>2. Prove tool→entity mapping can stay self-serve on messy catalogs.</p>
+<p>3. Run a real trace-file-in → verified-near-miss-out audit in under an hour.</p>
 <h2>Full report</h2>
 <ul>
 <li><a href="/pixi-wiki/wiki/agent-workflows/assets/reports/esl-full-report.html">Read the full ESL report as a standalone HTML artifact</a></li>

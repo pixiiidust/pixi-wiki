@@ -22,7 +22,7 @@
 </div></details></div></aside><article class="article">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/agent-workflows/README.md.html">Agent Workflows</a> / wiki/summaries/effective-state-load-full-report.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/agent-workflows/wiki/summaries/effective-state-load-full-report.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+agent-workflows%2Fwiki%2Fsummaries%2Feffective-state-load-full-report.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fagent-workflows%2Fwiki%2Fsummaries%2Feffective-state-load-full-report.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1>Effective State Load Full Report</h1>
-<div class="page-meta"><div><span>type</span>: summaries</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-07-05</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div></div>
+<div class="page-meta"><div><span>type</span>: summaries</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-07-07</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div></div>
 <p>This page routes to the full ESL project report compiled from <code>pixiiidust/effective-state-load</code> after Phase 3 completed.</p>
 <h2>Read directly</h2>
 <ul>
@@ -43,6 +43,8 @@
 <p>There is no universal ESL exponent or threshold to ship. What transfers is the operating method: define SC/DD for a workflow class, run a cheap calibration grid, map the collapse frontier, operate with margin, and use provenance/binding errors as leading indicators.</p>
 <h2>Product one-liner</h2>
 <blockquote>Schema validation checks that an ID is valid. Provenance guardrails check that it is the right ID for this task; ESL uses the same provenance graph to learn how much state/dependency load each workflow can safely carry.</blockquote>
+<h2>Implementation bridge</h2>
+<p>The follow-on MVP is a shadow-mode provenance auditor: replay traces, build the entity provenance graph, flag wrong-object/stale/scope-mismatched writes, and score the checker against hidden ToolDAG-B labels before running real traces.</p>
 <h2>Related page</h2>
 <ul>
 <li>Effective State Load</li>

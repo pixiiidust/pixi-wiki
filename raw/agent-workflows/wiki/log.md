@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-05
+updated: 2026-07-07
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-07 update | Effective State Load to provenance-auditor bridge
+
+- Refreshed the compiled Effective State Load concept after the research repo handoff changed from in-flight work to complete program state.
+- Added the public-safe implementation bridge: a shadow-mode provenance auditor MVP that validates right-object checks on ToolDAG-B traces before moving to entity-mapping UX or real traces.
+- Kept private repo/build details out of public namespace pages while preserving the product direction.
 
 ## 2026-07-05 update | Effective State Load full report + Phase 3 verdict
 

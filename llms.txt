@@ -21,7 +21,7 @@
 ## Agent Workflows
 
 > Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.
-> Current as of: 2026-07-05 — Effective State Load Phase 3 complete: no portable universal formula; ESL is a per-workload metric family plus measurement recipe. Full HTML/PDF report mirrored under this namespace assets.
+> Current as of: 2026-07-07 — Effective State Load research program complete; the public-safe next bridge is a shadow-mode provenance auditor MVP that checks right-object writes before any gateway/calibration product.
 > Agent access: [/wiki/agent-workflows/llms.txt](/wiki/agent-workflows/llms.txt) [/wiki/agent-workflows/llms-full.txt](/wiki/agent-workflows/llms-full.txt) [/wiki/agent-workflows/index.json](/wiki/agent-workflows/index.json)
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))

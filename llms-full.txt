@@ -401,7 +401,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-07-05
+updated: 2026-07-07
 type: namespace-overview
 status: active
 category: agents
@@ -425,7 +425,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-05 — Effective State Load Phase 3 complete: no portable universal formula; ESL is a per-workload metric family plus measurement recipe. Full HTML/PDF report mirrored under this namespace assets.
+2026-07-07 — Effective State Load research program complete; the public-safe next bridge is a shadow-mode provenance auditor MVP that checks right-object writes before any gateway/calibration product.
 
 ## Canonical Source Roots
 
@@ -1057,7 +1057,7 @@ Reusable Hermes skill: `~/.hermes/skills/creative/creative-ideation/SKILL.md`.
 ---
 title: Effective State Load
 created: 2026-07-03
-updated: 2026-07-05
+updated: 2026-07-07
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -1132,6 +1132,16 @@ The first product wedge is **object-provenance verification for AI-agent writes*
 > Schema validation checks that it is a customer ID. Provenance guardrails check that it is the right customer for this task.
 
 The same provenance graph then becomes the ESL measurement instrument: it can block or flag wrong-object writes today, then learn which workflows can safely reduce human review or need slicing/routing tomorrow.
+
+## Current implementation bridge
+
+The next build slice is a shadow-mode provenance auditor MVP. It starts with a deterministic checker over ToolDAG-B research traces, hiding gold labels during checking and scoring precision/recall afterward. Only after that passes should the work move to entity-mapping UX and real-trace audits.
+
+Public-safe milestone sequence:
+
+1. Validate provenance/binding checks on gold-labeled research traces.
+2. Prove tool→entity mapping can stay self-serve on messy catalogs.
+3. Run a real trace-file-in → verified-near-miss-out audit in under an hour.
 
 ## Full report
 
@@ -2303,7 +2313,7 @@ Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operati
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-07-05
+updated: 2026-07-07
 type: index
 status: compiled
 namespace: agent-workflows
@@ -2396,7 +2406,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-05
+updated: 2026-07-07
 type: log
 status: compiled
 namespace: agent-workflows
@@ -2405,6 +2415,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-07 update | Effective State Load to provenance-auditor bridge
+
+- Refreshed the compiled Effective State Load concept after the research repo handoff changed from in-flight work to complete program state.
+- Added the public-safe implementation bridge: a shadow-mode provenance auditor MVP that validates right-object checks on ToolDAG-B traces before moving to entity-mapping UX or real traces.
+- Kept private repo/build details out of public namespace pages while preserving the product direction.
 
 ## 2026-07-05 update | Effective State Load full report + Phase 3 verdict
 
@@ -2678,7 +2694,7 @@ The linked pages are Jamie's working answers to those questions.
 ---
 title: Effective State Load Full Report
 created: 2026-07-05
-updated: 2026-07-05
+updated: 2026-07-07
 type: summaries
 status: compiled
 namespace: agent-workflows
@@ -2712,6 +2728,10 @@ There is no universal ESL exponent or threshold to ship. What transfers is the o
 ## Product one-liner
 
 > Schema validation checks that an ID is valid. Provenance guardrails check that it is the right ID for this task; ESL uses the same provenance graph to learn how much state/dependency load each workflow can safely carry.
+
+## Implementation bridge
+
+The follow-on MVP is a shadow-mode provenance auditor: replay traces, build the entity provenance graph, flag wrong-object/stale/scope-mismatched writes, and score the checker against hidden ToolDAG-B labels before running real traces.
 
 ## Related page
 

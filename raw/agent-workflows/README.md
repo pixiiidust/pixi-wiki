@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-07-05
+updated: 2026-07-07
 type: namespace-overview
 status: active
 category: agents
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-05 — Effective State Load Phase 3 complete: no portable universal formula; ESL is a per-workload metric family plus measurement recipe. Full HTML/PDF report mirrored under this namespace assets.
+2026-07-07 — Effective State Load research program complete; the public-safe next bridge is a shadow-mode provenance auditor MVP that checks right-object writes before any gateway/calibration product.
 
 ## Canonical Source Roots
 

@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-07-05
+updated: 2026-07-07
 type: index
 status: compiled
 namespace: agent-workflows

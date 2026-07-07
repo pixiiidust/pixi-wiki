@@ -1,7 +1,7 @@
 ---
 title: Effective State Load Full Report
 created: 2026-07-05
-updated: 2026-07-05
+updated: 2026-07-07
 type: summaries
 status: compiled
 namespace: agent-workflows
@@ -35,6 +35,10 @@ There is no universal ESL exponent or threshold to ship. What transfers is the o
 ## Product one-liner
 
 > Schema validation checks that an ID is valid. Provenance guardrails check that it is the right ID for this task; ESL uses the same provenance graph to learn how much state/dependency load each workflow can safely carry.
+
+## Implementation bridge
+
+The follow-on MVP is a shadow-mode provenance auditor: replay traces, build the entity provenance graph, flag wrong-object/stale/scope-mismatched writes, and score the checker against hidden ToolDAG-B labels before running real traces.
 
 ## Related page
 

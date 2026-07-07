@@ -1,7 +1,7 @@
 ---
 title: Effective State Load
 created: 2026-07-03
-updated: 2026-07-05
+updated: 2026-07-07
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -76,6 +76,16 @@ The first product wedge is **object-provenance verification for AI-agent writes*
 > Schema validation checks that it is a customer ID. Provenance guardrails check that it is the right customer for this task.
 
 The same provenance graph then becomes the ESL measurement instrument: it can block or flag wrong-object writes today, then learn which workflows can safely reduce human review or need slicing/routing tomorrow.
+
+## Current implementation bridge
+
+The next build slice is a shadow-mode provenance auditor MVP. It starts with a deterministic checker over ToolDAG-B research traces, hiding gold labels during checking and scoring precision/recall afterward. Only after that passes should the work move to entity-mapping UX and real-trace audits.
+
+Public-safe milestone sequence:
+
+1. Validate provenance/binding checks on gold-labeled research traces.
+2. Prove tool→entity mapping can stay self-serve on messy catalogs.
+3. Run a real trace-file-in → verified-near-miss-out audit in under an hour.
 
 ## Full report
 
