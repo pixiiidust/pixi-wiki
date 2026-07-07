@@ -1182,7 +1182,6 @@ def write_updates_page(output_root: Path, entries: list[dict[str, str]]) -> None
         blocks: list[str] = []
         for _namespace, run in ns_runs:
             count = len(run)
-            open_attr = " open" if count <= 5 else ""
             rows = "".join(
                 f'<li class="updates-item">'
                 f'<a class="updates-title" href="{BASE_PATH}{html.escape(item["html"])}">{html.escape(item["title"])}</a>'
@@ -1191,8 +1190,8 @@ def write_updates_page(output_root: Path, entries: list[dict[str, str]]) -> None
                 for item in run
             )
             blocks.append(
-                f'<details class="updates-ns"{open_attr}>'
-                f'<summary>{html.escape(run[0]["namespace_title"])} {count}</summary>'
+                f'<details class="updates-ns">'
+                f'<summary>{html.escape(run[0]["namespace_title"])} ({count})</summary>'
                 f'<ul class="updates-list">{rows}</ul></details>'
             )
         sections.append(
