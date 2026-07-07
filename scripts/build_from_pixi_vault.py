@@ -148,12 +148,63 @@ def _render_table(rows: list[str], link_resolver: LinkResolver | None = None) ->
     return f'<div class="table-wrap">{table}</div>'
 
 
+def heading_plain_text(text: str) -> str:
+    """Reduce raw heading Markdown to plain words for slug/label derivation.
+
+    Wikilinks and links collapse to their visible label; backticks and
+    emphasis/strikethrough markers are dropped. No HTML escaping happens here.
+    """
+    plain = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", lambda m: m.group(2), text)
+    plain = re.sub(r"\[\[([^\]]+)\]\]", lambda m: m.group(1).split("/")[-1], plain)
+    plain = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", lambda m: m.group(1), plain)
+    plain = plain.replace("`", "")
+    plain = re.sub(r"[*_~]", "", plain)
+    return plain.strip()
+
+
+def slugify_heading(text: str) -> str:
+    """Slug from RAW heading text: strip markup, lowercase, non-alnum -> '-'."""
+    slug = re.sub(r"[^a-z0-9]+", "-", heading_plain_text(text).lower()).strip("-")
+    return slug or "section"
+
+
 def markdown_fragment(markdown: str, link_resolver: LinkResolver | None = None) -> str:
+    return markdown_fragment_with_headings(markdown, link_resolver)[0]
+
+
+def markdown_fragment_with_headings(
+    markdown: str, link_resolver: LinkResolver | None = None
+) -> tuple[str, list[dict[str, Any]]]:
+    """Render a Markdown block fragment, returning HTML plus emitted headings.
+
+    Each emitted h1/h2/h3 gets a stable ``id`` slugged from its raw text and a
+    trailing hover anchor link. Duplicate slugs within this single call get
+    deterministic ``-2``/``-3`` suffixes (document order); dedup state is local,
+    so the same input always yields the same ids with no cross-page leakage.
+    """
     out: list[str] = []
+    headings: list[dict[str, Any]] = []
+    slug_counts: dict[str, int] = {}
     in_code = False
     code: list[str] = []
     in_ul = False
     in_ol = False
+
+    def unique_slug(base: str) -> str:
+        count = slug_counts.get(base, 0) + 1
+        slug_counts[base] = count
+        return base if count == 1 else f"{base}-{count}"
+
+    def emit_heading(level: int, raw: str) -> None:
+        slug = unique_slug(slugify_heading(raw))
+        anchor = (
+            f'<a class="heading-anchor" href="#{slug}" '
+            f'aria-label="Link to this section">¶</a>'
+        )
+        out.append(
+            f'<h{level} id="{slug}">{inline_markdown(raw, link_resolver)}{anchor}</h{level}>'
+        )
+        headings.append({"level": level, "slug": slug, "text": heading_plain_text(raw)})
 
     def close_lists() -> None:
         nonlocal in_ul, in_ol
@@ -206,13 +257,13 @@ def markdown_fragment(markdown: str, link_resolver: LinkResolver | None = None) 
             continue
         if content.startswith("# "):
             close_lists()
-            out.append(f"<h1>{inline_markdown(content[2:].strip(), link_resolver)}</h1>")
+            emit_heading(1, content[2:].strip())
         elif content.startswith("## "):
             close_lists()
-            out.append(f"<h2>{inline_markdown(content[3:].strip(), link_resolver)}</h2>")
+            emit_heading(2, content[3:].strip())
         elif content.startswith("### "):
             close_lists()
-            out.append(f"<h3>{inline_markdown(content[4:].strip(), link_resolver)}</h3>")
+            emit_heading(3, content[4:].strip())
         elif content.startswith("- "):
             if in_ol:
                 out.append("</ol>")
@@ -235,7 +286,7 @@ def markdown_fragment(markdown: str, link_resolver: LinkResolver | None = None) 
             out.append(f"<p>{inline_markdown(content, link_resolver)}</p>")
         i += 1
     close_lists()
-    return "\n".join(out)
+    return "\n".join(out), headings
 
 
 def site_css() -> str:
@@ -243,6 +294,8 @@ def site_css() -> str:
 :root{color-scheme:light;--bg:#f7f3ea;--panel:#fffaf1;--panel2:#f0e8d8;--border:#d9cdb8;--soft:#eadfcb;--text:#22202a;--muted:#6f6a77;--heading:#111018;--accent:#9b5c00;--accent2:#6f4200;--green:#087a4a;--header:#fffdf8;--active-bg:#fff1d1}
 [data-theme=dark]{color-scheme:dark;--bg:#0d1117;--panel:#161b22;--panel2:#21262d;--border:#30363d;--soft:#21262d;--text:#e6edf3;--muted:#8b949e;--heading:#f0f6fc;--accent:#58a6ff;--accent2:#79c0ff;--green:#3fb950;--header:#010409;--active-bg:#1f6feb33}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"IBM Plex Mono","JetBrains Mono","Roboto Mono",ui-monospace,monospace;font-size:14px;line-height:1.7}a{color:var(--accent);text-decoration:none;border-bottom:1px dotted currentColor}a:hover{color:var(--accent2)}code{background:var(--panel2);border:1px solid var(--border);color:var(--accent2);padding:1px 5px;border-radius:4px}pre{background:var(--panel2);border:1px solid var(--border);padding:14px;overflow:auto}.table-wrap{overflow-x:auto;margin:20px 0;border:1px solid var(--border)}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid var(--border);padding:8px 12px;text-align:left;vertical-align:top}thead th{background:var(--panel2);color:var(--heading);font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:12px}.article img{max-width:100%;height:auto;display:block;margin:18px auto;border:1px solid var(--border);border-radius:8px;background:var(--panel)}.site-header{height:66px;border-bottom:1px solid var(--border);background:var(--header)}.header-inner{max-width:1180px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 20px}.logo{color:var(--heading);font-weight:800;letter-spacing:.04em;border:0}.header-nav{display:flex;align-items:center;gap:24px}.nav{display:flex;align-items:center;gap:24px}.nav a{color:var(--muted);border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.nav a:hover{color:var(--heading)}.nav-menu{display:none;position:relative}.nav-menu summary{list-style:none;cursor:pointer;color:var(--muted);border:1px solid var(--border);background:var(--panel);padding:8px 12px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.nav-menu summary::-webkit-details-marker{display:none}.nav-menu summary::before{content:"≡";margin-right:8px;color:var(--accent)}.nav-menu summary:hover{border-color:var(--accent);color:var(--accent)}.nav-panel{position:absolute;right:0;top:calc(100% + 10px);z-index:30;display:flex;flex-direction:column;gap:2px;min-width:190px;padding:10px;background:var(--panel);border:1px solid var(--border);border-radius:10px}.nav-panel a{color:var(--muted);border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:8px 10px;border-radius:6px}.nav-panel a:hover{color:var(--heading);background:var(--panel2)}.theme-toggle{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 10px;border-radius:999px;font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}.category-bar{border-bottom:1px solid var(--border);background:var(--panel)}.category-inner{max-width:1180px;margin:0 auto;display:flex;gap:22px;min-height:46px;align-items:center;padding:0 20px;flex-wrap:wrap}.category-inner a{color:var(--muted);border:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.category-inner a:first-child{color:var(--muted)}.page{max-width:1180px;margin:40px auto 90px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:0 20px}.sidebar{color:var(--muted)}.sidebar-block{border-left:1px solid var(--border);padding-left:12px;margin-bottom:24px}.sidebar-title{color:var(--heading);font-weight:800;margin-bottom:4px}.sidebar-count{color:var(--muted);font-size:11px;margin-bottom:16px}.sidebar a{display:block;padding:6px 10px;color:var(--muted);border:0;font-size:13px}.sidebar a.active{background:var(--active-bg);color:var(--accent2);border-left:2px solid var(--accent);margin-left:-13px;padding-left:11px;font-weight:800}.sidebar-section-title{margin:12px 0 6px;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.sidebar-section{margin:10px 0}.sidebar-section summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:6px 10px;border-radius:8px}.sidebar-section summary::-webkit-details-marker{display:none}.sidebar-section summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent);transition:transform .12s ease}.sidebar-section[open] summary::before{transform:rotate(90deg)}.sidebar-section summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-section-body{margin:2px 0 6px 12px;border-left:1px solid var(--border);padding-left:4px}.sidebar-empty{padding:6px 10px;color:var(--muted);font-size:12px;font-style:italic}.article{min-width:0}.content-header{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:18px;color:var(--muted);font-size:13px}.breadcrumbs a,.markdown-link{color:var(--accent)}h1{margin:0 0 10px;color:var(--heading);font-size:36px;line-height:1.1;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}h2{margin:48px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--heading);font-size:22px;line-height:1.2;font-weight:900;text-transform:uppercase}h2::before{content:"// ";color:var(--accent2)}h3{margin:26px 0 8px;color:var(--heading);text-transform:uppercase;font-size:15px;letter-spacing:.08em}.updated{color:var(--muted);font-size:13px;margin-bottom:18px}.info-card{border:1px solid var(--border);background:var(--panel);padding:20px 22px;margin:24px 0}.info-row{display:grid;grid-template-columns:136px 1fr;gap:18px;margin-bottom:12px}.info-row:last-child{margin-bottom:0}.info-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}.green{color:var(--green)}.yellow{color:var(--accent2)}.white{color:var(--heading)}.agent-card{margin:24px 0 22px;padding:14px 18px;background:var(--active-bg);border:1px solid var(--border);border-left:2px solid var(--accent);color:var(--text)}.agent-card a{font-weight:800;margin-right:12px}.hero-copy{max-width:860px;color:var(--text);font-size:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 18px}.button-link{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:999px;padding:9px 14px;background:var(--panel);color:var(--heading);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.button-link.primary{background:var(--active-bg);border-color:var(--accent);color:var(--accent2)}.button-link:hover{border-color:var(--accent);color:var(--accent2)}.agent-setup-callout{max-width:860px;margin:18px 0 34px;padding:16px 18px;background:var(--panel);border:1px solid var(--border);border-left:2px solid var(--accent)}.agent-setup-callout h2{font-size:16px;margin:0 0 6px;padding:0;border:0}.agent-setup-callout h2::before{content:""}.agent-setup-callout p{margin:0;color:var(--muted)}.wiki-nav{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 8px}.wiki-group{margin-top:34px;padding-top:8px}.group-header{max-width:760px;border-left:3px solid var(--active-bg);padding-left:14px;margin-bottom:14px}.group-header h2{margin:2px 0 4px}.group-header p{margin:0;color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2)!important;font-weight:800}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}.card{border:1px solid var(--border);border-radius:14px;padding:18px;background:var(--panel)}.card h2{border:0;margin:0 0 8px;padding:0;font-size:18px}.card h2::before{content:""}.meta{color:var(--muted);font-size:.9rem}.page-meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 22px;color:var(--muted);font-size:13px}.page-meta span{color:var(--heading);font-weight:800}.page-tools{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.prev-next{margin-top:54px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.prev-next-card{border:1px solid var(--border);border-bottom:1px dotted var(--accent);background:var(--panel);padding:18px 20px;text-decoration:none;display:block}.prev-card{text-align:left}.next-card{text-align:right}.next-label{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}.next-title{color:var(--heading);font-weight:800}.footer{border-top:1px solid var(--border);background:var(--header);color:var(--muted)}.footer-inner{max-width:1180px;margin:0 auto;padding:28px 20px;display:flex;justify-content:space-between;gap:20px}.footer a{margin-left:12px}@media(max-width:820px){.page{grid-template-columns:1fr}.article{order:1}.sidebar{order:2}.nav{display:none}.nav-menu{display:block}.info-row{grid-template-columns:1fr}.footer-inner{display:block}}
+.heading-anchor{margin-left:.4em;color:var(--muted);border:0;font-weight:400;opacity:0;transition:opacity .12s ease}h1:hover .heading-anchor,h2:hover .heading-anchor,h3:hover .heading-anchor,.heading-anchor:focus{opacity:1}.heading-anchor:hover{color:var(--accent)}
+.page-toc{border-left:2px solid var(--border);padding:2px 0 2px 16px;margin:0 0 32px}.page-toc-title{color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;margin-bottom:8px}.page-toc ul{list-style:none;margin:0;padding:0}.page-toc li{margin:4px 0}.page-toc a{color:var(--muted);border:0;font-size:13px}.page-toc a:hover{color:var(--accent)}.page-toc-h3{padding-left:16px}.page-toc-h3 a{color:var(--muted);font-size:12px}
 """
 
 
@@ -456,6 +509,30 @@ def prev_next_nav(slug: str, prev_doc: dict[str, str] | None, next_doc: dict[str
     return f'<nav class="prev-next">{"".join(cards)}</nav>' if cards else ""
 
 
+def page_toc(headings: list[dict[str, Any]]) -> str:
+    """On-this-page TOC from h2/h3 headings; empty for fewer than two sections."""
+    sections = [h for h in headings if h["level"] in (2, 3)]
+    if len(sections) < 2:
+        return ""
+    items = "".join(
+        f'<li class="page-toc-h{h["level"]}">'
+        f'<a href="#{h["slug"]}">{html.escape(h["text"])}</a></li>'
+        for h in sections
+    )
+    return (
+        '<nav class="page-toc"><div class="page-toc-title">On this page</div>'
+        f"<ul>{items}</ul></nav>"
+    )
+
+
+def insert_toc_before_first_h2(rendered_body: str, toc: str) -> str:
+    if not toc:
+        return rendered_body
+    if "<h2" in rendered_body:
+        return rendered_body.replace("<h2", f"{toc}\n<h2", 1)
+    return f"{toc}\n{rendered_body}"
+
+
 def render_readme(
     slug: str,
     title: str,
@@ -471,6 +548,11 @@ def render_readme(
     description = first_paragraph(body)
     body_without_title = re.sub(r"^#\s+.+\n", "", body, count=1).strip()
     body_without_scope = strip_scope_section(body_without_title).strip()
+    if body_without_scope:
+        rendered_body, body_headings = markdown_fragment_with_headings(body_without_scope, link_resolver)
+    else:
+        rendered_body, body_headings = "", []
+    toc = page_toc(body_headings)
     article = f"""
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/{slug}/README.md.html">{html.escape(title)}</a> / README.md</div>{page_tools(slug, "README.md")}</div>
 <h1>{html.escape(title)} Knowledge Base</h1>
@@ -481,7 +563,8 @@ def render_readme(
 <p>{inline_markdown(description, link_resolver)}</p>
 <h2>Structure</h2><ul><li><code>raw/</code> — raw Markdown provenance mirror for agents and source inspection.</li><li><code>wiki/</code> — synthesized knowledge pages: concepts, entities, summaries, and syntheses.</li><li>Schema and maintenance rules: see <code>CLAUDE.md</code>.</li></ul>
 <h2>Usage</h2><ul><li><strong>Add new sources:</strong> update canonical source notes in <code>pixi-vault</code>, then compile into this namespace.</li><li><strong>Ask questions:</strong> agents read this wiki and cite raw/source paths.</li><li><strong>Publish:</strong> regenerate <code>pixi-wiki</code>, run tests, then live-verify raw and HTML routes.</li></ul>
-{markdown_fragment(body_without_scope, link_resolver) if body_without_scope else ""}
+{toc}
+{rendered_body}
 {external_links_block(fm, body)}
 {prev_next_nav(slug, None, next_doc)}
 """
@@ -499,7 +582,9 @@ def render_page(
     next_doc: dict[str, str] | None,
     link_resolver: LinkResolver | None = None,
 ) -> str:
-    rendered_body = with_metadata_after_h1(markdown_fragment(body, link_resolver), metadata_block(fm))
+    fragment, body_headings = markdown_fragment_with_headings(body, link_resolver)
+    rendered_body = with_metadata_after_h1(fragment, metadata_block(fm))
+    rendered_body = insert_toc_before_first_h2(rendered_body, page_toc(body_headings))
     external_links = external_links_block(fm, body)
     return f"""
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/{slug}/README.md.html">{html.escape(title)}</a> / {html.escape(rel)}</div>{page_tools(slug, rel)}</div>
