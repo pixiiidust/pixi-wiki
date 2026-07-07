@@ -206,6 +206,9 @@ def test_css_has_site_search_rules(tmp_path: Path) -> None:
     assert "background:var(--panel)" in css
     # Shrinks but stays usable on narrow viewports.
     assert ".site-search{max-width:190px" in css
+    # Regression: display:flex on .search-results defeats the UA [hidden] rule,
+    # leaving an empty panel permanently visible under the input.
+    assert ".search-results[hidden]{display:none}" in css
 
 
 def test_result_hrefs_are_prefixed_with_site_base(tmp_path: Path) -> None:
