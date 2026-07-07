@@ -16,7 +16,7 @@ class CleanRootContractTest(unittest.TestCase):
         # regeneration lands, but the committed tree won't contain it until then,
         # so assert the present set is a subset of the allowlist (and still
         # includes index.html) rather than an exact match.
-        allowed = {"index.html", "recent.html"}
+        allowed = {"404.html", "index.html", "recent.html"}
         root_html = {path.name for path in ROOT.glob("*.html")}
         self.assertTrue(root_html.issubset(allowed), root_html)
         self.assertIn("index.html", root_html)
