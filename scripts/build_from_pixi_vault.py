@@ -9,6 +9,7 @@ namespace-local agent entrypoints.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import re
@@ -45,7 +46,7 @@ DEFAULT_SEED_SLUGS = [
     "software-architecture-metapatterns",
     "ui-patterns",
 ]
-GENERATED_ROOT_FILES = ["404.html", "index.html", "index.json", "llms.txt", "llms-full.txt", "recent.html", "recent.json", "site.css", "sitemap.xml"]
+GENERATED_ROOT_FILES = ["404.html", "index.html", "index.json", "llms.txt", "llms-full.txt", "recent.html", "recent.json", "site.css", "sitemap.xml", "updates.html", "updates.json"]
 
 # Live deployment coordinates, set per build call from ``build()`` (normalized)
 # so every f-string template reads the active values. ``BASE_PATH`` is the
@@ -70,7 +71,7 @@ def normalize_base_path(base_path: str) -> str:
 
 # Static SEO descriptions for the non-document chrome pages.
 HOME_DESCRIPTION = "Pixi Wiki turns notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki; agents read them as Markdown with llms.txt and MCP."
-RECENT_DESCRIPTION = "The most recently updated pages across every Pixi Wiki namespace, grouped by the date recorded in each page's frontmatter."
+UPDATES_DESCRIPTION = "Browse every updated page across every Pixi Wiki namespace, grouped by the date recorded in each page's frontmatter, indexed by month and filterable by time range."
 AGENT_SETUP_DESCRIPTION = "Connect AI agents to Pixi Wiki so they can list, search, and read the same Markdown knowledge bases behind the human wiki."
 REPLICATE_DESCRIPTION = "Use Pixi Wiki as a reusable pattern for turning your own Markdown notes, research, docs, or vault into a human wiki plus agent-readable context layer."
 SIGNAL_GRAPH_DESCRIPTION = "A local analysis sidecar for mapping Pixi Wiki's Markdown corpus before edits, fit-checks, and agent orientation."
@@ -78,16 +79,15 @@ LEGACY_ROOT_PATTERNS = ["concept-*.html", "projects-*.html", "knowledge.html", "
 GENERATED_DIRS = ["raw", "wiki", "agent", "legacy"]
 CONTENT_DIRS = {"concepts", "entities", "summaries", "syntheses"}
 
-# Recent Updates page/feed: cap the surfaced entries and only accept frontmatter
-# `updated` values that are strict day-granular ISO dates. Everything about the
-# ordering is derived from those strings (never today's clock) so an unchanged
-# input rebuilds byte-identically.
-RECENT_LIMIT = 50
-RECENT_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+# Updates page/feed: surface every qualifying page (no cap) and only accept
+# frontmatter `updated` values that are strict day-granular ISO dates. Everything
+# about the ordering is derived from those strings (never today's clock) so an
+# unchanged input rebuilds byte-identically.
+UPDATE_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
-def sort_recent_entries(entries: list[dict[str, str]]) -> list[dict[str, str]]:
-    """Order recent-update entries by (date DESC, namespace ASC, title ASC).
+def sort_update_entries(entries: list[dict[str, str]]) -> list[dict[str, str]]:
+    """Order update entries by (date DESC, namespace ASC, title ASC).
 
     Dates are strict ``YYYY-MM-DD`` strings, so negating each numeric component
     yields a stable, clock-free descending-by-date ordering with ascending
@@ -358,7 +358,20 @@ def site_css() -> str:
 .site-search{position:relative;flex:1 1 auto;max-width:420px;margin:0 24px}.search-input{width:100%;padding:8px 16px;background:var(--panel);border:1px solid var(--border);border-radius:999px;color:var(--text);font:inherit;font-size:13px;letter-spacing:.02em}.search-input::placeholder{color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:11px}.search-input:focus{outline:none;border-color:var(--accent)}.search-results{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:40;max-height:64vh;overflow-y:auto;display:flex;flex-direction:column;gap:2px;padding:8px;background:var(--panel);border:1px solid var(--border);border-radius:10px}.search-result{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:8px 10px;border:0;border-radius:6px;color:var(--muted)}.search-result:hover,.search-result.active{background:var(--panel2);color:var(--heading)}.search-result-title{color:var(--heading);font-weight:800}.search-badge{border:1px solid var(--border);background:var(--panel2);color:var(--accent2);border-radius:999px;padding:2px 9px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;flex:0 0 auto}.search-empty{padding:8px 10px;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-style:italic}.search-results[hidden]{display:none}@media(max-width:820px){.site-search{max-width:190px;margin:0 12px}}
 .skip-link{position:absolute;width:1px;height:1px;padding:0;margin:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}.skip-link:focus{position:fixed;top:12px;left:12px;width:auto;height:auto;padding:8px 14px;clip:auto;clip-path:none;background:var(--accent);color:var(--header);border-radius:999px;z-index:100;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
 pre{position:relative}.copy-button{position:absolute;top:8px;right:8px;padding:4px 10px;background:var(--panel);color:var(--muted);border:1px solid var(--border);border-radius:6px;font:inherit;font-size:11px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.copy-button:hover,.copy-button:focus{border-color:var(--accent);color:var(--accent)}
+.updates-filter{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}.updates-chip{border:1px solid var(--border);background:var(--panel);color:var(--muted);border-radius:999px;padding:6px 14px;font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.updates-chip:hover{border-color:var(--accent);color:var(--accent)}.updates-chip[aria-pressed=true]{background:var(--active-bg);border-color:var(--accent);color:var(--accent2);font-weight:800}.updates-empty{width:100%;padding:8px 2px;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-style:italic}.updates-months{display:flex;flex-wrap:wrap;gap:6px 10px;margin:14px 0 6px;color:var(--muted);font-size:12px;letter-spacing:.06em}.updates-months a{color:var(--muted);border:0}.updates-months a:hover{color:var(--accent)}.updates-month-anchor{display:block;height:0;overflow:hidden}.updates-group{margin-top:34px}.updates-group[hidden]{display:none}.updates-ns{margin:10px 0}.updates-ns summary{list-style:none;cursor:pointer;color:var(--heading);font-weight:800;font-size:13px;letter-spacing:.04em;padding:6px 0}.updates-ns summary::-webkit-details-marker{display:none}.updates-ns summary::before{content:"▸";display:inline-block;width:16px;color:var(--accent);transition:transform .12s ease}.updates-ns[open] summary::before{transform:rotate(90deg)}.updates-list{list-style:none;margin:4px 0 0;padding:0 0 0 16px}.updates-item{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px solid var(--border)}.updates-title{font-weight:800;border-bottom:1px dotted currentColor}.updates-raw{color:var(--muted);font-size:12px}
 """
+
+# Content hash of the shared stylesheet, computed once at import time. Every
+# ``<link rel="stylesheet">`` carries it as a ``?v=<hash>`` cache-buster so a CSS
+# fix invalidates the browser cache immediately instead of waiting out the old
+# cache lifetime. Pure content hash → deterministic across rebuilds.
+SITE_CSS_HASH = hashlib.sha256(site_css().encode("utf-8")).hexdigest()[:8]
+
+
+def stylesheet_link() -> str:
+    """Return the shared-stylesheet ``<link>`` with a content-hash cache-buster."""
+    return f'<link rel="stylesheet" href="{BASE_PATH}/site.css?v={SITE_CSS_HASH}">'
+
 
 def theme_script() -> str:
     return """<script>(function(){const key='pixi-wiki-theme';const root=document.documentElement;const saved=localStorage.getItem(key)||'light';root.dataset.theme=saved;function label(){const b=document.querySelector('[data-theme-toggle]');if(b)b.textContent=root.dataset.theme==='dark'?'☀':'☾';}document.addEventListener('DOMContentLoaded',function(){label();const b=document.querySelector('[data-theme-toggle]');if(b)b.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem(key,root.dataset.theme);label();});});})();</script>"""
@@ -411,7 +424,7 @@ def copy_button_script() -> str:
 def _wiki_nav_links(base_path: str) -> list[tuple[str, str]]:
     return [
         (f"{base_path}/#wikis", "Wikis"),
-        (f"{base_path}/recent.html", "Recent"),
+        (f"{base_path}/updates.html", "Updates"),
         (f"{base_path}/docs/AGENT_SETUP.html", "Agent Setup"),
         ("https://github.com/pixiiidust/pixi-wiki", "GitHub"),
     ]
@@ -420,7 +433,7 @@ def _wiki_nav_links(base_path: str) -> list[tuple[str, str]]:
 def _home_nav_links(base_path: str) -> list[tuple[str, str]]:
     return [
         (f"{base_path}/#wikis", "Wikis"),
-        (f"{base_path}/recent.html", "Recent"),
+        (f"{base_path}/updates.html", "Updates"),
         (f"{base_path}/docs/AGENT_SETUP.html", "Agent Setup"),
         (f"{base_path}/docs/SIGNAL_GRAPH.html", "Signal Graph"),
         ("https://github.com/pixiiidust/pixi-wiki", "GitHub"),
@@ -593,7 +606,7 @@ def page_shell(slug: str, namespace_title: str, doc_count: int, active_rel: str,
     return f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(page_title)} — {html.escape(namespace_title)} — Pixi Wiki</title>{meta}
-<link rel="stylesheet" href="{BASE_PATH}/site.css">{theme_script()}{sidebar_filter_script()}{search_script()}{copy_button_script()}</head><body>
+{stylesheet_link()}{theme_script()}{sidebar_filter_script()}{search_script()}{copy_button_script()}</head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 {site_header(WIKI_NAV_LINKS)}
 <main class="page">{sidebar}<article class="article" id="main-content">{article}</article></main>
@@ -835,7 +848,7 @@ def collect_namespace(
     links: list[tuple[str, str, str, str]] = []
     full_sections: list[tuple[str, str]] = []
     doc_records: list[dict[str, str]] = []
-    recent_entries: list[dict[str, str]] = []
+    update_entries: list[dict[str, str]] = []
     sitemap_docs: list[dict[str, str]] = []
     sidebar_docs = [
         {"title": page_title, "path": rel.as_posix(), "category": sidebar_category(rel, page_fm)}
@@ -929,12 +942,12 @@ def collect_namespace(
         html_output.write_text(page_shell(slug, str(title), len(md_files), rel_posix, sidebar_docs, article, str(page_title), page_description), encoding="utf-8", newline="\n")
         # Sitemap entry for this generated page. lastmod is emitted only when the
         # frontmatter `updated` is a strict YYYY-MM-DD date (deterministic; never
-        # the wall clock), matching the Recent Updates date contract.
+        # the wall clock), matching the Updates date contract.
         updated_for_sitemap = str(page_fm.get("updated", "")) if page_fm else ""
         sitemap_docs.append(
             {
                 "path": f"{BASE_PATH}/wiki/{slug}/{rel_posix}.html",
-                "lastmod": updated_for_sitemap if RECENT_DATE_RE.match(updated_for_sitemap) else "",
+                "lastmod": updated_for_sitemap if UPDATE_DATE_RE.match(updated_for_sitemap) else "",
             }
         )
         raw_url = f"/raw/{slug}/{rel_posix}"
@@ -942,11 +955,11 @@ def collect_namespace(
         links.append((str(page_title), rel_posix, raw_url, html_url))
         full_sections.append((f"{slug}/{rel_posix}", text))
         doc_records.append({"title": str(page_title), "path": rel_posix, "raw": raw_url, "html": html_url, "category": sidebar_category(rel, page_fm)})
-        # Recent Updates feed entry — only docs with a strict YYYY-MM-DD `updated`
+        # Updates feed entry — only docs with a strict YYYY-MM-DD `updated`
         # frontmatter value qualify; CLAUDE.md is never surfaced.
         updated_value = str(page_fm.get("updated", "")) if page_fm else ""
-        if rel_posix != "CLAUDE.md" and RECENT_DATE_RE.match(updated_value):
-            recent_entries.append(
+        if rel_posix != "CLAUDE.md" and UPDATE_DATE_RE.match(updated_value):
+            update_entries.append(
                 {
                     "title": str(page_title),
                     "path": rel_posix,
@@ -985,7 +998,7 @@ def collect_namespace(
         "html_base": f"/wiki/{slug}/",
         "documents": doc_records,
     }
-    return wiki_record, links, full_sections, recent_entries, sitemap_docs
+    return wiki_record, links, full_sections, update_entries, sitemap_docs
 
 
 def write_agent_setup_page(output_root: Path) -> None:
@@ -1021,7 +1034,7 @@ python3 scripts/pixi_wiki_mcp.py --self-test</code></pre>
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Agent Setup — Pixi Wiki</title>{head_meta("Agent Setup", AGENT_SETUP_DESCRIPTION, BASE_PATH + "/docs/AGENT_SETUP.html")}<link rel="stylesheet" href="{BASE_PATH}/site.css">{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<title>Agent Setup — Pixi Wiki</title>{head_meta("Agent Setup", AGENT_SETUP_DESCRIPTION, BASE_PATH + "/docs/AGENT_SETUP.html")}{stylesheet_link()}{theme_script()}{search_script()}{copy_button_script()}</head><body>
 <a class=\"skip-link\" href=\"#main-content\">Skip to content</a>
 {site_header(WIKI_NAV_LINKS)}
 <main id=\"main-content\">{body}</main>
@@ -1062,7 +1075,7 @@ def write_replicate_page(output_root: Path) -> None:
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Replicate the Approach — Pixi Wiki</title>{head_meta("Replicate the Approach", REPLICATE_DESCRIPTION, BASE_PATH + "/docs/REPLICATE_APPROACH.html")}<link rel="stylesheet" href="{BASE_PATH}/site.css">{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<title>Replicate the Approach — Pixi Wiki</title>{head_meta("Replicate the Approach", REPLICATE_DESCRIPTION, BASE_PATH + "/docs/REPLICATE_APPROACH.html")}{stylesheet_link()}{theme_script()}{search_script()}{copy_button_script()}</head><body>
 <a class=\"skip-link\" href=\"#main-content\">Skip to content</a>
 {site_header(WIKI_NAV_LINKS)}
 <main id=\"main-content\">{body}</main>
@@ -1092,7 +1105,7 @@ graphify cluster-only . --graph graphify-out/graph.json --no-label</code></pre>
 """
     page = f"""<!doctype html>
 <html lang=\"en\" data-theme=\"light\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">
-<title>Signal Graph — Pixi Wiki</title>{head_meta("Signal Graph", SIGNAL_GRAPH_DESCRIPTION, BASE_PATH + "/docs/SIGNAL_GRAPH.html")}<link rel="stylesheet" href="{BASE_PATH}/site.css">{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<title>Signal Graph — Pixi Wiki</title>{head_meta("Signal Graph", SIGNAL_GRAPH_DESCRIPTION, BASE_PATH + "/docs/SIGNAL_GRAPH.html")}{stylesheet_link()}{theme_script()}{search_script()}{copy_button_script()}</head><body>
 <a class=\"skip-link\" href=\"#main-content\">Skip to content</a>
 {site_header(HOME_NAV_LINKS)}
 <main id=\"main-content\">{body}</main>
@@ -1101,47 +1114,127 @@ graphify cluster-only . --graph graphify-out/graph.json --no-label</code></pre>
     (docs_dir / "SIGNAL_GRAPH.html").write_text(page, encoding="utf-8", newline="\n")
 
 
-def write_recent_page(output_root: Path, entries: list[dict[str, str]]) -> None:
-    """Render the standalone ``recent.html`` page from already-sorted entries.
+def updates_filter_script() -> str:
+    """Progressive-enhancement time-range filter for the Updates page.
 
-    Entries arrive pre-sorted (date DESC) and capped, so grouping consecutive
-    entries by their ``updated`` value yields date-descending sections.
+    On DOMContentLoaded this builds a chip bar (All / 7 / 30 / 90 days) inside
+    the empty ``.updates-filter`` placeholder, so nothing renders without
+    JavaScript and the full history stays readable. Clicking a chip reads the
+    CLIENT clock (client-side JS may use the clock; the generator never does),
+    computes a cutoff, hides every ``.updates-group`` whose ``data-date`` is
+    older, marks the active chip via ``aria-pressed``, and reveals a small
+    "no updates in this range" note when the whole list is hidden.
+    """
+    return """<script>(function(){document.addEventListener('DOMContentLoaded',function(){var box=document.querySelector('.updates-filter');if(!box)return;var groups=[].slice.call(document.querySelectorAll('.updates-group'));if(!groups.length)return;var ranges=[['All',0],['7 days',7],['30 days',30],['90 days',90]];var note=document.createElement('div');note.className='updates-empty';note.hidden=true;note.textContent='No updates in this range.';var buttons=[];function toUTC(s){var p=(s||'').split('-');if(p.length!==3)return NaN;return Date.UTC(+p[0],+p[1]-1,+p[2]);}function apply(days,active){for(var i=0;i<buttons.length;i++){buttons[i].setAttribute('aria-pressed',buttons[i]===active?'true':'false');}var visible=0;if(!days){for(var j=0;j<groups.length;j++){groups[j].hidden=false;visible++;}}else{var now=new Date();var cutoff=Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())-days*86400000;for(var k=0;k<groups.length;k++){var t=toUTC(groups[k].getAttribute('data-date'));var keep=!isNaN(t)&&t>=cutoff;groups[k].hidden=!keep;if(keep)visible++;}}note.hidden=visible>0;}for(var r=0;r<ranges.length;r++){(function(range){var b=document.createElement('button');b.type='button';b.className='updates-chip';b.textContent=range[0];b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){apply(range[1],b);});box.appendChild(b);buttons.push(b);})(ranges[r]);}box.appendChild(note);apply(0,buttons[0]);});})();</script>"""
+
+
+def write_updates_page(output_root: Path, entries: list[dict[str, str]]) -> None:
+    """Render the browsable ``updates.html`` page from already-sorted entries.
+
+    Entries arrive pre-sorted (date DESC, namespace ASC, title ASC) with no cap,
+    so grouping consecutive entries by ``updated`` yields date-descending
+    sections and, within each, contiguous per-namespace runs. Each date section
+    carries an ``id="d-YYYY-MM-DD"`` and a ``data-date`` attribute (the key the
+    filter script reads); each namespace run becomes a ``<details>`` that opens
+    when it holds five or fewer entries. A month index strip and per-month
+    anchors are pre-rendered from the data so the page is fully browsable with
+    no JavaScript.
     """
     groups: list[tuple[str, list[dict[str, str]]]] = []
     for entry in entries:
         if not groups or groups[-1][0] != entry["updated"]:
             groups.append((entry["updated"], []))
         groups[-1][1].append(entry)
+
+    # Month index: one link per distinct month (newest first), each jumping to
+    # the anchor placed on that month's first (newest) date section.
+    month_first_date: dict[str, str] = {}
+    months_order: list[str] = []
+    for date, _items in groups:
+        month = date[:7]
+        if month not in month_first_date:
+            month_first_date[month] = date
+            months_order.append(month)
+    month_links = " · ".join(
+        f'<a href="#m-{month}">{html.escape(month)}</a>' for month in months_order
+    )
+    month_strip = (
+        f'<nav class="updates-months" aria-label="Jump to month">{month_links}</nav>'
+        if month_links
+        else ""
+    )
+
     sections: list[str] = []
     for date, items in groups:
-        rows = "".join(
-            f'<li class="recent-item">'
-            f'<a class="recent-title" href="{BASE_PATH}{html.escape(item["html"])}">{html.escape(item["title"])}</a>'
-            f'<a class="namespace-badge" href="{BASE_PATH}/wiki/{html.escape(item["namespace"])}/README.md.html">{html.escape(item["namespace_title"])}</a>'
-            f'<a class="recent-raw" href="{BASE_PATH}{html.escape(item["raw"])}">raw</a>'
-            f'</li>'
-            for item in items
+        month = date[:7]
+        month_anchor = (
+            f'<span class="updates-month-anchor" id="m-{month}"></span>'
+            if month_first_date.get(month) == date
+            else ""
         )
+        # Contiguous per-namespace runs (entries are already namespace-sorted
+        # within a date), each rolled up into an open/closed <details>.
+        ns_runs: list[tuple[str, list[dict[str, str]]]] = []
+        for item in items:
+            if not ns_runs or ns_runs[-1][0] != item["namespace"]:
+                ns_runs.append((item["namespace"], []))
+            ns_runs[-1][1].append(item)
+        blocks: list[str] = []
+        for _namespace, run in ns_runs:
+            count = len(run)
+            open_attr = " open" if count <= 5 else ""
+            rows = "".join(
+                f'<li class="updates-item">'
+                f'<a class="updates-title" href="{BASE_PATH}{html.escape(item["html"])}">{html.escape(item["title"])}</a>'
+                f'<a class="updates-raw" href="{BASE_PATH}{html.escape(item["raw"])}">raw</a>'
+                f'</li>'
+                for item in run
+            )
+            blocks.append(
+                f'<details class="updates-ns"{open_attr}>'
+                f'<summary>{html.escape(run[0]["namespace_title"])} {count}</summary>'
+                f'<ul class="updates-list">{rows}</ul></details>'
+            )
         sections.append(
-            f'<section class="recent-group"><h2>{html.escape(date)}</h2><ul class="recent-list">{rows}</ul></section>'
+            f'{month_anchor}<section class="updates-group" id="d-{date}" data-date="{date}">'
+            f'<h2>{html.escape(date)}</h2>{"".join(blocks)}</section>'
         )
     grouped = "".join(sections) or '<p class="hero-copy">No dated updates yet.</p>'
     body = (
         '<article class="article" style="max-width:900px;margin:44px auto 90px;padding:0 20px">'
-        f'<div class="content-header"><div class="breadcrumbs"><a href="{BASE_PATH}/">wikis</a> / Recent Updates</div>'
-        f'<span class="page-tools"><a class="markdown-link" href="{BASE_PATH}/recent.json">recent.json</a></span></div>'
-        '<h1>Recent Updates</h1>'
-        '<p class="hero-copy">The most recently updated pages across every Pixi Wiki namespace, grouped by the date recorded in each page\'s frontmatter.</p>'
+        f'<div class="content-header"><div class="breadcrumbs"><a href="{BASE_PATH}/">wikis</a> / Updates</div>'
+        f'<span class="page-tools"><a class="markdown-link" href="{BASE_PATH}/updates.json">updates.json</a></span></div>'
+        '<h1>Updates</h1>'
+        '<p class="hero-copy">Every updated page across every Pixi Wiki namespace, grouped by the date recorded in each page\'s frontmatter. Jump by month, or filter by time range.</p>'
+        '<div class="updates-filter"></div>'
+        f'{month_strip}'
         f'{grouped}'
         '</article>'
     )
     page = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Recent Updates — Pixi Wiki</title>{head_meta("Recent Updates", RECENT_DESCRIPTION, BASE_PATH + "/recent.html")}<link rel="stylesheet" href="{BASE_PATH}/site.css">{theme_script()}{search_script()}</head><body>
+<title>Updates — Pixi Wiki</title>{head_meta("Updates", UPDATES_DESCRIPTION, BASE_PATH + "/updates.html")}{stylesheet_link()}{theme_script()}{search_script()}{updates_filter_script()}</head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 {site_header(HOME_NAV_LINKS)}
 <main id="main-content">{body}</main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="{BASE_PATH}/llms.txt">/llms.txt</a><a href="{BASE_PATH}/llms-full.txt">/llms-full.txt</a><a href="{BASE_PATH}/index.json">/index.json</a></p></div></footer>
+</body></html>"""
+    (output_root / "updates.html").write_text(page, encoding="utf-8", newline="\n")
+
+
+def write_recent_redirect(output_root: Path) -> None:
+    """Emit ``recent.html`` as a tiny meta-refresh stub to the renamed Updates page.
+
+    The old ``/recent.html`` URL was short-lived; this keeps it working by
+    redirecting to ``updates.html`` immediately. It carries no site chrome and is
+    deliberately kept out of the sitemap.
+    """
+    target = f"{BASE_PATH}/updates.html"
+    page = f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="0;url={target}"><meta name="robots" content="noindex">
+<link rel="canonical" href="{html.escape(SITE_ORIGIN + target, quote=True)}"><title>Moved to Updates — Pixi Wiki</title></head><body>
+<p>This page has moved to <a href="{target}">Updates</a>.</p>
 </body></html>"""
     (output_root / "recent.html").write_text(page, encoding="utf-8", newline="\n")
 
@@ -1151,12 +1244,13 @@ def write_sitemap(output_root: Path, doc_entries: list[dict[str, str]]) -> None:
 
     ``doc_entries`` covers every namespace document/README page (each a dict with
     a site-absolute ``path`` and a possibly-empty ``lastmod``). The homepage,
-    ``recent.html``, and the three docs pages are added here as undated chrome.
+    ``updates.html``, and the three docs pages are added here as undated chrome.
+    The ``recent.html`` redirect stub is intentionally excluded.
     Ordering is deterministic: the homepage first, then all other URLs sorted by
     path, so an unchanged corpus rebuilds byte-identically.
     """
     chrome_paths = [
-        f"{BASE_PATH}/recent.html",
+        f"{BASE_PATH}/updates.html",
         f"{BASE_PATH}/docs/AGENT_SETUP.html",
         f"{BASE_PATH}/docs/REPLICATE_APPROACH.html",
         f"{BASE_PATH}/docs/SIGNAL_GRAPH.html",
@@ -1193,7 +1287,7 @@ def write_404_page(output_root: Path) -> None:
     )
     page = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Page not found — Pixi Wiki</title>{head_meta("Page not found", "The page you requested does not exist in Pixi Wiki. Return to the homepage or browse the namespace list.", BASE_PATH + "/404.html")}<link rel="stylesheet" href="{BASE_PATH}/site.css">{theme_script()}</head><body>
+<title>Page not found — Pixi Wiki</title>{head_meta("Page not found", "The page you requested does not exist in Pixi Wiki. Return to the homepage or browse the namespace list.", BASE_PATH + "/404.html")}{stylesheet_link()}{theme_script()}</head><body>
 {site_header(HOME_NAV_LINKS)}
 <main>{body}</main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="{BASE_PATH}/llms.txt">/llms.txt</a><a href="{BASE_PATH}/llms-full.txt">/llms-full.txt</a><a href="{BASE_PATH}/index.json">/index.json</a></p></div></footer>
@@ -1235,7 +1329,7 @@ def build(
 
     wikis: list[dict[str, Any]] = []
     all_full_sections: list[tuple[str, str]] = []
-    all_recent_entries: list[dict[str, str]] = []
+    all_update_entries: list[dict[str, str]] = []
     all_sitemap_docs: list[dict[str, str]] = []
     llms_parts = [
         "# Pixi Wiki Namespace Registry\n\n",
@@ -1266,10 +1360,10 @@ def build(
     card_by_slug: dict[str, str] = {}
 
     for slug in slugs:
-        wiki_record, links, full_sections, recent_entries, sitemap_docs = collect_namespace(source_dir, output_root, slug, global_link_targets)
+        wiki_record, links, full_sections, update_entries, sitemap_docs = collect_namespace(source_dir, output_root, slug, global_link_targets)
         wikis.append(wiki_record)
         all_full_sections.extend(full_sections)
-        all_recent_entries.extend(recent_entries)
+        all_update_entries.extend(update_entries)
         all_sitemap_docs.extend(sitemap_docs)
         title = wiki_record["title"]
         llms_parts.append(f"## {title}\n\n")
@@ -1326,18 +1420,19 @@ def build(
     write_replicate_page(output_root)
     write_signal_graph_page(output_root)
 
-    recent_entries = sort_recent_entries(all_recent_entries)[:RECENT_LIMIT]
-    write_recent_page(output_root, recent_entries)
-    recent_payload = {
+    update_entries = sort_update_entries(all_update_entries)
+    write_updates_page(output_root, update_entries)
+    write_recent_redirect(output_root)
+    updates_payload = {
         "generated_from": "frontmatter updated fields",
-        "count": len(recent_entries),
-        "entries": recent_entries,
+        "count": len(update_entries),
+        "entries": update_entries,
     }
-    (output_root / "recent.json").write_text(json.dumps(recent_payload, indent=2) + "\n", encoding="utf-8", newline="\n")
+    (output_root / "updates.json").write_text(json.dumps(updates_payload, indent=2) + "\n", encoding="utf-8", newline="\n")
 
     index_html = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pixi Wiki</title>{head_meta("Pixi Wiki", HOME_DESCRIPTION, BASE_PATH + "/")}<link rel="stylesheet" href="{BASE_PATH}/site.css">{theme_script()}{search_script()}{copy_button_script()}</head><body>
+<title>Pixi Wiki</title>{head_meta("Pixi Wiki", HOME_DESCRIPTION, BASE_PATH + "/")}{stylesheet_link()}{theme_script()}{search_script()}{copy_button_script()}</head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 {site_header(HOME_NAV_LINKS)}
 <main id="main-content" style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="{BASE_PATH}/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="{BASE_PATH}/docs/SIGNAL_GRAPH.html">Signal graph sidecar</a></div><section class="agent-setup-callout"><h2>Agents start here</h2><pre><code>$ curl {SITE_ORIGIN}{BASE_PATH}/llms.txt</code></pre><p>Use <code>llms.txt</code> as the first routing map, then follow links to raw Markdown, namespace files, or MCP setup.</p></section><nav class="wiki-nav" aria-label="Wiki categories"><a class="button-link" href="#agent-ops">Agent Operations</a><a class="button-link" href="#knowledge-systems">Knowledge Systems</a><a class="button-link" href="#labs-products">Labs & Product Surfaces</a></nav><div id="wikis">{grouped_index}</div></main>

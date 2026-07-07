@@ -83,10 +83,14 @@ def read(output: Path, *parts: str) -> str:
     return output.joinpath(*parts).read_text(encoding="utf-8")
 
 
-STYLESHEET_LINK = '<link rel="stylesheet" href="/pixi-wiki/site.css">'
+# The stylesheet link now carries a content-hash cache-buster (issue #81), so
+# it is computed from the generator's own hash rather than hardcoded.
+_GENERATOR = load_generator()
+STYLESHEET_LINK = f'<link rel="stylesheet" href="/pixi-wiki/site.css?v={_GENERATOR.SITE_CSS_HASH}">'
 
-# Every built page type: wiki concept page, README, homepage, the three docs
-# chrome pages, recent.html, and 404.html.
+# Every built page type that carries full chrome: wiki concept page, README,
+# homepage, the three docs chrome pages, updates.html, and 404.html. The
+# recent.html redirect stub carries no stylesheet and is asserted separately.
 PAGE_PARTS = [
     ("wiki", "css-ns", "wiki", "concepts", "plain-concept.md.html"),
     ("wiki", "css-ns", "README.md.html"),
@@ -94,7 +98,7 @@ PAGE_PARTS = [
     ("docs", "AGENT_SETUP.html"),
     ("docs", "REPLICATE_APPROACH.html"),
     ("docs", "SIGNAL_GRAPH.html"),
-    ("recent.html",),
+    ("updates.html",),
     ("404.html",),
 ]
 
@@ -132,6 +136,20 @@ def test_site_css_is_byte_identical_to_site_css_helper(tmp_path: Path) -> None:
 def test_site_css_is_a_generated_root_file(tmp_path: Path) -> None:
     generator, _output = build_site(tmp_path)
     assert "site.css" in generator.GENERATED_ROOT_FILES
+
+
+def test_stylesheet_link_carries_hash_of_emitted_site_css(tmp_path: Path) -> None:
+    import hashlib
+
+    generator, output = build_site(tmp_path)
+    written = (output / "site.css").read_bytes()
+    expected_hash = hashlib.sha256(written).hexdigest()[:8]
+    # The generator's published hash matches the emitted stylesheet content.
+    assert generator.SITE_CSS_HASH == expected_hash
+    # Every full-chrome page links /site.css?v=<that hash>.
+    link = f'<link rel="stylesheet" href="/pixi-wiki/site.css?v={expected_hash}">'
+    for parts in PAGE_PARTS:
+        assert link in read(output, *parts), parts
 
 
 # ---------------------------------------------------------------------------

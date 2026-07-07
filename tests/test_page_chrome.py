@@ -184,11 +184,11 @@ def test_homepage_and_docs_have_signal_graph_link(tmp_path: Path) -> None:
 
 
 def test_css_mobile_rules_present_in_emitted_style(tmp_path: Path) -> None:
-    _, output = build_fixture(tmp_path)
+    generator, output = build_fixture(tmp_path)
     # The CSS is now served from one shared stylesheet (issue #61) rather than
     # inlined per page, so the mobile rules are asserted against site.css and the
-    # page is checked to link it.
-    assert '<link rel="stylesheet" href="/pixi-wiki/site.css">' in read(output / "index.html")
+    # page is checked to link it (with the #81 content-hash cache-buster).
+    assert f'<link rel="stylesheet" href="/pixi-wiki/site.css?v={generator.SITE_CSS_HASH}">' in read(output / "index.html")
     css = read(output / "site.css")
 
     media = re.search(r"@media\(max-width:820px\)\{(.*?)\}\s*$", css, re.DOTALL)

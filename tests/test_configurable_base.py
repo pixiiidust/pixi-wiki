@@ -109,7 +109,7 @@ def test_custom_base_path_covers_all_chrome(tmp_path: Path) -> None:
     page = read(output, "wiki", "base-ns", "wiki", "concepts", "plain-concept.md.html")
 
     # Stylesheet, logo, sidebar links, and data-registry all carry the base.
-    assert '<link rel="stylesheet" href="/custom-wiki/site.css">' in page
+    assert f'<link rel="stylesheet" href="/custom-wiki/site.css?v={generator.SITE_CSS_HASH}">' in page
     assert '<a class="logo" href="/custom-wiki/">Pixi Wiki</a>' in page
     assert 'data-registry="/custom-wiki/index.json"' in page
     assert 'href="/custom-wiki/wiki/base-ns/README.md.html"' in page
@@ -138,8 +138,8 @@ def test_custom_base_registry_values_stay_unprefixed(tmp_path: Path) -> None:
         assert "/custom-wiki" not in doc["html"]
 
 
-def test_custom_base_sitemap_recent_and_404(tmp_path: Path) -> None:
-    _generator, output = build_site(
+def test_custom_base_sitemap_updates_and_404(tmp_path: Path) -> None:
+    generator, output = build_site(
         tmp_path, base_path="/custom-wiki", site_origin="https://example.org"
     )
     # Sitemap locs live under origin + base.
@@ -147,12 +147,17 @@ def test_custom_base_sitemap_recent_and_404(tmp_path: Path) -> None:
     locs = [u.find("sm:loc", SITEMAP_NS).text for u in tree.getroot().findall("sm:url", SITEMAP_NS)]
     assert "https://example.org/custom-wiki/" in locs
     assert "https://example.org/custom-wiki/wiki/base-ns/README.md.html" in locs
+    assert "https://example.org/custom-wiki/updates.html" in locs
     assert all(loc.startswith("https://example.org/custom-wiki") for loc in locs)
 
-    # Recent page links carry the base (the entry html is prefixed explicitly).
+    # Updates page links carry the base (the entry html is prefixed explicitly).
+    updates = read(output, "updates.html")
+    assert 'href="/custom-wiki/wiki/base-ns/wiki/concepts/plain-concept.md.html"' in updates
+    assert f'<link rel="stylesheet" href="/custom-wiki/site.css?v={generator.SITE_CSS_HASH}">' in updates
+
+    # The recent.html redirect stub points at the base-prefixed updates page.
     recent = read(output, "recent.html")
-    assert 'href="/custom-wiki/wiki/base-ns/wiki/concepts/plain-concept.md.html"' in recent
-    assert '<link rel="stylesheet" href="/custom-wiki/site.css">' in recent
+    assert '<meta http-equiv="refresh" content="0;url=/custom-wiki/updates.html">' in recent
 
     # 404 chrome links carry the base.
     not_found = read(output, "404.html")
@@ -170,7 +175,7 @@ def test_empty_base_path_root_site(tmp_path: Path) -> None:
         tmp_path, base_path="", site_origin="https://example.org"
     )
     page = read(output, "wiki", "base-ns", "wiki", "concepts", "plain-concept.md.html")
-    assert '<link rel="stylesheet" href="/site.css">' in page
+    assert f'<link rel="stylesheet" href="/site.css?v={generator.SITE_CSS_HASH}">' in page
     assert '<a class="logo" href="/">Pixi Wiki</a>' in page
     assert 'data-registry="/index.json"' in page
 
@@ -198,6 +203,6 @@ def test_invalid_base_path_exits(tmp_path: Path) -> None:
 # ---------------------------------------------------------------------------
 
 def test_default_build_uses_pixi_wiki_base(tmp_path: Path) -> None:
-    _generator, output = build_site(tmp_path)
+    generator, output = build_site(tmp_path)
     page = read(output, "wiki", "base-ns", "wiki", "concepts", "plain-concept.md.html")
-    assert '<link rel="stylesheet" href="/pixi-wiki/site.css">' in page
+    assert f'<link rel="stylesheet" href="/pixi-wiki/site.css?v={generator.SITE_CSS_HASH}">' in page

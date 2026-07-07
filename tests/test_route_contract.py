@@ -12,11 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class CleanRootContractTest(unittest.TestCase):
     def test_only_registry_html_lives_at_root(self) -> None:
-        # Allowed root HTML pages. recent.html joins index.html once the #65
-        # regeneration lands, but the committed tree won't contain it until then,
-        # so assert the present set is a subset of the allowlist (and still
-        # includes index.html) rather than an exact match.
-        allowed = {"404.html", "index.html", "recent.html"}
+        # Allowed root HTML pages. updates.html (the reworked surface, #81) and
+        # recent.html (now a redirect stub) join index.html and 404.html. Assert
+        # the present set is a subset of the allowlist (and still includes
+        # index.html) rather than an exact match.
+        allowed = {"404.html", "index.html", "recent.html", "updates.html"}
         root_html = {path.name for path in ROOT.glob("*.html")}
         self.assertTrue(root_html.issubset(allowed), root_html)
         self.assertIn("index.html", root_html)
@@ -258,9 +258,12 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         # tokens live in that stylesheet; otherwise assert the legacy inline tokens.
         # The theme markup and boot script (data-theme, toggle, localStorage) stay
         # inline in every page in both worlds.
+        import hashlib
+
         site_css = ROOT / "site.css"
         linked = site_css.exists()
         css_source = site_css.read_text(encoding="utf-8") if linked else None
+        css_hash = hashlib.sha256(site_css.read_bytes()).hexdigest()[:8] if linked else None
         for path in [ROOT / "index.html", ROOT / "wiki" / "agent-workflows" / "README.md.html", ROOT / "docs" / "AGENT_SETUP.html", ROOT / "docs" / "REPLICATE_APPROACH.html"]:
             html = path.read_text(encoding="utf-8")
             with self.subTest(path=path):
@@ -269,7 +272,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 self.assertIn('>☾</button>', html)
                 self.assertIn('localStorage.getItem', html)
                 if linked:
-                    self.assertIn('<link rel="stylesheet" href="/pixi-wiki/site.css">', html)
+                    self.assertIn(f'<link rel="stylesheet" href="/pixi-wiki/site.css?v={css_hash}">', html)
                     css = css_source
                 else:
                     self.assertIn('<style>', html)
@@ -320,32 +323,45 @@ class HardenedSurfaceContractTest(unittest.TestCase):
     def test_new_root_surfaces_exist_and_are_consistent(self) -> None:
         import xml.etree.ElementTree as ET
 
-        for name in ["recent.html", "recent.json", "sitemap.xml", "404.html", "site.css"]:
+        # updates.html/.json are the reworked surface (#81); recent.html stays as
+        # a redirect stub.
+        for name in ["updates.html", "updates.json", "recent.html", "sitemap.xml", "404.html", "site.css"]:
             with self.subTest(file=name):
                 self.assertTrue((ROOT / name).is_file(), name)
-        recent = json.loads((ROOT / "recent.json").read_text(encoding="utf-8"))
-        self.assertGreater(recent["count"], 0)
+        updates = json.loads((ROOT / "updates.json").read_text(encoding="utf-8"))
+        self.assertGreater(updates["count"], 0)
         registry = json.loads((ROOT / "index.json").read_text(encoding="utf-8"))
         known = {(w["slug"], d["path"]) for w in registry["wikis"] for d in w["documents"]}
-        for entry in recent["entries"]:
+        for entry in updates["entries"]:
             self.assertIn((entry["namespace"], entry["path"]), known)
+        # The recent.html stub redirects to updates.html and stays out of the sitemap.
+        stub = (ROOT / "recent.html").read_text(encoding="utf-8")
+        self.assertIn('http-equiv="refresh"', stub)
+        self.assertIn("/pixi-wiki/updates.html", stub)
         tree = ET.parse(ROOT / "sitemap.xml")
         locs = [el.text for el in tree.iter() if el.tag.endswith("loc")]
         self.assertIn("https://pixiiidust.github.io/pixi-wiki/", locs)
+        self.assertIn("https://pixiiidust.github.io/pixi-wiki/updates.html", locs)
+        self.assertNotIn("https://pixiiidust.github.io/pixi-wiki/recent.html", locs)
         self.assertGreater(len(locs), 600)
 
     def test_published_pages_carry_the_new_chrome(self) -> None:
         html = (ROOT / "wiki" / "agent-workflows" / "README.md.html").read_text(encoding="utf-8")
         self.assertIn('<meta name="description"', html)
         self.assertIn('<link rel="canonical" href="https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/README.md.html">', html)
-        self.assertIn('<link rel="stylesheet" href="/pixi-wiki/site.css">', html)
+        # Stylesheet link carries the #81 content-hash cache-buster; the hash is
+        # of the committed site.css (which the regenerated pages point at).
+        import hashlib
+
+        css_hash = hashlib.sha256((ROOT / "site.css").read_bytes()).hexdigest()[:8]
+        self.assertIn(f'<link rel="stylesheet" href="/pixi-wiki/site.css?v={css_hash}">', html)
         self.assertIn('class="site-search" data-registry="/pixi-wiki/index.json"', html)
         self.assertIn('class="skip-link"', html)
         self.assertIn('id="main-content"', html)
         self.assertIn('aria-current="page"', html)
         self.assertIn('aria-label="Toggle color theme"', html)
         self.assertIn('<details class="nav-menu">', html)
-        self.assertIn('href="/pixi-wiki/recent.html"', html)
+        self.assertIn('href="/pixi-wiki/updates.html"', html)
         self.assertIn('<h2 id="', html)
         self.assertIn('class="heading-anchor"', html)
 
