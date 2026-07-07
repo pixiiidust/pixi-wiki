@@ -124,6 +124,17 @@ python3 scripts/pixi_wiki_mcp.py --self-test
 
 Agent workflow guidance is documented in [`docs/AGENT_SETUP.html`](docs/AGENT_SETUP.html). Full setup, tool list, Hermes config, KB editing flow, and assumptions are documented in [`docs/MCP_SERVER.md`](docs/MCP_SERVER.md).
 
+### Run the tests locally
+
+The full test suite runs under pytest:
+
+```bash
+python -m pip install pytest
+python -m pytest tests -q
+```
+
+CI runs the same command on every push to `main` and on pull requests.
+
 ## Source of truth
 
 This repository is a **clean generated mirror**. Do not hand-edit generated namespace output here unless you are also updating the generator/source so the change survives rebuilds.
