@@ -38,10 +38,32 @@ DEFAULT_SEED_SLUGS = [
     "software-architecture-metapatterns",
     "ui-patterns",
 ]
-GENERATED_ROOT_FILES = ["index.html", "index.json", "llms.txt", "llms-full.txt"]
+GENERATED_ROOT_FILES = ["index.html", "index.json", "llms.txt", "llms-full.txt", "recent.html", "recent.json"]
 LEGACY_ROOT_PATTERNS = ["concept-*.html", "projects-*.html", "knowledge.html", "projects.html", "maps-of-content.html", "root.html"]
 GENERATED_DIRS = ["raw", "wiki", "agent", "legacy"]
 CONTENT_DIRS = {"concepts", "entities", "summaries", "syntheses"}
+
+# Recent Updates page/feed: cap the surfaced entries and only accept frontmatter
+# `updated` values that are strict day-granular ISO dates. Everything about the
+# ordering is derived from those strings (never today's clock) so an unchanged
+# input rebuilds byte-identically.
+RECENT_LIMIT = 50
+RECENT_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def sort_recent_entries(entries: list[dict[str, str]]) -> list[dict[str, str]]:
+    """Order recent-update entries by (date DESC, namespace ASC, title ASC).
+
+    Dates are strict ``YYYY-MM-DD`` strings, so negating each numeric component
+    yields a stable, clock-free descending-by-date ordering with ascending
+    namespace/title tie-breaks.
+    """
+
+    def key(entry: dict[str, str]) -> tuple[int, int, int, str, str]:
+        year, month, day = entry["updated"].split("-")
+        return (-int(year), -int(month), -int(day), entry["namespace"], entry["title"])
+
+    return sorted(entries, key=key)
 
 
 def extract_section(text: str, heading: str) -> str:
@@ -296,8 +318,9 @@ def site_css() -> str:
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"IBM Plex Mono","JetBrains Mono","Roboto Mono",ui-monospace,monospace;font-size:14px;line-height:1.7}a{color:var(--accent);text-decoration:none;border-bottom:1px dotted currentColor}a:hover{color:var(--accent2)}code{background:var(--panel2);border:1px solid var(--border);color:var(--accent2);padding:1px 5px;border-radius:4px}pre{background:var(--panel2);border:1px solid var(--border);padding:14px;overflow:auto}.table-wrap{overflow-x:auto;margin:20px 0;border:1px solid var(--border)}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid var(--border);padding:8px 12px;text-align:left;vertical-align:top}thead th{background:var(--panel2);color:var(--heading);font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:12px}.article img{max-width:100%;height:auto;display:block;margin:18px auto;border:1px solid var(--border);border-radius:8px;background:var(--panel)}.site-header{height:66px;border-bottom:1px solid var(--border);background:var(--header)}.header-inner{max-width:1180px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 20px}.logo{color:var(--heading);font-weight:800;letter-spacing:.04em;border:0}.header-nav{display:flex;align-items:center;gap:24px}.nav{display:flex;align-items:center;gap:24px}.nav a{color:var(--muted);border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.nav a:hover{color:var(--heading)}.nav-menu{display:none;position:relative}.nav-menu summary{list-style:none;cursor:pointer;color:var(--muted);border:1px solid var(--border);background:var(--panel);padding:8px 12px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}.nav-menu summary::-webkit-details-marker{display:none}.nav-menu summary::before{content:"≡";margin-right:8px;color:var(--accent)}.nav-menu summary:hover{border-color:var(--accent);color:var(--accent)}.nav-panel{position:absolute;right:0;top:calc(100% + 10px);z-index:30;display:flex;flex-direction:column;gap:2px;min-width:190px;padding:10px;background:var(--panel);border:1px solid var(--border);border-radius:10px}.nav-panel a{color:var(--muted);border:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:8px 10px;border-radius:6px}.nav-panel a:hover{color:var(--heading);background:var(--panel2)}.theme-toggle{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:8px 10px;border-radius:999px;font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}.category-bar{border-bottom:1px solid var(--border);background:var(--panel)}.category-inner{max-width:1180px;margin:0 auto;display:flex;gap:22px;min-height:46px;align-items:center;padding:0 20px;flex-wrap:wrap}.category-inner a{color:var(--muted);border:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.category-inner a:first-child{color:var(--muted)}.page{max-width:1180px;margin:40px auto 90px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;padding:0 20px}.sidebar{color:var(--muted)}.sidebar-block{border-left:1px solid var(--border);padding-left:12px;margin-bottom:24px}.sidebar-title{color:var(--heading);font-weight:800;margin-bottom:4px}.sidebar-count{color:var(--muted);font-size:11px;margin-bottom:16px}.sidebar a{display:block;padding:6px 10px;color:var(--muted);border:0;font-size:13px}.sidebar a.active{background:var(--active-bg);color:var(--accent2);border-left:2px solid var(--accent);margin-left:-13px;padding-left:11px;font-weight:800}.sidebar-section-title{margin:12px 0 6px;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.sidebar-section{margin:10px 0}.sidebar-section summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:6px 10px;border-radius:8px}.sidebar-section summary::-webkit-details-marker{display:none}.sidebar-section summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent);transition:transform .12s ease}.sidebar-section[open] summary::before{transform:rotate(90deg)}.sidebar-section summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-section-body{margin:2px 0 6px 12px;border-left:1px solid var(--border);padding-left:4px}.sidebar-empty{padding:6px 10px;color:var(--muted);font-size:12px;font-style:italic}.article{min-width:0}.content-header{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:18px;color:var(--muted);font-size:13px}.breadcrumbs a,.markdown-link{color:var(--accent)}h1{margin:0 0 10px;color:var(--heading);font-size:36px;line-height:1.1;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}h2{margin:48px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--heading);font-size:22px;line-height:1.2;font-weight:900;text-transform:uppercase}h2::before{content:"// ";color:var(--accent2)}h3{margin:26px 0 8px;color:var(--heading);text-transform:uppercase;font-size:15px;letter-spacing:.08em}.updated{color:var(--muted);font-size:13px;margin-bottom:18px}.info-card{border:1px solid var(--border);background:var(--panel);padding:20px 22px;margin:24px 0}.info-row{display:grid;grid-template-columns:136px 1fr;gap:18px;margin-bottom:12px}.info-row:last-child{margin-bottom:0}.info-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}.green{color:var(--green)}.yellow{color:var(--accent2)}.white{color:var(--heading)}.agent-card{margin:24px 0 22px;padding:14px 18px;background:var(--active-bg);border:1px solid var(--border);border-left:2px solid var(--accent);color:var(--text)}.agent-card a{font-weight:800;margin-right:12px}.hero-copy{max-width:860px;color:var(--text);font-size:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 18px}.button-link{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:999px;padding:9px 14px;background:var(--panel);color:var(--heading);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.button-link.primary{background:var(--active-bg);border-color:var(--accent);color:var(--accent2)}.button-link:hover{border-color:var(--accent);color:var(--accent2)}.agent-setup-callout{max-width:860px;margin:18px 0 34px;padding:16px 18px;background:var(--panel);border:1px solid var(--border);border-left:2px solid var(--accent)}.agent-setup-callout h2{font-size:16px;margin:0 0 6px;padding:0;border:0}.agent-setup-callout h2::before{content:""}.agent-setup-callout p{margin:0;color:var(--muted)}.wiki-nav{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 8px}.wiki-group{margin-top:34px;padding-top:8px}.group-header{max-width:760px;border-left:3px solid var(--active-bg);padding-left:14px;margin-bottom:14px}.group-header h2{margin:2px 0 4px}.group-header p{margin:0;color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2)!important;font-weight:800}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}.card{border:1px solid var(--border);border-radius:14px;padding:18px;background:var(--panel)}.card h2{border:0;margin:0 0 8px;padding:0;font-size:18px}.card h2::before{content:""}.meta{color:var(--muted);font-size:.9rem}.page-meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 22px;color:var(--muted);font-size:13px}.page-meta span{color:var(--heading);font-weight:800}.page-tools{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.prev-next{margin-top:54px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.prev-next-card{border:1px solid var(--border);border-bottom:1px dotted var(--accent);background:var(--panel);padding:18px 20px;text-decoration:none;display:block}.prev-card{text-align:left}.next-card{text-align:right}.next-label{display:block;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}.next-title{color:var(--heading);font-weight:800}.footer{border-top:1px solid var(--border);background:var(--header);color:var(--muted)}.footer-inner{max-width:1180px;margin:0 auto;padding:28px 20px;display:flex;justify-content:space-between;gap:20px}.footer a{margin-left:12px}@media(max-width:820px){.page{grid-template-columns:1fr}.article{order:1}.sidebar{order:2}.nav{display:none}.nav-menu{display:block}.info-row{grid-template-columns:1fr}.footer-inner{display:block}}
 .heading-anchor{margin-left:.4em;color:var(--muted);border:0;font-weight:400;opacity:0;transition:opacity .12s ease}h1:hover .heading-anchor,h2:hover .heading-anchor,h3:hover .heading-anchor,.heading-anchor:focus{opacity:1}.heading-anchor:hover{color:var(--accent)}
 .page-toc{border-left:2px solid var(--border);padding:2px 0 2px 16px;margin:0 0 32px}.page-toc-title{color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;margin-bottom:8px}.page-toc ul{list-style:none;margin:0;padding:0}.page-toc li{margin:4px 0}.page-toc a{color:var(--muted);border:0;font-size:13px}.page-toc a:hover{color:var(--accent)}.page-toc-h3{padding-left:16px}.page-toc-h3 a{color:var(--muted);font-size:12px}
-.sidebar-subgroup{margin:2px 0}.sidebar-subgroup summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;padding:4px 10px;border-radius:8px}.sidebar-subgroup summary::-webkit-details-marker{display:none}.sidebar-subgroup summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent2);transition:transform .12s ease}.sidebar-subgroup[open] summary::before{transform:rotate(90deg)}.sidebar-subgroup summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-filter{display:block;width:100%;margin:2px 0 6px;padding:6px 10px;background:var(--panel);border:1px solid var(--border);border-radius:8px;color:var(--text);font:inherit;font-size:12px}.sidebar-filter:focus{outline:none;border-color:var(--accent)}"""
-
+.sidebar-subgroup{margin:2px 0}.sidebar-subgroup summary{list-style:none;cursor:pointer;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;padding:4px 10px;border-radius:8px}.sidebar-subgroup summary::-webkit-details-marker{display:none}.sidebar-subgroup summary::before{content:"▸";display:inline-block;width:14px;color:var(--accent2);transition:transform .12s ease}.sidebar-subgroup[open] summary::before{transform:rotate(90deg)}.sidebar-subgroup summary:hover{background:var(--panel2);color:var(--heading)}.sidebar-filter{display:block;width:100%;margin:2px 0 6px;padding:6px 10px;background:var(--panel);border:1px solid var(--border);border-radius:8px;color:var(--text);font:inherit;font-size:12px}.sidebar-filter:focus{outline:none;border-color:var(--accent)}
+.recent-group{margin-top:34px}.recent-list{list-style:none;margin:14px 0 0;padding:0}.recent-item{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid var(--border)}.recent-title{font-weight:800;border-bottom:1px dotted currentColor}.namespace-badge{border:1px solid var(--border);background:var(--panel2);color:var(--accent2);border-radius:999px;padding:2px 10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.recent-raw{color:var(--muted);font-size:12px}
+"""
 
 def theme_script() -> str:
     return """<script>(function(){const key='pixi-wiki-theme';const root=document.documentElement;const saved=localStorage.getItem(key)||'light';root.dataset.theme=saved;function label(){const b=document.querySelector('[data-theme-toggle]');if(b)b.textContent=root.dataset.theme==='dark'?'☀':'☾';}document.addEventListener('DOMContentLoaded',function(){label();const b=document.querySelector('[data-theme-toggle]');if(b)b.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem(key,root.dataset.theme);label();});});})();</script>"""
@@ -318,11 +341,13 @@ def sidebar_filter_script() -> str:
 # and Signal Graph page additionally surface the Signal Graph link (HOME_NAV_LINKS).
 WIKI_NAV_LINKS = [
     ("/pixi-wiki/#wikis", "Wikis"),
+    ("/pixi-wiki/recent.html", "Recent"),
     ("/pixi-wiki/docs/AGENT_SETUP.html", "Agent Setup"),
     ("https://github.com/pixiiidust/pixi-wiki", "GitHub"),
 ]
 HOME_NAV_LINKS = [
     ("/pixi-wiki/#wikis", "Wikis"),
+    ("/pixi-wiki/recent.html", "Recent"),
     ("/pixi-wiki/docs/AGENT_SETUP.html", "Agent Setup"),
     ("/pixi-wiki/docs/SIGNAL_GRAPH.html", "Signal Graph"),
     ("https://github.com/pixiiidust/pixi-wiki", "GitHub"),
@@ -663,7 +688,7 @@ def collect_namespace(
     output_root: Path,
     slug: str,
     global_link_targets: dict[str, str] | None = None,
-) -> tuple[dict[str, Any], list[tuple[str, str, str, str]], list[tuple[str, str]]]:
+) -> tuple[dict[str, Any], list[tuple[str, str, str, str]], list[tuple[str, str]], list[dict[str, str]]]:
     namespace_dir = source_dir / slug
     readme_path = namespace_dir / "README.md"
     readme = readme_path.read_text(encoding="utf-8")
@@ -690,6 +715,7 @@ def collect_namespace(
     links: list[tuple[str, str, str, str]] = []
     full_sections: list[tuple[str, str]] = []
     doc_records: list[dict[str, str]] = []
+    recent_entries: list[dict[str, str]] = []
     sidebar_docs = [
         {"title": page_title, "path": rel.as_posix(), "category": sidebar_category(rel, page_fm)}
         for rel, _text, page_fm, _body, page_title in parsed
@@ -782,6 +808,21 @@ def collect_namespace(
         links.append((str(page_title), rel_posix, raw_url, html_url))
         full_sections.append((f"{slug}/{rel_posix}", text))
         doc_records.append({"title": str(page_title), "path": rel_posix, "raw": raw_url, "html": html_url, "category": sidebar_category(rel, page_fm)})
+        # Recent Updates feed entry — only docs with a strict YYYY-MM-DD `updated`
+        # frontmatter value qualify; CLAUDE.md is never surfaced.
+        updated_value = str(page_fm.get("updated", "")) if page_fm else ""
+        if rel_posix != "CLAUDE.md" and RECENT_DATE_RE.match(updated_value):
+            recent_entries.append(
+                {
+                    "title": str(page_title),
+                    "path": rel_posix,
+                    "namespace": slug,
+                    "namespace_title": str(title),
+                    "updated": updated_value,
+                    "raw": raw_url,
+                    "html": html_url,
+                }
+            )
 
     local_index = {
         "slug": slug,
@@ -810,7 +851,7 @@ def collect_namespace(
         "html_base": f"/wiki/{slug}/",
         "documents": doc_records,
     }
-    return wiki_record, links, full_sections
+    return wiki_record, links, full_sections, recent_entries
 
 
 def write_agent_setup_page(output_root: Path) -> None:
@@ -923,6 +964,50 @@ graphify cluster-only . --graph graphify-out/graph.json --no-label</code></pre>
     (docs_dir / "SIGNAL_GRAPH.html").write_text(page, encoding="utf-8", newline="\n")
 
 
+def write_recent_page(output_root: Path, entries: list[dict[str, str]]) -> None:
+    """Render the standalone ``recent.html`` page from already-sorted entries.
+
+    Entries arrive pre-sorted (date DESC) and capped, so grouping consecutive
+    entries by their ``updated`` value yields date-descending sections.
+    """
+    groups: list[tuple[str, list[dict[str, str]]]] = []
+    for entry in entries:
+        if not groups or groups[-1][0] != entry["updated"]:
+            groups.append((entry["updated"], []))
+        groups[-1][1].append(entry)
+    sections: list[str] = []
+    for date, items in groups:
+        rows = "".join(
+            f'<li class="recent-item">'
+            f'<a class="recent-title" href="/pixi-wiki{html.escape(item["html"])}">{html.escape(item["title"])}</a>'
+            f'<a class="namespace-badge" href="/pixi-wiki/wiki/{html.escape(item["namespace"])}/README.md.html">{html.escape(item["namespace_title"])}</a>'
+            f'<a class="recent-raw" href="/pixi-wiki{html.escape(item["raw"])}">raw</a>'
+            f'</li>'
+            for item in items
+        )
+        sections.append(
+            f'<section class="recent-group"><h2>{html.escape(date)}</h2><ul class="recent-list">{rows}</ul></section>'
+        )
+    grouped = "".join(sections) or '<p class="hero-copy">No dated updates yet.</p>'
+    body = (
+        '<article class="article" style="max-width:900px;margin:44px auto 90px;padding:0 20px">'
+        '<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / Recent Updates</div>'
+        '<span class="page-tools"><a class="markdown-link" href="/pixi-wiki/recent.json">recent.json</a></span></div>'
+        '<h1>Recent Updates</h1>'
+        '<p class="hero-copy">The most recently updated pages across every Pixi Wiki namespace, grouped by the date recorded in each page\'s frontmatter.</p>'
+        f'{grouped}'
+        '</article>'
+    )
+    page = f"""<!doctype html>
+<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recent Updates — Pixi Wiki</title><style>{site_css()}</style>{theme_script()}</head><body>
+{site_header(HOME_NAV_LINKS)}
+<main>{body}</main>
+<footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
+</body></html>"""
+    (output_root / "recent.html").write_text(page, encoding="utf-8", newline="\n")
+
+
 def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     if not source_dir.is_dir():
         raise SystemExit(f"Source namespace directory not found: {source_dir}")
@@ -936,6 +1021,7 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
 
     wikis: list[dict[str, Any]] = []
     all_full_sections: list[tuple[str, str]] = []
+    all_recent_entries: list[dict[str, str]] = []
     llms_parts = [
         "# Pixi Wiki Namespace Registry\n\n",
         "> Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with llms.txt.\n\n",
@@ -965,9 +1051,10 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     card_by_slug: dict[str, str] = {}
 
     for slug in slugs:
-        wiki_record, links, full_sections = collect_namespace(source_dir, output_root, slug, global_link_targets)
+        wiki_record, links, full_sections, recent_entries = collect_namespace(source_dir, output_root, slug, global_link_targets)
         wikis.append(wiki_record)
         all_full_sections.extend(full_sections)
+        all_recent_entries.extend(recent_entries)
         title = wiki_record["title"]
         llms_parts.append(f"## {title}\n\n")
         llms_parts.append(f"> {wiki_record['description']}\n")
@@ -1022,6 +1109,15 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
     write_agent_setup_page(output_root)
     write_replicate_page(output_root)
     write_signal_graph_page(output_root)
+
+    recent_entries = sort_recent_entries(all_recent_entries)[:RECENT_LIMIT]
+    write_recent_page(output_root, recent_entries)
+    recent_payload = {
+        "generated_from": "frontmatter updated fields",
+        "count": len(recent_entries),
+        "entries": recent_entries,
+    }
+    (output_root / "recent.json").write_text(json.dumps(recent_payload, indent=2) + "\n", encoding="utf-8", newline="\n")
 
     index_html = f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
