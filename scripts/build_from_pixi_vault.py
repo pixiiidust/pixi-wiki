@@ -76,7 +76,7 @@ AGENT_SETUP_DESCRIPTION = "Connect AI agents to Pixi Wiki so they can list, sear
 REPLICATE_DESCRIPTION = "Use Pixi Wiki as a reusable pattern for turning your own Markdown notes, research, docs, or vault into a human wiki plus agent-readable context layer."
 SIGNAL_GRAPH_DESCRIPTION = "A local analysis sidecar for mapping Pixi Wiki's Markdown corpus before edits, fit-checks, and agent orientation."
 LEGACY_ROOT_PATTERNS = ["concept-*.html", "projects-*.html", "knowledge.html", "projects.html", "maps-of-content.html", "root.html"]
-GENERATED_DIRS = ["raw", "wiki", "agent", "legacy"]
+GENERATED_DIRS = ["raw", "wiki", "agent", "legacy", "updates"]
 CONTENT_DIRS = {"concepts", "entities", "summaries", "syntheses"}
 
 # Updates page/feed: surface every qualifying page (no cap) and only accept
@@ -84,6 +84,12 @@ CONTENT_DIRS = {"concepts", "entities", "summaries", "syntheses"}
 # about the ordering is derived from those strings (never today's clock) so an
 # unchanged input rebuilds byte-identically.
 UPDATE_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+# Soft per-page entry cap for the paginated Updates surface. Whole date sections
+# are accumulated onto a page until its running entry total reaches this target,
+# then a new page starts; a date section is never split, so a single heavy import
+# day simply becomes one oversized page. Pure function of the data — no clock.
+UPDATES_PAGE_ENTRY_TARGET = 60
 
 
 def sort_update_entries(entries: list[dict[str, str]]) -> list[dict[str, str]]:
@@ -359,6 +365,7 @@ def site_css() -> str:
 .skip-link{position:absolute;width:1px;height:1px;padding:0;margin:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}.skip-link:focus{position:fixed;top:12px;left:12px;width:auto;height:auto;padding:8px 14px;clip:auto;clip-path:none;background:var(--accent);color:var(--header);border-radius:999px;z-index:100;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
 pre{position:relative}.copy-button{position:absolute;top:8px;right:8px;padding:4px 10px;background:var(--panel);color:var(--muted);border:1px solid var(--border);border-radius:6px;font:inherit;font-size:11px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.copy-button:hover,.copy-button:focus{border-color:var(--accent);color:var(--accent)}
 .updates-filter{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}.updates-chip{border:1px solid var(--border);background:var(--panel);color:var(--muted);border-radius:999px;padding:6px 14px;font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.updates-chip:hover{border-color:var(--accent);color:var(--accent)}.updates-chip[aria-pressed=true]{background:var(--active-bg);border-color:var(--accent);color:var(--accent2);font-weight:800}.updates-empty{width:100%;padding:8px 2px;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-style:italic}.updates-months{display:flex;flex-wrap:wrap;gap:6px 10px;margin:14px 0 6px;color:var(--muted);font-size:12px;letter-spacing:.06em}.updates-months a{color:var(--muted);border:0}.updates-months a:hover{color:var(--accent)}.updates-month-anchor{display:block;height:0;overflow:hidden}.updates-group{margin-top:34px}.updates-group[hidden]{display:none}.updates-ns{margin:10px 0}.updates-ns summary{list-style:none;cursor:pointer;color:var(--heading);font-weight:800;font-size:13px;letter-spacing:.04em;padding:6px 0}.updates-ns summary::-webkit-details-marker{display:none}.updates-ns summary::before{content:"▸";display:inline-block;width:16px;color:var(--accent);transition:transform .12s ease}.updates-ns[open] summary::before{transform:rotate(90deg)}.updates-list{list-style:none;margin:4px 0 0;padding:0 0 0 16px}.updates-item{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px solid var(--border)}.updates-title{font-weight:800;border-bottom:1px dotted currentColor}.updates-raw{color:var(--muted);font-size:12px}
+.pagination{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:54px 0 0;padding-top:24px;border-top:1px solid var(--border)}.pagination a,.pagination span{border:1px solid var(--border);background:var(--panel);color:var(--muted);border-radius:999px;padding:7px 13px;font-size:12px;letter-spacing:.06em;min-width:38px;text-align:center}.pagination a{text-decoration:none}.pagination a:hover{border-color:var(--accent);color:var(--accent)}.pagination .pagination-current{background:var(--active-bg);border-color:var(--accent);color:var(--accent2);font-weight:800}.pagination .pagination-ellipsis{border:0;background:transparent;color:var(--muted);min-width:auto;padding:7px 4px}.pagination-prev,.pagination-next{text-transform:uppercase;letter-spacing:.1em}
 """
 
 # Content hash of the shared stylesheet, computed once at import time. Every
@@ -1128,26 +1135,246 @@ def updates_filter_script() -> str:
     return """<script>(function(){document.addEventListener('DOMContentLoaded',function(){var box=document.querySelector('.updates-filter');if(!box)return;var groups=[].slice.call(document.querySelectorAll('.updates-group'));if(!groups.length)return;var ranges=[['All',0],['7 days',7],['30 days',30],['90 days',90]];var note=document.createElement('div');note.className='updates-empty';note.hidden=true;note.textContent='No updates in this range.';var buttons=[];function toUTC(s){var p=(s||'').split('-');if(p.length!==3)return NaN;return Date.UTC(+p[0],+p[1]-1,+p[2]);}function apply(days,active){for(var i=0;i<buttons.length;i++){buttons[i].setAttribute('aria-pressed',buttons[i]===active?'true':'false');}var visible=0;if(!days){for(var j=0;j<groups.length;j++){groups[j].hidden=false;visible++;}}else{var now=new Date();var cutoff=Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())-days*86400000;for(var k=0;k<groups.length;k++){var t=toUTC(groups[k].getAttribute('data-date'));var keep=!isNaN(t)&&t>=cutoff;groups[k].hidden=!keep;if(keep)visible++;}}note.hidden=visible>0;}for(var r=0;r<ranges.length;r++){(function(range){var b=document.createElement('button');b.type='button';b.className='updates-chip';b.textContent=range[0];b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){apply(range[1],b);});box.appendChild(b);buttons.push(b);})(ranges[r]);}box.appendChild(note);apply(0,buttons[0]);});})();</script>"""
 
 
-def write_updates_page(output_root: Path, entries: list[dict[str, str]]) -> None:
-    """Render the browsable ``updates.html`` page from already-sorted entries.
-
-    Entries arrive pre-sorted (date DESC, namespace ASC, title ASC) with no cap,
-    so grouping consecutive entries by ``updated`` yields date-descending
-    sections and, within each, contiguous per-namespace runs. Each date section
-    carries an ``id="d-YYYY-MM-DD"`` and a ``data-date`` attribute (the key the
-    filter script reads); each namespace run becomes a ``<details>`` that opens
-    when it holds five or fewer entries. A month index strip and per-month
-    anchors are pre-rendered from the data so the page is fully browsable with
-    no JavaScript.
-    """
+def group_updates_by_date(
+    entries: list[dict[str, str]],
+) -> list[tuple[str, list[dict[str, str]]]]:
+    """Collapse pre-sorted entries into contiguous date-descending sections."""
     groups: list[tuple[str, list[dict[str, str]]]] = []
     for entry in entries:
         if not groups or groups[-1][0] != entry["updated"]:
             groups.append((entry["updated"], []))
         groups[-1][1].append(entry)
+    return groups
 
-    # Month index: one link per distinct month (newest first), each jumping to
-    # the anchor placed on that month's first (newest) date section.
+
+def paginate_update_groups(
+    groups: list[tuple[str, list[dict[str, str]]]],
+    target: int = UPDATES_PAGE_ENTRY_TARGET,
+) -> list[list[tuple[str, list[dict[str, str]]]]]:
+    """Split whole date sections into pages at a soft ``target`` entry cap.
+
+    Sections are appended to the current page until its running entry total
+    reaches ``target``; the page is then flushed and a new one begins. A section
+    is never split across pages, so a single import day larger than ``target``
+    becomes one oversized page. Pure function of the data; an empty corpus still
+    yields exactly one (empty) page so ``updates.html`` always exists.
+    """
+    pages: list[list[tuple[str, list[dict[str, str]]]]] = []
+    current: list[tuple[str, list[dict[str, str]]]] = []
+    running = 0
+    for date, items in groups:
+        current.append((date, items))
+        running += len(items)
+        if running >= target:
+            pages.append(current)
+            current = []
+            running = 0
+    if current or not pages:
+        pages.append(current)
+    return pages
+
+
+def updates_page_path(page_num: int) -> str:
+    """Site-absolute path for Updates page ``N`` (1 -> root, N>=2 -> subdir)."""
+    if page_num <= 1:
+        return f"{BASE_PATH}/updates.html"
+    return f"{BASE_PATH}/updates/{page_num}.html"
+
+
+def pagination_window(current: int, total: int, edge: int = 2) -> list[int | None]:
+    """Deterministic page-number window with ellipses for long ranges.
+
+    Ranges of nine pages or fewer render every number. Longer ranges keep the
+    first page, the last page, and ``current ± edge``, collapsing each remaining
+    gap into a single ``None`` sentinel (rendered as an ellipsis).
+    """
+    if total <= 9:
+        return list(range(1, total + 1))
+    keep = {1, total}
+    for page in range(current - edge, current + edge + 1):
+        if 1 <= page <= total:
+            keep.add(page)
+    result: list[int | None] = []
+    previous: int | None = None
+    for page in sorted(keep):
+        if previous is not None and page - previous > 1:
+            result.append(None)
+        result.append(page)
+        previous = page
+    return result
+
+
+def render_pagination(current: int, total: int) -> str:
+    """Bottom pagination bar: Prev, numbered pills (current marked), Next.
+
+    Omitted entirely for a single-page corpus (nothing to paginate). Prev is
+    dropped on the first page and Next on the last; the current page renders as a
+    non-link ``aria-current="page"`` pill.
+    """
+    if total <= 1:
+        return ""
+    items: list[str] = []
+    if current > 1:
+        items.append(
+            f'<a class="pagination-prev" rel="prev" '
+            f'href="{updates_page_path(current - 1)}">← Prev</a>'
+        )
+    for page in pagination_window(current, total):
+        if page is None:
+            items.append('<span class="pagination-ellipsis" aria-hidden="true">…</span>')
+        elif page == current:
+            items.append(
+                f'<span class="pagination-pill pagination-current" '
+                f'aria-current="page">{page}</span>'
+            )
+        else:
+            items.append(
+                f'<a class="pagination-pill" href="{updates_page_path(page)}">{page}</a>'
+            )
+    if current < total:
+        items.append(
+            f'<a class="pagination-next" rel="next" '
+            f'href="{updates_page_path(current + 1)}">Next →</a>'
+        )
+    return f'<nav class="pagination" aria-label="Pagination">{"".join(items)}</nav>'
+
+
+def _updates_month_strip(
+    months_order: list[str], month_page: dict[str, int], current_page: int
+) -> str:
+    """Month index strip shared by every page; hrefs cross-link off-page months.
+
+    A month whose first (newest) date section lives on the current page links to
+    a bare ``#m-YYYY-MM`` anchor; every other month links to its page URL plus
+    that anchor, so the strip works identically from any page.
+    """
+    if not months_order:
+        return ""
+    links: list[str] = []
+    for month in months_order:
+        target_page = month_page[month]
+        href = f"#m-{month}" if target_page == current_page else f"{updates_page_path(target_page)}#m-{month}"
+        links.append(f'<a href="{html.escape(href, quote=True)}">{html.escape(month)}</a>')
+    return f'<nav class="updates-months" aria-label="Jump to month">{" · ".join(links)}</nav>'
+
+
+def _render_updates_section(
+    date: str, items: list[dict[str, str]], is_month_first: bool
+) -> str:
+    """One date section: optional month anchor, heading, per-namespace roll-ups."""
+    month = date[:7]
+    month_anchor = (
+        f'<span class="updates-month-anchor" id="m-{month}"></span>'
+        if is_month_first
+        else ""
+    )
+    ns_runs: list[tuple[str, list[dict[str, str]]]] = []
+    for item in items:
+        if not ns_runs or ns_runs[-1][0] != item["namespace"]:
+            ns_runs.append((item["namespace"], []))
+        ns_runs[-1][1].append(item)
+    blocks: list[str] = []
+    for _namespace, run in ns_runs:
+        rows = "".join(
+            f'<li class="updates-item">'
+            f'<a class="updates-title" href="{BASE_PATH}{html.escape(item["html"])}">{html.escape(item["title"])}</a>'
+            f'<a class="updates-raw" href="{BASE_PATH}{html.escape(item["raw"])}">raw</a>'
+            f'</li>'
+            for item in run
+        )
+        blocks.append(
+            f'<details class="updates-ns">'
+            f'<summary>{html.escape(run[0]["namespace_title"])} ({len(run)})</summary>'
+            f'<ul class="updates-list">{rows}</ul></details>'
+        )
+    return (
+        f'{month_anchor}<section class="updates-group" id="d-{date}" data-date="{date}">'
+        f'<h2>{html.escape(date)}</h2>{"".join(blocks)}</section>'
+    )
+
+
+def render_updates_page(
+    page_num: int,
+    total_pages: int,
+    page_groups: list[tuple[str, list[dict[str, str]]]],
+    months_order: list[str],
+    month_first_date: dict[str, str],
+    month_page: dict[str, int],
+) -> str:
+    """Render one Updates page's full HTML document.
+
+    Every page carries standard chrome, the h1 + hero line, the cross-page month
+    strip, its own date sections, and the pagination bar. Only page 1 emits the
+    time-filter chip placeholder and its script: a "7 days" chip on a deeper page
+    would be meaningless, so deeper pages get neither.
+    """
+    month_strip = _updates_month_strip(months_order, month_page, page_num)
+    sections = [
+        _render_updates_section(date, items, month_first_date.get(date[:7]) == date)
+        for date, items in page_groups
+    ]
+    grouped = "".join(sections) or '<p class="hero-copy">No dated updates yet.</p>'
+    pagination = render_pagination(page_num, total_pages)
+
+    canonical = updates_page_path(page_num)
+    if page_num == 1:
+        title = "Updates"
+        description = UPDATES_DESCRIPTION
+        filter_placeholder = '<div class="updates-filter"></div>'
+        filter_js = updates_filter_script()
+    else:
+        title = f"Updates — page {page_num}"
+        description = f"Updates — page {page_num} of {total_pages}. {UPDATES_DESCRIPTION}"
+        filter_placeholder = ""
+        filter_js = ""
+
+    rel_links = ""
+    if page_num > 1:
+        prev_url = html.escape(SITE_ORIGIN + updates_page_path(page_num - 1), quote=True)
+        rel_links += f'<link rel="prev" href="{prev_url}">'
+    if page_num < total_pages:
+        next_url = html.escape(SITE_ORIGIN + updates_page_path(page_num + 1), quote=True)
+        rel_links += f'<link rel="next" href="{next_url}">'
+
+    body = (
+        '<article class="article" style="max-width:900px;margin:44px auto 90px;padding:0 20px">'
+        f'<div class="content-header"><div class="breadcrumbs"><a href="{BASE_PATH}/">wikis</a> / Updates</div>'
+        f'<span class="page-tools"><a class="markdown-link" href="{BASE_PATH}/updates.json">updates.json</a></span></div>'
+        f'<h1>{html.escape(title)}</h1>'
+        '<p class="hero-copy">Every updated page across every Pixi Wiki namespace, grouped by the date recorded in each page\'s frontmatter. Jump by month, or filter by time range.</p>'
+        f'{filter_placeholder}'
+        f'{month_strip}'
+        f'{grouped}'
+        f'{pagination}'
+        '</article>'
+    )
+    return f"""<!doctype html>
+<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{html.escape(title)} — Pixi Wiki</title>{head_meta(title, description, canonical)}{rel_links}{stylesheet_link()}{theme_script()}{search_script()}{filter_js}</head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+{site_header(HOME_NAV_LINKS)}
+<main id="main-content">{body}</main>
+<footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="{BASE_PATH}/llms.txt">/llms.txt</a><a href="{BASE_PATH}/llms-full.txt">/llms-full.txt</a><a href="{BASE_PATH}/index.json">/index.json</a></p></div></footer>
+</body></html>"""
+
+
+def write_updates_page(output_root: Path, entries: list[dict[str, str]]) -> list[str]:
+    """Render the paginated Updates surface and return every page's URL path.
+
+    Entries arrive pre-sorted (date DESC, namespace ASC, title ASC). They are
+    grouped into date-descending sections, chunked into pages at the
+    ``UPDATES_PAGE_ENTRY_TARGET`` soft cap (whole sections only), and each page is
+    written: page 1 to ``updates.html`` and page N>=2 to ``updates/N.html``. The
+    returned site-absolute paths feed the sitemap. The month strip, per-month
+    anchors, and pagination bar are all pre-rendered so every page is fully
+    browsable with no JavaScript.
+    """
+    groups = group_updates_by_date(entries)
+    pages = paginate_update_groups(groups)
+    total_pages = len(pages)
+
+    # Global month order and each month's first (newest) date section — the date
+    # that carries the ``m-`` anchor, wherever it lands across pages.
     month_first_date: dict[str, str] = {}
     months_order: list[str] = []
     for date, _items in groups:
@@ -1155,70 +1382,28 @@ def write_updates_page(output_root: Path, entries: list[dict[str, str]]) -> None
         if month not in month_first_date:
             month_first_date[month] = date
             months_order.append(month)
-    month_links = " · ".join(
-        f'<a href="#m-{month}">{html.escape(month)}</a>' for month in months_order
-    )
-    month_strip = (
-        f'<nav class="updates-months" aria-label="Jump to month">{month_links}</nav>'
-        if month_links
-        else ""
-    )
 
-    sections: list[str] = []
-    for date, items in groups:
-        month = date[:7]
-        month_anchor = (
-            f'<span class="updates-month-anchor" id="m-{month}"></span>'
-            if month_first_date.get(month) == date
-            else ""
+    # Which page holds each month's anchor, so the strip can cross-link.
+    month_page: dict[str, int] = {}
+    for index, page_groups in enumerate(pages, start=1):
+        for date, _items in page_groups:
+            month = date[:7]
+            if month not in month_page:
+                month_page[month] = index
+
+    updates_dir = output_root / "updates"
+    paths: list[str] = []
+    for index, page_groups in enumerate(pages, start=1):
+        page_html = render_updates_page(
+            index, total_pages, page_groups, months_order, month_first_date, month_page
         )
-        # Contiguous per-namespace runs (entries are already namespace-sorted
-        # within a date), each rolled up into an open/closed <details>.
-        ns_runs: list[tuple[str, list[dict[str, str]]]] = []
-        for item in items:
-            if not ns_runs or ns_runs[-1][0] != item["namespace"]:
-                ns_runs.append((item["namespace"], []))
-            ns_runs[-1][1].append(item)
-        blocks: list[str] = []
-        for _namespace, run in ns_runs:
-            count = len(run)
-            rows = "".join(
-                f'<li class="updates-item">'
-                f'<a class="updates-title" href="{BASE_PATH}{html.escape(item["html"])}">{html.escape(item["title"])}</a>'
-                f'<a class="updates-raw" href="{BASE_PATH}{html.escape(item["raw"])}">raw</a>'
-                f'</li>'
-                for item in run
-            )
-            blocks.append(
-                f'<details class="updates-ns">'
-                f'<summary>{html.escape(run[0]["namespace_title"])} ({count})</summary>'
-                f'<ul class="updates-list">{rows}</ul></details>'
-            )
-        sections.append(
-            f'{month_anchor}<section class="updates-group" id="d-{date}" data-date="{date}">'
-            f'<h2>{html.escape(date)}</h2>{"".join(blocks)}</section>'
-        )
-    grouped = "".join(sections) or '<p class="hero-copy">No dated updates yet.</p>'
-    body = (
-        '<article class="article" style="max-width:900px;margin:44px auto 90px;padding:0 20px">'
-        f'<div class="content-header"><div class="breadcrumbs"><a href="{BASE_PATH}/">wikis</a> / Updates</div>'
-        f'<span class="page-tools"><a class="markdown-link" href="{BASE_PATH}/updates.json">updates.json</a></span></div>'
-        '<h1>Updates</h1>'
-        '<p class="hero-copy">Every updated page across every Pixi Wiki namespace, grouped by the date recorded in each page\'s frontmatter. Jump by month, or filter by time range.</p>'
-        '<div class="updates-filter"></div>'
-        f'{month_strip}'
-        f'{grouped}'
-        '</article>'
-    )
-    page = f"""<!doctype html>
-<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Updates — Pixi Wiki</title>{head_meta("Updates", UPDATES_DESCRIPTION, BASE_PATH + "/updates.html")}{stylesheet_link()}{theme_script()}{search_script()}{updates_filter_script()}</head><body>
-<a class="skip-link" href="#main-content">Skip to content</a>
-{site_header(HOME_NAV_LINKS)}
-<main id="main-content">{body}</main>
-<footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="{BASE_PATH}/llms.txt">/llms.txt</a><a href="{BASE_PATH}/llms-full.txt">/llms-full.txt</a><a href="{BASE_PATH}/index.json">/index.json</a></p></div></footer>
-</body></html>"""
-    (output_root / "updates.html").write_text(page, encoding="utf-8", newline="\n")
+        if index == 1:
+            (output_root / "updates.html").write_text(page_html, encoding="utf-8", newline="\n")
+        else:
+            updates_dir.mkdir(parents=True, exist_ok=True)
+            (updates_dir / f"{index}.html").write_text(page_html, encoding="utf-8", newline="\n")
+        paths.append(updates_page_path(index))
+    return paths
 
 
 def write_recent_redirect(output_root: Path) -> None:
@@ -1238,18 +1423,21 @@ def write_recent_redirect(output_root: Path) -> None:
     (output_root / "recent.html").write_text(page, encoding="utf-8", newline="\n")
 
 
-def write_sitemap(output_root: Path, doc_entries: list[dict[str, str]]) -> None:
+def write_sitemap(
+    output_root: Path,
+    doc_entries: list[dict[str, str]],
+    updates_paths: list[str],
+) -> None:
     """Emit ``sitemap.xml`` with one ``<url>`` per generated HTML page.
 
     ``doc_entries`` covers every namespace document/README page (each a dict with
     a site-absolute ``path`` and a possibly-empty ``lastmod``). The homepage,
-    ``updates.html``, and the three docs pages are added here as undated chrome.
-    The ``recent.html`` redirect stub is intentionally excluded.
-    Ordering is deterministic: the homepage first, then all other URLs sorted by
-    path, so an unchanged corpus rebuilds byte-identically.
+    every paginated Updates page in ``updates_paths``, and the three docs pages
+    are added here as undated chrome. The ``recent.html`` redirect stub is
+    intentionally excluded. Ordering is deterministic: the homepage first, then
+    all other URLs sorted by path, so an unchanged corpus rebuilds byte-identically.
     """
-    chrome_paths = [
-        f"{BASE_PATH}/updates.html",
+    chrome_paths = list(updates_paths) + [
         f"{BASE_PATH}/docs/AGENT_SETUP.html",
         f"{BASE_PATH}/docs/REPLICATE_APPROACH.html",
         f"{BASE_PATH}/docs/SIGNAL_GRAPH.html",
@@ -1420,7 +1608,7 @@ def build(
     write_signal_graph_page(output_root)
 
     update_entries = sort_update_entries(all_update_entries)
-    write_updates_page(output_root, update_entries)
+    updates_paths = write_updates_page(output_root, update_entries)
     write_recent_redirect(output_root)
     updates_payload = {
         "generated_from": "frontmatter updated fields",
@@ -1439,7 +1627,7 @@ def build(
 </body></html>"""
     (output_root / "index.html").write_text(index_html, encoding="utf-8", newline="\n")
 
-    write_sitemap(output_root, all_sitemap_docs)
+    write_sitemap(output_root, all_sitemap_docs, updates_paths)
     write_404_page(output_root)
 
 
