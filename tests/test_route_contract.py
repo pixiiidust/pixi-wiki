@@ -111,30 +111,30 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         html = (ROOT / "wiki" / "agent-workflows" / "README.md.html").read_text(encoding="utf-8")
         self.assertIn("Agent Workflows Knowledge Base", html)
         self.assertIn("31 documents", html)
-        self.assertIn("📄 Agent Workflows Knowledge Base", html)
-        self.assertIn("📄 Agent Workflows KB — Master Index", html)
+        self.assertIn("📄 </span>Agent Workflows Knowledge Base", html)
+        self.assertIn("📄 </span>Agent Workflows KB — Master Index", html)
         self.assertIn("<summary>WIKI 1</summary>", html)
-        self.assertIn("📄 Agent Workflows — Activity Log", html)
+        self.assertIn("📄 </span>Agent Workflows — Activity Log", html)
         self.assertIn("<summary>CONCEPTS 22</summary>", html)
-        self.assertIn("📄 Agent Capability Route Pattern", html)
-        self.assertIn("📄 Agent Tooling Plan", html)
-        self.assertIn("📄 Effective State Load", html)
-        self.assertIn("📄 Reader-Centered Outreach Asks", html)
-        self.assertIn("📄 Compound Engineering Skill Layer", html)
-        self.assertIn("📄 Creative Ideation Routing", html)
-        self.assertIn("📄 Visual Plan Review Surfaces", html)
-        self.assertIn("📄 Bounded Context Tree Pattern", html)
-        self.assertIn("📄 Hermes SOUL.md Wiring", html)
-        self.assertIn("📄 High Agency Work Levels", html)
-        self.assertIn("📄 Knowledge Pack Routing", html)
-        self.assertIn("📄 Matt Pocock SDLC Rhythm", html)
-        self.assertIn("📄 Matt Pocock Skills Best Practices", html)
-        self.assertIn("📄 Multi-Agent Multiplayer Boundaries", html)
-        self.assertIn("📄 Ponytail Minimal Code Discipline", html)
+        self.assertIn("📄 </span>Agent Capability Route Pattern", html)
+        self.assertIn("📄 </span>Agent Tooling Plan", html)
+        self.assertIn("📄 </span>Effective State Load", html)
+        self.assertIn("📄 </span>Reader-Centered Outreach Asks", html)
+        self.assertIn("📄 </span>Compound Engineering Skill Layer", html)
+        self.assertIn("📄 </span>Creative Ideation Routing", html)
+        self.assertIn("📄 </span>Visual Plan Review Surfaces", html)
+        self.assertIn("📄 </span>Bounded Context Tree Pattern", html)
+        self.assertIn("📄 </span>Hermes SOUL.md Wiring", html)
+        self.assertIn("📄 </span>High Agency Work Levels", html)
+        self.assertIn("📄 </span>Knowledge Pack Routing", html)
+        self.assertIn("📄 </span>Matt Pocock SDLC Rhythm", html)
+        self.assertIn("📄 </span>Matt Pocock Skills Best Practices", html)
+        self.assertIn("📄 </span>Multi-Agent Multiplayer Boundaries", html)
+        self.assertIn("📄 </span>Ponytail Minimal Code Discipline", html)
         self.assertIn("<summary>ENTITIES 1</summary>", html)
         self.assertIn("<summary>SUMMARIES 2</summary>", html)
-        self.assertIn("📄 Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation", html)
-        self.assertIn("📄 Effective State Load Full Report", html)
+        self.assertIn("📄 </span>Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation", html)
+        self.assertIn("📄 </span>Effective State Load Full Report", html)
         self.assertIn("<summary>SYNTHESES 2</summary>", html)
         self.assertIn("<summary>// FOR AGENTS</summary>", html)
         self.assertIn("/wiki/agent-workflows/llms.txt", html)
@@ -298,6 +298,61 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("The reusable contract", html)
         self.assertIn("https://github.com/pixiiidust/pixi-wiki", html)
         self.assertIn("local read-only MCP tools", html)
+
+
+class HardenedSurfaceContractTest(unittest.TestCase):
+    """Committed-artifact contracts for the PRD #51 hardening (regenerated in #65).
+
+    These assert on the PUBLISHED tree, complementing the build-seam fixture
+    tests that landed with each feature PR (#68-#78).
+    """
+
+    def test_renderer_fixes_are_live_on_previously_broken_pages(self) -> None:
+        html = (ROOT / "wiki" / "agent-workflows" / "wiki" / "concepts" / "agent-tooling-plan.md.html").read_text(encoding="utf-8")
+        self.assertIn('<div class="table-wrap"><table><thead>', html)
+        self.assertIn("<th>Bucket</th>", html)
+        self.assertNotIn("<p>| Bucket", html)
+        self.assertIn("<strong>Agent Tooling Plan</strong>", html)
+        pattern = (ROOT / "wiki" / "pattern-language" / "wiki" / "concepts" / "patterns" / "activity-nodes-30.md.html").read_text(encoding="utf-8")
+        self.assertIn("<blockquote>", pattern)
+        self.assertNotIn("&gt;Community facilities", pattern)
+
+    def test_new_root_surfaces_exist_and_are_consistent(self) -> None:
+        import xml.etree.ElementTree as ET
+
+        for name in ["recent.html", "recent.json", "sitemap.xml", "404.html", "site.css"]:
+            with self.subTest(file=name):
+                self.assertTrue((ROOT / name).is_file(), name)
+        recent = json.loads((ROOT / "recent.json").read_text(encoding="utf-8"))
+        self.assertGreater(recent["count"], 0)
+        registry = json.loads((ROOT / "index.json").read_text(encoding="utf-8"))
+        known = {(w["slug"], d["path"]) for w in registry["wikis"] for d in w["documents"]}
+        for entry in recent["entries"]:
+            self.assertIn((entry["namespace"], entry["path"]), known)
+        tree = ET.parse(ROOT / "sitemap.xml")
+        locs = [el.text for el in tree.iter() if el.tag.endswith("loc")]
+        self.assertIn("https://pixiiidust.github.io/pixi-wiki/", locs)
+        self.assertGreater(len(locs), 600)
+
+    def test_published_pages_carry_the_new_chrome(self) -> None:
+        html = (ROOT / "wiki" / "agent-workflows" / "README.md.html").read_text(encoding="utf-8")
+        self.assertIn('<meta name="description"', html)
+        self.assertIn('<link rel="canonical" href="https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/README.md.html">', html)
+        self.assertIn('<link rel="stylesheet" href="/pixi-wiki/site.css">', html)
+        self.assertIn('class="site-search" data-registry="/pixi-wiki/index.json"', html)
+        self.assertIn('class="skip-link"', html)
+        self.assertIn('id="main-content"', html)
+        self.assertIn('aria-current="page"', html)
+        self.assertIn('aria-label="Toggle color theme"', html)
+        self.assertIn('<details class="nav-menu">', html)
+        self.assertIn('href="/pixi-wiki/recent.html"', html)
+        self.assertIn('<h2 id="', html)
+        self.assertIn('class="heading-anchor"', html)
+
+    def test_large_namespace_sidebar_is_grouped_and_filterable(self) -> None:
+        html = (ROOT / "wiki" / "pattern-language" / "README.md.html").read_text(encoding="utf-8")
+        self.assertIn('class="sidebar-subgroup"', html)
+        self.assertIn('class="sidebar-filter"', html)
 
 
 if __name__ == "__main__":
