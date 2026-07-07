@@ -206,3 +206,14 @@ def test_css_has_site_search_rules(tmp_path: Path) -> None:
     assert "background:var(--panel)" in css
     # Shrinks but stays usable on narrow viewports.
     assert ".site-search{max-width:190px" in css
+
+
+def test_result_hrefs_are_prefixed_with_site_base(tmp_path: Path) -> None:
+    # Regression: registry `html` values are site-root-relative (/wiki/...)
+    # WITHOUT the /pixi-wiki base; the script must derive the base from
+    # data-registry and prefix it, or every result link 404s on Pages.
+    generator = load_generator()
+    js = generator.search_script()
+    assert "var base=url.replace(/\\/index\\.json$/,'');" in js
+    assert "a.href=base+e.url;" in js
+    assert "a.href=e.url;" not in js
