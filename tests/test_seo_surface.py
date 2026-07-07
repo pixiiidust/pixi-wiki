@@ -176,13 +176,13 @@ def test_readme_page_uses_namespace_description(tmp_path: Path) -> None:
     assert meta_content(html_text, "name", "description") == NAMESPACE_DESCRIPTION
 
 
-def test_homepage_and_recent_have_static_descriptions(tmp_path: Path) -> None:
+def test_homepage_and_updates_have_static_descriptions(tmp_path: Path) -> None:
     generator, output = build_site(tmp_path)
     home = read(output, "index.html")
-    recent = read(output, "recent.html")
+    updates = read(output, "updates.html")
     assert htmllib.unescape(meta_content(home, "name", "description")) == generator.HOME_DESCRIPTION
     assert og_content(home, "og:type") == "website"
-    assert htmllib.unescape(meta_content(recent, "name", "description")) == generator.RECENT_DESCRIPTION
+    assert htmllib.unescape(meta_content(updates, "name", "description")) == generator.UPDATES_DESCRIPTION
 
 
 def test_description_special_characters_are_escaped(tmp_path: Path) -> None:
@@ -243,7 +243,9 @@ def test_sitemap_lists_every_page_with_conditional_lastmod(tmp_path: Path) -> No
     assert locs[0] == origin + "/pixi-wiki/"
     assert lastmods[origin + "/pixi-wiki/"] is None
     # Chrome pages present.
-    assert origin + "/pixi-wiki/recent.html" in locs
+    assert origin + "/pixi-wiki/updates.html" in locs
+    # The recent.html redirect stub stays out of the sitemap.
+    assert origin + "/pixi-wiki/recent.html" not in locs
     assert origin + "/pixi-wiki/docs/AGENT_SETUP.html" in locs
     assert origin + "/pixi-wiki/docs/REPLICATE_APPROACH.html" in locs
     assert origin + "/pixi-wiki/docs/SIGNAL_GRAPH.html" in locs

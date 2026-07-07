@@ -114,7 +114,7 @@ def built_pages(output: Path) -> list[Path]:
         a_readme_page(output),
         output / "index.html",
         output / "docs" / "AGENT_SETUP.html",
-        output / "recent.html",
+        output / "updates.html",
     ]
 
 

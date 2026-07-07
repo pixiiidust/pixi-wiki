@@ -166,9 +166,10 @@ def test_generator_removes_legacy_root_and_old_layers(tmp_path: Path) -> None:
     assert not (output / "raw" / "Knowledge").exists()
     assert not (output / "wiki" / "knowledge").exists()
 
-    # A fresh build always emits the 404 and Recent Updates pages alongside the registry.
+    # A fresh build always emits the 404, Updates, and recent-redirect stub pages
+    # alongside the registry.
     root_html = sorted(path.name for path in output.glob("*.html"))
-    assert root_html == ["404.html", "index.html", "recent.html"]
+    assert root_html == ["404.html", "index.html", "recent.html", "updates.html"]
 
 
 def test_generator_is_idempotent_for_clean_output(tmp_path: Path) -> None:
