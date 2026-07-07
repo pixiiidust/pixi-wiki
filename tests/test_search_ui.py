@@ -222,3 +222,12 @@ def test_result_hrefs_are_prefixed_with_site_base(tmp_path: Path) -> None:
     assert "var base=url.replace(/\\/index\\.json$/,'');" in js
     assert "a.href=base+e.url;" in js
     assert "a.href=e.url;" not in js
+
+def test_load_queues_latest_callback_instead_of_dropping() -> None:
+    # Regression: a focus-triggered load raced typing; input callbacks issued
+    # while the fetch was in flight were dropped, so a query typed entirely
+    # during the fetch rendered nothing until the next keystroke.
+    generator = load_generator()
+    js = generator.search_script()
+    assert 'pending=cb;if(loading)return;' in js
+    assert 'var p=pending;pending=null;if(p)p();' in js

@@ -275,3 +275,12 @@ def test_committed_search_page_is_published_and_noindexed() -> None:
     tree = ET.parse(ROOT / "sitemap.xml")
     locs = [el.text for el in tree.iter() if el.tag.endswith("loc")]
     assert "https://pixiiidust.github.io/pixi-wiki/search.html" not in locs
+
+def test_load_queues_latest_callback_instead_of_dropping() -> None:
+    # Regression: a focus-triggered load raced typing; input callbacks issued
+    # while the fetch was in flight were dropped, so a query typed entirely
+    # during the fetch rendered nothing until the next keystroke.
+    generator = load_generator()
+    js = generator.search_page_script()
+    assert 'pending=cb;if(loading)return;' in js
+    assert 'var p=pending;pending=null;if(p)p();' in js
