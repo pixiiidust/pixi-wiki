@@ -18,6 +18,11 @@ from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import quote_plus, urlparse
 
+try:  # Runs both as `python scripts/...` (scripts/ on path) and as `scripts.*` import.
+    from scripts.markdown_meta import first_heading, first_paragraph, parse_frontmatter
+except ImportError:  # pragma: no cover - direct-script execution fallback
+    from markdown_meta import first_heading, first_paragraph, parse_frontmatter
+
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = Path("/root/ObsidianVault/wikis")
 DEFAULT_SEED_SLUGS = [
@@ -37,64 +42,6 @@ GENERATED_ROOT_FILES = ["index.html", "index.json", "llms.txt", "llms-full.txt"]
 LEGACY_ROOT_PATTERNS = ["concept-*.html", "projects-*.html", "knowledge.html", "projects.html", "maps-of-content.html", "root.html"]
 GENERATED_DIRS = ["raw", "wiki", "agent", "legacy"]
 CONTENT_DIRS = {"concepts", "entities", "summaries", "syntheses"}
-
-
-def parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
-    if not text.startswith("---\n"):
-        return {}, text
-    end = text.find("\n---\n", 4)
-    if end == -1:
-        return {}, text
-    raw = text[4:end]
-    body = text[end + 5 :]
-    fm: dict[str, Any] = {}
-    current: str | None = None
-    for line in raw.splitlines():
-        if not line.strip():
-            continue
-        if line.startswith("  - ") and current:
-            fm.setdefault(current, [])
-            if isinstance(fm[current], list):
-                fm[current].append(line[4:].strip())
-            continue
-        if ":" not in line:
-            continue
-        key, value = line.split(":", 1)
-        key = key.strip()
-        value = value.strip()
-        if value == "":
-            fm[key] = []
-            current = key
-        elif value.startswith("[") and value.endswith("]"):
-            fm[key] = [part.strip().strip('"\'') for part in value[1:-1].split(",") if part.strip()]
-            current = key
-        else:
-            fm[key] = value.strip('"')
-            current = key
-    return fm, body
-
-
-def first_heading(text: str) -> str | None:
-    match = re.search(r"^#\s+(.+)$", text, re.MULTILINE)
-    return match.group(1).strip() if match else None
-
-
-def first_paragraph(text: str) -> str:
-    lines: list[str] = []
-    in_code = False
-    for line in text.splitlines():
-        stripped = line.strip()
-        if stripped.startswith("```"):
-            in_code = not in_code
-            continue
-        if in_code or not stripped or stripped.startswith(("#", ">", "- ", "---")):
-            if lines:
-                break
-            continue
-        lines.append(stripped)
-        if len(" ".join(lines)) > 260:
-            break
-    return " ".join(lines)[:300] or "Compiled namespace."
 
 
 def extract_section(text: str, heading: str) -> str:
@@ -434,7 +381,10 @@ def build_global_link_targets(source_dir: Path, slugs: list[str]) -> dict[str, s
     targets: dict[str, str] = {}
     for slug in slugs:
         namespace_dir = source_dir / slug
-        for source_file in namespace_dir.rglob("*.md"):
+        for source_file in sorted(
+            namespace_dir.rglob("*.md"),
+            key=lambda p: p.relative_to(namespace_dir).parts,
+        ):
             rel = source_file.relative_to(namespace_dir)
             text = source_file.read_text(encoding="utf-8")
             fm, _body = parse_frontmatter(text)
@@ -473,7 +423,7 @@ def collect_namespace(
     not_covered = extract_section(readme, "Not Covered")
     current_as = extract_section(readme, "Current As") or str(last_updated)
 
-    md_files = sorted(namespace_dir.rglob("*.md"))
+    md_files = sorted(namespace_dir.rglob("*.md"), key=lambda p: p.relative_to(namespace_dir).parts)
     parsed: list[tuple[Path, str, dict[str, Any], str, str]] = []
     counts: Counter[str] = Counter()
     for source_file in md_files:
@@ -556,8 +506,8 @@ def collect_namespace(
         raw_url = f"/raw/{slug}/{rel_posix}"
         html_url = f"/wiki/{slug}/{rel_posix}.html"
         local_llms.append(f"- [{page_title}]({raw_url}) ([html]({html_url}))\n")
-    (ns_wiki_dir / "llms.txt").write_text("".join(local_llms).rstrip() + "\n", encoding="utf-8")
-    (ns_wiki_dir / "llms-full.txt").write_text("\n\n".join(f"<!-- ===== {slug}/{rel.as_posix()} ===== -->\n\n{text}" for rel, text, *_ in parsed) + "\n", encoding="utf-8")
+    (ns_wiki_dir / "llms.txt").write_text("".join(local_llms).rstrip() + "\n", encoding="utf-8", newline="\n")
+    (ns_wiki_dir / "llms-full.txt").write_text("\n\n".join(f"<!-- ===== {slug}/{rel.as_posix()} ===== -->\n\n{text}" for rel, text, *_ in parsed) + "\n", encoding="utf-8", newline="\n")
 
     for rel, text, page_fm, body, page_title in parsed:
         rel_posix = rel.as_posix()
@@ -565,7 +515,7 @@ def collect_namespace(
         html_output = output_root / "wiki" / slug / (rel_posix + ".html")
         raw_output.parent.mkdir(parents=True, exist_ok=True)
         html_output.parent.mkdir(parents=True, exist_ok=True)
-        raw_output.write_text(text, encoding="utf-8")
+        raw_output.write_text(text, encoding="utf-8", newline="\n")
         nav_index = nav_by_path.get(rel_posix)
         prev_doc = nav_docs[nav_index - 1] if nav_index is not None and nav_index > 0 else None
         next_doc = nav_docs[nav_index + 1] if nav_index is not None and nav_index + 1 < len(nav_docs) else None
@@ -573,7 +523,7 @@ def collect_namespace(
             article = render_readme(slug, str(title), fm, readme_body, covers, not_covered, current_as, next_doc, resolve_wikilink)
         else:
             article = render_page(slug, str(title), rel_posix, str(page_title), page_fm, body if page_fm else text, prev_doc, next_doc, resolve_wikilink)
-        html_output.write_text(page_shell(slug, str(title), len(md_files), counts, rel_posix, sidebar_docs, article, str(page_title)), encoding="utf-8")
+        html_output.write_text(page_shell(slug, str(title), len(md_files), counts, rel_posix, sidebar_docs, article, str(page_title)), encoding="utf-8", newline="\n")
         raw_url = f"/raw/{slug}/{rel_posix}"
         html_url = f"/wiki/{slug}/{rel_posix}.html"
         links.append((str(page_title), rel_posix, raw_url, html_url))
@@ -588,7 +538,7 @@ def collect_namespace(
         "counts": {key: counts.get(key, 0) for key in ["wiki", "concepts", "entities", "summaries", "syntheses"]},
         "documents": doc_records,
     }
-    (ns_wiki_dir / "index.json").write_text(json.dumps(local_index, indent=2) + "\n", encoding="utf-8")
+    (ns_wiki_dir / "index.json").write_text(json.dumps(local_index, indent=2) + "\n", encoding="utf-8", newline="\n")
 
     wiki_record = {
         "slug": slug,
@@ -648,7 +598,7 @@ python3 scripts/pixi_wiki_mcp.py --self-test</code></pre>
 <main>{body}</main>
 <footer class=\"footer\"><div class=\"footer-inner\"><p>Plain static HTML. Agents read Markdown through <code>llms.txt</code> and MCP.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
 </body></html>"""
-    (docs_dir / "AGENT_SETUP.html").write_text(page, encoding="utf-8")
+    (docs_dir / "AGENT_SETUP.html").write_text(page, encoding="utf-8", newline="\n")
 
 
 def write_replicate_page(output_root: Path) -> None:
@@ -688,7 +638,7 @@ def write_replicate_page(output_root: Path) -> None:
 <main>{body}</main>
 <footer class=\"footer\"><div class=\"footer-inner\"><p>Copy the pattern. Keep your source files canonical.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
 </body></html>"""
-    (docs_dir / "REPLICATE_APPROACH.html").write_text(page, encoding="utf-8")
+    (docs_dir / "REPLICATE_APPROACH.html").write_text(page, encoding="utf-8", newline="\n")
 
 
 def write_signal_graph_page(output_root: Path) -> None:
@@ -717,7 +667,7 @@ graphify cluster-only . --graph graphify-out/graph.json --no-label</code></pre>
 <main>{body}</main>
 <footer class=\"footer\"><div class=\"footer-inner\"><p>Generated graph artifacts stay local unless intentionally shared.</p><p><a href=\"/pixi-wiki/llms.txt\">/llms.txt</a><a href=\"/pixi-wiki/llms-full.txt\">/llms-full.txt</a><a href=\"/pixi-wiki/index.json\">/index.json</a></p></div></footer>
 </body></html>"""
-    (docs_dir / "SIGNAL_GRAPH.html").write_text(page, encoding="utf-8")
+    (docs_dir / "SIGNAL_GRAPH.html").write_text(page, encoding="utf-8", newline="\n")
 
 
 def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
@@ -812,10 +762,10 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
         "wikis": wikis,
         "comingSoon": [],
     }
-    (output_root / "index.json").write_text(json.dumps(registry, indent=2) + "\n", encoding="utf-8")
-    (output_root / "llms.txt").write_text("".join(llms_parts).rstrip() + "\n", encoding="utf-8")
+    (output_root / "index.json").write_text(json.dumps(registry, indent=2) + "\n", encoding="utf-8", newline="\n")
+    (output_root / "llms.txt").write_text("".join(llms_parts).rstrip() + "\n", encoding="utf-8", newline="\n")
     full_body = "\n\n".join(f"<!-- ===== {name} ===== -->\n\n{text}" for name, text in all_full_sections)
-    (output_root / "llms-full.txt").write_text(full_body.rstrip() + "\n", encoding="utf-8")
+    (output_root / "llms-full.txt").write_text(full_body.rstrip() + "\n", encoding="utf-8", newline="\n")
     write_agent_setup_page(output_root)
     write_replicate_page(output_root)
     write_signal_graph_page(output_root)
@@ -827,7 +777,7 @@ def build(source_dir: Path, output_root: Path, slugs: list[str]) -> None:
 <main style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="/pixi-wiki/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal graph sidecar</a></div><section class="agent-setup-callout"><h2>Agents start here</h2><pre><code>$ curl https://pixiiidust.github.io/pixi-wiki/llms.txt</code></pre><p>Use <code>llms.txt</code> as the first routing map, then follow links to raw Markdown, namespace files, or MCP setup.</p></section><nav class="wiki-nav" aria-label="Wiki categories"><a class="button-link" href="#agent-ops">Agent Operations</a><a class="button-link" href="#knowledge-systems">Knowledge Systems</a><a class="button-link" href="#labs-products">Labs & Product Surfaces</a></nav><div id="wikis">{grouped_index}</div></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. No JavaScript is required to read any page — agents welcome.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a><a href="/pixi-wiki/docs/SIGNAL_GRAPH.html">Signal Graph</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a><a href="/pixi-wiki/docs/REPLICATE_APPROACH.html">Copy this approach</a></p></div></footer>
 </body></html>"""
-    (output_root / "index.html").write_text(index_html, encoding="utf-8")
+    (output_root / "index.html").write_text(index_html, encoding="utf-8", newline="\n")
 
 
 def main() -> None:

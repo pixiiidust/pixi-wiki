@@ -14,6 +14,11 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
+try:  # Runs both as `python scripts/...` (scripts/ on path) and as `scripts.*` import.
+    from scripts.markdown_meta import parse_frontmatter
+except ImportError:  # pragma: no cover - direct-script execution fallback
+    from markdown_meta import parse_frontmatter
+
 WIKILINK_RE = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\]]+))?\]\]")
 MDLINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 HEADING_RE = re.compile(r"^(#{1,4})\s+(.+?)\s*$", re.M)
@@ -86,43 +91,6 @@ def norm_title(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip()).strip("# ")
 
 
-def parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
-    if not text.startswith("---\n"):
-        return {}, text
-    end = text.find("\n---\n", 4)
-    if end == -1:
-        return {}, text
-
-    raw = text[4:end]
-    body = text[end + 5 :]
-    frontmatter: dict[str, Any] = {}
-    current_key: str | None = None
-
-    for line in raw.splitlines():
-        if not line.strip():
-            continue
-        if line.startswith("  - ") and current_key:
-            frontmatter.setdefault(current_key, [])
-            if isinstance(frontmatter[current_key], list):
-                frontmatter[current_key].append(line[4:].strip().strip('"'))
-            continue
-        match = re.match(r"^([A-Za-z0-9_-]+):\s*(.*)$", line)
-        if not match:
-            continue
-        key, value = match.group(1), match.group(2).strip()
-        current_key = key
-        if not value:
-            frontmatter[key] = []
-        elif value.startswith("[") and value.endswith("]"):
-            frontmatter[key] = [
-                item.strip().strip('"\'') for item in value[1:-1].split(",") if item.strip()
-            ]
-        else:
-            frontmatter[key] = value.strip('"')
-
-    return frontmatter, body
-
-
 class SignalGraphBuilder:
     def __init__(self, raw_dir: Path) -> None:
         self.raw_dir = raw_dir.resolve()
@@ -176,7 +144,7 @@ class SignalGraphBuilder:
         self.links.append(edge)
 
     def scan_documents(self) -> list[Path]:
-        md_files = sorted(self.raw_dir.rglob("*.md"))
+        md_files = sorted(self.raw_dir.rglob("*.md"), key=lambda p: p.relative_to(self.raw_dir).parts)
         for path in md_files:
             rel = path.relative_to(self.raw_dir).as_posix()
             namespace = rel.split("/", 1)[0]
@@ -359,10 +327,12 @@ def build_signal_graph(raw_dir: Path, out_dir: Path) -> dict[str, Any]:
     (out_dir / "graph.json").write_text(
         json.dumps(builder.graph_payload(), indent=2, ensure_ascii=False),
         encoding="utf-8",
+        newline="\n",
     )
     (out_dir / "SIGNAL_MARKDOWN_GRAPH_SUMMARY.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=False),
         encoding="utf-8",
+        newline="\n",
     )
     return summary
 
