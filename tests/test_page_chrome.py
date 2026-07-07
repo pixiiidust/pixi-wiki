@@ -183,15 +183,13 @@ def test_homepage_and_docs_have_signal_graph_link(tmp_path: Path) -> None:
 # --- CSS: mobile behavior at <=820px -----------------------------------------
 
 
-def _emitted_style(text: str) -> str:
-    match = re.search(r"<style>(.*?)</style>", text, re.DOTALL)
-    assert match
-    return match.group(1)
-
-
 def test_css_mobile_rules_present_in_emitted_style(tmp_path: Path) -> None:
     _, output = build_fixture(tmp_path)
-    css = _emitted_style(read(output / "index.html"))
+    # The CSS is now served from one shared stylesheet (issue #61) rather than
+    # inlined per page, so the mobile rules are asserted against site.css and the
+    # page is checked to link it.
+    assert '<link rel="stylesheet" href="/pixi-wiki/site.css">' in read(output / "index.html")
+    css = read(output / "site.css")
 
     media = re.search(r"@media\(max-width:820px\)\{(.*?)\}\s*$", css, re.DOTALL)
     assert media, "expected the <=820px media block"
