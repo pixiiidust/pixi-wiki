@@ -5,8 +5,8 @@ These exercise the build seam on a synthetic two-namespace fixture (not the
 committed tree) so they stay green before the integrator regenerates and guard
 the regenerated output afterwards. The surface (formerly "Recent Updates") is a
 browsable, uncapped Updates page: a month index strip, per-date sections keyed
-by ``data-date``, and per-namespace ``<details>`` roll-ups that open at five or
-fewer entries. The clock-free sort is tested directly against
+by ``data-date``, and per-namespace ``<details>`` roll-ups, closed by default,
+with bracketed counts. The clock-free sort is tested directly against
 ``sort_update_entries`` so a heavy corpus is unnecessary.
 """
 from __future__ import annotations
@@ -73,7 +73,7 @@ namespace: alpha
         encoding="utf-8",
     )
     # Six concept pages all dated 2026-06-15 so their namespace roll-up (count 6,
-    # > 5) renders CLOSED, exercising the open/closed threshold.
+    # > 5) exercises the bracketed-count summary on a large group.
     for i in range(6):
         (alpha / "wiki" / "concepts" / f"june-{i}.md").write_text(
             f"""---
@@ -252,14 +252,13 @@ def test_updates_html_month_index_strip(tmp_path: Path) -> None:
     assert '<span class="updates-month-anchor" id="m-2026-06"></span>' in html
 
 
-def test_updates_html_namespace_details_open_closed_threshold(tmp_path: Path) -> None:
+def test_updates_html_namespace_details_closed_with_bracketed_count(tmp_path: Path) -> None:
     _, output = build_fixture(tmp_path)
     html = (output / "updates.html").read_text(encoding="utf-8")
-    # The 2026-06-15 alpha roll-up has 6 entries (> 5) and renders CLOSED with a
-    # count in its summary.
-    assert '<details class="updates-ns"><summary>Alpha 6</summary>' in html
-    # A small roll-up (<= 5) renders OPEN. 2026-07-07 has one beta entry.
-    assert '<details class="updates-ns" open><summary>Beta 1</summary>' in html
+    # Every roll-up renders CLOSED by default, with the count in brackets.
+    assert '<details class="updates-ns"><summary>Alpha (6)</summary>' in html
+    assert '<details class="updates-ns"><summary>Beta (1)</summary>' in html
+    assert '<details class="updates-ns" open' not in html
     # No per-entry namespace badge inside the group (redundant); the old class
     # is gone.
     assert 'class="namespace-badge"' not in html
