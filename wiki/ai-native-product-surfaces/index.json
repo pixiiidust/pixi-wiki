@@ -2,11 +2,11 @@
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
   "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
-  "documentCount": 17,
+  "documentCount": 18,
   "counts": {
     "wiki": 1,
     "concepts": 7,
-    "entities": 5,
+    "entities": 6,
     "summaries": 0,
     "syntheses": 0
   },
@@ -86,6 +86,13 @@
       "path": "wiki/entities/i-know-kungfu.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html",
+      "category": "entities"
+    },
+    {
+      "title": "J-Space-Replay",
+      "path": "wiki/entities/j-space-replay.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/entities/j-space-replay.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/entities/j-space-replay.md.html",
       "category": "entities"
     },
     {

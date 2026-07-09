@@ -9,7 +9,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 - Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
 - Treat `Knowledge/` and `Projects/` as canonical authoring sources.
 - Treat Daily Notes as scratch chronology, not direct compiled content.
-- Keep this namespace scoped to: AI-native product/application surfaces, problem framing, product demos, PM case studies, job-search edge dashboards, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
+- Keep this namespace scoped to: AI-native product/application surfaces, problem framing, product demos, PM case studies, job-search edge dashboards, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
 - Do not widen scope silently; propose a namespace promotion/routing update first.
 - Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
 
@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-06-30
+updated: 2026-07-08
 type: namespace-overview
 status: scaffold
 category: product
@@ -45,11 +45,12 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-06-30 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype with scheduled Ashby refresh, and Shifu as a local-first searchable video knowledge prototype.
+2026-07-08 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
 
 ## Canonical Source Roots
 
 - `Projects/Job Edge/Index.md`
+- `Projects/J-Space-Replay/Index.md`
 - `Projects/Shifu/Index.md`
 - `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
@@ -1272,6 +1273,75 @@ The first slice should remain local-first and endpoint-ready. Do not treat the c
 Compiled from `Projects/I-know-kungfu/Index.md`, the public repo README/PRD, and GitHub issue #1.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/entities/j-space-replay.md ===== -->
+
+---
+title: J-Space-Replay
+created: 2026-07-08
+updated: 2026-07-08
+type: entity
+status: working-demo
+namespace: ai-native-product-surfaces
+source: Projects/J-Space-Replay/Index.md
+confidence: high
+---
+# J-Space-Replay
+
+J-Space-Replay is a public working demo for replaying a vision-language model's decoded internal readouts on a video timeline while it answers a question.
+
+The product surface is intentionally glass-box and cautious: it helps a user inspect Qwen2.5-VL logit-lens or fitted J-lens readouts, but it does **not** claim to reveal model thoughts or validate mechanistic claims about VLMs.
+
+## Product frame
+
+```text
+short video + question
+  -> one offline Qwen2.5-VL pass on a local NVIDIA GPU
+  -> per-layer residual capture
+  -> logit-lens-v1 or j-lens-v1 decode
+  -> schema-v1 trace
+  -> replay UI: answer, video, word grid, patch/box overlays, unspoken/adversarial cues
+```
+
+The UI is a technical replay dashboard: honesty banner, query/answer console, video transport, readout-strength bars, answer-token × layer workspace grid, raw top-token drilldown, lens selector, and trace library.
+
+## What the demo shows
+
+- **Answer precursors:** answer-token readouts can surface words such as `gravity` before the model emits them.
+- **Adversarial checks:** when an answer rules something out, cells that still decode the ruled-out word pulse as a warning surface.
+- **Unspoken readouts:** the UI lists words read across many cells that appear in neither prompt nor answer.
+- **Computed but unsaid content:** the ball-drop example shows late-mid J-lens readouts such as `level`, `horizontal`, `move`, `off`, and `right` while the answer remains a generic gravity explanation.
+
+## Architecture
+
+- Backend: Python/FastAPI package `src/jsr/`.
+- Model path: Qwen2.5-VL-7B-Instruct, NF4 + SDPA + fp16 stack.
+- Trace pipeline: video frame sampling, prompt preparation, residual capture, lens decode, label extraction, grounding queries, validated `trace.json` schema v1.
+- Frontend: React + Vite screens for upload, progress, replay, and library.
+- Demo mode: no-GPU pre-baked traces for instant browsing.
+- J-lens: ships as a fitting recipe, not committed weights.
+
+## Evidence and caveats
+
+The repo reports a verified J-lens port against component-level autograd checks, with the paper-faithful identity seed making final-layer J-lens readouts exactly equal to the logit lens. On synthetic clips, J-lens improves concept recall by about 31% and reveals a late-mid visual content band around layers 22-26.
+
+The honest boundary is central:
+
+- demo-quality interpretability only;
+- the Anthropic workspace paper validated text models, not VLMs;
+- single-token readouts only;
+- adversarial/unspoken surfaces are mechanical string analysis;
+- natural-video baselines and interventions are not done;
+- raw-token grid remains primary because concept-label recall is still limited.
+
+## Source handles
+
+- Project hub: `Projects/J-Space-Replay/Index.md`
+- Repo: https://github.com/pixiiidust/j-space-replay
+- Screenshot/demo: `docs/screenshot.png`, `docs/demo.mp4`
+- Evidence: `reports/jlens_evidence.md`, `reports/m2_quality_gate.md`
+- Related concepts: [[../concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]], [[../concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]], [[../concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
+
+
 <!-- ===== ai-native-product-surfaces/wiki/entities/job-edge.md ===== -->
 
 ---
@@ -1601,7 +1671,7 @@ Post-merge verification on `main`: focused verifier/eval tests 18 passed; full s
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-06-30
+updated: 2026-07-08
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -1627,6 +1697,7 @@ namespace: ai-native-product-surfaces
 
 - [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook wiki serving project for growing a user's knowledge base with bounded, agent-readable wikis.
 - [[entities/job-edge|Job Edge]] — Live job-search edge dashboard prototype using scheduled Ashby refresh, freshness, geography, fit, and LinkedIn-crowding signals to prioritize applications.
+- [[entities/j-space-replay|J-Space-Replay]] — Working public demo for replaying Qwen2.5-VL logit/J-lens readouts over video with explicit demo-quality interpretability boundaries.
 - [[entities/shifu-app|Shifu]] — Local-first video workbench/proof question with implementation chain complete; visual gameplay thesis under review after visual-only misses, next heavy tests wait for the repaired 5070 Ti desktop.
 - [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
 - [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
@@ -1642,6 +1713,7 @@ namespace: ai-native-product-surfaces
 ## Source Roots
 
 - `Projects/Job Edge/Index.md`
+- `Projects/J-Space-Replay/Index.md`
 - `Projects/Shifu/Index.md`
 - `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
@@ -1666,7 +1738,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-30
+updated: 2026-07-08
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -1675,6 +1747,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-08 create/update | J-Space-Replay entity
+
+- Added `wiki/entities/j-space-replay.md` from the canonical `Projects/J-Space-Replay/Index.md` hub and public `pixiiidust/j-space-replay` repo docs.
+- Routed J-Space-Replay as an AI-native product surface: a glass-box replay dashboard for VLM logit/J-lens readouts over video.
+- Preserved the public honesty boundary: demo-quality interpretability, not validated VLM mechanistic evidence or model-thought claims.
+- Updated namespace README, index, and compiler map; no Daily Notes were copied or compiled.
 
 ## 2026-06-30 update | Job Edge public dashboard and Ashby auto-refresh
 

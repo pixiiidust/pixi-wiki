@@ -91,7 +91,7 @@
 ## AI-Native Product Surfaces
 
 > AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.
-> Current as of: 2026-06-30 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype with scheduled Ashby refresh, and Shifu as a local-first searchable video knowledge prototype.
+> Current as of: 2026-07-08 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
 > Agent access: [/wiki/ai-native-product-surfaces/llms.txt](/wiki/ai-native-product-surfaces/llms.txt) [/wiki/ai-native-product-surfaces/llms-full.txt](/wiki/ai-native-product-surfaces/llms-full.txt) [/wiki/ai-native-product-surfaces/index.json](/wiki/ai-native-product-surfaces/index.json)
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
@@ -105,6 +105,7 @@
 - [Video Retrieve-Then-Verify Loop](/raw/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md.html))
 - [World Model Control Surfaces](/raw/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md.html))
 - [I-know-kungfu](/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html))
+- [J-Space-Replay](/raw/ai-native-product-surfaces/wiki/entities/j-space-replay.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/j-space-replay.md.html))
 - [Job Edge](/raw/ai-native-product-surfaces/wiki/entities/job-edge.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/job-edge.md.html))
 - [myAbode](/raw/ai-native-product-surfaces/wiki/entities/myabode.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html))
 - [Planned Program Intel](/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html))

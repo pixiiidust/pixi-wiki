@@ -532,14 +532,14 @@
       "scope": {
         "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
         "notCovered": "Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.",
-        "currentAs": "2026-06-30 \u2014 active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype with scheduled Ashby refresh, and Shifu as a local-first searchable video knowledge prototype."
+        "currentAs": "2026-07-08 \u2014 active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video."
       },
-      "lastUpdated": "2026-06-30",
-      "documentCount": 17,
+      "lastUpdated": "2026-07-08",
+      "documentCount": 18,
       "counts": {
         "wiki": 1,
         "concepts": 7,
-        "entities": 5,
+        "entities": 6,
         "summaries": 0,
         "syntheses": 0
       },
@@ -624,6 +624,13 @@
           "path": "wiki/entities/i-know-kungfu.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html",
+          "category": "entities"
+        },
+        {
+          "title": "J-Space-Replay",
+          "path": "wiki/entities/j-space-replay.md",
+          "raw": "/raw/ai-native-product-surfaces/wiki/entities/j-space-replay.md",
+          "html": "/wiki/ai-native-product-surfaces/wiki/entities/j-space-replay.md.html",
           "category": "entities"
         },
         {

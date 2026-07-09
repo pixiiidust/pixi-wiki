@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-06-30
+updated: 2026-07-08
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -10,6 +10,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-08 create/update | J-Space-Replay entity
+
+- Added `wiki/entities/j-space-replay.md` from the canonical `Projects/J-Space-Replay/Index.md` hub and public `pixiiidust/j-space-replay` repo docs.
+- Routed J-Space-Replay as an AI-native product surface: a glass-box replay dashboard for VLM logit/J-lens readouts over video.
+- Preserved the public honesty boundary: demo-quality interpretability, not validated VLM mechanistic evidence or model-thought claims.
+- Updated namespace README, index, and compiler map; no Daily Notes were copied or compiled.
 
 ## 2026-06-30 update | Job Edge public dashboard and Ashby auto-refresh
 
