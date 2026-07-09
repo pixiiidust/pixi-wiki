@@ -1,7 +1,7 @@
 ---
 title: Agent Skill Routing
 created: 2026-06-23
-updated: 2026-06-27
+updated: 2026-07-09
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -33,7 +33,7 @@ Tools already work this way: Jamie does not need to say `read_file` or `web_sear
 | PM portfolio or product case study | `portfolio-build-readiness-review` | `product-case-study`, `verb-first`, `pixi-wiki-first-research` |
 | Product positioning or copy | `verb-first` | `find-lock`, `ai-native-framing` |
 | Creative inspiration, brainstorming, project ideas, or option generation | `creative-ideation` | `find-lock`, `verb-first`, `ai-native-framing` after an idea is selected |
-| PRD or implementation plan needs an inspectable review surface | `visual-plan` | `plan`, `prototype`, `obsidian` when the artifact should be source-controlled |
+| Spec or implementation plan needs an inspectable review surface | `visual-plan` | `plan`, `prototype`, `obsidian` when the artifact should be source-controlled |
 | Build or implementation slice | `implement` | `test-driven-development`, `ponytail-code-discipline`, `github-operations` |
 | Repo-local Compound Engineering loop | `ce-setup`, then `ce-brainstorm` / `ce-plan` / `ce-work` | `ce-simplify-code`, `ce-code-review`, `ce-compound`; `/lfg` only with explicit scope and approval gates |
 | Debugging | `debugging` | project-specific skill, `codebase-inspection` |
@@ -63,7 +63,7 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 ## Boundaries
 
 - Use the smallest useful stack; do not load every adjacent skill.
-- Skills do not override current user intent, live repo state, GitHub issues, PRDs, safety rules, or verification evidence.
+- Skills do not override current user intent, live repo state, GitHub issues/tickets, specs/PRDs, safety rules, or verification evidence.
 - Subagent output that does not report required retrieval, evidence, or skill constraints is incomplete.
 - Durable lessons still route by layer: facts to memory, concepts to Knowledge/Pixi Wiki, project state to Obsidian/GitHub, procedures to skills.
 

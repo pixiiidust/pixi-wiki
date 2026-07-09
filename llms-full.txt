@@ -642,7 +642,7 @@ Pixoid should treat entrypoints as routing contracts, not as replacement truth. 
 ---
 title: Agent Skill Routing
 created: 2026-06-23
-updated: 2026-06-27
+updated: 2026-07-09
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -674,7 +674,7 @@ Tools already work this way: Jamie does not need to say `read_file` or `web_sear
 | PM portfolio or product case study | `portfolio-build-readiness-review` | `product-case-study`, `verb-first`, `pixi-wiki-first-research` |
 | Product positioning or copy | `verb-first` | `find-lock`, `ai-native-framing` |
 | Creative inspiration, brainstorming, project ideas, or option generation | `creative-ideation` | `find-lock`, `verb-first`, `ai-native-framing` after an idea is selected |
-| PRD or implementation plan needs an inspectable review surface | `visual-plan` | `plan`, `prototype`, `obsidian` when the artifact should be source-controlled |
+| Spec or implementation plan needs an inspectable review surface | `visual-plan` | `plan`, `prototype`, `obsidian` when the artifact should be source-controlled |
 | Build or implementation slice | `implement` | `test-driven-development`, `ponytail-code-discipline`, `github-operations` |
 | Repo-local Compound Engineering loop | `ce-setup`, then `ce-brainstorm` / `ce-plan` / `ce-work` | `ce-simplify-code`, `ce-code-review`, `ce-compound`; `/lfg` only with explicit scope and approval gates |
 | Debugging | `debugging` | project-specific skill, `codebase-inspection` |
@@ -704,7 +704,7 @@ Before producing the final answer, use Pixi Wiki MCP first: list available KBs, 
 ## Boundaries
 
 - Use the smallest useful stack; do not load every adjacent skill.
-- Skills do not override current user intent, live repo state, GitHub issues, PRDs, safety rules, or verification evidence.
+- Skills do not override current user intent, live repo state, GitHub issues/tickets, specs/PRDs, safety rules, or verification evidence.
 - Subagent output that does not report required retrieval, evidence, or skill constraints is incomplete.
 - Durable lessons still route by layer: facts to memory, concepts to Knowledge/Pixi Wiki, project state to Obsidian/GitHub, procedures to skills.
 
@@ -935,7 +935,7 @@ In the local Hermes KB, the same principle means concept pages should be concise
 ---
 title: Compound Engineering Skill Layer
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-07-09
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -993,7 +993,7 @@ It also overlaps with [[agent-skill-routing]] because Pixoid should choose the r
 ## Different from existing skills
 
 - CE is an integrated workflow package; Pocock/Jamie skills are modular gates.
-- CE's `ce-brainstorm` and `ce-plan` write a shared unified plan artifact for downstream CE commands; `to-prd` and `to-issues` remain better when the durable deliverable is a PRD/issue tree.
+- CE's `ce-brainstorm` and `ce-plan` write a shared unified plan artifact for downstream CE commands; `to-spec` and `to-tickets` remain better when the durable deliverable is a spec/ticket tree.
 - CE's `ce-work` assumes the CE plan context; `implement`/`tdd` remain better for one narrow GitHub issue or an existing non-CE plan.
 - CE's `ce-compound` captures project-local engineering learning, usually under `docs/solutions/`; Obsidian/Pixi Wiki remain the home for reusable human-facing knowledge.
 - CE's `lfg` is an autopilot. Jamie's AFK route contracts still govern profile boundaries, handoffs, merge/deploy approval, and route observability.
@@ -1001,7 +1001,7 @@ It also overlaps with [[agent-skill-routing]] because Pixoid should choose the r
 ## Pixoid routing rules
 
 - Use CE for repo-local engineering loops.
-- Use `prototype`, `visual-plan`, `grill-with-docs`, `/to-prd`, and `/to-issues` when Jamie needs explicit human review artifacts before execution.
+- Use `prototype`, `visual-plan`, `grill-with-docs`, `/wayfinder`, `/to-spec`, and `/to-tickets` when Jamie needs explicit human review artifacts before execution.
 - Use normal `code-review`, `debugging`, `ponytail-code-discipline`, or `test-driven-development` when CE's unified plan artifact is not the active source.
 - Do not let `lfg` bypass destructive-change, deploy, merge, secret, profile/runtime, or public publishing approvals.
 - Treat CE skills as procedures, not proof: inspect live state, run tests, and verify outputs before reporting success.
@@ -1389,7 +1389,7 @@ KPR deliberately keeps MCP/RAG/search deferred until a concrete eval shows markd
 ---
 title: Matt Pocock SDLC Rhythm
 created: 2026-06-18
-updated: 2026-06-27
+updated: 2026-07-09
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -1414,13 +1414,20 @@ A feature request is a **possible key**. The real user problem, workflow frictio
 
 The agent should not rush to compare keys. It should first understand the lock’s shape, then prototype or grill the right thing.
 
+## Wayfinder on-ramp
+
+Use `/wayfinder` before `/to-spec` when the effort is too foggy or too large for one agent session: greenfield projects, major frontend/product surface decisions, large migrations, or course/product planning. It creates a shared map issue with frontier tickets (`research`, `prototype`, `grilling`, `task`) and resolves one ticket per session until the route to a spec is clear.
+
+Use `/research` for AFK source-reading tickets. Use `/prototype` when a decision needs a concrete UI/logic artifact. Use `/grilling`/`/domain-modeling` when the decision belongs to Jamie or the domain language.
+
+
 ## Pattern 1 — Problem seems clear, but surface truth is needed
 
 Use when the domain problem sounds clear, but product/UI/workflow reality may reveal friction that prose misses.
 
 Sequence:
 
-`/prototype` → `/grill-with-docs` → `/to-prd` → human PRD approval → `/to-issues` → one issue at a time with `/tdd` → verify → PR/review → `/handoff`
+`/prototype` → `/grill-with-docs` (or `/wayfinder` if foggy/too large) → `/to-spec` → human spec approval → `/to-tickets` → one frontier ticket at a time with `/implement` (`/tdd` + `/review`) → verify → `/handoff`
 
 Why: visual and interactive surfaces often reveal missing states, wrong information hierarchy, trust gaps, awkward workflow loops, or language that sounds right but feels wrong in use.
 
@@ -1430,7 +1437,7 @@ Use when the input is a proposed solution, feature request, or “key” but the
 
 Sequence:
 
-`/prototype` as probe to reveal the lock/problem shape → `/grill-with-docs` → `/to-prd` → human PRD approval → `/to-issues` → one issue at a time with `/tdd` → verify → PR/review → `/handoff`
+`/prototype` as probe to reveal the lock/problem shape → `/grill-with-docs` or `/wayfinder` → `/to-spec` → human spec approval → `/to-tickets` → one frontier ticket at a time with `/implement` (`/tdd` + `/review`) → verify → `/handoff`
 
 Prototype-as-probe means creating small disposable artifacts where each variant tests a different lock hypothesis. The goal is not solution polish; the goal is to learn what problem is actually being solved.
 
@@ -1446,21 +1453,21 @@ Use when the uncertainty is primarily terminology, bounded contexts, rules, stat
 
 Sequence:
 
-`/grill-with-docs` → `/to-prd` → human PRD approval → `/to-issues` → one issue at a time with `/tdd` → verify → PR/review → `/handoff`
+`/grill-with-docs` → `/to-spec` → human spec approval → `/to-tickets` → one frontier ticket at a time with `/implement` (`/tdd` + `/review`) → verify → `/handoff`
 
 If uncertainty becomes experiential or hard to reason about in words, switch back to `/prototype` as a probe or logic/state prototype.
 
 ## Visual plan review gate
 
-Use [[visual-plan-review-surfaces]] when a PRD, implementation plan, or issue plan needs an inspectable artifact before execution. This is an optional review gate between `/to-prd` and `/to-issues`, or between an implementation plan and `/implement`.
+Use [[visual-plan-review-surfaces]] when a spec, implementation plan, or ticket plan needs an inspectable artifact before execution. This is an optional review gate between `/to-spec` and `/to-tickets`, or between an implementation plan and `/implement`.
 
-Jamie's default is local/private MDX artifacts under `.agent-native/plans/<slug>/`, not hosted share links or comment workflows. The visual plan should preserve durable truth in the PRD/GitHub/vault source while making the plan easier to inspect: file maps, diagrams, UI states, annotated code, open questions, and verification gates.
+Jamie's default is local/private MDX artifacts under `.agent-native/plans/<slug>/`, not hosted share links or comment workflows. The visual plan should preserve durable truth in the spec/GitHub/vault source while making the plan easier to inspect: file maps, diagrams, UI states, annotated code, open questions, and verification gates.
 
 ## Compound Engineering compatibility
 
-[[compound-engineering-skill-layer]] is compatible with this rhythm, but it packages the loop differently. Pocock/Jamie skills are modular gates for prototype, grill, PRD, issue slicing, TDD, review, and handoff. Compound Engineering is an integrated repo-local loop with `ce-brainstorm`, `ce-plan`, `ce-work`, `ce-simplify-code`, `ce-code-review`, and `ce-compound` sharing a unified plan artifact and project-local learning trail. Upstream docs may write these as `/ce-*`; on Discord that is skill shorthand unless a native slash command exists.
+[[compound-engineering-skill-layer]] is compatible with this rhythm, but it packages the loop differently. Pocock/Jamie skills are modular gates for prototype, grill, spec, ticket slicing, TDD, review, and handoff. Compound Engineering is an integrated repo-local loop with `ce-brainstorm`, `ce-plan`, `ce-work`, `ce-simplify-code`, `ce-code-review`, and `ce-compound` sharing a unified plan artifact and project-local learning trail. Upstream docs may write these as `/ce-*`; on Discord that is skill shorthand unless a native slash command exists.
 
-Use CE when the active repo should follow that integrated loop. Use this SDLC rhythm when Jamie needs explicit prototype/PRD/issue approval gates, a portfolio/product artifact, or a narrower one-issue implementation path.
+Use CE when the active repo should follow that integrated loop. Use this SDLC rhythm when Jamie needs explicit prototype/spec/ticket approval gates, a portfolio/product artifact, or a narrower one-issue implementation path.
 
 ## Source-backed best practices
 
@@ -1474,8 +1481,10 @@ Useful routes include:
 
 - `ask-matt` — choose which Matt-style flow fits the situation.
 - `grilling` / `grill-me` / `grill-with-docs` — pressure-test the problem, language, and assumptions.
-- `decision-mapping` — turn a loose idea into a sequenced investigation map.
-- `implement` — implement a bounded piece of work from an approved PRD or issue.
+- `wayfinder` — chart a foggy multi-session effort as a shared map of decision/research/prototype/task tickets.
+- `research` — delegate AFK source reading into a cited Markdown finding file.
+- `diagnosing-bugs` — build a tight failing loop before fixing hard bugs.
+- `implement` — implement a bounded piece of work from an approved spec or ticket.
 - `codebase-design` — reason about deep modules and vocabulary before changing code.
 - `domain-modeling` — sharpen domain language and boundaries.
 - `writing-great-skills` — improve reusable skill artifacts.
@@ -1486,10 +1495,10 @@ Useful routes include:
 - Do not skip `/prototype` just because a product/UI/workflow problem sounds clear.
 - Use `/prototype` as a probe when the lock/problem shape is unclear.
 - Use `/grill-with-docs` for alignment, ubiquitous language, `CONTEXT.md`, and ADR capture.
-- Use `/to-prd` as the lean requirements spine; do not proceed to issues until approved.
-- Use `visual-plan` when the PRD or implementation plan needs a richer local review surface before issues or code.
-- Use `/to-issues` for vertical tracer-bullet slices, not horizontal layers.
-- Use `/tdd` for red-green-refactor feedback loops.
+- Use `/to-spec` as the lean spec spine; do not proceed to tickets until approved.
+- Use `visual-plan` when the spec or implementation plan needs a richer local review surface before tickets or code.
+- Use `/to-tickets` for vertical tracer-bullet slices, not horizontal layers.
+- Use `/tdd` for red-green implementation loops; refactoring belongs in `/review`.
 - Use `/handoff` to keep continuity across fresh contexts.
 - Use Smart Zone discipline: watch context around 30%, checkpoint/stop before 40%, then continue in a fresh session with handoff.
 - Run a [[context-overfitting]] check when a past skill, memory, or project note seems to override current user intent or live evidence.
@@ -1519,7 +1528,7 @@ Useful routes include:
 ---
 title: Matt Pocock Skills Best Practices
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-07-09
 type: concept
 description: Best-practice pattern from Matt Pocock's skills repo for reducing agent misalignment through small composable skills, grilling, shared language, feedback loops, and architecture discipline.
 status: compiled
@@ -1546,7 +1555,7 @@ For Jamie's workflow, this page is the source-backed best-practices concept. [[m
 1. **Keep skills small and composable.** Avoid monolithic process frameworks that hide control flow. Use focused skills that can be adapted per repo and per problem.
 2. **Grill before building.** Misalignment is the default failure mode. Use `grill-me` / `grill-with-docs` to ask detailed questions before turning a vague request into implementation.
 3. **Write shared language.** Use domain docs such as `CONTEXT.md` and ADRs so humans, agents, files, functions, and tests reuse the same domain terms instead of re-decoding jargon every run.
-4. **Tighten feedback loops.** Red-green-refactor tests, static types, browser/runtime checks, and diagnosis loops are the guardrails that stop aligned intent from becoming broken code.
+4. **Tighten feedback loops.** Red-green tests, static types, browser/runtime checks, diagnosis loops, and a separate review/refactor pass are the guardrails that stop aligned intent from becoming broken code.
 5. **Care about codebase shape.** Agent speed can accelerate entropy. Use architecture/design review skills to keep modules deep, names consistent, and boundaries navigable.
 6. **Separate orchestration from discipline.** User-invoked skills route and orchestrate; model-invoked skills hold reusable discipline. A router should not recursively invoke another user-invoked router.
 
@@ -1556,7 +1565,7 @@ Use the repo as a menu of practices, not as a rigid mandatory pipeline:
 
 - run setup once per repo so tracker labels and docs locations are explicit;
 - choose the smallest skill that matches the current failure risk;
-- preserve human approval gates before PRDs become issues and before merge/deploy actions;
+- preserve human approval gates before specs become tickets and before merge/deploy actions;
 - verify with real tests/checks before claiming completion;
 - capture durable learning in docs, issues, or skills rather than hidden chat memory.
 
@@ -1564,9 +1573,13 @@ Use the repo as a menu of practices, not as a rigid mandatory pipeline:
 
 [[matt-pocock-sdlc-rhythm]] generalizes the upstream repo into Jamie's default flow:
 
-`/prototype` when surface truth or lock discovery is needed → `/grill-with-docs` for alignment and language → `/to-prd` for a lean requirements spine → `/to-issues` for vertical slices → `/tdd` and verification → PR/review → `/handoff`.
+`/prototype` when surface truth or lock discovery is needed → `/grill-with-docs` for alignment and language, or `/wayfinder` when the effort is too foggy/large → `/to-spec` for the requirements spine → `/to-tickets` for vertical slices and blocking edges → `/implement` with `/tdd` and `/review` → verification → `/handoff`.
 
 This concept explains **why** those gates reduce misalignment. The SDLC rhythm explains **when** to apply them.
+
+## Version 1.1 note
+
+Matt renamed the planning vocabulary to match the artifact: `/to-prd` became `/to-spec`, `/to-issues` became `/to-tickets`, and `/decision-mapping` became `/wayfinder`. Jamie’s Hermes install follows the new names, while upstream `/code-review` is locally exposed as `/review` because Jamie already has a broader Hermes `code-review` skill.
 
 ## Boundaries
 
@@ -2185,7 +2198,7 @@ If the eval fails, fix the cheapest layer first: source wording, index coverage,
 ---
 title: Visual Plan Review Surfaces
 created: 2026-06-26
-updated: 2026-06-27
+updated: 2026-07-09
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -2195,7 +2208,7 @@ confidence: high
 
 # Visual Plan Review Surfaces
 
-A visual plan review surface turns a PRD, implementation plan, or planned multi-file change into a local interactive MDX artifact that Jamie can inspect before code changes begin.
+A visual plan review surface turns a spec, PRD, implementation plan, or planned multi-file change into a local interactive MDX artifact that Jamie can inspect before code changes begin.
 
 For Jamie's current workflow, the default is **local/private self-use**: local MDX files and local verification, not hosted publishing, share links, or comment workflows.
 
@@ -2212,9 +2225,9 @@ The `visual-plan` Hermes skill from BuilderIO's Agent-Native skills turns normal
 
 ## Routing rules
 
-- Load `visual-plan` when Jamie asks to turn a PRD, implementation plan, issue plan, or architecture/UI plan into a review surface.
+- Load `visual-plan` when Jamie asks to turn a spec, PRD, ticket plan, implementation plan, or architecture/UI plan into a review surface.
 - Use local/private mode by default. Hosted Agent-Native Plan auth, share links, and comments are optional, not prerequisites.
-- Keep durable truth in source-controlled Markdown, Obsidian project hubs, GitHub issues/PRDs, and handoffs. The visual surface is a review artifact, not the only source of truth.
+- Keep durable truth in source-controlled Markdown, Obsidian project hubs, GitHub tickets/issues, specs/PRDs, and handoffs. The visual surface is a review artifact, not the only source of truth.
 - For UI/product work, include canvas wireframes or prototype surfaces only when they help review actual states or flows.
 - For backend/architecture/data work, skip decorative UI and use document-local diagrams, file maps, annotated code, API/schema blocks, risks, and verification steps.
 - Do not start implementation until the review surface has been generated and Jamie has approved the direction, unless the task is trivial or Jamie explicitly skips the gate.
@@ -2223,17 +2236,17 @@ The `visual-plan` Hermes skill from BuilderIO's Agent-Native skills turns normal
 
 Visual-plan is an approval surface between planning and implementation:
 
-- after `/to-prd` when the PRD needs a richer review surface before issue slicing;
+- after `/to-spec` when the spec needs a richer review surface before ticket slicing;
 - after an implementation plan when the plan touches multiple files, architecture, UX states, or open questions;
-- before `/to-issues` when the plan needs human review before creating execution slices;
+- before `/to-tickets` when the plan needs human review before creating execution slices;
 - before `/implement` when an existing plan needs visual inspection rather than more chat discussion.
 
-It complements [[matt-pocock-sdlc-rhythm]]: `/prototype` tests experiential unknowns, `/grill-with-docs` aligns language and decisions, `/to-prd` captures requirements, and `visual-plan` makes approved or near-approved plans inspectable.
+It complements [[matt-pocock-sdlc-rhythm]]: `/prototype` tests experiential unknowns, `/grill-with-docs` aligns language and decisions, `/to-spec` captures requirements, and `visual-plan` makes approved or near-approved plans inspectable.
 
 ## Boundaries
 
 - Not for trivial one-line fixes or changes whose diff is easier to review than a plan.
-- Not a substitute for live repo inspection, tests, GitHub issues, PRDs, or handoffs.
+- Not a substitute for live repo inspection, tests, GitHub tickets/issues, specs/PRDs, or handoffs.
 - Not authorization to publish, deploy, share, or use hosted comment workflows.
 - Not a place to store secrets, private customer data, or final project truth outside source-controlled plan files.
 
@@ -2360,7 +2373,7 @@ namespace: agent-workflows
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
 - [[concepts/high-agency-work-levels|High Agency Work Levels]] — Level 4+ operating ladder for recommendations, verified fixes, and system improvements with explicit approval boundaries.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
-- [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, router skills, and grill/PRD/issue/TDD gates.
+- [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, Wayfinder, router skills, and grill/spec/ticket/TDD/review gates.
 - [[concepts/matt-pocock-skills-best-practices|Matt Pocock Skills Best Practices]] — Source-backed best practices from `mattpocock/skills` for reducing agent misalignment through composable skills, grilling, shared language, feedback loops, and architecture discipline.
 - [[concepts/multi-agent-multiplayer-boundaries|Multi-Agent Multiplayer Boundaries]] — Coordinator/specialist/workbench/direct-multiplayer mode contract plus edge cases for triggers, turn-taking, identity, context, authority, concurrency, handoffs, verification, UX, safety, and eval traces.
 - [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.
@@ -2619,6 +2632,10 @@ namespace: agent-workflows
 - Updated `wiki/entities/hermes-mission-control.md` with the Pixoid Review Surface pattern.
 - Updated namespace README and index source roots.
 - No Daily Notes were copied or compiled.
+## 2026-07-09 update | Matt Pocock skills v1.1 refresh
+
+- Refreshed compiled `matt-pocock-sdlc-rhythm`, `matt-pocock-skills-best-practices`, `visual-plan-review-surfaces`, and `compound-engineering-skill-layer` for the upstream v1.1 rename: `/to-spec`, `/to-tickets`, `/wayfinder`, `/research`, `/diagnosing-bugs`, and local Hermes `/review` alias.
+- Updated namespace index wording; no Daily Notes were copied or compiled.
 
 
 <!-- ===== agent-workflows/wiki/summaries/agent-workflow-system-summary.md ===== -->

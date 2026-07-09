@@ -1,7 +1,7 @@
 ---
 title: Matt Pocock Skills Best Practices
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-07-09
 type: concept
 description: Best-practice pattern from Matt Pocock's skills repo for reducing agent misalignment through small composable skills, grilling, shared language, feedback loops, and architecture discipline.
 status: compiled
@@ -28,7 +28,7 @@ For Jamie's workflow, this page is the source-backed best-practices concept. [[m
 1. **Keep skills small and composable.** Avoid monolithic process frameworks that hide control flow. Use focused skills that can be adapted per repo and per problem.
 2. **Grill before building.** Misalignment is the default failure mode. Use `grill-me` / `grill-with-docs` to ask detailed questions before turning a vague request into implementation.
 3. **Write shared language.** Use domain docs such as `CONTEXT.md` and ADRs so humans, agents, files, functions, and tests reuse the same domain terms instead of re-decoding jargon every run.
-4. **Tighten feedback loops.** Red-green-refactor tests, static types, browser/runtime checks, and diagnosis loops are the guardrails that stop aligned intent from becoming broken code.
+4. **Tighten feedback loops.** Red-green tests, static types, browser/runtime checks, diagnosis loops, and a separate review/refactor pass are the guardrails that stop aligned intent from becoming broken code.
 5. **Care about codebase shape.** Agent speed can accelerate entropy. Use architecture/design review skills to keep modules deep, names consistent, and boundaries navigable.
 6. **Separate orchestration from discipline.** User-invoked skills route and orchestrate; model-invoked skills hold reusable discipline. A router should not recursively invoke another user-invoked router.
 
@@ -38,7 +38,7 @@ Use the repo as a menu of practices, not as a rigid mandatory pipeline:
 
 - run setup once per repo so tracker labels and docs locations are explicit;
 - choose the smallest skill that matches the current failure risk;
-- preserve human approval gates before PRDs become issues and before merge/deploy actions;
+- preserve human approval gates before specs become tickets and before merge/deploy actions;
 - verify with real tests/checks before claiming completion;
 - capture durable learning in docs, issues, or skills rather than hidden chat memory.
 
@@ -46,9 +46,13 @@ Use the repo as a menu of practices, not as a rigid mandatory pipeline:
 
 [[matt-pocock-sdlc-rhythm]] generalizes the upstream repo into Jamie's default flow:
 
-`/prototype` when surface truth or lock discovery is needed → `/grill-with-docs` for alignment and language → `/to-prd` for a lean requirements spine → `/to-issues` for vertical slices → `/tdd` and verification → PR/review → `/handoff`.
+`/prototype` when surface truth or lock discovery is needed → `/grill-with-docs` for alignment and language, or `/wayfinder` when the effort is too foggy/large → `/to-spec` for the requirements spine → `/to-tickets` for vertical slices and blocking edges → `/implement` with `/tdd` and `/review` → verification → `/handoff`.
 
 This concept explains **why** those gates reduce misalignment. The SDLC rhythm explains **when** to apply them.
+
+## Version 1.1 note
+
+Matt renamed the planning vocabulary to match the artifact: `/to-prd` became `/to-spec`, `/to-issues` became `/to-tickets`, and `/decision-mapping` became `/wayfinder`. Jamie’s Hermes install follows the new names, while upstream `/code-review` is locally exposed as `/review` because Jamie already has a broader Hermes `code-review` skill.
 
 ## Boundaries
 

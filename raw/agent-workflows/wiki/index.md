@@ -28,7 +28,7 @@ namespace: agent-workflows
 - [[concepts/hermes-soul-md-wiring|Hermes SOUL.md Wiring]] — Uppercase `SOUL.md` profile identity wiring and profile-audit boundary for Hermes agents.
 - [[concepts/high-agency-work-levels|High Agency Work Levels]] — Level 4+ operating ladder for recommendations, verified fixes, and system improvements with explicit approval boundaries.
 - [[concepts/knowledge-pack-routing|Knowledge Pack Routing]] — Markdown-first maps to canonical truth for agent work.
-- [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, router skills, and grill/PRD/issue/TDD gates.
+- [[concepts/matt-pocock-sdlc-rhythm|Matt Pocock SDLC Rhythm]] — Pattern-based SDLC rhythm with lock/key framing, prototype-as-probe, Wayfinder, router skills, and grill/spec/ticket/TDD/review gates.
 - [[concepts/matt-pocock-skills-best-practices|Matt Pocock Skills Best Practices]] — Source-backed best practices from `mattpocock/skills` for reducing agent misalignment through composable skills, grilling, shared language, feedback loops, and architecture discipline.
 - [[concepts/multi-agent-multiplayer-boundaries|Multi-Agent Multiplayer Boundaries]] — Coordinator/specialist/workbench/direct-multiplayer mode contract plus edge cases for triggers, turn-taking, identity, context, authority, concurrency, handoffs, verification, UX, safety, and eval traces.
 - [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]] — Boundary between named peer profiles and local subagent fallback.

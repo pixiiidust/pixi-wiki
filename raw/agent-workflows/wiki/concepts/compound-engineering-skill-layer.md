@@ -1,7 +1,7 @@
 ---
 title: Compound Engineering Skill Layer
 created: 2026-06-27
-updated: 2026-06-27
+updated: 2026-07-09
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -59,7 +59,7 @@ It also overlaps with [[agent-skill-routing]] because Pixoid should choose the r
 ## Different from existing skills
 
 - CE is an integrated workflow package; Pocock/Jamie skills are modular gates.
-- CE's `ce-brainstorm` and `ce-plan` write a shared unified plan artifact for downstream CE commands; `to-prd` and `to-issues` remain better when the durable deliverable is a PRD/issue tree.
+- CE's `ce-brainstorm` and `ce-plan` write a shared unified plan artifact for downstream CE commands; `to-spec` and `to-tickets` remain better when the durable deliverable is a spec/ticket tree.
 - CE's `ce-work` assumes the CE plan context; `implement`/`tdd` remain better for one narrow GitHub issue or an existing non-CE plan.
 - CE's `ce-compound` captures project-local engineering learning, usually under `docs/solutions/`; Obsidian/Pixi Wiki remain the home for reusable human-facing knowledge.
 - CE's `lfg` is an autopilot. Jamie's AFK route contracts still govern profile boundaries, handoffs, merge/deploy approval, and route observability.
@@ -67,7 +67,7 @@ It also overlaps with [[agent-skill-routing]] because Pixoid should choose the r
 ## Pixoid routing rules
 
 - Use CE for repo-local engineering loops.
-- Use `prototype`, `visual-plan`, `grill-with-docs`, `/to-prd`, and `/to-issues` when Jamie needs explicit human review artifacts before execution.
+- Use `prototype`, `visual-plan`, `grill-with-docs`, `/wayfinder`, `/to-spec`, and `/to-tickets` when Jamie needs explicit human review artifacts before execution.
 - Use normal `code-review`, `debugging`, `ponytail-code-discipline`, or `test-driven-development` when CE's unified plan artifact is not the active source.
 - Do not let `lfg` bypass destructive-change, deploy, merge, secret, profile/runtime, or public publishing approvals.
 - Treat CE skills as procedures, not proof: inspect live state, run tests, and verify outputs before reporting success.

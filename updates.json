@@ -3,6 +3,51 @@
   "count": 617,
   "entries": [
     {
+      "title": "Agent Skill Routing",
+      "path": "wiki/concepts/agent-skill-routing.md",
+      "namespace": "agent-workflows",
+      "namespace_title": "Agent Workflows",
+      "updated": "2026-07-09",
+      "raw": "/raw/agent-workflows/wiki/concepts/agent-skill-routing.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/agent-skill-routing.md.html"
+    },
+    {
+      "title": "Compound Engineering Skill Layer",
+      "path": "wiki/concepts/compound-engineering-skill-layer.md",
+      "namespace": "agent-workflows",
+      "namespace_title": "Agent Workflows",
+      "updated": "2026-07-09",
+      "raw": "/raw/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md.html"
+    },
+    {
+      "title": "Matt Pocock SDLC Rhythm",
+      "path": "wiki/concepts/matt-pocock-sdlc-rhythm.md",
+      "namespace": "agent-workflows",
+      "namespace_title": "Agent Workflows",
+      "updated": "2026-07-09",
+      "raw": "/raw/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md.html"
+    },
+    {
+      "title": "Matt Pocock Skills Best Practices",
+      "path": "wiki/concepts/matt-pocock-skills-best-practices.md",
+      "namespace": "agent-workflows",
+      "namespace_title": "Agent Workflows",
+      "updated": "2026-07-09",
+      "raw": "/raw/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md.html"
+    },
+    {
+      "title": "Visual Plan Review Surfaces",
+      "path": "wiki/concepts/visual-plan-review-surfaces.md",
+      "namespace": "agent-workflows",
+      "namespace_title": "Agent Workflows",
+      "updated": "2026-07-09",
+      "raw": "/raw/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md.html"
+    },
+    {
       "title": "AI-Native Product Surfaces",
       "path": "README.md",
       "namespace": "ai-native-product-surfaces",
@@ -5016,42 +5061,6 @@
       "html": "/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html"
     },
     {
-      "title": "Agent Skill Routing",
-      "path": "wiki/concepts/agent-skill-routing.md",
-      "namespace": "agent-workflows",
-      "namespace_title": "Agent Workflows",
-      "updated": "2026-06-27",
-      "raw": "/raw/agent-workflows/wiki/concepts/agent-skill-routing.md",
-      "html": "/wiki/agent-workflows/wiki/concepts/agent-skill-routing.md.html"
-    },
-    {
-      "title": "Compound Engineering Skill Layer",
-      "path": "wiki/concepts/compound-engineering-skill-layer.md",
-      "namespace": "agent-workflows",
-      "namespace_title": "Agent Workflows",
-      "updated": "2026-06-27",
-      "raw": "/raw/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md",
-      "html": "/wiki/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md.html"
-    },
-    {
-      "title": "Matt Pocock SDLC Rhythm",
-      "path": "wiki/concepts/matt-pocock-sdlc-rhythm.md",
-      "namespace": "agent-workflows",
-      "namespace_title": "Agent Workflows",
-      "updated": "2026-06-27",
-      "raw": "/raw/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md",
-      "html": "/wiki/agent-workflows/wiki/concepts/matt-pocock-sdlc-rhythm.md.html"
-    },
-    {
-      "title": "Visual Plan Review Surfaces",
-      "path": "wiki/concepts/visual-plan-review-surfaces.md",
-      "namespace": "agent-workflows",
-      "namespace_title": "Agent Workflows",
-      "updated": "2026-06-27",
-      "raw": "/raw/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md",
-      "html": "/wiki/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md.html"
-    },
-    {
       "title": "Agent Output Decision Artifacts",
       "path": "wiki/concepts/agent-output-decision-artifacts.md",
       "namespace": "ai-native-product-surfaces",
@@ -5167,15 +5176,6 @@
       "updated": "2026-06-24",
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html"
-    },
-    {
-      "title": "Matt Pocock Skills Best Practices",
-      "path": "wiki/concepts/matt-pocock-skills-best-practices.md",
-      "namespace": "agent-workflows",
-      "namespace_title": "Agent Workflows",
-      "updated": "2026-06-19",
-      "raw": "/raw/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md",
-      "html": "/wiki/agent-workflows/wiki/concepts/matt-pocock-skills-best-practices.md.html"
     },
     {
       "title": "External Hermes Wikis Import Review",

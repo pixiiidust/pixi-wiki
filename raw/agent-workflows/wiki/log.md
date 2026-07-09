@@ -194,3 +194,7 @@ namespace: agent-workflows
 - Updated `wiki/entities/hermes-mission-control.md` with the Pixoid Review Surface pattern.
 - Updated namespace README and index source roots.
 - No Daily Notes were copied or compiled.
+## 2026-07-09 update | Matt Pocock skills v1.1 refresh
+
+- Refreshed compiled `matt-pocock-sdlc-rhythm`, `matt-pocock-skills-best-practices`, `visual-plan-review-surfaces`, and `compound-engineering-skill-layer` for the upstream v1.1 rename: `/to-spec`, `/to-tickets`, `/wayfinder`, `/research`, `/diagnosing-bugs`, and local Hermes `/review` alias.
+- Updated namespace index wording; no Daily Notes were copied or compiled.

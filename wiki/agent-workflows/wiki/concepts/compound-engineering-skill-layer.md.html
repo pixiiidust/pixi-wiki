@@ -19,7 +19,7 @@
 </div></details></div></aside><article class="article" id="main-content">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/agent-workflows/README.md.html">Agent Workflows</a> / wiki/concepts/compound-engineering-skill-layer.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+agent-workflows%2Fwiki%2Fconcepts%2Fcompound-engineering-skill-layer.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fagent-workflows%2Fwiki%2Fconcepts%2Fcompound-engineering-skill-layer.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1 id="compound-engineering-skill-layer">Compound Engineering Skill Layer<a class="heading-anchor" href="#compound-engineering-skill-layer" aria-label="Link to this section">¶</a></h1>
-<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-06-27</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div></div>
+<div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-07-09</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div></div>
 <p>Compound Engineering is an EveryInc plugin that packages a repo-local engineering loop: ideate or brainstorm, plan, work, simplify, review, compound the learning, and repeat with better context.</p>
 <p>In Jamie&#x27;s Hermes setup, it is installed at <code>/root/.hermes/plugins/compound-engineering-plugin/skills</code> and exposed as normal Hermes skills such as <code>ce-setup</code>, <code>ce-brainstorm</code>, <code>ce-plan</code>, <code>ce-work</code>, <code>ce-simplify-code</code>, <code>ce-code-review</code>, <code>ce-debug</code>, <code>ce-compound</code>, and <code>lfg</code>.</p>
 <nav class="page-toc"><div class="page-toc-title">On this page</div><ul><li class="page-toc-h2"><a href="#quick-start">Quick start</a></li><li class="page-toc-h2"><a href="#when-to-use-it">When to use it</a></li><li class="page-toc-h2"><a href="#similar-to-existing-skills">Similar to existing skills</a></li><li class="page-toc-h2"><a href="#different-from-existing-skills">Different from existing skills</a></li><li class="page-toc-h2"><a href="#pixoid-routing-rules">Pixoid routing rules</a></li><li class="page-toc-h2"><a href="#related-pages">Related pages</a></li></ul></nav>
@@ -43,7 +43,7 @@ ce-compound</code></pre>
 <h2 id="different-from-existing-skills">Different from existing skills<a class="heading-anchor" href="#different-from-existing-skills" aria-label="Link to this section">¶</a></h2>
 <ul>
 <li>CE is an integrated workflow package; Pocock/Jamie skills are modular gates.</li>
-<li>CE&#x27;s <code>ce-brainstorm</code> and <code>ce-plan</code> write a shared unified plan artifact for downstream CE commands; <code>to-prd</code> and <code>to-issues</code> remain better when the durable deliverable is a PRD/issue tree.</li>
+<li>CE&#x27;s <code>ce-brainstorm</code> and <code>ce-plan</code> write a shared unified plan artifact for downstream CE commands; <code>to-spec</code> and <code>to-tickets</code> remain better when the durable deliverable is a spec/ticket tree.</li>
 <li>CE&#x27;s <code>ce-work</code> assumes the CE plan context; <code>implement</code>/<code>tdd</code> remain better for one narrow GitHub issue or an existing non-CE plan.</li>
 <li>CE&#x27;s <code>ce-compound</code> captures project-local engineering learning, usually under <code>docs/solutions/</code>; Obsidian/Pixi Wiki remain the home for reusable human-facing knowledge.</li>
 <li>CE&#x27;s <code>lfg</code> is an autopilot. Jamie&#x27;s AFK route contracts still govern profile boundaries, handoffs, merge/deploy approval, and route observability.</li>
@@ -51,7 +51,7 @@ ce-compound</code></pre>
 <h2 id="pixoid-routing-rules">Pixoid routing rules<a class="heading-anchor" href="#pixoid-routing-rules" aria-label="Link to this section">¶</a></h2>
 <ul>
 <li>Use CE for repo-local engineering loops.</li>
-<li>Use <code>prototype</code>, <code>visual-plan</code>, <code>grill-with-docs</code>, <code>/to-prd</code>, and <code>/to-issues</code> when Jamie needs explicit human review artifacts before execution.</li>
+<li>Use <code>prototype</code>, <code>visual-plan</code>, <code>grill-with-docs</code>, <code>/wayfinder</code>, <code>/to-spec</code>, and <code>/to-tickets</code> when Jamie needs explicit human review artifacts before execution.</li>
 <li>Use normal <code>code-review</code>, <code>debugging</code>, <code>ponytail-code-discipline</code>, or <code>test-driven-development</code> when CE&#x27;s unified plan artifact is not the active source.</li>
 <li>Do not let <code>lfg</code> bypass destructive-change, deploy, merge, secret, profile/runtime, or public publishing approvals.</li>
 <li>Treat CE skills as procedures, not proof: inspect live state, run tests, and verify outputs before reporting success.</li>
