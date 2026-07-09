@@ -1,11 +1,11 @@
 {
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
-  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
-  "documentCount": 18,
+  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
+  "documentCount": 19,
   "counts": {
     "wiki": 1,
-    "concepts": 7,
+    "concepts": 8,
     "entities": 6,
     "summaries": 0,
     "syntheses": 0
@@ -51,6 +51,13 @@
       "path": "wiki/concepts/interaction-mode-routing.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "J-Space as Global Workspace",
+      "path": "wiki/concepts/j-space-global-workspace.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md.html",
       "category": "concepts"
     },
     {

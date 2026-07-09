@@ -524,21 +524,21 @@
     {
       "slug": "ai-native-product-surfaces",
       "title": "AI-Native Product Surfaces",
-      "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
+      "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
       "tags": [
         "product"
       ],
       "category": "product",
       "scope": {
-        "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
+        "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
         "notCovered": "Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.",
-        "currentAs": "2026-07-08 \u2014 active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video."
+        "currentAs": "2026-07-08 \u2014 active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video."
       },
       "lastUpdated": "2026-07-08",
-      "documentCount": 18,
+      "documentCount": 19,
       "counts": {
         "wiki": 1,
-        "concepts": 7,
+        "concepts": 8,
         "entities": 6,
         "summaries": 0,
         "syntheses": 0
@@ -589,6 +589,13 @@
           "path": "wiki/concepts/interaction-mode-routing.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "J-Space as Global Workspace",
+          "path": "wiki/concepts/j-space-global-workspace.md",
+          "raw": "/raw/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md",
+          "html": "/wiki/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md.html",
           "category": "concepts"
         },
         {

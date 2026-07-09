@@ -11,6 +11,12 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-07-08 create/update | J-space as Global Workspace concept
+
+- Added `wiki/concepts/j-space-global-workspace.md` from the canonical `Knowledge/concepts/j-space-global-workspace.md` page and Anthropic Transformer Circuits paper.
+- Routed the paper as a product-surface concept: replay verbalizable readouts to keep model work inspectable, while preserving the caveat that this is not direct access to model thoughts.
+- Cross-linked it to J-Space-Replay as the app's inspiration and honesty boundary.
+
 ## 2026-07-08 create/update | J-Space-Replay entity
 
 - Added `wiki/entities/j-space-replay.md` from the canonical `Projects/J-Space-Replay/Index.md` hub and public `pixiiidust/j-space-replay` repo docs.

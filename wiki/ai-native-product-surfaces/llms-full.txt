@@ -37,7 +37,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, PM case studies, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.
 
 ### Not Covered
 
@@ -45,7 +45,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-08 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+2026-07-08 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
 
 ## Canonical Source Roots
 
@@ -58,6 +58,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Projects/myAbode/Index.md`
 - `Knowledge/concepts/ai-native-problem-framing-framework.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
+- `Knowledge/concepts/j-space-global-workspace.md`
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
@@ -871,6 +872,72 @@ For verbose agent output, use [[agent-output-decision-artifacts|Agent Output Dec
 Compiled from `Knowledge/concepts/interaction-mode-routing.md` plus project applications in I-know-kungfu, Pixi Wiki, and Hermes Mission Control.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md ===== -->
+
+---
+title: J-Space as Global Workspace
+created: 2026-07-08
+updated: 2026-07-08
+type: concept
+status: active
+namespace: ai-native-product-surfaces
+source: Knowledge/concepts/j-space-global-workspace.md
+confidence: medium
+---
+# J-Space as Global Workspace
+
+J-space is Anthropic's name for the model-internal subspace spanned by Jacobian lens vectors: directions in a language model's residual stream that make a token more likely to be verbalized now or later.
+
+The paper argues that this verbalizable subspace behaves like a **functional global workspace**: content written there can be reported, modulated, used in flexible reasoning, and broadcast to downstream computations. This is a functional claim about accessible representations, not a claim about subjective consciousness.
+
+## Product translation
+
+```text
+model activation at a position/layer
+  -> project onto J-lens directions
+  -> read token/concept directions with high activation
+  -> inspect what is available for verbal report or downstream use
+  -> optionally intervene to test whether the representation is causal
+```
+
+The useful product idea is not "read model thoughts." The useful idea is: **replay what a model is poised to verbalize so humans can inspect intermediate, silent, or weakly expressed content before trusting the answer.**
+
+## What the paper claims
+
+Anthropic reports that J-space has the cluster of properties associated with global workspace theory:
+
+- **Verbal report:** J-lens readouts track what the model will say, and interventions can change reports.
+- **Directed modulation:** instructed mental content can appear in J-lens readouts even while the surface output is unrelated.
+- **Internal reasoning:** unspoken intermediates can appear in J-space and be causally load-bearing.
+- **Flexible generalization / broadcast:** one J-space vector can feed many downstream functions.
+- **Selective mediation:** flexible explicit tasks depend on J-space more than routine automatic processing.
+- **Structural support:** model components appear arranged to read, write, amplify, and broadcast J-space content.
+
+## Alignment-auditing relevance
+
+The paper applies J-lens readouts to cases where silent strategic or situational assessments appear in J-space before or without appearing in the model output. This makes J-space a promising review surface for evaluation awareness, prompt-injection recognition, self-monitoring, or hidden objective signatures.
+
+The boundary is just as important: the authors do **not** claim J-space monitoring is sufficient for alignment. Automatic or highly practiced behavior can route outside J-space, and single-token limitations can hide multi-token or diffuse concepts.
+
+## Relationship to J-Space-Replay
+
+J-Space-Replay borrows the interaction shape: it lets users replay Qwen2.5-VL logit-lens and fitted J-lens readouts over a video-answer timeline.
+
+Keep the public claim honest:
+
+- the Anthropic paper validates text-model J-space behavior, not VLM video behavior;
+- J-Space-Replay is a demo-quality glass-box surface, not a full replication;
+- the app's preset traces and UI are useful for inspecting readouts, but upload/local GPU use is required for new videos;
+- the honest claim is "inspect VLM readouts," not "read model thoughts."
+
+## Source handles
+
+- Anthropic Transformer Circuits paper: https://transformer-circuits.pub/2026/workspace/index.html
+- Canonical Knowledge page: `Knowledge/concepts/j-space-global-workspace.md`
+- Source digest: `Knowledge/raw/papers/anthropic-verbalizable-representations-global-workspace-2026.md`
+- Related entity: [[../entities/j-space-replay|J-Space-Replay]]
+
+
 <!-- ===== ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md ===== -->
 
 ---
@@ -1287,7 +1354,7 @@ confidence: high
 ---
 # J-Space-Replay
 
-J-Space-Replay is a public working demo for replaying a vision-language model's decoded internal readouts on a video timeline while it answers a question.
+J-Space-Replay is a public working side project for replaying a vision-language model's decoded internal readouts on a video timeline while it answers a question. The public lite version lets users browse preset traces; upload/new-video generation requires local install/GPU.
 
 The product surface is intentionally glass-box and cautious: it helps a user inspect Qwen2.5-VL logit-lens or fitted J-lens readouts, but it does **not** claim to reveal model thoughts or validate mechanistic claims about VLMs.
 
@@ -1337,6 +1404,8 @@ The honest boundary is central:
 
 - Project hub: `Projects/J-Space-Replay/Index.md`
 - Repo: https://github.com/pixiiidust/j-space-replay
+- Lite preset library: https://pixiiidust.github.io/j-space-replay/
+- Inspiration concept: [[../concepts/j-space-global-workspace|J-Space as Global Workspace]]
 - Screenshot/demo: `docs/screenshot.png`, `docs/demo.mp4`
 - Evidence: `reports/jlens_evidence.md`, `reports/m2_quality_gate.md`
 - Related concepts: [[../concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]], [[../concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]], [[../concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
@@ -1688,6 +1757,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]] — Compress verbose agent output into concise, visual, source-backed decision artifacts with explicit next actions and feedback controls.
 - [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] — Defines environment/actions/goal/constraints for AI-native product surfaces.
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
+- [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
 - [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped evidence; for gameplay, visual-only is low-trust and structured signals matter.
 - [[concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]] — Product-surface pattern for video apps/workbenches that return clips, confidence, evidence, and recall boundaries with AI as assistant, not source of truth.
@@ -1721,6 +1791,7 @@ namespace: ai-native-product-surfaces
 - `Projects/myAbode/Index.md`
 - `Knowledge/concepts/ai-native-problem-framing-framework.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
+- `Knowledge/concepts/j-space-global-workspace.md`
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
@@ -1747,6 +1818,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-08 create/update | J-space as Global Workspace concept
+
+- Added `wiki/concepts/j-space-global-workspace.md` from the canonical `Knowledge/concepts/j-space-global-workspace.md` page and Anthropic Transformer Circuits paper.
+- Routed the paper as a product-surface concept: replay verbalizable readouts to keep model work inspectable, while preserving the caveat that this is not direct access to model thoughts.
+- Cross-linked it to J-Space-Replay as the app's inspiration and honesty boundary.
 
 ## 2026-07-08 create/update | J-Space-Replay entity
 

@@ -1,6 +1,6 @@
 {
   "generated_from": "frontmatter updated fields",
-  "count": 616,
+  "count": 617,
   "entries": [
     {
       "title": "AI-Native Product Surfaces",
@@ -28,6 +28,15 @@
       "updated": "2026-07-08",
       "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
+    },
+    {
+      "title": "J-Space as Global Workspace",
+      "path": "wiki/concepts/j-space-global-workspace.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-08",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md.html"
     },
     {
       "title": "J-Space-Replay",

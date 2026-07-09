@@ -10,7 +10,7 @@ confidence: high
 ---
 # J-Space-Replay
 
-J-Space-Replay is a public working demo for replaying a vision-language model's decoded internal readouts on a video timeline while it answers a question.
+J-Space-Replay is a public working side project for replaying a vision-language model's decoded internal readouts on a video timeline while it answers a question. The public lite version lets users browse preset traces; upload/new-video generation requires local install/GPU.
 
 The product surface is intentionally glass-box and cautious: it helps a user inspect Qwen2.5-VL logit-lens or fitted J-lens readouts, but it does **not** claim to reveal model thoughts or validate mechanistic claims about VLMs.
 
@@ -60,6 +60,8 @@ The honest boundary is central:
 
 - Project hub: `Projects/J-Space-Replay/Index.md`
 - Repo: https://github.com/pixiiidust/j-space-replay
+- Lite preset library: https://pixiiidust.github.io/j-space-replay/
+- Inspiration concept: [[../concepts/j-space-global-workspace|J-Space as Global Workspace]]
 - Screenshot/demo: `docs/screenshot.png`, `docs/demo.mp4`
 - Evidence: `reports/jlens_evidence.md`, `reports/m2_quality_gate.md`
 - Related concepts: [[../concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]], [[../concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]], [[../concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
