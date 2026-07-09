@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-07-07
+updated: 2026-07-09
 type: index
 status: compiled
 namespace: agent-workflows
@@ -18,6 +18,7 @@ namespace: agent-workflows
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
 - [[concepts/agent-tooling-plan|Agent Tooling Plan]] — Agent-as-tools playbook for mapping vague or clear requests into live-state checks, task buckets, tools, routing rules, memory, evaluation, permissions, and smallest proving loops.
+- [[concepts/agentic-harness-engineering|Agentic Harness Engineering]] — Eve-derived pattern for building agents as inspectable runtime harnesses with explicit capability slots, trust boundaries, durable sessions, channels, sandboxing, and eval gates.
 - [[concepts/compound-engineering-skill-layer|Compound Engineering Skill Layer]] — Guide for using EveryInc Compound Engineering skills inside Hermes and routing them against Jamie's existing skill stack.
 - Cross-namespace concept: [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]] — Selects the smallest effective Hermes surface for a task before work becomes a skill, subagent, cron, gateway/API, MCP/plugin, profile, kanban, provider, or vault/Pixi Wiki route.
 - [[concepts/creative-ideation-routing|Creative Ideation Routing]] — Method-routed inspiration loop for using the `creative-ideation` skill without generic brainstorming.
@@ -69,6 +70,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
 - `Knowledge/concepts/agent-tooling-plan.md`
+- `Knowledge/concepts/agentic-harness-engineering.md`
 - `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`

@@ -21,7 +21,7 @@
 ## Agent Workflows
 
 > Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.
-> Current as of: 2026-07-07 — Effective State Load research program complete; the public-safe next bridge is a shadow-mode provenance auditor MVP that checks right-object writes before any gateway/calibration product.
+> Current as of: 2026-07-09 — Added the Eve-derived Agentic Harness Engineering pattern: build agents as inspectable runtime harnesses with explicit capability slots, trust boundaries, durable sessions, channels, sandboxing, and eval gates.
 > Agent access: [/wiki/agent-workflows/llms.txt](/wiki/agent-workflows/llms.txt) [/wiki/agent-workflows/llms-full.txt](/wiki/agent-workflows/llms-full.txt) [/wiki/agent-workflows/index.json](/wiki/agent-workflows/index.json)
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
@@ -30,6 +30,7 @@
 - [Agent Entrypoint Mesh](/raw/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md.html))
 - [Agent Skill Routing](/raw/agent-workflows/wiki/concepts/agent-skill-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-skill-routing.md.html))
 - [Agent Tooling Plan](/raw/agent-workflows/wiki/concepts/agent-tooling-plan.md) ([html](/wiki/agent-workflows/wiki/concepts/agent-tooling-plan.md.html))
+- [Agentic Harness Engineering](/raw/agent-workflows/wiki/concepts/agentic-harness-engineering.md) ([html](/wiki/agent-workflows/wiki/concepts/agentic-harness-engineering.md.html))
 - [Bounded Context Tree Pattern](/raw/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md) ([html](/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html))
 - [Compound Engineering Skill Layer](/raw/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md) ([html](/wiki/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md.html))
 - [Creative Ideation Routing](/raw/agent-workflows/wiki/concepts/creative-ideation-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/creative-ideation-routing.md.html))

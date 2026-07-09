@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-07-07
+updated: 2026-07-09
 type: namespace-overview
 status: active
 category: agents
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-07 — Effective State Load research program complete; the public-safe next bridge is a shadow-mode provenance auditor MVP that checks right-object writes before any gateway/calibration product.
+2026-07-09 — Added the Eve-derived Agentic Harness Engineering pattern: build agents as inspectable runtime harnesses with explicit capability slots, trust boundaries, durable sessions, channels, sandboxing, and eval gates.
 
 ## Canonical Source Roots
 
@@ -41,6 +41,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
 - `Knowledge/concepts/agent-tooling-plan.md`
+- `Knowledge/concepts/agentic-harness-engineering.md`
 - `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`

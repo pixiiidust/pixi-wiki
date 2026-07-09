@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-07
+updated: 2026-07-09
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-09 create | Agentic Harness Engineering
+
+- Added compiled concept `wiki/concepts/agentic-harness-engineering.md` from the canonical Knowledge page and Eve docs/repo review.
+- Captured the transferable harness pattern: identity, tools, skills, channels, connections, subagents, schedules, sandbox, durable sessions, and evals should live in explicit slots with enforceable trust boundaries.
+- No public `pixi-wiki` deploy was pushed.
 
 ## 2026-07-07 update | Effective State Load to provenance-auditor bridge
 

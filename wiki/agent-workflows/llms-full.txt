@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-07-07
+updated: 2026-07-09
 type: namespace-overview
 status: active
 category: agents
@@ -43,7 +43,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-07 — Effective State Load research program complete; the public-safe next bridge is a shadow-mode provenance auditor MVP that checks right-object writes before any gateway/calibration product.
+2026-07-09 — Added the Eve-derived Agentic Harness Engineering pattern: build agents as inspectable runtime harnesses with explicit capability slots, trust boundaries, durable sessions, channels, sandboxing, and eval gates.
 
 ## Canonical Source Roots
 
@@ -59,6 +59,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
 - `Knowledge/concepts/agent-tooling-plan.md`
+- `Knowledge/concepts/agentic-harness-engineering.md`
 - `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
@@ -438,6 +439,88 @@ Canonical source: `Knowledge/concepts/agent-tooling-plan.md`.
 Reusable Hermes skill: `~/.hermes/skills/autonomous-ai-agents/agent-tooling-plan/SKILL.md`.
 
 Related pages: [[concepts/agent-skill-routing|Agent Skill Routing]], [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]], [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]], [[concepts/runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]], [[concepts/matt-pocock-skills-best-practices|Matt Pocock Skills Best Practices]].
+
+
+<!-- ===== agent-workflows/wiki/concepts/agentic-harness-engineering.md ===== -->
+
+---
+title: Agentic Harness Engineering
+created: 2026-07-09
+updated: 2026-07-09
+type: concept
+status: compiled
+namespace: agent-workflows
+source: Knowledge/concepts/agentic-harness-engineering.md
+confidence: high
+---
+
+# Agentic Harness Engineering
+
+Agentic harness engineering treats an AI agent as a deployable software harness, not a giant prompt. The harness makes identity, actions, tool authority, channel routes, sandbox execution, durable state, background work, and eval gates inspectable before the agent runs.
+
+## Reference pattern from Eve
+
+Vercel's Eve framework is a useful reference shape because it authors agents as files under `agent/`:
+
+```text
+instructions.md  -> identity and standing contract
+agent.ts         -> model and runtime config
+tools/           -> typed model-callable actions
+skills/          -> on-demand procedures
+channels/        -> HTTP, Slack, Discord, GitHub, Linear, and custom entrypoints
+connections/     -> MCP/OpenAPI external tool surfaces with brokered auth
+subagents/       -> specialist child agents
+schedules/       -> cron/background runs
+sandbox/         -> isolated /workspace for shell and file work
+evals/           -> route-level behavioral checks
+```
+
+The transferable lesson is not the exact folder names. The pattern is that each capability has a visible slot and a runtime boundary.
+
+## Harness checklist
+
+A real agentic harness should answer these questions without relying on chat history:
+
+| Question | Harness surface |
+|---|---|
+| Who is this agent? | instructions / profile / identity file |
+| What actions can it take? | typed tools and connection manifests |
+| Where can users reach it? | channels and route auth |
+| What is unsafe/untrusted execution? | sandbox backend, workspace, and network policy |
+| What needs human approval? | HITL and approval policies |
+| What persists across turns? | durable session state and knowledge/memory routing |
+| How does work split? | subagents and delegation caps |
+| What runs on a clock? | schedules / cron |
+| How is behavior verified? | evals, stream events, route checks, and live proof |
+
+## Jamie-system application
+
+- **Hermes Mission Control:** keep profile routes, Discord channel contracts, skills, cron, MCP, memories, vault truth, and verification as explicit harness surfaces.
+- **Pixi Wiki:** treat namespace source, compiler maps, generated routes, `llms.txt`, MCP tests, and live Pages checks as the publishing harness, not just generated pages.
+- **Crew workflows:** use peer-profile vs child-process boundaries before claiming named-agent execution.
+- **Product prototypes:** start with identity, tool/data boundary, channel, sandbox, approval path, durable state, and eval smoke test before promising autonomy.
+
+## Boundaries
+
+- A visible file tree is not sufficient; auth, approval, idempotency, network policy, and verification still matter.
+- Secrets belong in trusted runtime tools or connection auth, not in model context or sandbox files.
+- Long procedures should be load-on-demand skills/playbooks, not permanent prompt bulk.
+- Subagents are not an approval boundary by themselves.
+
+## Source
+
+Canonical source: `Knowledge/concepts/agentic-harness-engineering.md`.
+
+External references reviewed: `https://eve.dev/docs/introduction` and `https://github.com/vercel/eve`.
+
+## Related pages
+
+- [[agent-tooling-plan|Agent Tooling Plan]]
+- [[agent-skill-routing|Agent Skill Routing]]
+- [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]]
+- [[runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]]
+- [[self-improving-agent-systems|Self-Improving Agent Systems]]
+- [[peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]]
 
 
 <!-- ===== agent-workflows/wiki/concepts/bounded-context-tree-pattern.md ===== -->
@@ -1944,7 +2027,7 @@ Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operati
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-07-07
+updated: 2026-07-09
 type: index
 status: compiled
 namespace: agent-workflows
@@ -1961,6 +2044,7 @@ namespace: agent-workflows
 - [[concepts/agent-entrypoint-mesh|Agent Entrypoint Mesh]] — Typed starting points that route agents to the right truth surface.
 - [[concepts/agent-skill-routing|Agent Skill Routing]] — Contract for choosing useful Hermes skills automatically and passing active constraints into delegated subagents.
 - [[concepts/agent-tooling-plan|Agent Tooling Plan]] — Agent-as-tools playbook for mapping vague or clear requests into live-state checks, task buckets, tools, routing rules, memory, evaluation, permissions, and smallest proving loops.
+- [[concepts/agentic-harness-engineering|Agentic Harness Engineering]] — Eve-derived pattern for building agents as inspectable runtime harnesses with explicit capability slots, trust boundaries, durable sessions, channels, sandboxing, and eval gates.
 - [[concepts/compound-engineering-skill-layer|Compound Engineering Skill Layer]] — Guide for using EveryInc Compound Engineering skills inside Hermes and routing them against Jamie's existing skill stack.
 - Cross-namespace concept: [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]] — Selects the smallest effective Hermes surface for a task before work becomes a skill, subagent, cron, gateway/API, MCP/plugin, profile, kanban, provider, or vault/Pixi Wiki route.
 - [[concepts/creative-ideation-routing|Creative Ideation Routing]] — Method-routed inspiration loop for using the `creative-ideation` skill without generic brainstorming.
@@ -2012,6 +2096,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/runtime-memory-knowledge-routing.md`
 - `Knowledge/concepts/agent-skill-routing.md`
 - `Knowledge/concepts/agent-tooling-plan.md`
+- `Knowledge/concepts/agentic-harness-engineering.md`
 - `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
@@ -2037,7 +2122,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-07
+updated: 2026-07-09
 type: log
 status: compiled
 namespace: agent-workflows
@@ -2046,6 +2131,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-09 create | Agentic Harness Engineering
+
+- Added compiled concept `wiki/concepts/agentic-harness-engineering.md` from the canonical Knowledge page and Eve docs/repo review.
+- Captured the transferable harness pattern: identity, tools, skills, channels, connections, subagents, schedules, sandbox, durable sessions, and evals should live in explicit slots with enforceable trust boundaries.
+- No public `pixi-wiki` deploy was pushed.
 
 ## 2026-07-07 update | Effective State Load to provenance-auditor bridge
 

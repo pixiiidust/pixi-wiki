@@ -99,13 +99,13 @@
       "scope": {
         "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-07-07 \u2014 Effective State Load research program complete; the public-safe next bridge is a shadow-mode provenance auditor MVP that checks right-object writes before any gateway/calibration product."
+        "currentAs": "2026-07-09 \u2014 Added the Eve-derived Agentic Harness Engineering pattern: build agents as inspectable runtime harnesses with explicit capability slots, trust boundaries, durable sessions, channels, sandboxing, and eval gates."
       },
-      "lastUpdated": "2026-07-07",
-      "documentCount": 31,
+      "lastUpdated": "2026-07-09",
+      "documentCount": 32,
       "counts": {
         "wiki": 1,
-        "concepts": 22,
+        "concepts": 23,
         "entities": 1,
         "summaries": 2,
         "syntheses": 2
@@ -156,6 +156,13 @@
           "path": "wiki/concepts/agent-tooling-plan.md",
           "raw": "/raw/agent-workflows/wiki/concepts/agent-tooling-plan.md",
           "html": "/wiki/agent-workflows/wiki/concepts/agent-tooling-plan.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Agentic Harness Engineering",
+          "path": "wiki/concepts/agentic-harness-engineering.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/agentic-harness-engineering.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/agentic-harness-engineering.md.html",
           "category": "concepts"
         },
         {

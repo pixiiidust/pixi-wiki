@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/README.md.html</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-09</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/agent-capability-route-pattern.md.html</loc>
@@ -43,6 +43,10 @@
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/agent-tooling-plan.md.html</loc>
     <lastmod>2026-06-30</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/agentic-harness-engineering.md.html</loc>
+    <lastmod>2026-07-09</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html</loc>
@@ -122,11 +126,11 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/index.md.html</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-09</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/log.md.html</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-09</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/summaries/agent-workflow-system-summary.md.html</loc>
