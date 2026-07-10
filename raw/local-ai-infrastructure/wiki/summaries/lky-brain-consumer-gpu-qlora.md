@@ -57,6 +57,17 @@ On this WSL2 + Blackwell stack:
 
 These are verified for this run, not universal prescriptions for every GPU, WSL version, or future package release.
 
+## Portable use and serving path
+
+The public-readability refresh at repo commit `da490f6` replaced machine-specific checkout paths in the setup, training, generation, and upload launchers with paths derived from each script's location.
+
+The repo now documents two downstream paths:
+
+- **Quick local inference:** load Qwen3-14B in 4-bit with Transformers/bitsandbytes, attach `sjsim/lky-qlora` through PEFT, and run with about 16GB VRAM.
+- **OpenAI-compatible serving:** run vLLM with LoRA enabled, register the adapter as `lky`, keep maximum LoRA rank at 64, and disable Qwen3 thinking in request metadata.
+
+The serving guide estimates about 28GB for the full-precision 14B base and points readers toward a 40GB card, or a 24GB card with quantization. These examples make the project easier to try and integrate, but they were not executed as part of this VPS review and should not be promoted to verified serving evidence yet.
+
 ## Evidence boundary
 
-The repo has no CI or unit-test suite for the data/training pipeline, and the generated datasets/checkpoints are intentionally gitignored. The `uv.lock` covers the data-pipeline environment, but the version-sensitive Unsloth/TRL/Transformers/PEFT/Torch/bitsandbytes training stack is installed separately without exact pins. Reproducibility therefore depends on live sources, external model artifacts, package resolution, and operator-run hydration/training steps. Add training locks, manifests, hashes, schema versions, and a small CPU-only pipeline fixture before calling the template fully reproducible.
+The repo has no CI or unit-test suite for the data/training pipeline, and the generated datasets/checkpoints are intentionally gitignored. The `uv.lock` covers the data-pipeline environment, but the version-sensitive Unsloth/TRL/Transformers/PEFT/Torch/bitsandbytes training stack is installed separately without exact pins. Reproducibility therefore depends on live sources, external model artifacts, package resolution, and operator-run hydration/training steps. The portable shell paths reduce checkout-specific friction but do not solve dependency or artifact reproducibility. Add training locks, manifests, hashes, schema versions, a small CPU-only pipeline fixture, and GPU smoke checks for the documented inference/serving paths before calling the template fully reproducible.

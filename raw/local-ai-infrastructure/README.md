@@ -25,7 +25,7 @@ Cloud-only infrastructure unless it affects local-first migration; product UX un
 
 ### Current As
 
-2026-07-10 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study.
+2026-07-10 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers plus documented PEFT inference and vLLM serving paths.
 
 ## Canonical Source Roots
 
