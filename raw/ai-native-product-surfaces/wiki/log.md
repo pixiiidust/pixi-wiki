@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-08
+updated: 2026-07-09
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -10,6 +10,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-09 create/update | Role-Aligned Deployed Project Proof
+
+- Added `wiki/concepts/role-aligned-deployed-project-proof.md` from the canonical `Knowledge/concepts/role-aligned-deployed-project-proof.md` page.
+- Preserved the role/JD → repeated job verb → painful workflow → smallest live artifact → evidence → tailored case-study selection rule.
+- Kept the multi-role idea list as a starter catalog and made live deployment, ownership, truthfulness, and role-specific judgment explicit hard gates.
+- Updated namespace README and index; no Daily Notes were copied or compiled.
 
 ## 2026-07-08 create/update | J-space as Global Workspace concept
 

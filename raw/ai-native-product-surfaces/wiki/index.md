@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-07-08
+updated: 2026-07-09
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -20,6 +20,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
+- [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
 - [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped evidence; for gameplay, visual-only is low-trust and structured signals matter.
 - [[concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]] — Product-surface pattern for video apps/workbenches that return clips, confidence, evidence, and recall boundaries with AI as assistant, not source of truth.
 - [[concepts/world-model-control-surfaces|World Model Control Surfaces]] — Grounded-AI control/review lens for exposing state, actions, predictions, objectives, guardrails, evidence, and the recommended next safe step.
@@ -56,6 +57,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
+- `Knowledge/concepts/role-aligned-deployed-project-proof.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
