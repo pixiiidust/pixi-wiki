@@ -150,7 +150,7 @@
 ## Local AI Infrastructure
 
 > Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.
-> Current as of: 2026-07-10 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study.
+> Current as of: 2026-07-10 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers plus documented PEFT inference and vLLM serving paths.
 > Agent access: [/wiki/local-ai-infrastructure/llms.txt](/wiki/local-ai-infrastructure/llms.txt) [/wiki/local-ai-infrastructure/llms-full.txt](/wiki/local-ai-infrastructure/llms-full.txt) [/wiki/local-ai-infrastructure/index.json](/wiki/local-ai-infrastructure/index.json)
 
 - [Local AI Infrastructure Namespace Instructions](/raw/local-ai-infrastructure/CLAUDE.md) ([html](/wiki/local-ai-infrastructure/CLAUDE.md.html))

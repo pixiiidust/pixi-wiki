@@ -23,7 +23,7 @@ namespace: local-ai-infrastructure
 
 ## Summaries
 
-- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth path, WSL2 + Blackwell failure isolation, config drift, and reproducibility boundary.
+- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth path, WSL2 + Blackwell failure isolation, checkout-portable launchers, documented PEFT/vLLM use paths, config drift, and reproducibility boundary.
 
 ## Syntheses
 

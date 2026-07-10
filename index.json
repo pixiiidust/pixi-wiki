@@ -888,7 +888,7 @@
       "scope": {
         "covers": "Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.",
         "notCovered": "Cloud-only infrastructure unless it affects local-first migration; product UX unless tied to local model constraints.",
-        "currentAs": "2026-07-10 \u2014 active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study."
+        "currentAs": "2026-07-10 \u2014 active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers plus documented PEFT inference and vLLM serving paths."
       },
       "lastUpdated": "2026-07-10",
       "documentCount": 9,

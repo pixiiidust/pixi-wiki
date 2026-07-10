@@ -21,7 +21,7 @@
 <h1 id="lky-brain-consumer-gpu-qlora-case-study">LKY Brain Consumer-GPU QLoRA Case Study<a class="heading-anchor" href="#lky-brain-consumer-gpu-qlora-case-study" aria-label="Link to this section">¶</a></h1>
 <div class="page-meta"><div><span>type</span>: summary</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-07-10</div><div><span>status</span>: compiled</div><div><span>namespace</span>: local-ai-infrastructure</div><div><span>sources</span>: 2</div></div>
 <p><code>lky-brain</code> demonstrates a complete Qwen3-14B QLoRA run on one RTX 5070 Ti 16GB GPU under WSL2 Ubuntu 24.04. The useful infrastructure lesson is not one magic config; it is how to isolate the actual failing layer and preserve a working evidence path.</p>
-<nav class="page-toc"><div class="page-toc-title">On this page</div><ul><li class="page-toc-h2"><a href="#successful-run">Successful run</a></li><li class="page-toc-h2"><a href="#portability-config-vs-executed-config">Portability config vs executed config</a></li><li class="page-toc-h2"><a href="#failure-isolation-pattern">Failure isolation pattern</a></li><li class="page-toc-h2"><a href="#environment-specific-findings">Environment-specific findings</a></li><li class="page-toc-h2"><a href="#evidence-boundary">Evidence boundary</a></li></ul></nav>
+<nav class="page-toc"><div class="page-toc-title">On this page</div><ul><li class="page-toc-h2"><a href="#successful-run">Successful run</a></li><li class="page-toc-h2"><a href="#portability-config-vs-executed-config">Portability config vs executed config</a></li><li class="page-toc-h2"><a href="#failure-isolation-pattern">Failure isolation pattern</a></li><li class="page-toc-h2"><a href="#environment-specific-findings">Environment-specific findings</a></li><li class="page-toc-h2"><a href="#portable-use-and-serving-path">Portable use and serving path</a></li><li class="page-toc-h2"><a href="#evidence-boundary">Evidence boundary</a></li></ul></nav>
 <h2 id="successful-run">Successful run<a class="heading-anchor" href="#successful-run" aria-label="Link to this section">¶</a></h2>
 <ul>
 <li>base: Qwen3-14B, non-thinking mode;</li>
@@ -58,8 +58,16 @@
 <li>pinned-memory loading and Unsloth&#x27;s Qwen3 inference kernel were avoided.</li>
 </ul>
 <p>These are verified for this run, not universal prescriptions for every GPU, WSL version, or future package release.</p>
+<h2 id="portable-use-and-serving-path">Portable use and serving path<a class="heading-anchor" href="#portable-use-and-serving-path" aria-label="Link to this section">¶</a></h2>
+<p>The public-readability refresh at repo commit <code>da490f6</code> replaced machine-specific checkout paths in the setup, training, generation, and upload launchers with paths derived from each script&#x27;s location.</p>
+<p>The repo now documents two downstream paths:</p>
+<ul>
+<li><strong>Quick local inference:</strong> load Qwen3-14B in 4-bit with Transformers/bitsandbytes, attach <code>sjsim/lky-qlora</code> through PEFT, and run with about 16GB VRAM.</li>
+<li><strong>OpenAI-compatible serving:</strong> run vLLM with LoRA enabled, register the adapter as <code>lky</code>, keep maximum LoRA rank at 64, and disable Qwen3 thinking in request metadata.</li>
+</ul>
+<p>The serving guide estimates about 28GB for the full-precision 14B base and points readers toward a 40GB card, or a 24GB card with quantization. These examples make the project easier to try and integrate, but they were not executed as part of this VPS review and should not be promoted to verified serving evidence yet.</p>
 <h2 id="evidence-boundary">Evidence boundary<a class="heading-anchor" href="#evidence-boundary" aria-label="Link to this section">¶</a></h2>
-<p>The repo has no CI or unit-test suite for the data/training pipeline, and the generated datasets/checkpoints are intentionally gitignored. The <code>uv.lock</code> covers the data-pipeline environment, but the version-sensitive Unsloth/TRL/Transformers/PEFT/Torch/bitsandbytes training stack is installed separately without exact pins. Reproducibility therefore depends on live sources, external model artifacts, package resolution, and operator-run hydration/training steps. Add training locks, manifests, hashes, schema versions, and a small CPU-only pipeline fixture before calling the template fully reproducible.</p>
+<p>The repo has no CI or unit-test suite for the data/training pipeline, and the generated datasets/checkpoints are intentionally gitignored. The <code>uv.lock</code> covers the data-pipeline environment, but the version-sensitive Unsloth/TRL/Transformers/PEFT/Torch/bitsandbytes training stack is installed separately without exact pins. Reproducibility therefore depends on live sources, external model artifacts, package resolution, and operator-run hydration/training steps. The portable shell paths reduce checkout-specific friction but do not solve dependency or artifact reproducibility. Add training locks, manifests, hashes, schema versions, a small CPU-only pipeline fixture, and GPU smoke checks for the documented inference/serving paths before calling the template fully reproducible.</p>
 <h2>External links</h2>
 <ul>
 <li><a href="https://github.com/pixiiidust/lky-brain">github.com/pixiiidust/lky-brain</a></li>

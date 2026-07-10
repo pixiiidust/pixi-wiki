@@ -53,3 +53,10 @@ namespace: local-ai-infrastructure
 - Distinguished the successful Unsloth script from the retained but unexecuted Axolotl portability config.
 - Captured WSL2 + Blackwell failure isolation, non-packed training, plain-Transformers inference, checkpoint preservation, and environment-specific boundaries.
 - Crosslinked source/provenance to `curated-tuning-datasets` and evidence quality to `eval-trace`.
+
+## 2026-07-10 refresh | LKY Brain public-use and portability milestone
+
+- Refreshed the consumer-GPU QLoRA summary from repo commit `da490f6`.
+- Recorded checkout-relative launchers, the documented 4-bit PEFT quick-test path, and the vLLM OpenAI-compatible serving path.
+- Preserved the boundary between the executed training run and newly documented but not review-executed inference/serving examples.
+- Confirmed that dataset, training, and evaluation numbers did not change in this prose/portability refresh.
