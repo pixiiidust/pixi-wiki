@@ -231,34 +231,46 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/curated-tuning-datasets/README.md.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-10</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/curated-tuning-datasets/wiki/concepts/corpus-to-chat-transformation.md.html</loc>
+    <lastmod>2026-07-10</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md.html</loc>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/curated-tuning-datasets/wiki/index.md.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/curated-tuning-datasets/wiki/log.md.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/CLAUDE.md.html</loc>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/README.md.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/concepts/context-overfitting.md.html</loc>
     <lastmod>2026-06-18</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html</loc>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/entities/eval-trace.md.html</loc>
@@ -266,11 +278,11 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/index.md.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/log.md.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md.html</loc>
@@ -324,7 +336,7 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/local-ai-infrastructure/README.md.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/local-ai-infrastructure/raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md.html</loc>
@@ -343,11 +355,15 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/local-ai-infrastructure/wiki/index.md.html</loc>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/local-ai-infrastructure/wiki/log.md.html</loc>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-07-10</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md.html</loc>
+    <lastmod>2026-07-10</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/pattern-language/CLAUDE.md.html</loc>

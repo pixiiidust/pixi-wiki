@@ -9,7 +9,7 @@ This is a compiled namespace source under `pixi-vault/wikis/curated-tuning-datas
 - Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
 - Treat `Knowledge/` and `Projects/` as canonical authoring sources.
 - Treat Daily Notes as scratch chronology, not direct compiled content.
-- Keep this namespace scoped to: Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
+- Keep this namespace scoped to dataset/source curation for LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, recipe publication, and LKY Brain as an example. Route training runtime to `local-ai-infrastructure` and evaluation method to `eval-trace`.
 - Do not widen scope silently; propose a namespace promotion/routing update first.
 - Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
 
@@ -19,23 +19,23 @@ This is a compiled namespace source under `pixi-vault/wikis/curated-tuning-datas
 ---
 title: Curated Tuning Datasets
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-10
 type: namespace-overview
-status: scaffold
+status: active
 category: data-curation
 namespace: curated-tuning-datasets
-confidence: medium
+confidence: high
 ---
 
 # Curated Tuning Datasets
 
-> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+> Active namespace for provenance-aware corpus curation, dataset recipes, and readiness boundaries.
 
 ## Scope
 
 ### Covers
 
-Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
+Dataset/source curation for LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, dataset-recipe publication, and LKY Brain as a completed example.
 
 ### Not Covered
 
@@ -43,12 +43,14 @@ Training methods themselves except where they impose dataset-readiness requireme
 
 ### Current As
 
-2026-06-16 — scaffold only. Content has not yet been fully compiled.
+2026-07-10 — active. LKY Brain now covers the verified NAS manifest, local hydrated corpus, public recipe, adapter, and evaluation-readiness boundaries.
 
 ## Canonical Source Roots
 
 - `Projects/LKY Archive/Index.md`
 - `Projects/LKY Archive/Source Inventory.md`
+- `Knowledge/concepts/corpus-to-chat-transformation.md`
+- `Knowledge/concepts/dataset-recipe-publication.md`
 
 ## Crosslinks
 
@@ -73,50 +75,179 @@ When published to `pixi-wiki`, this namespace should expose:
 - Do not compile Daily Notes directly unless promoted or verified.
 
 
+<!-- ===== curated-tuning-datasets/wiki/concepts/corpus-to-chat-transformation.md ===== -->
+
+---
+title: Corpus-to-Chat Transformation
+created: 2026-07-10
+updated: 2026-07-10
+type: concept
+status: compiled
+namespace: curated-tuning-datasets
+tags: [curated-tuning-datasets, corpus-curation, instruction-backtranslation, temporal-persona]
+sources:
+  - Knowledge/concepts/corpus-to-chat-transformation.md
+  - Projects/LKY Archive/Index.md
+confidence: high
+---
+
+# Corpus-to-Chat Transformation
+
+A corpus-to-chat transformation converts real dialogue and monologic source material into supervised chat rows while preserving which text is observed, which text is synthetic, which speaker is the loss target, and which temporal context conditions each answer.
+
+## Two-stream contract
+
+### Real dialogue
+
+- Parse and validate speaker attribution.
+- Preserve bounded multi-turn windows.
+- Train only on the target speaker's assistant turns.
+- Hold out whole documents before creating overlapping windows.
+
+### Monologic speeches
+
+- Clean and paragraph-chunk real passages deterministically.
+- Generate one project-owned question that the passage directly answers.
+- Keep the source passage as the answer; do not synthesize the expert's response.
+- Store source ID, normalized-passage hash, date/title, and generation provenance.
+
+The reusable instruction-backtranslation rule is: **synthesize the prompt, not the expert's answer**.
+
+## Temporal conditioning
+
+Put normalized date, role/title, and setting in the system prompt when a speaker's role and views evolve over time. The mapping must be inspectable and malformed dates must fail or normalize explicitly. Temporal context is a label, not proof of historical fidelity.
+
+## LKY Brain instance
+
+- 1,142 interview/press-conference windows;
+- 2,895 speech passages with synthetic questions;
+- 404 generic-instruction rows;
+- 4,441 total training rows;
+- 66 windows from 10 whole held-out interviews.
+
+Qwen3 non-thinking mode and assistant-turn-only loss keep the objective on visible LKY-style answers rather than interviewer text or hidden scratchpad behavior.
+
+## Main risks
+
+- stale questions silently rejoining shifted chunks;
+- generator-model framing bias in synthetic questions;
+- same-event/date leakage across dialogue and speech streams;
+- interview-only holdout coverage;
+- title/speaker attribution and translation errors;
+- style transfer being mistaken for belief or factual fidelity.
+
+Hash-bound joins, explicit stream provenance, document-level splits, cross-stream leakage checks, and the `eval-trace` evidence contract are required before strong generalization claims.
+
+
+<!-- ===== curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md ===== -->
+
+---
+title: Dataset Recipe Publication
+created: 2026-07-10
+updated: 2026-07-10
+type: concept
+status: compiled
+namespace: curated-tuning-datasets
+tags: [curated-tuning-datasets, dataset-recipe, provenance, hydration, reproducibility]
+sources:
+  - Knowledge/concepts/dataset-recipe-publication.md
+  - Projects/LKY Archive/Index.md
+  - Projects/LKY Archive/Source Inventory.md
+confidence: high
+---
+
+# Dataset Recipe Publication
+
+A **dataset recipe** publishes project-owned labels or transformations, source pointers, schemas, and hydration code instead of redistributing source bodies whose terms or rights remain constrained.
+
+## Good recipe contents
+
+- stable source IDs and URLs;
+- provenance metadata;
+- project-authored questions, labels, or annotations;
+- deterministic retrieval, cleaning, and assembly code;
+- schema and pipeline versions;
+- source and normalized-passage hashes;
+- explicit rights and downstream-use boundaries.
+
+## Hard rule
+
+A recipe is not a legal bypass. Hydration still acquires the source under the source host's terms, and model-weight publication is a different review question from raw-text publication.
+
+## Reproducibility rule
+
+Do not rely only on `source_id + chunk_index`. Source files, extraction libraries, and chunking code can change while the identifier still looks valid. Bind each project-authored label/question to a normalized passage hash and fail closed when the hash drifts.
+
+## LKY Brain example
+
+`lky-brain` publishes about 2,895 synthetic interviewer questions and 1,328 NAS record pointers, plus hydration code, while excluding transcript bodies. That is a strong public boundary. Its next hardening step is to add source/passage hashes, pipeline versioning, and holdout manifests so the recipe is drift-detecting rather than only nominally deterministic.
+
+## Readiness ladder
+
+```text
+inventory → recipe → hash-verified hydration → repeated eval → rights/commercial review
+```
+
+Each gate is independent; training completion does not collapse them into one status.
+
+
 <!-- ===== curated-tuning-datasets/wiki/entities/lky-archive.md ===== -->
 
 ---
-title: LKY Archive
+title: LKY Brain / LKY Archive
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-10
 type: entity
-status: stub
+status: active
 namespace: curated-tuning-datasets
-tags: [curated-tuning-datasets, lky-archive, provenance, dataset-readiness]
+tags: [curated-tuning-datasets, lky-brain, provenance, dataset-recipe, qlora]
 sources:
   - Projects/LKY Archive/Index.md
   - Projects/LKY Archive/Source Inventory.md
-confidence: medium
+  - https://github.com/pixiiidust/lky-brain
+  - https://huggingface.co/datasets/sjsim/lky-reasoning-recipe
+confidence: high
 ---
 
-# LKY Archive
+# LKY Brain / LKY Archive
 
-The **LKY Archive** is a proposed curated-source inventory for Lee Kuan Yew-related material. Its current role is to define a provenance and dataset-readiness contract, not to scrape or train on data.
+`lky-brain` is a completed public case study that turns a National Archives of Singapore source manifest into a locally hydrated chat corpus, a Qwen3-14B QLoRA adapter, and a post-hoc reasoning-style evaluation.
 
-## Current boundary
+## What changed from the original inventory stub
 
-- Inventory contract only.
-- No scraping or downloading.
-- No LoRA/fine-tuning.
-- No claim that any source is training-safe.
-- Rights/provenance review comes before dataset construction.
+The project is no longer inventory-only:
 
-## Dataset-readiness ladder
+- 1,328 unique NAS records are cataloged in the committed manifest;
+- local extraction/cleaning, turn parsing, corpus filtering, speech chunking, and question backfill ran end to end;
+- the assembled training set contains 4,441 rows / about 4.0M tokens;
+- a Qwen3-14B QLoRA adapter trained for three epochs on one 16GB consumer GPU;
+- the epoch-2 checkpoint and a source-pointer dataset recipe are public;
+- a small n=24 held-out evaluation shows a directional shift in judged behavior.
 
-```text
-inventory-only → retrieval-ready → quote-ready → fine-tuning-candidate → rejected
-```
+## Dataset design
 
-A source should not move beyond `inventory-only` without provenance, source class, rights/risk notes, and format availability.
+- **Stream A:** 1,142 interview/press-conference windows, with loss on LKY assistant turns only.
+- **Stream B:** 2,895 speech passages paired with synthetic interviewer questions.
+- **Generic retention:** 404 Dolly instruction rows.
+- **Eval:** 66 windows from 10 whole held-out interviews; the published comparison uses 24 selected rows.
+- **Temporal control:** LKY samples carry a dated role/persona prompt. Generic rows use a generic assistant prompt.
 
-## Cross-namespace links
+## Publication boundary
 
-- `local-ai-infrastructure` — future local tuning/retrieval workflows may depend on curated datasets.
-- `eval-trace` — dataset-quality and provenance gates may later need evaluation traces.
+The public dataset is a **recipe**, not a transcript mirror. It publishes project-authored synthetic questions, NAS metadata pointers, hydration code, and documentation. Transcript bodies remain local and subject to NAS terms.
 
-## Source
+This reduces source-body redistribution. It does not prove that fetched transcripts or trained model weights are commercial-clean or unrestricted. Apache-2.0 labels cover project-owned code/recipe contributions, not automatically the source archive.
 
-Compiled from `Projects/LKY Archive/Index.md` and `Projects/LKY Archive/Source Inventory.md`.
+## Evidence boundary
+
+The evaluation supports a provisional behavioral-shift claim, not factual fidelity or general reasoning improvement. Epoch 2 is a sensible checkpoint preference because it preserved more reframing and bounded uncertainty than epoch 3, but the current sample is too small and clustered to establish definitive overfitting.
+
+## Related pages
+
+- [[../concepts/dataset-recipe-publication|Dataset Recipe Publication]]
+- [[../syntheses/lky-dataset-readiness-map|LKY Dataset Readiness Map]]
+- Cross-namespace: `local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md`
+- Cross-namespace: `eval-trace/wiki/concepts/style-transfer-evaluation.md`
 
 
 <!-- ===== curated-tuning-datasets/wiki/index.md ===== -->
@@ -124,23 +255,24 @@ Compiled from `Projects/LKY Archive/Index.md` and `Projects/LKY Archive/Source I
 ---
 title: Curated Tuning Datasets — Master Index
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-10
 type: index
-status: scaffold
+status: active
 namespace: curated-tuning-datasets
 ---
 
 # Curated Tuning Datasets — Master Index
 
-> Scaffold index for `curated-tuning-datasets`. Add compiled pages here as they are created.
+> Compiled index for provenance-aware tuning datasets, publication recipes, and the LKY Brain case study.
 
 ## Concepts
 
-<!-- Add compiled concepts alphabetically. -->
+- [[concepts/corpus-to-chat-transformation|Corpus-to-Chat Transformation]] — Preserve real dialogue and back-translate monologic speeches into questions without fabricating target-speaker answers.
+- [[concepts/dataset-recipe-publication|Dataset Recipe Publication]] — Publish project-owned transformations and source pointers with hash-verified hydration instead of constrained source bodies.
 
 ## Entities
 
-- [[entities/lky-archive|LKY Archive]] — Proposed curated-source inventory for Lee Kuan Yew material, with provenance and dataset-readiness boundaries.
+- [[entities/lky-archive|LKY Brain / LKY Archive]] — Completed NAS corpus-to-QLoRA case study with provenance, publication, training, and evidence boundaries.
 
 ## Summaries
 
@@ -154,6 +286,8 @@ namespace: curated-tuning-datasets
 
 - `Projects/LKY Archive/Index.md`
 - `Projects/LKY Archive/Source Inventory.md`
+- `Knowledge/concepts/corpus-to-chat-transformation.md`
+- `Knowledge/concepts/dataset-recipe-publication.md`
 
 
 <!-- ===== curated-tuning-datasets/wiki/log.md ===== -->
@@ -161,9 +295,9 @@ namespace: curated-tuning-datasets
 ---
 title: Curated Tuning Datasets — Activity Log
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-10
 type: log
-status: scaffold
+status: active
 namespace: curated-tuning-datasets
 ---
 
@@ -193,56 +327,82 @@ namespace: curated-tuning-datasets
 - Updated namespace index.
 - No Daily Notes were copied or compiled.
 
+## 2026-07-10 update | Reconcile completed LKY Brain corpus, adapter, and eval
+
+- Replaced the stale inventory-only entity/readiness state with verified repo, manifest, dataset, training, publication, and n=24 evaluation facts.
+- Added `wiki/concepts/corpus-to-chat-transformation.md` for real-dialogue windows, instruction back-translation, assistant-only loss, temporal conditioning, and leakage controls.
+- Added `wiki/concepts/dataset-recipe-publication.md` as the reusable source-pointer + hydration pattern.
+- Preserved NAS rights limits, the no-transcript publication boundary, and the distinction between technical reproducibility and commercial/redistribution clearance.
+- Routed the executed consumer-GPU QLoRA path to `local-ai-infrastructure` and the behavioral-eval contract to `eval-trace`.
+- Kept LKY Brain in this existing namespace rather than creating a new one; promotion requires an ongoing independent corpus/release lifecycle.
+
 
 <!-- ===== curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md ===== -->
 
 ---
 title: LKY Dataset Readiness Map
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-10
 type: synthesis
 status: compiled
 namespace: curated-tuning-datasets
-tags: [curated-tuning-datasets, lky-archive, dataset-readiness, provenance]
+tags: [curated-tuning-datasets, lky-brain, dataset-readiness, provenance, dataset-recipe]
 sources:
   - Projects/LKY Archive/Index.md
   - Projects/LKY Archive/Source Inventory.md
-confidence: medium
+  - https://github.com/pixiiidust/lky-brain
+confidence: high
 ---
 
 # LKY Dataset Readiness Map
 
-The **LKY Archive** belongs in `curated-tuning-datasets` as a source-provenance and readiness problem, not as a training-method project.
+The LKY work remains primarily a `curated-tuning-datasets` case study even though training is now complete. This namespace owns the source/provenance, transformation, recipe, and readiness contract; training runtime belongs in `local-ai-infrastructure`, and evaluation design belongs in `eval-trace`.
 
-## Current readiness level
+## Current readiness by artifact
+
+| Artifact | Current state | Boundary |
+|---|---|---|
+| NAS record manifest | retrieval-ready metadata | 1,328 unique pointers; verify source drift |
+| Local hydrated corpus | research/training use demonstrated | not redistributed; NAS terms still apply |
+| Synthetic-question recipe | publicly published recipe | question joins need stronger passage-hash validation |
+| Qwen3-14B adapter | public research artifact | persona/rights/factuality caveats remain |
+| Style-transfer evaluation | directional evidence | n=24, 10 documents, one judge, stochastic generation |
+| Commercial use | not established | requires separate rights and risk review |
+
+## Updated readiness ladder
 
 ```text
-inventory-only
+source-inventory
+→ locally hydrated corpus
+→ recipe publication
+→ hash-verified reproducibility
+→ repeated evaluation
+→ redistribution/commercial review
 ```
 
-The project currently defines source-selection and provenance expectations. It does not authorize scraping, downloading, fine-tuning, LoRA training, or claims that any material is training-safe.
+These are separate axes. Completing training does not automatically make the source bodies redistribution-safe, the recipe drift-proof, or the adapter commercially cleared.
 
-## Readiness ladder
+## What worked
 
-```text
-inventory-only → retrieval-ready → quote-ready → fine-tuning-candidate → rejected
-```
+- Source metadata and transcript bodies stayed separate.
+- Low-confidence OCR/translation/duplicate/ceremonial material was flagged before assembly.
+- Interviews were held out by whole document.
+- Synthetic questions were published without transcript bodies.
+- Intermediate checkpoints were preserved and evaluated rather than selecting only the lowest train loss.
 
-A source should only move upward when provenance, rights/risk notes, transcript/audio/video availability, and format quality are recorded.
+## Remaining gates
 
-## What this namespace owns
+1. Add source and normalized-passage hashes to the recipe.
+2. Pin the pipeline commit/schema and fail closed on chunk drift.
+3. Record holdout IDs and generated dataset summaries as reproducibility artifacts.
+4. Repeat evaluation with fixed/repeated seeds and document-clustered uncertainty.
+5. Keep NAS rights/terms and model-weight publication risk as explicit review lanes.
+6. Add tests/CI, a root code license, and a machine-readable run manifest tying commit, source/dataset hashes, executed config, checkpoint, generation, and eval artifacts together.
+7. Pin the version-sensitive training stack and generate report conclusions from result data rather than hardcoded percentages.
 
-`curated-tuning-datasets` owns:
+## Cross-namespace ownership
 
-- source inventory structure;
-- provenance and source-class notes;
-- corpus readiness criteria;
-- copyright/risk flags;
-- separation between retrieval-readiness and fine-tuning-readiness.
-
-Training methods, model selection, and local training infrastructure should link out to `local-ai-infrastructure` unless they directly impose dataset requirements.
-
-## Source
-
-Compiled from `Projects/LKY Archive/Index.md` and `Projects/LKY Archive/Source Inventory.md`.
+- `curated-tuning-datasets` — manifest, provenance, cleaning, recipe, readiness.
+- `local-ai-infrastructure` — successful Unsloth/WSL2/16GB QLoRA path and runtime landmines.
+- `eval-trace` — trait rubric, paired candidates, uncertainty, and claim strength.
 

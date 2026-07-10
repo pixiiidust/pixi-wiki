@@ -1,17 +1,17 @@
 ---
 title: Local AI Infrastructure
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-10
 type: namespace-overview
-status: scaffold
+status: active
 category: infrastructure
 namespace: local-ai-infrastructure
-confidence: medium
+confidence: high
 ---
 
 # Local AI Infrastructure
 
-> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+> Active namespace for local-first models, retrieval, fine-tuning, deployment, and hardware/software constraints.
 
 ## Scope
 
@@ -25,12 +25,13 @@ Cloud-only infrastructure unless it affects local-first migration; product UX un
 
 ### Current As
 
-2026-06-16 — scaffold only. Content has not yet been fully compiled.
+2026-07-10 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study.
 
 ## Canonical Source Roots
 
 - `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
 - `Knowledge/concepts/rag-over-agent-wikis.md`
+- `Projects/LKY Archive/Index.md`
 
 ## Crosslinks
 

@@ -345,21 +345,21 @@
     {
       "slug": "eval-trace",
       "title": "Eval Trace",
-      "description": "Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.",
+      "description": "Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.",
       "tags": [
         "evaluation"
       ],
       "category": "evaluation",
       "scope": {
-        "covers": "Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.",
-        "notCovered": "General observability unrelated to workflow quality; product analytics unless used as an evaluation surface.",
-        "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
+        "covers": "Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.",
+        "notCovered": "General observability unrelated to behavior/workflow quality; product analytics unless used as an evaluation surface; model-training infrastructure except where it changes the evaluation contract.",
+        "currentAs": "2026-07-10 \u2014 active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, and style-transfer evaluation."
       },
-      "lastUpdated": "2026-06-16",
-      "documentCount": 7,
+      "lastUpdated": "2026-07-10",
+      "documentCount": 8,
       "counts": {
         "wiki": 1,
-        "concepts": 1,
+        "concepts": 2,
         "entities": 1,
         "summaries": 0,
         "syntheses": 1
@@ -389,6 +389,13 @@
           "path": "wiki/concepts/context-overfitting.md",
           "raw": "/raw/eval-trace/wiki/concepts/context-overfitting.md",
           "html": "/wiki/eval-trace/wiki/concepts/context-overfitting.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Style-Transfer Evaluation",
+          "path": "wiki/concepts/style-transfer-evaluation.md",
+          "raw": "/raw/eval-trace/wiki/concepts/style-transfer-evaluation.md",
+          "html": "/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html",
           "category": "concepts"
         },
         {
@@ -787,21 +794,21 @@
     {
       "slug": "curated-tuning-datasets",
       "title": "Curated Tuning Datasets",
-      "description": "Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.",
+      "description": "Dataset/source curation for LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, dataset-recipe publication, and LKY Brain as a completed example.",
       "tags": [
         "data-curation"
       ],
       "category": "data-curation",
       "scope": {
-        "covers": "Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.",
+        "covers": "Dataset/source curation for LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, dataset-recipe publication, and LKY Brain as a completed example.",
         "notCovered": "Training methods themselves except where they impose dataset-readiness requirements; copyright-risk decisions without provenance evidence.",
-        "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
+        "currentAs": "2026-07-10 \u2014 active. LKY Brain now covers the verified NAS manifest, local hydrated corpus, public recipe, adapter, and evaluation-readiness boundaries."
       },
-      "lastUpdated": "2026-06-16",
-      "documentCount": 6,
+      "lastUpdated": "2026-07-10",
+      "documentCount": 8,
       "counts": {
         "wiki": 1,
-        "concepts": 0,
+        "concepts": 2,
         "entities": 1,
         "summaries": 0,
         "syntheses": 1
@@ -827,7 +834,21 @@
           "category": "other"
         },
         {
-          "title": "LKY Archive",
+          "title": "Corpus-to-Chat Transformation",
+          "path": "wiki/concepts/corpus-to-chat-transformation.md",
+          "raw": "/raw/curated-tuning-datasets/wiki/concepts/corpus-to-chat-transformation.md",
+          "html": "/wiki/curated-tuning-datasets/wiki/concepts/corpus-to-chat-transformation.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Dataset Recipe Publication",
+          "path": "wiki/concepts/dataset-recipe-publication.md",
+          "raw": "/raw/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md",
+          "html": "/wiki/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "LKY Brain / LKY Archive",
           "path": "wiki/entities/lky-archive.md",
           "raw": "/raw/curated-tuning-datasets/wiki/entities/lky-archive.md",
           "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html",
@@ -867,15 +888,15 @@
       "scope": {
         "covers": "Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.",
         "notCovered": "Cloud-only infrastructure unless it affects local-first migration; product UX unless tied to local model constraints.",
-        "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
+        "currentAs": "2026-07-10 \u2014 active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study."
       },
-      "lastUpdated": "2026-06-16",
-      "documentCount": 8,
+      "lastUpdated": "2026-07-10",
+      "documentCount": 9,
       "counts": {
         "wiki": 1,
         "concepts": 3,
         "entities": 0,
-        "summaries": 0,
+        "summaries": 1,
         "syntheses": 0
       },
       "llms_txt": "/wiki/local-ai-infrastructure/llms.txt",
@@ -939,6 +960,13 @@
           "raw": "/raw/local-ai-infrastructure/wiki/log.md",
           "html": "/wiki/local-ai-infrastructure/wiki/log.md.html",
           "category": "wiki"
+        },
+        {
+          "title": "LKY Brain Consumer-GPU QLoRA Case Study",
+          "path": "wiki/summaries/lky-brain-consumer-gpu-qlora.md",
+          "raw": "/raw/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md",
+          "html": "/wiki/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md.html",
+          "category": "summaries"
         }
       ]
     },

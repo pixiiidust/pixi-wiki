@@ -59,13 +59,14 @@
 
 ## Eval Trace
 
-> Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.
-> Current as of: 2026-06-16 — scaffold only. Content has not yet been fully compiled.
+> Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.
+> Current as of: 2026-07-10 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, and style-transfer evaluation.
 > Agent access: [/wiki/eval-trace/llms.txt](/wiki/eval-trace/llms.txt) [/wiki/eval-trace/llms-full.txt](/wiki/eval-trace/llms-full.txt) [/wiki/eval-trace/index.json](/wiki/eval-trace/index.json)
 
 - [Eval Trace Namespace Instructions](/raw/eval-trace/CLAUDE.md) ([html](/wiki/eval-trace/CLAUDE.md.html))
 - [Eval Trace](/raw/eval-trace/README.md) ([html](/wiki/eval-trace/README.md.html))
 - [Context Overfitting](/raw/eval-trace/wiki/concepts/context-overfitting.md) ([html](/wiki/eval-trace/wiki/concepts/context-overfitting.md.html))
+- [Style-Transfer Evaluation](/raw/eval-trace/wiki/concepts/style-transfer-evaluation.md) ([html](/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html))
 - [Eval Trace](/raw/eval-trace/wiki/entities/eval-trace.md) ([html](/wiki/eval-trace/wiki/entities/eval-trace.md.html))
 - [Eval Trace — Master Index](/raw/eval-trace/wiki/index.md) ([html](/wiki/eval-trace/wiki/index.md.html))
 - [Eval Trace — Activity Log](/raw/eval-trace/wiki/log.md) ([html](/wiki/eval-trace/wiki/log.md.html))
@@ -133,13 +134,15 @@
 
 ## Curated Tuning Datasets
 
-> Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
-> Current as of: 2026-06-16 — scaffold only. Content has not yet been fully compiled.
+> Dataset/source curation for LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, dataset-recipe publication, and LKY Brain as a completed example.
+> Current as of: 2026-07-10 — active. LKY Brain now covers the verified NAS manifest, local hydrated corpus, public recipe, adapter, and evaluation-readiness boundaries.
 > Agent access: [/wiki/curated-tuning-datasets/llms.txt](/wiki/curated-tuning-datasets/llms.txt) [/wiki/curated-tuning-datasets/llms-full.txt](/wiki/curated-tuning-datasets/llms-full.txt) [/wiki/curated-tuning-datasets/index.json](/wiki/curated-tuning-datasets/index.json)
 
 - [Curated Tuning Datasets Namespace Instructions](/raw/curated-tuning-datasets/CLAUDE.md) ([html](/wiki/curated-tuning-datasets/CLAUDE.md.html))
 - [Curated Tuning Datasets](/raw/curated-tuning-datasets/README.md) ([html](/wiki/curated-tuning-datasets/README.md.html))
-- [LKY Archive](/raw/curated-tuning-datasets/wiki/entities/lky-archive.md) ([html](/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html))
+- [Corpus-to-Chat Transformation](/raw/curated-tuning-datasets/wiki/concepts/corpus-to-chat-transformation.md) ([html](/wiki/curated-tuning-datasets/wiki/concepts/corpus-to-chat-transformation.md.html))
+- [Dataset Recipe Publication](/raw/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md) ([html](/wiki/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md.html))
+- [LKY Brain / LKY Archive](/raw/curated-tuning-datasets/wiki/entities/lky-archive.md) ([html](/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html))
 - [Curated Tuning Datasets — Master Index](/raw/curated-tuning-datasets/wiki/index.md) ([html](/wiki/curated-tuning-datasets/wiki/index.md.html))
 - [Curated Tuning Datasets — Activity Log](/raw/curated-tuning-datasets/wiki/log.md) ([html](/wiki/curated-tuning-datasets/wiki/log.md.html))
 - [LKY Dataset Readiness Map](/raw/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md) ([html](/wiki/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md.html))
@@ -147,7 +150,7 @@
 ## Local AI Infrastructure
 
 > Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.
-> Current as of: 2026-06-16 — scaffold only. Content has not yet been fully compiled.
+> Current as of: 2026-07-10 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study.
 > Agent access: [/wiki/local-ai-infrastructure/llms.txt](/wiki/local-ai-infrastructure/llms.txt) [/wiki/local-ai-infrastructure/llms-full.txt](/wiki/local-ai-infrastructure/llms-full.txt) [/wiki/local-ai-infrastructure/index.json](/wiki/local-ai-infrastructure/index.json)
 
 - [Local AI Infrastructure Namespace Instructions](/raw/local-ai-infrastructure/CLAUDE.md) ([html](/wiki/local-ai-infrastructure/CLAUDE.md.html))
@@ -158,6 +161,7 @@
 - [VPS Agent Web App Pattern](/raw/local-ai-infrastructure/wiki/concepts/vps-agent-web-app-pattern.md) ([html](/wiki/local-ai-infrastructure/wiki/concepts/vps-agent-web-app-pattern.md.html))
 - [Local AI Infrastructure — Master Index](/raw/local-ai-infrastructure/wiki/index.md) ([html](/wiki/local-ai-infrastructure/wiki/index.md.html))
 - [Local AI Infrastructure — Activity Log](/raw/local-ai-infrastructure/wiki/log.md) ([html](/wiki/local-ai-infrastructure/wiki/log.md.html))
+- [LKY Brain Consumer-GPU QLoRA Case Study](/raw/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md) ([html](/wiki/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md.html))
 
 ## Pattern Language
 
