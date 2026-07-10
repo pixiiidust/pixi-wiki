@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-07-08
+updated: 2026-07-09
 type: namespace-overview
 status: scaffold
 category: product
@@ -37,7 +37,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, PM case studies, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, role-aligned deployed portfolio proof, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.
 
 ### Not Covered
 
@@ -45,7 +45,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-08 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+2026-07-09 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
 
 ## Canonical Source Roots
 
@@ -62,6 +62,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
+- `Knowledge/concepts/role-aligned-deployed-project-proof.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -1019,6 +1020,115 @@ Hermes review surfaces should show enough plan, diff, evidence, risk, and next-a
 Compiled from `Knowledge/concepts/material-loop-and-glass-interfaces.md`, inspired by Ryo Lu's "Closer to the Material" talk for Cursor Compile 26.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md ===== -->
+
+---
+title: Role-Aligned Deployed Project Proof
+created: 2026-07-09
+updated: 2026-07-09
+type: concept
+status: active
+namespace: ai-native-product-surfaces
+source: Knowledge/concepts/role-aligned-deployed-project-proof.md
+confidence: medium
+---
+
+# Role-Aligned Deployed Project Proof
+
+A strong portfolio project is not merely “an AI app.” It is a live, owned artifact built around a real responsibility, workflow, or pain from a target role.
+
+The selection rule is:
+
+```text
+target role or JD
+→ repeated job verb
+→ painful or decision-critical workflow
+→ smallest useful live artifact
+→ evidence and limits
+→ tailored case study
+```
+
+The intended hiring signal is simple:
+
+> This person already understands the work we do.
+
+This is a useful heuristic, not universal proof about interview outcomes. The quality of the artifact, role fit, communication, and the rest of the application still matter.
+
+## Four hard gates
+
+1. **Role-specific** — maps to a responsibility, toolchain, decision, or pain visible in the job description.
+2. **Deployed** — a reviewer can use a live URL without installing the repo.
+3. **Yours** — the builder can explain the product choices, implementation, tradeoffs, limits, and feedback loop.
+4. **Truthful** — claims are supported by real behavior, tests, data, or user evidence.
+
+AI API wiring alone is not the proof. The role-specific decisions around the system are the proof.
+
+## Build-selection questions
+
+- Which exact role or job description is this for?
+- Which verbs repeat: review, investigate, forecast, analyze, summarize, route, monitor, optimize, communicate?
+- Who owns that workflow, and what delay, error, risk, or decision cost do they experience?
+- What is the smallest end-to-end artifact that performs one useful transformation?
+- Can it be deployed cheaply and reviewed in under two minutes?
+- What evidence will show that it works?
+- Which failure mode or boundary should be visible?
+- What demonstrates judgment from the target role rather than only API integration?
+
+## Starter idea catalog
+
+Tailor these against a real job description. Do not treat them as default builds.
+
+### Software engineering
+
+- AI code review bot: diff in, bounded risks and review questions out.
+- Smart bug explainer: logs and environment context in, likely causes and next checks out.
+- Resume parser API: resume text in, validated structured fields and confidence out.
+- PR summarizer: pull request in, changes, risks, tests, and reviewer questions out.
+- Semantic documentation search: question in, cited answer or explicit refusal out.
+
+### Data science and ML
+
+- Job-market trend analyzer: public postings in, sourced skill and role trends out.
+- Churn predictor: public dataset in, evaluated classification and explainable review surface out.
+- Sentiment dashboard: public posts in, time-based trends with coverage and bias notes out.
+- Sales forecasting tool: historical series in, backtested forecasts and scenario comparisons out.
+
+### Business, marketing, and operations
+
+- Content brief generator: keyword and audience in, editable sourced brief out.
+- Email campaign analyzer: campaign copy in, prioritized CTA, tone, and subject-line experiments out.
+- Competitive intelligence bot: public company sources in, cited positioning comparison out.
+- AI meeting summarizer: transcript in, decisions, owners, deadlines, and unresolved questions out.
+
+### Communications and information systems
+
+- Press release analyzer: release in, strategy, claims, risks, and journalist angles out.
+- Internal knowledge-base Q&A: documents in, permission-aware cited answers or “not found” out.
+
+## Translate the proof by role
+
+- **Software engineering:** integration quality, reliability, tests, observability, security, and deployment.
+- **Data science / ML:** data provenance, baselines, evaluation, uncertainty, drift, and model limits.
+- **Business / marketing / operations:** decision impact, workflow adoption, experiment design, and measurable action.
+- **Communications / information systems:** source fidelity, information architecture, editing judgment, permissions, and retrieval quality.
+- **Product management:** problem selection, user/workflow evidence, scope tradeoffs, success measures, launch choice, and learning.
+
+## Guardrails
+
+- Start from the role, not the project list.
+- A GitHub repo alone is not deployed proof.
+- Do not hide empty states, weak data, model uncertainty, or unsupported claims.
+- Prefer one complete role-shaped workflow over a broad platform.
+- Tailor the artifact itself, not only the application copy.
+- Build the smallest missing signal; do not duplicate a capability already proven by another project.
+
+## Related concepts
+
+- [AI-Native Problem Framing Framework](ai-native-problem-framing-framework.md)
+- [Interaction Mode Routing](interaction-mode-routing.md)
+- [Agent Output Decision Artifacts](agent-output-decision-artifacts.md)
+
+
 <!-- ===== ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md ===== -->
 
 ---
@@ -1740,7 +1850,7 @@ Post-merge verification on `main`: focused verifier/eval tests 18 passed; full s
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-07-08
+updated: 2026-07-09
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -1759,6 +1869,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
+- [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
 - [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped evidence; for gameplay, visual-only is low-trust and structured signals matter.
 - [[concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]] — Product-surface pattern for video apps/workbenches that return clips, confidence, evidence, and recall boundaries with AI as assistant, not source of truth.
 - [[concepts/world-model-control-surfaces|World Model Control Surfaces]] — Grounded-AI control/review lens for exposing state, actions, predictions, objectives, guardrails, evidence, and the recommended next safe step.
@@ -1795,6 +1906,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
+- `Knowledge/concepts/role-aligned-deployed-project-proof.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -1809,7 +1921,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-08
+updated: 2026-07-09
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -1818,6 +1930,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-09 create/update | Role-Aligned Deployed Project Proof
+
+- Added `wiki/concepts/role-aligned-deployed-project-proof.md` from the canonical `Knowledge/concepts/role-aligned-deployed-project-proof.md` page.
+- Preserved the role/JD → repeated job verb → painful workflow → smallest live artifact → evidence → tailored case-study selection rule.
+- Kept the multi-role idea list as a starter catalog and made live deployment, ownership, truthfulness, and role-specific judgment explicit hard gates.
+- Updated namespace README and index; no Daily Notes were copied or compiled.
 
 ## 2026-07-08 create/update | J-space as Global Workspace concept
 

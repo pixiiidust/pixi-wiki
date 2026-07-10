@@ -1,11 +1,11 @@
 {
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
-  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
-  "documentCount": 19,
+  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, role-aligned deployed portfolio proof, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
+  "documentCount": 20,
   "counts": {
     "wiki": 1,
-    "concepts": 8,
+    "concepts": 9,
     "entities": 6,
     "summaries": 0,
     "syntheses": 0
@@ -65,6 +65,13 @@
       "path": "wiki/concepts/material-loop-and-glass-interfaces.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Role-Aligned Deployed Project Proof",
+      "path": "wiki/concepts/role-aligned-deployed-project-proof.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md.html",
       "category": "concepts"
     },
     {

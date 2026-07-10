@@ -1,6 +1,6 @@
 {
   "generated_from": "frontmatter updated fields",
-  "count": 618,
+  "count": 619,
   "entries": [
     {
       "title": "Agent Skill Routing",
@@ -88,7 +88,7 @@
       "path": "README.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-08",
+      "updated": "2026-07-09",
       "raw": "/raw/ai-native-product-surfaces/README.md",
       "html": "/wiki/ai-native-product-surfaces/README.md.html"
     },
@@ -97,7 +97,7 @@
       "path": "wiki/log.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-08",
+      "updated": "2026-07-09",
       "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
     },
@@ -106,9 +106,18 @@
       "path": "wiki/index.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-08",
+      "updated": "2026-07-09",
       "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
+    },
+    {
+      "title": "Role-Aligned Deployed Project Proof",
+      "path": "wiki/concepts/role-aligned-deployed-project-proof.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-09",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md.html"
     },
     {
       "title": "J-Space as Global Workspace",
