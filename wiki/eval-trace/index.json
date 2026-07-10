@@ -1,11 +1,11 @@
 {
   "slug": "eval-trace",
   "title": "Eval Trace",
-  "description": "Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.",
-  "documentCount": 7,
+  "description": "Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.",
+  "documentCount": 8,
   "counts": {
     "wiki": 1,
-    "concepts": 1,
+    "concepts": 2,
     "entities": 1,
     "summaries": 0,
     "syntheses": 1
@@ -30,6 +30,13 @@
       "path": "wiki/concepts/context-overfitting.md",
       "raw": "/raw/eval-trace/wiki/concepts/context-overfitting.md",
       "html": "/wiki/eval-trace/wiki/concepts/context-overfitting.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Style-Transfer Evaluation",
+      "path": "wiki/concepts/style-transfer-evaluation.md",
+      "raw": "/raw/eval-trace/wiki/concepts/style-transfer-evaluation.md",
+      "html": "/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html",
       "category": "concepts"
     },
     {

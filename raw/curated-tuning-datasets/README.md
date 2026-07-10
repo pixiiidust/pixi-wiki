@@ -1,23 +1,23 @@
 ---
 title: Curated Tuning Datasets
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-10
 type: namespace-overview
-status: scaffold
+status: active
 category: data-curation
 namespace: curated-tuning-datasets
-confidence: medium
+confidence: high
 ---
 
 # Curated Tuning Datasets
 
-> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+> Active namespace for provenance-aware corpus curation, dataset recipes, and readiness boundaries.
 
 ## Scope
 
 ### Covers
 
-Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.
+Dataset/source curation for LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, dataset-recipe publication, and LKY Brain as a completed example.
 
 ### Not Covered
 
@@ -25,12 +25,14 @@ Training methods themselves except where they impose dataset-readiness requireme
 
 ### Current As
 
-2026-06-16 — scaffold only. Content has not yet been fully compiled.
+2026-07-10 — active. LKY Brain now covers the verified NAS manifest, local hydrated corpus, public recipe, adapter, and evaluation-readiness boundaries.
 
 ## Canonical Source Roots
 
 - `Projects/LKY Archive/Index.md`
 - `Projects/LKY Archive/Source Inventory.md`
+- `Knowledge/concepts/corpus-to-chat-transformation.md`
+- `Knowledge/concepts/dataset-recipe-publication.md`
 
 ## Crosslinks
 

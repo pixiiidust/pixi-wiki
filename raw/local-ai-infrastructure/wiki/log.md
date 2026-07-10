@@ -1,9 +1,9 @@
 ---
 title: Local AI Infrastructure — Activity Log
 created: 2026-06-16
-updated: 2026-06-19
+updated: 2026-07-10
 type: log
-status: scaffold
+status: active
 namespace: local-ai-infrastructure
 ---
 
@@ -46,3 +46,10 @@ namespace: local-ai-infrastructure
 - Added `wiki/concepts/vps-agent-web-app-pattern.md` as a local-infrastructure concept for small-VPS + resident-agent web app operation.
 - Updated `wiki/index.md` with the new concept and source handles.
 - Routed workflow/human-gate material by crosslink to `agent-workflows`; kept primary namespace as `local-ai-infrastructure` because the reusable decision is VPS/local deployment topology.
+
+## 2026-07-10 add | LKY Brain consumer-GPU QLoRA case study
+
+- Added `wiki/summaries/lky-brain-consumer-gpu-qlora.md` from the verified public repo and training report.
+- Distinguished the successful Unsloth script from the retained but unexecuted Axolotl portability config.
+- Captured WSL2 + Blackwell failure isolation, non-packed training, plain-Transformers inference, checkpoint preservation, and environment-specific boundaries.
+- Crosslinked source/provenance to `curated-tuning-datasets` and evidence quality to `eval-trace`.

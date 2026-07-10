@@ -1,7 +1,7 @@
 ---
 title: Eval Trace — Master Index
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-10
 type: index
 status: compiled
 namespace: eval-trace
@@ -14,6 +14,7 @@ namespace: eval-trace
 ## Concepts
 
 - [[concepts/context-overfitting|Context Overfitting]] — Agent workflow failure mode where stale or overly rigid context overwhelms current intent/live evidence.
+- [[concepts/style-transfer-evaluation|Style-Transfer Evaluation]] — Document-level holdouts, matched candidates, generation controls, judge calibration, cluster-aware uncertainty, and checkpoint claim boundaries.
 
 ## Entities
 
@@ -32,3 +33,4 @@ namespace: eval-trace
 
 - `Projects/Eval Trace/Index.md`
 - `Knowledge/concepts/context-overfitting.md`
+- `Knowledge/concepts/style-transfer-evaluation.md`

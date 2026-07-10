@@ -1,36 +1,37 @@
 ---
 title: Eval Trace
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-10
 type: namespace-overview
-status: scaffold
+status: active
 category: evaluation
 namespace: eval-trace
-confidence: medium
+confidence: high
 ---
 
 # Eval Trace
 
-> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+> Active namespace for evidence quality, behavior/workflow evaluation, reliability, and claim boundaries.
 
 ## Scope
 
 ### Covers
 
-Workflow and agent-quality evaluation, traces, context-overfitting detection, reliability metrics, evidence gates, and quality read-outs for agent workflows.
+Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.
 
 ### Not Covered
 
-General observability unrelated to workflow quality; product analytics unless used as an evaluation surface.
+General observability unrelated to behavior/workflow quality; product analytics unless used as an evaluation surface; model-training infrastructure except where it changes the evaluation contract.
 
 ### Current As
 
-2026-06-16 — scaffold only. Content has not yet been fully compiled.
+2026-07-10 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, and style-transfer evaluation.
 
 ## Canonical Source Roots
 
 - `Projects/Eval Trace/Index.md`
 - `Knowledge/concepts/context-overfitting.md`
+- `Knowledge/concepts/style-transfer-evaluation.md`
 
 ## Crosslinks
 

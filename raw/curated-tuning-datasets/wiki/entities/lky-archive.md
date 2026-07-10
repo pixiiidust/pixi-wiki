@@ -1,42 +1,55 @@
 ---
-title: LKY Archive
+title: LKY Brain / LKY Archive
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-10
 type: entity
-status: stub
+status: active
 namespace: curated-tuning-datasets
-tags: [curated-tuning-datasets, lky-archive, provenance, dataset-readiness]
+tags: [curated-tuning-datasets, lky-brain, provenance, dataset-recipe, qlora]
 sources:
   - Projects/LKY Archive/Index.md
   - Projects/LKY Archive/Source Inventory.md
-confidence: medium
+  - https://github.com/pixiiidust/lky-brain
+  - https://huggingface.co/datasets/sjsim/lky-reasoning-recipe
+confidence: high
 ---
 
-# LKY Archive
+# LKY Brain / LKY Archive
 
-The **LKY Archive** is a proposed curated-source inventory for Lee Kuan Yew-related material. Its current role is to define a provenance and dataset-readiness contract, not to scrape or train on data.
+`lky-brain` is a completed public case study that turns a National Archives of Singapore source manifest into a locally hydrated chat corpus, a Qwen3-14B QLoRA adapter, and a post-hoc reasoning-style evaluation.
 
-## Current boundary
+## What changed from the original inventory stub
 
-- Inventory contract only.
-- No scraping or downloading.
-- No LoRA/fine-tuning.
-- No claim that any source is training-safe.
-- Rights/provenance review comes before dataset construction.
+The project is no longer inventory-only:
 
-## Dataset-readiness ladder
+- 1,328 unique NAS records are cataloged in the committed manifest;
+- local extraction/cleaning, turn parsing, corpus filtering, speech chunking, and question backfill ran end to end;
+- the assembled training set contains 4,441 rows / about 4.0M tokens;
+- a Qwen3-14B QLoRA adapter trained for three epochs on one 16GB consumer GPU;
+- the epoch-2 checkpoint and a source-pointer dataset recipe are public;
+- a small n=24 held-out evaluation shows a directional shift in judged behavior.
 
-```text
-inventory-only → retrieval-ready → quote-ready → fine-tuning-candidate → rejected
-```
+## Dataset design
 
-A source should not move beyond `inventory-only` without provenance, source class, rights/risk notes, and format availability.
+- **Stream A:** 1,142 interview/press-conference windows, with loss on LKY assistant turns only.
+- **Stream B:** 2,895 speech passages paired with synthetic interviewer questions.
+- **Generic retention:** 404 Dolly instruction rows.
+- **Eval:** 66 windows from 10 whole held-out interviews; the published comparison uses 24 selected rows.
+- **Temporal control:** LKY samples carry a dated role/persona prompt. Generic rows use a generic assistant prompt.
 
-## Cross-namespace links
+## Publication boundary
 
-- `local-ai-infrastructure` — future local tuning/retrieval workflows may depend on curated datasets.
-- `eval-trace` — dataset-quality and provenance gates may later need evaluation traces.
+The public dataset is a **recipe**, not a transcript mirror. It publishes project-authored synthetic questions, NAS metadata pointers, hydration code, and documentation. Transcript bodies remain local and subject to NAS terms.
 
-## Source
+This reduces source-body redistribution. It does not prove that fetched transcripts or trained model weights are commercial-clean or unrestricted. Apache-2.0 labels cover project-owned code/recipe contributions, not automatically the source archive.
 
-Compiled from `Projects/LKY Archive/Index.md` and `Projects/LKY Archive/Source Inventory.md`.
+## Evidence boundary
+
+The evaluation supports a provisional behavioral-shift claim, not factual fidelity or general reasoning improvement. Epoch 2 is a sensible checkpoint preference because it preserved more reframing and bounded uncertainty than epoch 3, but the current sample is too small and clustered to establish definitive overfitting.
+
+## Related pages
+
+- [[../concepts/dataset-recipe-publication|Dataset Recipe Publication]]
+- [[../syntheses/lky-dataset-readiness-map|LKY Dataset Readiness Map]]
+- Cross-namespace: `local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md`
+- Cross-namespace: `eval-trace/wiki/concepts/style-transfer-evaluation.md`

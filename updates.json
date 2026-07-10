@@ -1,7 +1,142 @@
 {
   "generated_from": "frontmatter updated fields",
-  "count": 619,
+  "count": 623,
   "entries": [
+    {
+      "title": "Corpus-to-Chat Transformation",
+      "path": "wiki/concepts/corpus-to-chat-transformation.md",
+      "namespace": "curated-tuning-datasets",
+      "namespace_title": "Curated Tuning Datasets",
+      "updated": "2026-07-10",
+      "raw": "/raw/curated-tuning-datasets/wiki/concepts/corpus-to-chat-transformation.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/concepts/corpus-to-chat-transformation.md.html"
+    },
+    {
+      "title": "Curated Tuning Datasets",
+      "path": "README.md",
+      "namespace": "curated-tuning-datasets",
+      "namespace_title": "Curated Tuning Datasets",
+      "updated": "2026-07-10",
+      "raw": "/raw/curated-tuning-datasets/README.md",
+      "html": "/wiki/curated-tuning-datasets/README.md.html"
+    },
+    {
+      "title": "Curated Tuning Datasets \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "curated-tuning-datasets",
+      "namespace_title": "Curated Tuning Datasets",
+      "updated": "2026-07-10",
+      "raw": "/raw/curated-tuning-datasets/wiki/log.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/log.md.html"
+    },
+    {
+      "title": "Curated Tuning Datasets \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "curated-tuning-datasets",
+      "namespace_title": "Curated Tuning Datasets",
+      "updated": "2026-07-10",
+      "raw": "/raw/curated-tuning-datasets/wiki/index.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/index.md.html"
+    },
+    {
+      "title": "Dataset Recipe Publication",
+      "path": "wiki/concepts/dataset-recipe-publication.md",
+      "namespace": "curated-tuning-datasets",
+      "namespace_title": "Curated Tuning Datasets",
+      "updated": "2026-07-10",
+      "raw": "/raw/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md.html"
+    },
+    {
+      "title": "LKY Brain / LKY Archive",
+      "path": "wiki/entities/lky-archive.md",
+      "namespace": "curated-tuning-datasets",
+      "namespace_title": "Curated Tuning Datasets",
+      "updated": "2026-07-10",
+      "raw": "/raw/curated-tuning-datasets/wiki/entities/lky-archive.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html"
+    },
+    {
+      "title": "LKY Dataset Readiness Map",
+      "path": "wiki/syntheses/lky-dataset-readiness-map.md",
+      "namespace": "curated-tuning-datasets",
+      "namespace_title": "Curated Tuning Datasets",
+      "updated": "2026-07-10",
+      "raw": "/raw/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md.html"
+    },
+    {
+      "title": "Eval Trace",
+      "path": "README.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-10",
+      "raw": "/raw/eval-trace/README.md",
+      "html": "/wiki/eval-trace/README.md.html"
+    },
+    {
+      "title": "Eval Trace \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-10",
+      "raw": "/raw/eval-trace/wiki/log.md",
+      "html": "/wiki/eval-trace/wiki/log.md.html"
+    },
+    {
+      "title": "Eval Trace \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-10",
+      "raw": "/raw/eval-trace/wiki/index.md",
+      "html": "/wiki/eval-trace/wiki/index.md.html"
+    },
+    {
+      "title": "Style-Transfer Evaluation",
+      "path": "wiki/concepts/style-transfer-evaluation.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-10",
+      "raw": "/raw/eval-trace/wiki/concepts/style-transfer-evaluation.md",
+      "html": "/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html"
+    },
+    {
+      "title": "LKY Brain Consumer-GPU QLoRA Case Study",
+      "path": "wiki/summaries/lky-brain-consumer-gpu-qlora.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-10",
+      "raw": "/raw/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md.html"
+    },
+    {
+      "title": "Local AI Infrastructure",
+      "path": "README.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-10",
+      "raw": "/raw/local-ai-infrastructure/README.md",
+      "html": "/wiki/local-ai-infrastructure/README.md.html"
+    },
+    {
+      "title": "Local AI Infrastructure \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-10",
+      "raw": "/raw/local-ai-infrastructure/wiki/log.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/log.md.html"
+    },
+    {
+      "title": "Local AI Infrastructure \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-10",
+      "raw": "/raw/local-ai-infrastructure/wiki/index.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/index.md.html"
+    },
     {
       "title": "Agent Skill Routing",
       "path": "wiki/concepts/agent-skill-routing.md",
@@ -5205,24 +5340,6 @@
       "html": "/wiki/hermes-agent/wiki/summaries/external-hermes-wikis-import-review.md.html"
     },
     {
-      "title": "Local AI Infrastructure \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-06-19",
-      "raw": "/raw/local-ai-infrastructure/wiki/log.md",
-      "html": "/wiki/local-ai-infrastructure/wiki/log.md.html"
-    },
-    {
-      "title": "Local AI Infrastructure \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-06-19",
-      "raw": "/raw/local-ai-infrastructure/wiki/index.md",
-      "html": "/wiki/local-ai-infrastructure/wiki/index.md.html"
-    },
-    {
       "title": "VPS Agent Web App Pattern",
       "path": "wiki/concepts/vps-agent-web-app-pattern.md",
       "namespace": "local-ai-infrastructure",
@@ -5439,60 +5556,6 @@
       "html": "/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html"
     },
     {
-      "title": "Curated Tuning Datasets",
-      "path": "README.md",
-      "namespace": "curated-tuning-datasets",
-      "namespace_title": "Curated Tuning Datasets",
-      "updated": "2026-06-16",
-      "raw": "/raw/curated-tuning-datasets/README.md",
-      "html": "/wiki/curated-tuning-datasets/README.md.html"
-    },
-    {
-      "title": "Curated Tuning Datasets \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "curated-tuning-datasets",
-      "namespace_title": "Curated Tuning Datasets",
-      "updated": "2026-06-16",
-      "raw": "/raw/curated-tuning-datasets/wiki/log.md",
-      "html": "/wiki/curated-tuning-datasets/wiki/log.md.html"
-    },
-    {
-      "title": "Curated Tuning Datasets \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "curated-tuning-datasets",
-      "namespace_title": "Curated Tuning Datasets",
-      "updated": "2026-06-16",
-      "raw": "/raw/curated-tuning-datasets/wiki/index.md",
-      "html": "/wiki/curated-tuning-datasets/wiki/index.md.html"
-    },
-    {
-      "title": "LKY Archive",
-      "path": "wiki/entities/lky-archive.md",
-      "namespace": "curated-tuning-datasets",
-      "namespace_title": "Curated Tuning Datasets",
-      "updated": "2026-06-16",
-      "raw": "/raw/curated-tuning-datasets/wiki/entities/lky-archive.md",
-      "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html"
-    },
-    {
-      "title": "LKY Dataset Readiness Map",
-      "path": "wiki/syntheses/lky-dataset-readiness-map.md",
-      "namespace": "curated-tuning-datasets",
-      "namespace_title": "Curated Tuning Datasets",
-      "updated": "2026-06-16",
-      "raw": "/raw/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md",
-      "html": "/wiki/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md.html"
-    },
-    {
-      "title": "Eval Trace",
-      "path": "README.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-06-16",
-      "raw": "/raw/eval-trace/README.md",
-      "html": "/wiki/eval-trace/README.md.html"
-    },
-    {
       "title": "Eval Trace",
       "path": "wiki/entities/eval-trace.md",
       "namespace": "eval-trace",
@@ -5502,24 +5565,6 @@
       "html": "/wiki/eval-trace/wiki/entities/eval-trace.md.html"
     },
     {
-      "title": "Eval Trace \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-06-16",
-      "raw": "/raw/eval-trace/wiki/log.md",
-      "html": "/wiki/eval-trace/wiki/log.md.html"
-    },
-    {
-      "title": "Eval Trace \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-06-16",
-      "raw": "/raw/eval-trace/wiki/index.md",
-      "html": "/wiki/eval-trace/wiki/index.md.html"
-    },
-    {
       "title": "Workflow Quality Evaluation Map",
       "path": "wiki/syntheses/workflow-quality-evaluation-map.md",
       "namespace": "eval-trace",
@@ -5527,15 +5572,6 @@
       "updated": "2026-06-16",
       "raw": "/raw/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md",
       "html": "/wiki/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md.html"
-    },
-    {
-      "title": "Local AI Infrastructure",
-      "path": "README.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-06-16",
-      "raw": "/raw/local-ai-infrastructure/README.md",
-      "html": "/wiki/local-ai-infrastructure/README.md.html"
     },
     {
       "title": "RAG over Agent Wikis",

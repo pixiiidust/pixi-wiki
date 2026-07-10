@@ -1,11 +1,11 @@
 {
   "slug": "curated-tuning-datasets",
   "title": "Curated Tuning Datasets",
-  "description": "Dataset/source curation for future LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, and the LKY archive as an example corpus.",
-  "documentCount": 6,
+  "description": "Dataset/source curation for LoRA/fine-tuning, provenance, scraping/source inventories, corpus readiness, dataset-recipe publication, and LKY Brain as a completed example.",
+  "documentCount": 8,
   "counts": {
     "wiki": 1,
-    "concepts": 0,
+    "concepts": 2,
     "entities": 1,
     "summaries": 0,
     "syntheses": 1
@@ -26,7 +26,21 @@
       "category": "other"
     },
     {
-      "title": "LKY Archive",
+      "title": "Corpus-to-Chat Transformation",
+      "path": "wiki/concepts/corpus-to-chat-transformation.md",
+      "raw": "/raw/curated-tuning-datasets/wiki/concepts/corpus-to-chat-transformation.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/concepts/corpus-to-chat-transformation.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Dataset Recipe Publication",
+      "path": "wiki/concepts/dataset-recipe-publication.md",
+      "raw": "/raw/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "LKY Brain / LKY Archive",
       "path": "wiki/entities/lky-archive.md",
       "raw": "/raw/curated-tuning-datasets/wiki/entities/lky-archive.md",
       "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html",

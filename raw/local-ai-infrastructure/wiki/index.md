@@ -1,7 +1,7 @@
 ---
 title: Local AI Infrastructure — Master Index
 created: 2026-06-16
-updated: 2026-06-19
+updated: 2026-07-10
 type: index
 status: active
 namespace: local-ai-infrastructure
@@ -23,7 +23,7 @@ namespace: local-ai-infrastructure
 
 ## Summaries
 
-<!-- Add compiled summaries alphabetically. -->
+- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth path, WSL2 + Blackwell failure isolation, config drift, and reproducibility boundary.
 
 ## Syntheses
 
@@ -33,5 +33,6 @@ namespace: local-ai-infrastructure
 
 - `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
 - `Knowledge/concepts/rag-over-agent-wikis.md`
+- `Projects/LKY Archive/Index.md`
 - `raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md`
 - `https://youtu.be/K8ZTlMaDfmQ?si=IuNRaHVc-fFHZw41`

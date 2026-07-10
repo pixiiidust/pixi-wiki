@@ -2,12 +2,12 @@
   "slug": "local-ai-infrastructure",
   "title": "Local AI Infrastructure",
   "description": "Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.",
-  "documentCount": 8,
+  "documentCount": 9,
   "counts": {
     "wiki": 1,
     "concepts": 3,
     "entities": 0,
-    "summaries": 0,
+    "summaries": 1,
     "syntheses": 0
   },
   "documents": [
@@ -66,6 +66,13 @@
       "raw": "/raw/local-ai-infrastructure/wiki/log.md",
       "html": "/wiki/local-ai-infrastructure/wiki/log.md.html",
       "category": "wiki"
+    },
+    {
+      "title": "LKY Brain Consumer-GPU QLoRA Case Study",
+      "path": "wiki/summaries/lky-brain-consumer-gpu-qlora.md",
+      "raw": "/raw/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md.html",
+      "category": "summaries"
     }
   ]
 }
