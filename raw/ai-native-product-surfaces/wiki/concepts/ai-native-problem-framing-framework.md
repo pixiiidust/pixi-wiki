@@ -1,7 +1,7 @@
 ---
 title: AI-Native Problem Framing Framework
 created: 2026-06-16
-updated: 2026-06-26
+updated: 2026-07-12
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -49,6 +49,8 @@ It is especially useful for comparing:
 - myAbode: real-estate prepared next actions under compliance and adoption constraints;
 - future surfaces that need prediction, optimization, and execution separated rather than collapsed into a black box.
 
+After framing the AI system, use [[product-management-as-system-steering|Product Management as System Steering]] to make the human product calls around decision tempo, ownership seams, stakeholder dynamics, scope, and ecosystem incentives.
+
 ## Boundary
 
 Do not blindly copy game/RL patterns into product domains. Real-world operational products have partial visibility, noisy outcomes, multiple stakeholders, and constraints that must be represented explicitly.
@@ -58,6 +60,7 @@ Do not blindly copy game/RL patterns into product domains. Real-world operationa
 - [[interaction-mode-routing|Interaction Mode Routing]]
 - [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
 - [[world-model-control-surfaces|World Model Control Surfaces]]
+- [[product-management-as-system-steering|Product Management as System Steering]]
 
 ## Source
 

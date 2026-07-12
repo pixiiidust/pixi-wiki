@@ -4259,7 +4259,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-07-09
+updated: 2026-07-12
 type: namespace-overview
 status: scaffold
 category: product
@@ -4277,7 +4277,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, PM case studies, role-aligned deployed portfolio proof, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, role-aligned deployed portfolio proof, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.
 
 ### Not Covered
 
@@ -4285,7 +4285,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-09 — active namespace. Includes Jamie's top-level AI definition, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+2026-07-12 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
 
 ## Canonical Source Roots
 
@@ -4303,6 +4303,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
+- `Knowledge/concepts/product-management-as-system-steering.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -4971,7 +4972,7 @@ Compiled from `Knowledge/concepts/agent-output-decision-artifacts.md` and adjace
 ---
 title: AI-Native Problem Framing Framework
 created: 2026-06-16
-updated: 2026-06-26
+updated: 2026-07-12
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -5019,6 +5020,8 @@ It is especially useful for comparing:
 - myAbode: real-estate prepared next actions under compliance and adoption constraints;
 - future surfaces that need prediction, optimization, and execution separated rather than collapsed into a black box.
 
+After framing the AI system, use [[product-management-as-system-steering|Product Management as System Steering]] to make the human product calls around decision tempo, ownership seams, stakeholder dynamics, scope, and ecosystem incentives.
+
 ## Boundary
 
 Do not blindly copy game/RL patterns into product domains. Real-world operational products have partial visibility, noisy outcomes, multiple stakeholders, and constraints that must be represented explicitly.
@@ -5028,6 +5031,7 @@ Do not blindly copy game/RL patterns into product domains. Real-world operationa
 - [[interaction-mode-routing|Interaction Mode Routing]]
 - [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
 - [[world-model-control-surfaces|World Model Control Surfaces]]
+- [[product-management-as-system-steering|Product Management as System Steering]]
 
 ## Source
 
@@ -5260,12 +5264,86 @@ Hermes review surfaces should show enough plan, diff, evidence, risk, and next-a
 Compiled from `Knowledge/concepts/material-loop-and-glass-interfaces.md`, inspired by Ryo Lu's "Closer to the Material" talk for Cursor Compile 26.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md ===== -->
+
+---
+title: Product Management as System Steering
+created: 2026-07-12
+updated: 2026-07-12
+type: concept
+status: compiled
+namespace: ai-native-product-surfaces
+source: Knowledge/concepts/product-management-as-system-steering.md
+resource: https://roachcap.com/memos/secrets-of-the-best-pms.html
+confidence: medium
+---
+
+# Product Management as System Steering
+
+A PM steers a system of decisions, ownership seams, people, constraints, and participant incentives. The practical review formula is:
+
+```text
+Decide under ambiguity.
+Own the gaps.
+Route through people.
+Trade scope first.
+Align ecosystem incentives.
+```
+
+This lens is adapted from Fahd Ananta's [“Secrets of the Best PMs”](https://roachcap.com/memos/secrets-of-the-best-pms.html). Treat the article as practitioner judgment, not empirical proof.
+
+## Five steering responsibilities
+
+### 1. Match decision tempo to reversibility
+
+Make timely calls with incomplete information, including explicit decisions not to pursue something. Move quickly on reversible choices; slow down when downside is hard to undo. Record the evidence, assumptions, rejected options, owner, and review trigger.
+
+### 2. Close ownership gaps
+
+Extreme ownership means no unowned seam. It does not mean the PM personally executes every task. Keep the path from problem and design through build, launch, support, and learning connected with clear handoffs and escalation.
+
+### 3. Adapt influence to people
+
+Understand strengths, limits, incentives, working styles, and feedback needs. Use data for empirical disagreement, prototypes for hard-to-verbalize choices, memos for durable reasoning, coaching for learning, and escalation only when its trust cost is justified.
+
+### 4. Trade scope first
+
+For a bounded delivery window, assume team and time are fixed until proven otherwise. Cut, sequence, or defer scope to preserve the smallest coherent user outcome. Team and time can change, but usually more slowly and expensively than scope.
+
+### 5. Align ecosystem incentives
+
+Map users, buyers, operators, employees, vendors, partners, investors, regulators, and other constituents. Durable products create mutual value that makes continued participation rational. The healthy target is incentive alignment and embedded value, not coercive lock-in.
+
+## Product review questions
+
+1. What call are we making, what are we declining, and when will we revisit it?
+2. Which seam could fall between roles, and who closes it?
+3. Which stakeholder dynamics or incentives could block execution?
+4. With team and time fixed, what is the smallest coherent scope?
+5. Which participants must gain durable value for the product to work?
+6. What evidence will change the next decision?
+
+Use [[ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] to define environment, actions, goals, constraints, and agency boundaries. Use [[agent-output-decision-artifacts|Agent Output Decision Artifacts]] to make the call and its evidence reviewable. Use [[role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] to show this product judgment in a portfolio case study.
+
+## Guardrails
+
+- Decisiveness is not impulsiveness.
+- Ownership is not micromanagement.
+- Prioritization must preserve the core user outcome.
+- Influence tools lose force when overused; trust is a renewable coordination asset.
+- Incentive alignment must not become exploitative retention or dark patterns.
+
+## Source
+
+- Fahd Ananta, [“Secrets of the Best PMs”](https://roachcap.com/memos/secrets-of-the-best-pms.html), published 2026-02-26.
+
+
 <!-- ===== ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md ===== -->
 
 ---
 title: Role-Aligned Deployed Project Proof
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-07-12
 type: concept
 status: active
 namespace: ai-native-product-surfaces
@@ -5302,6 +5380,8 @@ This is a useful heuristic, not universal proof about interview outcomes. The qu
 4. **Truthful** — claims are supported by real behavior, tests, data, or user evidence.
 
 AI API wiring alone is not the proof. The role-specific decisions around the system are the proof.
+
+For PM roles, use [Product Management as System Steering](product-management-as-system-steering.md) to show the ambiguous call, ownership seam, stakeholder/influence choice, scope cut, ecosystem incentives, and evidence that changed the next decision.
 
 ## Build-selection questions
 
@@ -5367,6 +5447,7 @@ Tailor these against a real job description. Do not treat them as default builds
 - [AI-Native Problem Framing Framework](ai-native-problem-framing-framework.md)
 - [Interaction Mode Routing](interaction-mode-routing.md)
 - [Agent Output Decision Artifacts](agent-output-decision-artifacts.md)
+- [Product Management as System Steering](product-management-as-system-steering.md)
 
 
 <!-- ===== ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md ===== -->
@@ -6090,7 +6171,7 @@ Post-merge verification on `main`: focused verifier/eval tests 18 passed; full s
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-07-09
+updated: 2026-07-12
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -6109,6 +6190,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
+- [[concepts/product-management-as-system-steering|Product Management as System Steering]] — PM operating lens for timely decisions, gapless ownership, adaptive influence, scope-first tradeoffs, and ecosystem incentive alignment.
 - [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
 - [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped evidence; for gameplay, visual-only is low-trust and structured signals matter.
 - [[concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]] — Product-surface pattern for video apps/workbenches that return clips, confidence, evidence, and recall boundaries with AI as assistant, not source of truth.
@@ -6147,6 +6229,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
+- `Knowledge/concepts/product-management-as-system-steering.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -6161,7 +6244,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-09
+updated: 2026-07-12
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -6170,6 +6253,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-12 create/update | Product Management as System Steering
+
+- Added `wiki/concepts/product-management-as-system-steering.md` from the canonical Knowledge concept and Fahd Ananta's “Secrets of the Best PMs.”
+- Preserved the operating formula: decide under ambiguity, own the gaps, route through people, trade scope first, and align ecosystem incentives.
+- Linked the framework to AI-native problem framing, decision artifacts, and role-aligned deployed project proof; retained guardrails against impulsiveness, micromanagement, and coercive lock-in.
+- Updated namespace README and index; no Daily Notes were copied or compiled.
 
 ## 2026-07-09 create/update | Role-Aligned Deployed Project Proof
 

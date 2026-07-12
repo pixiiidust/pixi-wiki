@@ -1,7 +1,7 @@
 ---
 title: Role-Aligned Deployed Project Proof
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-07-12
 type: concept
 status: active
 namespace: ai-native-product-surfaces
@@ -38,6 +38,8 @@ This is a useful heuristic, not universal proof about interview outcomes. The qu
 4. **Truthful** — claims are supported by real behavior, tests, data, or user evidence.
 
 AI API wiring alone is not the proof. The role-specific decisions around the system are the proof.
+
+For PM roles, use [Product Management as System Steering](product-management-as-system-steering.md) to show the ambiguous call, ownership seam, stakeholder/influence choice, scope cut, ecosystem incentives, and evidence that changed the next decision.
 
 ## Build-selection questions
 
@@ -103,3 +105,4 @@ Tailor these against a real job description. Do not treat them as default builds
 - [AI-Native Problem Framing Framework](ai-native-problem-framing-framework.md)
 - [Interaction Mode Routing](interaction-mode-routing.md)
 - [Agent Output Decision Artifacts](agent-output-decision-artifacts.md)
+- [Product Management as System Steering](product-management-as-system-steering.md)

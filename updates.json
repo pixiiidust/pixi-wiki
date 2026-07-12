@@ -1,7 +1,61 @@
 {
   "generated_from": "frontmatter updated fields",
-  "count": 623,
+  "count": 624,
   "entries": [
+    {
+      "title": "AI-Native Problem Framing Framework",
+      "path": "wiki/concepts/ai-native-problem-framing-framework.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-12",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html"
+    },
+    {
+      "title": "AI-Native Product Surfaces",
+      "path": "README.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-12",
+      "raw": "/raw/ai-native-product-surfaces/README.md",
+      "html": "/wiki/ai-native-product-surfaces/README.md.html"
+    },
+    {
+      "title": "AI-Native Product Surfaces \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-12",
+      "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
+    },
+    {
+      "title": "AI-Native Product Surfaces \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-12",
+      "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
+    },
+    {
+      "title": "Product Management as System Steering",
+      "path": "wiki/concepts/product-management-as-system-steering.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-12",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md.html"
+    },
+    {
+      "title": "Role-Aligned Deployed Project Proof",
+      "path": "wiki/concepts/role-aligned-deployed-project-proof.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-12",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md.html"
+    },
     {
       "title": "Corpus-to-Chat Transformation",
       "path": "wiki/concepts/corpus-to-chat-transformation.md",
@@ -217,42 +271,6 @@
       "updated": "2026-07-09",
       "raw": "/raw/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md",
       "html": "/wiki/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md.html"
-    },
-    {
-      "title": "AI-Native Product Surfaces",
-      "path": "README.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-09",
-      "raw": "/raw/ai-native-product-surfaces/README.md",
-      "html": "/wiki/ai-native-product-surfaces/README.md.html"
-    },
-    {
-      "title": "AI-Native Product Surfaces \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-09",
-      "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
-      "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
-    },
-    {
-      "title": "AI-Native Product Surfaces \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-09",
-      "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
-      "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
-    },
-    {
-      "title": "Role-Aligned Deployed Project Proof",
-      "path": "wiki/concepts/role-aligned-deployed-project-proof.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-09",
-      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md",
-      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md.html"
     },
     {
       "title": "J-Space as Global Workspace",
@@ -5275,15 +5293,6 @@
       "updated": "2026-06-26",
       "raw": "/raw/agent-workflows/wiki/concepts/high-agency-work-levels.md",
       "html": "/wiki/agent-workflows/wiki/concepts/high-agency-work-levels.md.html"
-    },
-    {
-      "title": "AI-Native Problem Framing Framework",
-      "path": "wiki/concepts/ai-native-problem-framing-framework.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-06-26",
-      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md",
-      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html"
     },
     {
       "title": "World Model Control Surfaces",
