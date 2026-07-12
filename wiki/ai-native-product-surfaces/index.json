@@ -1,11 +1,11 @@
 {
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
-  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, role-aligned deployed portfolio proof, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language frameworks.",
-  "documentCount": 20,
+  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, role-aligned deployed portfolio proof, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language f",
+  "documentCount": 21,
   "counts": {
     "wiki": 1,
-    "concepts": 9,
+    "concepts": 10,
     "entities": 6,
     "summaries": 0,
     "syntheses": 0
@@ -65,6 +65,13 @@
       "path": "wiki/concepts/material-loop-and-glass-interfaces.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Product Management as System Steering",
+      "path": "wiki/concepts/product-management-as-system-steering.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md.html",
       "category": "concepts"
     },
     {

@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-09
+updated: 2026-07-12
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -10,6 +10,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-12 create/update | Product Management as System Steering
+
+- Added `wiki/concepts/product-management-as-system-steering.md` from the canonical Knowledge concept and Fahd Ananta's “Secrets of the Best PMs.”
+- Preserved the operating formula: decide under ambiguity, own the gaps, route through people, trade scope first, and align ecosystem incentives.
+- Linked the framework to AI-native problem framing, decision artifacts, and role-aligned deployed project proof; retained guardrails against impulsiveness, micromanagement, and coercive lock-in.
+- Updated namespace README and index; no Daily Notes were copied or compiled.
 
 ## 2026-07-09 create/update | Role-Aligned Deployed Project Proof
 
