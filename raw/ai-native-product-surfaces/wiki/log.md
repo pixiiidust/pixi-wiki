@@ -11,6 +11,13 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-07-13 create/update | Taste Requires Contact
+
+- Added `wiki/concepts/taste-requires-contact.md` from the canonical `Knowledge/concepts/taste-requires-contact.md` article and Jason Liu's “if you want good taste, you have to eat.”
+- Preserved the contact → notice → name → imitate → compare → curate → risk loop and the distinction between wasteful friction and learning-bearing friction.
+- Cross-linked Material Loop and Interaction Mode Routing so AI can remove boring execution without replacing the perception tasks that develop judgment.
+- Kept the supplied transcript private; the namespace contains a public-safe synthesis and source attribution only.
+
 ## 2026-07-13 create/update | Side Doors: Make Useful Work Legible
 
 - Added the illustrated synthesis `wiki/syntheses/side-doors-make-useful-work-legible.md` from the canonical `Knowledge/concepts/side-door-opportunity-search.md` page and Maja's “How to Enter Side Doors.”
