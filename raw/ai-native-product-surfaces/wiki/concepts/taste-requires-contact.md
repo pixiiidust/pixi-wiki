@@ -123,7 +123,7 @@ Together they form four loops:
 
 - [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
 - [[interaction-mode-routing|Interaction Mode Routing]]
-- [[../../../agent-workflows/wiki/concepts/creative-ideation-routing|Creative Ideation Routing]]
+- [[../../agent-workflows/wiki/concepts/creative-ideation-routing|Creative Ideation Routing]]
 
 ## Source
 
