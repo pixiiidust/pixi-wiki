@@ -4281,7 +4281,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
 
 ### Not Covered
 
@@ -4289,7 +4289,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-13 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+2026-07-13 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
 
 ## Canonical Source Roots
 
@@ -4309,6 +4309,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
 - `Knowledge/concepts/product-management-as-system-steering.md`
+- `Knowledge/concepts/side-quest-validation-loop.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -5464,6 +5465,94 @@ Tailor these against a real job description. Do not treat them as default builds
 - [Product Management as System Steering](product-management-as-system-steering.md)
 
 
+<!-- ===== ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md ===== -->
+
+---
+title: Side-Quest Validation Loop
+created: 2026-07-13
+updated: 2026-07-13
+type: concept
+status: active
+namespace: ai-native-product-surfaces
+confidence: medium
+source_url: https://www.youtube.com/watch?v=SE401zf_fgM
+---
+
+# Side-Quest Validation Loop
+
+## Definition
+
+A side quest is a **small, reversible, useful, and enjoyable experiment** that puts an idea in contact with real people before it earns serious product or business commitment.
+
+> Shrink the idea, ship a useful probe, expose it to reality, observe commitment, then kill, adjust, continue, or promote it.
+
+Deya's video frames this through creator and business anecdotes and demonstrates prototypes using sponsored tool Lovable. The transferable method is tool-independent, and the examples should be treated as practitioner evidence rather than universal proof.
+
+## Design criteria
+
+1. **Tiny enough** — test the important uncertainty without triggering a large project.
+2. **Useful enough** — solve one recognizable problem for one specific person well enough to produce a real reaction.
+3. **Fun enough** — sustain a short ambiguous exploration. Fun helps execution; it does not validate demand.
+
+## The loop
+
+1. Name the person, problem, and uncertain assumption.
+2. Choose one learning question.
+3. Build the smallest valid artifact: offer, manual service, workshop, calculator, waitlist, or prototype.
+4. Put it in front of the intended users.
+5. Observe behavior rather than collecting compliments.
+6. At the timebox, kill, adjust, continue, or promote it.
+
+## Evidence ladder
+
+From weaker to stronger:
+
+1. compliments;
+2. use or sharing;
+3. reply, signup, booking, or another intentional commitment;
+4. payment;
+5. repeat use or continued payment;
+6. unsolicited referral.
+
+A generated prototype or live link is an artifact, not validation. Validation begins when the intended user behaves differently.
+
+## Promotion gate
+
+Define this before launch:
+
+```text
+Person and problem:
+Smallest artifact:
+Distribution path:
+Timebox:
+Evidence target:
+Promote if:
+Kill or revise if:
+```
+
+Promote only when there is both **external pull** from user behavior and **builder pull** after doing the real work. Increase commitment one step at a time: a waitlist may justify interviews or a manual pilot, not a full product.
+
+## Common failure modes
+
+- branding, planning, or funnel work without user contact;
+- treating publication or compliments as proof;
+- choosing only for fun while ignoring problem severity and willingness to pay;
+- running too many quests without timeboxes or decisions;
+- letting a prototyping vendor define the method.
+
+## Product-surface connection
+
+This loop complements [[product-management-as-system-steering]]: move quickly on reversible tests and slow down as commitment becomes expensive. It also complements [[role-aligned-deployed-project-proof]]: use tiny public artifacts to test whether a workflow is useful before investing in a full portfolio or product build.
+
+## Compact formula
+
+> Tiny enough to start. Useful enough to test. Fun enough to finish. Real enough to produce evidence.
+
+## Source
+
+- Deya, ["your $1M business starts as a side quest, here's how."](https://www.youtube.com/watch?v=SE401zf_fgM), YouTube. The full user-supplied transcript remains in the private source vault and is not compiled into this public namespace.
+
+
 <!-- ===== ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md ===== -->
 
 ---
@@ -6341,6 +6430,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/taste-requires-contact|Taste Requires Contact]] — Judgment-building lens for firsthand experience, precise vocabulary, active imitation, comparison, curation, and creative risk in an AI-abundant world.
 - [[concepts/product-management-as-system-steering|Product Management as System Steering]] — PM operating lens for timely decisions, gapless ownership, adaptive influence, scope-first tradeoffs, and ecosystem incentive alignment.
 - [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
+- [[concepts/side-quest-validation-loop|Side-Quest Validation Loop]] — Low-pressure, timeboxed loop for turning an idea into a tiny useful public experiment and letting behavioral evidence earn further commitment.
 - [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped evidence; for gameplay, visual-only is low-trust and structured signals matter.
 - [[concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]] — Product-surface pattern for video apps/workbenches that return clips, confidence, evidence, and recall boundaries with AI as assistant, not source of truth.
 - [[concepts/world-model-control-surfaces|World Model Control Surfaces]] — Grounded-AI control/review lens for exposing state, actions, predictions, objectives, guardrails, evidence, and the recommended next safe step.
@@ -6380,6 +6470,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
 - `Knowledge/concepts/product-management-as-system-steering.md`
+- `Knowledge/concepts/side-quest-validation-loop.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -6406,6 +6497,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-13 create/update | Side-Quest Validation Loop
+
+- Added `wiki/concepts/side-quest-validation-loop.md` from the canonical `Knowledge/concepts/side-quest-validation-loop.md` synthesis and Deya's YouTube video.
+- Preserved the tiny/useful/fun criteria, behavior-weighted evidence ladder, and predeclared kill/adjust/continue/promote gate.
+- Kept the framework tool-independent and separated the sponsored Lovable demonstration and anecdotal business claims from universal proof.
+- Kept the full user-supplied transcript private; the namespace contains a public-safe synthesis and source attribution only.
 
 ## 2026-07-13 create/update | Taste Requires Contact
 

@@ -1,6 +1,6 @@
 {
   "generated_from": "frontmatter updated fields",
-  "count": 626,
+  "count": 627,
   "entries": [
     {
       "title": "Agent Workflows \u2014 Activity Log",
@@ -73,6 +73,15 @@
       "updated": "2026-07-13",
       "raw": "/raw/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md.html"
+    },
+    {
+      "title": "Side-Quest Validation Loop",
+      "path": "wiki/concepts/side-quest-validation-loop.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-13",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md.html"
     },
     {
       "title": "Taste Requires Contact: Building Judgment in the AI Era",

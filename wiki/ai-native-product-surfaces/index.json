@@ -1,11 +1,11 @@
 {
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
-  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program i",
-  "documentCount": 23,
+  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-ku",
+  "documentCount": 24,
   "counts": {
     "wiki": 1,
-    "concepts": 11,
+    "concepts": 12,
     "entities": 6,
     "summaries": 0,
     "syntheses": 1
@@ -79,6 +79,13 @@
       "path": "wiki/concepts/role-aligned-deployed-project-proof.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Side-Quest Validation Loop",
+      "path": "wiki/concepts/side-quest-validation-loop.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md.html",
       "category": "concepts"
     },
     {
