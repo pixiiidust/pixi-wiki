@@ -1648,7 +1648,7 @@ Compiled from `Knowledge/concepts/profile-memory-boundaries.md`.
 ---
 title: Reader-Centered Outreach Asks
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-07-13
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -1735,7 +1735,7 @@ Canonical source: `Knowledge/concepts/reader-centered-outreach-asks.md`.
 
 Primary article source: `Knowledge/raw/articles/how-to-ask-for-help-from-people-who-dont-know-you.md`.
 
-Related pages: [[concepts/agent-skill-routing|Agent Skill Routing]], [[concepts/agent-tooling-plan|Agent Tooling Plan]], [[../../ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning|Verb-First Product Positioning]], [[../../ai-native-product-surfaces/wiki/concepts/find-the-lock-problem-first|Find the Lock Problem First]].
+Related pages: [[concepts/agent-skill-routing|Agent Skill Routing]], [[concepts/agent-tooling-plan|Agent Tooling Plan]], [[../../ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning|Verb-First Product Positioning]], [[../../ai-native-product-surfaces/wiki/concepts/find-the-lock-problem-first|Find the Lock Problem First]], [[../../ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]].
 
 
 <!-- ===== agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md ===== -->
@@ -2122,7 +2122,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-09
+updated: 2026-07-13
 type: log
 status: compiled
 namespace: agent-workflows
@@ -2131,6 +2131,10 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-13 update | Link outreach asks to Side Doors synthesis
+
+- Cross-linked `reader-centered-outreach-asks.md` to the illustrated Side Doors synthesis in `ai-native-product-surfaces` so message drafting remains connected to the broader specificity, public-proof, and opportunity-search model.
 
 ## 2026-07-09 create | Agentic Harness Engineering
 

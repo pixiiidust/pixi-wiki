@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Side Doors: Make Useful Work Legible — AI-Native Product Surfaces — Pixi Wiki</title><meta name="description" content="A job is not fundamentally a title. It is a bundle of problems someone wants solved badly enough to spend money, trust, or attention on another person."><link rel="canonical" href="https://pixiiidust.github.io/pixi-wiki/wiki/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md.html"><meta property="og:title" content="Side Doors: Make Useful Work Legible — AI-Native Product Surfaces"><meta property="og:description" content="A job is not fundamentally a title. It is a bundle of problems someone wants solved badly enough to spend money, trust, or attention on another person."><meta property="og:url" content="https://pixiiidust.github.io/pixi-wiki/wiki/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md.html"><meta property="og:type" content="article"><meta property="og:site_name" content="Pixi Wiki"><meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/pixi-wiki/site.css?v=92c72be3"><script>(function(){const key='pixi-wiki-theme';const root=document.documentElement;const saved=localStorage.getItem(key)||'light';root.dataset.theme=saved;function label(){const b=document.querySelector('[data-theme-toggle]');if(b)b.textContent=root.dataset.theme==='dark'?'☀':'☾';}document.addEventListener('DOMContentLoaded',function(){label();const b=document.querySelector('[data-theme-toggle]');if(b)b.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem(key,root.dataset.theme);label();});});})();</script><script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.sidebar-filter').forEach(function(input){var section=input.closest('.sidebar-section');if(!section)return;var links=[].slice.call(section.querySelectorAll('a'));var groups=[].slice.call(section.querySelectorAll('.sidebar-subgroup'));var opened=groups.map(function(g){return g.open;});input.addEventListener('input',function(){var q=input.value.trim().toLowerCase();links.forEach(function(a){a.style.display=(!q||a.textContent.toLowerCase().indexOf(q)>-1)?'':'none';});groups.forEach(function(g,i){g.open=q?true:opened[i];});});});});</script><script>(function(){document.addEventListener('DOMContentLoaded',function(){var box=document.querySelector('.site-search');if(!box)return;var url=box.getAttribute('data-registry');var base=url.replace(/\/index\.json$/,'');var input=document.createElement('input');input.type='search';input.placeholder='Search… ( / )';input.setAttribute('aria-label','Search all pages');input.className='search-input';var panel=document.createElement('div');panel.className='search-results';panel.setAttribute('role','listbox');panel.hidden=true;box.appendChild(input);box.appendChild(panel);var CAP=8;var entries=null,pending=null,loading=false,failed=false,active=-1,rows=[];function flatten(data){var out=[];if(!data||!data.wikis)return out;for(var i=0;i<data.wikis.length;i++){var w=data.wikis[i]||{};var docs=w.documents||[];for(var j=0;j<docs.length;j++){var d=docs[j]||{};out.push({title:String(d.title||d.path||''),path:String(d.path||''),category:String(d.category||''),nsSlug:String(w.slug||''),nsTitle:String(w.title||''),url:String(d.html||'')});}}return out;}function load(cb){if(entries||failed){cb();return;}pending=cb;if(loading)return;loading=true;function done(){loading=false;var p=pending;pending=null;if(p)p();}try{fetch(url).then(function(r){return r.json();}).then(function(data){entries=flatten(data);done();}).catch(function(){failed=true;done();});}catch(e){failed=true;done();}}function filter(q){var tokens=q.toLowerCase().split(/\s+/).filter(Boolean);if(!tokens.length)return [];var res=[];for(var i=0;i<entries.length;i++){var e=entries[i];var hay=(e.title+' '+e.path+' '+e.category+' '+e.nsSlug+' '+e.nsTitle).toLowerCase();var ok=true;for(var t=0;t<tokens.length;t++){if(hay.indexOf(tokens[t])<0){ok=false;break;}}if(ok)res.push(e);}return res;}function close(){panel.hidden=true;panel.innerHTML='';rows=[];active=-1;}function render(list,q){panel.innerHTML='';rows=[];active=-1;if(failed){var f=document.createElement('div');f.className='search-empty';f.textContent='Search unavailable';panel.appendChild(f);panel.hidden=false;return;}if(!list.length){var n=document.createElement('div');n.className='search-empty';n.textContent='No matches';panel.appendChild(n);panel.hidden=false;return;}for(var i=0;i<list.length&&i<CAP;i++){var e=list[i];var a=document.createElement('a');a.className='search-result';a.setAttribute('role','option');a.setAttribute('aria-selected','false');a.href=base+e.url;var ttl=document.createElement('span');ttl.className='search-result-title';ttl.textContent=e.title;a.appendChild(ttl);var badge=document.createElement('span');badge.className='search-badge';badge.textContent=e.nsTitle||e.nsSlug;a.appendChild(badge);panel.appendChild(a);rows.push(a);}var see=document.createElement('a');see.className='search-result search-see-all';see.setAttribute('role','option');see.setAttribute('aria-selected','false');see.href=base+'/search.html?q='+encodeURIComponent(q);see.textContent='See all '+list.length+' results →';panel.appendChild(see);rows.push(see);panel.hidden=false;}function update(){var q=input.value.trim();if(!q){close();return;}load(function(){if(failed){render([],q);return;}if(!entries)return;render(filter(q),q);});}function setActive(i){if(!rows.length)return;if(active>=0&&rows[active]){rows[active].classList.remove('active');rows[active].setAttribute('aria-selected','false');}active=(i+rows.length)%rows.length;rows[active].classList.add('active');rows[active].setAttribute('aria-selected','true');if(rows[active].scrollIntoView)rows[active].scrollIntoView({block:'nearest'});}input.addEventListener('focus',function(){load(function(){});});input.addEventListener('input',update);input.addEventListener('keydown',function(ev){if(ev.key==='ArrowDown'){ev.preventDefault();setActive(active+1);}else if(ev.key==='ArrowUp'){ev.preventDefault();setActive(active-1);}else if(ev.key==='Enter'){ev.preventDefault();if(active>=0&&rows[active]){window.location.href=rows[active].href;}else{var qq=input.value.trim();if(qq)window.location.href=base+'/search.html?q='+encodeURIComponent(qq);}}else if(ev.key==='Escape'){input.value='';close();input.blur();}});document.addEventListener('keydown',function(ev){if(ev.key!=='/')return;var el=document.activeElement;var tag=el&&el.tagName?el.tagName.toLowerCase():'';if(tag==='input'||tag==='textarea'||(el&&el.isContentEditable))return;ev.preventDefault();input.focus();});document.addEventListener('click',function(ev){if(!box.contains(ev.target))panel.hidden=true;});});})();</script><script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('pre').forEach(function(pre){if(pre.querySelector('.copy-button'))return;var text=pre.innerText;var btn=document.createElement('button');btn.type='button';btn.className='copy-button';btn.setAttribute('aria-label','Copy code');btn.textContent='copy';btn.addEventListener('click',function(){function done(){btn.textContent='copied';setTimeout(function(){btn.textContent='copy';},1200);}function fallback(){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,fallback);}else{fallback();}});pre.appendChild(btn);});});</script></head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="header-inner"><a class="logo" href="/pixi-wiki/">Pixi Wiki</a><div class="site-search" data-registry="/pixi-wiki/index.json"></div><div class="header-nav"><nav class="nav"><a href="/pixi-wiki/#wikis">Wikis</a><a href="/pixi-wiki/updates.html">Updates</a><a href="/pixi-wiki/docs/AGENT_SETUP.html">Agent Setup</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a></nav><details class="nav-menu"><summary aria-label="Open menu">Menu</summary><nav class="nav-panel"><a href="/pixi-wiki/#wikis">Wikis</a><a href="/pixi-wiki/updates.html">Updates</a><a href="/pixi-wiki/docs/AGENT_SETUP.html">Agent Setup</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a></nav></details><button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle color theme">☾</button></div></div></header>
+<main class="page"><aside class="sidebar"><div class="sidebar-block"><div class="sidebar-title">AI-Native Product Surfaces</div><div class="sidebar-count">22 documents</div>
+<a href="/pixi-wiki/wiki/ai-native-product-surfaces/README.md.html"><span aria-hidden="true">📄 </span>AI-Native Product Surfaces Knowledge Base</a>
+<a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/index.md.html"><span aria-hidden="true">📄 </span>AI-Native Product Surfaces KB — Master Index</a>
+<details class="sidebar-section"><summary>WIKI 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/log.md.html"><span aria-hidden="true">📄 </span>AI-Native Product Surfaces — Activity Log</a></div></details>
+<details class="sidebar-section"><summary>CONCEPTS 10</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts.md.html"><span aria-hidden="true">📄 </span>Agent Output Decision Artifacts</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/ai-native-problem-framing-framework.md.html"><span aria-hidden="true">📄 </span>AI-Native Problem Framing Framework</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html"><span aria-hidden="true">📄 </span>Interaction Mode Routing</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md.html"><span aria-hidden="true">📄 </span>J-Space as Global Workspace</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html"><span aria-hidden="true">📄 </span>Material Loop and Glass Interfaces</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md.html"><span aria-hidden="true">📄 </span>Product Management as System Steering</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md.html"><span aria-hidden="true">📄 </span>Role-Aligned Deployed Project Proof</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md.html"><span aria-hidden="true">📄 </span>Verified Video Answer Surfaces</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md.html"><span aria-hidden="true">📄 </span>Video Retrieve-Then-Verify Loop</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md.html"><span aria-hidden="true">📄 </span>World Model Control Surfaces</a></div></details>
+<details class="sidebar-section"><summary>ENTITIES 6</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html"><span aria-hidden="true">📄 </span>I-know-kungfu</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/entities/j-space-replay.md.html"><span aria-hidden="true">📄 </span>J-Space-Replay</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/entities/job-edge.md.html"><span aria-hidden="true">📄 </span>Job Edge</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html"><span aria-hidden="true">📄 </span>myAbode</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html"><span aria-hidden="true">📄 </span>Planned Program Intel</a><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/entities/shifu-app.md.html"><span aria-hidden="true">📄 </span>Shifu</a></div></details>
+<details class="sidebar-section"><summary>SUMMARIES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
+<details class="sidebar-section" open><summary>SYNTHESES 1</summary><div class="sidebar-section-body"><a class="active" aria-current="page" href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md.html"><span aria-hidden="true">📄 </span>Side Doors: Make Useful Work Legible</a></div></details>
+</div><div class="sidebar-block"><details class="sidebar-section" open><summary>// FOR AGENTS</summary><div class="sidebar-section-body">
+<a href="/pixi-wiki/wiki/ai-native-product-surfaces/llms.txt">llms.txt</a>
+<a href="/pixi-wiki/wiki/ai-native-product-surfaces/llms-full.txt">llms-full.txt</a>
+<a href="/pixi-wiki/wiki/ai-native-product-surfaces/index.json">index.json</a>
+</div></details></div></aside><article class="article" id="main-content">
+<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/ai-native-product-surfaces/README.md.html">AI-Native Product Surfaces</a> / wiki/syntheses/side-doors-make-useful-work-legible.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+ai-native-product-surfaces%2Fwiki%2Fsyntheses%2Fside-doors-make-useful-work-legible.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fai-native-product-surfaces%2Fwiki%2Fsyntheses%2Fside-doors-make-useful-work-legible.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
+<h1 id="side-doors-make-useful-work-legible">Side Doors: Make Useful Work Legible<a class="heading-anchor" href="#side-doors-make-useful-work-legible" aria-label="Link to this section">¶</a></h1>
+<div class="page-meta"><div><span>type</span>: synthesis</div><div><span>confidence</span>: medium</div><div><span>updated</span>: 2026-07-13</div><div><span>status</span>: compiled</div><div><span>namespace</span>: ai-native-product-surfaces</div></div>
+<p>A job is not fundamentally a title. It is a bundle of problems someone wants solved badly enough to spend money, trust, or attention on another person.</p>
+<p>That framing changes opportunity search from:</p>
+<pre><code>find posted role → submit credentials → wait to be interpreted</code></pre>
+<p>into a larger search problem:</p>
+<pre><code>find meaningful work or a live problem
+→ understand it with specificity
+→ make useful capability visible
+→ place the signal where a relevant person can recognize it
+→ let a conversation reveal the opportunity</code></pre>
+<p>This synthesis draws from Maja&#x27;s <a href="https://velvetnoise.substack.com/p/how-to-enter-side-doors">&quot;How to Enter Side Doors&quot;</a>, Jamie-supplied framework and story screenshots, the public <a href="https://sweet-hall-e72.notion.site/A-Traveler-s-Guide-to-the-Latent-Space-85efba7e5e6a40e5bd3cae980f30235f">Traveler&#x27;s Guide to the Latent Space</a>, and a supplied transcript of the Shopify internship video.</p>
+<nav class="page-toc"><div class="page-toc-title">On this page</div><ul><li class="page-toc-h2"><a href="#companies-contain-problems-before-they-contain-jobs">Companies contain problems before they contain jobs</a></li><li class="page-toc-h2"><a href="#three-routes">Three routes</a></li><li class="page-toc-h3"><a href="#default-apply-to-the-package">Default: apply to the package</a></li><li class="page-toc-h3"><a href="#outbound-go-toward-the-live-problem">Outbound: go toward the live problem</a></li><li class="page-toc-h3"><a href="#inbound-make-the-signal-findable">Inbound: make the signal findable</a></li><li class="page-toc-h3"><a href="#hybrid-the-pitch-is-also-the-proof">Hybrid: the pitch is also the proof</a></li><li class="page-toc-h2"><a href="#what-creates-signal">What creates signal</a></li><li class="page-toc-h2"><a href="#story-1-the-calm-cold-email">Story 1: the Calm cold email</a></li><li class="page-toc-h2"><a href="#story-2-the-blackbird-internship-that-did-not-exist">Story 2: the Blackbird internship that did not exist</a></li><li class="page-toc-h2"><a href="#story-3-jae-s-essay-on-taste">Story 3: Jae&#x27;s essay on taste</a></li><li class="page-toc-h2"><a href="#story-4-a-traveler-s-guide-to-the-latent-space">Story 4: A Traveler&#x27;s Guide to the Latent Space</a></li><li class="page-toc-h2"><a href="#story-5-shopify-s-proposed-first-marketing-internship">Story 5: Shopify&#x27;s proposed first marketing internship</a></li><li class="page-toc-h2"><a href="#one-framework-five-different-objects">One framework, five different objects</a></li><li class="page-toc-h2"><a href="#verb-first-taste">Verb-first taste</a></li><li class="page-toc-h2"><a href="#verb-first-distribution">Verb-first distribution</a></li><li class="page-toc-h2"><a href="#community-brand-and-strategy-are-verbs-too">Community, brand, and strategy are verbs too</a></li><li class="page-toc-h2"><a href="#how-to-do-this-without-becoming-annoying">How to do this without becoming annoying</a></li><li class="page-toc-h2"><a href="#limits">Limits</a></li><li class="page-toc-h2"><a href="#working-checklist">Working checklist</a></li><li class="page-toc-h2"><a href="#sources-and-image-note">Sources and image note</a></li></ul></nav>
+<h2 id="companies-contain-problems-before-they-contain-jobs">Companies contain problems before they contain jobs<a class="heading-anchor" href="#companies-contain-problems-before-they-contain-jobs" aria-label="Link to this section">¶</a></h2>
+<p><img src="/pixi-wiki/wiki/ai-native-product-surfaces/assets/side-door-opportunity-search/company-is-a-set-of-problems.jpg" alt="Framework diagram describing a company as a collection of problems" loading="lazy"></p>
+<p><em>Figure 1. A company is a set of problems and desired outcomes. Screenshot supplied by Jamie from Maja&#x27;s article.</em></p>
+<p>Organizations are groups of people trying to make things happen under constraints. They need to understand markets, find customers, launch things, support users, explain their work, improve operations, hire, stay compliant, and remove bottlenecks.</p>
+<p>Those needs exist before a hiring team writes a job description.</p>
+<p><img src="/pixi-wiki/wiki/ai-native-product-surfaces/assets/side-door-opportunity-search/problems-packaged-into-jobs.jpg" alt="Framework diagram showing company problems becoming named jobs" loading="lazy"></p>
+<p><em>Figure 2. Some problems get packaged into formal jobs. Screenshot supplied by Jamie from Maja&#x27;s article.</em></p>
+<p>A formal role is a <strong>packaged problem bundle</strong>. Some needs have become legible enough to receive a title, budget, manager, and evaluation process. Other needs remain unscoped, cross functional, newly noticed, or ownerless.</p>
+<p>The front door begins after the packaging. Side doors operate around the gap between <strong>problems that already exist</strong> and <strong>roles that have already been formalized</strong>.</p>
+<h2 id="three-routes">Three routes<a class="heading-anchor" href="#three-routes" aria-label="Link to this section">¶</a></h2>
+<p><img src="/pixi-wiki/wiki/ai-native-product-surfaces/assets/side-door-opportunity-search/default-outbound-inbound-paths.jpg" alt="Framework diagram comparing default, outbound, and inbound paths" loading="lazy"></p>
+<p><em>Figure 3. The default, outbound, and inbound routes. Screenshot supplied by Jamie from Maja&#x27;s article.</em></p>
+<h3 id="default-apply-to-the-package">Default: apply to the package<a class="heading-anchor" href="#default-apply-to-the-package" aria-label="Link to this section">¶</a></h3>
+<pre><code>person → job board → posted role → application queue → company</code></pre>
+<p>The organization defines the problem and the evaluation frame. The candidate enters after the role is legible. This route remains useful, but it is crowded and lossy.</p>
+<h3 id="outbound-go-toward-the-live-problem">Outbound: go toward the live problem<a class="heading-anchor" href="#outbound-go-toward-the-live-problem" aria-label="Link to this section">¶</a></h3>
+<pre><code>person → specific company/person/problem
+→ useful proof or observation
+→ conversation
+→ possible advocate or opportunity</code></pre>
+<p>Strong outbound is not generic networking. It notices a particular body of work, studies the context, and makes a small unit of relevant capability visible. The recipient should not have to invent the connection.</p>
+<h3 id="inbound-make-the-signal-findable">Inbound: make the signal findable<a class="heading-anchor" href="#inbound-make-the-signal-findable" aria-label="Link to this section">¶</a></h3>
+<pre><code>real work → public artifact → discovery by a tuned-in person
+→ conversation → possible opportunity</code></pre>
+<p>Essays, guides, tools, analyses, prototypes, experiments, videos, events, and communities can act as ambassadors. They let another person inspect how the creator thinks before deciding whether to make contact.</p>
+<h3 id="hybrid-the-pitch-is-also-the-proof">Hybrid: the pitch is also the proof<a class="heading-anchor" href="#hybrid-the-pitch-is-also-the-proof" aria-label="Link to this section">¶</a></h3>
+<p>Some artifacts address one organization while remaining public and discoverable. The application itself performs the capability being offered.</p>
+<h2 id="what-creates-signal">What creates signal<a class="heading-anchor" href="#what-creates-signal" aria-label="Link to this section">¶</a></h2>
+<p>The recurring ingredients are:</p>
+<ol>
+<li><strong>Specificity:</strong> attention aimed at a real person, problem, company, or discourse.</li>
+<li><strong>Proof:</strong> a prior action, useful artifact, or inspectable decision trail.</li>
+<li><strong>Legibility:</strong> another person can infer what the creator notices and can do.</li>
+<li><strong>Placement:</strong> the proof reaches a channel or community where its value can be recognized.</li>
+<li><strong>Invitation:</strong> the next step is clear, small, and optional.</li>
+</ol>
+<pre><code>specific attention + observable proof + useful placement + bounded invitation</code></pre>
+<h2 id="story-1-the-calm-cold-email">Story 1: the Calm cold email<a class="heading-anchor" href="#story-1-the-calm-cold-email" aria-label="Link to this section">¶</a></h2>
+<p><img src="/pixi-wiki/wiki/ai-native-product-surfaces/assets/side-door-opportunity-search/calm-cold-email-excerpt.jpg" alt="Excerpt from a cold email to the Calm CEO titled Two Thank Yous and One Offer" loading="lazy"></p>
+<p><em>Figure 4. Excerpt from Maja&#x27;s &quot;Two Thank You&#x27;s + One Offer&quot; email. Screenshot supplied by Jamie from Maja&#x27;s article.</em></p>
+<p>At eighteen, Maja sent Calm&#x27;s CEO a long, earnest email after encountering his public work. She connected that trigger to relevant ideas and evidence from growing large Instagram pages. He replied, asked her to prepare a pitch, and they worked together.</p>
+<pre><code>specific person → genuine trigger → relevant proof → concrete offer</code></pre>
+<p>The lesson is not to imitate the email&#x27;s length or intensity. The useful mechanism is that the message contained more than admiration: it gave the recipient enough specific evidence to imagine a working relationship.</p>
+<h2 id="story-2-the-blackbird-internship-that-did-not-exist">Story 2: the Blackbird internship that did not exist<a class="heading-anchor" href="#story-2-the-blackbird-internship-that-did-not-exist" aria-label="Link to this section">¶</a></h2>
+<p><img src="/pixi-wiki/wiki/ai-native-product-surfaces/assets/side-door-opportunity-search/blackbird-linkedin-message.jpg" alt="LinkedIn message beginning Random moonshot and asking about a Blackbird Foundation internship" loading="lazy"></p>
+<p><em>Figure 5. Maja&#x27;s &quot;Random moonshot&quot; LinkedIn message. Screenshot supplied by Jamie from Maja&#x27;s article.</em></p>
+<p>Maja wanted to learn from Joel at the Blackbird Foundation, but no internship application was open. She explained the Startmate internship context, named why Blackbird and Joel specifically mattered, and connected her startup experience to the investor side she wanted to understand. An internship was later created.</p>
+<pre><code>specific person → specific context → credible fit
+→ request beyond the published taxonomy</code></pre>
+<p>From far away, this can look like luck. From inside, it begins with a person paying enough attention to try the handle on a door that has no official label.</p>
+<h2 id="story-3-jae-s-essay-on-taste">Story 3: Jae&#x27;s essay on taste<a class="heading-anchor" href="#story-3-jae-s-essay-on-taste" aria-label="Link to this section">¶</a></h2>
+<p><img src="/pixi-wiki/wiki/ai-native-product-surfaces/assets/side-door-opportunity-search/jae-taste-essay-linkedin-post.jpg" alt="LinkedIn post sharing an essay critiquing taste discourse" loading="lazy"></p>
+<p><em>Figure 6. LinkedIn post sharing Jae&#x27;s essay on taste. Screenshot supplied by Jamie from Maja&#x27;s article.</em></p>
+<p>Jae published a strong critique of contemporary taste discourse on Substack and LinkedIn. The essay exposed how he selected evidence, rejected a prevailing frame, and constructed an argument. Eucalyptus CEO Tim Doyle saw it, commented, met him for coffee, and Jae was eventually hired.</p>
+<pre><code>independent point of view → public essay → recognition → relationship</code></pre>
+<p>The essay was not a disguised application. It was real thinking directed at a real discourse. That is why it could travel ahead of its author.</p>
+<h2 id="story-4-a-traveler-s-guide-to-the-latent-space">Story 4: A Traveler&#x27;s Guide to the Latent Space<a class="heading-anchor" href="#story-4-a-traveler-s-guide-to-the-latent-space" aria-label="Link to this section">¶</a></h2>
+<p>Ethan Smith created <a href="https://sweet-hall-e72.notion.site/A-Traveler-s-Guide-to-the-Latent-Space-85efba7e5e6a40e5bd3cae980f30235f">A Traveler&#x27;s Guide to the Latent Space</a> in response to repeated questions from the early AI-art community: &quot;What&#x27;s the prompt?&quot; and &quot;What are the settings?&quot;</p>
+<p>It is not a casual post. The chaptered guide covers Disco Diffusion setup, prompt engineering, init images, model settings, GPU/runtime troubleshooting, experiments, and comparisons. It organizes scattered frontier learning so other people can begin farther along.</p>
+<p>Someone who recognized that capability contacted Ethan through Discord about becoming a technical cofounder of Leonardo.ai, later acquired by Canva.</p>
+<pre><code>frontier obsession → repeated community questions → useful guide
+→ discovery by someone carrying a matching problem</code></pre>
+<p>The guide demonstrates experimentation, synthesis, technical curiosity, teaching, and community awareness without listing them as identity claims.</p>
+<h2 id="story-5-shopify-s-proposed-first-marketing-internship">Story 5: Shopify&#x27;s proposed first marketing internship<a class="heading-anchor" href="#story-5-shopify-s-proposed-first-marketing-internship" aria-label="Link to this section">¶</a></h2>
+<p>The supplied video transcript begins:</p>
+<blockquote>&quot;Shopify doesn&#x27;t seem to have any marketing internships. What if I became the first?&quot;</blockquote>
+<p>The creator does not stop at saying she is creative. She narrates repeated actions: building a YouTube community of more than 10,000 people, collaborating with brands, launching a podcast, organizing Socratica events, creating belonging, and continuing to publish without guaranteed attention.</p>
+<p>It ends:</p>
+<blockquote>&quot;If you&#x27;re all about bold ideas, then here&#x27;s mine. Let me be your first.&quot;</blockquote>
+<pre><code>missing role → propose role → show repeated actions
+→ perform the capability in the pitch → direct ask</code></pre>
+<p>The video is a hybrid side door. It addresses Shopify directly while also functioning as a public artifact. Its storytelling, emotional structure, and ability to attract attention are part of the evidence.</p>
+<h2 id="one-framework-five-different-objects">One framework, five different objects<a class="heading-anchor" href="#one-framework-five-different-objects" aria-label="Link to this section">¶</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Example</th><th>Route</th><th>What was made legible</th><th>Proof object</th></tr></thead><tbody><tr><td>Calm email</td><td>Outbound</td><td>Internet attention, ideas, initiative</td><td>Specific email plus prior audience-building evidence</td></tr><tr><td>Blackbird message</td><td>Outbound</td><td>Person-specific fit and learning intent</td><td>Context-rich LinkedIn message</td></tr><tr><td>Jae&#x27;s taste essay</td><td>Inbound</td><td>Judgment and argument</td><td>Public essay</td></tr><tr><td>Traveler&#x27;s Guide</td><td>Inbound</td><td>Technical experimentation and teaching</td><td>Useful frontier guide</td></tr><tr><td>Shopify video</td><td>Hybrid</td><td>Story, connection, community, and audacity</td><td>Public application video</td></tr></tbody></table></div>
+<p>The reusable move is not a particular medium. It is:</p>
+<blockquote>Make the work inspectable enough that one relevant person can already imagine what engaging with you would feel like.</blockquote>
+<h2 id="verb-first-taste">Verb-first taste<a class="heading-anchor" href="#verb-first-taste" aria-label="Link to this section">¶</a></h2>
+<p>Technology discourse often treats <strong>taste</strong> as a noun someone possesses: a refined aesthetic, the right references, or membership in a fashionable scene.</p>
+<p>Verb-first taste asks what a person repeatedly:</p>
+<ul>
+<li>notices that others miss;</li>
+<li>selects and rejects;</li>
+<li>edits or removes;</li>
+<li>sequences under constraints;</li>
+<li>protects when tradeoffs appear;</li>
+<li>explains as better for the intended experience.</li>
+</ul>
+<p>A moodboard is an input. Taste is the pattern of choosing, rejecting, combining, and protecting.</p>
+<p>Jae&#x27;s essay demonstrates taste because the artifact exposes selections and refusals. It does not merely claim the identity.</p>
+<h2 id="verb-first-distribution">Verb-first distribution<a class="heading-anchor" href="#verb-first-distribution" aria-label="Link to this section">¶</a></h2>
+<p>Distribution is also commonly treated as a possession: a channel, audience, community, platform, or growth hire.</p>
+<p>A verb-first distribution model describes the behavioral chain:</p>
+<pre><code>person encounters
+→ recognizes relevance
+→ tries
+→ experiences value
+→ returns or shares</code></pre>
+<p>&quot;We use LinkedIn&quot; names a channel. It does not explain why someone notices, acts, continues, or tells another person.</p>
+<p>The examples show several distribution verbs:</p>
+<ul>
+<li>the Calm email <strong>reaches</strong> one person with specific relevance;</li>
+<li>the Blackbird message <strong>routes</strong> around a nonexistent application form;</li>
+<li>Jae&#x27;s essay <strong>travels</strong> through public discourse;</li>
+<li>Ethan&#x27;s guide <strong>answers</strong> repeated community questions and <strong>circulates</strong> among frontier practitioners;</li>
+<li>the Shopify video <strong>attracts</strong>, <strong>demonstrates</strong>, and <strong>invites</strong> simultaneously.</li>
+</ul>
+<h2 id="community-brand-and-strategy-are-verbs-too">Community, brand, and strategy are verbs too<a class="heading-anchor" href="#community-brand-and-strategy-are-verbs-too" aria-label="Link to this section">¶</a></h2>
+<ul>
+<li><strong>Community:</strong> Who gathers, contributes, returns, helps, and develops belonging?</li>
+<li><strong>Brand:</strong> What expectations are repeatedly created and kept?</li>
+<li><strong>Strategy:</strong> What is chosen, refused, sequenced, and protected under constraints?</li>
+</ul>
+<p>Nouns describe the identity someone wants credited. Verbs reveal the value they can repeatedly produce.</p>
+<h2 id="how-to-do-this-without-becoming-annoying">How to do this without becoming annoying<a class="heading-anchor" href="#how-to-do-this-without-becoming-annoying" aria-label="Link to this section">¶</a></h2>
+<ul>
+<li>Study before contacting.</li>
+<li>Begin from the recipient&#x27;s world, not a long biography.</li>
+<li>Make the proof small enough to inspect quickly.</li>
+<li>Do not require the recipient to invent the relevance.</li>
+<li>Ask for one bounded next step.</li>
+<li>Make &quot;no&quot; easy.</li>
+<li>Do not confuse audacity with entitlement.</li>
+<li>Do not spray identical messages at many people.</li>
+<li>Do not donate weeks of speculative labor to prove seriousness.</li>
+<li>Respect privacy, confidential information, and organizational boundaries.</li>
+</ul>
+<p>The useful unit is usually not a complete unpaid solution. It is the smallest artifact or observation that makes the quality of attention and capability visible.</p>
+<p>For the message layer, see <a href="/pixi-wiki/wiki/agent-workflows/wiki/concepts/reader-centered-outreach-asks.md.html">Reader-Centered Outreach Asks</a>.</p>
+<h2 id="limits">Limits<a class="heading-anchor" href="#limits" aria-label="Link to this section">¶</a></h2>
+<p>These are memorable success stories, so they contain survivorship bias. They do not prove that cold outreach, public writing, or viral artifacts reliably cause jobs.</p>
+<p>Luck, privilege, timing, network position, taste, and platform distribution remain part of the outcome. Most attempts may receive no response. The defensible claim is narrower:</p>
+<blockquote>Specific proof can create routes and signals that a formal application alone cannot create.</blockquote>
+<p>Side doors expand the move set. They do not make an unfair market fair, and they should not become a moral test that blames people when the market remains unresponsive.</p>
+<h2 id="working-checklist">Working checklist<a class="heading-anchor" href="#working-checklist" aria-label="Link to this section">¶</a></h2>
+<p>Before using a side door, ask:</p>
+<ol>
+<li>What real person, work, or problem am I paying attention to?</li>
+<li>What have I noticed that is specific rather than generic?</li>
+<li>What is the smallest useful proof I can make or point to?</li>
+<li>Which verbs does the proof demonstrate?</li>
+<li>Where can someone tuned to this problem encounter it?</li>
+<li>Is the invitation bounded and easy to decline?</li>
+<li>Am I respecting attention, privacy, and unpaid-labor boundaries?</li>
+<li>What will I learn even if the door stays closed?</li>
+</ol>
+<h2 id="sources-and-image-note">Sources and image note<a class="heading-anchor" href="#sources-and-image-note" aria-label="Link to this section">¶</a></h2>
+<ul>
+<li>Maja, <a href="https://velvetnoise.substack.com/p/how-to-enter-side-doors">&quot;How to Enter Side Doors&quot;</a>, Velvet Noise, 2026-05-14.</li>
+<li>Ethan Smith, <a href="https://sweet-hall-e72.notion.site/A-Traveler-s-Guide-to-the-Latent-Space-85efba7e5e6a40e5bd3cae980f30235f">&quot;A Traveler&#x27;s Guide to the Latent Space&quot;</a>.</li>
+<li>Framework and story screenshots supplied by Jamie from Maja&#x27;s article for commentary and analysis. Copyright remains with the respective creators and publications.</li>
+<li>Shopify transcript supplied by Jamie from the public internship video. Only short excerpts are reproduced here.</li>
+</ul>
+<h2>External links</h2>
+<ul>
+<li><a href="https://sweet-hall-e72.notion.site/A-Traveler-s-Guide-to-the-Latent-Space-85efba7e5e6a40e5bd3cae980f30235f">&quot;A Traveler&#x27;s Guide to the Latent Space&quot;</a></li><li><a href="https://velvetnoise.substack.com/p/how-to-enter-side-doors">&quot;How to Enter Side Doors&quot;</a></li>
+</ul>
+<nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/entities/shifu-app.md.html"><span class="next-label">← Prev</span><span class="next-title">Shifu</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/log.md.html"><span class="next-label">Next</span><span class="next-title">AI-Native Product Surfaces — Activity Log →</span></a></nav>
+</article></main>
+<footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
+</body></html>

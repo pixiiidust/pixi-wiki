@@ -92,8 +92,8 @@
 
 ## AI-Native Product Surfaces
 
-> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, role-aligned deployed portfolio proof, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language f
-> Current as of: 2026-07-12 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent
+> Current as of: 2026-07-13 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
 > Agent access: [/wiki/ai-native-product-surfaces/llms.txt](/wiki/ai-native-product-surfaces/llms.txt) [/wiki/ai-native-product-surfaces/llms-full.txt](/wiki/ai-native-product-surfaces/llms-full.txt) [/wiki/ai-native-product-surfaces/index.json](/wiki/ai-native-product-surfaces/index.json)
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
@@ -117,6 +117,7 @@
 - [Shifu](/raw/ai-native-product-surfaces/wiki/entities/shifu-app.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/shifu-app.md.html))
 - [AI-Native Product Surfaces — Master Index](/raw/ai-native-product-surfaces/wiki/index.md) ([html](/wiki/ai-native-product-surfaces/wiki/index.md.html))
 - [AI-Native Product Surfaces — Activity Log](/raw/ai-native-product-surfaces/wiki/log.md) ([html](/wiki/ai-native-product-surfaces/wiki/log.md.html))
+- [Side Doors: Make Useful Work Legible](/raw/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md) ([html](/wiki/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md.html))
 
 ## RL Sim Labs
 

@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-12
+updated: 2026-07-13
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -10,6 +10,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-13 create/update | Side Doors: Make Useful Work Legible
+
+- Added the illustrated synthesis `wiki/syntheses/side-doors-make-useful-work-legible.md` from the canonical `Knowledge/concepts/side-door-opportunity-search.md` page and Maja's “How to Enter Side Doors.”
+- Mirrored six Jamie-supplied framework and story screenshots under `assets/side-door-opportunity-search/` and used normal Markdown image syntax with local Pixi Wiki asset routes.
+- Preserved the default/outbound/inbound model, five story patterns, verb-first taste/distribution extension, and survivorship, attention, privacy, and unpaid-labor guardrails.
+- Updated namespace README and index; generated public output remains deployment-gated.
 
 ## 2026-07-12 create/update | Product Management as System Steering
 

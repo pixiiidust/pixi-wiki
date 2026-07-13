@@ -1,6 +1,6 @@
 # AI-Native Product Surfaces Knowledge Base
 
-> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, role-aligned deployed portfolio proof, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language f
+> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
@@ -23,3 +23,4 @@
 - [Shifu](/raw/ai-native-product-surfaces/wiki/entities/shifu-app.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/shifu-app.md.html))
 - [AI-Native Product Surfaces — Master Index](/raw/ai-native-product-surfaces/wiki/index.md) ([html](/wiki/ai-native-product-surfaces/wiki/index.md.html))
 - [AI-Native Product Surfaces — Activity Log](/raw/ai-native-product-surfaces/wiki/log.md) ([html](/wiki/ai-native-product-surfaces/wiki/log.md.html))
+- [Side Doors: Make Useful Work Legible](/raw/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md) ([html](/wiki/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md.html))
