@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-09
+updated: 2026-07-13
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,10 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-13 update | Link outreach asks to Side Doors synthesis
+
+- Cross-linked `reader-centered-outreach-asks.md` to the illustrated Side Doors synthesis in `ai-native-product-surfaces` so message drafting remains connected to the broader specificity, public-proof, and opportunity-search model.
 
 ## 2026-07-09 create | Agentic Harness Engineering
 

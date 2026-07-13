@@ -1,7 +1,7 @@
 ---
 title: Reader-Centered Outreach Asks
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-07-13
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -88,4 +88,4 @@ Canonical source: `Knowledge/concepts/reader-centered-outreach-asks.md`.
 
 Primary article source: `Knowledge/raw/articles/how-to-ask-for-help-from-people-who-dont-know-you.md`.
 
-Related pages: [[concepts/agent-skill-routing|Agent Skill Routing]], [[concepts/agent-tooling-plan|Agent Tooling Plan]], [[../../ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning|Verb-First Product Positioning]], [[../../ai-native-product-surfaces/wiki/concepts/find-the-lock-problem-first|Find the Lock Problem First]].
+Related pages: [[concepts/agent-skill-routing|Agent Skill Routing]], [[concepts/agent-tooling-plan|Agent Tooling Plan]], [[../../ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning|Verb-First Product Positioning]], [[../../ai-native-product-surfaces/wiki/concepts/find-the-lock-problem-first|Find the Lock Problem First]], [[../../ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]].

@@ -1,14 +1,14 @@
 {
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
-  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, role-aligned deployed portfolio proof, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product-language f",
-  "documentCount": 21,
+  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent",
+  "documentCount": 22,
   "counts": {
     "wiki": 1,
     "concepts": 10,
     "entities": 6,
     "summaries": 0,
-    "syntheses": 0
+    "syntheses": 1
   },
   "documents": [
     {
@@ -157,6 +157,13 @@
       "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html",
       "category": "wiki"
+    },
+    {
+      "title": "Side Doors: Make Useful Work Legible",
+      "path": "wiki/syntheses/side-doors-make-useful-work-legible.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md.html",
+      "category": "syntheses"
     }
   ]
 }

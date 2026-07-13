@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-07-12
+updated: 2026-07-13
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -41,7 +41,7 @@ namespace: ai-native-product-surfaces
 
 ## Syntheses
 
-<!-- Add compiled syntheses alphabetically. -->
+- [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]] — Illustrated synthesis of problem-first opportunity search, default/outbound/inbound paths, public proof, five story examples, and verb-first taste/distribution.
 
 ## Source Roots
 
@@ -67,3 +67,5 @@ namespace: ai-native-product-surfaces
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
+- `Knowledge/concepts/side-door-opportunity-search.md`
+- `Knowledge/raw/articles/how-to-enter-side-doors-maja.md`
