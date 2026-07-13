@@ -11,6 +11,13 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-07-13 create/update | Side-Quest Validation Loop
+
+- Added `wiki/concepts/side-quest-validation-loop.md` from the canonical `Knowledge/concepts/side-quest-validation-loop.md` synthesis and Deya's YouTube video.
+- Preserved the tiny/useful/fun criteria, behavior-weighted evidence ladder, and predeclared kill/adjust/continue/promote gate.
+- Kept the framework tool-independent and separated the sponsored Lovable demonstration and anecdotal business claims from universal proof.
+- Kept the full user-supplied transcript private; the namespace contains a public-safe synthesis and source attribution only.
+
 ## 2026-07-13 create/update | Taste Requires Contact
 
 - Added `wiki/concepts/taste-requires-contact.md` from the canonical `Knowledge/concepts/taste-requires-contact.md` article and Jason Liu's “if you want good taste, you have to eat.”
