@@ -112,6 +112,8 @@ Together they form four loops:
 
 [[interaction-mode-routing|Interaction Mode Routing]] should preserve firsthand use, diagnosis, preference formation, and final selection when those activities carry the learning. Agents can retrieve comparisons, widen the reference set, handle repetitive execution, and expose alternatives. They should not silently replace the perceptual act the user needs to practise.
 
+Contact develops judgment; artifacts make that judgment legible. [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]] shows the applied bridge: public work can expose what someone notices, selects, rejects, and protects, allowing other people to inspect the judgment instead of trusting a claim to “have taste.” An artifact is not proof of good taste merely because it exists; it makes the underlying decisions available for evaluation.
+
 ## Guardrails
 
 - Taste is domain-specific and socially situated, not a universal score.
@@ -123,6 +125,7 @@ Together they form four loops:
 
 - [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
 - [[interaction-mode-routing|Interaction Mode Routing]]
+- [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]]
 - [[../../agent-workflows/wiki/concepts/creative-ideation-routing|Creative Ideation Routing]]
 
 ## Source
