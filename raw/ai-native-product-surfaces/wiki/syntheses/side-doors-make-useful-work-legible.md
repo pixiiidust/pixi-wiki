@@ -207,6 +207,8 @@ Verb-first taste asks what a person repeatedly:
 
 A moodboard is an input. Taste is the pattern of choosing, rejecting, combining, and protecting.
 
+[[concepts/taste-requires-contact|Taste Requires Contact]] explains the upstream learning loop: firsthand encounter, precise noticing, vocabulary, imitation, comparison, curation, and creative risk develop judgment. Verb-first taste describes the downstream evidence of that judgment. Public work can then make those choices inspectable without reducing taste to a self-applied label.
+
 Jae's essay demonstrates taste because the artifact exposes selections and refusals. It does not merely claim the identity.
 
 ## Verb-first distribution

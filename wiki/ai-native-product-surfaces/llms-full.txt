@@ -1425,6 +1425,8 @@ Together they form four loops:
 
 [[interaction-mode-routing|Interaction Mode Routing]] should preserve firsthand use, diagnosis, preference formation, and final selection when those activities carry the learning. Agents can retrieve comparisons, widen the reference set, handle repetitive execution, and expose alternatives. They should not silently replace the perceptual act the user needs to practise.
 
+Contact develops judgment; artifacts make that judgment legible. [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]] shows the applied bridge: public work can expose what someone notices, selects, rejects, and protects, allowing other people to inspect the judgment instead of trusting a claim to “have taste.” An artifact is not proof of good taste merely because it exists; it makes the underlying decisions available for evaluation.
+
 ## Guardrails
 
 - Taste is domain-specific and socially situated, not a universal score.
@@ -1436,6 +1438,7 @@ Together they form four loops:
 
 - [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
 - [[interaction-mode-routing|Interaction Mode Routing]]
+- [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]]
 - [[../../agent-workflows/wiki/concepts/creative-ideation-routing|Creative Ideation Routing]]
 
 ## Source
@@ -2183,7 +2186,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
-- [[concepts/taste-requires-contact|Taste Requires Contact]] — Judgment-building lens for firsthand experience, precise vocabulary, active imitation, comparison, curation, and creative risk in an AI-abundant world.
+- [[concepts/taste-requires-contact|Taste Requires Contact]] — Judgment-building lens for firsthand experience, precise vocabulary, active imitation, comparison, curation, and creative risk; paired with Side Doors as the public-legibility layer.
 - [[concepts/product-management-as-system-steering|Product Management as System Steering]] — PM operating lens for timely decisions, gapless ownership, adaptive influence, scope-first tradeoffs, and ecosystem incentive alignment.
 - [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
 - [[concepts/side-quest-validation-loop|Side-Quest Validation Loop]] — Low-pressure, timeboxed loop for turning an idea into a tiny useful public experiment and letting behavioral evidence earn further commitment.
@@ -2206,7 +2209,7 @@ namespace: ai-native-product-surfaces
 
 ## Syntheses
 
-- [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]] — Illustrated synthesis of problem-first opportunity search, default/outbound/inbound paths, public proof, five story examples, and verb-first taste/distribution.
+- [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]] — Illustrated synthesis of problem-first opportunity search, public proof, five story examples, and verb-first taste/distribution; linked to Taste Requires Contact as the judgment-formation layer.
 
 ## Source Roots
 
@@ -2253,6 +2256,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-13 update | Connect taste formation to public legibility
+
+- Cross-linked `Taste Requires Contact` and the Side Doors `Verb-first taste` section in both directions.
+- Clarified the relationship as formation → evidence → distribution: contact develops judgment, verb-first choices expose it, and public artifacts let it travel.
+- Preserved the boundary that an artifact does not prove good taste by existing; it makes decisions inspectable.
 
 ## 2026-07-13 create/update | Side-Quest Validation Loop
 
@@ -2615,6 +2624,8 @@ Verb-first taste asks what a person repeatedly:
 - explains as better for the intended experience.
 
 A moodboard is an input. Taste is the pattern of choosing, rejecting, combining, and protecting.
+
+[[concepts/taste-requires-contact|Taste Requires Contact]] explains the upstream learning loop: firsthand encounter, precise noticing, vocabulary, imitation, comparison, curation, and creative risk develop judgment. Verb-first taste describes the downstream evidence of that judgment. Public work can then make those choices inspectable without reducing taste to a self-applied label.
 
 Jae's essay demonstrates taste because the artifact exposes selections and refusals. It does not merely claim the identity.
 

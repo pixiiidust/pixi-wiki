@@ -11,6 +11,12 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-07-13 update | Connect taste formation to public legibility
+
+- Cross-linked `Taste Requires Contact` and the Side Doors `Verb-first taste` section in both directions.
+- Clarified the relationship as formation → evidence → distribution: contact develops judgment, verb-first choices expose it, and public artifacts let it travel.
+- Preserved the boundary that an artifact does not prove good taste by existing; it makes decisions inspectable.
+
 ## 2026-07-13 create/update | Side-Quest Validation Loop
 
 - Added `wiki/concepts/side-quest-validation-loop.md` from the canonical `Knowledge/concepts/side-quest-validation-loop.md` synthesis and Deya's YouTube video.

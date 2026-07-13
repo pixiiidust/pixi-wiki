@@ -20,7 +20,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
-- [[concepts/taste-requires-contact|Taste Requires Contact]] — Judgment-building lens for firsthand experience, precise vocabulary, active imitation, comparison, curation, and creative risk in an AI-abundant world.
+- [[concepts/taste-requires-contact|Taste Requires Contact]] — Judgment-building lens for firsthand experience, precise vocabulary, active imitation, comparison, curation, and creative risk; paired with Side Doors as the public-legibility layer.
 - [[concepts/product-management-as-system-steering|Product Management as System Steering]] — PM operating lens for timely decisions, gapless ownership, adaptive influence, scope-first tradeoffs, and ecosystem incentive alignment.
 - [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
 - [[concepts/side-quest-validation-loop|Side-Quest Validation Loop]] — Low-pressure, timeboxed loop for turning an idea into a tiny useful public experiment and letting behavioral evidence earn further commitment.
@@ -43,7 +43,7 @@ namespace: ai-native-product-surfaces
 
 ## Syntheses
 
-- [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]] — Illustrated synthesis of problem-first opportunity search, default/outbound/inbound paths, public proof, five story examples, and verb-first taste/distribution.
+- [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]] — Illustrated synthesis of problem-first opportunity search, public proof, five story examples, and verb-first taste/distribution; linked to Taste Requires Contact as the judgment-formation layer.
 
 ## Source Roots
 
