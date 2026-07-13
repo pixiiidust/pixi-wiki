@@ -20,6 +20,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
+- [[concepts/taste-requires-contact|Taste Requires Contact]] — Judgment-building lens for firsthand experience, precise vocabulary, active imitation, comparison, curation, and creative risk in an AI-abundant world.
 - [[concepts/product-management-as-system-steering|Product Management as System Steering]] — PM operating lens for timely decisions, gapless ownership, adaptive influence, scope-first tradeoffs, and ecosystem incentive alignment.
 - [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
 - [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped evidence; for gameplay, visual-only is low-trust and structured signals matter.
@@ -56,6 +57,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/j-space-global-workspace.md`
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
+- `Knowledge/concepts/taste-requires-contact.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
@@ -65,6 +67,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
 - `Knowledge/raw/articles/nvidia-vss-docs.md`
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
+- `Knowledge/raw/transcripts/if-you-want-good-taste-you-have-to-eat.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
 - `Knowledge/concepts/side-door-opportunity-search.md`

@@ -1,7 +1,7 @@
 ---
 title: Material Loop and Glass Interfaces
 created: 2026-06-24
-updated: 2026-06-24
+updated: 2026-07-13
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -10,6 +10,7 @@ sources:
   - Knowledge/concepts/material-loop-and-glass-interfaces.md
   - Knowledge/concepts/interaction-mode-routing.md
   - Knowledge/concepts/ai-native-problem-framing-framework.md
+  - Knowledge/concepts/taste-requires-contact.md
   - https://youtu.be/az6OEZV8iHw
 confidence: medium
 ---
@@ -19,6 +20,8 @@ confidence: medium
 **Material Loop and Glass Interfaces** is the agency/authorship lens for AI-native product surfaces.
 
 The **Material Loop** is the cycle where a person turns an idea into a visible artifact, inspects what feels wrong, changes it, and develops judgment through contact with the work.
+
+[[taste-requires-contact|Taste Requires Contact]] adds the input side: judgment also depends on firsthand contact with the work a person consumes. Reference gathering is not enough; the person must use, notice, name, imitate, compare, curate, and sometimes depart from what they encountered.
 
 A **Glass Interface** keeps AI-shaped work inspectable, steerable, interruptible, and traceable. It exposes enough plan, state, sources, tools, diffs, commands, constraints, and intermediate artifacts for the user to stay close to the material without micromanaging every step.
 

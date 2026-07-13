@@ -1,7 +1,7 @@
 ---
 title: Interaction Mode Routing
 created: 2026-06-23
-updated: 2026-06-27
+updated: 2026-07-13
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -9,6 +9,7 @@ tags: [ai-native-product-surfaces, ai-native, product-framing, interaction-desig
 sources:
   - Knowledge/concepts/interaction-mode-routing.md
   - Knowledge/concepts/material-loop-and-glass-interfaces.md
+  - Knowledge/concepts/taste-requires-contact.md
   - Knowledge/concepts/ai-native-problem-framing-framework.md
   - Projects/I-know-kungfu/Index.md
   - Projects/Hermes Mission Control/Index.md
@@ -40,6 +41,8 @@ Use [[ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] 
 - stable truth for PRDs, project hubs, GitHub issues, handoffs, skills, MOCs, `llms.txt`, `index.json`, raw Markdown, and MCP entrypoints.
 
 Use [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] as the material closeness test: if the work carries taste, trust, scope, provenance, architecture, or release responsibility, keep it visible and steerable instead of collapsing it into black-box output.
+
+Use [[taste-requires-contact|Taste Requires Contact]] as the learning-friction test: when firsthand use, diagnosis, imitation, preference formation, or final selection is how the user develops judgment, assist that act without delegating it away.
 
 ## I-know-kungfu refactor
 

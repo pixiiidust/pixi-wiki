@@ -19,7 +19,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
 
 ### Not Covered
 
@@ -27,7 +27,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-13 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+2026-07-13 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
 
 ## Canonical Source Roots
 
@@ -42,6 +42,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/j-space-global-workspace.md`
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
+- `Knowledge/concepts/taste-requires-contact.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
@@ -51,6 +52,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
 - `Knowledge/raw/articles/nvidia-vss-docs.md`
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
+- `Knowledge/raw/transcripts/if-you-want-good-taste-you-have-to-eat.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
 - `Knowledge/concepts/side-door-opportunity-search.md`

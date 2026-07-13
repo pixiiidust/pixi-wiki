@@ -37,7 +37,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
 
 ### Not Covered
 
@@ -45,7 +45,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-13 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Interaction Mode Routing, Material Loop / Glass Interfaces, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+2026-07-13 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
 
 ## Canonical Source Roots
 
@@ -60,6 +60,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/j-space-global-workspace.md`
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
+- `Knowledge/concepts/taste-requires-contact.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
@@ -69,6 +70,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
 - `Knowledge/raw/articles/nvidia-vss-docs.md`
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
+- `Knowledge/raw/transcripts/if-you-want-good-taste-you-have-to-eat.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
 - `Knowledge/concepts/side-door-opportunity-search.md`
@@ -805,7 +807,7 @@ Compiled from `Knowledge/concepts/ai-native-problem-framing-framework.md`.
 ---
 title: Interaction Mode Routing
 created: 2026-06-23
-updated: 2026-06-27
+updated: 2026-07-13
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -813,6 +815,7 @@ tags: [ai-native-product-surfaces, ai-native, product-framing, interaction-desig
 sources:
   - Knowledge/concepts/interaction-mode-routing.md
   - Knowledge/concepts/material-loop-and-glass-interfaces.md
+  - Knowledge/concepts/taste-requires-contact.md
   - Knowledge/concepts/ai-native-problem-framing-framework.md
   - Projects/I-know-kungfu/Index.md
   - Projects/Hermes Mission Control/Index.md
@@ -844,6 +847,8 @@ Use [[ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] 
 - stable truth for PRDs, project hubs, GitHub issues, handoffs, skills, MOCs, `llms.txt`, `index.json`, raw Markdown, and MCP entrypoints.
 
 Use [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] as the material closeness test: if the work carries taste, trust, scope, provenance, architecture, or release responsibility, keep it visible and steerable instead of collapsing it into black-box output.
+
+Use [[taste-requires-contact|Taste Requires Contact]] as the learning-friction test: when firsthand use, diagnosis, imitation, preference formation, or final selection is how the user develops judgment, assist that act without delegating it away.
 
 ## I-know-kungfu refactor
 
@@ -950,7 +955,7 @@ Keep the public claim honest:
 ---
 title: Material Loop and Glass Interfaces
 created: 2026-06-24
-updated: 2026-06-24
+updated: 2026-07-13
 type: concept
 status: compiled
 namespace: ai-native-product-surfaces
@@ -959,6 +964,7 @@ sources:
   - Knowledge/concepts/material-loop-and-glass-interfaces.md
   - Knowledge/concepts/interaction-mode-routing.md
   - Knowledge/concepts/ai-native-problem-framing-framework.md
+  - Knowledge/concepts/taste-requires-contact.md
   - https://youtu.be/az6OEZV8iHw
 confidence: medium
 ---
@@ -968,6 +974,8 @@ confidence: medium
 **Material Loop and Glass Interfaces** is the agency/authorship lens for AI-native product surfaces.
 
 The **Material Loop** is the cycle where a person turns an idea into a visible artifact, inspects what feels wrong, changes it, and develops judgment through contact with the work.
+
+[[taste-requires-contact|Taste Requires Contact]] adds the input side: judgment also depends on firsthand contact with the work a person consumes. Reference gathering is not enough; the person must use, notice, name, imitate, compare, curate, and sometimes depart from what they encountered.
 
 A **Glass Interface** keeps AI-shaped work inspectable, steerable, interruptible, and traceable. It exposes enough plan, state, sources, tools, diffs, commands, constraints, and intermediate artifacts for the user to stay close to the material without micromanaging every step.
 
@@ -1210,6 +1218,140 @@ Tailor these against a real job description. Do not treat them as default builds
 - [Interaction Mode Routing](interaction-mode-routing.md)
 - [Agent Output Decision Artifacts](agent-output-decision-artifacts.md)
 - [Product Management as System Steering](product-management-as-system-steering.md)
+
+
+<!-- ===== ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md ===== -->
+
+---
+title: "Taste Requires Contact: Building Judgment in the AI Era"
+created: 2026-07-13
+updated: 2026-07-13
+type: concept
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, ai, judgment, taste, curation, learning, interaction-design]
+sources:
+  - Knowledge/concepts/taste-requires-contact.md
+  - Knowledge/raw/transcripts/if-you-want-good-taste-you-have-to-eat.md
+  - Knowledge/concepts/material-loop-and-glass-interfaces.md
+resource: https://youtu.be/F4igbiu9eR8
+confidence: medium
+---
+
+# Taste Requires Contact: Building Judgment in the AI Era
+
+AI can make almost anything for you. It cannot decide what deserves to exist. That judgment begins long before the prompt, in the things you have used, heard, worn, tasted, copied, compared, and learned to name.
+
+Jason Liu captures this with a simple line: **if you want good taste, you have to eat**. A menu can show what a restaurant serves, but it cannot teach how the food tastes. In the same way, screenshots, moodboards, launch videos, summaries, and AI-generated references can point toward quality without giving someone the firsthand experience required to understand it.
+
+## Taste is a practice
+
+**Taste requires contact** means that judgment develops through repeated, attentive encounters with real work. It is not downloaded as a reference collection or produced by generating more options.
+
+The practice loop is:
+
+```text
+Contact → notice → name → imitate → compare → curate → risk
+```
+
+- **Contact:** use, hear, wear, eat, play, or handle the thing itself.
+- **Notice:** detect specific choices and reactions.
+- **Name:** gain language that turns impressions into distinctions.
+- **Imitate:** test whether you actually perceived the structure.
+- **Compare:** inspect gaps across the original, your attempt, and alternatives.
+- **Curate:** select, reject, combine, sequence, and protect.
+- **Risk:** depart from consensus with a choice that expresses conviction.
+
+## Taste has three jobs
+
+Liu's account combines:
+
+1. **Aesthetic judgment** — sensing what is beautiful, coherent, expressive, or well made.
+2. **Audience judgment** — anticipating what other people will understand or value.
+3. **Personal conviction** — choosing something that may not already be validated by consensus.
+
+Good taste is not simply predicting popularity. Audience awareness without conviction produces safe consensus. Conviction without communication can become private expression that reaches no one. The useful tension is understanding the audience without becoming ruled by it.
+
+## Vocabulary makes perception actionable
+
+Contact creates impressions. Language turns them into diagnoses.
+
+Art has composition, depth, form, colour, and line confidence. Engineering has abstraction, contracts, coupling, and architecture. Animation has timing, easing, and sound design. Cooking has acidity, salting, searing, and marination. Fashion has silhouette, proportion, and drape.
+
+Without vocabulary, judgment stops at “I don't like it.” With vocabulary, it can move:
+
+```text
+vague reaction → named distinction → testable change
+```
+
+Words do not replace experience. They make experience inspectable enough to compare, explain, and refine.
+
+## AI flips the traditional gap
+
+Beginners have often developed taste faster than execution. They could see that their work was wrong but could not yet repair it.
+
+AI can reverse that relationship. It produces polished artifacts before the user has developed the judgment required to evaluate them. Output leaps ahead while perception, vocabulary, and standards remain unchanged.
+
+Experienced practitioners often gain more from AI because they bring references, causal models, diagnostic language, failure patterns, and the ability to distinguish a plausible result from a fitting one. Their advantage is not merely prompting. It is judgment.
+
+## Preserve the friction that teaches
+
+Not all friction is valuable. Repetitive formatting, boilerplate, file transfer, and deterministic checks are good automation targets.
+
+Other activities may carry the learning:
+
+- firsthand observation;
+- careful comparison;
+- attempted imitation;
+- diagnosis and error correction;
+- preference formation;
+- final selection.
+
+Liu's music-transcription example makes the distinction clear. The value is not possessing completed notation. The value is listening closely enough to produce it, making an attempt, detecting the mismatch, and correcting it.
+
+Before automating a learning task, ask:
+
+> **Is performing this activity how the person develops the judgment they are trying to acquire?**
+
+If yes, assist the loop without replacing its learning-bearing centre.
+
+## Copying and wandering
+
+Copying is active perception. A failed imitation reveals the gap between what someone thought they noticed and what the original actually does. Once the structure is understood, variation can become deliberate rather than accidental.
+
+Wandering expands the reference field. Browsing a book, trying clothes you will not buy, testing unfamiliar software, listening outside a familiar genre, or following a strange reference creates encounters that destination-only systems filter out.
+
+Efficiency is useful when the destination is known. It is a poor default when the purpose is discovery.
+
+## Product and agent implication
+
+[[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] explains how people develop judgment by staying close to shapeable work. Taste Requires Contact adds the input side: people must also stay close to the material they consume.
+
+Together they form four loops:
+
+1. **Reference loop:** encounter, notice, compare, and name.
+2. **Making loop:** imitate, generate, inspect, and revise.
+3. **Curation loop:** select, reject, sequence, and protect.
+4. **Conviction loop:** depart from consensus and take a creative risk.
+
+[[interaction-mode-routing|Interaction Mode Routing]] should preserve firsthand use, diagnosis, preference formation, and final selection when those activities carry the learning. Agents can retrieve comparisons, widen the reference set, handle repetitive execution, and expose alternatives. They should not silently replace the perceptual act the user needs to practise.
+
+## Guardrails
+
+- Taste is domain-specific and socially situated, not a universal score.
+- Vocabulary sharpens attention, but jargon without contact becomes performance.
+- Friction is not virtuous by itself; preserve only the friction that carries learning or responsibility.
+- Audience judgment and personal conviction should constrain each other, not erase each other.
+
+## Related pages
+
+- [[material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
+- [[interaction-mode-routing|Interaction Mode Routing]]
+- [[../../../agent-workflows/wiki/concepts/creative-ideation-routing|Creative Ideation Routing]]
+
+## Source
+
+- Jason Liu, [“if you want good taste, you have to eat”](https://youtu.be/F4igbiu9eR8), YouTube. This page synthesizes a user-supplied transcript as a practitioner framework; it does not reproduce the transcript publicly.
 
 
 <!-- ===== ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md ===== -->
@@ -1952,6 +2094,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
+- [[concepts/taste-requires-contact|Taste Requires Contact]] — Judgment-building lens for firsthand experience, precise vocabulary, active imitation, comparison, curation, and creative risk in an AI-abundant world.
 - [[concepts/product-management-as-system-steering|Product Management as System Steering]] — PM operating lens for timely decisions, gapless ownership, adaptive influence, scope-first tradeoffs, and ecosystem incentive alignment.
 - [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
 - [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped evidence; for gameplay, visual-only is low-trust and structured signals matter.
@@ -1988,6 +2131,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/j-space-global-workspace.md`
 - `Knowledge/concepts/material-loop-and-glass-interfaces.md`
+- `Knowledge/concepts/taste-requires-contact.md`
 - `Knowledge/concepts/world-model-control-surfaces.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
@@ -1997,6 +2141,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
 - `Knowledge/raw/articles/nvidia-vss-docs.md`
 - `Knowledge/raw/transcripts/yann-lecun-world-models-next-ai-revolution.md`
+- `Knowledge/raw/transcripts/if-you-want-good-taste-you-have-to-eat.md`
 - `Knowledge/concepts/verb-first-product-positioning.md`
 - `Knowledge/concepts/find-the-lock-problem-first.md`
 - `Knowledge/concepts/side-door-opportunity-search.md`
@@ -2017,6 +2162,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-13 create/update | Taste Requires Contact
+
+- Added `wiki/concepts/taste-requires-contact.md` from the canonical `Knowledge/concepts/taste-requires-contact.md` article and Jason Liu's “if you want good taste, you have to eat.”
+- Preserved the contact → notice → name → imitate → compare → curate → risk loop and the distinction between wasteful friction and learning-bearing friction.
+- Cross-linked Material Loop and Interaction Mode Routing so AI can remove boring execution without replacing the perception tasks that develop judgment.
+- Kept the supplied transcript private; the namespace contains a public-safe synthesis and source attribution only.
 
 ## 2026-07-13 create/update | Side Doors: Make Useful Work Legible
 
