@@ -1,6 +1,6 @@
 # AI-Native Product Surfaces Knowledge Base
 
-> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-ku
+> AI-native product/application surfaces, problem framing, product demos, technical explanation and case-study storytelling, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity an
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
@@ -10,6 +10,7 @@
 - [Interaction Mode Routing](/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html))
 - [J-Space as Global Workspace](/raw/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md.html))
 - [Material Loop and Glass Interfaces](/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html))
+- [Misconception-First Explanation Loop](/raw/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md.html))
 - [Product Management as System Steering](/raw/ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md.html))
 - [Role-Aligned Deployed Project Proof](/raw/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md.html))
 - [Side-Quest Validation Loop](/raw/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md.html))

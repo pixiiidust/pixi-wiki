@@ -1,7 +1,43 @@
 {
   "generated_from": "frontmatter updated fields",
-  "count": 627,
+  "count": 628,
   "entries": [
+    {
+      "title": "AI-Native Product Surfaces",
+      "path": "README.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-14",
+      "raw": "/raw/ai-native-product-surfaces/README.md",
+      "html": "/wiki/ai-native-product-surfaces/README.md.html"
+    },
+    {
+      "title": "AI-Native Product Surfaces \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-14",
+      "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
+    },
+    {
+      "title": "AI-Native Product Surfaces \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-14",
+      "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
+    },
+    {
+      "title": "Misconception-First Explanation Loop",
+      "path": "wiki/concepts/misconception-first-explanation-loop.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-14",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md.html"
+    },
     {
       "title": "Agent Workflows \u2014 Activity Log",
       "path": "wiki/log.md",
@@ -19,33 +55,6 @@
       "updated": "2026-07-13",
       "raw": "/raw/agent-workflows/wiki/concepts/reader-centered-outreach-asks.md",
       "html": "/wiki/agent-workflows/wiki/concepts/reader-centered-outreach-asks.md.html"
-    },
-    {
-      "title": "AI-Native Product Surfaces",
-      "path": "README.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-13",
-      "raw": "/raw/ai-native-product-surfaces/README.md",
-      "html": "/wiki/ai-native-product-surfaces/README.md.html"
-    },
-    {
-      "title": "AI-Native Product Surfaces \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-13",
-      "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
-      "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
-    },
-    {
-      "title": "AI-Native Product Surfaces \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-13",
-      "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
-      "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
     },
     {
       "title": "Interaction Mode Routing",
