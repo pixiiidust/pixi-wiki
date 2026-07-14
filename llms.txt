@@ -92,8 +92,8 @@
 
 ## AI-Native Product Surfaces
 
-> AI-native product/application surfaces, problem framing, product demos, technical explanation and case-study storytelling, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity an
-> Current as of: 2026-07-14 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, the illustrated Misconception-First Explanation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-ku
+> Current as of: 2026-07-14 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video. Cross-format attention and distribution guidance now lives in `content-distribution`.
 > Agent access: [/wiki/ai-native-product-surfaces/llms.txt](/wiki/ai-native-product-surfaces/llms.txt) [/wiki/ai-native-product-surfaces/llms-full.txt](/wiki/ai-native-product-surfaces/llms-full.txt) [/wiki/ai-native-product-surfaces/index.json](/wiki/ai-native-product-surfaces/index.json)
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
@@ -104,7 +104,6 @@
 - [Interaction Mode Routing](/raw/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/interaction-mode-routing.md.html))
 - [J-Space as Global Workspace](/raw/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/j-space-global-workspace.md.html))
 - [Material Loop and Glass Interfaces](/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html))
-- [Misconception-First Explanation Loop](/raw/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md.html))
 - [Product Management as System Steering](/raw/ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md.html))
 - [Role-Aligned Deployed Project Proof](/raw/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md.html))
 - [Side-Quest Validation Loop](/raw/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md.html))
@@ -121,6 +120,18 @@
 - [AI-Native Product Surfaces — Master Index](/raw/ai-native-product-surfaces/wiki/index.md) ([html](/wiki/ai-native-product-surfaces/wiki/index.md.html))
 - [AI-Native Product Surfaces — Activity Log](/raw/ai-native-product-surfaces/wiki/log.md) ([html](/wiki/ai-native-product-surfaces/wiki/log.md.html))
 - [Side Doors: Make Useful Work Legible](/raw/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md) ([html](/wiki/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md.html))
+
+## Content Distribution Systems
+
+> Long-form attention architecture, honest packaging, narrative/explanation structure, audience retention, shareable payoff design, cross-format translation across video, Substack/blog essays, X articles/threads, and measurement boundaries between entry, retention, redistribution, understanding, and t
+> Current as of: 2026-07-14 — active namespace. Starts with the illustrated **Attention Architecture for Long-Form Content** guide, migrated out of AI-Native Product Surfaces and generalized from a Veritasium video case into a cross-format editorial system.
+> Agent access: [/wiki/content-distribution/llms.txt](/wiki/content-distribution/llms.txt) [/wiki/content-distribution/llms-full.txt](/wiki/content-distribution/llms-full.txt) [/wiki/content-distribution/index.json](/wiki/content-distribution/index.json)
+
+- [Content Distribution Namespace Instructions](/raw/content-distribution/CLAUDE.md) ([html](/wiki/content-distribution/CLAUDE.md.html))
+- [Content Distribution Systems](/raw/content-distribution/README.md) ([html](/wiki/content-distribution/README.md.html))
+- [Content Distribution Systems — Master Index](/raw/content-distribution/wiki/index.md) ([html](/wiki/content-distribution/wiki/index.md.html))
+- [Content Distribution Systems — Activity Log](/raw/content-distribution/wiki/log.md) ([html](/wiki/content-distribution/wiki/log.md.html))
+- [Attention Architecture for Long-Form Content](/raw/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md) ([html](/wiki/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md.html))
 
 ## RL Sim Labs
 

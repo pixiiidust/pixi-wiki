@@ -538,21 +538,21 @@
     {
       "slug": "ai-native-product-surfaces",
       "title": "AI-Native Product Surfaces",
-      "description": "AI-native product/application surfaces, problem framing, product demos, technical explanation and case-study storytelling, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity an",
+      "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-ku",
       "tags": [
         "product"
       ],
       "category": "product",
       "scope": {
-        "covers": "AI-native product/application surfaces, problem framing, product demos, technical explanation and case-study storytelling, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.",
+        "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.",
         "notCovered": "Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.",
-        "currentAs": "2026-07-14 \u2014 active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, the illustrated Misconception-First Explanation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video."
+        "currentAs": "2026-07-14 \u2014 active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video. Cross-format attention and distribution guidance now lives in `content-distribution`."
       },
       "lastUpdated": "2026-07-14",
-      "documentCount": 25,
+      "documentCount": 24,
       "counts": {
         "wiki": 1,
-        "concepts": 13,
+        "concepts": 12,
         "entities": 6,
         "summaries": 0,
         "syntheses": 1
@@ -617,13 +617,6 @@
           "path": "wiki/concepts/material-loop-and-glass-interfaces.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html",
-          "category": "concepts"
-        },
-        {
-          "title": "Misconception-First Explanation Loop",
-          "path": "wiki/concepts/misconception-first-explanation-loop.md",
-          "raw": "/raw/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md",
-          "html": "/wiki/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md.html",
           "category": "concepts"
         },
         {
@@ -736,6 +729,71 @@
           "path": "wiki/syntheses/side-doors-make-useful-work-legible.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md.html",
+          "category": "syntheses"
+        }
+      ]
+    },
+    {
+      "slug": "content-distribution",
+      "title": "Content Distribution Systems",
+      "description": "Long-form attention architecture, honest packaging, narrative/explanation structure, audience retention, shareable payoff design, cross-format translation across video, Substack/blog essays, X articles/threads, and measurement boundaries between entry, retention, redistribution, understanding, and t",
+      "tags": [
+        "knowledge-systems"
+      ],
+      "category": "knowledge-systems",
+      "scope": {
+        "covers": "Long-form attention architecture, honest packaging, narrative/explanation structure, audience retention, shareable payoff design, cross-format translation across video, Substack/blog essays, X articles/threads, and measurement boundaries between entry, retention, redistribution, understanding, and trust.",
+        "notCovered": "Guaranteed virality formulas; platform-specific growth hacks without evidence; generic social calendars; paid-media operations; SEO catalogs; short-form trend imitation; manipulative clickbait or cliffhanger systems that sacrifice truth and payoff.",
+        "currentAs": "2026-07-14 \u2014 active namespace. Starts with the illustrated **Attention Architecture for Long-Form Content** guide, migrated out of AI-Native Product Surfaces and generalized from a Veritasium video case into a cross-format editorial system."
+      },
+      "lastUpdated": "2026-07-14",
+      "documentCount": 5,
+      "counts": {
+        "wiki": 1,
+        "concepts": 0,
+        "entities": 0,
+        "summaries": 0,
+        "syntheses": 1
+      },
+      "llms_txt": "/wiki/content-distribution/llms.txt",
+      "llms_full_txt": "/wiki/content-distribution/llms-full.txt",
+      "index_json": "/wiki/content-distribution/index.json",
+      "raw_base": "/raw/content-distribution/",
+      "html_base": "/wiki/content-distribution/",
+      "documents": [
+        {
+          "title": "Content Distribution Namespace Instructions",
+          "path": "CLAUDE.md",
+          "raw": "/raw/content-distribution/CLAUDE.md",
+          "html": "/wiki/content-distribution/CLAUDE.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Content Distribution Systems",
+          "path": "README.md",
+          "raw": "/raw/content-distribution/README.md",
+          "html": "/wiki/content-distribution/README.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Content Distribution Systems \u2014 Master Index",
+          "path": "wiki/index.md",
+          "raw": "/raw/content-distribution/wiki/index.md",
+          "html": "/wiki/content-distribution/wiki/index.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Content Distribution Systems \u2014 Activity Log",
+          "path": "wiki/log.md",
+          "raw": "/raw/content-distribution/wiki/log.md",
+          "html": "/wiki/content-distribution/wiki/log.md.html",
+          "category": "wiki"
+        },
+        {
+          "title": "Attention Architecture for Long-Form Content",
+          "path": "wiki/syntheses/attention-architecture-for-long-form-content.md",
+          "raw": "/raw/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md",
+          "html": "/wiki/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md.html",
           "category": "syntheses"
         }
       ]

@@ -20,7 +20,6 @@ namespace: ai-native-product-surfaces
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
-- [[concepts/misconception-first-explanation-loop|Misconception-First Explanation Loop]] — Illustrated technical-explanation and product-demo pattern: reveal a real prior-model gap, ask before explaining, then alternate concrete progress with technical depth.
 - [[concepts/taste-requires-contact|Taste Requires Contact]] — Judgment-building lens for firsthand experience, precise vocabulary, active imitation, comparison, curation, and creative risk; paired with Side Doors as the public-legibility layer.
 - [[concepts/product-management-as-system-steering|Product Management as System Steering]] — PM operating lens for timely decisions, gapless ownership, adaptive influence, scope-first tradeoffs, and ecosystem incentive alignment.
 - [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
@@ -65,9 +64,6 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
 - `Knowledge/concepts/product-management-as-system-steering.md`
 - `Knowledge/concepts/side-quest-validation-loop.md`
-- `Knowledge/concepts/misconception-first-explanation-loop.md`
-- `Knowledge/raw/transcripts/veritasium-what-you-dont-see.md`
-- `Knowledge/raw/assets/misconception-first-explanation-loop/provenance.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`

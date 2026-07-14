@@ -39,6 +39,7 @@ DEFAULT_SEED_SLUGS = [
     "eval-trace",
     "hermes-agent",
     "ai-native-product-surfaces",
+    "content-distribution",
     "rl-sim-labs",
     "curated-tuning-datasets",
     "local-ai-infrastructure",
@@ -1605,8 +1606,8 @@ def build(
         {
             "key": "knowledge-systems",
             "title": "Knowledge Systems",
-            "description": "The wiki/compiler layer, local retrieval, infrastructure, and curated source/data readiness.",
-            "slugs": {"pixi-vault", "local-ai-infrastructure", "curated-tuning-datasets"},
+            "description": "The wiki/compiler layer, local retrieval, infrastructure, curated source/data readiness, and systems for distributing useful knowledge.",
+            "slugs": {"pixi-vault", "local-ai-infrastructure", "curated-tuning-datasets", "content-distribution"},
         },
         {
             "key": "labs-products",

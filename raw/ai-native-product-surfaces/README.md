@@ -19,7 +19,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, technical explanation and case-study storytelling, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
 
 ### Not Covered
 
@@ -27,7 +27,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-14 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, the illustrated Misconception-First Explanation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+2026-07-14 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video. Cross-format attention and distribution guidance now lives in `content-distribution`.
 
 ## Canonical Source Roots
 
@@ -48,9 +48,6 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
 - `Knowledge/concepts/product-management-as-system-steering.md`
 - `Knowledge/concepts/side-quest-validation-loop.md`
-- `Knowledge/concepts/misconception-first-explanation-loop.md`
-- `Knowledge/raw/transcripts/veritasium-what-you-dont-see.md`
-- `Knowledge/raw/assets/misconception-first-explanation-loop/provenance.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -66,6 +63,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 - [[../agent-workflows/README|agent-workflows]]
 - [[../eval-trace/README|eval-trace]]
+- [[../content-distribution/README|content-distribution]]
 
 ## Public Output Contract
 

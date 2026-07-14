@@ -80,6 +80,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 "eval-trace",
                 "hermes-agent",
                 "ai-native-product-surfaces",
+                "content-distribution",
                 "rl-sim-labs",
                 "curated-tuning-datasets",
                 "local-ai-infrastructure",
@@ -187,6 +188,44 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         html = (ROOT / "wiki" / "software-architecture-metapatterns" / "README.md.html").read_text(encoding="utf-8")
         self.assertIn("Knowledge Systems", html)
         self.assertIn("Creative Commons", html)
+
+    def test_content_distribution_namespace_exposes_long_form_attention_guide(self) -> None:
+        registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}
+        wiki = registry["content-distribution"]
+        self.assertEqual(wiki["title"], "Content Distribution Systems")
+        self.assertEqual(wiki["category"], "knowledge-systems")
+        self.assertEqual(wiki["documentCount"], 5)
+        doc_paths = {doc["path"] for doc in wiki["documents"]}
+        self.assertIn("wiki/syntheses/attention-architecture-for-long-form-content.md", doc_paths)
+
+        raw = (ROOT / "raw" / "content-distribution" / "wiki" / "syntheses" / "attention-architecture-for-long-form-content.md").read_text(encoding="utf-8")
+        self.assertIn("Virality is not a structure you can guarantee", raw)
+        self.assertIn("### Long-form video", raw)
+        self.assertIn("### Substack or blog essay", raw)
+        self.assertIn("### X article or thread", raw)
+        self.assertNotIn("namespace: ai-native-product-surfaces", raw)
+
+        asset_root = ROOT / "wiki" / "content-distribution" / "assets" / "attention-architecture-for-long-form-content"
+        for name in [
+            "01-misconceptions-formula.png",
+            "02-question-to-explanation.png",
+            "03-a-plot-b-plot-timeline.png",
+            "04-framework-summary.png",
+        ]:
+            with self.subTest(asset=name):
+                self.assertTrue((asset_root / name).is_file())
+
+        html = (ROOT / "wiki" / "content-distribution" / "wiki" / "syntheses" / "attention-architecture-for-long-form-content.md.html").read_text(encoding="utf-8")
+        self.assertIn('<img src="/pixi-wiki/wiki/content-distribution/assets/attention-architecture-for-long-form-content/01-misconceptions-formula.png"', html)
+        self.assertIn("Measure the gates separately", html)
+        self.assertNotIn("/wiki/ai-native-product-surfaces/assets/misconception-first-explanation-loop/", html)
+
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<section class="wiki-group" id="knowledge-systems">', homepage)
+        self.assertIn('<article class="card" id="content-distribution">', homepage)
+
+        self.assertFalse((ROOT / "raw" / "ai-native-product-surfaces" / "wiki" / "concepts" / "misconception-first-explanation-loop.md").exists())
+        self.assertFalse((ROOT / "wiki" / "ai-native-product-surfaces" / "wiki" / "concepts" / "misconception-first-explanation-loop.md.html").exists())
 
     def test_software_architecture_metapatterns_diagrams_are_local_assets(self) -> None:
         raw = (ROOT / "raw" / "software-architecture-metapatterns" / "wiki" / "concepts" / "source" / "basic-metapatterns" / "basic-metapatterns.md").read_text(encoding="utf-8")

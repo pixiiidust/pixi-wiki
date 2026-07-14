@@ -4281,7 +4281,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, technical explanation and case-study storytelling, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
 
 ### Not Covered
 
@@ -4289,7 +4289,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-14 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, the illustrated Misconception-First Explanation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+2026-07-14 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video. Cross-format attention and distribution guidance now lives in `content-distribution`.
 
 ## Canonical Source Roots
 
@@ -4310,9 +4310,6 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
 - `Knowledge/concepts/product-management-as-system-steering.md`
 - `Knowledge/concepts/side-quest-validation-loop.md`
-- `Knowledge/concepts/misconception-first-explanation-loop.md`
-- `Knowledge/raw/transcripts/veritasium-what-you-dont-see.md`
-- `Knowledge/raw/assets/misconception-first-explanation-loop/provenance.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -4328,6 +4325,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 - [[../agent-workflows/README|agent-workflows]]
 - [[../eval-trace/README|eval-trace]]
+- [[../content-distribution/README|content-distribution]]
 
 ## Public Output Contract
 
@@ -5280,116 +5278,6 @@ Hermes review surfaces should show enough plan, diff, evidence, risk, and next-a
 ## Source
 
 Compiled from `Knowledge/concepts/material-loop-and-glass-interfaces.md`, inspired by Ryo Lu's "Closer to the Material" talk for Cursor Compile 26.
-
-
-<!-- ===== ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md ===== -->
-
----
-title: Misconception-First Explanation Loop
-created: 2026-07-14
-updated: 2026-07-14
-type: concept
-status: compiled
-namespace: ai-native-product-surfaces
-tags: [ai-native-product-surfaces, explanation, storytelling, content-design, product-demos, learning]
-sources:
-  - Knowledge/concepts/misconception-first-explanation-loop.md
-  - Knowledge/raw/transcripts/veritasium-what-you-dont-see.md
-resource: https://www.youtube.com/watch?v=QHhJ8_TJeNo
-confidence: medium
----
-
-# Misconception-First Explanation Loop
-
-Technical subjects become easier to enter when an explanation begins with the audience's current model rather than the expert's final answer.
-
-The reusable sequence is:
-
-```text
-Misconception → question → prediction → explanation → revised model
-```
-
-## Why the opening works
-
-A familiar topic can create false fluency: the audience assumes it already understands and stops testing its model. A precise contradiction reveals the gap.
-
-![Derek Muller speaking onstage beneath a mnemonic formula with misconceptions highlighted](/pixi-wiki/wiki/ai-native-product-surfaces/assets/misconception-first-explanation-loop/01-misconceptions-formula.png)
-
-*Figure 1. The source video's mnemonic highlights misconceptions as the opening move. The formula is a storytelling summary, not a validated quantitative model.*
-
-Good openings do not merely announce a topic. They surface a testable mismatch:
-
-- expected behavior versus observed behavior;
-- common explanation versus actual mechanism;
-- familiar object versus hidden rule;
-- confident prediction versus surprising result.
-
-Then ask before explaining. A prediction or question gives the next information a job.
-
-![Diagram showing a shade-ball question leading into explanatory frames about water coverage and temperature](/pixi-wiki/wiki/ai-native-product-surfaces/assets/misconception-first-explanation-loop/02-question-to-explanation.png)
-
-*Figure 2. The question creates a gap; the following visual sequence earns the explanation by resolving that specific uncertainty.*
-
-## Interleave the concrete and technical threads
-
-For longer pieces, interleave two connected threads:
-
-- **A plot:** a concrete experiment, journey, user task, demonstration, or mystery;
-- **B plot:** the mechanism, evidence, math, history, or technical explanation.
-
-When the A plot creates a real “why,” switch to the B plot. When the B plot becomes dense, return to the A plot and show what changed.
-
-![Timeline alternating reservoir scenes on the A-plot track and interviews or explanations on the B-plot track](/pixi-wiki/wiki/ai-native-product-surfaces/assets/misconception-first-explanation-loop/03-a-plot-b-plot-timeline.png)
-
-*Figure 3. The source video maps the reservoir investigation and the explanatory material onto alternating A-plot and B-plot tracks.*
-
-## Five-verb formula
-
-> Contradict. Ask. Demonstrate. Explain. Interleave.
-
-![Summary frame listing misconceptions question-explanation and A plot B plot beneath the source video formula](/pixi-wiki/wiki/ai-native-product-surfaces/assets/misconception-first-explanation-loop/04-framework-summary.png)
-
-*Figure 4. One-frame summary of the three moves: surface misconceptions, move from question to explanation, and interleave A and B plots.*
-
-## Product-demo and technical-case-study use
-
-1. Name the user's plausible prior belief or failed default.
-2. Show one concrete observation that the belief cannot explain.
-3. Ask the audience to predict what happens next.
-4. Follow the visible user/task thread as the A plot.
-5. Reveal the product or technical mechanism as the B plot.
-6. Switch only when one thread creates a question for the other.
-7. End with the revised model and evidence that the promise was paid off.
-
-This can make product demos and technical case studies more watchable without turning them into vague marketing. [[agent-output-decision-artifacts|Agent Output Decision Artifacts]] can borrow the contradiction-and-question opening while keeping the recommendation and evidence concise. [[taste-requires-contact|Taste Requires Contact]] adds a guardrail: test the opening against real audience language and experience rather than inventing a convenient misconception.
-
-## Packaging without clickbait
-
-Titles and thumbnails can frame the contradiction or unresolved question instead of only naming the topic. The promise must be specific, honest, and resolved in the piece. A click earned through a false premise is not a successful explanation.
-
-## Guardrails
-
-- Surprise is not enough; target a real prior model.
-- Confusion should diagnose a gap, not become the destination.
-- Open loops need timely, evidence-backed payoffs.
-- A/B switching should deepen one argument, not add unrelated novelty.
-- Watch time is not comprehension. Verify learning or action separately.
-- Use this for narrative explanations, demos, and case studies. Keep indexes, `llms.txt`, runbooks, and reference documentation direct and retrieval-first.
-
-## Evidence boundary
-
-The source video analyzes recurring Veritasium techniques and quotes Derek Muller describing a classroom experiment in which a misconception-focused video reportedly improved scores more than a clear conventional explainer. That supports this as a useful design hypothesis. The larger claim that the formula caused Veritasium's view counts is retrospective, not controlled causal evidence.
-
-## Related pages
-
-- [[agent-output-decision-artifacts|Agent Output Decision Artifacts]]
-- [[taste-requires-contact|Taste Requires Contact]]
-- [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]]
-
-## Source
-
-- The Internet Stamp, [“Veritasium - What you don't see”](https://www.youtube.com/watch?v=QHhJ8_TJeNo), YouTube. Synthesized from a user-supplied transcript; the full transcript remains private and is not reproduced in this public namespace.
-- Figures 1–4 are user-supplied frames from the source video, included for commentary and explanation of the depicted framework. Rights remain with the original video and image rights holders.
 
 
 <!-- ===== ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md ===== -->
@@ -6543,7 +6431,6 @@ namespace: ai-native-product-surfaces
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
-- [[concepts/misconception-first-explanation-loop|Misconception-First Explanation Loop]] — Illustrated technical-explanation and product-demo pattern: reveal a real prior-model gap, ask before explaining, then alternate concrete progress with technical depth.
 - [[concepts/taste-requires-contact|Taste Requires Contact]] — Judgment-building lens for firsthand experience, precise vocabulary, active imitation, comparison, curation, and creative risk; paired with Side Doors as the public-legibility layer.
 - [[concepts/product-management-as-system-steering|Product Management as System Steering]] — PM operating lens for timely decisions, gapless ownership, adaptive influence, scope-first tradeoffs, and ecosystem incentive alignment.
 - [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
@@ -6588,9 +6475,6 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/role-aligned-deployed-project-proof.md`
 - `Knowledge/concepts/product-management-as-system-steering.md`
 - `Knowledge/concepts/side-quest-validation-loop.md`
-- `Knowledge/concepts/misconception-first-explanation-loop.md`
-- `Knowledge/raw/transcripts/veritasium-what-you-dont-see.md`
-- `Knowledge/raw/assets/misconception-first-explanation-loop/provenance.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -6617,6 +6501,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-14 migrate | Move long-form attention guide to content-distribution
+
+- Removed the earlier misconception-first article and its four public figure assets from this product namespace.
+- The rewritten cross-format guide now lives at `content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md`.
+- Kept product demos in scope here while routing general video, essay, Substack, and X attention/distribution systems to the dedicated namespace.
 
 ## 2026-07-14 update | Add source-video framework figures
 
@@ -7081,6 +6971,393 @@ Before using a side door, ask:
 - Ethan Smith, ["A Traveler's Guide to the Latent Space"](https://sweet-hall-e72.notion.site/A-Traveler-s-Guide-to-the-Latent-Space-85efba7e5e6a40e5bd3cae980f30235f).
 - Framework and story screenshots supplied by Jamie from Maja's article for commentary and analysis. Copyright remains with the respective creators and publications.
 - Shopify transcript supplied by Jamie from the public internship video. Only short excerpts are reproduced here.
+
+
+<!-- ===== content-distribution/CLAUDE.md ===== -->
+
+# Content Distribution Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/content-distribution/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat `Knowledge/` and preserved raw sources as canonical authoring evidence.
+- Keep the namespace about content structure, packaging, retention, redistribution, and measurement across formats.
+- Do not claim that a framework guarantees virality or platform recommendation.
+- Distinguish attention metrics from comprehension, accuracy, and trust.
+- Translate patterns by medium; do not mechanically apply video pacing to essays or threads.
+- Preserve source and image-rights boundaries.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added or materially changed.
+
+
+<!-- ===== content-distribution/README.md ===== -->
+
+---
+title: Content Distribution Systems
+created: 2026-07-14
+updated: 2026-07-14
+type: namespace-overview
+status: active
+category: knowledge-systems
+namespace: content-distribution
+confidence: medium
+---
+
+# Content Distribution Systems
+
+> Cross-format systems for structuring, packaging, measuring, and improving the distribution conditions of useful long-form content.
+
+## Scope
+
+### Covers
+
+Long-form attention architecture, honest packaging, narrative/explanation structure, audience retention, shareable payoff design, cross-format translation across video, Substack/blog essays, X articles/threads, and measurement boundaries between entry, retention, redistribution, understanding, and trust.
+
+### Not Covered
+
+Guaranteed virality formulas; platform-specific growth hacks without evidence; generic social calendars; paid-media operations; SEO catalogs; short-form trend imitation; manipulative clickbait or cliffhanger systems that sacrifice truth and payoff.
+
+### Current As
+
+2026-07-14 — active namespace. Starts with the illustrated **Attention Architecture for Long-Form Content** guide, migrated out of AI-Native Product Surfaces and generalized from a Veritasium video case into a cross-format editorial system.
+
+## Canonical Source Roots
+
+- `Knowledge/concepts/attention-architecture-for-long-form-content.md`
+- `Knowledge/raw/transcripts/veritasium-what-you-dont-see.md`
+- `Knowledge/raw/assets/misconception-first-explanation-loop/provenance.md`
+- `Knowledge/raw/assets/misconception-first-explanation-loop/migration-2026-07-14.md`
+
+## Crosslinks
+
+- [[../ai-native-product-surfaces/README|ai-native-product-surfaces]]
+- [[../eval-trace/README|eval-trace]]
+
+## Public Output Contract
+
+When published to `pixi-wiki`, this namespace should expose:
+
+```text
+/raw/content-distribution/README.md
+/raw/content-distribution/wiki/index.md
+/wiki/content-distribution/README.md
+/wiki/content-distribution/wiki/index.md
+/wiki/content-distribution/llms.txt
+```
+
+## Maintenance
+
+- Edit canonical source notes first.
+- Keep claims about virality, algorithms, and platform causality evidence-calibrated.
+- Distinguish entry, retention, redistribution, understanding, and trust metrics.
+- Translate structure by medium rather than copying video tactics into prose.
+- Use `Wiki Compiler Maps/Namespace Wiki Compiler Map.md` for routing decisions.
+
+
+<!-- ===== content-distribution/wiki/index.md ===== -->
+
+---
+title: Content Distribution Systems — Master Index
+created: 2026-07-14
+updated: 2026-07-14
+type: index
+status: active
+namespace: content-distribution
+---
+
+# Content Distribution Systems — Master Index
+
+> Cross-format guides for earning attention, sustaining it honestly, and creating useful payoffs that improve the conditions for distribution.
+
+## Concepts
+
+<!-- Add durable component concepts alphabetically as the namespace grows. -->
+
+## Entities
+
+<!-- Add relevant platforms, publications, or case-study entities only when independently useful. -->
+
+## Summaries
+
+<!-- Add source or measurement summaries alphabetically. -->
+
+## Syntheses
+
+- [[syntheses/attention-architecture-for-long-form-content|Attention Architecture for Long-Form Content]] — Illustrated guide to the entry, retention, and redistribution gates across long-form video, Substack/blog essays, and X articles or threads.
+
+## Source Roots
+
+- `Knowledge/concepts/attention-architecture-for-long-form-content.md`
+- `Knowledge/raw/transcripts/veritasium-what-you-dont-see.md`
+- `Knowledge/raw/assets/misconception-first-explanation-loop/provenance.md`
+- `Knowledge/raw/assets/misconception-first-explanation-loop/migration-2026-07-14.md`
+
+
+<!-- ===== content-distribution/wiki/log.md ===== -->
+
+---
+title: Content Distribution Systems — Activity Log
+created: 2026-07-14
+updated: 2026-07-14
+type: log
+status: active
+namespace: content-distribution
+---
+
+# Content Distribution Systems — Activity Log
+
+## 2026-07-14 create/migrate | Attention Architecture for Long-Form Content
+
+- Created the `content-distribution` namespace under the Knowledge Systems shelf.
+- Renamed and expanded the earlier misconception-first concept into a practical cross-format guide for entry, retention, redistribution, understanding, and trust.
+- Migrated the four supplied source-video figures from `ai-native-product-surfaces` and placed them beside the audience-model, question-first, A/B-plot, and compact-model sections.
+- Added dedicated playbooks for long-form video, Substack/blog essays, and X articles or threads.
+- Preserved the boundary that structure can improve distribution conditions but cannot guarantee virality.
+
+
+<!-- ===== content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md ===== -->
+
+---
+title: Attention Architecture for Long-Form Content
+created: 2026-07-14
+updated: 2026-07-14
+type: synthesis
+status: compiled
+namespace: content-distribution
+tags: [content-distribution, long-form, storytelling, attention, retention, packaging]
+sources:
+  - Knowledge/concepts/attention-architecture-for-long-form-content.md
+  - Knowledge/raw/transcripts/veritasium-what-you-dont-see.md
+  - Knowledge/raw/assets/misconception-first-explanation-loop/provenance.md
+resource: https://www.youtube.com/watch?v=QHhJ8_TJeNo
+confidence: medium
+---
+
+# Attention Architecture for Long-Form Content
+
+> A practical guide to earning the open, sustaining curiosity, and improving the conditions for distribution across video, essays, Substack posts, and X articles.
+
+Virality is not a structure you can guarantee. Demand, audience fit, timing, initial reach, platform dynamics, social transmission, and luck all matter. Structure controls a narrower but useful part of the system:
+
+> Earn the open. Create a real question. Alternate progress with explanation. Pay off the promise. Give the audience something worth carrying forward.
+
+## The three gates
+
+Long-form content has to clear three different gates:
+
+1. **Entry:** does the packaging create an honest reason to open?
+2. **Retention:** does each section create, advance, or resolve a question?
+3. **Redistribution:** was the payoff useful, surprising, credible, or identity-relevant enough to save, share, quote, discuss, or recommend?
+
+```text
+Promise → knowledge gap → question/prediction → evidence → payoff → next useful gap
+                           ↘ narrative A plot ↔ analytical B plot ↗
+```
+
+Clickbait clears entry and fails the payoff. Dense expertise may contain value but provide no reason to continue. Smooth storytelling can retain attention while leaving no durable idea worth sharing.
+
+## 1. Start with a real audience model
+
+A familiar topic can create false fluency: “I already know this,” so the audience stops testing its assumptions. A precise contradiction reveals the gap.
+
+![Derek Muller speaking onstage beneath a mnemonic formula with misconceptions highlighted](/pixi-wiki/wiki/content-distribution/assets/attention-architecture-for-long-form-content/01-misconceptions-formula.png)
+
+*Figure 1. The source video's mnemonic highlights misconceptions as the opening move. Treat the formula as a storytelling summary, not a validated quantitative model.*
+
+Good openings use a specific mismatch, not generic surprise:
+
+- state the likely prior belief;
+- show what that belief fails to predict;
+- make the gap observable;
+- avoid claiming “everyone is wrong” when the disagreement is trivial or invented.
+
+## 2. Package the gap honestly
+
+Titles, thumbnails, headlines, deks, and opening posts are entry surfaces. Their job is to expose the unresolved gap while promising a payoff the piece can deliver.
+
+```text
+Topic label:     Shade balls in reservoirs
+Knowledge gap:   Why are there millions of black balls on this lake?
+```
+
+The stronger frame tells the audience what it will get to resolve. It does not need to reveal the answer or manufacture a mystery.
+
+## 3. Ask before explaining
+
+Let the audience form a prediction before receiving the mechanism:
+
+```text
+Observation → prediction → question → evidence → revised model
+```
+
+A question gives the next information a job. The explanation is no longer inert background; it resolves uncertainty the audience is already carrying.
+
+![Diagram showing a shade-ball question leading into explanatory frames about water coverage and temperature](/pixi-wiki/wiki/content-distribution/assets/attention-architecture-for-long-form-content/02-question-to-explanation.png)
+
+*Figure 2. The question creates a gap; the following sequence earns the explanation by resolving that specific uncertainty.*
+
+## 4. Alternate narrative and analysis
+
+Long-form pieces benefit from two connected tracks:
+
+- **A plot:** the experiment, person, journey, case, visible attempt, mystery, or concrete sequence;
+- **B plot:** the mechanism, data, math, history, expert interpretation, or abstract explanation.
+
+Move from A to B when the concrete action creates a real “why.” Return from B to A when abstraction accumulates and the audience needs to see consequences. Each switch should answer or create a question in the other track.
+
+![Timeline alternating reservoir scenes on the A-plot track and interviews or explanations on the B-plot track](/pixi-wiki/wiki/content-distribution/assets/attention-architecture-for-long-form-content/03-a-plot-b-plot-timeline.png)
+
+*Figure 3. The source video maps the reservoir investigation and explanatory material onto alternating A-plot and B-plot tracks.*
+
+This is not random variety. An unrelated anecdote may reset attention while weakening the argument.
+
+## 5. Pay off, then reset
+
+Resolve the opening promise clearly enough that the audience can state what changed. In a longer piece, each major payoff can expose the next useful question.
+
+A strong payoff gives the audience something portable:
+
+- a revised mental model;
+- a memorable distinction;
+- evidence worth citing;
+- a practical test;
+- language that helps explain the idea to someone else.
+
+Portable value is one bridge from retention to redistribution.
+
+## The compact model
+
+> Contradict. Ask. Demonstrate. Explain. Interleave.
+
+![Summary frame listing misconceptions question-explanation and A plot B plot beneath the source video formula](/pixi-wiki/wiki/content-distribution/assets/attention-architecture-for-long-form-content/04-framework-summary.png)
+
+*Figure 4. One-frame summary of the source video's three moves: surface misconceptions, move from question to explanation, and interleave A and B plots.*
+
+## Translate the structure by format
+
+| Function | Long-form video | Substack or blog essay | X article or thread |
+|---|---|---|---|
+| Entry surface | Title + thumbnail + cold open | Headline + dek + opening paragraph | Lead post, title, or first visible lines |
+| A plot | Demonstration, journey, case, on-location sequence | Story, reported case, experiment, personal progression | Concrete example, event sequence, build-in-public progression |
+| B plot | Voiceover, expert interview, mechanism, data | Analysis, evidence, history, model | Claim, evidence block, chart, quoted source, explanation |
+| Switch unit | Scene or chapter | Section or paragraph cluster | Post block or short section |
+| Payoff | Reveal, result, revised explanation | Thesis earned by evidence and consequences | Compact conclusion, model, or action worth quoting |
+| Redistribution object | Clip, visual, surprising fact, useful model | Quotable distinction, chart, framework, checklist | Quote-ready line, image, mini-framework, sourced claim |
+
+The medium changes the rhythm. Do not force video pacing into prose or turn an essay into artificial cliffhangers.
+
+## Format playbooks
+
+### Long-form video
+
+1. **Package:** title and thumbnail expose the gap.
+2. **Cold open:** show the contradiction before explaining the topic.
+3. **Prediction:** let the viewer decide what should happen.
+4. **A plot:** begin the experiment, journey, or case.
+5. **B plot:** explain only when the visible sequence creates a “why.”
+6. **Switch:** return to the concrete result before technical density becomes exhausting.
+7. **Payoff:** resolve the opening promise, then expose the next useful question.
+8. **Finish:** leave a visual, fact, or model worth sharing.
+
+### Substack or blog essay
+
+1. **Headline and dek:** promise a specific tension and consequence.
+2. **Opening:** begin with the failed expectation, not a throat-clearing definition.
+3. **Case:** give the reader a person, event, experiment, or decision to follow.
+4. **Analysis:** use each explanatory section to answer a question raised by the case.
+5. **Section endings:** close one loop before opening another.
+6. **Conclusion:** compress the revised model into language the reader can reuse.
+
+### X article or thread
+
+1. **Lead:** make one specific, sourceable claim or contradiction.
+2. **Preview:** tell readers what the sequence will resolve.
+3. **Blocks:** alternate concrete example and evidence instead of stacking unsupported claims.
+4. **Transitions:** make each post or section earn the next one.
+5. **Portable objects:** include a chart, image, distinction, or mini-framework worth quoting.
+6. **Close:** summarize the model and point to the underlying evidence, not a generic engagement request.
+
+## Working outline
+
+```text
+Audience:
+What they probably believe:
+Observable contradiction or unresolved tension:
+Entry promise:
+Opening question:
+Prediction the audience can make:
+A plot (concrete progression):
+B plot (mechanism/evidence):
+Switch points and why each switch is earned:
+First payoff:
+Next useful gap:
+Final revised model:
+Portable value worth saving/sharing:
+How truth and audience response will be measured:
+```
+
+## Measure the gates separately
+
+### Entry
+
+- click-through rate or open rate;
+- qualified starts, not only impressions;
+- packaging variants tested against the same underlying piece.
+
+### Retention
+
+- audience-retention curve or completion rate;
+- read depth and time on page;
+- exits around abstraction-heavy sections;
+- continuation from one section or post block to the next.
+
+### Redistribution
+
+- saves, shares, forwards, quotes, citations, and discussion;
+- subscriber or follower conversion;
+- recommendation and downstream traffic;
+- whether people reuse the model accurately.
+
+### Understanding and trust
+
+- can the audience explain the revised model?
+- did the opening promise match the payoff?
+- were sources and uncertainty visible?
+- did corrections reveal an overstated claim?
+
+Clicks are not learning. Retention is not truth. Shares are not necessarily endorsement.
+
+## Guardrails
+
+- **Do not promise virality.** Structure improves conditions; it does not control distribution.
+- **Use real audience language.** Do not invent a convenient misconception.
+- **Pay every major open loop.** Curiosity without resolution becomes manipulation.
+- **Keep A and B plots connected.** Variety should deepen the main question.
+- **Protect source truth.** A compelling narrative does not license weak evidence.
+- **Match the medium.** Essay rhythm, video rhythm, and thread rhythm are not interchangeable.
+- **Stay retrieval-first where needed.** Indexes, runbooks, reference docs, incident instructions, and agent entrypoints should usually answer directly.
+
+## Evidence boundary
+
+The source video combines two different claims:
+
+1. **Learning-design evidence:** an instructional comparison suggested that activating misconceptions can outperform a clear explanation that audiences process passively.
+2. **Virality interpretation:** the video retrospectively maps the same moves onto Veritasium's successful channel.
+
+The first supports a useful hypothesis about prior beliefs and active attention. The second is not controlled evidence that the structure caused view counts. Treat this guide as an editorial system to test against real audience behavior, not a universal algorithm.
+
+## Related pages
+
+- [[../../ai-native-product-surfaces/wiki/concepts/taste-requires-contact|Taste Requires Contact]]
+- [[../../ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]]
+- [[../../ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]]
+
+## Source and image rights
+
+- The Internet Stamp, [“Veritasium - What you don't see”](https://www.youtube.com/watch?v=QHhJ8_TJeNo), YouTube.
+- Figures 1–4 are Jamie-supplied frames from that source video, included for criticism, commentary, and explanation of the depicted framework. Rights remain with the original video and image rights holders.
+- The full supplied transcript remains private and is not reproduced in Pixi Wiki.
 
 
 <!-- ===== rl-sim-labs/CLAUDE.md ===== -->
