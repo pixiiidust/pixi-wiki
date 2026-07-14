@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Attention Architecture for Long-Form Content — Content Distribution Systems — Pixi Wiki</title><meta name="description" content="Virality is not a structure you can guarantee. Demand, audience fit, timing, initial reach, platform dynamics, social transmission, and luck all matter. Structure controls a narrower but useful part…"><link rel="canonical" href="https://pixiiidust.github.io/pixi-wiki/wiki/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md.html"><meta property="og:title" content="Attention Architecture for Long-Form Content — Content Distribution Systems"><meta property="og:description" content="Virality is not a structure you can guarantee. Demand, audience fit, timing, initial reach, platform dynamics, social transmission, and luck all matter. Structure controls a narrower but useful part…"><meta property="og:url" content="https://pixiiidust.github.io/pixi-wiki/wiki/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md.html"><meta property="og:type" content="article"><meta property="og:site_name" content="Pixi Wiki"><meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/pixi-wiki/site.css?v=92c72be3"><script>(function(){const key='pixi-wiki-theme';const root=document.documentElement;const saved=localStorage.getItem(key)||'light';root.dataset.theme=saved;function label(){const b=document.querySelector('[data-theme-toggle]');if(b)b.textContent=root.dataset.theme==='dark'?'☀':'☾';}document.addEventListener('DOMContentLoaded',function(){label();const b=document.querySelector('[data-theme-toggle]');if(b)b.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem(key,root.dataset.theme);label();});});})();</script><script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.sidebar-filter').forEach(function(input){var section=input.closest('.sidebar-section');if(!section)return;var links=[].slice.call(section.querySelectorAll('a'));var groups=[].slice.call(section.querySelectorAll('.sidebar-subgroup'));var opened=groups.map(function(g){return g.open;});input.addEventListener('input',function(){var q=input.value.trim().toLowerCase();links.forEach(function(a){a.style.display=(!q||a.textContent.toLowerCase().indexOf(q)>-1)?'':'none';});groups.forEach(function(g,i){g.open=q?true:opened[i];});});});});</script><script>(function(){document.addEventListener('DOMContentLoaded',function(){var box=document.querySelector('.site-search');if(!box)return;var url=box.getAttribute('data-registry');var base=url.replace(/\/index\.json$/,'');var input=document.createElement('input');input.type='search';input.placeholder='Search… ( / )';input.setAttribute('aria-label','Search all pages');input.className='search-input';var panel=document.createElement('div');panel.className='search-results';panel.setAttribute('role','listbox');panel.hidden=true;box.appendChild(input);box.appendChild(panel);var CAP=8;var entries=null,pending=null,loading=false,failed=false,active=-1,rows=[];function flatten(data){var out=[];if(!data||!data.wikis)return out;for(var i=0;i<data.wikis.length;i++){var w=data.wikis[i]||{};var docs=w.documents||[];for(var j=0;j<docs.length;j++){var d=docs[j]||{};out.push({title:String(d.title||d.path||''),path:String(d.path||''),category:String(d.category||''),nsSlug:String(w.slug||''),nsTitle:String(w.title||''),url:String(d.html||'')});}}return out;}function load(cb){if(entries||failed){cb();return;}pending=cb;if(loading)return;loading=true;function done(){loading=false;var p=pending;pending=null;if(p)p();}try{fetch(url).then(function(r){return r.json();}).then(function(data){entries=flatten(data);done();}).catch(function(){failed=true;done();});}catch(e){failed=true;done();}}function filter(q){var tokens=q.toLowerCase().split(/\s+/).filter(Boolean);if(!tokens.length)return [];var res=[];for(var i=0;i<entries.length;i++){var e=entries[i];var hay=(e.title+' '+e.path+' '+e.category+' '+e.nsSlug+' '+e.nsTitle).toLowerCase();var ok=true;for(var t=0;t<tokens.length;t++){if(hay.indexOf(tokens[t])<0){ok=false;break;}}if(ok)res.push(e);}return res;}function close(){panel.hidden=true;panel.innerHTML='';rows=[];active=-1;}function render(list,q){panel.innerHTML='';rows=[];active=-1;if(failed){var f=document.createElement('div');f.className='search-empty';f.textContent='Search unavailable';panel.appendChild(f);panel.hidden=false;return;}if(!list.length){var n=document.createElement('div');n.className='search-empty';n.textContent='No matches';panel.appendChild(n);panel.hidden=false;return;}for(var i=0;i<list.length&&i<CAP;i++){var e=list[i];var a=document.createElement('a');a.className='search-result';a.setAttribute('role','option');a.setAttribute('aria-selected','false');a.href=base+e.url;var ttl=document.createElement('span');ttl.className='search-result-title';ttl.textContent=e.title;a.appendChild(ttl);var badge=document.createElement('span');badge.className='search-badge';badge.textContent=e.nsTitle||e.nsSlug;a.appendChild(badge);panel.appendChild(a);rows.push(a);}var see=document.createElement('a');see.className='search-result search-see-all';see.setAttribute('role','option');see.setAttribute('aria-selected','false');see.href=base+'/search.html?q='+encodeURIComponent(q);see.textContent='See all '+list.length+' results →';panel.appendChild(see);rows.push(see);panel.hidden=false;}function update(){var q=input.value.trim();if(!q){close();return;}load(function(){if(failed){render([],q);return;}if(!entries)return;render(filter(q),q);});}function setActive(i){if(!rows.length)return;if(active>=0&&rows[active]){rows[active].classList.remove('active');rows[active].setAttribute('aria-selected','false');}active=(i+rows.length)%rows.length;rows[active].classList.add('active');rows[active].setAttribute('aria-selected','true');if(rows[active].scrollIntoView)rows[active].scrollIntoView({block:'nearest'});}input.addEventListener('focus',function(){load(function(){});});input.addEventListener('input',update);input.addEventListener('keydown',function(ev){if(ev.key==='ArrowDown'){ev.preventDefault();setActive(active+1);}else if(ev.key==='ArrowUp'){ev.preventDefault();setActive(active-1);}else if(ev.key==='Enter'){ev.preventDefault();if(active>=0&&rows[active]){window.location.href=rows[active].href;}else{var qq=input.value.trim();if(qq)window.location.href=base+'/search.html?q='+encodeURIComponent(qq);}}else if(ev.key==='Escape'){input.value='';close();input.blur();}});document.addEventListener('keydown',function(ev){if(ev.key!=='/')return;var el=document.activeElement;var tag=el&&el.tagName?el.tagName.toLowerCase():'';if(tag==='input'||tag==='textarea'||(el&&el.isContentEditable))return;ev.preventDefault();input.focus();});document.addEventListener('click',function(ev){if(!box.contains(ev.target))panel.hidden=true;});});})();</script><script>document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('pre').forEach(function(pre){if(pre.querySelector('.copy-button'))return;var text=pre.innerText;var btn=document.createElement('button');btn.type='button';btn.className='copy-button';btn.setAttribute('aria-label','Copy code');btn.textContent='copy';btn.addEventListener('click',function(){function done(){btn.textContent='copied';setTimeout(function(){btn.textContent='copy';},1200);}function fallback(){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,fallback);}else{fallback();}});pre.appendChild(btn);});});</script></head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="header-inner"><a class="logo" href="/pixi-wiki/">Pixi Wiki</a><div class="site-search" data-registry="/pixi-wiki/index.json"></div><div class="header-nav"><nav class="nav"><a href="/pixi-wiki/#wikis">Wikis</a><a href="/pixi-wiki/updates.html">Updates</a><a href="/pixi-wiki/docs/AGENT_SETUP.html">Agent Setup</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a></nav><details class="nav-menu"><summary aria-label="Open menu">Menu</summary><nav class="nav-panel"><a href="/pixi-wiki/#wikis">Wikis</a><a href="/pixi-wiki/updates.html">Updates</a><a href="/pixi-wiki/docs/AGENT_SETUP.html">Agent Setup</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a></nav></details><button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle color theme">☾</button></div></div></header>
+<main class="page"><aside class="sidebar"><div class="sidebar-block"><div class="sidebar-title">Content Distribution Systems</div><div class="sidebar-count">5 documents</div>
+<a href="/pixi-wiki/wiki/content-distribution/README.md.html"><span aria-hidden="true">📄 </span>Content Distribution Systems Knowledge Base</a>
+<a href="/pixi-wiki/wiki/content-distribution/wiki/index.md.html"><span aria-hidden="true">📄 </span>Content Distribution Systems KB — Master Index</a>
+<details class="sidebar-section"><summary>WIKI 1</summary><div class="sidebar-section-body"><a href="/pixi-wiki/wiki/content-distribution/wiki/log.md.html"><span aria-hidden="true">📄 </span>Content Distribution Systems — Activity Log</a></div></details>
+<details class="sidebar-section"><summary>CONCEPTS 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
+<details class="sidebar-section"><summary>ENTITIES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
+<details class="sidebar-section"><summary>SUMMARIES 0</summary><div class="sidebar-section-body"><div class="sidebar-empty">No pages yet</div></div></details>
+<details class="sidebar-section" open><summary>SYNTHESES 1</summary><div class="sidebar-section-body"><a class="active" aria-current="page" href="/pixi-wiki/wiki/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md.html"><span aria-hidden="true">📄 </span>Attention Architecture for Long-Form Content</a></div></details>
+</div><div class="sidebar-block"><details class="sidebar-section" open><summary>// FOR AGENTS</summary><div class="sidebar-section-body">
+<a href="/pixi-wiki/wiki/content-distribution/llms.txt">llms.txt</a>
+<a href="/pixi-wiki/wiki/content-distribution/llms-full.txt">llms-full.txt</a>
+<a href="/pixi-wiki/wiki/content-distribution/index.json">index.json</a>
+</div></details></div></aside><article class="article" id="main-content">
+<div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/content-distribution/README.md.html">Content Distribution Systems</a> / wiki/syntheses/attention-architecture-for-long-form-content.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+content-distribution%2Fwiki%2Fsyntheses%2Fattention-architecture-for-long-form-content.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fcontent-distribution%2Fwiki%2Fsyntheses%2Fattention-architecture-for-long-form-content.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
+<h1 id="attention-architecture-for-long-form-content">Attention Architecture for Long-Form Content<a class="heading-anchor" href="#attention-architecture-for-long-form-content" aria-label="Link to this section">¶</a></h1>
+<div class="page-meta"><div><span>type</span>: synthesis</div><div><span>confidence</span>: medium</div><div><span>updated</span>: 2026-07-14</div><div><span>status</span>: compiled</div><div><span>namespace</span>: content-distribution</div><div><span>sources</span>: 3</div></div>
+<blockquote>A practical guide to earning the open, sustaining curiosity, and improving the conditions for distribution across video, essays, Substack posts, and X articles.</blockquote>
+<p>Virality is not a structure you can guarantee. Demand, audience fit, timing, initial reach, platform dynamics, social transmission, and luck all matter. Structure controls a narrower but useful part of the system:</p>
+<blockquote>Earn the open. Create a real question. Alternate progress with explanation. Pay off the promise. Give the audience something worth carrying forward.</blockquote>
+<nav class="page-toc"><div class="page-toc-title">On this page</div><ul><li class="page-toc-h2"><a href="#the-three-gates">The three gates</a></li><li class="page-toc-h2"><a href="#1-start-with-a-real-audience-model">1. Start with a real audience model</a></li><li class="page-toc-h2"><a href="#2-package-the-gap-honestly">2. Package the gap honestly</a></li><li class="page-toc-h2"><a href="#3-ask-before-explaining">3. Ask before explaining</a></li><li class="page-toc-h2"><a href="#4-alternate-narrative-and-analysis">4. Alternate narrative and analysis</a></li><li class="page-toc-h2"><a href="#5-pay-off-then-reset">5. Pay off, then reset</a></li><li class="page-toc-h2"><a href="#the-compact-model">The compact model</a></li><li class="page-toc-h2"><a href="#translate-the-structure-by-format">Translate the structure by format</a></li><li class="page-toc-h2"><a href="#format-playbooks">Format playbooks</a></li><li class="page-toc-h3"><a href="#long-form-video">Long-form video</a></li><li class="page-toc-h3"><a href="#substack-or-blog-essay">Substack or blog essay</a></li><li class="page-toc-h3"><a href="#x-article-or-thread">X article or thread</a></li><li class="page-toc-h2"><a href="#working-outline">Working outline</a></li><li class="page-toc-h2"><a href="#measure-the-gates-separately">Measure the gates separately</a></li><li class="page-toc-h3"><a href="#entry">Entry</a></li><li class="page-toc-h3"><a href="#retention">Retention</a></li><li class="page-toc-h3"><a href="#redistribution">Redistribution</a></li><li class="page-toc-h3"><a href="#understanding-and-trust">Understanding and trust</a></li><li class="page-toc-h2"><a href="#guardrails">Guardrails</a></li><li class="page-toc-h2"><a href="#evidence-boundary">Evidence boundary</a></li><li class="page-toc-h2"><a href="#related-pages">Related pages</a></li><li class="page-toc-h2"><a href="#source-and-image-rights">Source and image rights</a></li></ul></nav>
+<h2 id="the-three-gates">The three gates<a class="heading-anchor" href="#the-three-gates" aria-label="Link to this section">¶</a></h2>
+<p>Long-form content has to clear three different gates:</p>
+<ol>
+<li><strong>Entry:</strong> does the packaging create an honest reason to open?</li>
+<li><strong>Retention:</strong> does each section create, advance, or resolve a question?</li>
+<li><strong>Redistribution:</strong> was the payoff useful, surprising, credible, or identity-relevant enough to save, share, quote, discuss, or recommend?</li>
+</ol>
+<pre><code>Promise → knowledge gap → question/prediction → evidence → payoff → next useful gap
+                           ↘ narrative A plot ↔ analytical B plot ↗</code></pre>
+<p>Clickbait clears entry and fails the payoff. Dense expertise may contain value but provide no reason to continue. Smooth storytelling can retain attention while leaving no durable idea worth sharing.</p>
+<h2 id="1-start-with-a-real-audience-model">1. Start with a real audience model<a class="heading-anchor" href="#1-start-with-a-real-audience-model" aria-label="Link to this section">¶</a></h2>
+<p>A familiar topic can create false fluency: “I already know this,” so the audience stops testing its assumptions. A precise contradiction reveals the gap.</p>
+<p><img src="/pixi-wiki/wiki/content-distribution/assets/attention-architecture-for-long-form-content/01-misconceptions-formula.png" alt="Derek Muller speaking onstage beneath a mnemonic formula with misconceptions highlighted" loading="lazy"></p>
+<p><em>Figure 1. The source video&#x27;s mnemonic highlights misconceptions as the opening move. Treat the formula as a storytelling summary, not a validated quantitative model.</em></p>
+<p>Good openings use a specific mismatch, not generic surprise:</p>
+<ul>
+<li>state the likely prior belief;</li>
+<li>show what that belief fails to predict;</li>
+<li>make the gap observable;</li>
+<li>avoid claiming “everyone is wrong” when the disagreement is trivial or invented.</li>
+</ul>
+<h2 id="2-package-the-gap-honestly">2. Package the gap honestly<a class="heading-anchor" href="#2-package-the-gap-honestly" aria-label="Link to this section">¶</a></h2>
+<p>Titles, thumbnails, headlines, deks, and opening posts are entry surfaces. Their job is to expose the unresolved gap while promising a payoff the piece can deliver.</p>
+<pre><code>Topic label:     Shade balls in reservoirs
+Knowledge gap:   Why are there millions of black balls on this lake?</code></pre>
+<p>The stronger frame tells the audience what it will get to resolve. It does not need to reveal the answer or manufacture a mystery.</p>
+<h2 id="3-ask-before-explaining">3. Ask before explaining<a class="heading-anchor" href="#3-ask-before-explaining" aria-label="Link to this section">¶</a></h2>
+<p>Let the audience form a prediction before receiving the mechanism:</p>
+<pre><code>Observation → prediction → question → evidence → revised model</code></pre>
+<p>A question gives the next information a job. The explanation is no longer inert background; it resolves uncertainty the audience is already carrying.</p>
+<p><img src="/pixi-wiki/wiki/content-distribution/assets/attention-architecture-for-long-form-content/02-question-to-explanation.png" alt="Diagram showing a shade-ball question leading into explanatory frames about water coverage and temperature" loading="lazy"></p>
+<p><em>Figure 2. The question creates a gap; the following sequence earns the explanation by resolving that specific uncertainty.</em></p>
+<h2 id="4-alternate-narrative-and-analysis">4. Alternate narrative and analysis<a class="heading-anchor" href="#4-alternate-narrative-and-analysis" aria-label="Link to this section">¶</a></h2>
+<p>Long-form pieces benefit from two connected tracks:</p>
+<ul>
+<li><strong>A plot:</strong> the experiment, person, journey, case, visible attempt, mystery, or concrete sequence;</li>
+<li><strong>B plot:</strong> the mechanism, data, math, history, expert interpretation, or abstract explanation.</li>
+</ul>
+<p>Move from A to B when the concrete action creates a real “why.” Return from B to A when abstraction accumulates and the audience needs to see consequences. Each switch should answer or create a question in the other track.</p>
+<p><img src="/pixi-wiki/wiki/content-distribution/assets/attention-architecture-for-long-form-content/03-a-plot-b-plot-timeline.png" alt="Timeline alternating reservoir scenes on the A-plot track and interviews or explanations on the B-plot track" loading="lazy"></p>
+<p><em>Figure 3. The source video maps the reservoir investigation and explanatory material onto alternating A-plot and B-plot tracks.</em></p>
+<p>This is not random variety. An unrelated anecdote may reset attention while weakening the argument.</p>
+<h2 id="5-pay-off-then-reset">5. Pay off, then reset<a class="heading-anchor" href="#5-pay-off-then-reset" aria-label="Link to this section">¶</a></h2>
+<p>Resolve the opening promise clearly enough that the audience can state what changed. In a longer piece, each major payoff can expose the next useful question.</p>
+<p>A strong payoff gives the audience something portable:</p>
+<ul>
+<li>a revised mental model;</li>
+<li>a memorable distinction;</li>
+<li>evidence worth citing;</li>
+<li>a practical test;</li>
+<li>language that helps explain the idea to someone else.</li>
+</ul>
+<p>Portable value is one bridge from retention to redistribution.</p>
+<h2 id="the-compact-model">The compact model<a class="heading-anchor" href="#the-compact-model" aria-label="Link to this section">¶</a></h2>
+<blockquote>Contradict. Ask. Demonstrate. Explain. Interleave.</blockquote>
+<p><img src="/pixi-wiki/wiki/content-distribution/assets/attention-architecture-for-long-form-content/04-framework-summary.png" alt="Summary frame listing misconceptions question-explanation and A plot B plot beneath the source video formula" loading="lazy"></p>
+<p><em>Figure 4. One-frame summary of the source video&#x27;s three moves: surface misconceptions, move from question to explanation, and interleave A and B plots.</em></p>
+<h2 id="translate-the-structure-by-format">Translate the structure by format<a class="heading-anchor" href="#translate-the-structure-by-format" aria-label="Link to this section">¶</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Function</th><th>Long-form video</th><th>Substack or blog essay</th><th>X article or thread</th></tr></thead><tbody><tr><td>Entry surface</td><td>Title + thumbnail + cold open</td><td>Headline + dek + opening paragraph</td><td>Lead post, title, or first visible lines</td></tr><tr><td>A plot</td><td>Demonstration, journey, case, on-location sequence</td><td>Story, reported case, experiment, personal progression</td><td>Concrete example, event sequence, build-in-public progression</td></tr><tr><td>B plot</td><td>Voiceover, expert interview, mechanism, data</td><td>Analysis, evidence, history, model</td><td>Claim, evidence block, chart, quoted source, explanation</td></tr><tr><td>Switch unit</td><td>Scene or chapter</td><td>Section or paragraph cluster</td><td>Post block or short section</td></tr><tr><td>Payoff</td><td>Reveal, result, revised explanation</td><td>Thesis earned by evidence and consequences</td><td>Compact conclusion, model, or action worth quoting</td></tr><tr><td>Redistribution object</td><td>Clip, visual, surprising fact, useful model</td><td>Quotable distinction, chart, framework, checklist</td><td>Quote-ready line, image, mini-framework, sourced claim</td></tr></tbody></table></div>
+<p>The medium changes the rhythm. Do not force video pacing into prose or turn an essay into artificial cliffhangers.</p>
+<h2 id="format-playbooks">Format playbooks<a class="heading-anchor" href="#format-playbooks" aria-label="Link to this section">¶</a></h2>
+<h3 id="long-form-video">Long-form video<a class="heading-anchor" href="#long-form-video" aria-label="Link to this section">¶</a></h3>
+<ol>
+<li><strong>Package:</strong> title and thumbnail expose the gap.</li>
+<li><strong>Cold open:</strong> show the contradiction before explaining the topic.</li>
+<li><strong>Prediction:</strong> let the viewer decide what should happen.</li>
+<li><strong>A plot:</strong> begin the experiment, journey, or case.</li>
+<li><strong>B plot:</strong> explain only when the visible sequence creates a “why.”</li>
+<li><strong>Switch:</strong> return to the concrete result before technical density becomes exhausting.</li>
+<li><strong>Payoff:</strong> resolve the opening promise, then expose the next useful question.</li>
+<li><strong>Finish:</strong> leave a visual, fact, or model worth sharing.</li>
+</ol>
+<h3 id="substack-or-blog-essay">Substack or blog essay<a class="heading-anchor" href="#substack-or-blog-essay" aria-label="Link to this section">¶</a></h3>
+<ol>
+<li><strong>Headline and dek:</strong> promise a specific tension and consequence.</li>
+<li><strong>Opening:</strong> begin with the failed expectation, not a throat-clearing definition.</li>
+<li><strong>Case:</strong> give the reader a person, event, experiment, or decision to follow.</li>
+<li><strong>Analysis:</strong> use each explanatory section to answer a question raised by the case.</li>
+<li><strong>Section endings:</strong> close one loop before opening another.</li>
+<li><strong>Conclusion:</strong> compress the revised model into language the reader can reuse.</li>
+</ol>
+<h3 id="x-article-or-thread">X article or thread<a class="heading-anchor" href="#x-article-or-thread" aria-label="Link to this section">¶</a></h3>
+<ol>
+<li><strong>Lead:</strong> make one specific, sourceable claim or contradiction.</li>
+<li><strong>Preview:</strong> tell readers what the sequence will resolve.</li>
+<li><strong>Blocks:</strong> alternate concrete example and evidence instead of stacking unsupported claims.</li>
+<li><strong>Transitions:</strong> make each post or section earn the next one.</li>
+<li><strong>Portable objects:</strong> include a chart, image, distinction, or mini-framework worth quoting.</li>
+<li><strong>Close:</strong> summarize the model and point to the underlying evidence, not a generic engagement request.</li>
+</ol>
+<h2 id="working-outline">Working outline<a class="heading-anchor" href="#working-outline" aria-label="Link to this section">¶</a></h2>
+<pre><code>Audience:
+What they probably believe:
+Observable contradiction or unresolved tension:
+Entry promise:
+Opening question:
+Prediction the audience can make:
+A plot (concrete progression):
+B plot (mechanism/evidence):
+Switch points and why each switch is earned:
+First payoff:
+Next useful gap:
+Final revised model:
+Portable value worth saving/sharing:
+How truth and audience response will be measured:</code></pre>
+<h2 id="measure-the-gates-separately">Measure the gates separately<a class="heading-anchor" href="#measure-the-gates-separately" aria-label="Link to this section">¶</a></h2>
+<h3 id="entry">Entry<a class="heading-anchor" href="#entry" aria-label="Link to this section">¶</a></h3>
+<ul>
+<li>click-through rate or open rate;</li>
+<li>qualified starts, not only impressions;</li>
+<li>packaging variants tested against the same underlying piece.</li>
+</ul>
+<h3 id="retention">Retention<a class="heading-anchor" href="#retention" aria-label="Link to this section">¶</a></h3>
+<ul>
+<li>audience-retention curve or completion rate;</li>
+<li>read depth and time on page;</li>
+<li>exits around abstraction-heavy sections;</li>
+<li>continuation from one section or post block to the next.</li>
+</ul>
+<h3 id="redistribution">Redistribution<a class="heading-anchor" href="#redistribution" aria-label="Link to this section">¶</a></h3>
+<ul>
+<li>saves, shares, forwards, quotes, citations, and discussion;</li>
+<li>subscriber or follower conversion;</li>
+<li>recommendation and downstream traffic;</li>
+<li>whether people reuse the model accurately.</li>
+</ul>
+<h3 id="understanding-and-trust">Understanding and trust<a class="heading-anchor" href="#understanding-and-trust" aria-label="Link to this section">¶</a></h3>
+<ul>
+<li>can the audience explain the revised model?</li>
+<li>did the opening promise match the payoff?</li>
+<li>were sources and uncertainty visible?</li>
+<li>did corrections reveal an overstated claim?</li>
+</ul>
+<p>Clicks are not learning. Retention is not truth. Shares are not necessarily endorsement.</p>
+<h2 id="guardrails">Guardrails<a class="heading-anchor" href="#guardrails" aria-label="Link to this section">¶</a></h2>
+<ul>
+<li><strong>Do not promise virality.</strong> Structure improves conditions; it does not control distribution.</li>
+<li><strong>Use real audience language.</strong> Do not invent a convenient misconception.</li>
+<li><strong>Pay every major open loop.</strong> Curiosity without resolution becomes manipulation.</li>
+<li><strong>Keep A and B plots connected.</strong> Variety should deepen the main question.</li>
+<li><strong>Protect source truth.</strong> A compelling narrative does not license weak evidence.</li>
+<li><strong>Match the medium.</strong> Essay rhythm, video rhythm, and thread rhythm are not interchangeable.</li>
+<li><strong>Stay retrieval-first where needed.</strong> Indexes, runbooks, reference docs, incident instructions, and agent entrypoints should usually answer directly.</li>
+</ul>
+<h2 id="evidence-boundary">Evidence boundary<a class="heading-anchor" href="#evidence-boundary" aria-label="Link to this section">¶</a></h2>
+<p>The source video combines two different claims:</p>
+<ol>
+<li><strong>Learning-design evidence:</strong> an instructional comparison suggested that activating misconceptions can outperform a clear explanation that audiences process passively.</li>
+<li><strong>Virality interpretation:</strong> the video retrospectively maps the same moves onto Veritasium&#x27;s successful channel.</li>
+</ol>
+<p>The first supports a useful hypothesis about prior beliefs and active attention. The second is not controlled evidence that the structure caused view counts. Treat this guide as an editorial system to test against real audience behavior, not a universal algorithm.</p>
+<h2 id="related-pages">Related pages<a class="heading-anchor" href="#related-pages" aria-label="Link to this section">¶</a></h2>
+<ul>
+<li><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md.html">Taste Requires Contact</a></li>
+<li><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/syntheses/side-doors-make-useful-work-legible.md.html">Side Doors: Make Useful Work Legible</a></li>
+<li><a href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts.md.html">Agent Output Decision Artifacts</a></li>
+</ul>
+<h2 id="source-and-image-rights">Source and image rights<a class="heading-anchor" href="#source-and-image-rights" aria-label="Link to this section">¶</a></h2>
+<ul>
+<li>The Internet Stamp, <a href="https://www.youtube.com/watch?v=QHhJ8_TJeNo">“Veritasium - What you don&#x27;t see”</a>, YouTube.</li>
+<li>Figures 1–4 are Jamie-supplied frames from that source video, included for criticism, commentary, and explanation of the depicted framework. Rights remain with the original video and image rights holders.</li>
+<li>The full supplied transcript remains private and is not reproduced in Pixi Wiki.</li>
+</ul>
+<h2>External links</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=QHhJ8_TJeNo">“Veritasium - What you don&#x27;t see”</a></li>
+</ul>
+<nav class="prev-next"><a class="prev-next-card prev-card" href="/pixi-wiki/wiki/content-distribution/wiki/index.md.html"><span class="next-label">← Prev</span><span class="next-title">Content Distribution Systems — Master Index</span></a><a class="prev-next-card next-card" href="/pixi-wiki/wiki/content-distribution/wiki/log.md.html"><span class="next-label">Next</span><span class="next-title">Content Distribution Systems — Activity Log →</span></a></nav>
+</article></main>
+<footer class="footer"><div class="footer-inner"><p>Plain static HTML. Humans browse it like a wiki; agents read Markdown through <code>llms.txt</code>.</p><p><a href="/pixi-wiki/llms.txt">/llms.txt</a><a href="/pixi-wiki/llms-full.txt">/llms-full.txt</a><a href="/pixi-wiki/index.json">/index.json</a></p></div></footer>
+</body></html>

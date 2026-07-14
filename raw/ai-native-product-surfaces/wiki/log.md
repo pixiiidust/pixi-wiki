@@ -11,6 +11,12 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-07-14 migrate | Move long-form attention guide to content-distribution
+
+- Removed the earlier misconception-first article and its four public figure assets from this product namespace.
+- The rewritten cross-format guide now lives at `content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md`.
+- Kept product demos in scope here while routing general video, essay, Substack, and X attention/distribution systems to the dedicated namespace.
+
 ## 2026-07-14 update | Add source-video framework figures
 
 - Added four Jamie-supplied frames to `assets/misconception-first-explanation-loop/` and embedded them beside the misconception, question-to-explanation, A-plot/B-plot, and combined-summary passages.

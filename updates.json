@@ -1,6 +1,6 @@
 {
   "generated_from": "frontmatter updated fields",
-  "count": 628,
+  "count": 631,
   "entries": [
     {
       "title": "AI-Native Product Surfaces",
@@ -30,13 +30,40 @@
       "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
     },
     {
-      "title": "Misconception-First Explanation Loop",
-      "path": "wiki/concepts/misconception-first-explanation-loop.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
+      "title": "Attention Architecture for Long-Form Content",
+      "path": "wiki/syntheses/attention-architecture-for-long-form-content.md",
+      "namespace": "content-distribution",
+      "namespace_title": "Content Distribution Systems",
       "updated": "2026-07-14",
-      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md",
-      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md.html"
+      "raw": "/raw/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md",
+      "html": "/wiki/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md.html"
+    },
+    {
+      "title": "Content Distribution Systems",
+      "path": "README.md",
+      "namespace": "content-distribution",
+      "namespace_title": "Content Distribution Systems",
+      "updated": "2026-07-14",
+      "raw": "/raw/content-distribution/README.md",
+      "html": "/wiki/content-distribution/README.md.html"
+    },
+    {
+      "title": "Content Distribution Systems \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "content-distribution",
+      "namespace_title": "Content Distribution Systems",
+      "updated": "2026-07-14",
+      "raw": "/raw/content-distribution/wiki/log.md",
+      "html": "/wiki/content-distribution/wiki/log.md.html"
+    },
+    {
+      "title": "Content Distribution Systems \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "content-distribution",
+      "namespace_title": "Content Distribution Systems",
+      "updated": "2026-07-14",
+      "raw": "/raw/content-distribution/wiki/index.md",
+      "html": "/wiki/content-distribution/wiki/index.md.html"
     },
     {
       "title": "Agent Workflows \u2014 Activity Log",
