@@ -11,6 +11,12 @@ namespace: ai-native-product-surfaces
 
 > Append-only namespace log.
 
+## 2026-07-14 update | Add source-video framework figures
+
+- Added four Jamie-supplied frames to `assets/misconception-first-explanation-loop/` and embedded them beside the misconception, question-to-explanation, A-plot/B-plot, and combined-summary passages.
+- Added descriptive alt text, numbered captions, source attribution, and a rights note.
+- Kept the formula framed as a mnemonic for the video's structure, not a validated quantitative model.
+
 ## 2026-07-14 create/update | Misconception-First Explanation Loop
 
 - Added `wiki/concepts/misconception-first-explanation-loop.md` from the canonical Knowledge concept and Jamie's supplied “Veritasium - What you don't see” transcript.

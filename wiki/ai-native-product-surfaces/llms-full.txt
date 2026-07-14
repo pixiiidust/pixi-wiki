@@ -45,7 +45,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-14 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Misconception-First Explanation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
+2026-07-14 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, the illustrated Misconception-First Explanation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video.
 
 ## Canonical Source Roots
 
@@ -68,6 +68,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 - `Knowledge/concepts/side-quest-validation-loop.md`
 - `Knowledge/concepts/misconception-first-explanation-loop.md`
 - `Knowledge/raw/transcripts/veritasium-what-you-dont-see.md`
+- `Knowledge/raw/assets/misconception-first-explanation-loop/provenance.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -1064,16 +1065,13 @@ The reusable sequence is:
 Misconception → question → prediction → explanation → revised model
 ```
 
-For longer pieces, interleave two connected threads:
-
-- **A plot:** a concrete experiment, journey, user task, demonstration, or mystery;
-- **B plot:** the mechanism, evidence, math, history, or technical explanation.
-
-When the A plot creates a real “why,” switch to the B plot. When the B plot becomes dense, return to the A plot and show what changed.
-
 ## Why the opening works
 
 A familiar topic can create false fluency: the audience assumes it already understands and stops testing its model. A precise contradiction reveals the gap.
+
+![Derek Muller speaking onstage beneath a mnemonic formula with misconceptions highlighted](/pixi-wiki/wiki/ai-native-product-surfaces/assets/misconception-first-explanation-loop/01-misconceptions-formula.png)
+
+*Figure 1. The source video's mnemonic highlights misconceptions as the opening move. The formula is a storytelling summary, not a validated quantitative model.*
 
 Good openings do not merely announce a topic. They surface a testable mismatch:
 
@@ -1084,9 +1082,30 @@ Good openings do not merely announce a topic. They surface a testable mismatch:
 
 Then ask before explaining. A prediction or question gives the next information a job.
 
+![Diagram showing a shade-ball question leading into explanatory frames about water coverage and temperature](/pixi-wiki/wiki/ai-native-product-surfaces/assets/misconception-first-explanation-loop/02-question-to-explanation.png)
+
+*Figure 2. The question creates a gap; the following visual sequence earns the explanation by resolving that specific uncertainty.*
+
+## Interleave the concrete and technical threads
+
+For longer pieces, interleave two connected threads:
+
+- **A plot:** a concrete experiment, journey, user task, demonstration, or mystery;
+- **B plot:** the mechanism, evidence, math, history, or technical explanation.
+
+When the A plot creates a real “why,” switch to the B plot. When the B plot becomes dense, return to the A plot and show what changed.
+
+![Timeline alternating reservoir scenes on the A-plot track and interviews or explanations on the B-plot track](/pixi-wiki/wiki/ai-native-product-surfaces/assets/misconception-first-explanation-loop/03-a-plot-b-plot-timeline.png)
+
+*Figure 3. The source video maps the reservoir investigation and the explanatory material onto alternating A-plot and B-plot tracks.*
+
 ## Five-verb formula
 
 > Contradict. Ask. Demonstrate. Explain. Interleave.
+
+![Summary frame listing misconceptions question-explanation and A plot B plot beneath the source video formula](/pixi-wiki/wiki/ai-native-product-surfaces/assets/misconception-first-explanation-loop/04-framework-summary.png)
+
+*Figure 4. One-frame summary of the three moves: surface misconceptions, move from question to explanation, and interleave A and B plots.*
 
 ## Product-demo and technical-case-study use
 
@@ -1126,6 +1145,7 @@ The source video analyzes recurring Veritasium techniques and quotes Derek Mulle
 ## Source
 
 - The Internet Stamp, [“Veritasium - What you don't see”](https://www.youtube.com/watch?v=QHhJ8_TJeNo), YouTube. Synthesized from a user-supplied transcript; the full transcript remains private and is not reproduced in this public namespace.
+- Figures 1–4 are user-supplied frames from the source video, included for commentary and explanation of the depicted framework. Rights remain with the original video and image rights holders.
 
 
 <!-- ===== ai-native-product-surfaces/wiki/concepts/product-management-as-system-steering.md ===== -->
@@ -2279,7 +2299,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/interaction-mode-routing|Interaction Mode Routing]] — Refactor lens for choosing direct UI, agentic delegation, generative UI, or stable truth/routing surfaces.
 - [[concepts/j-space-global-workspace|J-Space as Global Workspace]] — Anthropic's J-space / Jacobian lens concept: a verbalizable representation subspace that behaves like a functional global workspace for report, modulation, flexible reasoning, broadcast, and alignment-auditing caveats.
 - [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]] — Agency/authorship lens for keeping AI-shaped work inspectable, steerable, interruptible, and traceable.
-- [[concepts/misconception-first-explanation-loop|Misconception-First Explanation Loop]] — Technical-explanation and product-demo pattern: reveal a real prior-model gap, ask before explaining, then alternate concrete progress with technical depth.
+- [[concepts/misconception-first-explanation-loop|Misconception-First Explanation Loop]] — Illustrated technical-explanation and product-demo pattern: reveal a real prior-model gap, ask before explaining, then alternate concrete progress with technical depth.
 - [[concepts/taste-requires-contact|Taste Requires Contact]] — Judgment-building lens for firsthand experience, precise vocabulary, active imitation, comparison, curation, and creative risk; paired with Side Doors as the public-legibility layer.
 - [[concepts/product-management-as-system-steering|Product Management as System Steering]] — PM operating lens for timely decisions, gapless ownership, adaptive influence, scope-first tradeoffs, and ecosystem incentive alignment.
 - [[concepts/role-aligned-deployed-project-proof|Role-Aligned Deployed Project Proof]] — Project-selection heuristic for turning a target role or job description into a live, owned, evidence-backed artifact that demonstrates role understanding.
@@ -2326,6 +2346,7 @@ namespace: ai-native-product-surfaces
 - `Knowledge/concepts/side-quest-validation-loop.md`
 - `Knowledge/concepts/misconception-first-explanation-loop.md`
 - `Knowledge/raw/transcripts/veritasium-what-you-dont-see.md`
+- `Knowledge/raw/assets/misconception-first-explanation-loop/provenance.md`
 - `Knowledge/concepts/video-retrieve-then-verify-loop.md`
 - `Knowledge/concepts/verified-video-answer-surfaces.md`
 - `Knowledge/raw/articles/tonbistudio-mini-vss.md`
@@ -2352,6 +2373,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-14 update | Add source-video framework figures
+
+- Added four Jamie-supplied frames to `assets/misconception-first-explanation-loop/` and embedded them beside the misconception, question-to-explanation, A-plot/B-plot, and combined-summary passages.
+- Added descriptive alt text, numbered captions, source attribution, and a rights note.
+- Kept the formula framed as a mnemonic for the video's structure, not a validated quantitative model.
 
 ## 2026-07-14 create/update | Misconception-First Explanation Loop
 
