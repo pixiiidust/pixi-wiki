@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-13
+updated: 2026-07-14
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -10,6 +10,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-14 create/update | Misconception-First Explanation Loop
+
+- Added `wiki/concepts/misconception-first-explanation-loop.md` from the canonical Knowledge concept and Jamie's supplied “Veritasium - What you don't see” transcript.
+- Preserved the reusable sequence: misconception → question → prediction → explanation → revised model, plus connected concrete A-plot / technical B-plot switching.
+- Routed it narrowly to technical explainers, product demos, and case studies; kept indexes, `llms.txt`, runbooks, and reference docs retrieval-first.
+- Kept the full supplied transcript private and separated practitioner learning evidence from retrospective virality claims.
 
 ## 2026-07-13 update | Connect taste formation to public legibility
 

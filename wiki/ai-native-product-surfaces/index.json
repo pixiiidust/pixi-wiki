@@ -1,11 +1,11 @@
 {
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
-  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-ku",
-  "documentCount": 24,
+  "description": "AI-native product/application surfaces, problem framing, product demos, technical explanation and case-study storytelling, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity an",
+  "documentCount": 25,
   "counts": {
     "wiki": 1,
-    "concepts": 12,
+    "concepts": 13,
     "entities": 6,
     "summaries": 0,
     "syntheses": 1
@@ -65,6 +65,13 @@
       "path": "wiki/concepts/material-loop-and-glass-interfaces.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/material-loop-and-glass-interfaces.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Misconception-First Explanation Loop",
+      "path": "wiki/concepts/misconception-first-explanation-loop.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/misconception-first-explanation-loop.md.html",
       "category": "concepts"
     },
     {
