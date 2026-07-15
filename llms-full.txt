@@ -4253,7 +4253,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 - Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
 - Treat `Knowledge/` and `Projects/` as canonical authoring sources.
 - Treat Daily Notes as scratch chronology, not direct compiled content.
-- Keep this namespace scoped to: AI-native product/application surfaces, problem framing, product demos, PM case studies, job-search edge dashboards, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
+- Keep this namespace scoped to: AI-native product/application surfaces, problem framing, product demos, PM case studies, job-search edge dashboards, J-Space-Replay, LKY Avatar, I-know-kungfu, planned program intelligence, myAbode, and product-language frameworks.
 - Do not widen scope silently; propose a namespace promotion/routing update first.
 - Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
 
@@ -4263,7 +4263,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-07-14
+updated: 2026-07-15
 type: namespace-overview
 status: scaffold
 category: product
@@ -4281,7 +4281,7 @@ confidence: medium
 
 ### Covers
 
-AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
+AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avatar, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
 
 ### Not Covered
 
@@ -4289,12 +4289,13 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-14 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video. Cross-format attention and distribution guidance now lives in `content-distribution`.
+2026-07-15 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and an explicit factual-grounding frontier. Cross-format attention and distribution guidance lives in `content-distribution`.
 
 ## Canonical Source Roots
 
 - `Projects/Job Edge/Index.md`
 - `Projects/J-Space-Replay/Index.md`
+- `Projects/LKY Avatar/Index.md`
 - `Projects/Shifu/Index.md`
 - `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
@@ -6230,6 +6231,102 @@ Primary workflow:
 Add automated discovery for new Ashby company slugs and a “new / removed / changed since last refresh” diff layer so users can distinguish a healthy refresh from a stable job count.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/entities/lky-avatar.md ===== -->
+
+---
+title: LKY Avatar / Voice Persona Stack
+created: 2026-07-15
+updated: 2026-07-15
+type: entity
+status: working-demo
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, voice-ai, avatar, local-ai, evaluation]
+sources:
+  - Projects/LKY Avatar/Index.md
+  - Projects/LKY Archive/Index.md
+  - https://github.com/pixiiidust/lky-brain
+confidence: high
+---
+
+# LKY Avatar / Voice Persona Stack
+
+LKY Avatar is a working local fictional-interview product that turns the `lky-brain` reasoning-style adapter into a voice-first, interruptible experience with an animated elderly-statesman portrait, a tuned watermarked voice, and a transcript designed as the record of proceedings.
+
+It is a separate applied product from the completed [[../../curated-tuning-datasets/wiki/entities/lky-archive|LKY Brain / LKY Archive]] corpus-and-adapter case study. The brain supplies the reasoning-style model; the avatar product owns the interaction, serving, disclosure, failure handling, and public-experience gates. The source avatar and voice-training repos are private. This page records a public-safe system summary, not private launch instructions.
+
+## Product frame
+
+```text
+speak or type a question
+  -> streaming transcription
+  -> local LKY-style language model
+  -> fine-tuned elder voice
+  -> animated portrait + spoken reply
+  -> transcript/export as inspectable record
+```
+
+The web surface uses a broadcast-interview hierarchy rather than a generic chat layout:
+
+- portrait stage and session-state lamp;
+- persistent fictional-AI disclosure;
+- `TRANSCRIPT OF RECORD` for spoken and written turns;
+- voice input, typed-note fallback, and free interruption;
+- transcript export, visible reset, and explicit busy/rate-limit states;
+- text-only continuation when voice synthesis is unavailable.
+
+The current default avatar is a bundled illustrated elderly-statesman portrait sprite with state-mapped expressions, mouth motion, blink, and breathing. It replaced an earlier anime placeholder. A separate Live2D path remains for a future full custom rig.
+
+## Architecture
+
+- LiveKit Cloud carries realtime rooms and WebRTC media.
+- Deepgram provides streaming speech-to-text.
+- A Python voice agent owns persona prompting, history, interruption, TTS state, and degraded text delivery.
+- The brain is a merged epoch-2 `lky-brain` LoRA served as Q4_K_M GGUF through llama.cpp behind an OpenAI-compatible seam.
+- The voice is a Chatterbox t3 model with a merged rank-16 LoRA overlay, served through a loopback-only HTTP adapter.
+- A Vite/TypeScript client renders the interview surface and keeps transcript export client-side.
+- A small token server mints short-lived room tokens and enforces unique rooms, one active session, and per-IP limits.
+
+## Evidence gates reached
+
+### Brain and interaction
+
+- Warm brain decode: 80.5 tok/s p50; warm time to first token about 0.05 s.
+- End-of-speech to first audio: 3.96 s p50, 5.95 s worst observed over 10 live turns.
+- Agent-side playback stops about 18–21 ms after interruption detection; about 270 ms from raw speech onset including the deliberate detection window.
+- Thirty-minute soak: 37/37 turns with no failures.
+
+### Fine-tuned voice
+
+The voice-training project compared two arms against a frozen Chatterbox baseline:
+
+| arm | blind preference | similarity | WER | outcome |
+|---|---:|---:|---:|---|
+| baseline | 2/20 in final LoRA pack | 0.8693 | 0.0324 | retained rollback |
+| GPT-SoVITS | 13/20 tuned | 0.9049 | 0.1274 | failed intelligibility gate |
+| **Chatterbox LoRA epoch 14** | **18/20 tuned** | **0.8900** | **0.0390** | **integrated** |
+
+The integrated voice kept the existing HTTP contract, passed a ten-turn same-GPU placement run at RTF mean 0.369 / max 0.397 with zero failures, and preserved Chatterbox's PerTh watermark at confidence 1.0000 on served output.
+
+## Trust and honesty boundary
+
+- This is a fictional simulation. Generated answers are not authentic quotations and the portrait is illustrative, not an authentic photo or endorsement.
+- The style adapter is not a factual database. Live testing found invented constituencies, dates, and historical events. Fact grounding is now the main quality gate.
+- Voice data and weights remain local. The generated audio stays watermarked.
+- Singapore proper nouns remain a weak point across STT and TTS. The tuned voice improved identity and pacing but did not solve out-of-vocabulary pronunciation.
+- The demo is not publicly deployed as of 2026-07-15. Home-GPU hosting is a measured recommendation, not a verified live service.
+
+## Next gate
+
+Add a small audited fact sheet, retrieve relevant sections into each turn, guard against invented specifics, boost Singapore proper nouns in STT/TTS, and evaluate factual accuracy separately from persona quality. Only after that trust gate passes should the project choose between the full Live2D rig and public hosting.
+
+## Related
+
+- [[../../curated-tuning-datasets/wiki/entities/lky-archive|LKY Brain / LKY Archive]]
+- [[../../local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]]
+- [[concepts/material-loop-and-glass-interfaces|Material Loop and Glass Interfaces]]
+- [[concepts/interaction-mode-routing|Interaction Mode Routing]]
+
+
 <!-- ===== ai-native-product-surfaces/wiki/entities/myabode.md ===== -->
 
 ---
@@ -6412,7 +6509,7 @@ Post-merge verification on `main`: focused verifier/eval tests 18 passed; full s
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-07-14
+updated: 2026-07-15
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -6444,6 +6541,7 @@ namespace: ai-native-product-surfaces
 - [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook wiki serving project for growing a user's knowledge base with bounded, agent-readable wikis.
 - [[entities/job-edge|Job Edge]] — Live job-search edge dashboard prototype using scheduled Ashby refresh, freshness, geography, fit, and LinkedIn-crowding signals to prioritize applications.
 - [[entities/j-space-replay|J-Space-Replay]] — Working public demo for replaying Qwen2.5-VL logit/J-lens readouts over video with explicit demo-quality interpretability boundaries.
+- [[entities/lky-avatar|LKY Avatar / Voice Persona Stack]] — Working local fictional-interview product combining the LKY reasoning adapter, a tuned watermarked voice, animated portrait, transcript/eval surfaces, and explicit factual-grounding gates.
 - [[entities/shifu-app|Shifu]] — Local-first video workbench/proof question with implementation chain complete; visual gameplay thesis under review after visual-only misses, next heavy tests wait for the repaired 5070 Ti desktop.
 - [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
 - [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
@@ -6460,6 +6558,7 @@ namespace: ai-native-product-surfaces
 
 - `Projects/Job Edge/Index.md`
 - `Projects/J-Space-Replay/Index.md`
+- `Projects/LKY Avatar/Index.md`
 - `Projects/Shifu/Index.md`
 - `Projects/I-know-kungfu/Index.md`
 - `Projects/Planned Program Intel/Index.md`
@@ -6492,7 +6591,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-14
+updated: 2026-07-15
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -6501,6 +6600,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-15 create | LKY Avatar / Voice Persona Stack
+
+- Added `wiki/entities/lky-avatar.md` from the canonical `Projects/LKY Avatar/Index.md` hub after reconciling current private avatar/voice repo docs, merged PRs, open issues, and eval reports with the public `lky-brain` foundation.
+- Kept the applied interview product separate from the LKY Brain corpus-and-adapter entity.
+- Captured the tuned Chatterbox LoRA win, watermarked same-GPU integration, interaction/stability gates, portrait-sprite milestone, and the factual-grounding / Singapore proper-noun frontier.
+- Omitted private weights, secrets, machine-only launch details, and any claim that the local demo is already publicly deployed.
 
 ## 2026-07-14 migrate | Move long-form attention guide to content-distribution
 
@@ -8453,7 +8559,7 @@ Each gate is independent; training completion does not collapse them into one st
 ---
 title: LKY Brain / LKY Archive
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: entity
 status: active
 namespace: curated-tuning-datasets
@@ -8461,6 +8567,7 @@ tags: [curated-tuning-datasets, lky-brain, provenance, dataset-recipe, qlora]
 sources:
   - Projects/LKY Archive/Index.md
   - Projects/LKY Archive/Source Inventory.md
+  - Projects/LKY Avatar/Index.md
   - https://github.com/pixiiidust/lky-brain
   - https://huggingface.co/datasets/sjsim/lky-reasoning-recipe
 confidence: high
@@ -8499,10 +8606,16 @@ This reduces source-body redistribution. It does not prove that fetched transcri
 
 The evaluation supports a provisional behavioral-shift claim, not factual fidelity or general reasoning improvement. Epoch 2 is a sensible checkpoint preference because it preserved more reframing and bounded uncertainty than epoch 3, but the current sample is too small and clustered to establish definitive overfitting.
 
+## Applied downstream relationship
+
+The separate LKY Avatar product now consumes the published epoch-2 adapter through a merged Q4_K_M llama.cpp serving path and pairs it with a tuned voice and animated portrait. That downstream milestone does not turn this corpus-and-adapter entity into a factual knowledge base. Live product use surfaced invented biography, dates, offices, and events, which confirms that style transfer and fact grounding must remain separate evidence lanes.
+
+Use `Projects/LKY Avatar/Index.md` for interaction, voice, portrait, hosting, and factual-grounding status. Keep this page focused on corpus provenance, dataset design, publication boundaries, and the adapter result.
+
 ## Related pages
 
-- [[../concepts/dataset-recipe-publication|Dataset Recipe Publication]]
-- [[../syntheses/lky-dataset-readiness-map|LKY Dataset Readiness Map]]
+- [[concepts/dataset-recipe-publication|Dataset Recipe Publication]]
+- [[syntheses/lky-dataset-readiness-map|LKY Dataset Readiness Map]]
 - Cross-namespace: `local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md`
 - Cross-namespace: `eval-trace/wiki/concepts/style-transfer-evaluation.md`
 
@@ -8552,7 +8665,7 @@ namespace: curated-tuning-datasets
 ---
 title: Curated Tuning Datasets — Activity Log
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: log
 status: active
 namespace: curated-tuning-datasets
@@ -8561,6 +8674,12 @@ namespace: curated-tuning-datasets
 # Curated Tuning Datasets — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-15 refresh | Separate LKY Brain source from the applied avatar product
+
+- Updated the LKY Brain / LKY Archive entity with its downstream relationship to `Projects/LKY Avatar/Index.md`.
+- Kept corpus provenance, dataset publication, and adapter evidence here while routing voice, interaction, portrait, hosting, and fact-grounding status to the applied product context.
+- Recorded the key trust lesson from live use: a reasoning-style adapter can still invent biography and dates, so style transfer is not factual grounding.
 
 ## 2026-06-16 create | Namespace scaffold initialized
 
@@ -8685,7 +8804,7 @@ This is a compiled namespace source under `pixi-vault/wikis/local-ai-infrastruct
 ---
 title: Local AI Infrastructure
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: namespace-overview
 status: active
 category: infrastructure
@@ -8709,13 +8828,14 @@ Cloud-only infrastructure unless it affects local-first migration; product UX un
 
 ### Current As
 
-2026-07-10 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers plus documented PEFT inference and vLLM serving paths.
+2026-07-15 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers, documented PEFT/vLLM paths, plus the executed downstream llama.cpp Q4_K_M serving and tuned-voice co-placement used by LKY Avatar.
 
 ## Canonical Source Roots
 
 - `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
 - `Knowledge/concepts/rag-over-agent-wikis.md`
 - `Projects/LKY Archive/Index.md`
+- `Projects/LKY Avatar/Index.md`
 
 ## Crosslinks
 
@@ -9093,7 +9213,7 @@ Compiled from Tonbi AI's video transcript, “The Autonomous Agentic Workflow th
 ---
 title: Local AI Infrastructure — Master Index
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: index
 status: active
 namespace: local-ai-infrastructure
@@ -9115,7 +9235,7 @@ namespace: local-ai-infrastructure
 
 ## Summaries
 
-- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth path, WSL2 + Blackwell failure isolation, checkout-portable launchers, documented PEFT/vLLM use paths, config drift, and reproducibility boundary.
+- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth training plus downstream llama.cpp Q4_K_M serving beside the tuned voice on one 16GB GPU; preserves config drift, factual-grounding, and reproducibility boundaries.
 
 ## Syntheses
 
@@ -9126,6 +9246,7 @@ namespace: local-ai-infrastructure
 - `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
 - `Knowledge/concepts/rag-over-agent-wikis.md`
 - `Projects/LKY Archive/Index.md`
+- `Projects/LKY Avatar/Index.md`
 - `raw/transcripts/tonbi-vps-agent-web-app-workflow-2026.md`
 - `https://youtu.be/K8ZTlMaDfmQ?si=IuNRaHVc-fFHZw41`
 
@@ -9135,7 +9256,7 @@ namespace: local-ai-infrastructure
 ---
 title: Local AI Infrastructure — Activity Log
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: log
 status: active
 namespace: local-ai-infrastructure
@@ -9144,6 +9265,12 @@ namespace: local-ai-infrastructure
 # Local AI Infrastructure — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-15 refresh | LKY Brain downstream avatar serving path
+
+- Refreshed the LKY Brain consumer-GPU summary from the separate `lky-avatar` integration evidence.
+- Added the executed merged-LoRA Q4_K_M llama.cpp route, 80.5 tok/s warm decode, tuned-voice co-placement, and ten-turn no-failure/VRAM evidence.
+- Kept the boundary that this verifies one local product path, not vLLM, multi-user capacity, factual reliability, or a reproducible locked training environment.
 
 ## 2026-06-16 create | Namespace scaffold initialized
 
@@ -9201,13 +9328,14 @@ namespace: local-ai-infrastructure
 ---
 title: LKY Brain Consumer-GPU QLoRA Case Study
 created: 2026-07-10
-updated: 2026-07-10
+updated: 2026-07-15
 type: summary
 status: compiled
 namespace: local-ai-infrastructure
-tags: [local-ai-infrastructure, qlora, consumer-gpu, wsl2, blackwell, reproducibility]
+tags: [local-ai-infrastructure, qlora, consumer-gpu, wsl2, blackwell, reproducibility, llama-cpp, voice-ai]
 sources:
   - Projects/LKY Archive/Index.md
+  - Projects/LKY Avatar/Index.md
   - https://github.com/pixiiidust/lky-brain
 confidence: high
 ---
@@ -9267,6 +9395,19 @@ The repo now documents two downstream paths:
 - **OpenAI-compatible serving:** run vLLM with LoRA enabled, register the adapter as `lky`, keep maximum LoRA rank at 64, and disable Qwen3 thinking in request metadata.
 
 The serving guide estimates about 28GB for the full-precision 14B base and points readers toward a 40GB card, or a 24GB card with quantization. These examples make the project easier to try and integrate, but they were not executed as part of this VPS review and should not be promoted to verified serving evidence yet.
+
+## Executed downstream serving in LKY Avatar
+
+The separate `lky-avatar` product has now executed a different serving route on the same RTX 5070 Ti:
+
+- merge the published epoch-2 LoRA into Qwen3-14B;
+- quantize the merged model to Q4_K_M GGUF;
+- serve through llama.cpp's OpenAI-compatible `llama-server`;
+- use the same client seam as the slower 4-bit Transformers + PEFT fallback.
+
+Measured warm brain performance was 80.5 tok/s p50 decode and about 0.05 s time to first token. The brain plus the fine-tuned Chatterbox voice then completed a ten-turn same-GPU placement run with zero failures; TTS RTF mean/max was 0.369/0.397 and total-card VRAM peaked at 15,813 MiB of 16,303 MiB.
+
+This verifies one local product-serving path. It does not validate the README's vLLM example, establish multi-user serving capacity, or make the style adapter factually reliable. Live use exposed confident biography/date/place hallucinations, so retrieval-backed fact grounding is now an application trust gate.
 
 ## Evidence boundary
 

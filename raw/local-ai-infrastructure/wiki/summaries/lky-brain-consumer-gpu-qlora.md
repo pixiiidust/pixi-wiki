@@ -1,13 +1,14 @@
 ---
 title: LKY Brain Consumer-GPU QLoRA Case Study
 created: 2026-07-10
-updated: 2026-07-10
+updated: 2026-07-15
 type: summary
 status: compiled
 namespace: local-ai-infrastructure
-tags: [local-ai-infrastructure, qlora, consumer-gpu, wsl2, blackwell, reproducibility]
+tags: [local-ai-infrastructure, qlora, consumer-gpu, wsl2, blackwell, reproducibility, llama-cpp, voice-ai]
 sources:
   - Projects/LKY Archive/Index.md
+  - Projects/LKY Avatar/Index.md
   - https://github.com/pixiiidust/lky-brain
 confidence: high
 ---
@@ -67,6 +68,19 @@ The repo now documents two downstream paths:
 - **OpenAI-compatible serving:** run vLLM with LoRA enabled, register the adapter as `lky`, keep maximum LoRA rank at 64, and disable Qwen3 thinking in request metadata.
 
 The serving guide estimates about 28GB for the full-precision 14B base and points readers toward a 40GB card, or a 24GB card with quantization. These examples make the project easier to try and integrate, but they were not executed as part of this VPS review and should not be promoted to verified serving evidence yet.
+
+## Executed downstream serving in LKY Avatar
+
+The separate `lky-avatar` product has now executed a different serving route on the same RTX 5070 Ti:
+
+- merge the published epoch-2 LoRA into Qwen3-14B;
+- quantize the merged model to Q4_K_M GGUF;
+- serve through llama.cpp's OpenAI-compatible `llama-server`;
+- use the same client seam as the slower 4-bit Transformers + PEFT fallback.
+
+Measured warm brain performance was 80.5 tok/s p50 decode and about 0.05 s time to first token. The brain plus the fine-tuned Chatterbox voice then completed a ten-turn same-GPU placement run with zero failures; TTS RTF mean/max was 0.369/0.397 and total-card VRAM peaked at 15,813 MiB of 16,303 MiB.
+
+This verifies one local product-serving path. It does not validate the README's vLLM example, establish multi-user serving capacity, or make the style adapter factually reliable. Live use exposed confident biography/date/place hallucinations, so retrieval-backed fact grounding is now an application trust gate.
 
 ## Evidence boundary
 

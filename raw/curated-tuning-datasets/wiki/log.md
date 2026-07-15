@@ -1,7 +1,7 @@
 ---
 title: Curated Tuning Datasets — Activity Log
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: log
 status: active
 namespace: curated-tuning-datasets
@@ -10,6 +10,12 @@ namespace: curated-tuning-datasets
 # Curated Tuning Datasets — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-15 refresh | Separate LKY Brain source from the applied avatar product
+
+- Updated the LKY Brain / LKY Archive entity with its downstream relationship to `Projects/LKY Avatar/Index.md`.
+- Kept corpus provenance, dataset publication, and adapter evidence here while routing voice, interaction, portrait, hosting, and fact-grounding status to the applied product context.
+- Recorded the key trust lesson from live use: a reasoning-style adapter can still invent biography and dates, so style transfer is not factual grounding.
 
 ## 2026-06-16 create | Namespace scaffold initialized
 

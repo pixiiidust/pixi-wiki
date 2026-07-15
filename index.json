@@ -538,22 +538,22 @@
     {
       "slug": "ai-native-product-surfaces",
       "title": "AI-Native Product Surfaces",
-      "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-ku",
+      "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avata",
       "tags": [
         "product"
       ],
       "category": "product",
       "scope": {
-        "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.",
+        "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avatar, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.",
         "notCovered": "Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.",
-        "currentAs": "2026-07-14 \u2014 active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, and J-Space-Replay as a public demo for replaying VLM lens readouts over video. Cross-format attention and distribution guidance now lives in `content-distribution`."
+        "currentAs": "2026-07-15 \u2014 active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and an explicit factual-grounding frontier. Cross-format attention and distribution guidance lives in `content-distribution`."
       },
-      "lastUpdated": "2026-07-14",
-      "documentCount": 24,
+      "lastUpdated": "2026-07-15",
+      "documentCount": 25,
       "counts": {
         "wiki": 1,
         "concepts": 12,
-        "entities": 6,
+        "entities": 7,
         "summaries": 0,
         "syntheses": 1
       },
@@ -687,6 +687,13 @@
           "path": "wiki/entities/job-edge.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/entities/job-edge.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/entities/job-edge.md.html",
+          "category": "entities"
+        },
+        {
+          "title": "LKY Avatar / Voice Persona Stack",
+          "path": "wiki/entities/lky-avatar.md",
+          "raw": "/raw/ai-native-product-surfaces/wiki/entities/lky-avatar.md",
+          "html": "/wiki/ai-native-product-surfaces/wiki/entities/lky-avatar.md.html",
           "category": "entities"
         },
         {
@@ -981,9 +988,9 @@
       "scope": {
         "covers": "Local-first AI setup, local LLMs, LoRA/fine-tuning infrastructure, RAG over compiled wikis, deterministic local workflow offload, and hardware/software constraints.",
         "notCovered": "Cloud-only infrastructure unless it affects local-first migration; product UX unless tied to local model constraints.",
-        "currentAs": "2026-07-10 \u2014 active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers plus documented PEFT inference and vLLM serving paths."
+        "currentAs": "2026-07-15 \u2014 active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers, documented PEFT/vLLM paths, plus the executed downstream llama.cpp Q4_K_M serving and tuned-voice co-placement used by LKY Avatar."
       },
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-15",
       "documentCount": 9,
       "counts": {
         "wiki": 1,

@@ -1,7 +1,7 @@
 ---
 title: LKY Brain / LKY Archive
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: entity
 status: active
 namespace: curated-tuning-datasets
@@ -9,6 +9,7 @@ tags: [curated-tuning-datasets, lky-brain, provenance, dataset-recipe, qlora]
 sources:
   - Projects/LKY Archive/Index.md
   - Projects/LKY Archive/Source Inventory.md
+  - Projects/LKY Avatar/Index.md
   - https://github.com/pixiiidust/lky-brain
   - https://huggingface.co/datasets/sjsim/lky-reasoning-recipe
 confidence: high
@@ -47,9 +48,15 @@ This reduces source-body redistribution. It does not prove that fetched transcri
 
 The evaluation supports a provisional behavioral-shift claim, not factual fidelity or general reasoning improvement. Epoch 2 is a sensible checkpoint preference because it preserved more reframing and bounded uncertainty than epoch 3, but the current sample is too small and clustered to establish definitive overfitting.
 
+## Applied downstream relationship
+
+The separate LKY Avatar product now consumes the published epoch-2 adapter through a merged Q4_K_M llama.cpp serving path and pairs it with a tuned voice and animated portrait. That downstream milestone does not turn this corpus-and-adapter entity into a factual knowledge base. Live product use surfaced invented biography, dates, offices, and events, which confirms that style transfer and fact grounding must remain separate evidence lanes.
+
+Use `Projects/LKY Avatar/Index.md` for interaction, voice, portrait, hosting, and factual-grounding status. Keep this page focused on corpus provenance, dataset design, publication boundaries, and the adapter result.
+
 ## Related pages
 
-- [[../concepts/dataset-recipe-publication|Dataset Recipe Publication]]
-- [[../syntheses/lky-dataset-readiness-map|LKY Dataset Readiness Map]]
+- [[concepts/dataset-recipe-publication|Dataset Recipe Publication]]
+- [[syntheses/lky-dataset-readiness-map|LKY Dataset Readiness Map]]
 - Cross-namespace: `local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md`
 - Cross-namespace: `eval-trace/wiki/concepts/style-transfer-evaluation.md`

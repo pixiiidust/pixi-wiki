@@ -1,12 +1,12 @@
 {
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
-  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-ku",
-  "documentCount": 24,
+  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avata",
+  "documentCount": 25,
   "counts": {
     "wiki": 1,
     "concepts": 12,
-    "entities": 6,
+    "entities": 7,
     "summaries": 0,
     "syntheses": 1
   },
@@ -135,6 +135,13 @@
       "path": "wiki/entities/job-edge.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/entities/job-edge.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/entities/job-edge.md.html",
+      "category": "entities"
+    },
+    {
+      "title": "LKY Avatar / Voice Persona Stack",
+      "path": "wiki/entities/lky-avatar.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/entities/lky-avatar.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/entities/lky-avatar.md.html",
       "category": "entities"
     },
     {

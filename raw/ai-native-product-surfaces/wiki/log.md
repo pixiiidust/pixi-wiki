@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-14
+updated: 2026-07-15
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -10,6 +10,13 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-15 create | LKY Avatar / Voice Persona Stack
+
+- Added `wiki/entities/lky-avatar.md` from the canonical `Projects/LKY Avatar/Index.md` hub after reconciling current private avatar/voice repo docs, merged PRs, open issues, and eval reports with the public `lky-brain` foundation.
+- Kept the applied interview product separate from the LKY Brain corpus-and-adapter entity.
+- Captured the tuned Chatterbox LoRA win, watermarked same-GPU integration, interaction/stability gates, portrait-sprite milestone, and the factual-grounding / Singapore proper-noun frontier.
+- Omitted private weights, secrets, machine-only launch details, and any claim that the local demo is already publicly deployed.
 
 ## 2026-07-14 migrate | Move long-form attention guide to content-distribution
 

@@ -1,7 +1,7 @@
 ---
 title: Local AI Infrastructure — Activity Log
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: log
 status: active
 namespace: local-ai-infrastructure
@@ -10,6 +10,12 @@ namespace: local-ai-infrastructure
 # Local AI Infrastructure — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-15 refresh | LKY Brain downstream avatar serving path
+
+- Refreshed the LKY Brain consumer-GPU summary from the separate `lky-avatar` integration evidence.
+- Added the executed merged-LoRA Q4_K_M llama.cpp route, 80.5 tok/s warm decode, tuned-voice co-placement, and ten-turn no-failure/VRAM evidence.
+- Kept the boundary that this verifies one local product path, not vLLM, multi-user capacity, factual reliability, or a reproducible locked training environment.
 
 ## 2026-06-16 create | Namespace scaffold initialized
 
