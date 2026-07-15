@@ -1,13 +1,13 @@
 {
   "generated_from": "frontmatter updated fields",
-  "count": 631,
+  "count": 632,
   "entries": [
     {
       "title": "AI-Native Product Surfaces",
       "path": "README.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-14",
+      "updated": "2026-07-15",
       "raw": "/raw/ai-native-product-surfaces/README.md",
       "html": "/wiki/ai-native-product-surfaces/README.md.html"
     },
@@ -16,7 +16,7 @@
       "path": "wiki/log.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-14",
+      "updated": "2026-07-15",
       "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
     },
@@ -25,9 +25,72 @@
       "path": "wiki/index.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-14",
+      "updated": "2026-07-15",
       "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
+    },
+    {
+      "title": "LKY Avatar / Voice Persona Stack",
+      "path": "wiki/entities/lky-avatar.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-15",
+      "raw": "/raw/ai-native-product-surfaces/wiki/entities/lky-avatar.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/entities/lky-avatar.md.html"
+    },
+    {
+      "title": "Curated Tuning Datasets \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "curated-tuning-datasets",
+      "namespace_title": "Curated Tuning Datasets",
+      "updated": "2026-07-15",
+      "raw": "/raw/curated-tuning-datasets/wiki/log.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/log.md.html"
+    },
+    {
+      "title": "LKY Brain / LKY Archive",
+      "path": "wiki/entities/lky-archive.md",
+      "namespace": "curated-tuning-datasets",
+      "namespace_title": "Curated Tuning Datasets",
+      "updated": "2026-07-15",
+      "raw": "/raw/curated-tuning-datasets/wiki/entities/lky-archive.md",
+      "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html"
+    },
+    {
+      "title": "LKY Brain Consumer-GPU QLoRA Case Study",
+      "path": "wiki/summaries/lky-brain-consumer-gpu-qlora.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-15",
+      "raw": "/raw/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md.html"
+    },
+    {
+      "title": "Local AI Infrastructure",
+      "path": "README.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-15",
+      "raw": "/raw/local-ai-infrastructure/README.md",
+      "html": "/wiki/local-ai-infrastructure/README.md.html"
+    },
+    {
+      "title": "Local AI Infrastructure \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-15",
+      "raw": "/raw/local-ai-infrastructure/wiki/log.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/log.md.html"
+    },
+    {
+      "title": "Local AI Infrastructure \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-15",
+      "raw": "/raw/local-ai-infrastructure/wiki/index.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/index.md.html"
     },
     {
       "title": "Attention Architecture for Long-Form Content",
@@ -174,15 +237,6 @@
       "html": "/wiki/curated-tuning-datasets/README.md.html"
     },
     {
-      "title": "Curated Tuning Datasets \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "curated-tuning-datasets",
-      "namespace_title": "Curated Tuning Datasets",
-      "updated": "2026-07-10",
-      "raw": "/raw/curated-tuning-datasets/wiki/log.md",
-      "html": "/wiki/curated-tuning-datasets/wiki/log.md.html"
-    },
-    {
       "title": "Curated Tuning Datasets \u2014 Master Index",
       "path": "wiki/index.md",
       "namespace": "curated-tuning-datasets",
@@ -199,15 +253,6 @@
       "updated": "2026-07-10",
       "raw": "/raw/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md",
       "html": "/wiki/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md.html"
-    },
-    {
-      "title": "LKY Brain / LKY Archive",
-      "path": "wiki/entities/lky-archive.md",
-      "namespace": "curated-tuning-datasets",
-      "namespace_title": "Curated Tuning Datasets",
-      "updated": "2026-07-10",
-      "raw": "/raw/curated-tuning-datasets/wiki/entities/lky-archive.md",
-      "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html"
     },
     {
       "title": "LKY Dataset Readiness Map",
@@ -253,42 +298,6 @@
       "updated": "2026-07-10",
       "raw": "/raw/eval-trace/wiki/concepts/style-transfer-evaluation.md",
       "html": "/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html"
-    },
-    {
-      "title": "LKY Brain Consumer-GPU QLoRA Case Study",
-      "path": "wiki/summaries/lky-brain-consumer-gpu-qlora.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-07-10",
-      "raw": "/raw/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md",
-      "html": "/wiki/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md.html"
-    },
-    {
-      "title": "Local AI Infrastructure",
-      "path": "README.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-07-10",
-      "raw": "/raw/local-ai-infrastructure/README.md",
-      "html": "/wiki/local-ai-infrastructure/README.md.html"
-    },
-    {
-      "title": "Local AI Infrastructure \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-07-10",
-      "raw": "/raw/local-ai-infrastructure/wiki/log.md",
-      "html": "/wiki/local-ai-infrastructure/wiki/log.md.html"
-    },
-    {
-      "title": "Local AI Infrastructure \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-07-10",
-      "raw": "/raw/local-ai-infrastructure/wiki/index.md",
-      "html": "/wiki/local-ai-infrastructure/wiki/index.md.html"
     },
     {
       "title": "Agent Skill Routing",

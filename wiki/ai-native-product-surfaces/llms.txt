@@ -1,6 +1,6 @@
 # AI-Native Product Surfaces Knowledge Base
 
-> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, I-know-ku
+> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avata
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
@@ -20,6 +20,7 @@
 - [I-know-kungfu](/raw/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/i-know-kungfu.md.html))
 - [J-Space-Replay](/raw/ai-native-product-surfaces/wiki/entities/j-space-replay.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/j-space-replay.md.html))
 - [Job Edge](/raw/ai-native-product-surfaces/wiki/entities/job-edge.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/job-edge.md.html))
+- [LKY Avatar / Voice Persona Stack](/raw/ai-native-product-surfaces/wiki/entities/lky-avatar.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/lky-avatar.md.html))
 - [myAbode](/raw/ai-native-product-surfaces/wiki/entities/myabode.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/myabode.md.html))
 - [Planned Program Intel](/raw/ai-native-product-surfaces/wiki/entities/planned-program-intel.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/planned-program-intel.md.html))
 - [Shifu](/raw/ai-native-product-surfaces/wiki/entities/shifu-app.md) ([html](/wiki/ai-native-product-surfaces/wiki/entities/shifu-app.md.html))

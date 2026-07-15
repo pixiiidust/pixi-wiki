@@ -1,7 +1,7 @@
 ---
 title: Local AI Infrastructure
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: namespace-overview
 status: active
 category: infrastructure
@@ -25,13 +25,14 @@ Cloud-only infrastructure unless it affects local-first migration; product UX un
 
 ### Current As
 
-2026-07-10 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers plus documented PEFT inference and vLLM serving paths.
+2026-07-15 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers, documented PEFT/vLLM paths, plus the executed downstream llama.cpp Q4_K_M serving and tuned-voice co-placement used by LKY Avatar.
 
 ## Canonical Source Roots
 
 - `Knowledge/concepts/local-retrieval-agent-infrastructure.md`
 - `Knowledge/concepts/rag-over-agent-wikis.md`
 - `Projects/LKY Archive/Index.md`
+- `Projects/LKY Avatar/Index.md`
 
 ## Crosslinks
 

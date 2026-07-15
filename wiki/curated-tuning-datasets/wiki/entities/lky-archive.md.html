@@ -19,9 +19,9 @@
 </div></details></div></aside><article class="article" id="main-content">
 <div class="content-header"><div class="breadcrumbs"><a href="/pixi-wiki/">wikis</a> / <a href="/pixi-wiki/wiki/curated-tuning-datasets/README.md.html">Curated Tuning Datasets</a> / wiki/entities/lky-archive.md</div><span class="page-tools"><a class="markdown-link" href="/pixi-wiki/raw/curated-tuning-datasets/wiki/entities/lky-archive.md">view as markdown</a><a class="markdown-link" href="https://github.com/pixiiidust/pixi-wiki/issues/new?title=Pixi+Wiki+correction%3A+curated-tuning-datasets%2Fwiki%2Fentities%2Flky-archive.md&body=Page%3A+https%3A%2F%2Fpixiiidust.github.io%2Fpixi-wiki%2Fwiki%2Fcurated-tuning-datasets%2Fwiki%2Fentities%2Flky-archive.md.html%0A%0AWhat+should+be+corrected%3F">report a mistake</a></span></div>
 <h1 id="lky-brain-lky-archive">LKY Brain / LKY Archive<a class="heading-anchor" href="#lky-brain-lky-archive" aria-label="Link to this section">¶</a></h1>
-<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-07-10</div><div><span>status</span>: active</div><div><span>namespace</span>: curated-tuning-datasets</div><div><span>sources</span>: 4</div></div>
+<div class="page-meta"><div><span>type</span>: entity</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-07-15</div><div><span>status</span>: active</div><div><span>namespace</span>: curated-tuning-datasets</div><div><span>sources</span>: 5</div></div>
 <p><code>lky-brain</code> is a completed public case study that turns a National Archives of Singapore source manifest into a locally hydrated chat corpus, a Qwen3-14B QLoRA adapter, and a post-hoc reasoning-style evaluation.</p>
-<nav class="page-toc"><div class="page-toc-title">On this page</div><ul><li class="page-toc-h2"><a href="#what-changed-from-the-original-inventory-stub">What changed from the original inventory stub</a></li><li class="page-toc-h2"><a href="#dataset-design">Dataset design</a></li><li class="page-toc-h2"><a href="#publication-boundary">Publication boundary</a></li><li class="page-toc-h2"><a href="#evidence-boundary">Evidence boundary</a></li><li class="page-toc-h2"><a href="#related-pages">Related pages</a></li></ul></nav>
+<nav class="page-toc"><div class="page-toc-title">On this page</div><ul><li class="page-toc-h2"><a href="#what-changed-from-the-original-inventory-stub">What changed from the original inventory stub</a></li><li class="page-toc-h2"><a href="#dataset-design">Dataset design</a></li><li class="page-toc-h2"><a href="#publication-boundary">Publication boundary</a></li><li class="page-toc-h2"><a href="#evidence-boundary">Evidence boundary</a></li><li class="page-toc-h2"><a href="#applied-downstream-relationship">Applied downstream relationship</a></li><li class="page-toc-h2"><a href="#related-pages">Related pages</a></li></ul></nav>
 <h2 id="what-changed-from-the-original-inventory-stub">What changed from the original inventory stub<a class="heading-anchor" href="#what-changed-from-the-original-inventory-stub" aria-label="Link to this section">¶</a></h2>
 <p>The project is no longer inventory-only:</p>
 <ul>
@@ -45,10 +45,13 @@
 <p>This reduces source-body redistribution. It does not prove that fetched transcripts or trained model weights are commercial-clean or unrestricted. Apache-2.0 labels cover project-owned code/recipe contributions, not automatically the source archive.</p>
 <h2 id="evidence-boundary">Evidence boundary<a class="heading-anchor" href="#evidence-boundary" aria-label="Link to this section">¶</a></h2>
 <p>The evaluation supports a provisional behavioral-shift claim, not factual fidelity or general reasoning improvement. Epoch 2 is a sensible checkpoint preference because it preserved more reframing and bounded uncertainty than epoch 3, but the current sample is too small and clustered to establish definitive overfitting.</p>
+<h2 id="applied-downstream-relationship">Applied downstream relationship<a class="heading-anchor" href="#applied-downstream-relationship" aria-label="Link to this section">¶</a></h2>
+<p>The separate LKY Avatar product now consumes the published epoch-2 adapter through a merged Q4_K_M llama.cpp serving path and pairs it with a tuned voice and animated portrait. That downstream milestone does not turn this corpus-and-adapter entity into a factual knowledge base. Live product use surfaced invented biography, dates, offices, and events, which confirms that style transfer and fact grounding must remain separate evidence lanes.</p>
+<p>Use <code>Projects/LKY Avatar/Index.md</code> for interaction, voice, portrait, hosting, and factual-grounding status. Keep this page focused on corpus provenance, dataset design, publication boundaries, and the adapter result.</p>
 <h2 id="related-pages">Related pages<a class="heading-anchor" href="#related-pages" aria-label="Link to this section">¶</a></h2>
 <ul>
-<li>Dataset Recipe Publication</li>
-<li>LKY Dataset Readiness Map</li>
+<li><a href="/pixi-wiki/wiki/curated-tuning-datasets/wiki/concepts/dataset-recipe-publication.md.html">Dataset Recipe Publication</a></li>
+<li><a href="/pixi-wiki/wiki/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md.html">LKY Dataset Readiness Map</a></li>
 <li>Cross-namespace: <code>local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md</code></li>
 <li>Cross-namespace: <code>eval-trace/wiki/concepts/style-transfer-evaluation.md</code></li>
 </ul>
