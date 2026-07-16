@@ -1,7 +1,7 @@
 ---
 title: Eval Trace — Activity Log
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: log
 status: compiled
 namespace: eval-trace
@@ -10,6 +10,12 @@ namespace: eval-trace
 # Eval Trace — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-15 update | Extend style-transfer evaluation to tuned voice
+
+- Added the LKY Voice parallel case to `wiki/concepts/style-transfer-evaluation.md`.
+- Preserved separate gates for identity similarity, WER intelligibility, realtime factor, blind human preference, same-GPU placement, watermarking, and rollback.
+- Recorded GPT-SoVITS as the counterexample where higher similarity did not compensate for failed intelligibility, and kept pronunciation/authenticity/factuality outside the claim.
 
 ## 2026-06-16 create | Namespace scaffold initialized
 

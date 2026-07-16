@@ -60,7 +60,7 @@
 ## Eval Trace
 
 > Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.
-> Current as of: 2026-07-10 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, and style-transfer evaluation.
+> Current as of: 2026-07-15 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, and the LKY Voice objective-plus-blind-listening gate.
 > Agent access: [/wiki/eval-trace/llms.txt](/wiki/eval-trace/llms.txt) [/wiki/eval-trace/llms-full.txt](/wiki/eval-trace/llms-full.txt) [/wiki/eval-trace/index.json](/wiki/eval-trace/index.json)
 
 - [Eval Trace Namespace Instructions](/raw/eval-trace/CLAUDE.md) ([html](/wiki/eval-trace/CLAUDE.md.html))

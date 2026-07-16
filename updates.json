@@ -57,6 +57,42 @@
       "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html"
     },
     {
+      "title": "Eval Trace",
+      "path": "README.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-15",
+      "raw": "/raw/eval-trace/README.md",
+      "html": "/wiki/eval-trace/README.md.html"
+    },
+    {
+      "title": "Eval Trace \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-15",
+      "raw": "/raw/eval-trace/wiki/log.md",
+      "html": "/wiki/eval-trace/wiki/log.md.html"
+    },
+    {
+      "title": "Eval Trace \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-15",
+      "raw": "/raw/eval-trace/wiki/index.md",
+      "html": "/wiki/eval-trace/wiki/index.md.html"
+    },
+    {
+      "title": "Style-Transfer Evaluation",
+      "path": "wiki/concepts/style-transfer-evaluation.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-15",
+      "raw": "/raw/eval-trace/wiki/concepts/style-transfer-evaluation.md",
+      "html": "/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html"
+    },
+    {
       "title": "LKY Brain Consumer-GPU QLoRA Case Study",
       "path": "wiki/summaries/lky-brain-consumer-gpu-qlora.md",
       "namespace": "local-ai-infrastructure",
@@ -262,42 +298,6 @@
       "updated": "2026-07-10",
       "raw": "/raw/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md",
       "html": "/wiki/curated-tuning-datasets/wiki/syntheses/lky-dataset-readiness-map.md.html"
-    },
-    {
-      "title": "Eval Trace",
-      "path": "README.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-10",
-      "raw": "/raw/eval-trace/README.md",
-      "html": "/wiki/eval-trace/README.md.html"
-    },
-    {
-      "title": "Eval Trace \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-10",
-      "raw": "/raw/eval-trace/wiki/log.md",
-      "html": "/wiki/eval-trace/wiki/log.md.html"
-    },
-    {
-      "title": "Eval Trace \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-10",
-      "raw": "/raw/eval-trace/wiki/index.md",
-      "html": "/wiki/eval-trace/wiki/index.md.html"
-    },
-    {
-      "title": "Style-Transfer Evaluation",
-      "path": "wiki/concepts/style-transfer-evaluation.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-10",
-      "raw": "/raw/eval-trace/wiki/concepts/style-transfer-evaluation.md",
-      "html": "/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html"
     },
     {
       "title": "Agent Skill Routing",

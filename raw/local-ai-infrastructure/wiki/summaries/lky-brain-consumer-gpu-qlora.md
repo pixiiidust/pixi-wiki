@@ -69,6 +69,12 @@ The repo now documents two downstream paths:
 
 The serving guide estimates about 28GB for the full-precision 14B base and points readers toward a 40GB card, or a 24GB card with quantization. These examples make the project easier to try and integrate, but they were not executed as part of this VPS review and should not be promoted to verified serving evidence yet.
 
+## Interactive chat path and sampling correction
+
+Repo commit `3a9f6a5` added a streaming Transformers + PEFT chat REPL with conversation history, `/date` era switching, and `/reset`. The documented interactive defaults are temperature 0.7 with repetition penalty 1.1 after temperature 0.8 without a penalty produced degenerate loops in field use.
+
+This is an executed local interaction path, not evidence for the unexecuted vLLM example. It also does not rewrite the historical n=24 style-evaluation contract, which used its original stochastic generation settings.
+
 ## Executed downstream serving in LKY Avatar
 
 The separate `lky-avatar` product has now executed a different serving route on the same RTX 5070 Ti:
