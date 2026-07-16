@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/eval-trace/`.
 ---
 title: Eval Trace
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: namespace-overview
 status: active
 category: evaluation
@@ -43,18 +43,21 @@ General observability unrelated to behavior/workflow quality; product analytics 
 
 ### Current As
 
-2026-07-10 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, and style-transfer evaluation.
+2026-07-15 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, and the LKY Voice objective-plus-blind-listening gate.
 
 ## Canonical Source Roots
 
 - `Projects/Eval Trace/Index.md`
 - `Knowledge/concepts/context-overfitting.md`
 - `Knowledge/concepts/style-transfer-evaluation.md`
+- `Projects/LKY Avatar/Index.md`
 
 ## Crosslinks
 
 - [[../agent-workflows/README|agent-workflows]]
 - [[../pixi-vault/README|pixi-vault]]
+- [[../ai-native-product-surfaces/README|ai-native-product-surfaces]]
+- [[../local-ai-infrastructure/README|local-ai-infrastructure]]
 
 ## Public Output Contract
 
@@ -172,14 +175,15 @@ For self-improvement, pair this page with [[self-improving-agent-systems]]: prom
 ---
 title: Style-Transfer Evaluation
 created: 2026-07-10
-updated: 2026-07-10
+updated: 2026-07-15
 type: concept
 status: compiled
 namespace: eval-trace
-tags: [eval-trace, style-transfer, lora, llm-judge, checkpoint-selection, uncertainty]
+tags: [eval-trace, style-transfer, lora, llm-judge, checkpoint-selection, uncertainty, voice-ai]
 sources:
   - Knowledge/concepts/style-transfer-evaluation.md
   - Projects/LKY Archive/Index.md
+  - Projects/LKY Avatar/Index.md
   - https://github.com/pixiiidust/lky-brain
   - https://pixiiidust.github.io/lora-LKY-report/
 confidence: high
@@ -211,6 +215,22 @@ On 24 rows from 10 held-out interviews, the epoch-2 QLoRA checkpoint moved judge
 - reframing: 29% → 38%.
 
 Epoch 3 reached voice 2.96 and analogy 38%, but lower reframing and bounded uncertainty. Epoch 2 is a defensible provisional checkpoint preference because it retains the subtler traits while tying on broad voice within likely noise.
+
+## Parallel speech-style evaluation
+
+The LKY Voice run applies the same evidence discipline to speech generation, where identity, intelligibility, deployment speed, and human recognition must remain separate:
+
+| gate | contract | winning Chatterbox LoRA e14 |
+|---|---|---:|
+| speaker similarity | meet or beat baseline 0.8693 | 0.8900 |
+| intelligibility | WER ≤ 0.05 | 0.0390 |
+| deployability | RTF ≤ 0.6 | 0.381 |
+| human blind listen | tuned preferred ≥ 70% | 18/20 |
+| integrated placement | no failures; realtime on the shared GPU | RTF mean/max 0.369/0.397; 0 failures |
+
+The rejected GPT-SoVITS arm is the useful counterexample: similarity improved to 0.9049, but WER degraded to 0.1274. The operator's blind listen can veto a numerically attractive model; no one metric decides shipment.
+
+Integration also preserved a stock-model rollback and PerTh watermark confidence 1.0000. These results support a tuned-voice preference and deployment decision, not authentic speech, semantic correctness, factual fidelity, or robust pronunciation. Singapore proper nouns and mixed acoustic eras remain separate residual risks.
 
 ## Claim boundary
 
@@ -277,7 +297,7 @@ Compiled from `Projects/Eval Trace/Index.md`.
 ---
 title: Eval Trace — Master Index
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: index
 status: compiled
 namespace: eval-trace
@@ -290,7 +310,7 @@ namespace: eval-trace
 ## Concepts
 
 - [[concepts/context-overfitting|Context Overfitting]] — Agent workflow failure mode where stale or overly rigid context overwhelms current intent/live evidence.
-- [[concepts/style-transfer-evaluation|Style-Transfer Evaluation]] — Document-level holdouts, matched candidates, generation controls, judge calibration, cluster-aware uncertainty, and checkpoint claim boundaries.
+- [[concepts/style-transfer-evaluation|Style-Transfer Evaluation]] — LLM document holdouts and trait rubrics plus tuned-voice similarity, intelligibility, realtime, blind-listening, placement, watermark, and rollback gates.
 
 ## Entities
 
@@ -310,6 +330,7 @@ namespace: eval-trace
 - `Projects/Eval Trace/Index.md`
 - `Knowledge/concepts/context-overfitting.md`
 - `Knowledge/concepts/style-transfer-evaluation.md`
+- `Projects/LKY Avatar/Index.md`
 
 
 <!-- ===== eval-trace/wiki/log.md ===== -->
@@ -317,7 +338,7 @@ namespace: eval-trace
 ---
 title: Eval Trace — Activity Log
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: log
 status: compiled
 namespace: eval-trace
@@ -326,6 +347,12 @@ namespace: eval-trace
 # Eval Trace — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-15 update | Extend style-transfer evaluation to tuned voice
+
+- Added the LKY Voice parallel case to `wiki/concepts/style-transfer-evaluation.md`.
+- Preserved separate gates for identity similarity, WER intelligibility, realtime factor, blind human preference, same-GPU placement, watermarking, and rollback.
+- Recorded GPT-SoVITS as the counterexample where higher similarity did not compensate for failed intelligibility, and kept pronunciation/authenticity/factuality outside the claim.
 
 ## 2026-06-16 create | Namespace scaffold initialized
 

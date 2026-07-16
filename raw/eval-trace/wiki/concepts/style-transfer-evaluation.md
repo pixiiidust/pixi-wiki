@@ -1,14 +1,15 @@
 ---
 title: Style-Transfer Evaluation
 created: 2026-07-10
-updated: 2026-07-10
+updated: 2026-07-15
 type: concept
 status: compiled
 namespace: eval-trace
-tags: [eval-trace, style-transfer, lora, llm-judge, checkpoint-selection, uncertainty]
+tags: [eval-trace, style-transfer, lora, llm-judge, checkpoint-selection, uncertainty, voice-ai]
 sources:
   - Knowledge/concepts/style-transfer-evaluation.md
   - Projects/LKY Archive/Index.md
+  - Projects/LKY Avatar/Index.md
   - https://github.com/pixiiidust/lky-brain
   - https://pixiiidust.github.io/lora-LKY-report/
 confidence: high
@@ -40,6 +41,22 @@ On 24 rows from 10 held-out interviews, the epoch-2 QLoRA checkpoint moved judge
 - reframing: 29% → 38%.
 
 Epoch 3 reached voice 2.96 and analogy 38%, but lower reframing and bounded uncertainty. Epoch 2 is a defensible provisional checkpoint preference because it retains the subtler traits while tying on broad voice within likely noise.
+
+## Parallel speech-style evaluation
+
+The LKY Voice run applies the same evidence discipline to speech generation, where identity, intelligibility, deployment speed, and human recognition must remain separate:
+
+| gate | contract | winning Chatterbox LoRA e14 |
+|---|---|---:|
+| speaker similarity | meet or beat baseline 0.8693 | 0.8900 |
+| intelligibility | WER ≤ 0.05 | 0.0390 |
+| deployability | RTF ≤ 0.6 | 0.381 |
+| human blind listen | tuned preferred ≥ 70% | 18/20 |
+| integrated placement | no failures; realtime on the shared GPU | RTF mean/max 0.369/0.397; 0 failures |
+
+The rejected GPT-SoVITS arm is the useful counterexample: similarity improved to 0.9049, but WER degraded to 0.1274. The operator's blind listen can veto a numerically attractive model; no one metric decides shipment.
+
+Integration also preserved a stock-model rollback and PerTh watermark confidence 1.0000. These results support a tuned-voice preference and deployment decision, not authentic speech, semantic correctness, factual fidelity, or robust pronunciation. Singapore proper nouns and mixed acoustic eras remain separate residual risks.
 
 ## Claim boundary
 

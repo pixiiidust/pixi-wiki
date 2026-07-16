@@ -353,9 +353,9 @@
       "scope": {
         "covers": "Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.",
         "notCovered": "General observability unrelated to behavior/workflow quality; product analytics unless used as an evaluation surface; model-training infrastructure except where it changes the evaluation contract.",
-        "currentAs": "2026-07-10 \u2014 active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, and style-transfer evaluation."
+        "currentAs": "2026-07-15 \u2014 active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, and the LKY Voice objective-plus-blind-listening gate."
       },
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-15",
       "documentCount": 8,
       "counts": {
         "wiki": 1,

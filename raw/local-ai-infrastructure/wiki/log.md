@@ -15,6 +15,7 @@ namespace: local-ai-infrastructure
 
 - Refreshed the LKY Brain consumer-GPU summary from the separate `lky-avatar` integration evidence.
 - Added the executed merged-LoRA Q4_K_M llama.cpp route, 80.5 tok/s warm decode, tuned-voice co-placement, and ten-turn no-failure/VRAM evidence.
+- Added the later interactive chat REPL and its temperature 0.7 / repetition-penalty 1.1 correction while preserving the historical evaluation boundary.
 - Kept the boundary that this verifies one local product path, not vLLM, multi-user capacity, factual reliability, or a reproducible locked training environment.
 
 ## 2026-06-16 create | Namespace scaffold initialized

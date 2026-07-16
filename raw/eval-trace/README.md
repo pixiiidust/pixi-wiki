@@ -1,7 +1,7 @@
 ---
 title: Eval Trace
 created: 2026-06-16
-updated: 2026-07-10
+updated: 2026-07-15
 type: namespace-overview
 status: active
 category: evaluation
@@ -25,18 +25,21 @@ General observability unrelated to behavior/workflow quality; product analytics 
 
 ### Current As
 
-2026-07-10 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, and style-transfer evaluation.
+2026-07-15 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, and the LKY Voice objective-plus-blind-listening gate.
 
 ## Canonical Source Roots
 
 - `Projects/Eval Trace/Index.md`
 - `Knowledge/concepts/context-overfitting.md`
 - `Knowledge/concepts/style-transfer-evaluation.md`
+- `Projects/LKY Avatar/Index.md`
 
 ## Crosslinks
 
 - [[../agent-workflows/README|agent-workflows]]
 - [[../pixi-vault/README|pixi-vault]]
+- [[../ai-native-product-surfaces/README|ai-native-product-surfaces]]
+- [[../local-ai-infrastructure/README|local-ai-infrastructure]]
 
 ## Public Output Contract
 
