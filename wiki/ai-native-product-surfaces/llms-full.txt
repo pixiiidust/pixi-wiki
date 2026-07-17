@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: namespace-overview
 status: scaffold
 category: product
@@ -45,7 +45,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-15 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and an explicit factual-grounding frontier. Cross-format attention and distribution guidance lives in `content-distribution`.
+2026-07-17 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and a merged audited fact-grounding layer awaiting live operator proof. Cross-format attention and distribution guidance lives in `content-distribution`.
 
 ## Canonical Source Roots
 
@@ -1992,7 +1992,7 @@ Add automated discovery for new Ashby company slugs and a “new / removed / cha
 ---
 title: LKY Avatar / Voice Persona Stack
 created: 2026-07-15
-updated: 2026-07-15
+updated: 2026-07-17
 type: entity
 status: working-demo
 namespace: ai-native-product-surfaces
@@ -2036,7 +2036,9 @@ The current default avatar is a bundled illustrated elderly-statesman portrait s
 
 - LiveKit Cloud carries realtime rooms and WebRTC media.
 - Deepgram provides streaming speech-to-text.
-- A Python voice agent owns persona prompting, history, interruption, TTS state, and degraded text delivery.
+- A Python voice agent owns persona prompting, history, interruption, TTS state, degraded text delivery, per-turn fact retrieval, and the uncertainty guardrail.
+- A small audited fact sheet is split into retrievable sections. The best matches are inserted immediately before the latest question behind a source-over-memory instruction.
+- Deepgram Nova-3 receives a Singapore proper-noun `keyterm` list; the same vocabulary extends the TTS pronunciation seam.
 - The brain is a merged epoch-2 `lky-brain` LoRA served as Q4_K_M GGUF through llama.cpp behind an OpenAI-compatible seam.
 - The voice is a Chatterbox t3 model with a merged rank-16 LoRA overlay, served through a loopback-only HTTP adapter.
 - A Vite/TypeScript client renders the interview surface and keeps transcript export client-side.
@@ -2063,17 +2065,25 @@ The voice-training project compared two arms against a frozen Chatterbox baselin
 
 The integrated voice kept the existing HTTP contract, passed a ten-turn same-GPU placement run at RTF mean 0.369 / max 0.397 with zero failures, and preserved Chatterbox's PerTh watermark at confidence 1.0000 on served output.
 
+### Factual-grounding implementation
+
+- The audited sheet covers constituencies and offices, independence and merger, HDB, water, selected policies, family, and a critical Tanjong Pagar correction with institutional source notes.
+- Deterministic keyword retrieval selects only relevant sections per turn and leaves the brain server unchanged.
+- A 12-question eval records factual accuracy, persona quality, and fabrication as independent signals and supports matched grounding-on/off runs.
+- Repository verification passed across 148 root tests, 199 voice-agent tests with 3 live-service skips, 91 web tests, and a production build.
+- The implementation is merged; live factual lift and real-microphone proper-noun transcription are still operator-side proofs.
+
 ## Trust and honesty boundary
 
 - This is a fictional simulation. Generated answers are not authentic quotations and the portrait is illustrative, not an authentic photo or endorsement.
-- The style adapter is not a factual database. Live testing found invented constituencies, dates, and historical events. Fact grounding is now the main quality gate.
+- The style adapter is not a factual database. Live testing found invented constituencies, dates, and historical events. The application now has an audited retrieval layer, but model-quality lift has not yet been measured live.
 - Voice data and weights remain local. The generated audio stays watermarked.
-- Singapore proper nouns remain a weak point across STT and TTS. The tuned voice improved identity and pacing but did not solve out-of-vocabulary pronunciation.
-- The demo is not publicly deployed as of 2026-07-15. Home-GPU hosting is a measured recommendation, not a verified live service.
+- Singapore proper-noun input/output seams are implemented. Real-microphone STT and broader TTS pronunciation remain acceptance checks rather than proven coverage.
+- The demo is not publicly deployed as of 2026-07-17. Home-GPU hosting is a measured recommendation, not a verified live service.
 
 ## Next gate
 
-Add a small audited fact sheet, retrieve relevant sections into each turn, guard against invented specifics, boost Singapore proper nouns in STT/TTS, and evaluate factual accuracy separately from persona quality. Only after that trust gate passes should the project choose between the full Live2D rig and public hosting.
+Run the 12 fact questions with grounding on and off against the local brain, score factual accuracy separately from persona quality and fabrication, and live-check the Singapore keyterms through a real microphone. Reopen the grounding gate if either fails. Only after those proofs should the project choose between the full Live2D rig and public hosting.
 
 ## Related
 
@@ -2265,7 +2275,7 @@ Post-merge verification on `main`: focused verifier/eval tests 18 passed; full s
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -2297,7 +2307,7 @@ namespace: ai-native-product-surfaces
 - [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook wiki serving project for growing a user's knowledge base with bounded, agent-readable wikis.
 - [[entities/job-edge|Job Edge]] — Live job-search edge dashboard prototype using scheduled Ashby refresh, freshness, geography, fit, and LinkedIn-crowding signals to prioritize applications.
 - [[entities/j-space-replay|J-Space-Replay]] — Working public demo for replaying Qwen2.5-VL logit/J-lens readouts over video with explicit demo-quality interpretability boundaries.
-- [[entities/lky-avatar|LKY Avatar / Voice Persona Stack]] — Working local fictional-interview product combining the LKY reasoning adapter, a tuned watermarked voice, animated portrait, transcript/eval surfaces, and explicit factual-grounding gates.
+- [[entities/lky-avatar|LKY Avatar / Voice Persona Stack]] — Working local fictional-interview product combining the LKY reasoning adapter, tuned watermarked voice, animated portrait, audited per-turn fact retrieval, transcript/eval surfaces, and explicit live-proof boundaries.
 - [[entities/shifu-app|Shifu]] — Local-first video workbench/proof question with implementation chain complete; visual gameplay thesis under review after visual-only misses, next heavy tests wait for the repaired 5070 Ti desktop.
 - [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
 - [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
@@ -2347,7 +2357,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -2356,6 +2366,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-17 update | LKY Avatar fact-grounding layer merged
+
+- Refreshed `wiki/entities/lky-avatar.md` after issue #45 / PR #47 added an audited sectioned fact sheet, per-turn retrieval, source-over-memory and uncertainty instructions, Singapore STT keyterms, and a 12-question factuality eval.
+- Recorded the implementation verification and the new signal boundary: factual accuracy, persona quality, and fabrication must be judged separately.
+- Kept the live-proof boundary explicit: real-microphone STT and grounding-on/off local-brain results remain pending; the local demo is still not presented as a public live service.
 
 ## 2026-07-15 create | LKY Avatar / Voice Persona Stack
 

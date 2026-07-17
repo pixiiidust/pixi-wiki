@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/local-ai-infrastruct
 ---
 title: Local AI Infrastructure
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: namespace-overview
 status: active
 category: infrastructure
@@ -43,7 +43,7 @@ Cloud-only infrastructure unless it affects local-first migration; product UX un
 
 ### Current As
 
-2026-07-15 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers, documented PEFT/vLLM paths, plus the executed downstream llama.cpp Q4_K_M serving and tuned-voice co-placement used by LKY Avatar.
+2026-07-17 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers, documented PEFT/vLLM paths, executed downstream llama.cpp Q4_K_M serving, tuned-voice co-placement, and the application-layer audited retrieval seam used by LKY Avatar.
 
 ## Canonical Source Roots
 
@@ -428,7 +428,7 @@ Compiled from Tonbi AI's video transcript, “The Autonomous Agentic Workflow th
 ---
 title: Local AI Infrastructure — Master Index
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: index
 status: active
 namespace: local-ai-infrastructure
@@ -450,7 +450,7 @@ namespace: local-ai-infrastructure
 
 ## Summaries
 
-- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth training plus downstream llama.cpp Q4_K_M serving beside the tuned voice on one 16GB GPU; preserves config drift, factual-grounding, and reproducibility boundaries.
+- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth training plus downstream llama.cpp Q4_K_M serving beside the tuned voice on one 16GB GPU, now with an application-layer audited retrieval seam; preserves config drift, live-proof, and reproducibility boundaries.
 
 ## Syntheses
 
@@ -471,7 +471,7 @@ namespace: local-ai-infrastructure
 ---
 title: Local AI Infrastructure — Activity Log
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: log
 status: active
 namespace: local-ai-infrastructure
@@ -480,6 +480,12 @@ namespace: local-ai-infrastructure
 # Local AI Infrastructure — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-17 refresh | LKY Avatar application-layer fact retrieval
+
+- Updated the LKY Brain case study after `lky-avatar` issue #45 / PR #47 merged a small audited fact sheet, deterministic per-turn retrieval, uncertainty instructions, Singapore STT keyterms, and a 12-question factuality eval.
+- Preserved the serving boundary: the Q4_K_M llama.cpp brain is unchanged; grounding belongs to the voice-agent application layer.
+- Preserved the proof boundary: tests cover the seams, while real-microphone STT and grounding-on/off local-brain quality results remain pending.
 
 ## 2026-07-15 refresh | LKY Brain downstream avatar serving path
 
@@ -544,7 +550,7 @@ namespace: local-ai-infrastructure
 ---
 title: LKY Brain Consumer-GPU QLoRA Case Study
 created: 2026-07-10
-updated: 2026-07-15
+updated: 2026-07-17
 type: summary
 status: compiled
 namespace: local-ai-infrastructure
@@ -629,7 +635,11 @@ The separate `lky-avatar` product has now executed a different serving route on 
 
 Measured warm brain performance was 80.5 tok/s p50 decode and about 0.05 s time to first token. The brain plus the fine-tuned Chatterbox voice then completed a ten-turn same-GPU placement run with zero failures; TTS RTF mean/max was 0.369/0.397 and total-card VRAM peaked at 15,813 MiB of 16,303 MiB.
 
-This verifies one local product-serving path. It does not validate the README's vLLM example, establish multi-user serving capacity, or make the style adapter factually reliable. Live use exposed confident biography/date/place hallucinations, so retrieval-backed fact grounding is now an application trust gate.
+This verifies one local product-serving path. It does not validate the README's vLLM example, establish multi-user serving capacity, or make the style adapter factually reliable. Live use exposed confident biography/date/place hallucinations.
+
+The application layer now adds a small audited fact sheet, deterministic section retrieval per turn, a source-over-memory and uncertainty block immediately before the latest question, and Singapore proper-noun input boosts without changing llama-server. A 12-question eval separates factual accuracy, persona quality, and fabrication and supports matched grounding-on/off runs.
+
+Repository verification passed 148 root tests and 199 voice-agent tests with 3 live-service skips. That proves the retrieval, prompt, config, STT-construction, and eval seams as code; it does not prove the model-quality lift. Real-microphone STT and a local-brain grounding-on/off run remain the acceptance evidence.
 
 ## Evidence boundary
 

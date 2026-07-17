@@ -1,7 +1,7 @@
 ---
 title: Local AI Infrastructure — Master Index
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: index
 status: active
 namespace: local-ai-infrastructure
@@ -23,7 +23,7 @@ namespace: local-ai-infrastructure
 
 ## Summaries
 
-- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth training plus downstream llama.cpp Q4_K_M serving beside the tuned voice on one 16GB GPU; preserves config drift, factual-grounding, and reproducibility boundaries.
+- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth training plus downstream llama.cpp Q4_K_M serving beside the tuned voice on one 16GB GPU, now with an application-layer audited retrieval seam; preserves config drift, live-proof, and reproducibility boundaries.
 
 ## Syntheses
 

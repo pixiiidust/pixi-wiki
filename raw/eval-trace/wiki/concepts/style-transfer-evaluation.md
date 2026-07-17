@@ -1,7 +1,7 @@
 ---
 title: Style-Transfer Evaluation
 created: 2026-07-10
-updated: 2026-07-15
+updated: 2026-07-17
 type: concept
 status: compiled
 namespace: eval-trace
@@ -58,6 +58,20 @@ The rejected GPT-SoVITS arm is the useful counterexample: similarity improved to
 
 Integration also preserved a stock-model rollback and PerTh watermark confidence 1.0000. These results support a tuned-voice preference and deployment decision, not authentic speech, semantic correctness, factual fidelity, or robust pronunciation. Singapore proper nouns and mixed acoustic eras remain separate residual risks.
 
+## Parallel factuality evaluation
+
+The first integrated LKY Avatar session passed interaction and voice gates while inventing constituencies, dates, and historical events. The application therefore added an independent factuality lane:
+
+| signal | question |
+|---|---|
+| factual accuracy | Does the answer contain only correct dates, places, offices, and relationships? |
+| persona quality | Does grounding preserve concise, recognizable reasoning style? |
+| fabrication | Did the model invent a date, quote, meeting, office, or constituency? |
+
+The implementation uses a small audited fact sheet, deterministic per-turn section retrieval, a source-over-memory block inserted immediately before the latest question, an uncertainty guardrail, and Singapore proper-noun STT keyterms. A 12-question subset supports matched grounding-on/off runs.
+
+Tests establish that these seams work as code. They do not establish factual lift. The remaining proof is a real-microphone keyterm check plus a local-brain comparison of factual accuracy, persona quality, and fabrication with grounding enabled and disabled.
+
 ## Claim boundary
 
 The evidence supports a directional behavioral shift. It does not yet establish statistically stable per-trait lift, factual fidelity, general capability gain, or definitive overfitting because:
@@ -71,4 +85,4 @@ The evidence supports a directional behavioral shift. It does not yet establish 
 
 ## Next evidence gate
 
-Evaluate all 66 rows with fixed or repeated seeds, separate checkpoint selection from final testing, publish document-level aggregates and confidence intervals, add a blind/no-reference judge pass, manually review a stratified sample, and check same-event/date leakage across the dialogue and speech streams. Phrase epoch-3 as a possible overfit signal until those checks agree.
+For model style, evaluate all 66 rows with fixed or repeated seeds, separate checkpoint selection from final testing, publish document-level aggregates and confidence intervals, add a blind/no-reference judge pass, manually review a stratified sample, and check same-event/date leakage across the dialogue and speech streams. For application factuality, run the 12 questions with grounding on/off and report factual accuracy, persona quality, and fabrication separately. Phrase epoch-3 as a possible overfit signal and the retrieval layer as implemented-but-unproven until those checks agree.

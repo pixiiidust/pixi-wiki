@@ -1,7 +1,7 @@
 ---
 title: Eval Trace — Master Index
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: index
 status: compiled
 namespace: eval-trace
@@ -14,7 +14,7 @@ namespace: eval-trace
 ## Concepts
 
 - [[concepts/context-overfitting|Context Overfitting]] — Agent workflow failure mode where stale or overly rigid context overwhelms current intent/live evidence.
-- [[concepts/style-transfer-evaluation|Style-Transfer Evaluation]] — LLM document holdouts and trait rubrics plus tuned-voice similarity, intelligibility, realtime, blind-listening, placement, watermark, and rollback gates.
+- [[concepts/style-transfer-evaluation|Style-Transfer Evaluation]] — LLM document holdouts and trait rubrics; tuned-voice similarity, intelligibility, realtime, blind-listening, placement, watermark, and rollback; plus separate factual accuracy, persona quality, and fabrication signals for grounded applications.
 
 ## Entities
 

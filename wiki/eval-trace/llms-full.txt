@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/eval-trace/`.
 ---
 title: Eval Trace
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: namespace-overview
 status: active
 category: evaluation
@@ -43,7 +43,7 @@ General observability unrelated to behavior/workflow quality; product analytics 
 
 ### Current As
 
-2026-07-15 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, and the LKY Voice objective-plus-blind-listening gate.
+2026-07-17 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, the LKY Voice objective-plus-blind-listening gate, and the LKY Avatar factual-accuracy/persona-quality/fabrication separation.
 
 ## Canonical Source Roots
 
@@ -175,7 +175,7 @@ For self-improvement, pair this page with [[self-improving-agent-systems]]: prom
 ---
 title: Style-Transfer Evaluation
 created: 2026-07-10
-updated: 2026-07-15
+updated: 2026-07-17
 type: concept
 status: compiled
 namespace: eval-trace
@@ -232,6 +232,20 @@ The rejected GPT-SoVITS arm is the useful counterexample: similarity improved to
 
 Integration also preserved a stock-model rollback and PerTh watermark confidence 1.0000. These results support a tuned-voice preference and deployment decision, not authentic speech, semantic correctness, factual fidelity, or robust pronunciation. Singapore proper nouns and mixed acoustic eras remain separate residual risks.
 
+## Parallel factuality evaluation
+
+The first integrated LKY Avatar session passed interaction and voice gates while inventing constituencies, dates, and historical events. The application therefore added an independent factuality lane:
+
+| signal | question |
+|---|---|
+| factual accuracy | Does the answer contain only correct dates, places, offices, and relationships? |
+| persona quality | Does grounding preserve concise, recognizable reasoning style? |
+| fabrication | Did the model invent a date, quote, meeting, office, or constituency? |
+
+The implementation uses a small audited fact sheet, deterministic per-turn section retrieval, a source-over-memory block inserted immediately before the latest question, an uncertainty guardrail, and Singapore proper-noun STT keyterms. A 12-question subset supports matched grounding-on/off runs.
+
+Tests establish that these seams work as code. They do not establish factual lift. The remaining proof is a real-microphone keyterm check plus a local-brain comparison of factual accuracy, persona quality, and fabrication with grounding enabled and disabled.
+
 ## Claim boundary
 
 The evidence supports a directional behavioral shift. It does not yet establish statistically stable per-trait lift, factual fidelity, general capability gain, or definitive overfitting because:
@@ -245,7 +259,7 @@ The evidence supports a directional behavioral shift. It does not yet establish 
 
 ## Next evidence gate
 
-Evaluate all 66 rows with fixed or repeated seeds, separate checkpoint selection from final testing, publish document-level aggregates and confidence intervals, add a blind/no-reference judge pass, manually review a stratified sample, and check same-event/date leakage across the dialogue and speech streams. Phrase epoch-3 as a possible overfit signal until those checks agree.
+For model style, evaluate all 66 rows with fixed or repeated seeds, separate checkpoint selection from final testing, publish document-level aggregates and confidence intervals, add a blind/no-reference judge pass, manually review a stratified sample, and check same-event/date leakage across the dialogue and speech streams. For application factuality, run the 12 questions with grounding on/off and report factual accuracy, persona quality, and fabrication separately. Phrase epoch-3 as a possible overfit signal and the retrieval layer as implemented-but-unproven until those checks agree.
 
 
 <!-- ===== eval-trace/wiki/entities/eval-trace.md ===== -->
@@ -297,7 +311,7 @@ Compiled from `Projects/Eval Trace/Index.md`.
 ---
 title: Eval Trace — Master Index
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: index
 status: compiled
 namespace: eval-trace
@@ -310,7 +324,7 @@ namespace: eval-trace
 ## Concepts
 
 - [[concepts/context-overfitting|Context Overfitting]] — Agent workflow failure mode where stale or overly rigid context overwhelms current intent/live evidence.
-- [[concepts/style-transfer-evaluation|Style-Transfer Evaluation]] — LLM document holdouts and trait rubrics plus tuned-voice similarity, intelligibility, realtime, blind-listening, placement, watermark, and rollback gates.
+- [[concepts/style-transfer-evaluation|Style-Transfer Evaluation]] — LLM document holdouts and trait rubrics; tuned-voice similarity, intelligibility, realtime, blind-listening, placement, watermark, and rollback; plus separate factual accuracy, persona quality, and fabrication signals for grounded applications.
 
 ## Entities
 
@@ -338,7 +352,7 @@ namespace: eval-trace
 ---
 title: Eval Trace — Activity Log
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: log
 status: compiled
 namespace: eval-trace
@@ -347,6 +361,12 @@ namespace: eval-trace
 # Eval Trace — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-17 update | Separate factual grounding from persona quality
+
+- Extended the style-transfer page with the LKY Avatar factuality lane after issue #45 / PR #47 merged.
+- Added the audited evidence, per-turn retrieval, uncertainty, proper-noun input, and 12-question matched-eval contract.
+- Kept tests as implementation evidence only; live microphone and local-brain grounding-on/off results remain the quality gate.
 
 ## 2026-07-15 update | Extend style-transfer evaluation to tuned voice
 
