@@ -3003,7 +3003,7 @@ This is a compiled namespace source under `pixi-vault/wikis/eval-trace/`.
 ---
 title: Eval Trace
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: namespace-overview
 status: active
 category: evaluation
@@ -3027,7 +3027,7 @@ General observability unrelated to behavior/workflow quality; product analytics 
 
 ### Current As
 
-2026-07-15 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, and the LKY Voice objective-plus-blind-listening gate.
+2026-07-17 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, the LKY Voice objective-plus-blind-listening gate, and the LKY Avatar factual-accuracy/persona-quality/fabrication separation.
 
 ## Canonical Source Roots
 
@@ -3159,7 +3159,7 @@ For self-improvement, pair this page with [[self-improving-agent-systems]]: prom
 ---
 title: Style-Transfer Evaluation
 created: 2026-07-10
-updated: 2026-07-15
+updated: 2026-07-17
 type: concept
 status: compiled
 namespace: eval-trace
@@ -3216,6 +3216,20 @@ The rejected GPT-SoVITS arm is the useful counterexample: similarity improved to
 
 Integration also preserved a stock-model rollback and PerTh watermark confidence 1.0000. These results support a tuned-voice preference and deployment decision, not authentic speech, semantic correctness, factual fidelity, or robust pronunciation. Singapore proper nouns and mixed acoustic eras remain separate residual risks.
 
+## Parallel factuality evaluation
+
+The first integrated LKY Avatar session passed interaction and voice gates while inventing constituencies, dates, and historical events. The application therefore added an independent factuality lane:
+
+| signal | question |
+|---|---|
+| factual accuracy | Does the answer contain only correct dates, places, offices, and relationships? |
+| persona quality | Does grounding preserve concise, recognizable reasoning style? |
+| fabrication | Did the model invent a date, quote, meeting, office, or constituency? |
+
+The implementation uses a small audited fact sheet, deterministic per-turn section retrieval, a source-over-memory block inserted immediately before the latest question, an uncertainty guardrail, and Singapore proper-noun STT keyterms. A 12-question subset supports matched grounding-on/off runs.
+
+Tests establish that these seams work as code. They do not establish factual lift. The remaining proof is a real-microphone keyterm check plus a local-brain comparison of factual accuracy, persona quality, and fabrication with grounding enabled and disabled.
+
 ## Claim boundary
 
 The evidence supports a directional behavioral shift. It does not yet establish statistically stable per-trait lift, factual fidelity, general capability gain, or definitive overfitting because:
@@ -3229,7 +3243,7 @@ The evidence supports a directional behavioral shift. It does not yet establish 
 
 ## Next evidence gate
 
-Evaluate all 66 rows with fixed or repeated seeds, separate checkpoint selection from final testing, publish document-level aggregates and confidence intervals, add a blind/no-reference judge pass, manually review a stratified sample, and check same-event/date leakage across the dialogue and speech streams. Phrase epoch-3 as a possible overfit signal until those checks agree.
+For model style, evaluate all 66 rows with fixed or repeated seeds, separate checkpoint selection from final testing, publish document-level aggregates and confidence intervals, add a blind/no-reference judge pass, manually review a stratified sample, and check same-event/date leakage across the dialogue and speech streams. For application factuality, run the 12 questions with grounding on/off and report factual accuracy, persona quality, and fabrication separately. Phrase epoch-3 as a possible overfit signal and the retrieval layer as implemented-but-unproven until those checks agree.
 
 
 <!-- ===== eval-trace/wiki/entities/eval-trace.md ===== -->
@@ -3281,7 +3295,7 @@ Compiled from `Projects/Eval Trace/Index.md`.
 ---
 title: Eval Trace — Master Index
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: index
 status: compiled
 namespace: eval-trace
@@ -3294,7 +3308,7 @@ namespace: eval-trace
 ## Concepts
 
 - [[concepts/context-overfitting|Context Overfitting]] — Agent workflow failure mode where stale or overly rigid context overwhelms current intent/live evidence.
-- [[concepts/style-transfer-evaluation|Style-Transfer Evaluation]] — LLM document holdouts and trait rubrics plus tuned-voice similarity, intelligibility, realtime, blind-listening, placement, watermark, and rollback gates.
+- [[concepts/style-transfer-evaluation|Style-Transfer Evaluation]] — LLM document holdouts and trait rubrics; tuned-voice similarity, intelligibility, realtime, blind-listening, placement, watermark, and rollback; plus separate factual accuracy, persona quality, and fabrication signals for grounded applications.
 
 ## Entities
 
@@ -3322,7 +3336,7 @@ namespace: eval-trace
 ---
 title: Eval Trace — Activity Log
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: log
 status: compiled
 namespace: eval-trace
@@ -3331,6 +3345,12 @@ namespace: eval-trace
 # Eval Trace — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-17 update | Separate factual grounding from persona quality
+
+- Extended the style-transfer page with the LKY Avatar factuality lane after issue #45 / PR #47 merged.
+- Added the audited evidence, per-turn retrieval, uncertainty, proper-noun input, and 12-question matched-eval contract.
+- Kept tests as implementation evidence only; live microphone and local-brain grounding-on/off results remain the quality gate.
 
 ## 2026-07-15 update | Extend style-transfer evaluation to tuned voice
 
@@ -4290,7 +4310,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: namespace-overview
 status: scaffold
 category: product
@@ -4316,7 +4336,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-15 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and an explicit factual-grounding frontier. Cross-format attention and distribution guidance lives in `content-distribution`.
+2026-07-17 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and a merged audited fact-grounding layer awaiting live operator proof. Cross-format attention and distribution guidance lives in `content-distribution`.
 
 ## Canonical Source Roots
 
@@ -6263,7 +6283,7 @@ Add automated discovery for new Ashby company slugs and a “new / removed / cha
 ---
 title: LKY Avatar / Voice Persona Stack
 created: 2026-07-15
-updated: 2026-07-15
+updated: 2026-07-17
 type: entity
 status: working-demo
 namespace: ai-native-product-surfaces
@@ -6307,7 +6327,9 @@ The current default avatar is a bundled illustrated elderly-statesman portrait s
 
 - LiveKit Cloud carries realtime rooms and WebRTC media.
 - Deepgram provides streaming speech-to-text.
-- A Python voice agent owns persona prompting, history, interruption, TTS state, and degraded text delivery.
+- A Python voice agent owns persona prompting, history, interruption, TTS state, degraded text delivery, per-turn fact retrieval, and the uncertainty guardrail.
+- A small audited fact sheet is split into retrievable sections. The best matches are inserted immediately before the latest question behind a source-over-memory instruction.
+- Deepgram Nova-3 receives a Singapore proper-noun `keyterm` list; the same vocabulary extends the TTS pronunciation seam.
 - The brain is a merged epoch-2 `lky-brain` LoRA served as Q4_K_M GGUF through llama.cpp behind an OpenAI-compatible seam.
 - The voice is a Chatterbox t3 model with a merged rank-16 LoRA overlay, served through a loopback-only HTTP adapter.
 - A Vite/TypeScript client renders the interview surface and keeps transcript export client-side.
@@ -6334,17 +6356,25 @@ The voice-training project compared two arms against a frozen Chatterbox baselin
 
 The integrated voice kept the existing HTTP contract, passed a ten-turn same-GPU placement run at RTF mean 0.369 / max 0.397 with zero failures, and preserved Chatterbox's PerTh watermark at confidence 1.0000 on served output.
 
+### Factual-grounding implementation
+
+- The audited sheet covers constituencies and offices, independence and merger, HDB, water, selected policies, family, and a critical Tanjong Pagar correction with institutional source notes.
+- Deterministic keyword retrieval selects only relevant sections per turn and leaves the brain server unchanged.
+- A 12-question eval records factual accuracy, persona quality, and fabrication as independent signals and supports matched grounding-on/off runs.
+- Repository verification passed across 148 root tests, 199 voice-agent tests with 3 live-service skips, 91 web tests, and a production build.
+- The implementation is merged; live factual lift and real-microphone proper-noun transcription are still operator-side proofs.
+
 ## Trust and honesty boundary
 
 - This is a fictional simulation. Generated answers are not authentic quotations and the portrait is illustrative, not an authentic photo or endorsement.
-- The style adapter is not a factual database. Live testing found invented constituencies, dates, and historical events. Fact grounding is now the main quality gate.
+- The style adapter is not a factual database. Live testing found invented constituencies, dates, and historical events. The application now has an audited retrieval layer, but model-quality lift has not yet been measured live.
 - Voice data and weights remain local. The generated audio stays watermarked.
-- Singapore proper nouns remain a weak point across STT and TTS. The tuned voice improved identity and pacing but did not solve out-of-vocabulary pronunciation.
-- The demo is not publicly deployed as of 2026-07-15. Home-GPU hosting is a measured recommendation, not a verified live service.
+- Singapore proper-noun input/output seams are implemented. Real-microphone STT and broader TTS pronunciation remain acceptance checks rather than proven coverage.
+- The demo is not publicly deployed as of 2026-07-17. Home-GPU hosting is a measured recommendation, not a verified live service.
 
 ## Next gate
 
-Add a small audited fact sheet, retrieve relevant sections into each turn, guard against invented specifics, boost Singapore proper nouns in STT/TTS, and evaluate factual accuracy separately from persona quality. Only after that trust gate passes should the project choose between the full Live2D rig and public hosting.
+Run the 12 fact questions with grounding on and off against the local brain, score factual accuracy separately from persona quality and fabrication, and live-check the Singapore keyterms through a real microphone. Reopen the grounding gate if either fails. Only after those proofs should the project choose between the full Live2D rig and public hosting.
 
 ## Related
 
@@ -6536,7 +6566,7 @@ Post-merge verification on `main`: focused verifier/eval tests 18 passed; full s
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -6568,7 +6598,7 @@ namespace: ai-native-product-surfaces
 - [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook wiki serving project for growing a user's knowledge base with bounded, agent-readable wikis.
 - [[entities/job-edge|Job Edge]] — Live job-search edge dashboard prototype using scheduled Ashby refresh, freshness, geography, fit, and LinkedIn-crowding signals to prioritize applications.
 - [[entities/j-space-replay|J-Space-Replay]] — Working public demo for replaying Qwen2.5-VL logit/J-lens readouts over video with explicit demo-quality interpretability boundaries.
-- [[entities/lky-avatar|LKY Avatar / Voice Persona Stack]] — Working local fictional-interview product combining the LKY reasoning adapter, a tuned watermarked voice, animated portrait, transcript/eval surfaces, and explicit factual-grounding gates.
+- [[entities/lky-avatar|LKY Avatar / Voice Persona Stack]] — Working local fictional-interview product combining the LKY reasoning adapter, tuned watermarked voice, animated portrait, audited per-turn fact retrieval, transcript/eval surfaces, and explicit live-proof boundaries.
 - [[entities/shifu-app|Shifu]] — Local-first video workbench/proof question with implementation chain complete; visual gameplay thesis under review after visual-only misses, next heavy tests wait for the repaired 5070 Ti desktop.
 - [[entities/myabode|myAbode]] — Parked real-estate AI CRM case study focused on prepared next actions and adoption constraints.
 - [[entities/planned-program-intel|Planned Program Intel]] — Done decision-routing and institutional-memory prototype for enterprise event programs.
@@ -6618,7 +6648,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -6627,6 +6657,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-17 update | LKY Avatar fact-grounding layer merged
+
+- Refreshed `wiki/entities/lky-avatar.md` after issue #45 / PR #47 added an audited sectioned fact sheet, per-turn retrieval, source-over-memory and uncertainty instructions, Singapore STT keyterms, and a 12-question factuality eval.
+- Recorded the implementation verification and the new signal boundary: factual accuracy, persona quality, and fabrication must be judged separately.
+- Kept the live-proof boundary explicit: real-microphone STT and grounding-on/off local-brain results remain pending; the local demo is still not presented as a public live service.
 
 ## 2026-07-15 create | LKY Avatar / Voice Persona Stack
 
@@ -8831,7 +8867,7 @@ This is a compiled namespace source under `pixi-vault/wikis/local-ai-infrastruct
 ---
 title: Local AI Infrastructure
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: namespace-overview
 status: active
 category: infrastructure
@@ -8855,7 +8891,7 @@ Cloud-only infrastructure unless it affects local-first migration; product UX un
 
 ### Current As
 
-2026-07-15 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers, documented PEFT/vLLM paths, plus the executed downstream llama.cpp Q4_K_M serving and tuned-voice co-placement used by LKY Avatar.
+2026-07-17 — active. Includes local retrieval/RAG concepts, VPS app operation, and the LKY Brain consumer-GPU QLoRA case study with checkout-portable launchers, documented PEFT/vLLM paths, executed downstream llama.cpp Q4_K_M serving, tuned-voice co-placement, and the application-layer audited retrieval seam used by LKY Avatar.
 
 ## Canonical Source Roots
 
@@ -9240,7 +9276,7 @@ Compiled from Tonbi AI's video transcript, “The Autonomous Agentic Workflow th
 ---
 title: Local AI Infrastructure — Master Index
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: index
 status: active
 namespace: local-ai-infrastructure
@@ -9262,7 +9298,7 @@ namespace: local-ai-infrastructure
 
 ## Summaries
 
-- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth training plus downstream llama.cpp Q4_K_M serving beside the tuned voice on one 16GB GPU; preserves config drift, factual-grounding, and reproducibility boundaries.
+- [[summaries/lky-brain-consumer-gpu-qlora|LKY Brain Consumer-GPU QLoRA Case Study]] — Executed Qwen3-14B/Unsloth training plus downstream llama.cpp Q4_K_M serving beside the tuned voice on one 16GB GPU, now with an application-layer audited retrieval seam; preserves config drift, live-proof, and reproducibility boundaries.
 
 ## Syntheses
 
@@ -9283,7 +9319,7 @@ namespace: local-ai-infrastructure
 ---
 title: Local AI Infrastructure — Activity Log
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: log
 status: active
 namespace: local-ai-infrastructure
@@ -9292,6 +9328,12 @@ namespace: local-ai-infrastructure
 # Local AI Infrastructure — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-17 refresh | LKY Avatar application-layer fact retrieval
+
+- Updated the LKY Brain case study after `lky-avatar` issue #45 / PR #47 merged a small audited fact sheet, deterministic per-turn retrieval, uncertainty instructions, Singapore STT keyterms, and a 12-question factuality eval.
+- Preserved the serving boundary: the Q4_K_M llama.cpp brain is unchanged; grounding belongs to the voice-agent application layer.
+- Preserved the proof boundary: tests cover the seams, while real-microphone STT and grounding-on/off local-brain quality results remain pending.
 
 ## 2026-07-15 refresh | LKY Brain downstream avatar serving path
 
@@ -9356,7 +9398,7 @@ namespace: local-ai-infrastructure
 ---
 title: LKY Brain Consumer-GPU QLoRA Case Study
 created: 2026-07-10
-updated: 2026-07-15
+updated: 2026-07-17
 type: summary
 status: compiled
 namespace: local-ai-infrastructure
@@ -9441,7 +9483,11 @@ The separate `lky-avatar` product has now executed a different serving route on 
 
 Measured warm brain performance was 80.5 tok/s p50 decode and about 0.05 s time to first token. The brain plus the fine-tuned Chatterbox voice then completed a ten-turn same-GPU placement run with zero failures; TTS RTF mean/max was 0.369/0.397 and total-card VRAM peaked at 15,813 MiB of 16,303 MiB.
 
-This verifies one local product-serving path. It does not validate the README's vLLM example, establish multi-user serving capacity, or make the style adapter factually reliable. Live use exposed confident biography/date/place hallucinations, so retrieval-backed fact grounding is now an application trust gate.
+This verifies one local product-serving path. It does not validate the README's vLLM example, establish multi-user serving capacity, or make the style adapter factually reliable. Live use exposed confident biography/date/place hallucinations.
+
+The application layer now adds a small audited fact sheet, deterministic section retrieval per turn, a source-over-memory and uncertainty block immediately before the latest question, and Singapore proper-noun input boosts without changing llama-server. A 12-question eval separates factual accuracy, persona quality, and fabrication and supports matched grounding-on/off runs.
+
+Repository verification passed 148 root tests and 199 voice-agent tests with 3 live-service skips. That proves the retrieval, prompt, config, STT-construction, and eval seams as code; it does not prove the model-quality lift. Real-microphone STT and a local-brain grounding-on/off run remain the acceptance evidence.
 
 ## Evidence boundary
 

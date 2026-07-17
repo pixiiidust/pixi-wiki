@@ -1,7 +1,7 @@
 ---
 title: Eval Trace — Activity Log
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: log
 status: compiled
 namespace: eval-trace
@@ -10,6 +10,12 @@ namespace: eval-trace
 # Eval Trace — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-17 update | Separate factual grounding from persona quality
+
+- Extended the style-transfer page with the LKY Avatar factuality lane after issue #45 / PR #47 merged.
+- Added the audited evidence, per-turn retrieval, uncertainty, proper-noun input, and 12-question matched-eval contract.
+- Kept tests as implementation evidence only; live microphone and local-brain grounding-on/off results remain the quality gate.
 
 ## 2026-07-15 update | Extend style-transfer evaluation to tuned voice
 

@@ -1,7 +1,7 @@
 ---
 title: Local AI Infrastructure — Activity Log
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: log
 status: active
 namespace: local-ai-infrastructure
@@ -10,6 +10,12 @@ namespace: local-ai-infrastructure
 # Local AI Infrastructure — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-17 refresh | LKY Avatar application-layer fact retrieval
+
+- Updated the LKY Brain case study after `lky-avatar` issue #45 / PR #47 merged a small audited fact sheet, deterministic per-turn retrieval, uncertainty instructions, Singapore STT keyterms, and a 12-question factuality eval.
+- Preserved the serving boundary: the Q4_K_M llama.cpp brain is unchanged; grounding belongs to the voice-agent application layer.
+- Preserved the proof boundary: tests cover the seams, while real-microphone STT and grounding-on/off local-brain quality results remain pending.
 
 ## 2026-07-15 refresh | LKY Brain downstream avatar serving path
 

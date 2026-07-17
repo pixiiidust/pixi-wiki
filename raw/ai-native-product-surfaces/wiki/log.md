@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -10,6 +10,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-17 update | LKY Avatar fact-grounding layer merged
+
+- Refreshed `wiki/entities/lky-avatar.md` after issue #45 / PR #47 added an audited sectioned fact sheet, per-turn retrieval, source-over-memory and uncertainty instructions, Singapore STT keyterms, and a 12-question factuality eval.
+- Recorded the implementation verification and the new signal boundary: factual accuracy, persona quality, and fabrication must be judged separately.
+- Kept the live-proof boundary explicit: real-microphone STT and grounding-on/off local-brain results remain pending; the local demo is still not presented as a public live service.
 
 ## 2026-07-15 create | LKY Avatar / Voice Persona Stack
 

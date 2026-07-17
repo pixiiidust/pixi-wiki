@@ -7,7 +7,7 @@
       "path": "README.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-15",
+      "updated": "2026-07-17",
       "raw": "/raw/ai-native-product-surfaces/README.md",
       "html": "/wiki/ai-native-product-surfaces/README.md.html"
     },
@@ -16,7 +16,7 @@
       "path": "wiki/log.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-15",
+      "updated": "2026-07-17",
       "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
     },
@@ -25,7 +25,7 @@
       "path": "wiki/index.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-15",
+      "updated": "2026-07-17",
       "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
     },
@@ -34,9 +34,81 @@
       "path": "wiki/entities/lky-avatar.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-15",
+      "updated": "2026-07-17",
       "raw": "/raw/ai-native-product-surfaces/wiki/entities/lky-avatar.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/entities/lky-avatar.md.html"
+    },
+    {
+      "title": "Eval Trace",
+      "path": "README.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-17",
+      "raw": "/raw/eval-trace/README.md",
+      "html": "/wiki/eval-trace/README.md.html"
+    },
+    {
+      "title": "Eval Trace \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-17",
+      "raw": "/raw/eval-trace/wiki/log.md",
+      "html": "/wiki/eval-trace/wiki/log.md.html"
+    },
+    {
+      "title": "Eval Trace \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-17",
+      "raw": "/raw/eval-trace/wiki/index.md",
+      "html": "/wiki/eval-trace/wiki/index.md.html"
+    },
+    {
+      "title": "Style-Transfer Evaluation",
+      "path": "wiki/concepts/style-transfer-evaluation.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-17",
+      "raw": "/raw/eval-trace/wiki/concepts/style-transfer-evaluation.md",
+      "html": "/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html"
+    },
+    {
+      "title": "LKY Brain Consumer-GPU QLoRA Case Study",
+      "path": "wiki/summaries/lky-brain-consumer-gpu-qlora.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-17",
+      "raw": "/raw/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md.html"
+    },
+    {
+      "title": "Local AI Infrastructure",
+      "path": "README.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-17",
+      "raw": "/raw/local-ai-infrastructure/README.md",
+      "html": "/wiki/local-ai-infrastructure/README.md.html"
+    },
+    {
+      "title": "Local AI Infrastructure \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-17",
+      "raw": "/raw/local-ai-infrastructure/wiki/log.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/log.md.html"
+    },
+    {
+      "title": "Local AI Infrastructure \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "local-ai-infrastructure",
+      "namespace_title": "Local AI Infrastructure",
+      "updated": "2026-07-17",
+      "raw": "/raw/local-ai-infrastructure/wiki/index.md",
+      "html": "/wiki/local-ai-infrastructure/wiki/index.md.html"
     },
     {
       "title": "Curated Tuning Datasets \u2014 Activity Log",
@@ -55,78 +127,6 @@
       "updated": "2026-07-15",
       "raw": "/raw/curated-tuning-datasets/wiki/entities/lky-archive.md",
       "html": "/wiki/curated-tuning-datasets/wiki/entities/lky-archive.md.html"
-    },
-    {
-      "title": "Eval Trace",
-      "path": "README.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-15",
-      "raw": "/raw/eval-trace/README.md",
-      "html": "/wiki/eval-trace/README.md.html"
-    },
-    {
-      "title": "Eval Trace \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-15",
-      "raw": "/raw/eval-trace/wiki/log.md",
-      "html": "/wiki/eval-trace/wiki/log.md.html"
-    },
-    {
-      "title": "Eval Trace \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-15",
-      "raw": "/raw/eval-trace/wiki/index.md",
-      "html": "/wiki/eval-trace/wiki/index.md.html"
-    },
-    {
-      "title": "Style-Transfer Evaluation",
-      "path": "wiki/concepts/style-transfer-evaluation.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-15",
-      "raw": "/raw/eval-trace/wiki/concepts/style-transfer-evaluation.md",
-      "html": "/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html"
-    },
-    {
-      "title": "LKY Brain Consumer-GPU QLoRA Case Study",
-      "path": "wiki/summaries/lky-brain-consumer-gpu-qlora.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-07-15",
-      "raw": "/raw/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md",
-      "html": "/wiki/local-ai-infrastructure/wiki/summaries/lky-brain-consumer-gpu-qlora.md.html"
-    },
-    {
-      "title": "Local AI Infrastructure",
-      "path": "README.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-07-15",
-      "raw": "/raw/local-ai-infrastructure/README.md",
-      "html": "/wiki/local-ai-infrastructure/README.md.html"
-    },
-    {
-      "title": "Local AI Infrastructure \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-07-15",
-      "raw": "/raw/local-ai-infrastructure/wiki/log.md",
-      "html": "/wiki/local-ai-infrastructure/wiki/log.md.html"
-    },
-    {
-      "title": "Local AI Infrastructure \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "local-ai-infrastructure",
-      "namespace_title": "Local AI Infrastructure",
-      "updated": "2026-07-15",
-      "raw": "/raw/local-ai-infrastructure/wiki/index.md",
-      "html": "/wiki/local-ai-infrastructure/wiki/index.md.html"
     },
     {
       "title": "Attention Architecture for Long-Form Content",

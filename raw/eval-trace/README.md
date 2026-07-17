@@ -1,7 +1,7 @@
 ---
 title: Eval Trace
 created: 2026-06-16
-updated: 2026-07-15
+updated: 2026-07-17
 type: namespace-overview
 status: active
 category: evaluation
@@ -25,7 +25,7 @@ General observability unrelated to behavior/workflow quality; product analytics 
 
 ### Current As
 
-2026-07-15 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, and the LKY Voice objective-plus-blind-listening gate.
+2026-07-17 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, the LKY Voice objective-plus-blind-listening gate, and the LKY Avatar factual-accuracy/persona-quality/fabrication separation.
 
 ## Canonical Source Roots
 

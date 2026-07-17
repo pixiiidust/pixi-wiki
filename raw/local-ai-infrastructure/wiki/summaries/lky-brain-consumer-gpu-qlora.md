@@ -1,7 +1,7 @@
 ---
 title: LKY Brain Consumer-GPU QLoRA Case Study
 created: 2026-07-10
-updated: 2026-07-15
+updated: 2026-07-17
 type: summary
 status: compiled
 namespace: local-ai-infrastructure
@@ -86,7 +86,11 @@ The separate `lky-avatar` product has now executed a different serving route on 
 
 Measured warm brain performance was 80.5 tok/s p50 decode and about 0.05 s time to first token. The brain plus the fine-tuned Chatterbox voice then completed a ten-turn same-GPU placement run with zero failures; TTS RTF mean/max was 0.369/0.397 and total-card VRAM peaked at 15,813 MiB of 16,303 MiB.
 
-This verifies one local product-serving path. It does not validate the README's vLLM example, establish multi-user serving capacity, or make the style adapter factually reliable. Live use exposed confident biography/date/place hallucinations, so retrieval-backed fact grounding is now an application trust gate.
+This verifies one local product-serving path. It does not validate the README's vLLM example, establish multi-user serving capacity, or make the style adapter factually reliable. Live use exposed confident biography/date/place hallucinations.
+
+The application layer now adds a small audited fact sheet, deterministic section retrieval per turn, a source-over-memory and uncertainty block immediately before the latest question, and Singapore proper-noun input boosts without changing llama-server. A 12-question eval separates factual accuracy, persona quality, and fabrication and supports matched grounding-on/off runs.
+
+Repository verification passed 148 root tests and 199 voice-agent tests with 3 live-service skips. That proves the retrieval, prompt, config, STT-construction, and eval seams as code; it does not prove the model-quality lift. Real-microphone STT and a local-brain grounding-on/off run remain the acceptance evidence.
 
 ## Evidence boundary
 

@@ -1,7 +1,7 @@
 ---
 title: LKY Avatar / Voice Persona Stack
 created: 2026-07-15
-updated: 2026-07-15
+updated: 2026-07-17
 type: entity
 status: working-demo
 namespace: ai-native-product-surfaces
@@ -45,7 +45,9 @@ The current default avatar is a bundled illustrated elderly-statesman portrait s
 
 - LiveKit Cloud carries realtime rooms and WebRTC media.
 - Deepgram provides streaming speech-to-text.
-- A Python voice agent owns persona prompting, history, interruption, TTS state, and degraded text delivery.
+- A Python voice agent owns persona prompting, history, interruption, TTS state, degraded text delivery, per-turn fact retrieval, and the uncertainty guardrail.
+- A small audited fact sheet is split into retrievable sections. The best matches are inserted immediately before the latest question behind a source-over-memory instruction.
+- Deepgram Nova-3 receives a Singapore proper-noun `keyterm` list; the same vocabulary extends the TTS pronunciation seam.
 - The brain is a merged epoch-2 `lky-brain` LoRA served as Q4_K_M GGUF through llama.cpp behind an OpenAI-compatible seam.
 - The voice is a Chatterbox t3 model with a merged rank-16 LoRA overlay, served through a loopback-only HTTP adapter.
 - A Vite/TypeScript client renders the interview surface and keeps transcript export client-side.
@@ -72,17 +74,25 @@ The voice-training project compared two arms against a frozen Chatterbox baselin
 
 The integrated voice kept the existing HTTP contract, passed a ten-turn same-GPU placement run at RTF mean 0.369 / max 0.397 with zero failures, and preserved Chatterbox's PerTh watermark at confidence 1.0000 on served output.
 
+### Factual-grounding implementation
+
+- The audited sheet covers constituencies and offices, independence and merger, HDB, water, selected policies, family, and a critical Tanjong Pagar correction with institutional source notes.
+- Deterministic keyword retrieval selects only relevant sections per turn and leaves the brain server unchanged.
+- A 12-question eval records factual accuracy, persona quality, and fabrication as independent signals and supports matched grounding-on/off runs.
+- Repository verification passed across 148 root tests, 199 voice-agent tests with 3 live-service skips, 91 web tests, and a production build.
+- The implementation is merged; live factual lift and real-microphone proper-noun transcription are still operator-side proofs.
+
 ## Trust and honesty boundary
 
 - This is a fictional simulation. Generated answers are not authentic quotations and the portrait is illustrative, not an authentic photo or endorsement.
-- The style adapter is not a factual database. Live testing found invented constituencies, dates, and historical events. Fact grounding is now the main quality gate.
+- The style adapter is not a factual database. Live testing found invented constituencies, dates, and historical events. The application now has an audited retrieval layer, but model-quality lift has not yet been measured live.
 - Voice data and weights remain local. The generated audio stays watermarked.
-- Singapore proper nouns remain a weak point across STT and TTS. The tuned voice improved identity and pacing but did not solve out-of-vocabulary pronunciation.
-- The demo is not publicly deployed as of 2026-07-15. Home-GPU hosting is a measured recommendation, not a verified live service.
+- Singapore proper-noun input/output seams are implemented. Real-microphone STT and broader TTS pronunciation remain acceptance checks rather than proven coverage.
+- The demo is not publicly deployed as of 2026-07-17. Home-GPU hosting is a measured recommendation, not a verified live service.
 
 ## Next gate
 
-Add a small audited fact sheet, retrieve relevant sections into each turn, guard against invented specifics, boost Singapore proper nouns in STT/TTS, and evaluate factual accuracy separately from persona quality. Only after that trust gate passes should the project choose between the full Live2D rig and public hosting.
+Run the 12 fact questions with grounding on and off against the local brain, score factual accuracy separately from persona quality and fabrication, and live-check the Singapore keyterms through a real microphone. Reopen the grounding gate if either fails. Only after those proofs should the project choose between the full Live2D rig and public hosting.
 
 ## Related
 
