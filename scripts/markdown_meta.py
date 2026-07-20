@@ -124,6 +124,4 @@ def first_paragraph(text: str) -> str:
                 break
             continue
         lines.append(stripped)
-        if len(" ".join(lines)) > 260:
-            break
-    return " ".join(lines)[:300] or "Compiled namespace."
+    return " ".join(lines) or "Compiled namespace."

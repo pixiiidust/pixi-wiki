@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-13
+updated: 2026-07-20
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,13 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-20 create | Verb-First vs Noun-First: Actions Before Labels
+
+- Added `wiki/concepts/verb-first-knowledge.md` from the canonical Knowledge concept.
+- Separated the general action-before-label principle from its product-positioning application.
+- Captured the human comprehension, intent-transfer, LLM instruction, tool-selection, output-contract, and permission-boundary implications.
+- Linked reciprocally to the applied product page in `ai-native-product-surfaces`.
 
 ## 2026-07-13 update | Link outreach asks to Side Doors synthesis
 

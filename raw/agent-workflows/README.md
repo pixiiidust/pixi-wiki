@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-07-09
+updated: 2026-07-20
 type: namespace-overview
 status: active
 category: agents
@@ -17,7 +17,7 @@ confidence: medium
 
 ### Covers
 
-Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.
+Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
 
 ### Not Covered
 
@@ -25,7 +25,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-09 — Added the Eve-derived Agentic Harness Engineering pattern: build agents as inspectable runtime harnesses with explicit capability slots, trust boundaries, durable sessions, channels, sandboxing, and eval gates.
+2026-07-20 — Added the Verb-First vs Noun-First concept: use nouns for retrieval and orientation, then expose actors, actions, conditions, outcomes, and boundaries so people and LLMs can understand and execute intent with less ambiguity.
 
 ## Canonical Source Roots
 
@@ -44,6 +44,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/agentic-harness-engineering.md`
 - `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
+- `Knowledge/concepts/verb-first-knowledge.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
 - `Knowledge/concepts/hermes-capability-routing.md`
 - `Knowledge/concepts/high-agency-work-levels.md`

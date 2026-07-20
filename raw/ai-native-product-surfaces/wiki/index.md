@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-07-17
+updated: 2026-07-20
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -27,6 +27,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped evidence; for gameplay, visual-only is low-trust and structured signals matter.
 - [[concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]] — Product-surface pattern for video apps/workbenches that return clips, confidence, evidence, and recall boundaries with AI as assistant, not source of truth.
 - [[concepts/world-model-control-surfaces|World Model Control Surfaces]] — Grounded-AI control/review lens for exposing state, actions, predictions, objectives, guardrails, evidence, and the recommended next safe step.
+- [[concepts/verb-first-product-positioning|Verb-First Product Positioning]] — Applied action-before-label rule: name the input, product action, user, outcome, and removed pain before the category; linked to the general Verb-First vs Noun-First concept.
 
 ## Entities
 

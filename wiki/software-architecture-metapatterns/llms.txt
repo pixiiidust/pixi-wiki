@@ -1,6 +1,6 @@
 # Software Architecture Metapatterns Knowledge Base
 
-> The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependenc
+> The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, and architecture evolution paths.
 
 - [Software Architecture Metapatterns Namespace Instructions](/raw/software-architecture-metapatterns/CLAUDE.md) ([html](/wiki/software-architecture-metapatterns/CLAUDE.md.html))
 - [Software Architecture Metapatterns](/raw/software-architecture-metapatterns/README.md) ([html](/wiki/software-architecture-metapatterns/README.md.html))

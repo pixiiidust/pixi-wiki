@@ -96,10 +96,7 @@ def test_first_paragraph_default_fallback_on_empty_body() -> None:
     assert first_paragraph("# Only a heading\n") == "Compiled namespace."
 
 
-def test_first_paragraph_stops_after_exceeding_260_chars() -> None:
+def test_first_paragraph_preserves_the_complete_paragraph() -> None:
     body = "a" * 200 + "\n" + "b" * 100 + "\n" + "c" * 100 + "\n"
     result = first_paragraph(body)
-    # First two lines join to length 301 (> 260) so the loop stops; the third
-    # line is never appended, and the result is truncated to 300 chars.
-    assert len(result) == 300
-    assert "c" not in result
+    assert result == "a" * 200 + " " + "b" * 100 + " " + "c" * 100

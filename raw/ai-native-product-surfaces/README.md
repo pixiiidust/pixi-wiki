@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-07-17
+updated: 2026-07-20
 type: namespace-overview
 status: scaffold
 category: product
@@ -27,7 +27,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-17 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and a merged audited fact-grounding layer awaiting live operator proof. Cross-format attention and distribution guidance lives in `content-distribution`.
+2026-07-20 — active namespace. Includes Verb-First Product Positioning as the product application of the general Verb-First vs Noun-First concept, plus Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and a merged audited fact-grounding layer awaiting live operator proof. Cross-format attention and distribution guidance lives in `content-distribution`.
 
 ## Canonical Source Roots
 

@@ -1,13 +1,49 @@
 {
   "generated_from": "frontmatter updated fields",
-  "count": 632,
+  "count": 634,
   "entries": [
+    {
+      "title": "Agent Workflows",
+      "path": "README.md",
+      "namespace": "agent-workflows",
+      "namespace_title": "Agent Workflows",
+      "updated": "2026-07-20",
+      "raw": "/raw/agent-workflows/README.md",
+      "html": "/wiki/agent-workflows/README.md.html"
+    },
+    {
+      "title": "Agent Workflows \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "agent-workflows",
+      "namespace_title": "Agent Workflows",
+      "updated": "2026-07-20",
+      "raw": "/raw/agent-workflows/wiki/log.md",
+      "html": "/wiki/agent-workflows/wiki/log.md.html"
+    },
+    {
+      "title": "Agent Workflows \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "agent-workflows",
+      "namespace_title": "Agent Workflows",
+      "updated": "2026-07-20",
+      "raw": "/raw/agent-workflows/wiki/index.md",
+      "html": "/wiki/agent-workflows/wiki/index.md.html"
+    },
+    {
+      "title": "Verb-First vs Noun-First: Actions Before Labels",
+      "path": "wiki/concepts/verb-first-knowledge.md",
+      "namespace": "agent-workflows",
+      "namespace_title": "Agent Workflows",
+      "updated": "2026-07-20",
+      "raw": "/raw/agent-workflows/wiki/concepts/verb-first-knowledge.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/verb-first-knowledge.md.html"
+    },
     {
       "title": "AI-Native Product Surfaces",
       "path": "README.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-17",
+      "updated": "2026-07-20",
       "raw": "/raw/ai-native-product-surfaces/README.md",
       "html": "/wiki/ai-native-product-surfaces/README.md.html"
     },
@@ -16,7 +52,7 @@
       "path": "wiki/log.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-17",
+      "updated": "2026-07-20",
       "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
     },
@@ -25,9 +61,18 @@
       "path": "wiki/index.md",
       "namespace": "ai-native-product-surfaces",
       "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-17",
+      "updated": "2026-07-20",
       "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
+    },
+    {
+      "title": "Verb-First Product Positioning",
+      "path": "wiki/concepts/verb-first-product-positioning.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-20",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md.html"
     },
     {
       "title": "LKY Avatar / Voice Persona Stack",
@@ -165,15 +210,6 @@
       "html": "/wiki/content-distribution/wiki/index.md.html"
     },
     {
-      "title": "Agent Workflows \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "agent-workflows",
-      "namespace_title": "Agent Workflows",
-      "updated": "2026-07-13",
-      "raw": "/raw/agent-workflows/wiki/log.md",
-      "html": "/wiki/agent-workflows/wiki/log.md.html"
-    },
-    {
       "title": "Reader-Centered Outreach Asks",
       "path": "wiki/concepts/reader-centered-outreach-asks.md",
       "namespace": "agent-workflows",
@@ -307,24 +343,6 @@
       "updated": "2026-07-09",
       "raw": "/raw/agent-workflows/wiki/concepts/agent-skill-routing.md",
       "html": "/wiki/agent-workflows/wiki/concepts/agent-skill-routing.md.html"
-    },
-    {
-      "title": "Agent Workflows",
-      "path": "README.md",
-      "namespace": "agent-workflows",
-      "namespace_title": "Agent Workflows",
-      "updated": "2026-07-09",
-      "raw": "/raw/agent-workflows/README.md",
-      "html": "/wiki/agent-workflows/README.md.html"
-    },
-    {
-      "title": "Agent Workflows \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "agent-workflows",
-      "namespace_title": "Agent Workflows",
-      "updated": "2026-07-09",
-      "raw": "/raw/agent-workflows/wiki/index.md",
-      "html": "/wiki/agent-workflows/wiki/index.md.html"
     },
     {
       "title": "Agentic Harness Engineering",

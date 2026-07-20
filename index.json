@@ -91,21 +91,21 @@
     {
       "slug": "agent-workflows",
       "title": "Agent Workflows",
-      "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.",
+      "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.",
       "tags": [
         "agents"
       ],
       "category": "agents",
       "scope": {
-        "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.",
+        "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-07-09 \u2014 Added the Eve-derived Agentic Harness Engineering pattern: build agents as inspectable runtime harnesses with explicit capability slots, trust boundaries, durable sessions, channels, sandboxing, and eval gates."
+        "currentAs": "2026-07-20 \u2014 Added the Verb-First vs Noun-First concept: use nouns for retrieval and orientation, then expose actors, actions, conditions, outcomes, and boundaries so people and LLMs can understand and execute intent with less ambiguity."
       },
-      "lastUpdated": "2026-07-09",
-      "documentCount": 32,
+      "lastUpdated": "2026-07-20",
+      "documentCount": 33,
       "counts": {
         "wiki": 1,
-        "concepts": 23,
+        "concepts": 24,
         "entities": 1,
         "summaries": 2,
         "syntheses": 2
@@ -285,6 +285,13 @@
           "category": "concepts"
         },
         {
+          "title": "Verb-First vs Noun-First: Actions Before Labels",
+          "path": "wiki/concepts/verb-first-knowledge.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/verb-first-knowledge.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/verb-first-knowledge.md.html",
+          "category": "concepts"
+        },
+        {
           "title": "Visual Plan Review Surfaces",
           "path": "wiki/concepts/visual-plan-review-surfaces.md",
           "raw": "/raw/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md",
@@ -431,7 +438,7 @@
     {
       "slug": "hermes-agent",
       "title": "Hermes Agent",
-      "description": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, capability-routing decisions, and Jamie-specific operating reference for Pi",
+      "description": "Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, capability-routing decisions, and Jamie-specific operating reference for Pixoid.",
       "tags": [
         "agent-infrastructure"
       ],
@@ -538,7 +545,7 @@
     {
       "slug": "ai-native-product-surfaces",
       "title": "AI-Native Product Surfaces",
-      "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avata",
+      "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avatar, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.",
       "tags": [
         "product"
       ],
@@ -546,13 +553,13 @@
       "scope": {
         "covers": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avatar, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.",
         "notCovered": "Generic product management notes that do not involve AI-native surfaces; local model infrastructure unless relevant to product behavior.",
-        "currentAs": "2026-07-17 \u2014 active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and a merged audited fact-grounding layer awaiting live operator proof. Cross-format attention and distribution guidance lives in `content-distribution`."
+        "currentAs": "2026-07-20 \u2014 active namespace. Includes Verb-First Product Positioning as the product application of the general Verb-First vs Noun-First concept, plus Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and a merged audited fact-grounding layer awaiting live operator proof. Cross-format attention and distribution guidance lives in `content-distribution`."
       },
-      "lastUpdated": "2026-07-17",
-      "documentCount": 25,
+      "lastUpdated": "2026-07-20",
+      "documentCount": 26,
       "counts": {
         "wiki": 1,
-        "concepts": 12,
+        "concepts": 13,
         "entities": 7,
         "summaries": 0,
         "syntheses": 1
@@ -645,6 +652,13 @@
           "path": "wiki/concepts/taste-requires-contact.md",
           "raw": "/raw/ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md",
           "html": "/wiki/ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Verb-First Product Positioning",
+          "path": "wiki/concepts/verb-first-product-positioning.md",
+          "raw": "/raw/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md",
+          "html": "/wiki/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md.html",
           "category": "concepts"
         },
         {
@@ -743,7 +757,7 @@
     {
       "slug": "content-distribution",
       "title": "Content Distribution Systems",
-      "description": "Long-form attention architecture, honest packaging, narrative/explanation structure, audience retention, shareable payoff design, cross-format translation across video, Substack/blog essays, X articles/threads, and measurement boundaries between entry, retention, redistribution, understanding, and t",
+      "description": "Long-form attention architecture, honest packaging, narrative/explanation structure, audience retention, shareable payoff design, cross-format translation across video, Substack/blog essays, X articles/threads, and measurement boundaries between entry, retention, redistribution, understanding, and trust.",
       "tags": [
         "knowledge-systems"
       ],
@@ -2923,7 +2937,7 @@
     {
       "slug": "software-architecture-metapatterns",
       "title": "Software Architecture Metapatterns",
-      "description": "The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependenc",
+      "description": "The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, and architecture evolution paths.",
       "tags": [
         "knowledge-systems"
       ],

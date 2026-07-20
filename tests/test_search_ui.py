@@ -191,6 +191,27 @@ def test_search_script_is_lazy_and_null_safe(tmp_path: Path) -> None:
     assert "search-badge" in js
 
 
+def test_dropdown_search_uses_word_tokens_and_relevance_ranking(tmp_path: Path) -> None:
+    generator, _ = build_fixture(tmp_path)
+    js = generator.search_script()
+    # Punctuation and hyphens split into searchable words, so "verb-first" and
+    # "verb first" behave the same without substring matches such as ai/maintain.
+    assert "match(/[a-z0-9]+/g)||[]" in js
+    assert "function unique(tokens)" in js
+    assert "var tokens=unique(tokenize(q))" in js
+    # Exact and containing title phrases beat incidental path/namespace hits.
+    assert "if(title===phrase)score+=100" in js
+    assert "if(title.indexOf(phrase)>=0)score+=60" in js
+    assert "res.sort(function(a,b)" in js
+    # The registry is static after load, so document fields are tokenized once
+    # in flatten() rather than again for every keystroke.
+    assert "var titleTokens=tokenize(title)" in js
+    assert "_titleTokens:titleTokens" in js
+    assert "var titleTokens=e._titleTokens" in js
+    assert "_allTokens:titleTokens.concat(pathTokens,metaTokens)" in js
+    assert "var hay=e._allTokens" in js
+
+
 # --- CSS ---------------------------------------------------------------------
 
 

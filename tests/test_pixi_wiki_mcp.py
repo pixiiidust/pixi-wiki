@@ -174,6 +174,75 @@ class PixiWikiMcpStoreTest(unittest.TestCase):
             agent_hits = {r["document_id"] for r in store.search_all_kbs("agent")["results"]}
             self.assertIn("agent.md", agent_hits)
 
+    def test_search_requires_all_terms_and_prioritizes_title_phrase(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            noisy_body = "Verb appears once.\n\n" + "First appears often. " * 40
+            self._write_store(
+                root,
+                [
+                    (
+                        "verb-first-knowledge.md",
+                        "---\ntitle: Verb-First Knowledge\n---\n\n# Verb-First Knowledge\n\nActions before labels.\n",
+                    ),
+                    ("activity-log.md", f"---\ntitle: Activity Log\n---\n\n# Activity Log\n\n{noisy_body}\n"),
+                    (
+                        "first-only.md",
+                        "---\ntitle: First Only\n---\n\n# First Only\n\nFirst appears without the other query term.\n",
+                    ),
+                ],
+            )
+            store = PixiWikiStore(root)
+
+            results = store.search_all_kbs("verb first")["results"]
+            duplicate_term_results = store.search_all_kbs("verb verb first")["results"]
+
+            self.assertEqual(results[0]["document_id"], "verb-first-knowledge.md")
+            self.assertNotIn("first-only.md", {result["document_id"] for result in results})
+            self.assertEqual(
+                [(result["document_id"], result["score"]) for result in duplicate_term_results],
+                [(result["document_id"], result["score"]) for result in results],
+            )
+            with self.assertRaises(PixiWikiError) as ctx:
+                store.search_all_kbs("---")
+            self.assertEqual(ctx.exception.code, "EMPTY_QUERY")
+
+    def test_search_snippet_prefers_a_line_with_all_query_terms(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self._write_store(
+                root,
+                [
+                    (
+                        "instructions.md",
+                        "---\ntitle: Instructions\n---\n\n# Instructions\n\nFirst appears alone here.\n\nVerb-first instructions expose the intended action.\n",
+                    )
+                ],
+            )
+            store = PixiWikiStore(root)
+
+            result = store.search_all_kbs("verb first")["results"][0]
+
+            self.assertEqual(result["snippet"], "Verb-first instructions expose the intended action.")
+
+    def test_search_snippet_skips_frontmatter_and_heading_labels(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self._write_store(
+                root,
+                [
+                    (
+                        "verb-first.md",
+                        "---\ntitle: Verb First\n---\n\n# Verb First\n\nThis principle exposes actions before category labels.\n",
+                    )
+                ],
+            )
+            store = PixiWikiStore(root)
+
+            result = store.search_all_kbs("verb first")["results"][0]
+
+            self.assertEqual(result["snippet"], "This principle exposes actions before category labels.")
+
     def test_corrupt_registry_raises_structured_error(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
