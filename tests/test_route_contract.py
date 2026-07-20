@@ -109,15 +109,23 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertNotIn("Knowledge domain llms.txt", llms)
         self.assertNotIn("concept-knowledge-concepts", llms)
 
+    def test_namespace_descriptions_preserve_complete_scope_text(self) -> None:
+        registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}
+        description = registry["agent-workflows"]["description"]
+        self.assertIn(
+            "verb-first instruction/knowledge design, and workflow reliability practices.",
+            description,
+        )
+
     def test_namespace_pages_have_agentwikis_sidebar_and_readme_card(self) -> None:
         html = (ROOT / "wiki" / "agent-workflows" / "README.md.html").read_text(encoding="utf-8")
         self.assertIn("Agent Workflows Knowledge Base", html)
-        self.assertIn("32 documents", html)
+        self.assertIn("33 documents", html)
         self.assertIn("📄 </span>Agent Workflows Knowledge Base", html)
         self.assertIn("📄 </span>Agent Workflows KB — Master Index", html)
         self.assertIn("<summary>WIKI 1</summary>", html)
         self.assertIn("📄 </span>Agent Workflows — Activity Log", html)
-        self.assertIn("<summary>CONCEPTS 23</summary>", html)
+        self.assertIn("<summary>CONCEPTS 24</summary>", html)
         self.assertIn("📄 </span>Agent Capability Route Pattern", html)
         self.assertIn("📄 </span>Agent Tooling Plan", html)
         self.assertIn("📄 </span>Agentic Harness Engineering", html)
@@ -134,6 +142,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("📄 </span>Matt Pocock Skills Best Practices", html)
         self.assertIn("📄 </span>Multi-Agent Multiplayer Boundaries", html)
         self.assertIn("📄 </span>Ponytail Minimal Code Discipline", html)
+        self.assertIn("📄 </span>Verb-First vs Noun-First: Actions Before Labels", html)
         self.assertIn("<summary>ENTITIES 1</summary>", html)
         self.assertIn("<summary>SUMMARIES 2</summary>", html)
         self.assertIn("📄 </span>Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation", html)
@@ -147,6 +156,33 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("view as markdown", html)
         self.assertIn("report a mistake", html)
         self.assertIn("prev-next-card", html)
+
+    def test_verb_first_general_and_product_pages_are_reciprocally_linked(self) -> None:
+        registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}
+        workflow_paths = {doc["path"] for doc in registry["agent-workflows"]["documents"]}
+        product_paths = {doc["path"] for doc in registry["ai-native-product-surfaces"]["documents"]}
+        self.assertIn("wiki/concepts/verb-first-knowledge.md", workflow_paths)
+        self.assertIn("wiki/concepts/verb-first-product-positioning.md", product_paths)
+
+        general_html = (
+            ROOT / "wiki" / "agent-workflows" / "wiki" / "concepts" / "verb-first-knowledge.md.html"
+        ).read_text(encoding="utf-8")
+        product_html = (
+            ROOT
+            / "wiki"
+            / "ai-native-product-surfaces"
+            / "wiki"
+            / "concepts"
+            / "verb-first-product-positioning.md.html"
+        ).read_text(encoding="utf-8")
+        self.assertIn(
+            'href="/pixi-wiki/wiki/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md.html"',
+            general_html,
+        )
+        self.assertIn(
+            'href="/pixi-wiki/wiki/agent-workflows/wiki/concepts/verb-first-knowledge.md.html"',
+            product_html,
+        )
 
     def test_pattern_language_namespace_exposes_pattern_corpus_and_agent_guidance(self) -> None:
         registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}

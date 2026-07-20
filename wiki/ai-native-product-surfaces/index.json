@@ -1,11 +1,11 @@
 {
   "slug": "ai-native-product-surfaces",
   "title": "AI-Native Product Surfaces",
-  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avata",
-  "documentCount": 25,
+  "description": "AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avatar, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.",
+  "documentCount": 26,
   "counts": {
     "wiki": 1,
-    "concepts": 12,
+    "concepts": 13,
     "entities": 7,
     "summaries": 0,
     "syntheses": 1
@@ -93,6 +93,13 @@
       "path": "wiki/concepts/taste-requires-contact.md",
       "raw": "/raw/ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Verb-First Product Positioning",
+      "path": "wiki/concepts/verb-first-product-positioning.md",
+      "raw": "/raw/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md.html",
       "category": "concepts"
     },
     {

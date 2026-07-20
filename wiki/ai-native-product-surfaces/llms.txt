@@ -1,6 +1,6 @@
 # AI-Native Product Surfaces Knowledge Base
 
-> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avata
+> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avatar, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
 - [AI-Native Product Surfaces](/raw/ai-native-product-surfaces/README.md) ([html](/wiki/ai-native-product-surfaces/README.md.html))
@@ -14,6 +14,7 @@
 - [Role-Aligned Deployed Project Proof](/raw/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md.html))
 - [Side-Quest Validation Loop](/raw/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md.html))
 - [Taste Requires Contact: Building Judgment in the AI Era](/raw/ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md.html))
+- [Verb-First Product Positioning](/raw/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md.html))
 - [Verified Video Answer Surfaces](/raw/ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md.html))
 - [Video Retrieve-Then-Verify Loop](/raw/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md.html))
 - [World Model Control Surfaces](/raw/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md.html))

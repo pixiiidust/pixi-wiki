@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-07-09
+updated: 2026-07-20
 type: namespace-overview
 status: active
 category: agents
@@ -35,7 +35,7 @@ confidence: medium
 
 ### Covers
 
-Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.
+Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
 
 ### Not Covered
 
@@ -43,7 +43,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 
 ### Current As
 
-2026-07-09 — Added the Eve-derived Agentic Harness Engineering pattern: build agents as inspectable runtime harnesses with explicit capability slots, trust boundaries, durable sessions, channels, sandboxing, and eval gates.
+2026-07-20 — Added the Verb-First vs Noun-First concept: use nouns for retrieval and orientation, then expose actors, actions, conditions, outcomes, and boundaries so people and LLMs can understand and execute intent with less ambiguity.
 
 ## Canonical Source Roots
 
@@ -62,6 +62,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/agentic-harness-engineering.md`
 - `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
+- `Knowledge/concepts/verb-first-knowledge.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
 - `Knowledge/concepts/hermes-capability-routing.md`
 - `Knowledge/concepts/high-agency-work-levels.md`
@@ -1874,6 +1875,137 @@ If the eval fails, fix the cheapest layer first: source wording, index coverage,
 - [Context Overfitting](../../../eval-trace/wiki/concepts/context-overfitting.md)
 
 
+<!-- ===== agent-workflows/wiki/concepts/verb-first-knowledge.md ===== -->
+
+---
+title: "Verb-First vs Noun-First: Actions Before Labels"
+created: 2026-07-20
+updated: 2026-07-20
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-workflows, agent-systems, instruction-design, knowledge-systems, intent]
+sources:
+  - Knowledge/concepts/verb-first-knowledge.md
+  - Knowledge/concepts/verb-first-product-positioning.md
+confidence: medium
+---
+
+# Verb-First vs Noun-First: Actions Before Labels
+
+**Verb-first knowledge** explains or instructs through actions before relying on category labels. It names who or what acts, what changes, what receives the action, under which conditions, and what observable result should follow.
+
+Verb-first does not mean every sentence must literally begin with a verb. It means the operational meaning comes before the label.
+
+```text
+actor → action → object or state → condition → observable result
+```
+
+Noun-first language says what something *is*:
+
+> This is an agent-governance framework.
+
+Verb-first language shows what it *does*:
+
+> It routes requests to bounded agents, checks their evidence, and stops unapproved actions before execution.
+
+The category can follow once the action is clear.
+
+## What difference do verbs make?
+
+Nouns are useful compression. They name stable things, roles, domains, and categories. But a noun often asks the reader to supply the mechanism from prior knowledge.
+
+Verbs expose the mechanism. They help a person:
+
+1. **Simulate what happens** — picture a sequence or state change.
+2. **Infer less** — rely less on assumptions hidden behind labels such as `platform`, `strategy`, `governance`, or `assistant`.
+3. **See responsibility** — identify who acts and who receives the result.
+4. **Test the claim** — observe, compare, or falsify an action and outcome.
+5. **Choose a next move** — understand what to do, not only which shelf the idea belongs on.
+
+A noun can create recognition without operational understanding. A verb turns recognition into a model of behavior.
+
+## Difference for people
+
+People need more than *what category is this?* They need to know:
+
+- What can I do with it?
+- What will it do to my input?
+- What changes afterward?
+- What am I responsible for?
+- What should I expect to observe?
+
+Verb-first language reduces the gap between reading and acting. It also makes intent easier to repeat across domains, teams, or cultures where the same noun may carry different assumptions. `Review`, `governance`, `community`, and `strategy` can each name many incompatible practices. The verbs reveal which practice is intended.
+
+## Difference for an LLM
+
+An LLM predicts continuations from the information and instructions it receives. A noun or role label can activate a broad cloud of associated patterns without selecting the behavior the user wants.
+
+> You are a reviewer.
+
+That leaves the review target, method, evidence standard, output, and authority boundary unspecified.
+
+A verb-first instruction narrows the action space:
+
+> Compare the changed files with the acceptance criteria, identify concrete regressions, cite file paths and evidence, return findings by severity, and do not edit or merge anything.
+
+This supplies:
+
+- an actor and target;
+- an action sequence;
+- selection and evidence criteria;
+- an output contract;
+- permission boundaries.
+
+For tool-using agents, verbs also map directly to capabilities such as `search`, `read`, `compare`, `calculate`, `write`, `test`, `publish`, or `stop`. Noun labels help retrieval; action language helps select and sequence tools.
+
+Verb-first wording does not guarantee correct model behavior. Models can still misunderstand, ignore constraints, or fabricate. Examples, evidence, permissions, and verification remain necessary. The advantage is narrower ambiguity, not deterministic control.
+
+## Reusable shapes
+
+For knowledge:
+
+> [Actor or system] [verb] [object or state] under [condition] to produce [observable result].
+
+For instructions:
+
+> When [trigger], [verb] [object] using [evidence or tool], return [artifact], and do not [boundary].
+
+If the actor, action, object, condition, result, or boundary cannot be named, the concept may still be too vague to use.
+
+## Examples
+
+| Noun-first | Verb-first |
+|---|---|
+| An AI research assistant | Searches named sources, extracts relevant evidence, and returns a cited comparison. |
+| A memory system | Stores stable user facts, retrieves relevant context, and keeps temporary task state out of durable memory. |
+| A governance framework | Routes decisions by risk, requires approval for protected actions, and records verification evidence. |
+| A community strategy | Brings a defined group together to exchange help, contribute work, and return for repeated value. |
+| A reviewer | Compares the change with the contract, identifies regressions, cites evidence, and returns findings without editing. |
+
+## Nouns still matter
+
+Verb-first is not anti-noun. Nouns provide identity, indexing, continuity, and shared vocabulary. Useful knowledge needs both:
+
+```text
+nouns for retrieval and orientation
+verbs for behavior and execution
+```
+
+Use the noun to help someone find the concept. Use the verbs to help them understand, apply, test, or delegate it.
+
+## Applied page: product positioning
+
+[[../../ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning|Verb-First Product Positioning]] applies this general rule to product descriptions: name what the product does to a specific input, for whom, with what outcome, and which pain it removes before naming its category.
+
+## Related pages
+
+- [[concepts/agent-tooling-plan|Agent Tooling Plan]]
+- [[concepts/agent-skill-routing|Agent Skill Routing]]
+- [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]]
+- [[../../ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning|Verb-First Product Positioning]]
+
+
 <!-- ===== agent-workflows/wiki/concepts/visual-plan-review-surfaces.md ===== -->
 
 ---
@@ -2027,7 +2159,7 @@ Compiled from `Projects/Hermes Mission Control/Index.md` and related KPR operati
 ---
 title: Agent Workflows — Master Index
 created: 2026-06-16
-updated: 2026-07-09
+updated: 2026-07-20
 type: index
 status: compiled
 namespace: agent-workflows
@@ -2064,6 +2196,7 @@ namespace: agent-workflows
 - [[concepts/runtime-memory-knowledge-routing|Runtime Memory Knowledge Routing]] — How agents combine injected memory, Honcho, knowledge packs, skills, GitHub, and session search at runtime.
 - [[concepts/self-improving-agent-systems|Self-Improving Agent Systems]] — How agents improve through verified durable state rather than weight updates.
 - [[concepts/static-retrieval-evals|Static Retrieval Evals]] — Small retrieval question sets used as gates before heavier search/RAG/MCP infrastructure.
+- [[concepts/verb-first-knowledge|Verb-First vs Noun-First: Actions Before Labels]] — Explain knowledge and instructions through actors, actions, conditions, outcomes, and boundaries; nouns aid retrieval, while verbs aid understanding and execution.
 - [[concepts/visual-plan-review-surfaces|Visual Plan Review Surfaces]] — Local/private review artifacts for turning PRDs and implementation plans into inspectable MDX before code changes.
 - Cross-namespace concept: [[../../eval-trace/wiki/concepts/context-overfitting|Context Overfitting]] — Eval Trace primary page for a workflow reliability failure mode.
 
@@ -2099,6 +2232,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/agentic-harness-engineering.md`
 - `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
+- `Knowledge/concepts/verb-first-knowledge.md`
 - `Knowledge/concepts/compound-engineering-skill-layer.md`
 - `Knowledge/concepts/hermes-capability-routing.md`
 - `Knowledge/concepts/high-agency-work-levels.md`
@@ -2122,7 +2256,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-13
+updated: 2026-07-20
 type: log
 status: compiled
 namespace: agent-workflows
@@ -2131,6 +2265,13 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-20 create | Verb-First vs Noun-First: Actions Before Labels
+
+- Added `wiki/concepts/verb-first-knowledge.md` from the canonical Knowledge concept.
+- Separated the general action-before-label principle from its product-positioning application.
+- Captured the human comprehension, intent-transfer, LLM instruction, tool-selection, output-contract, and permission-boundary implications.
+- Linked reciprocally to the applied product page in `ai-native-product-surfaces`.
 
 ## 2026-07-13 update | Link outreach asks to Side Doors synthesis
 

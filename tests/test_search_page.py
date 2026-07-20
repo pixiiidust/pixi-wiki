@@ -178,13 +178,28 @@ def test_results_script_reads_url_params_and_replaces_state(tmp_path: Path) -> N
 def test_results_script_ranks_and_highlights(tmp_path: Path) -> None:
     generator, _ = build_site(tmp_path)
     js = generator.search_page_script()
-    # Ranking weights: 3x token hits in the title + 1x hits in path/cat/namespace.
-    assert "score+=3" in js
-    assert "score+=1" in js
+    # Word-token matching avoids substring noise, while exact/containing title
+    # phrases outrank incidental metadata matches.
+    assert "match(/[a-z0-9]+/g)||[]" in js
+    assert "function unique(tokens)" in js
+    assert "var tokens=unique(tokenize(q))" in js
+    assert "function search(tokens){if(!tokens.length)return []" in js
+    assert "if(title===phrase)score+=100" in js
+    assert "if(title.indexOf(phrase)>=0)score+=60" in js
+    assert "if(path.indexOf(phrase)>=0)score+=25" in js
+    assert "var titleTokens=tokenize(title)" in js
+    assert "_titleTokens:titleTokens" in js
+    assert "var titleTokens=e._titleTokens" in js
+    assert "_allTokens:titleTokens.concat(pathTokens,metaTokens)" in js
+    assert "var hay=e._allTokens" in js
     # Escape-safe <mark> highlighting built via DOM text nodes, never innerHTML.
     assert "createElement('mark')" in js
     assert "createTextNode" in js
+    assert "var word=/[a-z0-9]+/gi" in js
+    assert "wanted[m[0].toLowerCase()]" in js
+    assert "slice(last)));}function sync" in js
     assert "textContent" in js
+    assert ".innerHTML=tokens" not in js
 
 
 def test_results_script_paginates_at_20_per_page(tmp_path: Path) -> None:

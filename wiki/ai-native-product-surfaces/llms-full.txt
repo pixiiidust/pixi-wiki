@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/ai-native-product-su
 ---
 title: AI-Native Product Surfaces
 created: 2026-06-16
-updated: 2026-07-17
+updated: 2026-07-20
 type: namespace-overview
 status: scaffold
 category: product
@@ -45,7 +45,7 @@ Generic product management notes that do not involve AI-native surfaces; local m
 
 ### Current As
 
-2026-07-17 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and a merged audited fact-grounding layer awaiting live operator proof. Cross-format attention and distribution guidance lives in `content-distribution`.
+2026-07-20 — active namespace. Includes Verb-First Product Positioning as the product application of the general Verb-First vs Noun-First concept, plus Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and a merged audited fact-grounding layer awaiting live operator proof. Cross-format attention and distribution guidance lives in `content-distribution`.
 
 ## Canonical Source Roots
 
@@ -1448,6 +1448,125 @@ Contact develops judgment; artifacts make that judgment legible. [[syntheses/sid
 - Jason Liu, [“if you want good taste, you have to eat”](https://youtu.be/F4igbiu9eR8), YouTube. This page synthesizes a user-supplied transcript as a practitioner framework; it does not reproduce the transcript publicly.
 
 
+<!-- ===== ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md ===== -->
+
+---
+title: Verb-First Product Positioning
+created: 2026-06-11
+updated: 2026-07-20
+type: concept
+status: compiled
+namespace: ai-native-product-surfaces
+tags: [ai-native-product-surfaces, product-management, positioning, customer-discovery, strategy]
+sources:
+  - Knowledge/concepts/verb-first-product-positioning.md
+  - Knowledge/concepts/verb-first-knowledge.md
+confidence: high
+---
+
+# Verb-First Product Positioning
+
+**Verb-first product positioning** describes a product by the concrete job it performs before naming its category.
+
+The rule: say what the product does to a specific input, for whom, with what outcome, and what pain it removes.
+
+> We [verb] your [specific input] so you can [desired outcome] without [specific pain].
+
+This is an applied form of [[../../agent-workflows/wiki/concepts/verb-first-knowledge|Verb-First vs Noun-First: Actions Before Labels]], the broader communication rule that actions reveal operational meaning while nouns provide identity and indexing.
+
+## Why noun-first positioning fails
+
+Noun-first descriptions make users decode an abstract category:
+
+> We're building a cloud platform for AI.
+
+That sentence names a market shelf, but it does not show the product doing useful work. `Platform`, `assistant`, `workflow system`, and `infrastructure layer` can each describe many incompatible products.
+
+Verb-first descriptions make the work visible:
+
+> We containerize your code and run it on cloud GPUs so you don't have to manage the infrastructure yourself.
+
+The reader can identify the input, action, environment, and removed pain.
+
+## Required pieces
+
+A useful product sentence answers:
+
+1. **Input:** What does the product touch?
+   - code, emails, invoices, calls, PDFs, appointments, leads, reports
+2. **Action:** What does it do to that input?
+   - summarize, route, generate, detect, schedule, reconcile, convert, monitor, clean, approve
+3. **User:** Who receives the value?
+4. **Outcome:** What becomes faster, safer, easier, or newly possible?
+5. **Removed pain:** What manual work, uncertainty, delay, or infrastructure disappears?
+
+Short form:
+
+> We [verb] [object] so [user] can [result].
+
+## Rewrite trigger
+
+If the first sentence names what the product *is* before saying what it *does*, rewrite it.
+
+Noun-first:
+
+> An AI platform for small businesses.
+
+Verb-first:
+
+> We turn customer emails into draft replies so small teams can answer faster without hiring more support staff.
+
+Noun-first:
+
+> A workflow automation system for agencies.
+
+Verb-first:
+
+> We turn meeting notes into assigned follow-up tasks so agencies do not lose client decisions.
+
+## What difference does it make to people?
+
+Verb-first positioning reduces the amount of market and technical knowledge a reader needs before they can judge relevance. It helps someone answer:
+
+- Is this for me?
+- What do I give it?
+- What will it do?
+- What changes afterward?
+- Which current pain might disappear?
+
+The category can still follow. Categories help comparison and discovery; they should not carry the entire explanation.
+
+## Beyond products: capability as action
+
+The same test applies to abstract capability claims such as `taste`, `distribution`, `community`, `brand`, and `strategy`.
+
+- **Taste:** What does someone notice, select, reject, edit, sequence, protect, and explain?
+- **Distribution:** How does a person encounter, recognize, try, experience value, return, or share?
+- **Community:** Who gathers, contributes, helps, returns, and develops belonging?
+- **Brand:** What expectations are repeatedly created and kept?
+- **Strategy:** What is chosen, refused, sequenced, and protected under constraints?
+
+Nouns describe the identity someone wants credited. Verbs expose the value they can repeatedly produce.
+
+## Pass/fail test
+
+If someone can reasonably respond with **“What does that mean?”**, the description probably still depends on a category label.
+
+If they can repeat the input, action, user, and result in plain language, the positioning is doing its job.
+
+## Boundary
+
+Verb-first positioning is not a promise that every product is useful. A concrete sentence can still describe weak demand, a poor workflow, or an unproven outcome. Use [[concepts/side-quest-validation-loop|Side-Quest Validation Loop]] to test behavior and [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]] to define environment, actions, goals, and constraints.
+
+## Related pages
+
+- [[../../agent-workflows/wiki/concepts/verb-first-knowledge|Verb-First vs Noun-First: Actions Before Labels]]
+- [[concepts/ai-native-problem-framing-framework|AI-Native Problem Framing Framework]]
+- [[concepts/side-quest-validation-loop|Side-Quest Validation Loop]]
+- [[concepts/taste-requires-contact|Taste Requires Contact]]
+- [[syntheses/side-doors-make-useful-work-legible|Side Doors: Make Useful Work Legible]]
+
+
 <!-- ===== ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md ===== -->
 
 ---
@@ -2275,7 +2394,7 @@ Post-merge verification on `main`: focused verifier/eval tests 18 passed; full s
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-07-17
+updated: 2026-07-20
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -2301,6 +2420,7 @@ namespace: ai-native-product-surfaces
 - [[concepts/video-retrieve-then-verify-loop|Video Retrieve-Then-Verify Loop]] — Video AI architecture pattern: retrieve high-recall candidate moments, then verify with timestamped evidence; for gameplay, visual-only is low-trust and structured signals matter.
 - [[concepts/verified-video-answer-surfaces|Verified Video Answer Surfaces]] — Product-surface pattern for video apps/workbenches that return clips, confidence, evidence, and recall boundaries with AI as assistant, not source of truth.
 - [[concepts/world-model-control-surfaces|World Model Control Surfaces]] — Grounded-AI control/review lens for exposing state, actions, predictions, objectives, guardrails, evidence, and the recommended next safe step.
+- [[concepts/verb-first-product-positioning|Verb-First Product Positioning]] — Applied action-before-label rule: name the input, product action, user, outcome, and removed pain before the category; linked to the general Verb-First vs Noun-First concept.
 
 ## Entities
 
@@ -2357,7 +2477,7 @@ namespace: ai-native-product-surfaces
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-17
+updated: 2026-07-20
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -2366,6 +2486,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-20 create | Verb-First Product Positioning
+
+- Added the missing compiled `wiki/concepts/verb-first-product-positioning.md` page from its canonical Knowledge source.
+- Kept this page product-specific: input, action, user, outcome, removed pain, and category boundary.
+- Linked reciprocally to the general Verb-First vs Noun-First concept in `agent-workflows`.
 
 ## 2026-07-17 update | LKY Avatar fact-grounding layer merged
 

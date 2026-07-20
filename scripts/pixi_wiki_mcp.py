@@ -39,10 +39,6 @@ class PixiWikiError(Exception):
         return {"error": self.code, "message": self.message}
 
 
-def _slugify(value: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
-
-
 def _tokenize(value: str) -> list[str]:
     return re.findall(r"[a-z0-9]+", value.lower())
 
@@ -267,10 +263,11 @@ class PixiWikiStore:
         # Hyphens/underscores in a query term split into their component tokens,
         # matching how hyphenated haystack text tokenizes (e.g. "agent-workflows"
         # -> "agent", "workflows"). This keeps scoring on whole-token boundaries.
-        terms = _tokenize(cleaned)
+        terms = list(dict.fromkeys(_tokenize(cleaned)))
         if not terms:
             raise PixiWikiError("EMPTY_QUERY", "Search query must include searchable text.")
         max_results = max(1, min(int(max_results), 50))
+        query_phrase = " ".join(terms)
         scored: list[tuple[int, dict[str, Any]]] = []
         for ref in refs:
             try:
@@ -278,10 +275,31 @@ class PixiWikiStore:
             except PixiWikiError:
                 continue
             content = path.read_text(encoding="utf-8", errors="replace")
-            token_counts = Counter(_tokenize(" ".join([ref.title, ref.document_id, content])))
-            score = sum(token_counts[term] for term in terms)
-            if score <= 0:
+            title_tokens = _tokenize(ref.title)
+            path_tokens = _tokenize(ref.document_id)
+            content_tokens = _tokenize(content)
+            title_counts = Counter(title_tokens)
+            path_counts = Counter(path_tokens)
+            content_counts = Counter(content_tokens)
+            if not all(title_counts[term] + path_counts[term] + content_counts[term] > 0 for term in terms):
                 continue
+            normalized_title = " ".join(title_tokens)
+            normalized_path = " ".join(path_tokens)
+            score = 0
+            # Exact matches intentionally receive both the exact and containing
+            # phrase boosts so they remain decisively ahead of partial titles.
+            if normalized_title == query_phrase:
+                score += 1_000
+            if query_phrase in normalized_title:
+                score += 600
+            if query_phrase in normalized_path:
+                score += 250
+            score += sum(
+                min(title_counts[term], 3) * 40
+                + min(path_counts[term], 3) * 12
+                + min(content_counts[term], 5)
+                for term in terms
+            )
             snippet = self._snippet(content, terms)
             scored.append(
                 (
@@ -303,15 +321,17 @@ class PixiWikiStore:
 
     @staticmethod
     def _snippet(content: str, terms: list[str]) -> str:
-        lines = content.splitlines()
-        for line in lines:
-            normalized = _slugify(line)
-            if any(term in normalized for term in terms):
-                stripped = re.sub(r"\s+", " ", line).strip()
-                return stripped[:260]
-        # first_paragraph operates on body text; strip frontmatter here (the MCP
-        # copy used to do this internally).
         _frontmatter, body = parse_frontmatter(content)
+        lines = [line for line in body.splitlines() if not line.lstrip().startswith("#")]
+        tokenized_lines: list[tuple[str, set[str]]] = []
+        for line in lines:
+            line_tokens = set(_tokenize(line))
+            tokenized_lines.append((line, line_tokens))
+            if all(term in line_tokens for term in terms):
+                return re.sub(r"\s+", " ", line).strip()[:260]
+        for line, line_tokens in tokenized_lines:
+            if any(term in line_tokens for term in terms):
+                return re.sub(r"\s+", " ", line).strip()[:260]
         paragraph = first_paragraph(body)
         return paragraph[:260] if paragraph else "Match found in document metadata."
 

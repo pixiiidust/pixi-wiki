@@ -1,6 +1,6 @@
 # Content Distribution Systems Knowledge Base
 
-> Long-form attention architecture, honest packaging, narrative/explanation structure, audience retention, shareable payoff design, cross-format translation across video, Substack/blog essays, X articles/threads, and measurement boundaries between entry, retention, redistribution, understanding, and t
+> Long-form attention architecture, honest packaging, narrative/explanation structure, audience retention, shareable payoff design, cross-format translation across video, Substack/blog essays, X articles/threads, and measurement boundaries between entry, retention, redistribution, understanding, and trust.
 
 - [Content Distribution Namespace Instructions](/raw/content-distribution/CLAUDE.md) ([html](/wiki/content-distribution/CLAUDE.md.html))
 - [Content Distribution Systems](/raw/content-distribution/README.md) ([html](/wiki/content-distribution/README.md.html))

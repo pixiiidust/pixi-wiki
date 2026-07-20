@@ -1,6 +1,6 @@
 # Hermes Agent Knowledge Base
 
-> Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, capability-routing decisions, and Jamie-specific operating reference for Pi
+> Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, capability-routing decisions, and Jamie-specific operating reference for Pixoid.
 
 - [Hermes Agent Namespace Instructions](/raw/hermes-agent/CLAUDE.md) ([html](/wiki/hermes-agent/CLAUDE.md.html))
 - [Hermes Agent](/raw/hermes-agent/README.md) ([html](/wiki/hermes-agent/README.md.html))

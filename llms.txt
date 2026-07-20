@@ -20,8 +20,8 @@
 
 ## Agent Workflows
 
-> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.
-> Current as of: 2026-07-09 — Added the Eve-derived Agentic Harness Engineering pattern: build agents as inspectable runtime harnesses with explicit capability slots, trust boundaries, durable sessions, channels, sandboxing, and eval gates.
+> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
+> Current as of: 2026-07-20 — Added the Verb-First vs Noun-First concept: use nouns for retrieval and orientation, then expose actors, actions, conditions, outcomes, and boundaries so people and LLMs can understand and execute intent with less ambiguity.
 > Agent access: [/wiki/agent-workflows/llms.txt](/wiki/agent-workflows/llms.txt) [/wiki/agent-workflows/llms-full.txt](/wiki/agent-workflows/llms-full.txt) [/wiki/agent-workflows/index.json](/wiki/agent-workflows/index.json)
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
@@ -48,6 +48,7 @@
 - [Runtime Memory Knowledge Routing](/raw/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md.html))
 - [Self-Improving Agent Systems](/raw/agent-workflows/wiki/concepts/self-improving-agent-systems.md) ([html](/wiki/agent-workflows/wiki/concepts/self-improving-agent-systems.md.html))
 - [Static Retrieval Evals](/raw/agent-workflows/wiki/concepts/static-retrieval-evals.md) ([html](/wiki/agent-workflows/wiki/concepts/static-retrieval-evals.md.html))
+- [Verb-First vs Noun-First: Actions Before Labels](/raw/agent-workflows/wiki/concepts/verb-first-knowledge.md) ([html](/wiki/agent-workflows/wiki/concepts/verb-first-knowledge.md.html))
 - [Visual Plan Review Surfaces](/raw/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md) ([html](/wiki/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md.html))
 - [Hermes Mission Control](/raw/agent-workflows/wiki/entities/hermes-mission-control.md) ([html](/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html))
 - [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md) ([html](/wiki/agent-workflows/wiki/index.md.html))
@@ -74,7 +75,7 @@
 
 ## Hermes Agent
 
-> Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, capability-routing decisions, and Jamie-specific operating reference for Pi
+> Hermes Agent setup and configuration, MCP integration, profiles, skills, memory, cron, gateway operations, subagents/delegation, session traces, trajectory capture, batch evals, Langfuse traces, NeMo Relay ATOF/ATIF exports, capability-routing decisions, and Jamie-specific operating reference for Pixoid.
 > Current as of: 2026-06-27 — added Hermes Remote Artifact Previews as a reusable rule: remote Desktop artifacts must use dashboard HTTP/API, never VPS-local `file://` preview paths.
 > Agent access: [/wiki/hermes-agent/llms.txt](/wiki/hermes-agent/llms.txt) [/wiki/hermes-agent/llms-full.txt](/wiki/hermes-agent/llms-full.txt) [/wiki/hermes-agent/index.json](/wiki/hermes-agent/index.json)
 
@@ -92,8 +93,8 @@
 
 ## AI-Native Product Surfaces
 
-> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avata
-> Current as of: 2026-07-17 — active namespace. Includes Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and a merged audited fact-grounding layer awaiting live operator proof. Cross-format attention and distribution guidance lives in `content-distribution`.
+> AI-native product/application surfaces, problem framing, product demos, PM case studies, product-management system-steering frameworks, side-quest validation, AI-era judgment and taste, role-aligned deployed portfolio proof, side-door opportunity and public-proof synthesis, J-Space-Replay, LKY Avatar, I-know-kungfu, planned program intelligence, myAbode, agent output decision artifacts, and product/capability-language frameworks.
+> Current as of: 2026-07-20 — active namespace. Includes Verb-First Product Positioning as the product application of the general Verb-First vs Noun-First concept, plus Jamie's top-level AI definition, Product Management as System Steering, Side-Quest Validation Loop, Interaction Mode Routing, Material Loop / Glass Interfaces, Taste Requires Contact, World Model Control Surfaces, Agent Output Decision Artifacts, Role-Aligned Deployed Project Proof, Side Doors: Make Useful Work Legible, Anthropic J-space / Jacobian lens as a product-surface concept, video retrieve-then-verify / verified video answer concepts, compiled product-surface entities and concepts, Job Edge as a live job-search edge/dashboard prototype, Shifu as a local-first searchable video knowledge prototype, J-Space-Replay as a public demo for replaying VLM lens readouts over video, and LKY Avatar as a local fictional-interview stack with tuned voice, animated portrait, executed interaction gates, and a merged audited fact-grounding layer awaiting live operator proof. Cross-format attention and distribution guidance lives in `content-distribution`.
 > Agent access: [/wiki/ai-native-product-surfaces/llms.txt](/wiki/ai-native-product-surfaces/llms.txt) [/wiki/ai-native-product-surfaces/llms-full.txt](/wiki/ai-native-product-surfaces/llms-full.txt) [/wiki/ai-native-product-surfaces/index.json](/wiki/ai-native-product-surfaces/index.json)
 
 - [AI-Native Product Surfaces Namespace Instructions](/raw/ai-native-product-surfaces/CLAUDE.md) ([html](/wiki/ai-native-product-surfaces/CLAUDE.md.html))
@@ -108,6 +109,7 @@
 - [Role-Aligned Deployed Project Proof](/raw/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/role-aligned-deployed-project-proof.md.html))
 - [Side-Quest Validation Loop](/raw/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/side-quest-validation-loop.md.html))
 - [Taste Requires Contact: Building Judgment in the AI Era](/raw/ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/taste-requires-contact.md.html))
+- [Verb-First Product Positioning](/raw/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/verb-first-product-positioning.md.html))
 - [Verified Video Answer Surfaces](/raw/ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/verified-video-answer-surfaces.md.html))
 - [Video Retrieve-Then-Verify Loop](/raw/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/video-retrieve-then-verify-loop.md.html))
 - [World Model Control Surfaces](/raw/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md) ([html](/wiki/ai-native-product-surfaces/wiki/concepts/world-model-control-surfaces.md.html))
@@ -124,7 +126,7 @@
 
 ## Content Distribution Systems
 
-> Long-form attention architecture, honest packaging, narrative/explanation structure, audience retention, shareable payoff design, cross-format translation across video, Substack/blog essays, X articles/threads, and measurement boundaries between entry, retention, redistribution, understanding, and t
+> Long-form attention architecture, honest packaging, narrative/explanation structure, audience retention, shareable payoff design, cross-format translation across video, Substack/blog essays, X articles/threads, and measurement boundaries between entry, retention, redistribution, understanding, and trust.
 > Current as of: 2026-07-14 — active namespace. Starts with the illustrated **Attention Architecture for Long-Form Content** guide, migrated out of AI-Native Product Surfaces and generalized from a Veritasium video case into a cross-format editorial system.
 > Agent access: [/wiki/content-distribution/llms.txt](/wiki/content-distribution/llms.txt) [/wiki/content-distribution/llms-full.txt](/wiki/content-distribution/llms-full.txt) [/wiki/content-distribution/index.json](/wiki/content-distribution/index.json)
 
@@ -449,7 +451,7 @@
 
 ## Software Architecture Metapatterns
 
-> The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependenc
+> The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, and architecture evolution paths.
 > Current as of: 2026-07-02 — Initial namespace release imports the public GitHub wiki Markdown corpus, preserves source URLs/provenance, adds an agent retrieval contract, and classifies the namespace under Knowledge Systems because it organizes software architecture knowledge into a navigable pattern language.
 > Agent access: [/wiki/software-architecture-metapatterns/llms.txt](/wiki/software-architecture-metapatterns/llms.txt) [/wiki/software-architecture-metapatterns/llms-full.txt](/wiki/software-architecture-metapatterns/llms-full.txt) [/wiki/software-architecture-metapatterns/index.json](/wiki/software-architecture-metapatterns/index.json)
 

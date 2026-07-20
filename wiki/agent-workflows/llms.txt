@@ -1,6 +1,6 @@
 # Agent Workflows Knowledge Base
 
-> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, and workflow reliability practices.
+> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
 - [Agent Workflows](/raw/agent-workflows/README.md) ([html](/wiki/agent-workflows/README.md.html))
@@ -26,6 +26,7 @@
 - [Runtime Memory Knowledge Routing](/raw/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/runtime-memory-knowledge-routing.md.html))
 - [Self-Improving Agent Systems](/raw/agent-workflows/wiki/concepts/self-improving-agent-systems.md) ([html](/wiki/agent-workflows/wiki/concepts/self-improving-agent-systems.md.html))
 - [Static Retrieval Evals](/raw/agent-workflows/wiki/concepts/static-retrieval-evals.md) ([html](/wiki/agent-workflows/wiki/concepts/static-retrieval-evals.md.html))
+- [Verb-First vs Noun-First: Actions Before Labels](/raw/agent-workflows/wiki/concepts/verb-first-knowledge.md) ([html](/wiki/agent-workflows/wiki/concepts/verb-first-knowledge.md.html))
 - [Visual Plan Review Surfaces](/raw/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md) ([html](/wiki/agent-workflows/wiki/concepts/visual-plan-review-surfaces.md.html))
 - [Hermes Mission Control](/raw/agent-workflows/wiki/entities/hermes-mission-control.md) ([html](/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html))
 - [Agent Workflows — Master Index](/raw/agent-workflows/wiki/index.md) ([html](/wiki/agent-workflows/wiki/index.md.html))

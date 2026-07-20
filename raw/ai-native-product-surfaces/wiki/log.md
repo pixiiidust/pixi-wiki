@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-17
+updated: 2026-07-20
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -10,6 +10,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-20 create | Verb-First Product Positioning
+
+- Added the missing compiled `wiki/concepts/verb-first-product-positioning.md` page from its canonical Knowledge source.
+- Kept this page product-specific: input, action, user, outcome, removed pain, and category boundary.
+- Linked reciprocally to the general Verb-First vs Noun-First concept in `agent-workflows`.
 
 ## 2026-07-17 update | LKY Avatar fact-grounding layer merged
 
