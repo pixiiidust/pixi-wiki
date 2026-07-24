@@ -22,6 +22,9 @@
     <loc>https://pixiiidust.github.io/pixi-wiki/updates/3.html</loc>
   </url>
   <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/updates/4.html</loc>
+  </url>
+  <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/CLAUDE.md.html</loc>
   </url>
   <url>
@@ -309,11 +312,15 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/README.md.html</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/concepts/context-overfitting.md.html</loc>
     <lastmod>2026-06-18</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/concepts/emergence-claim-ladder.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html</loc>
@@ -325,11 +332,11 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/index.md.html</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/log.md.html</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/eval-trace/wiki/syntheses/workflow-quality-evaluation-map.md.html</loc>
@@ -1452,6 +1459,45 @@
     <lastmod>2026-07-01</lastmod>
   </url>
   <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/petri-eden/CLAUDE.md.html</loc>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/petri-eden/README.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/petri-eden/wiki/concepts/operational-species.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/petri-eden/wiki/entities/petri-eden.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/petri-eden/wiki/index.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/petri-eden/wiki/log.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/petri-eden/wiki/summaries/evidence-and-frontier.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/petri-eden/wiki/summaries/product-experience-and-inspection.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/petri-eden/wiki/summaries/v1-system-map.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/petri-eden/wiki/syntheses/v2-v3-research-branches.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/pixi-vault/CLAUDE.md.html</loc>
   </url>
   <url>
@@ -1483,13 +1529,17 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/rl-sim-labs/README.md.html</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/rl-sim-labs/raw/puffer-ai-blog.md.html</loc>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/rl-sim-labs/raw/puffer-ai-docs.md.html</loc>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/rl-sim-labs/wiki/concepts/pufferlib-fast-environment-loop.md.html</loc>
@@ -1501,18 +1551,18 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/rl-sim-labs/wiki/index.md.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/rl-sim-labs/wiki/log.md.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/software-architecture-metapatterns/CLAUDE.md.html</loc>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/software-architecture-metapatterns/README.md.html</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/ambiguous-patterns.md.html</loc>
@@ -1832,11 +1882,11 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/software-architecture-metapatterns/wiki/index.md.html</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/software-architecture-metapatterns/wiki/log.md.html</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/software-architecture-metapatterns/wiki/summaries/for-agents-software-architecture-retrieval.md.html</loc>
@@ -1849,6 +1899,10 @@
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/software-architecture-metapatterns/wiki/syntheses/architecture-metapatterns-fit-for-pixi.md.html</loc>
     <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary.md.html</loc>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/ui-patterns/CLAUDE.md.html</loc>

@@ -2719,4 +2719,3 @@ The live 2026-06-29 Discord milestone proved that role mentions and human mentio
 - [[../../../eval-trace/wiki/concepts/context-overfitting|Context Overfitting]] — evaluation failure mode for stale-context execution.
 - `pixi-vault` — namespace compiler and source-class policy.
 - `local-ai-infrastructure` — future local/offloaded execution support.
-

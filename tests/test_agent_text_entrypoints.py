@@ -34,6 +34,14 @@ class AgentTextEntrypointsTest(unittest.TestCase):
         self.assertIn("<!-- ===== agent-workflows/README.md ===== -->", text)
         self.assertIn("Wiki Compiler", text)
 
+    def test_namespace_llms_full_files_end_with_one_newline(self) -> None:
+        for wiki in self.data["wikis"]:
+            path = ROOT / "wiki" / wiki["slug"] / "llms-full.txt"
+            with self.subTest(namespace=wiki["slug"]):
+                self.assertTrue(path.is_file())
+                self.assertTrue(path.read_bytes().endswith(b"\n"))
+                self.assertFalse(path.read_bytes().endswith(b"\n\n"))
+
     def test_index_json_document_records_resolve_to_files(self) -> None:
         for wiki in self.data["wikis"]:
             for doc in wiki["documents"]:

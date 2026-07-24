@@ -1,7 +1,196 @@
 {
   "generated_from": "frontmatter updated fields",
-  "count": 634,
+  "count": 646,
   "entries": [
+    {
+      "title": "Emergence Claim Ladder",
+      "path": "wiki/concepts/emergence-claim-ladder.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-24",
+      "raw": "/raw/eval-trace/wiki/concepts/emergence-claim-ladder.md",
+      "html": "/wiki/eval-trace/wiki/concepts/emergence-claim-ladder.md.html"
+    },
+    {
+      "title": "Eval Trace",
+      "path": "README.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-24",
+      "raw": "/raw/eval-trace/README.md",
+      "html": "/wiki/eval-trace/README.md.html"
+    },
+    {
+      "title": "Eval Trace \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-24",
+      "raw": "/raw/eval-trace/wiki/log.md",
+      "html": "/wiki/eval-trace/wiki/log.md.html"
+    },
+    {
+      "title": "Eval Trace \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "eval-trace",
+      "namespace_title": "Eval Trace",
+      "updated": "2026-07-24",
+      "raw": "/raw/eval-trace/wiki/index.md",
+      "html": "/wiki/eval-trace/wiki/index.md.html"
+    },
+    {
+      "title": "Operational Species",
+      "path": "wiki/concepts/operational-species.md",
+      "namespace": "petri-eden",
+      "namespace_title": "Petri Eden",
+      "updated": "2026-07-24",
+      "raw": "/raw/petri-eden/wiki/concepts/operational-species.md",
+      "html": "/wiki/petri-eden/wiki/concepts/operational-species.md.html"
+    },
+    {
+      "title": "Petri Eden",
+      "path": "README.md",
+      "namespace": "petri-eden",
+      "namespace_title": "Petri Eden",
+      "updated": "2026-07-24",
+      "raw": "/raw/petri-eden/README.md",
+      "html": "/wiki/petri-eden/README.md.html"
+    },
+    {
+      "title": "Petri Eden - Master Index",
+      "path": "wiki/index.md",
+      "namespace": "petri-eden",
+      "namespace_title": "Petri Eden",
+      "updated": "2026-07-24",
+      "raw": "/raw/petri-eden/wiki/index.md",
+      "html": "/wiki/petri-eden/wiki/index.md.html"
+    },
+    {
+      "title": "Petri Eden - Update Log",
+      "path": "wiki/log.md",
+      "namespace": "petri-eden",
+      "namespace_title": "Petri Eden",
+      "updated": "2026-07-24",
+      "raw": "/raw/petri-eden/wiki/log.md",
+      "html": "/wiki/petri-eden/wiki/log.md.html"
+    },
+    {
+      "title": "Petri Eden Evidence and Frontier",
+      "path": "wiki/summaries/evidence-and-frontier.md",
+      "namespace": "petri-eden",
+      "namespace_title": "Petri Eden",
+      "updated": "2026-07-24",
+      "raw": "/raw/petri-eden/wiki/summaries/evidence-and-frontier.md",
+      "html": "/wiki/petri-eden/wiki/summaries/evidence-and-frontier.md.html"
+    },
+    {
+      "title": "Petri Eden Product Experience and Inspection",
+      "path": "wiki/summaries/product-experience-and-inspection.md",
+      "namespace": "petri-eden",
+      "namespace_title": "Petri Eden",
+      "updated": "2026-07-24",
+      "raw": "/raw/petri-eden/wiki/summaries/product-experience-and-inspection.md",
+      "html": "/wiki/petri-eden/wiki/summaries/product-experience-and-inspection.md.html"
+    },
+    {
+      "title": "Petri Eden Project",
+      "path": "wiki/entities/petri-eden.md",
+      "namespace": "petri-eden",
+      "namespace_title": "Petri Eden",
+      "updated": "2026-07-24",
+      "raw": "/raw/petri-eden/wiki/entities/petri-eden.md",
+      "html": "/wiki/petri-eden/wiki/entities/petri-eden.md.html"
+    },
+    {
+      "title": "Petri Eden V1 System Map",
+      "path": "wiki/summaries/v1-system-map.md",
+      "namespace": "petri-eden",
+      "namespace_title": "Petri Eden",
+      "updated": "2026-07-24",
+      "raw": "/raw/petri-eden/wiki/summaries/v1-system-map.md",
+      "html": "/wiki/petri-eden/wiki/summaries/v1-system-map.md.html"
+    },
+    {
+      "title": "Petri Eden V2 and V3 Research Branches",
+      "path": "wiki/syntheses/v2-v3-research-branches.md",
+      "namespace": "petri-eden",
+      "namespace_title": "Petri Eden",
+      "updated": "2026-07-24",
+      "raw": "/raw/petri-eden/wiki/syntheses/v2-v3-research-branches.md",
+      "html": "/wiki/petri-eden/wiki/syntheses/v2-v3-research-branches.md.html"
+    },
+    {
+      "title": "Neuroevolution vs Reinforcement Learning",
+      "path": "wiki/concepts/neuroevolution-vs-reinforcement-learning.md",
+      "namespace": "rl-sim-labs",
+      "namespace_title": "RL Sim Labs",
+      "updated": "2026-07-24",
+      "raw": "/raw/rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning.md",
+      "html": "/wiki/rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning.md.html"
+    },
+    {
+      "title": "RL Sim Labs",
+      "path": "README.md",
+      "namespace": "rl-sim-labs",
+      "namespace_title": "RL Sim Labs",
+      "updated": "2026-07-24",
+      "raw": "/raw/rl-sim-labs/README.md",
+      "html": "/wiki/rl-sim-labs/README.md.html"
+    },
+    {
+      "title": "RL Sim Labs \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "rl-sim-labs",
+      "namespace_title": "RL Sim Labs",
+      "updated": "2026-07-24",
+      "raw": "/raw/rl-sim-labs/wiki/log.md",
+      "html": "/wiki/rl-sim-labs/wiki/log.md.html"
+    },
+    {
+      "title": "RL Sim Labs \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "rl-sim-labs",
+      "namespace_title": "RL Sim Labs",
+      "updated": "2026-07-24",
+      "raw": "/raw/rl-sim-labs/wiki/index.md",
+      "html": "/wiki/rl-sim-labs/wiki/index.md.html"
+    },
+    {
+      "title": "Authoritative Simulation Boundary",
+      "path": "wiki/syntheses/authoritative-simulation-boundary.md",
+      "namespace": "software-architecture-metapatterns",
+      "namespace_title": "Software Architecture Metapatterns",
+      "updated": "2026-07-24",
+      "raw": "/raw/software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary.md",
+      "html": "/wiki/software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary.md.html"
+    },
+    {
+      "title": "Software Architecture Metapatterns",
+      "path": "README.md",
+      "namespace": "software-architecture-metapatterns",
+      "namespace_title": "Software Architecture Metapatterns",
+      "updated": "2026-07-24",
+      "raw": "/raw/software-architecture-metapatterns/README.md",
+      "html": "/wiki/software-architecture-metapatterns/README.md.html"
+    },
+    {
+      "title": "Software Architecture Metapatterns \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "software-architecture-metapatterns",
+      "namespace_title": "Software Architecture Metapatterns",
+      "updated": "2026-07-24",
+      "raw": "/raw/software-architecture-metapatterns/wiki/log.md",
+      "html": "/wiki/software-architecture-metapatterns/wiki/log.md.html"
+    },
+    {
+      "title": "Software Architecture Metapatterns \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "software-architecture-metapatterns",
+      "namespace_title": "Software Architecture Metapatterns",
+      "updated": "2026-07-24",
+      "raw": "/raw/software-architecture-metapatterns/wiki/index.md",
+      "html": "/wiki/software-architecture-metapatterns/wiki/index.md.html"
+    },
     {
       "title": "Agent Workflows",
       "path": "README.md",
@@ -82,33 +271,6 @@
       "updated": "2026-07-17",
       "raw": "/raw/ai-native-product-surfaces/wiki/entities/lky-avatar.md",
       "html": "/wiki/ai-native-product-surfaces/wiki/entities/lky-avatar.md.html"
-    },
-    {
-      "title": "Eval Trace",
-      "path": "README.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-17",
-      "raw": "/raw/eval-trace/README.md",
-      "html": "/wiki/eval-trace/README.md.html"
-    },
-    {
-      "title": "Eval Trace \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-17",
-      "raw": "/raw/eval-trace/wiki/log.md",
-      "html": "/wiki/eval-trace/wiki/log.md.html"
-    },
-    {
-      "title": "Eval Trace \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "eval-trace",
-      "namespace_title": "Eval Trace",
-      "updated": "2026-07-17",
-      "raw": "/raw/eval-trace/wiki/index.md",
-      "html": "/wiki/eval-trace/wiki/index.md.html"
     },
     {
       "title": "Style-Transfer Evaluation",
@@ -1180,33 +1342,6 @@
       "updated": "2026-07-02",
       "raw": "/raw/software-architecture-metapatterns/wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md",
       "html": "/wiki/software-architecture-metapatterns/wiki/concepts/source/analytics/sharing-functionality-or-data-among-services.md.html"
-    },
-    {
-      "title": "Software Architecture Metapatterns",
-      "path": "README.md",
-      "namespace": "software-architecture-metapatterns",
-      "namespace_title": "Software Architecture Metapatterns",
-      "updated": "2026-07-02",
-      "raw": "/raw/software-architecture-metapatterns/README.md",
-      "html": "/wiki/software-architecture-metapatterns/README.md.html"
-    },
-    {
-      "title": "Software Architecture Metapatterns \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "software-architecture-metapatterns",
-      "namespace_title": "Software Architecture Metapatterns",
-      "updated": "2026-07-02",
-      "raw": "/raw/software-architecture-metapatterns/wiki/log.md",
-      "html": "/wiki/software-architecture-metapatterns/wiki/log.md.html"
-    },
-    {
-      "title": "Software Architecture Metapatterns \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "software-architecture-metapatterns",
-      "namespace_title": "Software Architecture Metapatterns",
-      "updated": "2026-07-02",
-      "raw": "/raw/software-architecture-metapatterns/wiki/index.md",
-      "html": "/wiki/software-architecture-metapatterns/wiki/index.md.html"
     },
     {
       "title": "Source Wiki Home",
@@ -5556,24 +5691,6 @@
       "html": "/wiki/rl-sim-labs/wiki/concepts/pufferlib-fast-environment-loop.md.html"
     },
     {
-      "title": "RL Sim Labs \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "rl-sim-labs",
-      "namespace_title": "RL Sim Labs",
-      "updated": "2026-06-18",
-      "raw": "/raw/rl-sim-labs/wiki/log.md",
-      "html": "/wiki/rl-sim-labs/wiki/log.md.html"
-    },
-    {
-      "title": "RL Sim Labs \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "rl-sim-labs",
-      "namespace_title": "RL Sim Labs",
-      "updated": "2026-06-18",
-      "raw": "/raw/rl-sim-labs/wiki/index.md",
-      "html": "/wiki/rl-sim-labs/wiki/index.md.html"
-    },
-    {
       "title": "Agent Entrypoint Mesh",
       "path": "wiki/concepts/agent-entrypoint-mesh.md",
       "namespace": "agent-workflows",
@@ -5698,15 +5815,6 @@
       "updated": "2026-06-16",
       "raw": "/raw/rl-sim-labs/wiki/entities/critical-ranger-ffm.md",
       "html": "/wiki/rl-sim-labs/wiki/entities/critical-ranger-ffm.md.html"
-    },
-    {
-      "title": "RL Sim Labs",
-      "path": "README.md",
-      "namespace": "rl-sim-labs",
-      "namespace_title": "RL Sim Labs",
-      "updated": "2026-06-16",
-      "raw": "/raw/rl-sim-labs/README.md",
-      "html": "/wiki/rl-sim-labs/README.md.html"
     }
   ]
 }

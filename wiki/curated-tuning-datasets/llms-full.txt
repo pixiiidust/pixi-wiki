@@ -418,4 +418,3 @@ These are separate axes. Completing training does not automatically make the sou
 - `curated-tuning-datasets` — manifest, provenance, cleaning, recipe, readiness.
 - `local-ai-infrastructure` — successful Unsloth/WSL2/16GB QLoRA path and runtime landmines.
 - `eval-trace` — trait rubric, paired candidates, uncertainty, and claim strength.
-

@@ -1,7 +1,7 @@
 ---
 title: Eval Trace — Master Index
 created: 2026-06-16
-updated: 2026-07-17
+updated: 2026-07-24
 type: index
 status: compiled
 namespace: eval-trace
@@ -14,6 +14,7 @@ namespace: eval-trace
 ## Concepts
 
 - [[concepts/context-overfitting|Context Overfitting]] — Agent workflow failure mode where stale or overly rigid context overwhelms current intent/live evidence.
+- [[concepts/emergence-claim-ladder|Emergence Claim Ladder]] — Evidence levels that separate execution, determinism, viability, measurement, inheritance, causal repeatability, and strong emergence claims.
 - [[concepts/style-transfer-evaluation|Style-Transfer Evaluation]] — LLM document holdouts and trait rubrics; tuned-voice similarity, intelligibility, realtime, blind-listening, placement, watermark, and rollback; plus separate factual accuracy, persona quality, and fabrication signals for grounded applications.
 
 ## Entities
@@ -33,5 +34,6 @@ namespace: eval-trace
 
 - `Projects/Eval Trace/Index.md`
 - `Knowledge/concepts/context-overfitting.md`
+- `Knowledge/concepts/emergence-claim-ladder.md`
 - `Knowledge/concepts/style-transfer-evaluation.md`
 - `Projects/LKY Avatar/Index.md`

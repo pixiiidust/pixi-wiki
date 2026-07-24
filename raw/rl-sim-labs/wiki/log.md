@@ -1,7 +1,7 @@
 ---
 title: RL Sim Labs — Activity Log
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-24
 type: log
 status: scaffold
 namespace: rl-sim-labs
@@ -10,6 +10,12 @@ namespace: rl-sim-labs
 # RL Sim Labs — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-24 update | Distinguish neuroevolution from reinforcement learning
+
+- Added `wiki/concepts/neuroevolution-vs-reinforcement-learning.md` as a reusable comparison page.
+- Kept Petri Eden in its own primary namespace and linked to it as the applied non-RL artificial-life case.
+- Preserved the retired Critical Ranger entity as historical context rather than a default active project.
 
 ## 2026-06-16 create | Namespace scaffold initialized
 

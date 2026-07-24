@@ -13680,4 +13680,3 @@ source_url: "https://ui-patterns.com/patterns"
 - Navigation: 26 patterns across 5 subgroups
 - Onboarding: 9 patterns across 2 subgroups
 - Social: 11 patterns across 2 subgroups
-

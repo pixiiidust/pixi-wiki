@@ -9,7 +9,7 @@ This is a compiled namespace source under `pixi-vault/wikis/rl-sim-labs/`.
 - Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
 - Treat `Knowledge/` and `Projects/` as canonical authoring sources.
 - Treat Daily Notes as scratch chronology, not direct compiled content.
-- Keep this namespace scoped to: PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.
+- Keep this namespace scoped to: PufferLib/RL projects, Critical Ranger FFM as historical context, zone-control experiments, simulation evidence gates, environment design, future similar RL labs, and bounded comparisons to adjacent learning systems. Keep artificial-life project state in `petri-eden`.
 - Do not widen scope silently; propose a namespace promotion/routing update first.
 - Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
 
@@ -19,9 +19,9 @@ This is a compiled namespace source under `pixi-vault/wikis/rl-sim-labs/`.
 ---
 title: RL Sim Labs
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-24
 type: namespace-overview
-status: scaffold
+status: active
 category: rl-simulation
 namespace: rl-sim-labs
 confidence: medium
@@ -29,21 +29,21 @@ confidence: medium
 
 # RL Sim Labs
 
-> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+> Reinforcement-learning and simulation-lab guidance, including explicit boundaries to adjacent learning systems.
 
 ## Scope
 
 ### Covers
 
-PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.
+PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, future similar RL labs, and bounded comparisons that distinguish RL from adjacent learning systems such as neuroevolution.
 
 ### Not Covered
 
-General local GPU setup unless required by RL experiment execution; unrelated game projects without RL/simulation learning goals.
+General local GPU setup unless required by RL experiment execution; unrelated game projects without RL/simulation learning goals; artificial-life project state that belongs in the project's own namespace.
 
 ### Current As
 
-2026-06-16 — scaffold only. Content has not yet been fully compiled.
+2026-07-24 — active. Includes the PufferLib fast-environment loop, the retired Critical Ranger FFM project entity, and a neuroevolution-versus-RL comparison linked to Petri Eden without moving Petri Eden into this namespace.
 
 ## Canonical Source Roots
 
@@ -51,8 +51,9 @@ General local GPU setup unless required by RL experiment execution; unrelated ga
 
 ## Crosslinks
 
-- [[../eval-trace/README|eval-trace]]
-- [[../local-ai-infrastructure/README|local-ai-infrastructure]]
+- [[../../eval-trace/README|eval-trace]]
+- [[../../local-ai-infrastructure/README|local-ai-infrastructure]]
+- [[../../petri-eden/README|petri-eden]]
 
 ## Public Output Contract
 
@@ -665,6 +666,101 @@ How do I export screenshots/gifs? F12 for screenshots, control+F12 for gifs. Thi
 Where did all the Python/third-party stuff go? It was all 100x+ slower than PufferLib is now. We do plan on hooking the C/C++ for Atari, NetHack, and maybe ProcGen into our low-level interface when we have time.
 
 
+<!-- ===== rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning.md ===== -->
+
+---
+title: Neuroevolution vs Reinforcement Learning
+created: 2026-07-24
+updated: 2026-07-24
+type: concept
+status: active
+namespace: rl-sim-labs
+sources:
+  - Petri Eden project context and native v1 plan
+confidence: high
+---
+
+# Neuroevolution vs Reinforcement Learning
+
+## Short Answer
+
+Neuroevolution changes neural controllers across generations through mutation, inheritance, and differential reproduction. Reinforcement learning changes a policy from reward-linked experience, usually through returns, value estimates, or policy gradients.
+
+Both can use simulations and neural networks. They are not interchangeable.
+
+## Comparison
+
+| Dimension | Neuroevolution | Reinforcement learning |
+|---|---|---|
+| Primary update | mutation/recombination plus selection | reward-linked optimization |
+| Persistence unit | genome/controller across descendants | policy parameters/state across training |
+| Objective source | survival/reproduction or explicit fitness | explicit reward/return |
+| Time scale | generations | steps, episodes, and updates |
+| Credit assignment | population/lineage outcome, often indirect | temporal reward credit |
+| Structural change | natural fit for topology mutation | often fixed policy structure, with exceptions |
+| Main evidence | lineage, inherited change, descendant outcomes | return, policy behavior, generalization, training dynamics |
+
+## Important Nuance
+
+Neuroevolution may use an explicit fitness score. Petri Eden deliberately does not do so in v1. Its selection signal is descendant count under ecological pressure, making ecology part of the causal mechanism rather than a backdrop around a scalar objective.
+
+RL may also use evolutionary search or population-based training as an optimizer. The useful classification asks:
+
+1. What state changes?
+2. What signal drives the change?
+3. When does it persist?
+4. What evidence supports the behavioral claim?
+
+## Hybrid Systems
+
+One system can combine:
+
+- inherited evolutionary priors;
+- reward-driven within-lifetime policy learning;
+- reward-free local plasticity;
+- descendant-based selection;
+- social or cultural transmission.
+
+Keep state and provenance separate so outcomes can be attributed to genome, reward, lifetime learning, environment, or social transfer.
+
+## Evaluation Differences
+
+### Neuroevolution
+
+- track genomes and lineages;
+- compare descendant outcomes;
+- preserve ecology and mutation provenance;
+- test across generations and unseen seeds;
+- distinguish viable environment from successful adaptation.
+
+### Reinforcement learning
+
+- track return and reward definition;
+- separate training from evaluation;
+- compare policy behavior and generalization;
+- control episode and compute budgets;
+- inspect reward hacking and environment shortcuts.
+
+Both need deterministic/reproducible environments where possible, negative baselines, and honest failure reporting.
+
+## Failure Modes
+
+- calling every agent-in-environment system RL;
+- calling any parameter search evolution without inheritance or differential reproduction;
+- hiding a fitness/reward score while claiming ecology-only selection;
+- measuring RL only by training return or evolution only by network size;
+- comparing systems with unequal compute or environment budgets.
+
+## Applied Example
+
+[[../../petri-eden/wiki/entities/petri-eden|Petri Eden v1]] is a neuroevolution/artificial-life project. Genomes mutate across generations, organisms act through deterministic neural controllers, and selection is descendant count. It has no reward signal or value function.
+
+## Related
+
+- [[../../petri-eden/wiki/summaries/v1-system-map|Petri Eden V1 System Map]]
+- [[../../eval-trace/wiki/concepts/emergence-claim-ladder|Emergence Claim Ladder]]
+
+
 <!-- ===== rl-sim-labs/wiki/concepts/pufferlib-fast-environment-loop.md ===== -->
 
 ---
@@ -823,7 +919,7 @@ Compiled from `Projects/Critical Ranger FFM/Index.md`.
 ---
 title: RL Sim Labs — Master Index
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-24
 type: index
 status: active
 namespace: rl-sim-labs
@@ -835,6 +931,7 @@ namespace: rl-sim-labs
 
 ## Concepts
 
+- [[concepts/neuroevolution-vs-reinforcement-learning|Neuroevolution vs Reinforcement Learning]] — Distinguishes mutation/inheritance/descendant selection from reward-linked policy optimization, with Petri Eden as the applied non-RL case.
 - [[concepts/pufferlib-fast-environment-loop|PufferLib Fast Environment Loop]] — Systems-first pattern for fast PufferLib environment authoring, training, sweeps, and evidence gates.
 
 <!-- Add compiled concepts alphabetically. -->
@@ -854,6 +951,7 @@ namespace: rl-sim-labs
 ## Source Roots
 
 - `Projects/Critical Ranger FFM/Index.md`
+- `Knowledge/concepts/neuroevolution-vs-reinforcement-learning.md`
 
 
 <!-- ===== rl-sim-labs/wiki/log.md ===== -->
@@ -861,7 +959,7 @@ namespace: rl-sim-labs
 ---
 title: RL Sim Labs — Activity Log
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-24
 type: log
 status: scaffold
 namespace: rl-sim-labs
@@ -870,6 +968,12 @@ namespace: rl-sim-labs
 # RL Sim Labs — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-24 update | Distinguish neuroevolution from reinforcement learning
+
+- Added `wiki/concepts/neuroevolution-vs-reinforcement-learning.md` as a reusable comparison page.
+- Kept Petri Eden in its own primary namespace and linked to it as the applied non-RL artificial-life case.
+- Preserved the retired Critical Ranger entity as historical context rather than a default active project.
 
 ## 2026-06-16 create | Namespace scaffold initialized
 
@@ -891,4 +995,3 @@ namespace: rl-sim-labs
 - Added `wiki/concepts/pufferlib-fast-environment-loop.md`.
 - Updated `wiki/index.md` with the new compiled concept.
 - Kept scope inside `rl-sim-labs`; no Daily Notes were copied or compiled.
-

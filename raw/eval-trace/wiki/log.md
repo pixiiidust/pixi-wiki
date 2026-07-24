@@ -1,7 +1,7 @@
 ---
 title: Eval Trace — Activity Log
 created: 2026-06-16
-updated: 2026-07-17
+updated: 2026-07-24
 type: log
 status: compiled
 namespace: eval-trace
@@ -10,6 +10,12 @@ namespace: eval-trace
 # Eval Trace — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-24 update | Add simulation emergence claim ladder
+
+- Added `wiki/concepts/emergence-claim-ladder.md` from the Petri Eden evidence boundary.
+- Separated execution, determinism, viability, measurement, inheritance/learning, causal repeatability, and strong emergence claims.
+- Added reciprocal links to Petri Eden, RL Sim Labs, and the authoritative simulation architecture synthesis.
 
 ## 2026-07-17 update | Separate factual grounding from persona quality
 

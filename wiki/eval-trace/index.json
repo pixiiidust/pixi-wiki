@@ -1,11 +1,11 @@
 {
   "slug": "eval-trace",
   "title": "Eval Trace",
-  "description": "Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.",
-  "documentCount": 8,
+  "description": "Workflow, agent, model-behavior, and simulation-claim evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.",
+  "documentCount": 9,
   "counts": {
     "wiki": 1,
-    "concepts": 2,
+    "concepts": 3,
     "entities": 1,
     "summaries": 0,
     "syntheses": 1
@@ -30,6 +30,13 @@
       "path": "wiki/concepts/context-overfitting.md",
       "raw": "/raw/eval-trace/wiki/concepts/context-overfitting.md",
       "html": "/wiki/eval-trace/wiki/concepts/context-overfitting.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Emergence Claim Ladder",
+      "path": "wiki/concepts/emergence-claim-ladder.md",
+      "raw": "/raw/eval-trace/wiki/concepts/emergence-claim-ladder.md",
+      "html": "/wiki/eval-trace/wiki/concepts/emergence-claim-ladder.md.html",
       "category": "concepts"
     },
     {

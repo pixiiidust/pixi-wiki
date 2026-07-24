@@ -12855,4 +12855,3 @@ verification:
 ## Deferral Rule
 
 Do not start adapter implementation until `pattern-language` is live, searchable, and verified through Pixi Wiki raw/HTML/llms/MCP surfaces.
-

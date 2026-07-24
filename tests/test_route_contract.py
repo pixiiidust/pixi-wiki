@@ -82,6 +82,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 "ai-native-product-surfaces",
                 "content-distribution",
                 "rl-sim-labs",
+                "petri-eden",
                 "curated-tuning-datasets",
                 "local-ai-infrastructure",
                 "pattern-language",
@@ -182,6 +183,81 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn(
             'href="/pixi-wiki/wiki/agent-workflows/wiki/concepts/verb-first-knowledge.md.html"',
             product_html,
+        )
+
+    def test_petri_eden_namespace_and_cross_namespace_explanations(self) -> None:
+        registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}
+        petri = registry["petri-eden"]
+        self.assertEqual(petri["title"], "Petri Eden")
+        self.assertEqual(petri["documentCount"], 10)
+
+        petri_paths = {doc["path"] for doc in petri["documents"]}
+        self.assertIn("wiki/entities/petri-eden.md", petri_paths)
+        self.assertIn("wiki/summaries/v1-system-map.md", petri_paths)
+        self.assertIn("wiki/summaries/evidence-and-frontier.md", petri_paths)
+        self.assertIn("wiki/syntheses/v2-v3-research-branches.md", petri_paths)
+
+        expected_cross_pages = {
+            "software-architecture-metapatterns": "wiki/syntheses/authoritative-simulation-boundary.md",
+            "eval-trace": "wiki/concepts/emergence-claim-ladder.md",
+            "rl-sim-labs": "wiki/concepts/neuroevolution-vs-reinforcement-learning.md",
+        }
+        for slug, path in expected_cross_pages.items():
+            with self.subTest(namespace=slug):
+                self.assertIn(path, {doc["path"] for doc in registry[slug]["documents"]})
+
+        v1_html = (
+            ROOT / "wiki" / "petri-eden" / "wiki" / "summaries" / "v1-system-map.md.html"
+        ).read_text(encoding="utf-8")
+        architecture_html = (
+            ROOT
+            / "wiki"
+            / "software-architecture-metapatterns"
+            / "wiki"
+            / "syntheses"
+            / "authoritative-simulation-boundary.md.html"
+        ).read_text(encoding="utf-8")
+        evidence_html = (
+            ROOT / "wiki" / "petri-eden" / "wiki" / "summaries" / "evidence-and-frontier.md.html"
+        ).read_text(encoding="utf-8")
+        emergence_html = (
+            ROOT / "wiki" / "eval-trace" / "wiki" / "concepts" / "emergence-claim-ladder.md.html"
+        ).read_text(encoding="utf-8")
+        entity_html = (
+            ROOT / "wiki" / "petri-eden" / "wiki" / "entities" / "petri-eden.md.html"
+        ).read_text(encoding="utf-8")
+        rl_html = (
+            ROOT
+            / "wiki"
+            / "rl-sim-labs"
+            / "wiki"
+            / "concepts"
+            / "neuroevolution-vs-reinforcement-learning.md.html"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn(
+            'href="/pixi-wiki/wiki/software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary.md.html"',
+            v1_html,
+        )
+        self.assertIn(
+            'href="/pixi-wiki/wiki/petri-eden/wiki/summaries/v1-system-map.md.html"',
+            architecture_html,
+        )
+        self.assertIn(
+            'href="/pixi-wiki/wiki/eval-trace/wiki/concepts/emergence-claim-ladder.md.html"',
+            evidence_html,
+        )
+        self.assertIn(
+            'href="/pixi-wiki/wiki/petri-eden/wiki/summaries/evidence-and-frontier.md.html"',
+            emergence_html,
+        )
+        self.assertIn(
+            'href="/pixi-wiki/wiki/rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning.md.html"',
+            entity_html,
+        )
+        self.assertIn(
+            'href="/pixi-wiki/wiki/petri-eden/wiki/entities/petri-eden.md.html"',
+            rl_html,
         )
 
     def test_pattern_language_namespace_exposes_pattern_corpus_and_agent_guidance(self) -> None:

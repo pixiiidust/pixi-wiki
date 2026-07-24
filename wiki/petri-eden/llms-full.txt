@@ -1,0 +1,729 @@
+<!-- ===== petri-eden/CLAUDE.md ===== -->
+
+# Petri Eden Namespace Instructions
+
+This is a compiled namespace source under `pixi-vault/wikis/petri-eden/`.
+
+## Rules
+
+- Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
+- Treat the private Petri Eden project hub, repository docs, ADRs, tests, issues, and CI as canonical source classes in that order of relevance.
+- Separate implemented code, committed v1 plan, V2 draft, and V3 brainstorm on every page.
+- Keep public pages free of private repo URLs, local machine paths, credentials, unpublished run artifacts, and release binaries.
+- Preserve the boundary that v1 is neuroevolution/artificial life, not reinforcement learning and not reward-driven optimization.
+- Do not claim emergence, intelligence, communication, or culture beyond the evidence ladder.
+- Keep human ecology decisions human-gated.
+- Route reusable architecture, evaluation, and learning-system comparisons to their primary namespaces with reciprocal crosslinks.
+- Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added or materially changed.
+
+
+<!-- ===== petri-eden/README.md ===== -->
+
+---
+title: Petri Eden
+created: 2026-07-24
+updated: 2026-07-24
+category: simulation
+status: active
+sources:
+  - Petri Eden project context and native v1 delivery plan
+  - Petri Eden UI design and architecture decisions
+  - Verified repository state and continuous-integration results as of 2026-07-24
+---
+
+# Petri Eden
+
+Petri Eden is a deterministic native artificial-life laboratory: design species, start an ecosystem, intervene during a run, and inspect how ecology and inherited neural controllers shape descendants.
+
+## Scope
+
+### Covers
+
+- Petri Eden's product, domain, architecture, evidence, and roadmap boundaries.
+- Deterministic artificial-life simulation and ecology-first neuroevolution.
+- Native inspection surfaces for populations, materials, lineage, perception, neural decisions, and run provenance.
+- Operational species as reproducible lineage/genome clusters.
+- V2 plasticity and Baldwin-effect research as draft work.
+- V3 embodied agents, communication, and cultural inheritance as a brainstorm.
+- Honest separation between implemented code, committed plans, and speculative research.
+
+### Not Covered
+
+- General reinforcement-learning implementation guidance.
+- Claims that Petri Eden proves open-ended evolution, intelligence, communication, or culture.
+- Private repository URLs, machine paths, credentials, unpublished artifacts, or release binaries.
+- V2/V3 ideas presented as shipped v1 capabilities.
+- Generic LLM-agent systems unrelated to embodied evolutionary experiments.
+
+### Current As
+
+2026-07-24. Native v1 work is implemented through deterministic simulation, spatial perception, ecology, evolution/mutation, and time control. Ecosystem telemetry is the active frontier. Species recognition, neural-decision inspection, interventions, persistence, endurance, scale, onboarding, packaging, and release certification remain later planned epics. One predator-viability ecology mechanism is awaiting a human product decision.
+
+## Start Here
+
+- [[wiki/entities/petri-eden|Petri Eden Project]] - the project identity, promise, status, and hard boundaries.
+- [[wiki/summaries/v1-system-map|V1 System Map]] - modules, authority, deterministic tick flow, and implementation frontier.
+- [[wiki/summaries/product-experience-and-inspection|Product Experience and Inspection]] - the world-first desktop experience and explanation surfaces.
+- [[wiki/summaries/evidence-and-frontier|Evidence and Frontier]] - implemented versus planned, current blocker, and evidence gates.
+- [[wiki/concepts/operational-species|Operational Species]] - a reproducible species definition for evolving simulated populations.
+- [[wiki/syntheses/v2-v3-research-branches|V2 and V3 Research Branches]] - plasticity/Baldwin experiments and embodied cultural agents, clearly marked future work.
+
+## Cross-Namespace Guides
+
+- [[../../software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary|Authoritative Simulation Boundary]] - the reusable architecture pattern behind deterministic interactive worlds.
+- [[../../eval-trace/wiki/concepts/emergence-claim-ladder|Emergence Claim Ladder]] - how evidence limits claims about evolution, learning, communication, and culture.
+- [[../../rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning|Neuroevolution vs Reinforcement Learning]] - why Petri Eden v1 is not an RL benchmark.
+
+## Update Contract
+
+Update this namespace when the project's implemented frontier, architecture contracts, evidence, or research status changes. Keep current issue numbers and private implementation details in the private project hub; keep this namespace durable and public-safe.
+
+
+<!-- ===== petri-eden/wiki/concepts/operational-species.md ===== -->
+
+---
+title: Operational Species
+created: 2026-07-24
+updated: 2026-07-24
+type: concept
+status: active
+namespace: petri-eden
+sources:
+  - Petri Eden native v1 delivery plan
+confidence: high
+---
+
+# Operational Species
+
+## Definition
+
+An operational species is a reproducible grouping rule for simulated organisms based on lineage and genome similarity. It is an analysis instrument with versioned parameters, not a subjective label based on appearance and not a claim that one universal biological species definition has been solved.
+
+## Required Contract
+
+A usable definition needs:
+
+- a deterministic genome-distance function;
+- explicit weights for structural and parameter differences;
+- a threshold or clustering rule;
+- stable tie-breaking and representative selection;
+- a versioned assignment policy;
+- lineage continuity rules across births, mutation, extinction, and reappearance;
+- provenance in saves and exports;
+- tests across repeated runs and worker counts.
+
+## Why Species Needs Lineage
+
+Genome distance alone can create unstable labels when a population drifts around a threshold. Lineage provides temporal and causal continuity:
+
+- who descended from whom;
+- when a branch separated;
+- which mutations crossed the operational threshold;
+- whether a cluster persisted or only appeared for one sample;
+- how extinction and reintroduction should be recorded.
+
+## Instrument Versus Authority
+
+The authoritative simulation owns genomes, organisms, births, deaths, and ancestry. Species assignment is a deterministic derived index over that truth. It must not secretly change reproduction, ecology, or selection unless an experiment explicitly introduces species-dependent rules.
+
+## UI Implications
+
+A species surface should expose:
+
+- stable species ID and color;
+- representative genome or lineage root;
+- population and biomass over time;
+- generation and trait distributions;
+- controller complexity distributions;
+- parent/child species relationships;
+- threshold/version metadata;
+- uncertainty or boundary cases rather than forced confidence.
+
+## Failure Modes
+
+- assigning species by hand-authored predator/prey guild;
+- clustering only by current appearance;
+- allowing hash or iteration order to change IDs;
+- changing distance weights without a version bump;
+- treating every mutation as a new species;
+- using species count alone as evidence of meaningful evolutionary novelty;
+- letting the species index feed back into selection accidentally.
+
+## Evidence Gate
+
+An operational-species implementation supports statements such as "this deterministic rule identified three persistent lineage clusters." It does not by itself support "three genuinely new biological species evolved" or "open-ended evolution occurred."
+
+## Related
+
+- [[wiki/entities/petri-eden|Petri Eden Project]]
+- [[wiki/summaries/v1-system-map|V1 System Map]]
+- [[wiki/summaries/evidence-and-frontier|Evidence and Frontier]]
+- [[../../eval-trace/wiki/concepts/emergence-claim-ladder|Emergence Claim Ladder]]
+
+
+<!-- ===== petri-eden/wiki/entities/petri-eden.md ===== -->
+
+---
+title: Petri Eden Project
+created: 2026-07-24
+updated: 2026-07-24
+type: entity
+status: active
+namespace: petri-eden
+sources:
+  - Petri Eden project context, v1 delivery plan, UI design, ADRs, tests, issues, and CI
+confidence: high
+---
+
+# Petri Eden Project
+
+## Identity
+
+Petri Eden is a native desktop artificial-life laboratory built around a deterministic ecology and inherited neural controllers. The user creates or chooses species, launches a seeded world, watches behavior and population dynamics, intervenes, and inspects why outcomes changed.
+
+## Verb-First Product Frame
+
+**Design species, run a world, perturb it, and trace what the ecology and descendants did next.**
+
+The project is not primarily a simulator backend or a visual evolution toy. Its product is the loop between a living world and the evidence needed to understand it.
+
+## Four Coupled Systems
+
+1. **Ecology** - materials, plants, prey, predators, metabolism, reproduction, death, and decay.
+2. **Neuroevolution** - deterministic controllers, mutation, structural change, inheritance, and descendant-count selection.
+3. **Experiment instrument** - seeds, exact time, telemetry, lineage/species, events, persistence, export, and branching.
+4. **Desktop experience** - world canvas, controls, charts, inspectors, design studio, onboarding, and fault recovery.
+
+## Current Status
+
+As of 2026-07-24:
+
+- The native skeleton and CI/toolchain exist.
+- Seeded deterministic replay and digest contracts exist.
+- Spatial simulation and deterministic parallel perception exist.
+- The first ecology and material-flow loop exists.
+- Mutation, structural controller changes, and descendant-count selection exist.
+- Pause, exact step, speed policies, and terminal/fault handling exist.
+- Ecosystem telemetry is the active delivery frontier.
+- Predator viability has exposed a human-gated ecology decision.
+- Species recognition, neural inspection, intervention, persistence, endurance, scale, onboarding, packaging, and release audit remain planned.
+
+Read [[wiki/summaries/evidence-and-frontier|Evidence and Frontier]] for the claim boundary.
+
+## Hard Boundaries
+
+- No reward signal, value function, or hidden ecosystem-health score in v1.
+- No hand-authored organism behavior trees.
+- No open-ended evolution claim.
+- No claim that controller size equals intelligence.
+- No within-lifetime learning in v1.
+- No embodied language-model society in v1.
+- No distributed simulation or remote client in v1.
+
+## Namespace Topology
+
+Petri Eden earns a standalone namespace because it has an independent audience, multiple document types, a substantial source corpus, an active update lifecycle, and a clear covers/not-covered boundary.
+
+Reusable topics are routed out rather than duplicated:
+
+- [[../../software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary|Authoritative Simulation Boundary]]
+- [[../../eval-trace/wiki/concepts/emergence-claim-ladder|Emergence Claim Ladder]]
+- [[../../rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning|Neuroevolution vs Reinforcement Learning]]
+
+V2 plasticity and V3 cultural-agent ideas remain inside this namespace until implementation and reuse justify another namespace.
+
+## Related
+
+- [[wiki/summaries/v1-system-map|V1 System Map]]
+- [[wiki/summaries/product-experience-and-inspection|Product Experience and Inspection]]
+- [[wiki/concepts/operational-species|Operational Species]]
+- [[wiki/syntheses/v2-v3-research-branches|V2 and V3 Research Branches]]
+
+
+<!-- ===== petri-eden/wiki/index.md ===== -->
+
+---
+title: Petri Eden - Master Index
+created: 2026-07-24
+updated: 2026-07-24
+type: index
+status: active
+namespace: petri-eden
+---
+
+# Petri Eden - Master Index
+
+> Content index for the deterministic native artificial-life laboratory.
+
+## Concepts
+
+- [[wiki/concepts/operational-species|Operational Species]] - deterministic lineage/genome clustering as an analysis instrument.
+
+## Entities
+
+- [[wiki/entities/petri-eden|Petri Eden Project]] - project identity, promise, status, and boundaries.
+
+## Summaries
+
+- [[wiki/summaries/evidence-and-frontier|Evidence and Frontier]] - shipped versus planned status, current ecology gate, and claim discipline.
+- [[wiki/summaries/product-experience-and-inspection|Product Experience and Inspection]] - world-first desktop interaction and explanation surfaces.
+- [[wiki/summaries/v1-system-map|V1 System Map]] - native modules, authority boundaries, deterministic processing, and delivery sequence.
+
+## Syntheses
+
+- [[wiki/syntheses/v2-v3-research-branches|V2 and V3 Research Branches]] - future plasticity/Baldwin-effect and embodied cultural-agent research.
+
+## Cross-Namespace Explanations
+
+- [[../../software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary|Authoritative Simulation Boundary]]
+- [[../../eval-trace/wiki/concepts/emergence-claim-ladder|Emergence Claim Ladder]]
+- [[../../rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning|Neuroevolution vs Reinforcement Learning]]
+
+
+<!-- ===== petri-eden/wiki/log.md ===== -->
+
+---
+title: Petri Eden - Update Log
+created: 2026-07-24
+updated: 2026-07-24
+type: log
+status: active
+namespace: petri-eden
+---
+
+# Petri Eden - Update Log
+
+## 2026-07-24
+
+- Created the `petri-eden` namespace as the primary public-safe knowledge base for the project.
+- Added the project entity, v1 system map, product/inspection map, evidence/frontier summary, operational-species concept, and V2/V3 research synthesis.
+- Recorded the evidence boundary: v1 implementation through time control, telemetry as the active frontier, later epics planned, and V2/V3 not implemented.
+- Added reciprocal cross-namespace explanations for authoritative simulation architecture, emergence claims, and neuroevolution versus reinforcement learning.
+- Kept private repository coordinates and machine-local paths out of the namespace.
+
+
+<!-- ===== petri-eden/wiki/summaries/evidence-and-frontier.md ===== -->
+
+---
+title: Petri Eden Evidence and Frontier
+created: 2026-07-24
+updated: 2026-07-24
+type: summary
+status: active
+namespace: petri-eden
+sources:
+  - Petri Eden native v1 plan, triage policy, issue tracker, tests, and CI
+confidence: high
+---
+
+# Petri Eden Evidence and Frontier
+
+## Implemented Versus Planned
+
+| Capability | Status on 2026-07-24 |
+|---|---|
+| Native C++/SFML skeleton and CI | implemented |
+| Seeded deterministic timeline and replay digest | implemented |
+| Spatial world and deterministic parallel perception | implemented |
+| First ecology and material-flow loop | implemented |
+| Mutation, structural controller change, descendant-count selection | implemented |
+| Pause, exact step, speed policies, terminal/fault semantics | implemented |
+| Population/biomass and broader telemetry | active frontier |
+| Operational species and lineage views | planned |
+| Perception and neural-decision inspection | planned |
+| Mid-run species introduction | planned |
+| Save/resume/import/export/branch | planned |
+| Unattended-run resilience and scale | planned |
+| Onboarding, packaging, release audit | planned |
+| Lifetime plasticity and Baldwin experiments | V2 draft |
+| Embodied language-model agents and cultural inheritance | V3 brainstorm |
+
+## Active Frontier
+
+The next instrumentation sequence is:
+
+1. authoritative population and biomass sampling;
+2. native charts, tables, and retained summaries;
+3. material transfers, births, deaths, and cause evidence;
+4. generation, trait, and controller-complexity aggregates;
+5. integrity and distinct fault-state diagnostics;
+6. long-run retention, storage/memory trends, and degraded-state verification.
+
+This order matters. Later claims about species, evolution, or learning need a trustworthy measurement spine first.
+
+## Current Human Decision
+
+Predator viability is not yet satisfactory. Scripted predators die before the required long-run horizon because attacks carry health cost while usable energy arrives only through carcass scavenging. A human must choose the smallest ecology correction, likely one of:
+
+- bounded direct energy transfer from successful predation;
+- attack/metabolism/yield/decay rebalance;
+- a minimal combination.
+
+The change must preserve material conservation, plant/prey viability, deterministic worker-count digests, and the no-reward/no-fitness-score rule.
+
+## Evidence Gates
+
+Petri Eden should climb claims in order:
+
+1. **execution** - builds and smoke runs;
+2. **determinism** - repeated and worker-count digest agreement;
+3. **viability** - long-run baselines and material conservation;
+4. **measurement** - retained population, flow, trait, and integrity evidence;
+5. **inheritance** - lineage/genome evidence across generations;
+6. **repeatability** - fixed and unseen seeds, controls, ablations, failure cases;
+7. **strong emergence claims** - operational definition and independent scrutiny.
+
+The reusable guide is [[../../eval-trace/wiki/concepts/emergence-claim-ladder|Emergence Claim Ladder]].
+
+## Baseline Design
+
+Useful comparisons include:
+
+- no-op organisms;
+- random-action organisms;
+- scripted foragers/predators;
+- evolving controllers;
+- fixed versus unseen seeds;
+- `1/2/4` worker digest matrices;
+- mechanism-on versus mechanism-off ablations;
+- same ecology with different mutation/plasticity settings.
+
+Random or no-op collapse can be a valid negative baseline. It becomes a problem only if a supposedly viable scripted policy also collapses or the result cannot be explained.
+
+## Claims Not Yet Supported
+
+- open-ended evolution;
+- autonomous emergence of intelligence;
+- stable species diversification in the biological sense;
+- learned behavior in v1;
+- emergent language or culture;
+- production-ready unattended runs;
+- installable release quality.
+
+## Related
+
+- [[wiki/summaries/v1-system-map|V1 System Map]]
+- [[wiki/concepts/operational-species|Operational Species]]
+- [[wiki/syntheses/v2-v3-research-branches|V2 and V3 Research Branches]]
+
+
+<!-- ===== petri-eden/wiki/summaries/product-experience-and-inspection.md ===== -->
+
+---
+title: Petri Eden Product Experience and Inspection
+created: 2026-07-24
+updated: 2026-07-24
+type: summary
+status: active
+namespace: petri-eden
+sources:
+  - Petri Eden UI design and native v1 plan
+confidence: high
+---
+
+# Petri Eden Product Experience and Inspection
+
+## Product Loop
+
+```text
+design species -> seed world -> watch -> select -> inspect
+              -> intervene -> save/branch -> compare
+```
+
+The world is the primary artifact. Charts and panels explain it rather than replacing it.
+
+## Stable Desktop Frame
+
+### World canvas
+
+The largest surface shows organisms, plants, carcasses, materials, terrain cues, selection, and activity. It should remain legible at overview scale and useful when tracking one organism or lineage.
+
+### Top bar
+
+Persistent run controls and identity:
+
+- seed and run identity;
+- tick/time and current speed policy;
+- pause/resume and exact step;
+- save/export access when implemented;
+- normal, degraded, faulted, or terminal state.
+
+### Right rail
+
+Progressive measurement:
+
+- population and biomass;
+- material transfer and birth/death causes;
+- generation, traits, and controller complexity;
+- integrity and performance diagnostics.
+
+The rail shows raw measurements and trends. It must not collapse the ecosystem into a hidden health score.
+
+### Bottom drawer
+
+Contextual investigation:
+
+- selected organism phenotype;
+- lineage and operational species;
+- ordered perception inputs;
+- neural nodes, connections, and action outputs;
+- causal events and timelines;
+- charts and technical diagnostics.
+
+### Species Design Studio
+
+A constrained pre-run or intervention surface for creating a species while preserving experiment metadata. It should not become an unrestricted behavior-tree editor or visual programming environment in v1.
+
+## Inspection Contract
+
+A useful inspection path answers progressively deeper questions:
+
+1. **What changed?** Population, biomass, material flow, births, deaths.
+2. **Where did it happen?** World location, selected organism, local neighborhood.
+3. **Which lineage changed?** Parent/descendant history and species branch.
+4. **What did the organism sense?** Ordered spatial/perception channels.
+5. **What did the controller output?** Neural activation and action evidence.
+6. **What can be reproduced?** Seed, config, version, command history, save/branch identity.
+
+## Progressive Disclosure
+
+The interface should support three modes without separate products:
+
+- **watch**: the world and basic trends;
+- **investigate**: select organisms, lineages, and events;
+- **audit**: exact metadata, diagnostics, digests, saves, exports, and comparison.
+
+## Accessibility and State Completeness
+
+The v1 plan reserves explicit work for keyboard access, onboarding, empty/loading/degraded/faulted states, window behavior, DPI, and visual certification. Those are later planned epics as of 2026-07-24, not current implementation claims.
+
+## Product Risks
+
+- dashboards dominate the world and turn exploration into spreadsheet reading;
+- attractive motion becomes mistaken for scientific evidence;
+- speed controls change the logical experiment;
+- selection state is not stable across snapshot refreshes;
+- charts omit denominators or retention/downsampling rules;
+- normal ecological collapse is presented as a software error;
+- controller diagrams imply intelligence without behavioral evidence.
+
+## Related
+
+- [[wiki/entities/petri-eden|Petri Eden Project]]
+- [[wiki/summaries/v1-system-map|V1 System Map]]
+- [[wiki/summaries/evidence-and-frontier|Evidence and Frontier]]
+- [[wiki/concepts/operational-species|Operational Species]]
+
+
+<!-- ===== petri-eden/wiki/summaries/v1-system-map.md ===== -->
+
+---
+title: Petri Eden V1 System Map
+created: 2026-07-24
+updated: 2026-07-24
+type: summary
+status: active
+namespace: petri-eden
+sources:
+  - Petri Eden native v1 plan and architecture decisions
+confidence: high
+---
+
+# Petri Eden V1 System Map
+
+## Architecture
+
+```text
+Desktop shell
+  SFML window, input, rendering, ImGui-SFML controls
+       |
+       v typed commands
+
+Simulation host
+  one authoritative thread, lifecycle, command order, time policy
+       |
+       v deterministic step
+
+Simulation core
+  world, ecology, perception inputs, neural controllers,
+  actions, materials, birth/death, genome, mutation, lineage
+       |
+       +--> immutable snapshots --> renderer and inspectors
+       +--> events/telemetry ----> charts and evidence views
+       +--> saved authority -----> resume, export, branch
+```
+
+## Module Boundaries
+
+| Module | Owns | Must not own |
+|---|---|---|
+| Contracts | IDs, commands, snapshots, persistence/export schemas | domain behavior |
+| Simulation core | canonical world state and deterministic tick transitions | window/UI timing |
+| Simulation host | authority thread, queues, time policy, snapshot publication | product rendering |
+| Renderer | world pixels from snapshots | live state mutation |
+| UI | commands and explanations | direct world writes |
+| Acceptance | cross-module proof, golden digests, endurance | production authority |
+
+## Deterministic Parallel Perception
+
+Petri Eden parallelizes expensive spatial perception without parallelizing authority:
+
+1. the authority thread captures a read-only world view;
+2. organisms are ordered by stable ID;
+3. workers compute into preassigned result slots;
+4. workers do not mutate the world or consume shared random state;
+5. results commit in canonical order;
+6. supported worker counts must produce matching authoritative digests.
+
+The reusable form of this pattern lives in [[../../software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary|Authoritative Simulation Boundary]].
+
+## V1 Domain Loop
+
+```text
+sense -> controller -> act -> ecology/material transfer
+      -> birth/death -> inherit/mutate -> lineage/species
+      -> telemetry/snapshot -> inspect/intervene
+```
+
+Selection is descendant count under ecological pressure. There is no reward signal or value function. See [[../../rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning|Neuroevolution vs Reinforcement Learning]].
+
+## Delivery Sequence
+
+The native plan is deliberately sequential:
+
+1. skeleton and toolchain;
+2. deterministic timeline;
+3. spatial world and parallel perception;
+4. ecology and material accounting;
+5. evolution and mutation;
+6. time control;
+7. telemetry;
+8. species/lineages;
+9. perception and neural inspection;
+10. interventions;
+11. persistence/export/branching;
+12. unattended-run resilience;
+13. scale/performance;
+14. onboarding and keyboard access;
+15. desktop/visual certification;
+16. private packaging;
+17. release-candidate audit.
+
+As of 2026-07-24, steps 1-6 are implemented and step 7 is active. The remaining steps are planned, not shipped.
+
+## Integrity Boundary
+
+A healthy simulation can contain ecological collapse. Product state must distinguish:
+
+- **normal**: authority and observations are current;
+- **degraded**: observation or performance is reduced but truth remains valid;
+- **faulted**: an invariant or authority path failed;
+- **terminal ecology**: the simulated world reached an ordinary terminal condition.
+
+A population crash is not automatically a technical fault, and a frozen chart must not be interpreted as stable ecology.
+
+## Related
+
+- [[wiki/summaries/evidence-and-frontier|Evidence and Frontier]]
+- [[wiki/summaries/product-experience-and-inspection|Product Experience and Inspection]]
+- [[wiki/concepts/operational-species|Operational Species]]
+
+
+<!-- ===== petri-eden/wiki/syntheses/v2-v3-research-branches.md ===== -->
+
+---
+title: Petri Eden V2 and V3 Research Branches
+created: 2026-07-24
+updated: 2026-07-24
+type: synthesis
+status: speculative
+namespace: petri-eden
+sources:
+  - Petri Eden V2 draft and V3 brainstorm
+confidence: medium
+---
+
+# Petri Eden V2 and V3 Research Branches
+
+> Future research only. V2 is a draft. V3 is a brainstorm. Neither is a shipped v1 capability.
+
+## V2 - Lifetime Plasticity and the Baldwin Effect
+
+### Question
+
+Can organisms that learn during a lifetime drive evolution toward inherited predispositions that make useful learning faster, cheaper, or more reliable?
+
+### Proposed separation
+
+```text
+inherited genome parameters
+        +
+within-lifetime learned state
+        +
+environment and experience
+        -> behavior and descendant outcome
+```
+
+Learned state should not be copied directly into the genome. The Baldwin-effect hypothesis is indirect: organisms with better inherited predispositions learn more effectively, leave more descendants, and shift the inherited population over generations.
+
+### Required controls
+
+- learning enabled versus disabled;
+- explicit learning tax enabled versus removed;
+- learned state reset and leak tests;
+- equal ecology, seed, and run budgets;
+- lineage/genome and learned-state measurements kept separate;
+- fixed plus unseen seeds;
+- holdout behaviors or environments.
+
+### Failure boundary
+
+A controller changing within one lifetime shows plasticity. It does not alone show the Baldwin effect. That requires cross-generation inherited change caused by differential reproduction among learners.
+
+## V3 - Embodied Agents and Cultural Evolution
+
+### Question
+
+Can embodied agents develop and transmit useful information through communication, imitation, teaching, or artifacts in ways that cross genomic lineage?
+
+### Three inheritance systems
+
+1. **Genomic** - parent to descendant.
+2. **Lifetime memory** - experience retained by one organism.
+3. **Cultural/memetic** - information transmitted socially or through the environment.
+
+Each needs distinct state, provenance, and lineage. Otherwise a result cannot be attributed.
+
+### Required controls
+
+- communication disabled;
+- imitation/teaching disabled;
+- artifact persistence disabled;
+- bounded message cost and bandwidth;
+- shared-prompt and memory-leak checks;
+- novel-task transfer tests;
+- information tracing across non-kin agents;
+- comparison against pretrained model priors.
+
+### Failure boundary
+
+Fluent language-model output is not evolved communication. Shared model priors are not culture. Cultural-evolution claims require socially transmitted behavior or information that persists, transfers, and changes outcomes under controlled conditions.
+
+## Namespace Decision
+
+V2 and V3 stay in `petri-eden` now. Creating separate namespaces would overstate draft material and fragment one project's research roadmap.
+
+Reconsider a new namespace only when a branch has:
+
+- active implementation and a reproducible evidence corpus;
+- reusable concepts beyond Petri Eden;
+- an independent audience and update lifecycle;
+- multiple document types;
+- a clear covers/not-covered boundary.
+
+## Related
+
+- [[wiki/entities/petri-eden|Petri Eden Project]]
+- [[wiki/summaries/evidence-and-frontier|Evidence and Frontier]]
+- [[../../eval-trace/wiki/concepts/emergence-claim-ladder|Emergence Claim Ladder]]
+- [[../../rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning|Neuroevolution vs Reinforcement Learning]]

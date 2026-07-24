@@ -1,14 +1,14 @@
 {
   "slug": "software-architecture-metapatterns",
   "title": "Software Architecture Metapatterns",
-  "description": "The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, and architecture evolution paths.",
-  "documentCount": 86,
+  "description": "The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, architecture evolution paths, and clearly labeled applied syntheses derived from project evidence.",
+  "documentCount": 87,
   "counts": {
     "wiki": 1,
     "concepts": 79,
     "entities": 0,
     "summaries": 2,
-    "syntheses": 1
+    "syntheses": 2
   },
   "documents": [
     {
@@ -611,6 +611,13 @@
       "path": "wiki/syntheses/architecture-metapatterns-fit-for-pixi.md",
       "raw": "/raw/software-architecture-metapatterns/wiki/syntheses/architecture-metapatterns-fit-for-pixi.md",
       "html": "/wiki/software-architecture-metapatterns/wiki/syntheses/architecture-metapatterns-fit-for-pixi.md.html",
+      "category": "syntheses"
+    },
+    {
+      "title": "Authoritative Simulation Boundary",
+      "path": "wiki/syntheses/authoritative-simulation-boundary.md",
+      "raw": "/raw/software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary.md",
+      "html": "/wiki/software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary.md.html",
       "category": "syntheses"
     }
   ]

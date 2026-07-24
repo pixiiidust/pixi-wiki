@@ -1,13 +1,19 @@
 ---
 title: "Software Architecture Metapatterns — Activity Log"
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-24
 type: log
 status: active
 namespace: software-architecture-metapatterns
 ---
 
 # Software Architecture Metapatterns — Activity Log
+
+## 2026-07-24
+
+- Added `wiki/syntheses/authoritative-simulation-boundary.md` as a clearly labeled applied synthesis.
+- Grounded the pattern in deterministic simulation needs without altering imported source pages.
+- Added reciprocal links to Petri Eden and Eval Trace.
 
 ## 2026-07-02
 

@@ -644,4 +644,3 @@ Repository verification passed 148 root tests and 199 voice-agent tests with 3 l
 ## Evidence boundary
 
 The repo has no CI or unit-test suite for the data/training pipeline, and the generated datasets/checkpoints are intentionally gitignored. The `uv.lock` covers the data-pipeline environment, but the version-sensitive Unsloth/TRL/Transformers/PEFT/Torch/bitsandbytes training stack is installed separately without exact pins. Reproducibility therefore depends on live sources, external model artifacts, package resolution, and operator-run hydration/training steps. The portable shell paths reduce checkout-specific friction but do not solve dependency or artifact reproducibility. Add training locks, manifests, hashes, schema versions, a small CPU-only pipeline fixture, and GPU smoke checks for the documented inference/serving paths before calling the template fully reproducible.
-

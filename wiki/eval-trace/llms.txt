@@ -1,10 +1,11 @@
 # Eval Trace Knowledge Base
 
-> Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.
+> Workflow, agent, model-behavior, and simulation-claim evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.
 
 - [Eval Trace Namespace Instructions](/raw/eval-trace/CLAUDE.md) ([html](/wiki/eval-trace/CLAUDE.md.html))
 - [Eval Trace](/raw/eval-trace/README.md) ([html](/wiki/eval-trace/README.md.html))
 - [Context Overfitting](/raw/eval-trace/wiki/concepts/context-overfitting.md) ([html](/wiki/eval-trace/wiki/concepts/context-overfitting.md.html))
+- [Emergence Claim Ladder](/raw/eval-trace/wiki/concepts/emergence-claim-ladder.md) ([html](/wiki/eval-trace/wiki/concepts/emergence-claim-ladder.md.html))
 - [Style-Transfer Evaluation](/raw/eval-trace/wiki/concepts/style-transfer-evaluation.md) ([html](/wiki/eval-trace/wiki/concepts/style-transfer-evaluation.md.html))
 - [Eval Trace](/raw/eval-trace/wiki/entities/eval-trace.md) ([html](/wiki/eval-trace/wiki/entities/eval-trace.md.html))
 - [Eval Trace — Master Index](/raw/eval-trace/wiki/index.md) ([html](/wiki/eval-trace/wiki/index.md.html))

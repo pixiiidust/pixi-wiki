@@ -1,7 +1,7 @@
 ---
 title: Eval Trace
 created: 2026-06-16
-updated: 2026-07-17
+updated: 2026-07-24
 type: namespace-overview
 status: active
 category: evaluation
@@ -17,29 +17,31 @@ confidence: high
 
 ### Covers
 
-Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.
+Workflow, agent, model-behavior, and simulation-claim evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.
 
 ### Not Covered
 
-General observability unrelated to behavior/workflow quality; product analytics unless used as an evaluation surface; model-training infrastructure except where it changes the evaluation contract.
+General observability unrelated to behavior, workflow, or simulation-claim quality; product analytics unless used as an evaluation surface; model-training infrastructure except where it changes the evaluation contract.
 
 ### Current As
 
-2026-07-17 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, the LKY Voice objective-plus-blind-listening gate, and the LKY Avatar factual-accuracy/persona-quality/fabrication separation.
+2026-07-24 — active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, voice/persona evidence separation, and an emergence claim ladder for simulations and agent populations.
 
 ## Canonical Source Roots
 
 - `Projects/Eval Trace/Index.md`
 - `Knowledge/concepts/context-overfitting.md`
+- `Knowledge/concepts/emergence-claim-ladder.md`
 - `Knowledge/concepts/style-transfer-evaluation.md`
 - `Projects/LKY Avatar/Index.md`
 
 ## Crosslinks
 
-- [[../agent-workflows/README|agent-workflows]]
-- [[../pixi-vault/README|pixi-vault]]
-- [[../ai-native-product-surfaces/README|ai-native-product-surfaces]]
-- [[../local-ai-infrastructure/README|local-ai-infrastructure]]
+- [[../../agent-workflows/README|agent-workflows]]
+- [[../../pixi-vault/README|pixi-vault]]
+- [[../../ai-native-product-surfaces/README|ai-native-product-surfaces]]
+- [[../../local-ai-infrastructure/README|local-ai-infrastructure]]
+- [[../../petri-eden/README|petri-eden]]
 
 ## Public Output Contract
 

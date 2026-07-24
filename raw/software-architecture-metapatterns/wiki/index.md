@@ -1,7 +1,7 @@
 ---
 title: "Software Architecture Metapatterns — Master Index"
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-24
 type: index
 status: compiled
 namespace: software-architecture-metapatterns
@@ -15,6 +15,7 @@ namespace: software-architecture-metapatterns
 
 - [[summaries/for-agents-software-architecture-retrieval|For Agents — Software Architecture Retrieval]] — Retrieval and comparison contract for architecture reasoning.
 - [[syntheses/architecture-metapatterns-fit-for-pixi|Architecture Metapatterns — Fit for Pixi]] — Why this corpus belongs in Pixi Wiki under Knowledge Systems.
+- [[syntheses/authoritative-simulation-boundary|Authoritative Simulation Boundary]] — Applied architecture synthesis for deterministic interactive simulations, with Petri Eden as the reciprocal case.
 - [[summaries/license-and-provenance|License and Provenance]] — Source roots, license ambiguity, and attribution guardrails.
 
 ## Imported Corpus

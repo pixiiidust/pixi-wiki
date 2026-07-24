@@ -41,6 +41,7 @@ DEFAULT_SEED_SLUGS = [
     "ai-native-product-surfaces",
     "content-distribution",
     "rl-sim-labs",
+    "petri-eden",
     "curated-tuning-datasets",
     "local-ai-infrastructure",
     "pattern-language",
@@ -958,7 +959,10 @@ def collect_namespace(
         html_url = f"/wiki/{slug}/{rel_posix}.html"
         local_llms.append(f"- [{page_title}]({raw_url}) ([html]({html_url}))\n")
     (ns_wiki_dir / "llms.txt").write_text("".join(local_llms).rstrip() + "\n", encoding="utf-8", newline="\n")
-    (ns_wiki_dir / "llms-full.txt").write_text("\n\n".join(f"<!-- ===== {slug}/{rel.as_posix()} ===== -->\n\n{text}" for rel, text, *_ in parsed) + "\n", encoding="utf-8", newline="\n")
+    local_llms_full = "\n\n".join(
+        f"<!-- ===== {slug}/{rel.as_posix()} ===== -->\n\n{text}" for rel, text, *_ in parsed
+    )
+    (ns_wiki_dir / "llms-full.txt").write_text(local_llms_full.rstrip() + "\n", encoding="utf-8", newline="\n")
 
     for rel, text, page_fm, body, page_title in parsed:
         rel_posix = rel.as_posix()
@@ -1614,7 +1618,7 @@ def build(
             "key": "labs-products",
             "title": "Labs & Product Surfaces",
             "description": "AI-native products, simulations, demos, and experiment-facing project labs.",
-            "slugs": {"ai-native-product-surfaces", "rl-sim-labs"},
+            "slugs": {"ai-native-product-surfaces", "rl-sim-labs", "petri-eden"},
         },
     ]
     card_by_slug: dict[str, str] = {}

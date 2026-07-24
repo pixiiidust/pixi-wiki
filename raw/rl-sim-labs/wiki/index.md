@@ -1,7 +1,7 @@
 ---
 title: RL Sim Labs — Master Index
 created: 2026-06-16
-updated: 2026-06-18
+updated: 2026-07-24
 type: index
 status: active
 namespace: rl-sim-labs
@@ -13,6 +13,7 @@ namespace: rl-sim-labs
 
 ## Concepts
 
+- [[concepts/neuroevolution-vs-reinforcement-learning|Neuroevolution vs Reinforcement Learning]] — Distinguishes mutation/inheritance/descendant selection from reward-linked policy optimization, with Petri Eden as the applied non-RL case.
 - [[concepts/pufferlib-fast-environment-loop|PufferLib Fast Environment Loop]] — Systems-first pattern for fast PufferLib environment authoring, training, sweeps, and evidence gates.
 
 <!-- Add compiled concepts alphabetically. -->
@@ -32,3 +33,4 @@ namespace: rl-sim-labs
 ## Source Roots
 
 - `Projects/Critical Ranger FFM/Index.md`
+- `Knowledge/concepts/neuroevolution-vs-reinforcement-learning.md`

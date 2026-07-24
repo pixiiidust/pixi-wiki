@@ -1,0 +1,85 @@
+{
+  "slug": "petri-eden",
+  "title": "Petri Eden",
+  "description": "Petri Eden is a deterministic native artificial-life laboratory: design species, start an ecosystem, intervene during a run, and inspect how ecology and inherited neural controllers shape descendants.",
+  "documentCount": 10,
+  "counts": {
+    "wiki": 1,
+    "concepts": 1,
+    "entities": 1,
+    "summaries": 3,
+    "syntheses": 1
+  },
+  "documents": [
+    {
+      "title": "Petri Eden Namespace Instructions",
+      "path": "CLAUDE.md",
+      "raw": "/raw/petri-eden/CLAUDE.md",
+      "html": "/wiki/petri-eden/CLAUDE.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Petri Eden",
+      "path": "README.md",
+      "raw": "/raw/petri-eden/README.md",
+      "html": "/wiki/petri-eden/README.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Operational Species",
+      "path": "wiki/concepts/operational-species.md",
+      "raw": "/raw/petri-eden/wiki/concepts/operational-species.md",
+      "html": "/wiki/petri-eden/wiki/concepts/operational-species.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Petri Eden Project",
+      "path": "wiki/entities/petri-eden.md",
+      "raw": "/raw/petri-eden/wiki/entities/petri-eden.md",
+      "html": "/wiki/petri-eden/wiki/entities/petri-eden.md.html",
+      "category": "entities"
+    },
+    {
+      "title": "Petri Eden - Master Index",
+      "path": "wiki/index.md",
+      "raw": "/raw/petri-eden/wiki/index.md",
+      "html": "/wiki/petri-eden/wiki/index.md.html",
+      "category": "other"
+    },
+    {
+      "title": "Petri Eden - Update Log",
+      "path": "wiki/log.md",
+      "raw": "/raw/petri-eden/wiki/log.md",
+      "html": "/wiki/petri-eden/wiki/log.md.html",
+      "category": "wiki"
+    },
+    {
+      "title": "Petri Eden Evidence and Frontier",
+      "path": "wiki/summaries/evidence-and-frontier.md",
+      "raw": "/raw/petri-eden/wiki/summaries/evidence-and-frontier.md",
+      "html": "/wiki/petri-eden/wiki/summaries/evidence-and-frontier.md.html",
+      "category": "summaries"
+    },
+    {
+      "title": "Petri Eden Product Experience and Inspection",
+      "path": "wiki/summaries/product-experience-and-inspection.md",
+      "raw": "/raw/petri-eden/wiki/summaries/product-experience-and-inspection.md",
+      "html": "/wiki/petri-eden/wiki/summaries/product-experience-and-inspection.md.html",
+      "category": "summaries"
+    },
+    {
+      "title": "Petri Eden V1 System Map",
+      "path": "wiki/summaries/v1-system-map.md",
+      "raw": "/raw/petri-eden/wiki/summaries/v1-system-map.md",
+      "html": "/wiki/petri-eden/wiki/summaries/v1-system-map.md.html",
+      "category": "summaries"
+    },
+    {
+      "title": "Petri Eden V2 and V3 Research Branches",
+      "path": "wiki/syntheses/v2-v3-research-branches.md",
+      "raw": "/raw/petri-eden/wiki/syntheses/v2-v3-research-branches.md",
+      "html": "/wiki/petri-eden/wiki/syntheses/v2-v3-research-branches.md.html",
+      "category": "syntheses"
+    }
+  ]
+}

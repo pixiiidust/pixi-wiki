@@ -352,21 +352,21 @@
     {
       "slug": "eval-trace",
       "title": "Eval Trace",
-      "description": "Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.",
+      "description": "Workflow, agent, model-behavior, and simulation-claim evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.",
       "tags": [
         "evaluation"
       ],
       "category": "evaluation",
       "scope": {
-        "covers": "Workflow, agent, and model-behavior evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.",
-        "notCovered": "General observability unrelated to behavior/workflow quality; product analytics unless used as an evaluation surface; model-training infrastructure except where it changes the evaluation contract.",
-        "currentAs": "2026-07-17 \u2014 active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, the LKY Voice objective-plus-blind-listening gate, and the LKY Avatar factual-accuracy/persona-quality/fabrication separation."
+        "covers": "Workflow, agent, model-behavior, and simulation-claim evaluation; traces; context-overfitting detection; reliability metrics; evidence gates; style-transfer checks; and quality read-outs.",
+        "notCovered": "General observability unrelated to behavior, workflow, or simulation-claim quality; product analytics unless used as an evaluation surface; model-training infrastructure except where it changes the evaluation contract.",
+        "currentAs": "2026-07-24 \u2014 active. Includes context-overfitting, the Eval Trace prototype, workflow-quality mapping, LLM style-transfer evaluation, voice/persona evidence separation, and an emergence claim ladder for simulations and agent populations."
       },
-      "lastUpdated": "2026-07-17",
-      "documentCount": 8,
+      "lastUpdated": "2026-07-24",
+      "documentCount": 9,
       "counts": {
         "wiki": 1,
-        "concepts": 2,
+        "concepts": 3,
         "entities": 1,
         "summaries": 0,
         "syntheses": 1
@@ -396,6 +396,13 @@
           "path": "wiki/concepts/context-overfitting.md",
           "raw": "/raw/eval-trace/wiki/concepts/context-overfitting.md",
           "html": "/wiki/eval-trace/wiki/concepts/context-overfitting.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Emergence Claim Ladder",
+          "path": "wiki/concepts/emergence-claim-ladder.md",
+          "raw": "/raw/eval-trace/wiki/concepts/emergence-claim-ladder.md",
+          "html": "/wiki/eval-trace/wiki/concepts/emergence-claim-ladder.md.html",
           "category": "concepts"
         },
         {
@@ -822,21 +829,21 @@
     {
       "slug": "rl-sim-labs",
       "title": "RL Sim Labs",
-      "description": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.",
+      "description": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, future similar RL labs, and bounded comparisons that distinguish RL from adjacent learning systems such as neuroevolution.",
       "tags": [
         "rl-simulation"
       ],
       "category": "rl-simulation",
       "scope": {
-        "covers": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.",
-        "notCovered": "General local GPU setup unless required by RL experiment execution; unrelated game projects without RL/simulation learning goals.",
-        "currentAs": "2026-06-16 \u2014 scaffold only. Content has not yet been fully compiled."
+        "covers": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, future similar RL labs, and bounded comparisons that distinguish RL from adjacent learning systems such as neuroevolution.",
+        "notCovered": "General local GPU setup unless required by RL experiment execution; unrelated game projects without RL/simulation learning goals; artificial-life project state that belongs in the project's own namespace.",
+        "currentAs": "2026-07-24 \u2014 active. Includes the PufferLib fast-environment loop, the retired Critical Ranger FFM project entity, and a neuroevolution-versus-RL comparison linked to Petri Eden without moving Petri Eden into this namespace."
       },
-      "lastUpdated": "2026-06-16",
-      "documentCount": 8,
+      "lastUpdated": "2026-07-24",
+      "documentCount": 9,
       "counts": {
         "wiki": 1,
-        "concepts": 1,
+        "concepts": 2,
         "entities": 1,
         "summaries": 0,
         "syntheses": 0
@@ -876,6 +883,13 @@
           "category": "other"
         },
         {
+          "title": "Neuroevolution vs Reinforcement Learning",
+          "path": "wiki/concepts/neuroevolution-vs-reinforcement-learning.md",
+          "raw": "/raw/rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning.md",
+          "html": "/wiki/rl-sim-labs/wiki/concepts/neuroevolution-vs-reinforcement-learning.md.html",
+          "category": "concepts"
+        },
+        {
           "title": "PufferLib Fast Environment Loop",
           "path": "wiki/concepts/pufferlib-fast-environment-loop.md",
           "raw": "/raw/rl-sim-labs/wiki/concepts/pufferlib-fast-environment-loop.md",
@@ -902,6 +916,106 @@
           "raw": "/raw/rl-sim-labs/wiki/log.md",
           "html": "/wiki/rl-sim-labs/wiki/log.md.html",
           "category": "wiki"
+        }
+      ]
+    },
+    {
+      "slug": "petri-eden",
+      "title": "Petri Eden",
+      "description": "Petri Eden is a deterministic native artificial-life laboratory: design species, start an ecosystem, intervene during a run, and inspect how ecology and inherited neural controllers shape descendants.",
+      "tags": [
+        "simulation"
+      ],
+      "category": "simulation",
+      "scope": {
+        "covers": "- Petri Eden's product, domain, architecture, evidence, and roadmap boundaries.\n- Deterministic artificial-life simulation and ecology-first neuroevolution.\n- Native inspection surfaces for populations, materials, lineage, perception, neural decisions, and run provenance.\n- Operational species as reproducible lineage/genome clusters.\n- V2 plasticity and Baldwin-effect research as draft work.\n- V3 embodied agents, communication, and cultural inheritance as a brainstorm.\n- Honest separation between implemented code, committed plans, and speculative research.",
+        "notCovered": "- General reinforcement-learning implementation guidance.\n- Claims that Petri Eden proves open-ended evolution, intelligence, communication, or culture.\n- Private repository URLs, machine paths, credentials, unpublished artifacts, or release binaries.\n- V2/V3 ideas presented as shipped v1 capabilities.\n- Generic LLM-agent systems unrelated to embodied evolutionary experiments.",
+        "currentAs": "2026-07-24. Native v1 work is implemented through deterministic simulation, spatial perception, ecology, evolution/mutation, and time control. Ecosystem telemetry is the active frontier. Species recognition, neural-decision inspection, interventions, persistence, endurance, scale, onboarding, packaging, and release certification remain later planned epics. One predator-viability ecology mechanism is awaiting a human product decision."
+      },
+      "lastUpdated": "2026-07-24",
+      "documentCount": 10,
+      "counts": {
+        "wiki": 1,
+        "concepts": 1,
+        "entities": 1,
+        "summaries": 3,
+        "syntheses": 1
+      },
+      "llms_txt": "/wiki/petri-eden/llms.txt",
+      "llms_full_txt": "/wiki/petri-eden/llms-full.txt",
+      "index_json": "/wiki/petri-eden/index.json",
+      "raw_base": "/raw/petri-eden/",
+      "html_base": "/wiki/petri-eden/",
+      "documents": [
+        {
+          "title": "Petri Eden Namespace Instructions",
+          "path": "CLAUDE.md",
+          "raw": "/raw/petri-eden/CLAUDE.md",
+          "html": "/wiki/petri-eden/CLAUDE.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Petri Eden",
+          "path": "README.md",
+          "raw": "/raw/petri-eden/README.md",
+          "html": "/wiki/petri-eden/README.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Operational Species",
+          "path": "wiki/concepts/operational-species.md",
+          "raw": "/raw/petri-eden/wiki/concepts/operational-species.md",
+          "html": "/wiki/petri-eden/wiki/concepts/operational-species.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Petri Eden Project",
+          "path": "wiki/entities/petri-eden.md",
+          "raw": "/raw/petri-eden/wiki/entities/petri-eden.md",
+          "html": "/wiki/petri-eden/wiki/entities/petri-eden.md.html",
+          "category": "entities"
+        },
+        {
+          "title": "Petri Eden - Master Index",
+          "path": "wiki/index.md",
+          "raw": "/raw/petri-eden/wiki/index.md",
+          "html": "/wiki/petri-eden/wiki/index.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Petri Eden - Update Log",
+          "path": "wiki/log.md",
+          "raw": "/raw/petri-eden/wiki/log.md",
+          "html": "/wiki/petri-eden/wiki/log.md.html",
+          "category": "wiki"
+        },
+        {
+          "title": "Petri Eden Evidence and Frontier",
+          "path": "wiki/summaries/evidence-and-frontier.md",
+          "raw": "/raw/petri-eden/wiki/summaries/evidence-and-frontier.md",
+          "html": "/wiki/petri-eden/wiki/summaries/evidence-and-frontier.md.html",
+          "category": "summaries"
+        },
+        {
+          "title": "Petri Eden Product Experience and Inspection",
+          "path": "wiki/summaries/product-experience-and-inspection.md",
+          "raw": "/raw/petri-eden/wiki/summaries/product-experience-and-inspection.md",
+          "html": "/wiki/petri-eden/wiki/summaries/product-experience-and-inspection.md.html",
+          "category": "summaries"
+        },
+        {
+          "title": "Petri Eden V1 System Map",
+          "path": "wiki/summaries/v1-system-map.md",
+          "raw": "/raw/petri-eden/wiki/summaries/v1-system-map.md",
+          "html": "/wiki/petri-eden/wiki/summaries/v1-system-map.md.html",
+          "category": "summaries"
+        },
+        {
+          "title": "Petri Eden V2 and V3 Research Branches",
+          "path": "wiki/syntheses/v2-v3-research-branches.md",
+          "raw": "/raw/petri-eden/wiki/syntheses/v2-v3-research-branches.md",
+          "html": "/wiki/petri-eden/wiki/syntheses/v2-v3-research-branches.md.html",
+          "category": "syntheses"
         }
       ]
     },
@@ -2937,24 +3051,24 @@
     {
       "slug": "software-architecture-metapatterns",
       "title": "Software Architecture Metapatterns",
-      "description": "The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, and architecture evolution paths.",
+      "description": "The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, architecture evolution paths, and clearly labeled applied syntheses derived from project evidence.",
       "tags": [
         "knowledge-systems"
       ],
       "category": "knowledge-systems",
       "scope": {
-        "covers": "The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, and architecture evolution paths.",
+        "covers": "The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, architecture evolution paths, and clearly labeled applied syntheses derived from project evidence.",
         "notCovered": "This namespace does not cover every design pattern or programming idiom, prescribe architecture by fashion, replace project-specific code review, or establish commercial-clean training-data clearance. It is a reference and reasoning aid for architecture review, migration planning, and agent retrieval.",
-        "currentAs": "2026-07-02 \u2014 Initial namespace release imports the public GitHub wiki Markdown corpus, preserves source URLs/provenance, adds an agent retrieval contract, and classifies the namespace under Knowledge Systems because it organizes software architecture knowledge into a navigable pattern language."
+        "currentAs": "2026-07-24 \u2014 The namespace remains classified under Knowledge Systems, preserves the imported public architecture corpus, and now includes an applied authoritative-simulation-boundary synthesis linked reciprocally to Petri Eden."
       },
-      "lastUpdated": "2026-07-02",
-      "documentCount": 86,
+      "lastUpdated": "2026-07-24",
+      "documentCount": 87,
       "counts": {
         "wiki": 1,
         "concepts": 79,
         "entities": 0,
         "summaries": 2,
-        "syntheses": 1
+        "syntheses": 2
       },
       "llms_txt": "/wiki/software-architecture-metapatterns/llms.txt",
       "llms_full_txt": "/wiki/software-architecture-metapatterns/llms-full.txt",
@@ -3562,6 +3676,13 @@
           "path": "wiki/syntheses/architecture-metapatterns-fit-for-pixi.md",
           "raw": "/raw/software-architecture-metapatterns/wiki/syntheses/architecture-metapatterns-fit-for-pixi.md",
           "html": "/wiki/software-architecture-metapatterns/wiki/syntheses/architecture-metapatterns-fit-for-pixi.md.html",
+          "category": "syntheses"
+        },
+        {
+          "title": "Authoritative Simulation Boundary",
+          "path": "wiki/syntheses/authoritative-simulation-boundary.md",
+          "raw": "/raw/software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary.md",
+          "html": "/wiki/software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary.md.html",
           "category": "syntheses"
         }
       ]

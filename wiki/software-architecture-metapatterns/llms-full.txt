@@ -9,7 +9,7 @@ This is a compiled namespace source under `pixi-vault/wikis/software-architectur
 - Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
 - Preserve source provenance and license ambiguity from `denyspoltorak/metapatterns`.
 - Treat imported pages as architecture reference material, not as commercial-clean training data.
-- Keep this namespace scoped to software architecture metapatterns and architecture-reasoning guidance.
+- Keep this namespace scoped to software architecture metapatterns, architecture-reasoning guidance, and clearly labeled applied syntheses grounded in live project evidence.
 - Do not prescribe architectures by trend; retrieve the relevant source pages and compare forces first.
 - Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added or the import is refreshed.
 
@@ -19,7 +19,7 @@ This is a compiled namespace source under `pixi-vault/wikis/software-architectur
 ---
 title: "Software Architecture Metapatterns"
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-24
 type: namespace-overview
 status: active
 category: knowledge-systems
@@ -38,7 +38,7 @@ source_license_note: "Repository root is CC BY-NC-SA 4.0; book/source directory 
 
 ### Covers
 
-The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, and architecture evolution paths.
+The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, architecture evolution paths, and clearly labeled applied syntheses derived from project evidence.
 
 ### Not Covered
 
@@ -46,7 +46,7 @@ This namespace does not cover every design pattern or programming idiom, prescri
 
 ### Current As
 
-2026-07-02 — Initial namespace release imports the public GitHub wiki Markdown corpus, preserves source URLs/provenance, adds an agent retrieval contract, and classifies the namespace under Knowledge Systems because it organizes software architecture knowledge into a navigable pattern language.
+2026-07-24 — The namespace remains classified under Knowledge Systems, preserves the imported public architecture corpus, and now includes an applied authoritative-simulation-boundary synthesis linked reciprocally to Petri Eden.
 
 ## Canonical Source Roots
 
@@ -63,11 +63,16 @@ Use this corpus for reference, critique, education, architecture review, and non
 
 ## Agent Use Contract
 
-- Start with [[summaries/for-agents-software-architecture-retrieval|For Agents — Software Architecture Retrieval]].
+- Start with [[wiki/summaries/for-agents-software-architecture-retrieval|For Agents — Software Architecture Retrieval]].
 - Retrieve a bounded set of 3–8 relevant metapattern/source pages before recommending an architecture.
 - Compare patterns by structure, dependency direction, communication style, performance, team ownership, and likely evolution path.
 - Cite metapattern names and source pages in the recommendation so a human can inspect the reasoning.
 - Prefer "what forces are present?" over "what architecture is trendy?" Tiny systems do not need distributed cosplay.
+
+## Applied Syntheses
+
+- [[wiki/syntheses/authoritative-simulation-boundary|Authoritative Simulation Boundary]] — One mutation authority, ordered commands, immutable snapshots, deterministic parallel work, and explicit fault boundaries.
+- Cross-namespace case: [[../../petri-eden/wiki/summaries/v1-system-map|Petri Eden V1 System Map]].
 
 ## Public Output Contract
 
@@ -12702,7 +12707,7 @@ Any help with the content, including adding new patterns or correcting the ones 
 ---
 title: "Software Architecture Metapatterns — Master Index"
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-24
 type: index
 status: compiled
 namespace: software-architecture-metapatterns
@@ -12716,6 +12721,7 @@ namespace: software-architecture-metapatterns
 
 - [[summaries/for-agents-software-architecture-retrieval|For Agents — Software Architecture Retrieval]] — Retrieval and comparison contract for architecture reasoning.
 - [[syntheses/architecture-metapatterns-fit-for-pixi|Architecture Metapatterns — Fit for Pixi]] — Why this corpus belongs in Pixi Wiki under Knowledge Systems.
+- [[syntheses/authoritative-simulation-boundary|Authoritative Simulation Boundary]] — Applied architecture synthesis for deterministic interactive simulations, with Petri Eden as the reciprocal case.
 - [[summaries/license-and-provenance|License and Provenance]] — Source roots, license ambiguity, and attribution guardrails.
 
 ## Imported Corpus
@@ -12766,13 +12772,19 @@ Imported source Markdown pages: 79.
 ---
 title: "Software Architecture Metapatterns — Activity Log"
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-24
 type: log
 status: active
 namespace: software-architecture-metapatterns
 ---
 
 # Software Architecture Metapatterns — Activity Log
+
+## 2026-07-24
+
+- Added `wiki/syntheses/authoritative-simulation-boundary.md` as a clearly labeled applied synthesis.
+- Grounded the pattern in deterministic simulation needs without altering imported source pages.
+- Added reciprocal links to Petri Eden and Eval Trace.
 
 ## 2026-07-02
 
@@ -12925,3 +12937,99 @@ This corpus belongs under Knowledge Systems because it is a system for organizin
 
 Keep the imported source corpus separate from Jamie-authored architecture decisions. Use it to support review and reasoning; do not let it override live code evidence or project constraints.
 
+
+<!-- ===== software-architecture-metapatterns/wiki/syntheses/authoritative-simulation-boundary.md ===== -->
+
+---
+title: Authoritative Simulation Boundary
+created: 2026-07-24
+updated: 2026-07-24
+type: synthesis
+status: active
+namespace: software-architecture-metapatterns
+sources:
+  - Petri Eden native architecture decisions and deterministic simulation plan
+confidence: high
+---
+
+# Authoritative Simulation Boundary
+
+## Pattern
+
+Place one component in sole control of canonical simulation mutation. External systems submit typed ordered commands and consume immutable snapshots, events, telemetry, or persisted artifacts.
+
+```text
+commands -> authoritative host -> pure simulation step -> canonical state
+                                 -> snapshots
+                                 -> events/telemetry
+                                 -> persistence/export
+```
+
+The boundary turns thread schedules, frame timing, UI interaction, and metrics collection into external concerns rather than hidden domain inputs.
+
+## Forces
+
+- Interactive applications need responsive rendering and controls.
+- Simulations need stable causal order and reproducibility.
+- Expensive sensing or physics may need parallel work.
+- Observability must explain state without becoming state authority.
+- Save/resume and branch comparison need exact identity.
+- Failures in the view layer must not corrupt domain truth.
+
+## Resolution
+
+### One mutation authority
+
+Only the host/authority thread commits world changes. UI, renderer, workers, exporters, and inspectors cannot write directly to live domain state.
+
+### Ordered command ingress
+
+Every intervention has a typed payload, validation rule, sequence position, and recorded provenance. Commands are domain inputs; mouse events and frame callbacks are not.
+
+### Pure or explicit step boundary
+
+The simulation step consumes canonical state, ordered commands, and deterministic random streams. It produces new canonical state plus events/snapshots through explicit contracts.
+
+### Snapshot egress
+
+Readers receive immutable versioned snapshots. A reader may be stale or degraded without changing the world. Backpressure and retention are observable policies.
+
+### Deterministic parallelism
+
+Parallel workers receive read-only inputs and preassigned output slots. They do not mutate shared world state or consume one shared PRNG. The authority commits results in stable order and verifies equivalent digests across worker counts.
+
+## Failure State Taxonomy
+
+Keep these distinct:
+
+- normal domain outcome, including simulated collapse;
+- degraded observation or performance with valid authority;
+- faulted authority or invariant failure;
+- terminal simulated state.
+
+This prevents an empty ecosystem from being mistaken for a crashed application and a frozen chart from being mistaken for a stable ecosystem.
+
+## Quality Attributes
+
+| Attribute | Benefit | Cost |
+|---|---|---|
+| Determinism | replay, comparison, debugging, scientific confidence | stricter data structures and math choices |
+| Testability | headless core and digest-based contracts | more explicit schemas and fixtures |
+| Concurrency safety | workers cannot race domain mutation | authority commit can become a bottleneck |
+| UI resilience | rendering/inspection failures stay outside truth | snapshot freshness needs policy |
+| Persistence | exact save/resume/branch semantics | migration and provenance burden |
+
+## When to Use
+
+Use this pattern when domain causality matters more than maximum distributed throughput: artificial life, strategy simulation, digital twins, reproducible games, training environments, and scientific desktop tools.
+
+Avoid pretending it is free. If the world must scale across machines with independent writers, the authority model needs partitioning, consensus, or a different consistency contract.
+
+## Applied Example
+
+[[../../petri-eden/wiki/summaries/v1-system-map|Petri Eden's V1 System Map]] applies the pattern with a pure simulation core, one simulation host, deterministic parallel perception, and snapshot-driven native UI.
+
+## Related
+
+- [[../../petri-eden/wiki/entities/petri-eden|Petri Eden Project]]
+- [[../../eval-trace/wiki/concepts/emergence-claim-ladder|Emergence Claim Ladder]]

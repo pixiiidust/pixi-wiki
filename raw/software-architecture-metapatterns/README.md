@@ -1,7 +1,7 @@
 ---
 title: "Software Architecture Metapatterns"
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-24
 type: namespace-overview
 status: active
 category: knowledge-systems
@@ -20,7 +20,7 @@ source_license_note: "Repository root is CC BY-NC-SA 4.0; book/source directory 
 
 ### Covers
 
-The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, and architecture evolution paths.
+The `software-architecture-metapatterns` namespace covers software architecture metapatterns: system topologies, layers, services, pipelines, proxies, orchestrators, plugins, hexagonal architecture, service-oriented architecture, polyglot persistence, pattern aliases, architectural forces, dependencies, performance tradeoffs, architecture evolution paths, and clearly labeled applied syntheses derived from project evidence.
 
 ### Not Covered
 
@@ -28,7 +28,7 @@ This namespace does not cover every design pattern or programming idiom, prescri
 
 ### Current As
 
-2026-07-02 — Initial namespace release imports the public GitHub wiki Markdown corpus, preserves source URLs/provenance, adds an agent retrieval contract, and classifies the namespace under Knowledge Systems because it organizes software architecture knowledge into a navigable pattern language.
+2026-07-24 — The namespace remains classified under Knowledge Systems, preserves the imported public architecture corpus, and now includes an applied authoritative-simulation-boundary synthesis linked reciprocally to Petri Eden.
 
 ## Canonical Source Roots
 
@@ -45,11 +45,16 @@ Use this corpus for reference, critique, education, architecture review, and non
 
 ## Agent Use Contract
 
-- Start with [[summaries/for-agents-software-architecture-retrieval|For Agents — Software Architecture Retrieval]].
+- Start with [[wiki/summaries/for-agents-software-architecture-retrieval|For Agents — Software Architecture Retrieval]].
 - Retrieve a bounded set of 3–8 relevant metapattern/source pages before recommending an architecture.
 - Compare patterns by structure, dependency direction, communication style, performance, team ownership, and likely evolution path.
 - Cite metapattern names and source pages in the recommendation so a human can inspect the reasoning.
 - Prefer "what forces are present?" over "what architecture is trendy?" Tiny systems do not need distributed cosplay.
+
+## Applied Syntheses
+
+- [[wiki/syntheses/authoritative-simulation-boundary|Authoritative Simulation Boundary]] — One mutation authority, ordered commands, immutable snapshots, deterministic parallel work, and explicit fault boundaries.
+- Cross-namespace case: [[../../petri-eden/wiki/summaries/v1-system-map|Petri Eden V1 System Map]].
 
 ## Public Output Contract
 

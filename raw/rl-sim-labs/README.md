@@ -1,9 +1,9 @@
 ---
 title: RL Sim Labs
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-24
 type: namespace-overview
-status: scaffold
+status: active
 category: rl-simulation
 namespace: rl-sim-labs
 confidence: medium
@@ -11,21 +11,21 @@ confidence: medium
 
 # RL Sim Labs
 
-> Scaffold namespace for the Pixi Vault AgentWikis compiler.
+> Reinforcement-learning and simulation-lab guidance, including explicit boundaries to adjacent learning systems.
 
 ## Scope
 
 ### Covers
 
-PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, and future similar RL labs.
+PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, future similar RL labs, and bounded comparisons that distinguish RL from adjacent learning systems such as neuroevolution.
 
 ### Not Covered
 
-General local GPU setup unless required by RL experiment execution; unrelated game projects without RL/simulation learning goals.
+General local GPU setup unless required by RL experiment execution; unrelated game projects without RL/simulation learning goals; artificial-life project state that belongs in the project's own namespace.
 
 ### Current As
 
-2026-06-16 — scaffold only. Content has not yet been fully compiled.
+2026-07-24 — active. Includes the PufferLib fast-environment loop, the retired Critical Ranger FFM project entity, and a neuroevolution-versus-RL comparison linked to Petri Eden without moving Petri Eden into this namespace.
 
 ## Canonical Source Roots
 
@@ -33,8 +33,9 @@ General local GPU setup unless required by RL experiment execution; unrelated ga
 
 ## Crosslinks
 
-- [[../eval-trace/README|eval-trace]]
-- [[../local-ai-infrastructure/README|local-ai-infrastructure]]
+- [[../../eval-trace/README|eval-trace]]
+- [[../../local-ai-infrastructure/README|local-ai-infrastructure]]
+- [[../../petri-eden/README|petri-eden]]
 
 ## Public Output Contract
 

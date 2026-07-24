@@ -1,0 +1,14 @@
+# Petri Eden Knowledge Base
+
+> Petri Eden is a deterministic native artificial-life laboratory: design species, start an ecosystem, intervene during a run, and inspect how ecology and inherited neural controllers shape descendants.
+
+- [Petri Eden Namespace Instructions](/raw/petri-eden/CLAUDE.md) ([html](/wiki/petri-eden/CLAUDE.md.html))
+- [Petri Eden](/raw/petri-eden/README.md) ([html](/wiki/petri-eden/README.md.html))
+- [Operational Species](/raw/petri-eden/wiki/concepts/operational-species.md) ([html](/wiki/petri-eden/wiki/concepts/operational-species.md.html))
+- [Petri Eden Project](/raw/petri-eden/wiki/entities/petri-eden.md) ([html](/wiki/petri-eden/wiki/entities/petri-eden.md.html))
+- [Petri Eden - Master Index](/raw/petri-eden/wiki/index.md) ([html](/wiki/petri-eden/wiki/index.md.html))
+- [Petri Eden - Update Log](/raw/petri-eden/wiki/log.md) ([html](/wiki/petri-eden/wiki/log.md.html))
+- [Petri Eden Evidence and Frontier](/raw/petri-eden/wiki/summaries/evidence-and-frontier.md) ([html](/wiki/petri-eden/wiki/summaries/evidence-and-frontier.md.html))
+- [Petri Eden Product Experience and Inspection](/raw/petri-eden/wiki/summaries/product-experience-and-inspection.md) ([html](/wiki/petri-eden/wiki/summaries/product-experience-and-inspection.md.html))
+- [Petri Eden V1 System Map](/raw/petri-eden/wiki/summaries/v1-system-map.md) ([html](/wiki/petri-eden/wiki/summaries/v1-system-map.md.html))
+- [Petri Eden V2 and V3 Research Branches](/raw/petri-eden/wiki/syntheses/v2-v3-research-branches.md) ([html](/wiki/petri-eden/wiki/syntheses/v2-v3-research-branches.md.html))

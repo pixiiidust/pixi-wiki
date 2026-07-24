@@ -2975,4 +2975,3 @@ Before using a side door, ask:
 - Ethan Smith, ["A Traveler's Guide to the Latent Space"](https://sweet-hall-e72.notion.site/A-Traveler-s-Guide-to-the-Latent-Space-85efba7e5e6a40e5bd3cae980f30235f).
 - Framework and story screenshots supplied by Jamie from Maja's article for commentary and analysis. Copyright remains with the respective creators and publications.
 - Shopify transcript supplied by Jamie from the public internship video. Only short excerpts are reproduced here.
-
