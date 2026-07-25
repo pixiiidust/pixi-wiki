@@ -1,16 +1,16 @@
 ---
 title: Job Edge
 created: 2026-06-27
-updated: 2026-06-30
+updated: 2026-07-25
 type: entity
-status: live-public-prototype
+status: cold-storage
 namespace: ai-native-product-surfaces
 source: Projects/Job Edge/Index.md
 confidence: high
 ---
 # Job Edge
 
-Job Edge is a live public prototype for finding **edge in crowded job searches**: freshness, geography, fit, and distribution signals that make a role more worth applying to now.
+Job Edge is a cold-stored prototype for finding **edge in crowded job searches**: freshness, geography, fit, and distribution signals that make a role more worth applying to now.
 
 The first use case is **Ashby PM Radar**, a PM/product-role radar that turns public Ashby job-board data into an apply-action queue.
 
@@ -22,15 +22,15 @@ Core question:
 
 > Which roles are worth applying to today because timing, fit, and crowding signals create an edge?
 
-## Current prototype
+## Current state
 
-The public dashboard is live at:
+As of 2026-07-25, Jamie is not using Job Edge. The repository is private, has no open pull requests or issues, and its former GitHub Pages dashboard returns 404:
 
 ```text
 https://pixiiidust.github.io/job-edge/
 ```
 
-The public `pixiiidust/job-edge` repo contains:
+The repository preserves this historical implementation:
 
 ```text
 job_edge/ashby_pm_radar.py                # Ashby use-case CLI/scorer
@@ -44,9 +44,9 @@ tests/                                    # unit tests
 
 `ashby-pm-radar` is the first use case, not the full product boundary.
 
-## Ashby PM Radar flow
+## Historical Ashby PM Radar flow
 
-Current automatic flow:
+Implemented but dormant flow:
 
 ```text
 saved Ashby company slugs → fetch public boards → score jobs → commit static JSON → publish GitHub Pages
@@ -58,15 +58,15 @@ Ashby exposes company-scoped public boards, not a global search endpoint:
 https://api.ashbyhq.com/posting-api/job-board/{companySlug}?includeCompensation=true
 ```
 
-GitHub Actions now runs the refresh every 6 hours and on manual workflow dispatch. The browser does not run Python; the dashboard only re-fetches the latest published static JSON.
+The workflow was configured to run every 6 hours and on manual dispatch. It was manually disabled on 2026-07-25 to stop unused GitHub Actions spend. Verified state: `disabled_manually`, with no queued or running jobs. The browser never ran Python; the dashboard only re-fetched published static JSON.
 
 ## Discovery boundary
 
-Job Edge currently refreshes **known Ashby boards** from `data/discovered_slugs.txt`. It does **not yet automatically search the public web for brand-new Ashby companies**.
+When enabled, Job Edge refreshes **known Ashby boards** from `data/discovered_slugs.txt`. It does **not automatically search the public web for brand-new Ashby companies**.
 
-This means a future run can still show `150` jobs and be healthy. The success signal is a fresh generated timestamp plus current board data, not a changed count.
+An enabled run could still show `150` jobs and be healthy; its success signal would be a fresh generated timestamp plus current board data, not a changed count. While disabled, no fresh snapshot is expected.
 
-Next discovery layer:
+Deferred discovery layer:
 
 ```text
 automated search queries → extract jobs.ashbyhq.com/{slug} → update slug list with provenance → refresh boards
@@ -104,11 +104,11 @@ old_31_90d
 stale_90d_plus
 ```
 
-## Dashboard contract
+## Historical dashboard contract
 
-The dashboard is an action queue, not a generic job board.
+The dashboard was designed as an action queue, not a generic job board.
 
-It supports:
+It supported:
 
 - Apply and source-job links.
 - Mark-applied state in browser local storage.
@@ -116,10 +116,10 @@ It supports:
 - Search by title, company, and location.
 - Filters for triage, freshness, and LinkedIn presence.
 - Sorting by best triage, freshness, low crowd risk, Canada/Toronto fit, role fit, or score.
-- Manual `Run Ashby refresh` link to the GitHub Actions workflow.
-- `Reload latest published data` button for re-fetching the current static snapshot.
+- Manual `Run Ashby refresh` link to the GitHub Actions workflow; dormant while the workflow is disabled.
+- `Reload latest published data` button for re-fetching the last static snapshot; the former Pages route is currently inactive.
 
-Primary workflow:
+Historical primary workflow:
 
 ```text
 1. Apply now — fresh/local roles with no LinkedIn evidence.
@@ -128,6 +128,13 @@ Primary workflow:
 ```
 
 ## Verification snapshot
+
+2026-07-25 shutdown verified:
+
+- `Refresh Ashby PM Radar` workflow state is `disabled_manually`.
+- No queued or in-progress Actions runs.
+- Repository is private with no open pull requests or issues.
+- GitHub Pages API and the former dashboard URL return 404.
 
 2026-06-30 auto-refresh milestone verified:
 
@@ -138,6 +145,6 @@ Primary workflow:
 - Latest verified generated timestamp: `2026-06-30T22:08:53.138975+00:00`.
 - Browser smoke confirmed the refresh link, reload button, job rows, and no JavaScript console errors.
 
-## Next slice
+## Reactivation gate
 
-Add automated discovery for new Ashby company slugs and a “new / removed / changed since last refresh” diff layer so users can distinguish a healthy refresh from a stable job count.
+There is no active next slice. If Jamie explicitly reopens Job Edge, first decide whether to restore the dashboard and set a bounded refresh cadence/budget; only then reconsider automated company discovery or new/removed/changed job diffs.
