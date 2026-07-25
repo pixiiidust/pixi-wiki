@@ -3,6 +3,33 @@
   "count": 646,
   "entries": [
     {
+      "title": "AI-Native Product Surfaces \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-25",
+      "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
+    },
+    {
+      "title": "AI-Native Product Surfaces \u2014 Master Index",
+      "path": "wiki/index.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-25",
+      "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
+    },
+    {
+      "title": "Job Edge",
+      "path": "wiki/entities/job-edge.md",
+      "namespace": "ai-native-product-surfaces",
+      "namespace_title": "AI-Native Product Surfaces",
+      "updated": "2026-07-25",
+      "raw": "/raw/ai-native-product-surfaces/wiki/entities/job-edge.md",
+      "html": "/wiki/ai-native-product-surfaces/wiki/entities/job-edge.md.html"
+    },
+    {
       "title": "Emergence Claim Ladder",
       "path": "wiki/concepts/emergence-claim-ladder.md",
       "namespace": "eval-trace",
@@ -235,24 +262,6 @@
       "updated": "2026-07-20",
       "raw": "/raw/ai-native-product-surfaces/README.md",
       "html": "/wiki/ai-native-product-surfaces/README.md.html"
-    },
-    {
-      "title": "AI-Native Product Surfaces \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-20",
-      "raw": "/raw/ai-native-product-surfaces/wiki/log.md",
-      "html": "/wiki/ai-native-product-surfaces/wiki/log.md.html"
-    },
-    {
-      "title": "AI-Native Product Surfaces \u2014 Master Index",
-      "path": "wiki/index.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-07-20",
-      "raw": "/raw/ai-native-product-surfaces/wiki/index.md",
-      "html": "/wiki/ai-native-product-surfaces/wiki/index.md.html"
     },
     {
       "title": "Verb-First Product Positioning",
@@ -5410,15 +5419,6 @@
       "updated": "2026-06-30",
       "raw": "/raw/agent-workflows/wiki/concepts/agent-tooling-plan.md",
       "html": "/wiki/agent-workflows/wiki/concepts/agent-tooling-plan.md.html"
-    },
-    {
-      "title": "Job Edge",
-      "path": "wiki/entities/job-edge.md",
-      "namespace": "ai-native-product-surfaces",
-      "namespace_title": "AI-Native Product Surfaces",
-      "updated": "2026-06-30",
-      "raw": "/raw/ai-native-product-surfaces/wiki/entities/job-edge.md",
-      "html": "/wiki/ai-native-product-surfaces/wiki/entities/job-edge.md.html"
     },
     {
       "title": "Shifu",

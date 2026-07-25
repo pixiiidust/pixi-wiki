@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Activity Log
 created: 2026-06-16
-updated: 2026-07-20
+updated: 2026-07-25
 type: log
 status: scaffold
 namespace: ai-native-product-surfaces
@@ -10,6 +10,12 @@ namespace: ai-native-product-surfaces
 # AI-Native Product Surfaces — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-25 update | Job Edge moved to cold storage
+
+- Refreshed `wiki/entities/job-edge.md` from the canonical project hub after unused GitHub Actions billing surfaced.
+- Recorded the verified shutdown state: scheduled Ashby refresh `disabled_manually`, no queued/running jobs, private repo, no open pull requests/issues, and former Pages route returning 404.
+- Preserved the launch architecture and 2026-06-30 proof as historical context while removing stale live/active and next-slice wording.
 
 ## 2026-07-20 create | Verb-First Product Positioning
 

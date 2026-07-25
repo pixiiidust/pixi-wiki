@@ -1,7 +1,7 @@
 ---
 title: AI-Native Product Surfaces — Master Index
 created: 2026-06-16
-updated: 2026-07-20
+updated: 2026-07-25
 type: index
 status: active
 namespace: ai-native-product-surfaces
@@ -32,7 +32,7 @@ namespace: ai-native-product-surfaces
 ## Entities
 
 - [[entities/i-know-kungfu|I-know-kungfu]] — Active local-first Cookbook wiki serving project for growing a user's knowledge base with bounded, agent-readable wikis.
-- [[entities/job-edge|Job Edge]] — Live job-search edge dashboard prototype using scheduled Ashby refresh, freshness, geography, fit, and LinkedIn-crowding signals to prioritize applications.
+- [[entities/job-edge|Job Edge]] — Cold-stored job-search edge dashboard prototype; scheduled Ashby refresh is disabled and the former Pages route is inactive.
 - [[entities/j-space-replay|J-Space-Replay]] — Working public demo for replaying Qwen2.5-VL logit/J-lens readouts over video with explicit demo-quality interpretability boundaries.
 - [[entities/lky-avatar|LKY Avatar / Voice Persona Stack]] — Working local fictional-interview product combining the LKY reasoning adapter, tuned watermarked voice, animated portrait, audited per-turn fact retrieval, transcript/eval surfaces, and explicit live-proof boundaries.
 - [[entities/shifu-app|Shifu]] — Local-first video workbench/proof question with implementation chain complete; visual gameplay thesis under review after visual-only misses, next heavy tests wait for the repaired 5070 Ti desktop.
