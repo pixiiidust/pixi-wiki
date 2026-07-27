@@ -40,6 +40,7 @@ DEFAULT_SEED_SLUGS = [
     "hermes-agent",
     "ai-native-product-surfaces",
     "content-distribution",
+    "rays-into-the-shadow",
     "rl-sim-labs",
     "petri-eden",
     "curated-tuning-datasets",
@@ -537,7 +538,13 @@ def sidebar_category(rel: Path, fm: dict[str, Any]) -> str:
     return "other"
 
 
-def make_sidebar(slug: str, title: str, doc_count: int, active_rel: str, sidebar_docs: list[dict[str, str]]) -> str:
+def make_sidebar(slug: str, title: str, doc_count: int, active_rel: str, sidebar_docs: list[dict[str, Any]]) -> str:
+    def doc_order_key(doc: dict[str, Any]) -> tuple[int, int, str]:
+        order = doc.get("order")
+        if isinstance(order, int) or (isinstance(order, str) and order.isdigit()):
+            return (0, int(order), str(doc["title"]).lower())
+        return (1, 0, str(doc["title"]).lower())
+
     def cls(rel: str) -> str:
         return ' class="active" aria-current="page"' if rel == active_rel else ""
 
@@ -545,7 +552,7 @@ def make_sidebar(slug: str, title: str, doc_count: int, active_rel: str, sidebar
         return f'<a{cls(doc["path"])} href="{BASE_PATH}/wiki/{slug}/{html.escape(doc["path"])}.html"><span aria-hidden="true">📄 </span>{html.escape(doc["title"])}</a>'
 
     def section(label: str, category: str) -> str:
-        docs = sorted((doc for doc in sidebar_docs if doc["category"] == category), key=lambda doc: doc["title"].lower())
+        docs = sorted((doc for doc in sidebar_docs if doc["category"] == category), key=doc_order_key)
         count = len(docs)
         open_attr = " open" if any(doc["path"] == active_rel for doc in docs) else ""
 
@@ -638,13 +645,14 @@ def head_meta(title: str, description: str, canonical_path: str, og_type: str = 
     )
 
 
-def page_shell(slug: str, namespace_title: str, doc_count: int, active_rel: str, sidebar_docs: list[dict[str, str]], article: str, page_title: str, description: str) -> str:
+def page_shell(slug: str, namespace_title: str, doc_count: int, active_rel: str, sidebar_docs: list[dict[str, str]], article: str, page_title: str, description: str, dedupe_title: bool = False) -> str:
     sidebar = make_sidebar(slug, namespace_title, doc_count, active_rel, sidebar_docs)
     canonical_path = f"{BASE_PATH}/wiki/{slug}/{active_rel}.html"
-    meta = head_meta(f"{page_title} — {namespace_title}", description, canonical_path, og_type="article")
+    display_title = namespace_title if dedupe_title else f"{page_title} — {namespace_title}"
+    meta = head_meta(display_title, description, canonical_path, og_type="article")
     return f"""<!doctype html>
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{html.escape(page_title)} — {html.escape(namespace_title)} — Pixi Wiki</title>{meta}
+<title>{html.escape(display_title)} — Pixi Wiki</title>{meta}
 {stylesheet_link()}{theme_script()}{sidebar_filter_script()}{search_script()}{copy_button_script()}</head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 {site_header(WIKI_NAV_LINKS)}
@@ -777,6 +785,17 @@ def render_readme(
     next_doc: dict[str, str] | None,
     link_resolver: LinkResolver | None = None,
 ) -> str:
+    if fm.get("presentation") == "book":
+        rendered_body, body_headings = markdown_fragment_with_headings(body, link_resolver)
+        rendered_body = with_metadata_after_h1(rendered_body, metadata_block(fm))
+        rendered_body = insert_toc_before_first_h2(rendered_body, page_toc(body_headings))
+        return f"""
+<div class="content-header"><div class="breadcrumbs"><a href="{BASE_PATH}/">wikis</a> / <a href="{BASE_PATH}/wiki/{slug}/README.md.html">{html.escape(title)}</a> / README.md</div>{page_tools(slug, "README.md")}</div>
+{rendered_body}
+{external_links_block(fm, body)}
+{prev_next_nav(slug, None, next_doc)}
+"""
+
     updated = fm.get("updated", "unknown")
     description = first_paragraph(body)
     body_without_title = re.sub(r"^#\s+.+\n", "", body, count=1).strip()
@@ -890,20 +909,22 @@ def collect_namespace(
     update_entries: list[dict[str, str]] = []
     sitemap_docs: list[dict[str, str]] = []
     sidebar_docs = [
-        {"title": page_title, "path": rel.as_posix(), "category": sidebar_category(rel, page_fm)}
+        {"title": page_title, "path": rel.as_posix(), "category": sidebar_category(rel, page_fm), "order": page_fm.get("chapter")}
         for rel, _text, page_fm, _body, page_title in parsed
         if rel.as_posix() not in {"README.md", "wiki/index.md", "CLAUDE.md"}
     ]
 
-    def navigation_rank(item: tuple[Path, str, dict[str, Any], str, str]) -> tuple[int, str]:
+    def navigation_rank(item: tuple[Path, str, dict[str, Any], str, str]) -> tuple[int, int, str]:
         rel, _text, page_fm, _body, page_title = item
         rel_posix = rel.as_posix()
         if rel_posix == "README.md":
-            return (0, page_title.lower())
+            return (0, 0, page_title.lower())
         if rel_posix == "wiki/index.md":
-            return (1, page_title.lower())
+            return (1, 0, page_title.lower())
         category_rank = {"concepts": 2, "entities": 3, "summaries": 4, "syntheses": 5, "wiki": 6, "other": 7}
-        return (category_rank.get(sidebar_category(rel, page_fm), 7), page_title.lower())
+        chapter = page_fm.get("chapter")
+        order = int(chapter) if isinstance(chapter, int) or (isinstance(chapter, str) and chapter.isdigit()) else 999999
+        return (category_rank.get(sidebar_category(rel, page_fm), 7), order, page_title.lower())
 
     nav_docs = [
         {"title": page_title, "path": rel.as_posix()}
@@ -981,7 +1002,21 @@ def collect_namespace(
             content_source = body if page_fm else text
             article = render_page(slug, str(title), rel_posix, str(page_title), page_fm, content_source, prev_doc, next_doc, resolve_wikilink)
             page_description = first_paragraph(content_source) or description
-        html_output.write_text(page_shell(slug, str(title), len(md_files), rel_posix, sidebar_docs, article, str(page_title), page_description), encoding="utf-8", newline="\n")
+        html_output.write_text(
+            page_shell(
+                slug,
+                str(title),
+                len(md_files),
+                rel_posix,
+                sidebar_docs,
+                article,
+                str(page_title),
+                page_description,
+                dedupe_title=rel_posix == "README.md" and page_fm.get("presentation") == "book",
+            ),
+            encoding="utf-8",
+            newline="\n",
+        )
         # Sitemap entry for this generated page. lastmod is emitted only when the
         # frontmatter `updated` is a strict YYYY-MM-DD date (deterministic; never
         # the wall clock), matching the Updates date contract.
@@ -1699,7 +1734,7 @@ def build(
 <title>Pixi Wiki</title>{head_meta("Pixi Wiki", HOME_DESCRIPTION, BASE_PATH + "/")}{stylesheet_link()}{theme_script()}{search_script()}{copy_button_script()}</head><body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 {site_header(HOME_NAV_LINKS)}
-<main id="main-content" style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="{BASE_PATH}/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="{BASE_PATH}/docs/SIGNAL_GRAPH.html">Signal graph sidecar</a></div><section class="agent-setup-callout"><h2>Agents start here</h2><pre><code>$ curl {SITE_ORIGIN}{BASE_PATH}/llms.txt</code></pre><p>Use <code>llms.txt</code> as the first routing map, then follow links to raw Markdown, namespace files, or MCP setup.</p></section><nav class="wiki-nav" aria-label="Wiki categories"><a class="button-link" href="#agent-ops">Agent Operations</a><a class="button-link" href="#knowledge-systems">Knowledge Systems</a><a class="button-link" href="#labs-products">Labs & Product Surfaces</a></nav><div id="wikis">{grouped_index}</div></main>
+<main id="main-content" style="max-width:1180px;margin:44px auto 90px;padding:0 20px"><h1>Pixi Wiki</h1><p class="hero-copy">Pixi Wiki turns my notes, project docs, research, and working context into structured, maintained knowledge bases. Humans browse them like a wiki. Agents read them natively as plain Markdown with <code>llms.txt</code> and local MCP access.</p><div class="hero-actions"><a class="button-link primary" href="#wikis">Browse wikis</a><a class="button-link" href="{BASE_PATH}/docs/AGENT_SETUP.html">Connect agents via MCP</a><a class="button-link" href="{BASE_PATH}/docs/SIGNAL_GRAPH.html">Signal graph sidecar</a></div><section class="agent-setup-callout"><h2>Agents start here</h2><pre><code>$ curl {SITE_ORIGIN}{BASE_PATH}/llms.txt</code></pre><p>Use <code>llms.txt</code> as the first routing map, then follow links to raw Markdown, namespace files, or MCP setup.</p></section><nav class="wiki-nav" aria-label="Wiki categories"><a class="button-link" href="#agent-ops">Agent Operations</a><a class="button-link" href="#knowledge-systems">Knowledge Systems</a><a class="button-link" href="#labs-products">Labs & Product Surfaces</a><a class="button-link" href="#other-wikis">Other Wikis</a></nav><div id="wikis">{grouped_index}</div></main>
 <footer class="footer"><div class="footer-inner"><p>Plain static HTML. No JavaScript is required to read any page — agents welcome.</p><p><a href="{BASE_PATH}/llms.txt">/llms.txt</a><a href="{BASE_PATH}/llms-full.txt">/llms-full.txt</a><a href="{BASE_PATH}/index.json">/index.json</a><a href="{BASE_PATH}/docs/SIGNAL_GRAPH.html">Signal Graph</a><a href="https://github.com/pixiiidust/pixi-wiki">GitHub</a><a href="{BASE_PATH}/docs/REPLICATE_APPROACH.html">Copy this approach</a></p></div></footer>
 </body></html>"""
     (output_root / "index.html").write_text(index_html, encoding="utf-8", newline="\n")

@@ -1,0 +1,23 @@
+# Rays into the Shadow Knowledge Base
+
+> A friend introduced Jamie, writing as Pixiedust, and Pham on 25 July 2026. Pham described a recent burst of ideas and work. Jamie asked the question that gives the exchange its direction: what, exactly, got him stuck?
+
+- [Rays into the Shadow Namespace Instructions](/raw/rays-into-the-shadow/CLAUDE.md) ([html](/wiki/rays-into-the-shadow/CLAUDE.md.html))
+- [Rays into the Shadow](/raw/rays-into-the-shadow/README.md) ([html](/wiki/rays-into-the-shadow/README.md.html))
+- [Rays into the Shadow — Source Conversation, 25 July 2026](/raw/rays-into-the-shadow/raw/transcripts/2026-07-25-introduction.md) ([html](/wiki/rays-into-the-shadow/raw/transcripts/2026-07-25-introduction.md.html))
+- [Rays into the Shadow — Supplementary Conversation Excerpt](/raw/rays-into-the-shadow/raw/transcripts/2026-07-25-request-excerpt.md) ([html](/wiki/rays-into-the-shadow/raw/transcripts/2026-07-25-request-excerpt.md.html))
+- [Rays into the Shadow — Table of Contents](/raw/rays-into-the-shadow/wiki/index.md) ([html](/wiki/rays-into-the-shadow/wiki/index.md.html))
+- [Rays into the Shadow — Activity Log](/raw/rays-into-the-shadow/wiki/log.md) ([html](/wiki/rays-into-the-shadow/wiki/log.md.html))
+- [Artifacts Mentioned — Source Register](/raw/rays-into-the-shadow/wiki/summaries/artifacts-mentioned.md) ([html](/wiki/rays-into-the-shadow/wiki/summaries/artifacts-mentioned.md.html))
+- [Conversation Map — The Exchange Comes First](/raw/rays-into-the-shadow/wiki/summaries/conversation-map.md) ([html](/wiki/rays-into-the-shadow/wiki/summaries/conversation-map.md.html))
+- [Editorial Method — Say What You Mean](/raw/rays-into-the-shadow/wiki/summaries/editorial-method.md) ([html](/wiki/rays-into-the-shadow/wiki/summaries/editorial-method.md.html))
+- [Preface — What This Book Keeps](/raw/rays-into-the-shadow/wiki/syntheses/chapters/00-preface.md) ([html](/wiki/rays-into-the-shadow/wiki/syntheses/chapters/00-preface.md.html))
+- [Chapter 1 — An Introduction Between Strangers](/raw/rays-into-the-shadow/wiki/syntheses/chapters/01-an-introduction-between-strangers.md) ([html](/wiki/rays-into-the-shadow/wiki/syntheses/chapters/01-an-introduction-between-strangers.md.html))
+- [Chapter 2 — Arriving Late, Moving Quickly](/raw/rays-into-the-shadow/wiki/syntheses/chapters/02-arriving-late-moving-quickly.md) ([html](/wiki/rays-into-the-shadow/wiki/syntheses/chapters/02-arriving-late-moving-quickly.md.html))
+- [Chapter 3 — Jamie Asks What Got You Stuck](/raw/rays-into-the-shadow/wiki/syntheses/chapters/03-jamie-asks-what-got-you-stuck.md) ([html](/wiki/rays-into-the-shadow/wiki/syntheses/chapters/03-jamie-asks-what-got-you-stuck.md.html))
+- [Chapter 4 — The Edge of the Non-Testable](/raw/rays-into-the-shadow/wiki/syntheses/chapters/04-the-edge-of-the-non-testable.md) ([html](/wiki/rays-into-the-shadow/wiki/syntheses/chapters/04-the-edge-of-the-non-testable.md.html))
+- [Chapter 5 — Rays into the Shadow](/raw/rays-into-the-shadow/wiki/syntheses/chapters/05-rays-into-the-shadow.md) ([html](/wiki/rays-into-the-shadow/wiki/syntheses/chapters/05-rays-into-the-shadow.md.html))
+- [Chapter 6 — How Can We Know?](/raw/rays-into-the-shadow/wiki/syntheses/chapters/06-how-can-we-know.md) ([html](/wiki/rays-into-the-shadow/wiki/syntheses/chapters/06-how-can-we-know.md.html))
+- [Chapter 7 — Many Agents, One Song](/raw/rays-into-the-shadow/wiki/syntheses/chapters/07-many-agents-one-song.md) ([html](/wiki/rays-into-the-shadow/wiki/syntheses/chapters/07-many-agents-one-song.md.html))
+- [Chapter 8 — The Limit of the Trivial](/raw/rays-into-the-shadow/wiki/syntheses/chapters/08-the-limit-of-the-trivial.md) ([html](/wiki/rays-into-the-shadow/wiki/syntheses/chapters/08-the-limit-of-the-trivial.md.html))
+- [Chapter 9 — Open Questions](/raw/rays-into-the-shadow/wiki/syntheses/chapters/09-open-questions.md) ([html](/wiki/rays-into-the-shadow/wiki/syntheses/chapters/09-open-questions.md.html))

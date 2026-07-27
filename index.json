@@ -827,6 +827,169 @@
       ]
     },
     {
+      "slug": "rays-into-the-shadow",
+      "title": "Rays into the Shadow",
+      "description": "A friend introduced Jamie, writing as Pixiedust, and Pham on 25 July 2026. Pham described a recent burst of ideas and work. Jamie asked the question that gives the exchange its direction: what, exactly, got him stuck?",
+      "tags": [
+        "conversation"
+      ],
+      "category": "conversation",
+      "scope": {
+        "covers": "The ongoing conversation about bounded unknowns, non-testable programs, provenance, truth, theology, independent inquiry, many-agent convergence, computational physics, and the move from known work toward discovery.",
+        "notCovered": "",
+        "currentAs": "2026-07-27"
+      },
+      "lastUpdated": "2026-07-27",
+      "documentCount": 19,
+      "counts": {
+        "wiki": 1,
+        "concepts": 0,
+        "entities": 0,
+        "summaries": 3,
+        "syntheses": 10
+      },
+      "llms_txt": "/wiki/rays-into-the-shadow/llms.txt",
+      "llms_full_txt": "/wiki/rays-into-the-shadow/llms-full.txt",
+      "index_json": "/wiki/rays-into-the-shadow/index.json",
+      "raw_base": "/raw/rays-into-the-shadow/",
+      "html_base": "/wiki/rays-into-the-shadow/",
+      "documents": [
+        {
+          "title": "Rays into the Shadow Namespace Instructions",
+          "path": "CLAUDE.md",
+          "raw": "/raw/rays-into-the-shadow/CLAUDE.md",
+          "html": "/wiki/rays-into-the-shadow/CLAUDE.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Rays into the Shadow",
+          "path": "README.md",
+          "raw": "/raw/rays-into-the-shadow/README.md",
+          "html": "/wiki/rays-into-the-shadow/README.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Rays into the Shadow \u2014 Source Conversation, 25 July 2026",
+          "path": "raw/transcripts/2026-07-25-introduction.md",
+          "raw": "/raw/rays-into-the-shadow/raw/transcripts/2026-07-25-introduction.md",
+          "html": "/wiki/rays-into-the-shadow/raw/transcripts/2026-07-25-introduction.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Rays into the Shadow \u2014 Supplementary Conversation Excerpt",
+          "path": "raw/transcripts/2026-07-25-request-excerpt.md",
+          "raw": "/raw/rays-into-the-shadow/raw/transcripts/2026-07-25-request-excerpt.md",
+          "html": "/wiki/rays-into-the-shadow/raw/transcripts/2026-07-25-request-excerpt.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Rays into the Shadow \u2014 Table of Contents",
+          "path": "wiki/index.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/index.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/index.md.html",
+          "category": "other"
+        },
+        {
+          "title": "Rays into the Shadow \u2014 Activity Log",
+          "path": "wiki/log.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/log.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/log.md.html",
+          "category": "wiki"
+        },
+        {
+          "title": "Artifacts Mentioned \u2014 Source Register",
+          "path": "wiki/summaries/artifacts-mentioned.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/summaries/artifacts-mentioned.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/summaries/artifacts-mentioned.md.html",
+          "category": "summaries"
+        },
+        {
+          "title": "Conversation Map \u2014 The Exchange Comes First",
+          "path": "wiki/summaries/conversation-map.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/summaries/conversation-map.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/summaries/conversation-map.md.html",
+          "category": "summaries"
+        },
+        {
+          "title": "Editorial Method \u2014 Say What You Mean",
+          "path": "wiki/summaries/editorial-method.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/summaries/editorial-method.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/summaries/editorial-method.md.html",
+          "category": "summaries"
+        },
+        {
+          "title": "Preface \u2014 What This Book Keeps",
+          "path": "wiki/syntheses/chapters/00-preface.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/00-preface.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/00-preface.md.html",
+          "category": "syntheses"
+        },
+        {
+          "title": "Chapter 1 \u2014 An Introduction Between Strangers",
+          "path": "wiki/syntheses/chapters/01-an-introduction-between-strangers.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/01-an-introduction-between-strangers.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/01-an-introduction-between-strangers.md.html",
+          "category": "syntheses"
+        },
+        {
+          "title": "Chapter 2 \u2014 Arriving Late, Moving Quickly",
+          "path": "wiki/syntheses/chapters/02-arriving-late-moving-quickly.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/02-arriving-late-moving-quickly.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/02-arriving-late-moving-quickly.md.html",
+          "category": "syntheses"
+        },
+        {
+          "title": "Chapter 3 \u2014 Jamie Asks What Got You Stuck",
+          "path": "wiki/syntheses/chapters/03-jamie-asks-what-got-you-stuck.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/03-jamie-asks-what-got-you-stuck.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/03-jamie-asks-what-got-you-stuck.md.html",
+          "category": "syntheses"
+        },
+        {
+          "title": "Chapter 4 \u2014 The Edge of the Non-Testable",
+          "path": "wiki/syntheses/chapters/04-the-edge-of-the-non-testable.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/04-the-edge-of-the-non-testable.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/04-the-edge-of-the-non-testable.md.html",
+          "category": "syntheses"
+        },
+        {
+          "title": "Chapter 5 \u2014 Rays into the Shadow",
+          "path": "wiki/syntheses/chapters/05-rays-into-the-shadow.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/05-rays-into-the-shadow.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/05-rays-into-the-shadow.md.html",
+          "category": "syntheses"
+        },
+        {
+          "title": "Chapter 6 \u2014 How Can We Know?",
+          "path": "wiki/syntheses/chapters/06-how-can-we-know.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/06-how-can-we-know.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/06-how-can-we-know.md.html",
+          "category": "syntheses"
+        },
+        {
+          "title": "Chapter 7 \u2014 Many Agents, One Song",
+          "path": "wiki/syntheses/chapters/07-many-agents-one-song.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/07-many-agents-one-song.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/07-many-agents-one-song.md.html",
+          "category": "syntheses"
+        },
+        {
+          "title": "Chapter 8 \u2014 The Limit of the Trivial",
+          "path": "wiki/syntheses/chapters/08-the-limit-of-the-trivial.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/08-the-limit-of-the-trivial.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/08-the-limit-of-the-trivial.md.html",
+          "category": "syntheses"
+        },
+        {
+          "title": "Chapter 9 \u2014 Open Questions",
+          "path": "wiki/syntheses/chapters/09-open-questions.md",
+          "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/09-open-questions.md",
+          "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/09-open-questions.md.html",
+          "category": "syntheses"
+        }
+      ]
+    },
+    {
       "slug": "rl-sim-labs",
       "title": "RL Sim Labs",
       "description": "PufferLib/RL projects, Critical Ranger FFM, zone-control experiments, simulation evidence gates, environment design, future similar RL labs, and bounded comparisons that distinguish RL from adjacent learning systems such as neuroevolution.",

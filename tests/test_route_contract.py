@@ -81,6 +81,7 @@ class NamespaceRegistryContractTest(unittest.TestCase):
                 "hermes-agent",
                 "ai-native-product-surfaces",
                 "content-distribution",
+                "rays-into-the-shadow",
                 "rl-sim-labs",
                 "petri-eden",
                 "curated-tuning-datasets",
@@ -338,6 +339,50 @@ class NamespaceRegistryContractTest(unittest.TestCase):
 
         self.assertFalse((ROOT / "raw" / "ai-native-product-surfaces" / "wiki" / "concepts" / "misconception-first-explanation-loop.md").exists())
         self.assertFalse((ROOT / "wiki" / "ai-native-product-surfaces" / "wiki" / "concepts" / "misconception-first-explanation-loop.md.html").exists())
+
+    def test_rays_into_the_shadow_keeps_the_exchange_as_its_north_star(self) -> None:
+        registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}
+        wiki = registry["rays-into-the-shadow"]
+        self.assertEqual(wiki["title"], "Rays into the Shadow")
+        self.assertEqual(wiki["category"], "conversation")
+        self.assertEqual(wiki["documentCount"], 19)
+
+        doc_paths = {doc["path"] for doc in wiki["documents"]}
+        self.assertIn("raw/transcripts/2026-07-25-introduction.md", doc_paths)
+        self.assertIn("raw/transcripts/2026-07-25-request-excerpt.md", doc_paths)
+        self.assertIn("wiki/summaries/conversation-map.md", doc_paths)
+        self.assertIn("wiki/syntheses/chapters/03-jamie-asks-what-got-you-stuck.md", doc_paths)
+        self.assertIn("wiki/syntheses/chapters/09-open-questions.md", doc_paths)
+
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<a class="button-link" href="#other-wikis">Other Wikis</a>', homepage)
+        self.assertIn('<section class="wiki-group" id="other-wikis">', homepage)
+        self.assertIn('<article class="card" id="rays-into-the-shadow">', homepage)
+
+        landing_html = (ROOT / "wiki" / "rays-into-the-shadow" / "README.md.html").read_text(encoding="utf-8")
+        self.assertIn("<title>Rays into the Shadow — Pixi Wiki</title>", landing_html)
+        self.assertEqual(landing_html.count("<h1"), 1)
+        self.assertNotIn("<h2>Structure</h2>", landing_html)
+        self.assertIn("Open edition · 0.1", landing_html)
+
+        map_html = (ROOT / "wiki" / "rays-into-the-shadow" / "wiki" / "summaries" / "conversation-map.md.html").read_text(encoding="utf-8")
+        self.assertIn("The Exchange Comes First", map_html)
+        self.assertIn("Ontology — what exists in the conversation", map_html)
+        self.assertIn("Epistemology — how the book handles knowledge", map_html)
+        self.assertIn("Jamie, writing as Pixiedust, and Pham", map_html)
+
+        jamie_html = (ROOT / "wiki" / "rays-into-the-shadow" / "wiki" / "syntheses" / "chapters" / "03-jamie-asks-what-got-you-stuck.md.html").read_text(encoding="utf-8")
+        self.assertIn("what specifically got you stuck", jamie_html)
+        self.assertIn("That last question is the north star", jamie_html)
+        self.assertIn("I am going to finish exploring", jamie_html)
+        self.assertIn("Sounds good!", jamie_html)
+
+        chapter_html = (ROOT / "wiki" / "rays-into-the-shadow" / "wiki" / "syntheses" / "chapters" / "07-many-agents-one-song.md.html").read_text(encoding="utf-8")
+        sidebar = chapter_html.split('<aside class="sidebar">', 1)[1].split("</aside>", 1)[0]
+        ordered_titles = ["Preface — What This Book Keeps", *[f"Chapter {number} —" for number in range(1, 10)]]
+        positions = [sidebar.index(title) for title in ordered_titles]
+        self.assertEqual(positions, sorted(positions))
+        self.assertIn("convergence is evidence, not proof", chapter_html)
 
     def test_software_architecture_metapatterns_diagrams_are_local_assets(self) -> None:
         raw = (ROOT / "raw" / "software-architecture-metapatterns" / "wiki" / "concepts" / "source" / "basic-metapatterns" / "basic-metapatterns.md").read_text(encoding="utf-8")
