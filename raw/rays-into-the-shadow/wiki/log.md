@@ -12,6 +12,12 @@ namespace: rays-into-the-shadow
 
 > Append-only. The newest entry goes first.
 
+## 2026-07-27 — Visual conversation report
+
+- Added `assets/reports/rays-into-the-shadow.html` as a self-contained visual companion to the chaptered book.
+- Kept the Jamie–Pham exchange as the organizing line, with Jamie's question as the hinge and the missing next reply left open.
+- Added slide and scrolling modes, keyboard navigation, print styles, source links, and visual models for rays, convergence, evidence state, and the boundary of known work.
+
 ## 2026-07-27 — Edition 0.1, exchange-first revision
 
 - Made the exchanges between Jamie (Pixiedust) and Pham the north star for the book.

@@ -24,6 +24,10 @@ This first source gives Pham more words than Jamie. The book does not mistake le
 
 This edition keeps the original words, adds plain editorial notes, and marks what remains unproven.
 
+## Read the visual report
+
+Open the [standalone visual conversation report](/pixi-wiki/wiki/rays-into-the-shadow/assets/reports/rays-into-the-shadow.html) for a slide or scrolling view of the exchange, the ray model, the evidence boundary, and the missing next turn.
+
 ## Read the conversation map
 
 Start with the [[wiki/summaries/conversation-map|Conversation Map]]. It keeps the exchange between Jamie and Pham as the north star for every concept and claim downstream.

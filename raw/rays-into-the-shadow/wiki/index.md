@@ -15,6 +15,10 @@ namespace: rays-into-the-shadow
 
 The book is still being written because the conversation is still taking place. Each new source section will keep its date. Each new turn will change the map before it changes the downstream concepts.
 
+## Visual report
+
+- [Open the standalone HTML report](/pixi-wiki/wiki/rays-into-the-shadow/assets/reports/rays-into-the-shadow.html) — switch between presentation and scrolling modes.
+
 ## North star
 
 Start with the [[summaries/conversation-map|Conversation Map]]. It defines the ontology—what exists in the conversation—and the epistemology—how the book treats claims and evidence. The exchange between Jamie and Pham organizes everything that follows.

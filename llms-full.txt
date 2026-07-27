@@ -7989,6 +7989,10 @@ This first source gives Pham more words than Jamie. The book does not mistake le
 
 This edition keeps the original words, adds plain editorial notes, and marks what remains unproven.
 
+## Read the visual report
+
+Open the [standalone visual conversation report](/pixi-wiki/wiki/rays-into-the-shadow/assets/reports/rays-into-the-shadow.html) for a slide or scrolling view of the exchange, the ray model, the evidence boundary, and the missing next turn.
+
 ## Read the conversation map
 
 Start with the [[wiki/summaries/conversation-map|Conversation Map]]. It keeps the exchange between Jamie and Pham as the north star for every concept and claim downstream.
@@ -8203,6 +8207,10 @@ namespace: rays-into-the-shadow
 
 The book is still being written because the conversation is still taking place. Each new source section will keep its date. Each new turn will change the map before it changes the downstream concepts.
 
+## Visual report
+
+- [Open the standalone HTML report](/pixi-wiki/wiki/rays-into-the-shadow/assets/reports/rays-into-the-shadow.html) — switch between presentation and scrolling modes.
+
 ## North star
 
 Start with the [[summaries/conversation-map|Conversation Map]]. It defines the ontology—what exists in the conversation—and the epistemology—how the book treats claims and evidence. The exchange between Jamie and Pham organizes everything that follows.
@@ -8254,6 +8262,12 @@ namespace: rays-into-the-shadow
 # Rays into the Shadow — Activity Log
 
 > Append-only. The newest entry goes first.
+
+## 2026-07-27 — Visual conversation report
+
+- Added `assets/reports/rays-into-the-shadow.html` as a self-contained visual companion to the chaptered book.
+- Kept the Jamie–Pham exchange as the organizing line, with Jamie's question as the hinge and the missing next reply left open.
+- Added slide and scrolling modes, keyboard navigation, print styles, source links, and visual models for rays, convergence, evidence state, and the boundary of known work.
 
 ## 2026-07-27 — Edition 0.1, exchange-first revision
 

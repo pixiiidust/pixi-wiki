@@ -364,6 +364,22 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertEqual(landing_html.count("<h1"), 1)
         self.assertNotIn("<h2>Structure</h2>", landing_html)
         self.assertIn("Open edition · 0.1", landing_html)
+        self.assertIn("/pixi-wiki/wiki/rays-into-the-shadow/assets/reports/rays-into-the-shadow.html", landing_html)
+
+        report_path = ROOT / "wiki" / "rays-into-the-shadow" / "assets" / "reports" / "rays-into-the-shadow.html"
+        self.assertTrue(report_path.is_file())
+        report_html = report_path.read_text(encoding="utf-8")
+        self.assertIn("Rays into the Shadow — Visual Conversation Report", report_html)
+        self.assertEqual(report_html.count('<section class="panel"'), 10)
+        self.assertIn("d0cf24417c875addefee8b5a1b2e9647e116f5fba9124b7648a0f76b13cbac9d", report_html)
+        self.assertIn("/raw/transcripts/2026-07-25-introduction.md.html", report_html)
+        self.assertIn("/raw/transcripts/2026-07-25-request-excerpt.md.html", report_html)
+        self.assertIn("Read as scrolling report", report_html)
+        self.assertIn("I’d be curious to hear what specifically got you stuck after that point.", report_html)
+        self.assertIn("Agreement is evidence, not proof.", report_html)
+        self.assertIn("Turn 7", report_html)
+        self.assertIn("26f818a54881262c5e4295ab6e6dfeeef0008dc06d52aba5904a4bca5daa8d93", report_html)
+        self.assertNotIn("TODO", report_html)
 
         map_html = (ROOT / "wiki" / "rays-into-the-shadow" / "wiki" / "summaries" / "conversation-map.md.html").read_text(encoding="utf-8")
         self.assertIn("The Exchange Comes First", map_html)
