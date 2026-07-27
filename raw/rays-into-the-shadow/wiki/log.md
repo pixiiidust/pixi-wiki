@@ -12,6 +12,12 @@ namespace: rays-into-the-shadow
 
 > Append-only. The newest entry goes first.
 
+## 2026-07-27 — Chaptered HTML book
+
+- Replaced the meta-report with the conversation summary itself: the preface and Chapters 1–9 now make up the HTML artifact.
+- Added one in-page table of contents, chapter selection, previous/next reading, scrolling mode, and chapter-presentation mode.
+- Kept the old report URL as a redirect so the first shared link does not break.
+
 ## 2026-07-27 — Visual conversation report
 
 - Added `assets/reports/rays-into-the-shadow.html` as a self-contained visual companion to the chaptered book.

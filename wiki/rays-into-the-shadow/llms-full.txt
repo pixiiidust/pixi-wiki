@@ -81,9 +81,9 @@ This first source gives Pham more words than Jamie. The book does not mistake le
 
 This edition keeps the original words, adds plain editorial notes, and marks what remains unproven.
 
-## Read the visual report
+## Read the HTML book
 
-Open the [standalone visual conversation report](/pixi-wiki/wiki/rays-into-the-shadow/assets/reports/rays-into-the-shadow.html) for a slide or scrolling view of the exchange, the ray model, the evidence boundary, and the missing next turn.
+Open the [complete chaptered HTML edition](/pixi-wiki/wiki/rays-into-the-shadow/assets/books/rays-into-the-shadow.html). It contains the preface and Chapters 1–9 in one artifact, with scrolling and chapter-presentation modes.
 
 ## Read the conversation map
 
@@ -299,9 +299,9 @@ namespace: rays-into-the-shadow
 
 The book is still being written because the conversation is still taking place. Each new source section will keep its date. Each new turn will change the map before it changes the downstream concepts.
 
-## Visual report
+## HTML book
 
-- [Open the standalone HTML report](/pixi-wiki/wiki/rays-into-the-shadow/assets/reports/rays-into-the-shadow.html) — switch between presentation and scrolling modes.
+- [Read the complete HTML edition](/pixi-wiki/wiki/rays-into-the-shadow/assets/books/rays-into-the-shadow.html) — the preface and Chapters 1–9 in scrolling or chapter-presentation mode.
 
 ## North star
 
@@ -354,6 +354,12 @@ namespace: rays-into-the-shadow
 # Rays into the Shadow — Activity Log
 
 > Append-only. The newest entry goes first.
+
+## 2026-07-27 — Chaptered HTML book
+
+- Replaced the meta-report with the conversation summary itself: the preface and Chapters 1–9 now make up the HTML artifact.
+- Added one in-page table of contents, chapter selection, previous/next reading, scrolling mode, and chapter-presentation mode.
+- Kept the old report URL as a redirect so the first shared link does not break.
 
 ## 2026-07-27 — Visual conversation report
 

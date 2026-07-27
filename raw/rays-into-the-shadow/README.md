@@ -24,9 +24,9 @@ This first source gives Pham more words than Jamie. The book does not mistake le
 
 This edition keeps the original words, adds plain editorial notes, and marks what remains unproven.
 
-## Read the visual report
+## Read the HTML book
 
-Open the [standalone visual conversation report](/pixi-wiki/wiki/rays-into-the-shadow/assets/reports/rays-into-the-shadow.html) for a slide or scrolling view of the exchange, the ray model, the evidence boundary, and the missing next turn.
+Open the [complete chaptered HTML edition](/pixi-wiki/wiki/rays-into-the-shadow/assets/books/rays-into-the-shadow.html). It contains the preface and Chapters 1–9 in one artifact, with scrolling and chapter-presentation modes.
 
 ## Read the conversation map
 
