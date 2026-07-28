@@ -122,12 +122,13 @@ class NamespaceRegistryContractTest(unittest.TestCase):
     def test_namespace_pages_have_agentwikis_sidebar_and_readme_card(self) -> None:
         html = (ROOT / "wiki" / "agent-workflows" / "README.md.html").read_text(encoding="utf-8")
         self.assertIn("Agent Workflows Knowledge Base", html)
-        self.assertIn("34 documents", html)
+        self.assertIn("35 documents", html)
         self.assertIn("📄 </span>Agent Workflows Knowledge Base", html)
         self.assertIn("📄 </span>Agent Workflows KB — Master Index", html)
         self.assertIn("<summary>WIKI 1</summary>", html)
         self.assertIn("📄 </span>Agent Workflows — Activity Log", html)
-        self.assertIn("<summary>CONCEPTS 25</summary>", html)
+        self.assertIn("<summary>CONCEPTS 26</summary>", html)
+        self.assertIn("📄 </span>Discord Crew Onboarding Contract", html)
         self.assertIn("📄 </span>Executable Agent Worlds", html)
         self.assertIn("📄 </span>Agent Capability Route Pattern", html)
         self.assertIn("📄 </span>Agent Tooling Plan", html)
@@ -159,6 +160,32 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn("view as markdown", html)
         self.assertIn("report a mistake", html)
         self.assertIn("prev-next-card", html)
+
+    def test_discord_crew_onboarding_contract_is_routed_and_public_safe(self) -> None:
+        registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}
+        workflow_paths = {doc["path"] for doc in registry["agent-workflows"]["documents"]}
+        path = "wiki/concepts/discord-crew-onboarding.md"
+        self.assertIn(path, workflow_paths)
+
+        raw = (ROOT / "raw" / "agent-workflows" / path).read_text(encoding="utf-8")
+        html = (ROOT / "wiki" / "agent-workflows" / f"{path}.html").read_text(encoding="utf-8")
+        self.assertIn("Onboard <Discord user ID>", raw)
+        self.assertIn("DISCORD_BOTS_REQUIRE_INLINE_MENTION=true", raw)
+        self.assertIn("including HTTP 500 responses", raw)
+        self.assertIn("at most three attempts with bounded backoff", raw)
+        self.assertIn(
+            "Never repeat an allowlist mutation, gateway restart, thread creation, or message post unless verification proves the first mutation did not occur.",
+            raw,
+        )
+        self.assertNotRegex(raw, r"\b\d{17,20}\b")
+        self.assertIn(
+            'href="/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html"',
+            html,
+        )
+        self.assertIn(
+            'href="/pixi-wiki/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html"',
+            html,
+        )
 
     def test_verb_first_general_and_product_pages_are_reciprocally_linked(self) -> None:
         registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}

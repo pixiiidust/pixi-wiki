@@ -33,7 +33,7 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/agent-capability-route-pattern.md.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/agent-entrypoint-mesh.md.html</loc>
@@ -62,6 +62,10 @@
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/creative-ideation-routing.md.html</loc>
     <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/discord-crew-onboarding.md.html</loc>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/effective-state-load.md.html</loc>
@@ -93,11 +97,11 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/multi-agent-multiplayer-boundaries.md.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/peer-profiles-vs-child-processes.md.html</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/ponytail-minimal-code-discipline.md.html</loc>
@@ -133,7 +137,7 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/index.md.html</loc>
@@ -145,7 +149,7 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/summaries/agent-workflow-system-summary.md.html</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/summaries/effective-state-load-full-report.md.html</loc>
@@ -157,7 +161,7 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/ai-native-product-surfaces/CLAUDE.md.html</loc>

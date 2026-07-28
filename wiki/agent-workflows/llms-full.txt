@@ -9,7 +9,7 @@ This is a compiled namespace source under `pixi-vault/wikis/agent-workflows/`.
 - Follow the root `Wiki Compiler Maps/Namespace Wiki Compiler Map.md`.
 - Treat `Knowledge/` and `Projects/` as canonical authoring sources.
 - Treat Daily Notes as scratch chronology, not direct compiled content.
-- Keep this namespace scoped to: Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, self-improving agent systems, executable agent environments/institutions, and workflow reliability practices.
+- Keep this namespace scoped to: Pika/Pixoid/Tinker/Quill/Boba operating model, Discord crew onboarding, Hermes Mission Control, route governance, memory boundaries, context handoffs, self-improving agent systems, executable agent environments/institutions, and workflow reliability practices.
 - Do not widen scope silently; propose a namespace promotion/routing update first.
 - Update `wiki/index.md` and `wiki/log.md` whenever compiled pages are added.
 
@@ -29,13 +29,13 @@ confidence: medium
 
 # Agent Workflows
 
-> Operational namespace for Jamie's Pixoid crew workflows: route governance, durable context, agent entrypoints, verification gates, and markdown-first agent memory.
+> Operational namespace for Jamie's Pika/Pixoid crew workflows: coordination and fallback boundaries, Discord onboarding, route governance, durable context, verification gates, and markdown-first agent memory.
 
 ## Scope
 
 ### Covers
 
-Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
+Pika/Pixoid/Tinker/Quill/Boba operating model, Discord crew onboarding, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
 
 Also includes executable agent-world design where software mechanics become real constraints on agent information, authority, resources, actions, timing, and consequences.
 
@@ -44,6 +44,8 @@ Also includes executable agent-world design where software mechanics become real
 Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.
 
 ### Current As
+
+2026-07-28 — Added the Pika-first Discord crew onboarding contract: local Pika coordinates/final-reviews, VPS Pixoid verifies/falls back, direct bot-user mentions route work, role mentions do not, bot handoffs require inline mentions, and one person gets one shared onboarding thread.
 
 2026-07-28 — Added Executable Agent Worlds: separate software understanding, runtime adapters, agent organization, and evidence so legacy software can become a genuine agent environment rather than a decorative dashboard.
 
@@ -72,6 +74,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `Knowledge/concepts/discord-crew-onboarding.md`
 - `Knowledge/concepts/multi-agent-multiplayer-boundaries.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/visual-plan-review-surfaces.md`
@@ -109,7 +112,7 @@ When published to `pixi-wiki`, this namespace should expose:
 ---
 title: Agent Capability Route Pattern
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-28
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -124,7 +127,7 @@ confidence: high
 
 ## Definition
 
-An **agent capability route** is an explicit, bounded path from approved work into a Hermes agent capability. It defines how work enters, which profile may execute it, what that profile may do, what artifact it must return, and how Pixoid verifies the result before it becomes durable truth.
+An **agent capability route** is an explicit, bounded path from approved work into a Hermes agent capability. It defines how work enters, which identity/profile may execute it, what it may do, what artifact it must return, how Pixoid verifies VPS results, and how Pika performs final review when available.
 
 Short form:
 
@@ -146,7 +149,7 @@ A route is not just “ask an agent.” It is a small operating contract with th
 | Verification gate | What real evidence proves the artifact worked or stayed in bounds? |
 | Observability | What event, issue comment, report, or handoff records requested profile, actual profile, status, and proof? |
 
-The profile seam is the identity-critical part. Named crew work should run through peer Hermes profiles when a real route exists; child subagents can help with analysis, but they are not proof that Tinker, Quill, Boba, or another named peer profile executed work. See [[peer-profiles-vs-child-processes]] and [[hermes-soul-md-wiring]].
+The profile/route seam is identity-critical. Named crew work should run through the actual local or VPS identity route; child subagents can help with analysis, but they are not proof that Pika, Pixoid, Tinker, Quill, Boba, or another named peer executed work. See [[peer-profiles-vs-child-processes]] and [[hermes-soul-md-wiring]].
 
 ## Application
 
@@ -173,6 +176,7 @@ For issue-driven work, route execution usually pairs with [[issue-driven-afk-wor
 - Do not mutate profiles, gateways, providers, cron, webhooks, secrets, MCP, RAG, or deployment state unless the route explicitly authorizes that action.
 - Do not merge, deploy, post live messages, or expose secrets without the route’s approval policy and current user scope supporting it.
 - Keep transient issue numbers, PR numbers, commit SHAs, and milestone state out of generic concept pages.
+- Direct bot-user mentions are executable Discord routes; role mentions and outbound webhooks are not. See [[concepts/discord-crew-onboarding|Discord Crew Onboarding Contract]].
 
 ## Related pages
 
@@ -755,6 +759,93 @@ Bad output is unrouted LLM slop: generic lists, vague app nouns, no method, no m
 Canonical source: `Knowledge/concepts/creative-ideation-routing.md`.
 
 Reusable Hermes skill: `~/.hermes/skills/creative/creative-ideation/SKILL.md`.
+
+
+<!-- ===== agent-workflows/wiki/concepts/discord-crew-onboarding.md ===== -->
+
+---
+title: Discord Crew Onboarding Contract
+created: 2026-07-28
+updated: 2026-07-28
+type: concept
+status: compiled
+namespace: agent-workflows
+tags: [agent-systems, discord, onboarding, governance, workflow]
+sources:
+  - Knowledge/concepts/discord-crew-onboarding.md
+  - Projects/Hermes Mission Control/Index.md
+confidence: high
+---
+
+# Discord Crew Onboarding Contract
+
+Discord crew onboarding is an idempotent route that turns one validated Discord user ID into verified access to an active Hermes crew, then welcomes that person in one shared thread.
+
+## Crew and topology
+
+- **Pika:** local-desktop, primary user-facing coordinator, and final reviewer when available.
+- **Pixoid:** VPS control plane, verifier, and fallback orchestrator when Pika is unavailable.
+- **Tinker:** builder.
+- **Quill:** scribe.
+- **Boba:** researcher and reality checker.
+- The canonical vault and generated wiki build environment live on the VPS; cross-host review uses pushed review branches rather than assumed shared filesystem access.
+
+## Routing invariants
+
+- Direct bot-user mentions are executable routes; role mentions are labels, not bot routes.
+- Webhooks provide outbound display identity, not inbound execution.
+- YAML presence alone does not prove bot-authored intake is enabled in the running adapter.
+- Bot-authored handoffs require an explicit inline mention. A reply chip alone must not wake another bot.
+- Create one shared onboarding thread, not one thread per bot. Never depend on a fixed or previously observed thread ID.
+
+## Effective VPS safety pair
+
+```env
+DISCORD_ALLOW_BOTS=mentions
+DISCORD_BOTS_REQUIRE_INLINE_MENTION=true
+```
+
+Apply the pair to each affected active VPS profile, preserve existing users/tokens/unrelated settings, restart gateways sequentially, and verify fresh process IDs plus safe config readback.
+
+## Retry and side-effect idempotency
+
+- Transient read-only lookup or verification failures, including HTTP 500 responses, may receive at most three attempts with bounded backoff.
+- Never repeat an allowlist mutation, gateway restart, thread creation, or message post unless verification proves the first mutation did not occur.
+- Before any mutation retry, read back the relevant state: allowlist membership, process ID/start time, existing active onboarding threads, or the target message. If the outcome remains ambiguous, stop and escalate rather than risking duplicate side effects.
+
+## Reusable trigger
+
+```text
+Onboard <Discord user ID>
+```
+
+Default route:
+
+1. Validate the ID and channel access for the person and active crew bots.
+2. Enumerate active profiles for the current topology.
+3. Append the ID exactly once to every active profile's `DISCORD_ALLOWED_USERS`.
+4. Confirm the effective safety pair.
+5. Restart affected gateways sequentially and verify fresh process IDs.
+6. Stop if a matching active onboarding thread already exists.
+7. Create exactly one shared onboarding thread.
+8. Pika welcomes the person, directly summons each crew bot, and reviews the complete introduction package. Every bot gives a distinct practical example.
+9. Rewrite generic, repetitive, unclear, or example-free copy. Pixoid substitutes only when Pika is unavailable.
+10. Report actual verification and the shared thread link.
+
+## Boundaries
+
+- Use placeholders in public documentation. Never publish real human IDs, bot IDs, tokens, or ephemeral thread IDs.
+- Preserve existing authorization entries and unrelated profile settings.
+- A role assignment, webhook, profile name, YAML key, or passing repo test is not by itself proof of live inbound routing.
+- For cross-host documentation work, push review branches for the local coordinator to inspect before merge or deploy.
+
+## Related
+
+- [[concepts/multi-agent-multiplayer-boundaries|Multi-Agent Multiplayer Boundaries]]
+- [[concepts/peer-profiles-vs-child-processes|Peer Profiles vs Child Processes]]
+- [[concepts/agent-capability-route-pattern|Agent Capability Route Pattern]]
+- [[entities/hermes-mission-control|Hermes Mission Control]]
+- [[syntheses/pixoid-crew-operating-model|Pika/Pixoid Crew Operating Model]]
 
 
 <!-- ===== agent-workflows/wiki/concepts/effective-state-load.md ===== -->
@@ -1367,7 +1458,7 @@ Matt renamed the planning vocabulary to match the artifact: `/to-prd` became `/t
 ---
 title: Multi-Agent Multiplayer Boundaries
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-07-28
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -1397,9 +1488,9 @@ Use four explicit modes:
 
 | Mode | Contract | Default? |
 |---|---|---|
-| Coordinator mode | Pixoid owns the user thread, routes work, verifies results, and posts one final answer. | Yes |
-| Specialist mode | A direct `@Boba`, `@Quill`, or `@Tinker` call wakes only that named profile/route. | Yes |
-| Bounded huddle / workbench council | Pixoid opens a bounded huddle or workbench thread for agent discussion, closes on all-replied-or-timeout, then summarizes/decides. | Preferred for crew input |
+| Coordinator mode | Pika owns the user-facing thread and final review while available; Pixoid substitutes only when Pika is unavailable. | Yes |
+| Specialist mode | A direct `@Pixoid`, `@Boba`, `@Quill`, or `@Tinker` call wakes only that named bot-user route. | Yes |
+| Bounded huddle / workbench council | Pika opens/reuses a shared work thread; Pixoid may do so in fallback mode. The coordinator closes and synthesizes. | Preferred for crew input |
 | Direct multiplayer | Multiple live agents may speak in the same user thread. | Test-only / explicit opt-in |
 
 The core invariant:
@@ -1408,26 +1499,26 @@ The core invariant:
 user message -> route classifier -> one visible owner -> optional workers -> verified artifact -> one final answer
 ```
 
-## Implemented council-mode hardening (2026-06-29)
+## Historical council-mode hardening and current contract
 
-The 2026-06-29 Discord council-mode hardening slice turned the boundary model into live gateway behavior for Jamie's crew:
+The 2026-06-29 Discord council-mode hardening slice established the anti-dogpile and closed-loop safety baseline. The 2026-07-28 topology keeps those protections but supersedes the Pixoid-first default:
 
-- `@Crew` and crew text aliases route to Pixoid/default as coordinator; they do not wake every worker bot.
-- Direct `@Boba`, `@Quill`, and `@Tinker` remain specialist summons in approved channels/threads; they do not wake from untagged top-level-channel chatter.
-- Pixoid can open a bounded huddle, collect one short worker round, close on all-replied-or-timeout, and post one final answer to the original thread.
+- Pika is the primary user-facing coordinator/final reviewer while available; Pixoid is the VPS control plane and fallback orchestrator.
+- Direct bot-user mentions wake only the named route. Role mentions such as `@Crew` are not executable routes.
+- Pika can open or reuse one shared work thread; Pixoid may do so in fallback mode. Do not create one thread per bot.
 - Closed huddle route records are enforced in the adapter/gateway path: ambient worker/bot chatter after close is dropped before model invocation.
-- Discord reply pings do not count as direct summons unless the message text explicitly includes the bot mention or an owned council role mention.
-- Top-level shared channels can be stricter than huddle threads: `discord.channel_allow_bots: none` blocks bot/status chatter in channels while preserving `allow_bots: mentions` for thread handoffs. Worker profiles share Pixoid's approved room allowlist but still require direct mentions in top-level channels.
+- Discord reply pings do not count as direct summons unless the message text explicitly includes the target bot-user mention.
+- The effective VPS bot-ingress pair is `DISCORD_ALLOW_BOTS=mentions` plus `DISCORD_BOTS_REQUIRE_INLINE_MENTION=true`. YAML alone is not enough when the adapter reads environment values.
 - Prompt-level silence is a useful belt, not the lock. The lock is router-level suppression plus replay coverage.
 
 ## Boundary conditions
 
 ### 1. Summoning and routing
 
-- `@Crew` must not blindly wake every bot; it should wake Pixoid as coordinator unless direct multiplayer is explicitly enabled.
+- Role mentions must not wake bots. Directly mention Pika for coordination or the intended specialist bot-user for specialist work.
 - Role mentions, user mentions, text aliases, quoted messages, edited messages, replies, thread names, and topic metadata need separate trigger handling.
 - Agent replies should not accidentally summon other agents unless the route contract permits that chain.
-- Discord reply metadata is not enough to prove a direct summon; direct calls should be based on explicit textual bot/role mentions or a route-owned trigger.
+- Discord reply metadata is not enough to prove a direct summon; bot-authored direct calls require an explicit textual bot-user mention or a route-owned trigger with equivalent proof.
 - Webhook personas are outbound display identities only; they are not proof of an inbound, pingable agent route.
 - A crew request can mean opinions, delegation, workbench council, or live multiplayer; the route must classify which one before acting.
 
@@ -1435,13 +1526,13 @@ The 2026-06-29 Discord council-mode hardening slice turned the boundary model in
 
 - Without a single visible owner, agents duplicate answers, interrupt each other, debate endlessly, or bury the useful answer.
 - Each worker needs an explicit stop condition and return format.
-- The coordinator decides when enough input exists and closes the loop.
+- Pika decides when enough input exists and closes the loop while available; Pixoid does so only in fallback mode.
 - Closed route state must suppress post-close worker/bot chatter at the adapter or router layer; prompt-level silence is not sufficient.
 - Agent-to-agent discussion belongs in a workbench surface by default, not the main user thread.
 
 ### 3. Identity and accountability
 
-- Do not claim “Boba/Quill/Tinker did this” unless route evidence proves the requested profile, actual profile, trigger, artifact, verification proof, and Pixoid review.
+- Do not claim a named crew member did work unless route evidence proves the requested identity/profile, actual route, trigger, artifact, verification proof, and Pika/Pixoid review as required by topology.
 - Child/subagent analysis is useful, but it is not named peer-profile execution.
 - Profile memories, credentials, tool scopes, and delivery identities must not silently bleed across agents.
 - A model is not an identity; the identity lives in the profile, route, memory boundary, tools, and audit trail.
@@ -1487,10 +1578,12 @@ return format
 
 Weak handoffs cause agents to do housekeeping, duplicate research, or expand scope because they cannot infer the intended slice.
 
+Discord handoffs should stay under 1,800 characters. If splitting is unavoidable, every `PART n/N` must directly mention the recipient so no instruction segment is silently missed.
+
 ### 8. Verification and observability
 
 - Worker summaries are leads, not proof.
-- Pixoid or the route verifier must inspect changed files, tests, URLs, branch state, issue state, and delivery artifacts before reporting success.
+- Pixoid or the route verifier must inspect changed files, tests, URLs, branch state, issue state, and delivery artifacts before reporting success; Pika performs final review when available.
 - Every meaningful run should produce an observable record: event/route ID, owner, requested profile, actual profile, status, artifact, verification proof, and final delivery target.
 - Duplicate/out-of-order events, gateway restarts, retries, partial tool failures, rate limits, and stale cron deliveries need idempotency and status tracking.
 
@@ -1512,8 +1605,9 @@ Weak handoffs cause agents to do housekeeping, duplicate research, or expand sco
 
 A proper multiplayer agent system should have tests or replay traces for:
 
-- `@Crew` produces one Pixoid-owned answer.
-- Direct `@Boba`, `@Quill`, or `@Tinker` wakes only that specialist route.
+- Direct `@Pika` coordination produces one Pika-owned answer while Pika is available.
+- Direct `@Pixoid`, `@Boba`, `@Quill`, or `@Tinker` wakes only that named route.
+- Role mentions do not execute bot routes.
 - Mentions inside quotes, code blocks, historical messages, or agent replies do not accidentally trigger workers.
 - Duplicate Discord events are idempotent.
 - Out-of-order worker replies do not publish stale conclusions.
@@ -1521,7 +1615,7 @@ A proper multiplayer agent system should have tests or replay traces for:
 - Conflicting human instructions escalate instead of racing.
 - Direct multiplayer requires an explicit mode flag.
 - Parallel coding work uses separate branches/worktrees or an equivalent claim protocol.
-- Pixoid verifies artifacts before closure.
+- Pixoid verifies VPS artifacts before closure; Pika final-reviews when available.
 - Closed huddle threads drop ambient worker/bot messages before model invocation.
 - Discord reply pings after a huddle closes do not reopen the loop unless there is an explicit direct mention or approved reopen trigger.
 - All-replied and timeout closure paths both produce one final owner answer, not worker chatter.
@@ -1531,9 +1625,10 @@ A proper multiplayer agent system should have tests or replay traces for:
 Use this as the default policy:
 
 ```text
-Do not make @Crew wake every agent in the main thread.
-Make @Crew wake Pixoid.
-Pixoid decides whether to answer directly, ask one specialist, open a workbench council, or explicitly enter direct multiplayer test mode.
+Do not use role mentions as executable bot routes.
+Directly mention Pika for primary coordination.
+Pika decides whether to answer, ask one specialist, or use one shared work thread.
+If Pika is unavailable, Pixoid becomes the coordinator and verifier.
 ```
 
 That preserves the multiplayer feel while keeping source truth, accountability, and attention under control.
@@ -1553,7 +1648,7 @@ That preserves the multiplayer feel while keeping source truth, accountability, 
 ---
 title: Peer Profiles vs Child Processes
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-28
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -1568,7 +1663,7 @@ confidence: high
 
 ## Definition
 
-Jamie’s named crew agents are **peer Hermes profiles by default**, not Pixoid-owned child processes.
+Jamie’s named crew agents are **peer Hermes identities/routes by default**, not Pixoid-owned child processes. Active Pika coordinates from Jamie's local desktop; Pixoid and specialist profiles operate on the VPS.
 
 Peer profiles have their own identity surface, memory boundary, tool configuration, and route evidence. Child processes or `delegate_task` subagents are temporary workers inside the current session; they can analyze, draft, or review, but they do not prove that a named peer profile executed work.
 
@@ -1581,7 +1676,7 @@ Use the distinction this way:
 | Peer Hermes profile | Named crew execution with profile identity, credentials, memory boundary, route logs, and durable audit requirements. | Fast in-session synthesis when no real profile route is needed. |
 | Child/subagent process | Local read-only research, drafting, compatibility review, or linting that Pixoid will synthesize and verify. | Claiming “Tinker/Quill/Boba did this,” persistent route proof, profile-specific credentials, or live side effects. |
 
-Pixoid remains the control plane: clarify scope, route work, verify output, and report to Jamie. Named peers may execute bounded work when an [[agent-capability-route-pattern]] exists and current authorization allows it.
+Pika remains the primary user-facing coordinator/final reviewer while available. Pixoid remains the VPS control plane, verifies output, and substitutes as coordinator only when Pika is unavailable. Named peers execute bounded work when an [[agent-capability-route-pattern]] exists and current authorization allows it.
 
 ## Application
 
@@ -1592,7 +1687,7 @@ Before saying a named peer did work, verify route evidence:
 3. route trigger or handoff;
 4. output artifact;
 5. verification proof;
-6. Pixoid review or closure comment.
+6. required Pixoid verification and Pika final review for the current topology.
 
 If those are absent, describe the work as child-subagent analysis, local synthesis, or Pixoid-authored output.
 
@@ -2160,11 +2255,11 @@ It complements [[matt-pocock-sdlc-rhythm]]: `/prototype` tests experiential unkn
 ---
 title: Hermes Mission Control
 created: 2026-06-16
-updated: 2026-06-29
+updated: 2026-07-28
 type: entity
 status: compiled
 namespace: agent-workflows
-tags: [agent-workflows, hermes, pixoid, route-governance]
+tags: [agent-workflows, hermes, pika, pixoid, route-governance]
 sources:
   - Projects/Hermes Mission Control/Index.md
   - Projects/Hermes Mission Control/kpr-pixoid-routing-rule.md
@@ -2174,16 +2269,17 @@ confidence: medium
 
 # Hermes Mission Control
 
-**Hermes Mission Control** is Jamie's agent-ops coordination hub for the Pixoid crew: Pixoid, Quill, Tinker, and Boba.
+**Hermes Mission Control** is Jamie's agent-ops coordination hub for Pika, Pixoid, Tinker, Quill, and Boba across a local-desktop/VPS topology.
 
 Its primary namespace is `agent-workflows` because the durable knowledge is not the public wiki itself. The durable knowledge is how agents coordinate work: route governance, persona boundaries, issue-backed execution, handoffs, review gates, and durable truth routing.
 
 ## Crew roles
 
-- **Pixoid:** orchestrator, reviewer, route owner, final verifier.
+- **Pika:** local-desktop primary user-facing coordinator and final reviewer when available.
+- **Pixoid:** VPS control plane, route verifier, and fallback orchestrator when Pika is unavailable.
 - **Tinker:** builder for bounded implementation slices.
 - **Quill:** scribe for vault/docs updates and compiled knowledge pages.
-- **Boba:** explorer/researcher for external signal and reality checks.
+- **Boba:** researcher and reality checker for external signal.
 
 ## What it controls
 
@@ -2191,28 +2287,29 @@ Its primary namespace is `agent-workflows` because the durable knowledge is not 
 - GitHub issue/PR coordination as durable work truth.
 - Obsidian/Git as knowledge and project truth.
 - Discord as notification surface, not durable truth.
-- Discord council-mode routing: `@Crew`/crew aliases call Pixoid as coordinator by default; direct worker mentions call individual profiles; bounded huddles collect one worker round, close deterministically, and suppress post-close worker chatter at the gateway layer.
+- Discord routing/onboarding: direct bot-user mentions call the named route; role mentions do not execute; `Onboard <Discord user ID>` uses one shared thread and active-profile verification.
 - Cron output as context, not canonical project state.
 - Verification gates before tracker closure.
 
 
-## Pixoid Review Surface
+## Pika/Pixoid Review Surface
 
-Interaction Mode Routing clarifies that chat is the command channel, not the whole Hermes interface. Pixoid should generate small review/control surfaces when Jamie needs to approve or steer work, while durable truth remains in GitHub issues/PRs, Obsidian hubs, handoffs, skills, and knowledge entrypoints.
+Interaction Mode Routing clarifies that chat is the command channel, not the whole Hermes interface. Pixoid generates inspectable VPS artifacts and review branches; Pika performs final review when available. Durable truth remains in GitHub issues/PRs, Obsidian hubs, handoffs, skills, and knowledge entrypoints.
 
 The standard review surface includes status, evidence, risks, files/handles, verification run, options, and Pixoid's recommended next slice.
 
 ## Discord council-mode hardening milestone
 
-As of 2026-06-29, the stable Discord contract is coordinator-first and gateway-enforced:
+The 2026-06-29 slice established anti-dogpile and closed-loop protections. The current 2026-07-28 contract is topology-aware and direct-mention-only:
 
-- `@Crew` / `<@&1521188694915158078>` is a Pixoid/default coordinator call.
-- `crew:`, `get the crew`, and `calling the crew` are Pixoid/default text aliases.
-- `@Boba`, `@Quill`, and `@Tinker` are direct specialist calls in approved channels/threads; they do not answer ambient top-level-channel chatter.
-- If Pixoid needs visible crew discussion, it opens a bounded huddle tied to the triggering message/origin, waits for one short worker round or timeout, closes the huddle, and returns one final answer.
+- Direct `@Pika` calls use Pika as primary coordinator/final reviewer while available.
+- Direct `@Pixoid`, `@Boba`, `@Quill`, and `@Tinker` calls wake only the named bot-user route.
+- Role mentions such as `@Crew` are labels, not executable bot routes.
+- Pika may open/reuse one shared work thread; Pixoid does so only in fallback mode. Onboarding never creates one thread per bot.
 - Closed huddle threads suppress ambient worker/bot chatter before model invocation; prompt-level silence is not the enforcement layer.
-- Discord reply pings are not direct summons unless the message text explicitly mentions the bot or an owned council role.
-- Re-adding the shared `Crew` role to all worker bots is not the default because it causes duplicate independent work in the user thread.
+- Discord reply pings are not direct summons unless the message text explicitly mentions the target bot-user.
+- Active VPS profiles use `DISCORD_ALLOW_BOTS=mentions` plus `DISCORD_BOTS_REQUIRE_INLINE_MENTION=true`; YAML presence alone is not runtime proof.
+- Outbound webhooks provide display identity only and do not prove inbound execution.
 
 ## Routing significance
 
@@ -2264,6 +2361,7 @@ namespace: agent-workflows
 - [[concepts/compound-engineering-skill-layer|Compound Engineering Skill Layer]] — Guide for using EveryInc Compound Engineering skills inside Hermes and routing them against Jamie's existing skill stack.
 - Cross-namespace concept: [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]] — Selects the smallest effective Hermes surface for a task before work becomes a skill, subagent, cron, gateway/API, MCP/plugin, profile, kanban, provider, or vault/Pixi Wiki route.
 - [[concepts/creative-ideation-routing|Creative Ideation Routing]] — Method-routed inspiration loop for using the `creative-ideation` skill without generic brainstorming.
+- [[concepts/discord-crew-onboarding|Discord Crew Onboarding Contract]] — Idempotent user allowlisting, direct-mention routing, inline bot-mention safety, bounded read-only retries, no duplicate side effects, one shared welcome thread, Pika/Pixoid fallback, and cross-host review branches.
 - [[concepts/reader-centered-outreach-asks|Reader-Centered Outreach Asks]] — Cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific bounded ask, easy no, and no lies.
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] — Product/refactor lens that also defines Hermes review/control surfaces.
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]] — Compress verbose agent output into concise, visual, source-backed review/control artifacts when users need to decide, approve, compare, or steer.
@@ -2286,7 +2384,7 @@ namespace: agent-workflows
 
 ## Entities
 
-- [[entities/hermes-mission-control|Hermes Mission Control]] — Agent-ops coordination hub for Pixoid crew route governance, delivery boundaries, and durable work truth.
+- [[entities/hermes-mission-control|Hermes Mission Control]] — Agent-ops coordination hub for Pika/Pixoid topology, Discord onboarding, route governance, delivery boundaries, and durable work truth.
 
 ## Summaries
 
@@ -2297,7 +2395,7 @@ namespace: agent-workflows
 ## Syntheses
 
 - [[syntheses/markdown-first-agent-memory|Markdown-First Agent Memory]] — Why visible, versioned Markdown/issues/skills should carry durable operational knowledge before hidden infrastructure.
-- [[syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — Crew roles, source-of-truth boundaries, route rules, and verification gates.
+- [[syntheses/pixoid-crew-operating-model|Pika/Pixoid Crew Operating Model]] — Pika coordination, Pixoid VPS/fallback execution, specialist roles, source-of-truth boundaries, route rules, and verification gates.
 
 ## Source Roots
 
@@ -2325,6 +2423,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `Knowledge/concepts/discord-crew-onboarding.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/visual-plan-review-surfaces.md`
 - `Knowledge/concepts/multi-agent-multiplayer-boundaries.md`
@@ -2350,6 +2449,19 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-28 update | Onboarding retry and idempotency boundary
+
+- Added bounded retries for transient read-only lookup or verification failures, including HTTP 500 responses.
+- Prohibited repeating allowlist mutations, gateway restarts, thread creation, or message posts unless verification proves the first mutation did not occur.
+- Kept ambiguous mutation outcomes fail-closed: verify state or escalate rather than duplicate a side effect.
+
+## 2026-07-28 create/update | Discord crew onboarding and topology
+
+- Added `wiki/concepts/discord-crew-onboarding.md` with the public-safe `Onboard <Discord user ID>` contract.
+- Updated current crew truth: local-desktop Pika coordinates and final-reviews; VPS Pixoid executes/verifies and falls back; Tinker builds; Quill writes; Boba researches and reality-checks.
+- Recorded direct bot-user mentions as executable routes, role mentions/webhooks as non-routes, the inline bot-mention safety pair, one-shared-thread rule, and remote review-branch boundary.
+- Preserved 2026-06-29 council-mode work as a historical anti-dogpile/closed-loop baseline rather than current Pixoid-first policy.
 
 ## 2026-07-28 create | Executable Agent Worlds
 
@@ -2569,7 +2681,7 @@ namespace: agent-workflows
 ---
 title: Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-07-28
 type: summary
 status: compiled
 namespace: agent-workflows
@@ -2596,7 +2708,8 @@ Jamie's agent workflow system turns a human request in Discord into routed, insp
 
 ```text
 human request
-→ Pixoid route selection
+→ Pika coordination/final review when available
+→ Pixoid VPS execution/verification or fallback coordination
 → skills / tools / subagents / cron / MCP-style knowledge access
 → GitHub, Obsidian, and Pixi Wiki as durable truth surfaces
 → verification before final answer, closure, merge, or deploy
@@ -2610,8 +2723,9 @@ The product lesson is simple: agents become useful when the building system make
 - **Runtime/capability routing:** [Hermes Capability Routing](/pixi-wiki/wiki/hermes-agent/wiki/concepts/hermes-capability-routing.md.html) maps tasks to direct tools, scripts, skills, subagents, cron, MCP/plugins, gateway routes, or durable knowledge updates.
 - **Agent delegation:** [Agent Capability Route Pattern](/pixi-wiki/wiki/agent-workflows/wiki/concepts/agent-capability-route-pattern.md.html) defines trigger → profile/capability → bounded execution → artifact → verification.
 - **Multi-agent coordination:** [Multi-Agent Multiplayer Boundaries](/pixi-wiki/wiki/agent-workflows/wiki/concepts/multi-agent-multiplayer-boundaries.md.html) captures coordinator mode, specialist mode, workbench huddles, direct multiplayer risks, and suppression of noisy worker chatter.
-- **Control plane:** [Hermes Mission Control](/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html) documents Pixoid/Tinker/Quill/Boba roles, Discord routing, GitHub issue/PR truth, and verification gates.
-- **Operating model:** [Pixoid Crew Operating Model](/pixi-wiki/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html) explains how work moves across route selection, source-of-truth checks, memory boundaries, and review.
+- **Control plane:** [Hermes Mission Control](/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html) documents Pika/Pixoid/Tinker/Quill/Boba roles, Discord routing/onboarding, GitHub issue/PR truth, and verification gates.
+- **Operating model:** [Pika/Pixoid Crew Operating Model](/pixi-wiki/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html) explains local coordination, VPS execution/fallback, source-of-truth checks, memory boundaries, and review.
+- **Discord onboarding:** [Discord Crew Onboarding Contract](/pixi-wiki/wiki/agent-workflows/wiki/concepts/discord-crew-onboarding.md.html) defines idempotent allowlisting, direct-mention routing, bot-ingress safety, one shared welcome thread, and cross-host review.
 - **Planning agents as tools:** [Agent Tooling Plan](/pixi-wiki/wiki/agent-workflows/wiki/concepts/agent-tooling-plan.md.html) turns vague or clear requests into task buckets, tools, routing rules, memory, evaluation, permissions, and smallest proving loops.
 - **Durable knowledge for agents:** [Markdown-First Agent Memory](/pixi-wiki/wiki/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md.html) and [Knowledge Pack Routing](/pixi-wiki/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html) keep agent context visible, versioned, citeable, and reusable.
 
@@ -2619,7 +2733,7 @@ The product lesson is simple: agents become useful when the building system make
 
 This work is not just "using agents." The product judgment is in the boundaries:
 
-- one visible owner for the user-facing thread;
+- one visible owner for the user-facing thread, with Pika primary and Pixoid fallback;
 - explicit route contracts instead of unbounded agent autonomy;
 - skills as reusable operating procedures, not prompt vibes;
 - GitHub issues, PRs, Obsidian, and Pixi Wiki as durable truth surfaces;
@@ -2631,13 +2745,13 @@ This work is not just "using agents." The product judgment is in the boundaries:
 
 The hard parts have been product and systems tradeoffs, not just wiring tools together:
 
-- Coordination vs agent noise — direct multiplayer feels powerful, but it can create duplicate work and noisy threads. The system now favors Pixoid as one visible coordinator, with bounded huddles only when specialist input is useful.
-- Convenience vs trigger precision — role mentions, reply pings, bot-authored chatter, and thread metadata can accidentally wake the wrong agent. The routing layer needs explicit summons, channel controls, and closed-loop suppression before model invocation.
+- Coordination vs agent noise — direct multiplayer feels powerful, but it can create duplicate work and noisy threads. The system favors Pika as the visible coordinator, Pixoid as fallback, and one shared work thread only when specialist input is useful.
+- Convenience vs trigger precision — role mentions, reply pings, bot-authored chatter, and thread metadata can accidentally wake the wrong agent. Direct bot-user mentions, inline bot-mention enforcement, and closed-loop suppression are required before model invocation.
 - Builder speed vs trust — agents can move fast, but outputs only become durable after verification: changed files, tests, links, GitHub state, and source-truth checks.
 - Local knowledge vs shareable surfaces — Pixi Wiki keeps the same knowledge usable by humans and agents through browsable pages, raw Markdown, indexes, and local MCP-style retrieval.
 - Custom workflows vs scale — the repeatable unit is a route, skill, template, or scheduled job: define the trigger, allowed actions, artifact, owner, stop condition, and verification handle so one builder workflow can become a team workflow.
 
-A concrete implementation example is the [Discord council and bot routing hardening PR](https://github.com/NousResearch/hermes-agent/pull/55200), which came from a real product problem: `@Crew` should create coordinated progress, not wake every worker into the same user thread. That work maps directly to [Multi-Agent Multiplayer Boundaries](/pixi-wiki/wiki/agent-workflows/wiki/concepts/multi-agent-multiplayer-boundaries.md.html) and [Hermes Mission Control](/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html).
+A concrete implementation example is the [Discord council and bot routing hardening PR](https://github.com/NousResearch/hermes-agent/pull/55200), which came from a real product problem: a shared role must not wake every worker into the same thread. The current contract goes further by treating roles as labels and requiring direct bot-user mentions. That work maps to [Multi-Agent Multiplayer Boundaries](/pixi-wiki/wiki/agent-workflows/wiki/concepts/multi-agent-multiplayer-boundaries.md.html) and [Hermes Mission Control](/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html).
 
 ## How it maps to a Founding PM, Agents role
 
@@ -2755,13 +2869,13 @@ The danger is treating written context as commandment. Packs and notes are routi
 <!-- ===== agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md ===== -->
 
 ---
-title: Pixoid Crew Operating Model
+title: Pika/Pixoid Crew Operating Model
 created: 2026-06-16
-updated: 2026-06-29
+updated: 2026-07-28
 type: synthesis
 status: compiled
 namespace: agent-workflows
-tags: [agent-workflows, pixoid, crew, source-of-truth]
+tags: [agent-workflows, pika, pixoid, crew, source-of-truth]
 sources:
   - Projects/Hermes Mission Control/Index.md
   - Knowledge/concepts/profile-memory-boundaries.md
@@ -2771,9 +2885,9 @@ sources:
 confidence: high
 ---
 
-# Pixoid Crew Operating Model
+# Pika/Pixoid Crew Operating Model
 
-The Pixoid crew operates as a set of bounded peer roles coordinated through durable source-of-truth surfaces. Pixoid is the control plane; Tinker builds; Quill maintains vault/source truth; Boba explores public sources and reality-checks signals.
+Jamie's crew operates as bounded peer roles across two hosts. Pika coordinates and final-reviews from the local desktop when available. Pixoid runs the VPS control plane, verifies artifacts, and becomes fallback orchestrator when Pika is unavailable. Tinker builds; Quill maintains source truth; Boba researches and reality-checks.
 
 ## Operating contract
 
@@ -2791,20 +2905,21 @@ The model is about how work moves through the crew: route selection, source-of-t
 
 1. **Route by source of truth.** Use GitHub for work coordination, Obsidian for knowledge/project truth, skills for procedures, and memory only for compact stable routing facts.
 2. **Prefer peer profiles for named crew work.** Use child/subagent execution only as a local fallback and label it honestly.
-3. **Verify before closing.** Pixoid checks changed files, tests, live URLs, issue state, and pushed commits before reporting success.
+3. **Verify before closing.** Pixoid checks changed files, tests, URLs, branches, issue state, and pushed commits; Pika final-reviews when available.
 4. **Promote durable learning carefully.** Evidence must justify whether a lesson belongs in a dossier, concept page, skill, prompt, project hub, or memory pointer.
-5. **Separate coordinator mode from multiplayer mode.** `@Crew` is a Pixoid coordinator call by default, not a request for every live bot gateway to solve the same user message independently.
+5. **Separate coordinator mode from specialist routing.** Directly mention Pika for coordination or the intended bot-user for specialist work. Role mentions do not execute routes.
 
 ## Discord crew interaction modes
 
 | Mode | Trigger | Contract |
 |---|---|---|
-| Coordinator | `@Crew`, `crew:`, `get the crew`, `calling the crew` | Pixoid handles the user-facing thread, creates/reuses a topic workbench thread when useful, gathers crew input, and posts one final answer. |
-| Specialist | `@Boba`, `@Quill`, `@Tinker` | Only the named profile replies directly. |
-| Workbench council / bounded huddle | Pixoid-created huddle tied to the triggering message/origin | Worker profiles respond once to a bounded prompt; Pixoid closes on all-replied-or-timeout and posts one final answer. |
+| Coordinator | Direct `@Pika` request | Pika owns the user-facing thread and final review while available. |
+| Fallback coordinator | Pika unavailable | Pixoid routes, verifies, and returns one final answer from the VPS. |
+| Specialist | Direct `@Pixoid`, `@Boba`, `@Quill`, or `@Tinker` | Only the named route replies directly. |
+| Shared work thread | Pika-created/reused thread; Pixoid may substitute | Workers respond to bounded direct mentions; one coordinator closes and synthesizes. |
 | Direct multiplayer | Shared role assigned to all bots | Not default. It caused duplicate independent investigations and should only be enabled intentionally for tests. |
 
-The live 2026-06-29 Discord milestone proved that role mentions and human mentions arrive in different Discord fields (`message.role_mentions` vs `message.mentions`) and that prompt-level worker silence fails under reply-ping/runtime-notice loops. The adapter fixes therefore enforce both summon parsing and closure state: shared crew summons should not wake all peer profiles into the same user thread, closed huddle worker chatter is dropped before model invocation, and reply pings do not reopen the loop without an explicit direct mention or approved reopen trigger.
+The 2026-06-29 Discord milestone proved that role mentions and user mentions arrive in different fields and that prompt-level silence fails under reply-ping/runtime-notice loops. The current contract therefore treats role mentions as non-executable, requires direct bot-user mentions, and enforces `DISCORD_ALLOW_BOTS=mentions` plus `DISCORD_BOTS_REQUIRE_INLINE_MENTION=true` for VPS bot handoffs. Reply chips alone cannot wake another bot.
 
 ## Cross-namespace links
 

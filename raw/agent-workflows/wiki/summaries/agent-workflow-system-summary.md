@@ -1,7 +1,7 @@
 ---
 title: Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-07-28
 type: summary
 status: compiled
 namespace: agent-workflows
@@ -28,7 +28,8 @@ Jamie's agent workflow system turns a human request in Discord into routed, insp
 
 ```text
 human request
-→ Pixoid route selection
+→ Pika coordination/final review when available
+→ Pixoid VPS execution/verification or fallback coordination
 → skills / tools / subagents / cron / MCP-style knowledge access
 → GitHub, Obsidian, and Pixi Wiki as durable truth surfaces
 → verification before final answer, closure, merge, or deploy
@@ -42,8 +43,9 @@ The product lesson is simple: agents become useful when the building system make
 - **Runtime/capability routing:** [Hermes Capability Routing](/pixi-wiki/wiki/hermes-agent/wiki/concepts/hermes-capability-routing.md.html) maps tasks to direct tools, scripts, skills, subagents, cron, MCP/plugins, gateway routes, or durable knowledge updates.
 - **Agent delegation:** [Agent Capability Route Pattern](/pixi-wiki/wiki/agent-workflows/wiki/concepts/agent-capability-route-pattern.md.html) defines trigger → profile/capability → bounded execution → artifact → verification.
 - **Multi-agent coordination:** [Multi-Agent Multiplayer Boundaries](/pixi-wiki/wiki/agent-workflows/wiki/concepts/multi-agent-multiplayer-boundaries.md.html) captures coordinator mode, specialist mode, workbench huddles, direct multiplayer risks, and suppression of noisy worker chatter.
-- **Control plane:** [Hermes Mission Control](/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html) documents Pixoid/Tinker/Quill/Boba roles, Discord routing, GitHub issue/PR truth, and verification gates.
-- **Operating model:** [Pixoid Crew Operating Model](/pixi-wiki/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html) explains how work moves across route selection, source-of-truth checks, memory boundaries, and review.
+- **Control plane:** [Hermes Mission Control](/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html) documents Pika/Pixoid/Tinker/Quill/Boba roles, Discord routing/onboarding, GitHub issue/PR truth, and verification gates.
+- **Operating model:** [Pika/Pixoid Crew Operating Model](/pixi-wiki/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html) explains local coordination, VPS execution/fallback, source-of-truth checks, memory boundaries, and review.
+- **Discord onboarding:** [Discord Crew Onboarding Contract](/pixi-wiki/wiki/agent-workflows/wiki/concepts/discord-crew-onboarding.md.html) defines idempotent allowlisting, direct-mention routing, bot-ingress safety, one shared welcome thread, and cross-host review.
 - **Planning agents as tools:** [Agent Tooling Plan](/pixi-wiki/wiki/agent-workflows/wiki/concepts/agent-tooling-plan.md.html) turns vague or clear requests into task buckets, tools, routing rules, memory, evaluation, permissions, and smallest proving loops.
 - **Durable knowledge for agents:** [Markdown-First Agent Memory](/pixi-wiki/wiki/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md.html) and [Knowledge Pack Routing](/pixi-wiki/wiki/agent-workflows/wiki/concepts/knowledge-pack-routing.md.html) keep agent context visible, versioned, citeable, and reusable.
 
@@ -51,7 +53,7 @@ The product lesson is simple: agents become useful when the building system make
 
 This work is not just "using agents." The product judgment is in the boundaries:
 
-- one visible owner for the user-facing thread;
+- one visible owner for the user-facing thread, with Pika primary and Pixoid fallback;
 - explicit route contracts instead of unbounded agent autonomy;
 - skills as reusable operating procedures, not prompt vibes;
 - GitHub issues, PRs, Obsidian, and Pixi Wiki as durable truth surfaces;
@@ -63,13 +65,13 @@ This work is not just "using agents." The product judgment is in the boundaries:
 
 The hard parts have been product and systems tradeoffs, not just wiring tools together:
 
-- Coordination vs agent noise — direct multiplayer feels powerful, but it can create duplicate work and noisy threads. The system now favors Pixoid as one visible coordinator, with bounded huddles only when specialist input is useful.
-- Convenience vs trigger precision — role mentions, reply pings, bot-authored chatter, and thread metadata can accidentally wake the wrong agent. The routing layer needs explicit summons, channel controls, and closed-loop suppression before model invocation.
+- Coordination vs agent noise — direct multiplayer feels powerful, but it can create duplicate work and noisy threads. The system favors Pika as the visible coordinator, Pixoid as fallback, and one shared work thread only when specialist input is useful.
+- Convenience vs trigger precision — role mentions, reply pings, bot-authored chatter, and thread metadata can accidentally wake the wrong agent. Direct bot-user mentions, inline bot-mention enforcement, and closed-loop suppression are required before model invocation.
 - Builder speed vs trust — agents can move fast, but outputs only become durable after verification: changed files, tests, links, GitHub state, and source-truth checks.
 - Local knowledge vs shareable surfaces — Pixi Wiki keeps the same knowledge usable by humans and agents through browsable pages, raw Markdown, indexes, and local MCP-style retrieval.
 - Custom workflows vs scale — the repeatable unit is a route, skill, template, or scheduled job: define the trigger, allowed actions, artifact, owner, stop condition, and verification handle so one builder workflow can become a team workflow.
 
-A concrete implementation example is the [Discord council and bot routing hardening PR](https://github.com/NousResearch/hermes-agent/pull/55200), which came from a real product problem: `@Crew` should create coordinated progress, not wake every worker into the same user thread. That work maps directly to [Multi-Agent Multiplayer Boundaries](/pixi-wiki/wiki/agent-workflows/wiki/concepts/multi-agent-multiplayer-boundaries.md.html) and [Hermes Mission Control](/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html).
+A concrete implementation example is the [Discord council and bot routing hardening PR](https://github.com/NousResearch/hermes-agent/pull/55200), which came from a real product problem: a shared role must not wake every worker into the same thread. The current contract goes further by treating roles as labels and requiring direct bot-user mentions. That work maps to [Multi-Agent Multiplayer Boundaries](/pixi-wiki/wiki/agent-workflows/wiki/concepts/multi-agent-multiplayer-boundaries.md.html) and [Hermes Mission Control](/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html).
 
 ## How it maps to a Founding PM, Agents role
 

@@ -1,11 +1,11 @@
 ---
-title: Pixoid Crew Operating Model
+title: Pika/Pixoid Crew Operating Model
 created: 2026-06-16
-updated: 2026-06-29
+updated: 2026-07-28
 type: synthesis
 status: compiled
 namespace: agent-workflows
-tags: [agent-workflows, pixoid, crew, source-of-truth]
+tags: [agent-workflows, pika, pixoid, crew, source-of-truth]
 sources:
   - Projects/Hermes Mission Control/Index.md
   - Knowledge/concepts/profile-memory-boundaries.md
@@ -15,9 +15,9 @@ sources:
 confidence: high
 ---
 
-# Pixoid Crew Operating Model
+# Pika/Pixoid Crew Operating Model
 
-The Pixoid crew operates as a set of bounded peer roles coordinated through durable source-of-truth surfaces. Pixoid is the control plane; Tinker builds; Quill maintains vault/source truth; Boba explores public sources and reality-checks signals.
+Jamie's crew operates as bounded peer roles across two hosts. Pika coordinates and final-reviews from the local desktop when available. Pixoid runs the VPS control plane, verifies artifacts, and becomes fallback orchestrator when Pika is unavailable. Tinker builds; Quill maintains source truth; Boba researches and reality-checks.
 
 ## Operating contract
 
@@ -35,20 +35,21 @@ The model is about how work moves through the crew: route selection, source-of-t
 
 1. **Route by source of truth.** Use GitHub for work coordination, Obsidian for knowledge/project truth, skills for procedures, and memory only for compact stable routing facts.
 2. **Prefer peer profiles for named crew work.** Use child/subagent execution only as a local fallback and label it honestly.
-3. **Verify before closing.** Pixoid checks changed files, tests, live URLs, issue state, and pushed commits before reporting success.
+3. **Verify before closing.** Pixoid checks changed files, tests, URLs, branches, issue state, and pushed commits; Pika final-reviews when available.
 4. **Promote durable learning carefully.** Evidence must justify whether a lesson belongs in a dossier, concept page, skill, prompt, project hub, or memory pointer.
-5. **Separate coordinator mode from multiplayer mode.** `@Crew` is a Pixoid coordinator call by default, not a request for every live bot gateway to solve the same user message independently.
+5. **Separate coordinator mode from specialist routing.** Directly mention Pika for coordination or the intended bot-user for specialist work. Role mentions do not execute routes.
 
 ## Discord crew interaction modes
 
 | Mode | Trigger | Contract |
 |---|---|---|
-| Coordinator | `@Crew`, `crew:`, `get the crew`, `calling the crew` | Pixoid handles the user-facing thread, creates/reuses a topic workbench thread when useful, gathers crew input, and posts one final answer. |
-| Specialist | `@Boba`, `@Quill`, `@Tinker` | Only the named profile replies directly. |
-| Workbench council / bounded huddle | Pixoid-created huddle tied to the triggering message/origin | Worker profiles respond once to a bounded prompt; Pixoid closes on all-replied-or-timeout and posts one final answer. |
+| Coordinator | Direct `@Pika` request | Pika owns the user-facing thread and final review while available. |
+| Fallback coordinator | Pika unavailable | Pixoid routes, verifies, and returns one final answer from the VPS. |
+| Specialist | Direct `@Pixoid`, `@Boba`, `@Quill`, or `@Tinker` | Only the named route replies directly. |
+| Shared work thread | Pika-created/reused thread; Pixoid may substitute | Workers respond to bounded direct mentions; one coordinator closes and synthesizes. |
 | Direct multiplayer | Shared role assigned to all bots | Not default. It caused duplicate independent investigations and should only be enabled intentionally for tests. |
 
-The live 2026-06-29 Discord milestone proved that role mentions and human mentions arrive in different Discord fields (`message.role_mentions` vs `message.mentions`) and that prompt-level worker silence fails under reply-ping/runtime-notice loops. The adapter fixes therefore enforce both summon parsing and closure state: shared crew summons should not wake all peer profiles into the same user thread, closed huddle worker chatter is dropped before model invocation, and reply pings do not reopen the loop without an explicit direct mention or approved reopen trigger.
+The 2026-06-29 Discord milestone proved that role mentions and user mentions arrive in different fields and that prompt-level silence fails under reply-ping/runtime-notice loops. The current contract therefore treats role mentions as non-executable, requires direct bot-user mentions, and enforces `DISCORD_ALLOW_BOTS=mentions` plus `DISCORD_BOTS_REQUIRE_INLINE_MENTION=true` for VPS bot handoffs. Reply chips alone cannot wake another bot.
 
 ## Cross-namespace links
 
