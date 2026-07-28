@@ -29,7 +29,7 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/README.md.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/agent-capability-route-pattern.md.html</loc>
@@ -66,6 +66,10 @@
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/effective-state-load.md.html</loc>
     <lastmod>2026-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/executable-agent-worlds.md.html</loc>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html</loc>
@@ -133,11 +137,11 @@
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/index.md.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/log.md.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://pixiiidust.github.io/pixi-wiki/wiki/agent-workflows/wiki/summaries/agent-workflow-system-summary.md.html</loc>

@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows — Activity Log
 created: 2026-06-16
-updated: 2026-07-20
+updated: 2026-07-28
 type: log
 status: compiled
 namespace: agent-workflows
@@ -10,6 +10,13 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-28 create | Executable Agent Worlds
+
+- Added `wiki/concepts/executable-agent-worlds.md` from the canonical Knowledge concept and the exploratory Discord brainstorm.
+- Preserved the four-layer boundary: software understanding, runtime adapter, agent organization, and event/evaluation.
+- Kept Ghidra MCP in the discovery layer and required a separate adapter for live state and actions.
+- Marked Dune II as an intuition pump, not a selected implementation, and linked stronger emergence claims to Eval Trace evidence gates.
 
 ## 2026-07-20 create | Verb-First vs Noun-First: Actions Before Labels
 
