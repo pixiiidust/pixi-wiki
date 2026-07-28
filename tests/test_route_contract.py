@@ -171,6 +171,12 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         html = (ROOT / "wiki" / "agent-workflows" / f"{path}.html").read_text(encoding="utf-8")
         self.assertIn("Onboard <Discord user ID>", raw)
         self.assertIn("DISCORD_BOTS_REQUIRE_INLINE_MENTION=true", raw)
+        self.assertIn("including HTTP 500 responses", raw)
+        self.assertIn("at most three attempts with bounded backoff", raw)
+        self.assertIn(
+            "Never repeat an allowlist mutation, gateway restart, thread creation, or message post unless verification proves the first mutation did not occur.",
+            raw,
+        )
         self.assertNotRegex(raw, r"\b\d{17,20}\b")
         self.assertIn(
             'href="/pixi-wiki/wiki/agent-workflows/wiki/entities/hermes-mission-control.md.html"',

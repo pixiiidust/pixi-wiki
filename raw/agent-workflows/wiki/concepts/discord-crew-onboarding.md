@@ -42,6 +42,12 @@ DISCORD_BOTS_REQUIRE_INLINE_MENTION=true
 
 Apply the pair to each affected active VPS profile, preserve existing users/tokens/unrelated settings, restart gateways sequentially, and verify fresh process IDs plus safe config readback.
 
+## Retry and side-effect idempotency
+
+- Transient read-only lookup or verification failures, including HTTP 500 responses, may receive at most three attempts with bounded backoff.
+- Never repeat an allowlist mutation, gateway restart, thread creation, or message post unless verification proves the first mutation did not occur.
+- Before any mutation retry, read back the relevant state: allowlist membership, process ID/start time, existing active onboarding threads, or the target message. If the outcome remains ambiguous, stop and escalate rather than risking duplicate side effects.
+
 ## Reusable trigger
 
 ```text

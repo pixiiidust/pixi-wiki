@@ -21,7 +21,7 @@
 <h1 id="discord-crew-onboarding-contract">Discord Crew Onboarding Contract<a class="heading-anchor" href="#discord-crew-onboarding-contract" aria-label="Link to this section">¶</a></h1>
 <div class="page-meta"><div><span>type</span>: concept</div><div><span>confidence</span>: high</div><div><span>updated</span>: 2026-07-28</div><div><span>status</span>: compiled</div><div><span>namespace</span>: agent-workflows</div><div><span>sources</span>: 2</div></div>
 <p>Discord crew onboarding is an idempotent route that turns one validated Discord user ID into verified access to an active Hermes crew, then welcomes that person in one shared thread.</p>
-<nav class="page-toc"><div class="page-toc-title">On this page</div><ul><li class="page-toc-h2"><a href="#crew-and-topology">Crew and topology</a></li><li class="page-toc-h2"><a href="#routing-invariants">Routing invariants</a></li><li class="page-toc-h2"><a href="#effective-vps-safety-pair">Effective VPS safety pair</a></li><li class="page-toc-h2"><a href="#reusable-trigger">Reusable trigger</a></li><li class="page-toc-h2"><a href="#boundaries">Boundaries</a></li><li class="page-toc-h2"><a href="#related">Related</a></li></ul></nav>
+<nav class="page-toc"><div class="page-toc-title">On this page</div><ul><li class="page-toc-h2"><a href="#crew-and-topology">Crew and topology</a></li><li class="page-toc-h2"><a href="#routing-invariants">Routing invariants</a></li><li class="page-toc-h2"><a href="#effective-vps-safety-pair">Effective VPS safety pair</a></li><li class="page-toc-h2"><a href="#retry-and-side-effect-idempotency">Retry and side-effect idempotency</a></li><li class="page-toc-h2"><a href="#reusable-trigger">Reusable trigger</a></li><li class="page-toc-h2"><a href="#boundaries">Boundaries</a></li><li class="page-toc-h2"><a href="#related">Related</a></li></ul></nav>
 <h2 id="crew-and-topology">Crew and topology<a class="heading-anchor" href="#crew-and-topology" aria-label="Link to this section">¶</a></h2>
 <ul>
 <li><strong>Pika:</strong> local-desktop, primary user-facing coordinator, and final reviewer when available.</li>
@@ -43,6 +43,12 @@
 <pre><code>DISCORD_ALLOW_BOTS=mentions
 DISCORD_BOTS_REQUIRE_INLINE_MENTION=true</code></pre>
 <p>Apply the pair to each affected active VPS profile, preserve existing users/tokens/unrelated settings, restart gateways sequentially, and verify fresh process IDs plus safe config readback.</p>
+<h2 id="retry-and-side-effect-idempotency">Retry and side-effect idempotency<a class="heading-anchor" href="#retry-and-side-effect-idempotency" aria-label="Link to this section">¶</a></h2>
+<ul>
+<li>Transient read-only lookup or verification failures, including HTTP 500 responses, may receive at most three attempts with bounded backoff.</li>
+<li>Never repeat an allowlist mutation, gateway restart, thread creation, or message post unless verification proves the first mutation did not occur.</li>
+<li>Before any mutation retry, read back the relevant state: allowlist membership, process ID/start time, existing active onboarding threads, or the target message. If the outcome remains ambiguous, stop and escalate rather than risking duplicate side effects.</li>
+</ul>
 <h2 id="reusable-trigger">Reusable trigger<a class="heading-anchor" href="#reusable-trigger" aria-label="Link to this section">¶</a></h2>
 <pre><code>Onboard &lt;Discord user ID&gt;</code></pre>
 <p>Default route:</p>

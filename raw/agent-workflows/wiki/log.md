@@ -11,6 +11,12 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-07-28 update | Onboarding retry and idempotency boundary
+
+- Added bounded retries for transient read-only lookup or verification failures, including HTTP 500 responses.
+- Prohibited repeating allowlist mutations, gateway restarts, thread creation, or message posts unless verification proves the first mutation did not occur.
+- Kept ambiguous mutation outcomes fail-closed: verify state or escalate rather than duplicate a side effect.
+
 ## 2026-07-28 create/update | Discord crew onboarding and topology
 
 - Added `wiki/concepts/discord-crew-onboarding.md` with the public-safe `Onboard <Discord user ID>` contract.

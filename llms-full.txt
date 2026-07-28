@@ -1209,6 +1209,12 @@ DISCORD_BOTS_REQUIRE_INLINE_MENTION=true
 
 Apply the pair to each affected active VPS profile, preserve existing users/tokens/unrelated settings, restart gateways sequentially, and verify fresh process IDs plus safe config readback.
 
+## Retry and side-effect idempotency
+
+- Transient read-only lookup or verification failures, including HTTP 500 responses, may receive at most three attempts with bounded backoff.
+- Never repeat an allowlist mutation, gateway restart, thread creation, or message post unless verification proves the first mutation did not occur.
+- Before any mutation retry, read back the relevant state: allowlist membership, process ID/start time, existing active onboarding threads, or the target message. If the outcome remains ambiguous, stop and escalate rather than risking duplicate side effects.
+
 ## Reusable trigger
 
 ```text
@@ -2757,7 +2763,7 @@ namespace: agent-workflows
 - [[concepts/compound-engineering-skill-layer|Compound Engineering Skill Layer]] — Guide for using EveryInc Compound Engineering skills inside Hermes and routing them against Jamie's existing skill stack.
 - Cross-namespace concept: [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]] — Selects the smallest effective Hermes surface for a task before work becomes a skill, subagent, cron, gateway/API, MCP/plugin, profile, kanban, provider, or vault/Pixi Wiki route.
 - [[concepts/creative-ideation-routing|Creative Ideation Routing]] — Method-routed inspiration loop for using the `creative-ideation` skill without generic brainstorming.
-- [[concepts/discord-crew-onboarding|Discord Crew Onboarding Contract]] — Idempotent user allowlisting, direct-mention routing, inline bot-mention safety, one shared welcome thread, Pika/Pixoid fallback, and cross-host review branches.
+- [[concepts/discord-crew-onboarding|Discord Crew Onboarding Contract]] — Idempotent user allowlisting, direct-mention routing, inline bot-mention safety, bounded read-only retries, no duplicate side effects, one shared welcome thread, Pika/Pixoid fallback, and cross-host review branches.
 - [[concepts/reader-centered-outreach-asks|Reader-Centered Outreach Asks]] — Cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific bounded ask, easy no, and no lies.
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] — Product/refactor lens that also defines Hermes review/control surfaces.
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]] — Compress verbose agent output into concise, visual, source-backed review/control artifacts when users need to decide, approve, compare, or steer.
@@ -2845,6 +2851,12 @@ namespace: agent-workflows
 # Agent Workflows — Activity Log
 
 > Append-only namespace log.
+
+## 2026-07-28 update | Onboarding retry and idempotency boundary
+
+- Added bounded retries for transient read-only lookup or verification failures, including HTTP 500 responses.
+- Prohibited repeating allowlist mutations, gateway restarts, thread creation, or message posts unless verification proves the first mutation did not occur.
+- Kept ambiguous mutation outcomes fail-closed: verify state or escalate rather than duplicate a side effect.
 
 ## 2026-07-28 create/update | Discord crew onboarding and topology
 
