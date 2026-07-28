@@ -2,10 +2,10 @@
   "slug": "agent-workflows",
   "title": "Agent Workflows",
   "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.",
-  "documentCount": 33,
+  "documentCount": 34,
   "counts": {
     "wiki": 1,
-    "concepts": 24,
+    "concepts": 25,
     "entities": 1,
     "summaries": 2,
     "syntheses": 2
@@ -86,6 +86,13 @@
       "path": "wiki/concepts/effective-state-load.md",
       "raw": "/raw/agent-workflows/wiki/concepts/effective-state-load.md",
       "html": "/wiki/agent-workflows/wiki/concepts/effective-state-load.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Executable Agent Worlds",
+      "path": "wiki/concepts/executable-agent-worlds.md",
+      "raw": "/raw/agent-workflows/wiki/concepts/executable-agent-worlds.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/executable-agent-worlds.md.html",
       "category": "concepts"
     },
     {

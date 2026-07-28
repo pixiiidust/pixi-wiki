@@ -1,7 +1,7 @@
 ---
 title: Agent Workflows
 created: 2026-06-16
-updated: 2026-07-20
+updated: 2026-07-28
 type: namespace-overview
 status: active
 category: agents
@@ -19,13 +19,15 @@ confidence: medium
 
 Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
 
+Also includes executable agent-world design where software mechanics become real constraints on agent information, authority, resources, actions, timing, and consequences.
+
 ### Not Covered
 
 Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.
 
 ### Current As
 
-2026-07-20 — Added the Verb-First vs Noun-First concept: use nouns for retrieval and orientation, then expose actors, actions, conditions, outcomes, and boundaries so people and LLMs can understand and execute intent with less ambiguity.
+2026-07-28 — Added Executable Agent Worlds: separate software understanding, runtime adapters, agent organization, and evidence so legacy software can become a genuine agent environment rather than a decorative dashboard.
 
 ## Canonical Source Roots
 
@@ -42,6 +44,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/agent-skill-routing.md`
 - `Knowledge/concepts/agent-tooling-plan.md`
 - `Knowledge/concepts/agentic-harness-engineering.md`
+- `Knowledge/concepts/executable-agent-worlds.md`
 - `Knowledge/concepts/effective-state-load.md`
 - `Knowledge/concepts/reader-centered-outreach-asks.md`
 - `Knowledge/concepts/verb-first-knowledge.md`

@@ -97,15 +97,15 @@
       ],
       "category": "agents",
       "scope": {
-        "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.",
+        "covers": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.\n\nAlso includes executable agent-world design where software mechanics become real constraints on agent information, authority, resources, actions, timing, and consequences.",
         "notCovered": "Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.",
-        "currentAs": "2026-07-20 \u2014 Added the Verb-First vs Noun-First concept: use nouns for retrieval and orientation, then expose actors, actions, conditions, outcomes, and boundaries so people and LLMs can understand and execute intent with less ambiguity."
+        "currentAs": "2026-07-28 \u2014 Added Executable Agent Worlds: separate software understanding, runtime adapters, agent organization, and evidence so legacy software can become a genuine agent environment rather than a decorative dashboard."
       },
-      "lastUpdated": "2026-07-20",
-      "documentCount": 33,
+      "lastUpdated": "2026-07-28",
+      "documentCount": 34,
       "counts": {
         "wiki": 1,
-        "concepts": 24,
+        "concepts": 25,
         "entities": 1,
         "summaries": 2,
         "syntheses": 2
@@ -191,6 +191,13 @@
           "path": "wiki/concepts/effective-state-load.md",
           "raw": "/raw/agent-workflows/wiki/concepts/effective-state-load.md",
           "html": "/wiki/agent-workflows/wiki/concepts/effective-state-load.md.html",
+          "category": "concepts"
+        },
+        {
+          "title": "Executable Agent Worlds",
+          "path": "wiki/concepts/executable-agent-worlds.md",
+          "raw": "/raw/agent-workflows/wiki/concepts/executable-agent-worlds.md",
+          "html": "/wiki/agent-workflows/wiki/concepts/executable-agent-worlds.md.html",
           "category": "concepts"
         },
         {
