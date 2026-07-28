@@ -1,7 +1,7 @@
 ---
 title: Peer Profiles vs Child Processes
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-28
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -16,7 +16,7 @@ confidence: high
 
 ## Definition
 
-Jamie’s named crew agents are **peer Hermes profiles by default**, not Pixoid-owned child processes.
+Jamie’s named crew agents are **peer Hermes identities/routes by default**, not Pixoid-owned child processes. Active Pika coordinates from Jamie's local desktop; Pixoid and specialist profiles operate on the VPS.
 
 Peer profiles have their own identity surface, memory boundary, tool configuration, and route evidence. Child processes or `delegate_task` subagents are temporary workers inside the current session; they can analyze, draft, or review, but they do not prove that a named peer profile executed work.
 
@@ -29,7 +29,7 @@ Use the distinction this way:
 | Peer Hermes profile | Named crew execution with profile identity, credentials, memory boundary, route logs, and durable audit requirements. | Fast in-session synthesis when no real profile route is needed. |
 | Child/subagent process | Local read-only research, drafting, compatibility review, or linting that Pixoid will synthesize and verify. | Claiming “Tinker/Quill/Boba did this,” persistent route proof, profile-specific credentials, or live side effects. |
 
-Pixoid remains the control plane: clarify scope, route work, verify output, and report to Jamie. Named peers may execute bounded work when an [[agent-capability-route-pattern]] exists and current authorization allows it.
+Pika remains the primary user-facing coordinator/final reviewer while available. Pixoid remains the VPS control plane, verifies output, and substitutes as coordinator only when Pika is unavailable. Named peers execute bounded work when an [[agent-capability-route-pattern]] exists and current authorization allows it.
 
 ## Application
 
@@ -40,7 +40,7 @@ Before saying a named peer did work, verify route evidence:
 3. route trigger or handoff;
 4. output artifact;
 5. verification proof;
-6. Pixoid review or closure comment.
+6. required Pixoid verification and Pika final review for the current topology.
 
 If those are absent, describe the work as child-subagent analysis, local synthesis, or Pixoid-authored output.
 

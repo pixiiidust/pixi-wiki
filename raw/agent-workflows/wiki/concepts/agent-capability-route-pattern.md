@@ -1,7 +1,7 @@
 ---
 title: Agent Capability Route Pattern
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-28
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -16,7 +16,7 @@ confidence: high
 
 ## Definition
 
-An **agent capability route** is an explicit, bounded path from approved work into a Hermes agent capability. It defines how work enters, which profile may execute it, what that profile may do, what artifact it must return, and how Pixoid verifies the result before it becomes durable truth.
+An **agent capability route** is an explicit, bounded path from approved work into a Hermes agent capability. It defines how work enters, which identity/profile may execute it, what it may do, what artifact it must return, how Pixoid verifies VPS results, and how Pika performs final review when available.
 
 Short form:
 
@@ -38,7 +38,7 @@ A route is not just “ask an agent.” It is a small operating contract with th
 | Verification gate | What real evidence proves the artifact worked or stayed in bounds? |
 | Observability | What event, issue comment, report, or handoff records requested profile, actual profile, status, and proof? |
 
-The profile seam is the identity-critical part. Named crew work should run through peer Hermes profiles when a real route exists; child subagents can help with analysis, but they are not proof that Tinker, Quill, Boba, or another named peer profile executed work. See [[peer-profiles-vs-child-processes]] and [[hermes-soul-md-wiring]].
+The profile/route seam is identity-critical. Named crew work should run through the actual local or VPS identity route; child subagents can help with analysis, but they are not proof that Pika, Pixoid, Tinker, Quill, Boba, or another named peer executed work. See [[peer-profiles-vs-child-processes]] and [[hermes-soul-md-wiring]].
 
 ## Application
 
@@ -65,6 +65,7 @@ For issue-driven work, route execution usually pairs with [[issue-driven-afk-wor
 - Do not mutate profiles, gateways, providers, cron, webhooks, secrets, MCP, RAG, or deployment state unless the route explicitly authorizes that action.
 - Do not merge, deploy, post live messages, or expose secrets without the route’s approval policy and current user scope supporting it.
 - Keep transient issue numbers, PR numbers, commit SHAs, and milestone state out of generic concept pages.
+- Direct bot-user mentions are executable Discord routes; role mentions and outbound webhooks are not. See [[concepts/discord-crew-onboarding|Discord Crew Onboarding Contract]].
 
 ## Related pages
 

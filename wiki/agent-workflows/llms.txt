@@ -1,6 +1,6 @@
 # Agent Workflows Knowledge Base
 
-> Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
+> Pika/Pixoid/Tinker/Quill/Boba operating model, Discord crew onboarding, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
 
 - [Agent Workflows Namespace Instructions](/raw/agent-workflows/CLAUDE.md) ([html](/wiki/agent-workflows/CLAUDE.md.html))
 - [Agent Workflows](/raw/agent-workflows/README.md) ([html](/wiki/agent-workflows/README.md.html))
@@ -12,6 +12,7 @@
 - [Bounded Context Tree Pattern](/raw/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md) ([html](/wiki/agent-workflows/wiki/concepts/bounded-context-tree-pattern.md.html))
 - [Compound Engineering Skill Layer](/raw/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md) ([html](/wiki/agent-workflows/wiki/concepts/compound-engineering-skill-layer.md.html))
 - [Creative Ideation Routing](/raw/agent-workflows/wiki/concepts/creative-ideation-routing.md) ([html](/wiki/agent-workflows/wiki/concepts/creative-ideation-routing.md.html))
+- [Discord Crew Onboarding Contract](/raw/agent-workflows/wiki/concepts/discord-crew-onboarding.md) ([html](/wiki/agent-workflows/wiki/concepts/discord-crew-onboarding.md.html))
 - [Effective State Load](/raw/agent-workflows/wiki/concepts/effective-state-load.md) ([html](/wiki/agent-workflows/wiki/concepts/effective-state-load.md.html))
 - [Executable Agent Worlds](/raw/agent-workflows/wiki/concepts/executable-agent-worlds.md) ([html](/wiki/agent-workflows/wiki/concepts/executable-agent-worlds.md.html))
 - [Hermes SOUL.md Wiring](/raw/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md) ([html](/wiki/agent-workflows/wiki/concepts/hermes-soul-md-wiring.md.html))
@@ -35,4 +36,4 @@
 - [Agent Workflow System Summary — Skills, Tools, Scheduling, Delegation](/raw/agent-workflows/wiki/summaries/agent-workflow-system-summary.md) ([html](/wiki/agent-workflows/wiki/summaries/agent-workflow-system-summary.md.html))
 - [Effective State Load Full Report](/raw/agent-workflows/wiki/summaries/effective-state-load-full-report.md) ([html](/wiki/agent-workflows/wiki/summaries/effective-state-load-full-report.md.html))
 - [Markdown-First Agent Memory](/raw/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md) ([html](/wiki/agent-workflows/wiki/syntheses/markdown-first-agent-memory.md.html))
-- [Pixoid Crew Operating Model](/raw/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md) ([html](/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html))
+- [Pika/Pixoid Crew Operating Model](/raw/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md) ([html](/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html))

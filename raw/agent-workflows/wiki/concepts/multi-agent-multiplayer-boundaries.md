@@ -1,7 +1,7 @@
 ---
 title: Multi-Agent Multiplayer Boundaries
 created: 2026-06-29
-updated: 2026-06-29
+updated: 2026-07-28
 type: concept
 status: compiled
 namespace: agent-workflows
@@ -31,9 +31,9 @@ Use four explicit modes:
 
 | Mode | Contract | Default? |
 |---|---|---|
-| Coordinator mode | Pixoid owns the user thread, routes work, verifies results, and posts one final answer. | Yes |
-| Specialist mode | A direct `@Boba`, `@Quill`, or `@Tinker` call wakes only that named profile/route. | Yes |
-| Bounded huddle / workbench council | Pixoid opens a bounded huddle or workbench thread for agent discussion, closes on all-replied-or-timeout, then summarizes/decides. | Preferred for crew input |
+| Coordinator mode | Pika owns the user-facing thread and final review while available; Pixoid substitutes only when Pika is unavailable. | Yes |
+| Specialist mode | A direct `@Pixoid`, `@Boba`, `@Quill`, or `@Tinker` call wakes only that named bot-user route. | Yes |
+| Bounded huddle / workbench council | Pika opens/reuses a shared work thread; Pixoid may do so in fallback mode. The coordinator closes and synthesizes. | Preferred for crew input |
 | Direct multiplayer | Multiple live agents may speak in the same user thread. | Test-only / explicit opt-in |
 
 The core invariant:
@@ -42,26 +42,26 @@ The core invariant:
 user message -> route classifier -> one visible owner -> optional workers -> verified artifact -> one final answer
 ```
 
-## Implemented council-mode hardening (2026-06-29)
+## Historical council-mode hardening and current contract
 
-The 2026-06-29 Discord council-mode hardening slice turned the boundary model into live gateway behavior for Jamie's crew:
+The 2026-06-29 Discord council-mode hardening slice established the anti-dogpile and closed-loop safety baseline. The 2026-07-28 topology keeps those protections but supersedes the Pixoid-first default:
 
-- `@Crew` and crew text aliases route to Pixoid/default as coordinator; they do not wake every worker bot.
-- Direct `@Boba`, `@Quill`, and `@Tinker` remain specialist summons in approved channels/threads; they do not wake from untagged top-level-channel chatter.
-- Pixoid can open a bounded huddle, collect one short worker round, close on all-replied-or-timeout, and post one final answer to the original thread.
+- Pika is the primary user-facing coordinator/final reviewer while available; Pixoid is the VPS control plane and fallback orchestrator.
+- Direct bot-user mentions wake only the named route. Role mentions such as `@Crew` are not executable routes.
+- Pika can open or reuse one shared work thread; Pixoid may do so in fallback mode. Do not create one thread per bot.
 - Closed huddle route records are enforced in the adapter/gateway path: ambient worker/bot chatter after close is dropped before model invocation.
-- Discord reply pings do not count as direct summons unless the message text explicitly includes the bot mention or an owned council role mention.
-- Top-level shared channels can be stricter than huddle threads: `discord.channel_allow_bots: none` blocks bot/status chatter in channels while preserving `allow_bots: mentions` for thread handoffs. Worker profiles share Pixoid's approved room allowlist but still require direct mentions in top-level channels.
+- Discord reply pings do not count as direct summons unless the message text explicitly includes the target bot-user mention.
+- The effective VPS bot-ingress pair is `DISCORD_ALLOW_BOTS=mentions` plus `DISCORD_BOTS_REQUIRE_INLINE_MENTION=true`. YAML alone is not enough when the adapter reads environment values.
 - Prompt-level silence is a useful belt, not the lock. The lock is router-level suppression plus replay coverage.
 
 ## Boundary conditions
 
 ### 1. Summoning and routing
 
-- `@Crew` must not blindly wake every bot; it should wake Pixoid as coordinator unless direct multiplayer is explicitly enabled.
+- Role mentions must not wake bots. Directly mention Pika for coordination or the intended specialist bot-user for specialist work.
 - Role mentions, user mentions, text aliases, quoted messages, edited messages, replies, thread names, and topic metadata need separate trigger handling.
 - Agent replies should not accidentally summon other agents unless the route contract permits that chain.
-- Discord reply metadata is not enough to prove a direct summon; direct calls should be based on explicit textual bot/role mentions or a route-owned trigger.
+- Discord reply metadata is not enough to prove a direct summon; bot-authored direct calls require an explicit textual bot-user mention or a route-owned trigger with equivalent proof.
 - Webhook personas are outbound display identities only; they are not proof of an inbound, pingable agent route.
 - A crew request can mean opinions, delegation, workbench council, or live multiplayer; the route must classify which one before acting.
 
@@ -69,13 +69,13 @@ The 2026-06-29 Discord council-mode hardening slice turned the boundary model in
 
 - Without a single visible owner, agents duplicate answers, interrupt each other, debate endlessly, or bury the useful answer.
 - Each worker needs an explicit stop condition and return format.
-- The coordinator decides when enough input exists and closes the loop.
+- Pika decides when enough input exists and closes the loop while available; Pixoid does so only in fallback mode.
 - Closed route state must suppress post-close worker/bot chatter at the adapter or router layer; prompt-level silence is not sufficient.
 - Agent-to-agent discussion belongs in a workbench surface by default, not the main user thread.
 
 ### 3. Identity and accountability
 
-- Do not claim “Boba/Quill/Tinker did this” unless route evidence proves the requested profile, actual profile, trigger, artifact, verification proof, and Pixoid review.
+- Do not claim a named crew member did work unless route evidence proves the requested identity/profile, actual route, trigger, artifact, verification proof, and Pika/Pixoid review as required by topology.
 - Child/subagent analysis is useful, but it is not named peer-profile execution.
 - Profile memories, credentials, tool scopes, and delivery identities must not silently bleed across agents.
 - A model is not an identity; the identity lives in the profile, route, memory boundary, tools, and audit trail.
@@ -121,10 +121,12 @@ return format
 
 Weak handoffs cause agents to do housekeeping, duplicate research, or expand scope because they cannot infer the intended slice.
 
+Discord handoffs should stay under 1,800 characters. If splitting is unavoidable, every `PART n/N` must directly mention the recipient so no instruction segment is silently missed.
+
 ### 8. Verification and observability
 
 - Worker summaries are leads, not proof.
-- Pixoid or the route verifier must inspect changed files, tests, URLs, branch state, issue state, and delivery artifacts before reporting success.
+- Pixoid or the route verifier must inspect changed files, tests, URLs, branch state, issue state, and delivery artifacts before reporting success; Pika performs final review when available.
 - Every meaningful run should produce an observable record: event/route ID, owner, requested profile, actual profile, status, artifact, verification proof, and final delivery target.
 - Duplicate/out-of-order events, gateway restarts, retries, partial tool failures, rate limits, and stale cron deliveries need idempotency and status tracking.
 
@@ -146,8 +148,9 @@ Weak handoffs cause agents to do housekeeping, duplicate research, or expand sco
 
 A proper multiplayer agent system should have tests or replay traces for:
 
-- `@Crew` produces one Pixoid-owned answer.
-- Direct `@Boba`, `@Quill`, or `@Tinker` wakes only that specialist route.
+- Direct `@Pika` coordination produces one Pika-owned answer while Pika is available.
+- Direct `@Pixoid`, `@Boba`, `@Quill`, or `@Tinker` wakes only that named route.
+- Role mentions do not execute bot routes.
 - Mentions inside quotes, code blocks, historical messages, or agent replies do not accidentally trigger workers.
 - Duplicate Discord events are idempotent.
 - Out-of-order worker replies do not publish stale conclusions.
@@ -155,7 +158,7 @@ A proper multiplayer agent system should have tests or replay traces for:
 - Conflicting human instructions escalate instead of racing.
 - Direct multiplayer requires an explicit mode flag.
 - Parallel coding work uses separate branches/worktrees or an equivalent claim protocol.
-- Pixoid verifies artifacts before closure.
+- Pixoid verifies VPS artifacts before closure; Pika final-reviews when available.
 - Closed huddle threads drop ambient worker/bot messages before model invocation.
 - Discord reply pings after a huddle closes do not reopen the loop unless there is an explicit direct mention or approved reopen trigger.
 - All-replied and timeout closure paths both produce one final owner answer, not worker chatter.
@@ -165,9 +168,10 @@ A proper multiplayer agent system should have tests or replay traces for:
 Use this as the default policy:
 
 ```text
-Do not make @Crew wake every agent in the main thread.
-Make @Crew wake Pixoid.
-Pixoid decides whether to answer directly, ask one specialist, open a workbench council, or explicitly enter direct multiplayer test mode.
+Do not use role mentions as executable bot routes.
+Directly mention Pika for primary coordination.
+Pika decides whether to answer, ask one specialist, or use one shared work thread.
+If Pika is unavailable, Pixoid becomes the coordinator and verifier.
 ```
 
 That preserves the multiplayer feel while keeping source truth, accountability, and attention under control.

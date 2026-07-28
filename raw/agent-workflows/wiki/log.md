@@ -11,6 +11,13 @@ namespace: agent-workflows
 
 > Append-only namespace log.
 
+## 2026-07-28 create/update | Discord crew onboarding and topology
+
+- Added `wiki/concepts/discord-crew-onboarding.md` with the public-safe `Onboard <Discord user ID>` contract.
+- Updated current crew truth: local-desktop Pika coordinates and final-reviews; VPS Pixoid executes/verifies and falls back; Tinker builds; Quill writes; Boba researches and reality-checks.
+- Recorded direct bot-user mentions as executable routes, role mentions/webhooks as non-routes, the inline bot-mention safety pair, one-shared-thread rule, and remote review-branch boundary.
+- Preserved 2026-06-29 council-mode work as a historical anti-dogpile/closed-loop baseline rather than current Pixoid-first policy.
+
 ## 2026-07-28 create | Executable Agent Worlds
 
 - Added `wiki/concepts/executable-agent-worlds.md` from the canonical Knowledge concept and the exploratory Discord brainstorm.

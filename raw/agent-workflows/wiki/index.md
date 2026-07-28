@@ -23,6 +23,7 @@ namespace: agent-workflows
 - [[concepts/compound-engineering-skill-layer|Compound Engineering Skill Layer]] — Guide for using EveryInc Compound Engineering skills inside Hermes and routing them against Jamie's existing skill stack.
 - Cross-namespace concept: [[../../hermes-agent/wiki/concepts/hermes-capability-routing|Hermes Capability Routing]] — Selects the smallest effective Hermes surface for a task before work becomes a skill, subagent, cron, gateway/API, MCP/plugin, profile, kanban, provider, or vault/Pixi Wiki route.
 - [[concepts/creative-ideation-routing|Creative Ideation Routing]] — Method-routed inspiration loop for using the `creative-ideation` skill without generic brainstorming.
+- [[concepts/discord-crew-onboarding|Discord Crew Onboarding Contract]] — Idempotent user allowlisting, direct-mention routing, inline bot-mention safety, one shared welcome thread, Pika/Pixoid fallback, and cross-host review branches.
 - [[concepts/reader-centered-outreach-asks|Reader-Centered Outreach Asks]] — Cold DM/email/help-request drafting contract: recipient mind first, true proof of work, tiny context, specific bounded ask, easy no, and no lies.
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/interaction-mode-routing|Interaction Mode Routing]] — Product/refactor lens that also defines Hermes review/control surfaces.
 - Cross-namespace concept: [[../../ai-native-product-surfaces/wiki/concepts/agent-output-decision-artifacts|Agent Output Decision Artifacts]] — Compress verbose agent output into concise, visual, source-backed review/control artifacts when users need to decide, approve, compare, or steer.
@@ -45,7 +46,7 @@ namespace: agent-workflows
 
 ## Entities
 
-- [[entities/hermes-mission-control|Hermes Mission Control]] — Agent-ops coordination hub for Pixoid crew route governance, delivery boundaries, and durable work truth.
+- [[entities/hermes-mission-control|Hermes Mission Control]] — Agent-ops coordination hub for Pika/Pixoid topology, Discord onboarding, route governance, delivery boundaries, and durable work truth.
 
 ## Summaries
 
@@ -56,7 +57,7 @@ namespace: agent-workflows
 ## Syntheses
 
 - [[syntheses/markdown-first-agent-memory|Markdown-First Agent Memory]] — Why visible, versioned Markdown/issues/skills should carry durable operational knowledge before hidden infrastructure.
-- [[syntheses/pixoid-crew-operating-model|Pixoid Crew Operating Model]] — Crew roles, source-of-truth boundaries, route rules, and verification gates.
+- [[syntheses/pixoid-crew-operating-model|Pika/Pixoid Crew Operating Model]] — Pika coordination, Pixoid VPS/fallback execution, specialist roles, source-of-truth boundaries, route rules, and verification gates.
 
 ## Source Roots
 
@@ -84,6 +85,7 @@ namespace: agent-workflows
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/agent-output-decision-artifacts.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `Knowledge/concepts/discord-crew-onboarding.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/visual-plan-review-surfaces.md`
 - `Knowledge/concepts/multi-agent-multiplayer-boundaries.md`

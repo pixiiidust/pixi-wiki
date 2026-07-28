@@ -1,11 +1,11 @@
 {
   "slug": "agent-workflows",
   "title": "Agent Workflows",
-  "description": "Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.",
-  "documentCount": 34,
+  "description": "Pika/Pixoid/Tinker/Quill/Boba operating model, Discord crew onboarding, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.",
+  "documentCount": 35,
   "counts": {
     "wiki": 1,
-    "concepts": 25,
+    "concepts": 26,
     "entities": 1,
     "summaries": 2,
     "syntheses": 2
@@ -79,6 +79,13 @@
       "path": "wiki/concepts/creative-ideation-routing.md",
       "raw": "/raw/agent-workflows/wiki/concepts/creative-ideation-routing.md",
       "html": "/wiki/agent-workflows/wiki/concepts/creative-ideation-routing.md.html",
+      "category": "concepts"
+    },
+    {
+      "title": "Discord Crew Onboarding Contract",
+      "path": "wiki/concepts/discord-crew-onboarding.md",
+      "raw": "/raw/agent-workflows/wiki/concepts/discord-crew-onboarding.md",
+      "html": "/wiki/agent-workflows/wiki/concepts/discord-crew-onboarding.md.html",
       "category": "concepts"
     },
     {
@@ -243,7 +250,7 @@
       "category": "syntheses"
     },
     {
-      "title": "Pixoid Crew Operating Model",
+      "title": "Pika/Pixoid Crew Operating Model",
       "path": "wiki/syntheses/pixoid-crew-operating-model.md",
       "raw": "/raw/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md",
       "html": "/wiki/agent-workflows/wiki/syntheses/pixoid-crew-operating-model.md.html",

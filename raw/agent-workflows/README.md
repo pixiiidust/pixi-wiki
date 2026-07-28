@@ -11,13 +11,13 @@ confidence: medium
 
 # Agent Workflows
 
-> Operational namespace for Jamie's Pixoid crew workflows: route governance, durable context, agent entrypoints, verification gates, and markdown-first agent memory.
+> Operational namespace for Jamie's Pika/Pixoid crew workflows: coordination and fallback boundaries, Discord onboarding, route governance, durable context, verification gates, and markdown-first agent memory.
 
 ## Scope
 
 ### Covers
 
-Pixoid/Tinker/Quill/Boba operating model, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
+Pika/Pixoid/Tinker/Quill/Boba operating model, Discord crew onboarding, Hermes Mission Control, route governance, memory boundaries, context handoffs, Knowledge Pack Routing, agent entrypoint meshes, static retrieval/eval gates, self-improving agent systems, effective-state-load boundaries, verb-first instruction/knowledge design, and workflow reliability practices.
 
 Also includes executable agent-world design where software mechanics become real constraints on agent information, authority, resources, actions, timing, and consequences.
 
@@ -26,6 +26,8 @@ Also includes executable agent-world design where software mechanics become real
 Product case studies except where they demonstrate agent workflow mechanics; low-level local AI infrastructure unless it affects workflow execution; public wiki publishing mechanics except where they define agent routing contracts; Daily Notes scratch chronology unless explicitly promoted into durable source notes.
 
 ### Current As
+
+2026-07-28 — Added the Pika-first Discord crew onboarding contract: local Pika coordinates/final-reviews, VPS Pixoid verifies/falls back, direct bot-user mentions route work, role mentions do not, bot handoffs require inline mentions, and one person gets one shared onboarding thread.
 
 2026-07-28 — Added Executable Agent Worlds: separate software understanding, runtime adapters, agent organization, and evidence so legacy software can become a genuine agent environment rather than a decorative dashboard.
 
@@ -54,6 +56,7 @@ Product case studies except where they demonstrate agent workflow mechanics; low
 - `Knowledge/concepts/creative-ideation-routing.md`
 - `Knowledge/concepts/interaction-mode-routing.md`
 - `Knowledge/concepts/peer-profiles-vs-child-processes.md`
+- `Knowledge/concepts/discord-crew-onboarding.md`
 - `Knowledge/concepts/multi-agent-multiplayer-boundaries.md`
 - `Knowledge/concepts/ponytail-minimal-code-discipline.md`
 - `Knowledge/concepts/visual-plan-review-surfaces.md`
