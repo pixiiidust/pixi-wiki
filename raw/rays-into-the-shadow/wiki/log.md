@@ -1,16 +1,22 @@
 ---
-title: Rays into the Shadow — Activity Log
-description: Append-only record of source and chapter updates.
+title: Chat Musings — Activity Log
+description: Append-only record of source and conversation-artifact updates.
 created: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-28
 type: log
 status: ongoing
 namespace: rays-into-the-shadow
 ---
 
-# Rays into the Shadow — Activity Log
+# Chat Musings — Activity Log
 
 > Append-only. The newest entry goes first.
+
+## 2026-07-28 — Clean conversation reading copy
+
+- Renamed the displayed work from **Rays into the Shadow** to **Chat Musings** while preserving the existing public URL.
+- Replaced the book framing, chapters, editorial commentary, and open-question appendix with one scrolling Jamie–Pham conversation organized under nine plain topic headers.
+- Removed Discord and attachment-preview clutter, lightly reformulated difficult wording, and kept the two source records separate and linked.
 
 ## 2026-07-27 — Chaptered HTML book
 

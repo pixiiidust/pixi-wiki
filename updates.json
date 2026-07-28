@@ -3,10 +3,37 @@
   "count": 662,
   "entries": [
     {
+      "title": "Chat Musings",
+      "path": "README.md",
+      "namespace": "rays-into-the-shadow",
+      "namespace_title": "Chat Musings",
+      "updated": "2026-07-28",
+      "raw": "/raw/rays-into-the-shadow/README.md",
+      "html": "/wiki/rays-into-the-shadow/README.md.html"
+    },
+    {
+      "title": "Chat Musings \u2014 Activity Log",
+      "path": "wiki/log.md",
+      "namespace": "rays-into-the-shadow",
+      "namespace_title": "Chat Musings",
+      "updated": "2026-07-28",
+      "raw": "/raw/rays-into-the-shadow/wiki/log.md",
+      "html": "/wiki/rays-into-the-shadow/wiki/log.md.html"
+    },
+    {
+      "title": "Chat Musings \u2014 Editorial Index",
+      "path": "wiki/index.md",
+      "namespace": "rays-into-the-shadow",
+      "namespace_title": "Chat Musings",
+      "updated": "2026-07-28",
+      "raw": "/raw/rays-into-the-shadow/wiki/index.md",
+      "html": "/wiki/rays-into-the-shadow/wiki/index.md.html"
+    },
+    {
       "title": "Artifacts Mentioned \u2014 Source Register",
       "path": "wiki/summaries/artifacts-mentioned.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/summaries/artifacts-mentioned.md",
       "html": "/wiki/rays-into-the-shadow/wiki/summaries/artifacts-mentioned.md.html"
@@ -15,7 +42,7 @@
       "title": "Chapter 1 \u2014 An Introduction Between Strangers",
       "path": "wiki/syntheses/chapters/01-an-introduction-between-strangers.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/01-an-introduction-between-strangers.md",
       "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/01-an-introduction-between-strangers.md.html"
@@ -24,7 +51,7 @@
       "title": "Chapter 2 \u2014 Arriving Late, Moving Quickly",
       "path": "wiki/syntheses/chapters/02-arriving-late-moving-quickly.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/02-arriving-late-moving-quickly.md",
       "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/02-arriving-late-moving-quickly.md.html"
@@ -33,7 +60,7 @@
       "title": "Chapter 3 \u2014 Jamie Asks What Got You Stuck",
       "path": "wiki/syntheses/chapters/03-jamie-asks-what-got-you-stuck.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/03-jamie-asks-what-got-you-stuck.md",
       "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/03-jamie-asks-what-got-you-stuck.md.html"
@@ -42,7 +69,7 @@
       "title": "Chapter 4 \u2014 The Edge of the Non-Testable",
       "path": "wiki/syntheses/chapters/04-the-edge-of-the-non-testable.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/04-the-edge-of-the-non-testable.md",
       "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/04-the-edge-of-the-non-testable.md.html"
@@ -51,7 +78,7 @@
       "title": "Chapter 5 \u2014 Rays into the Shadow",
       "path": "wiki/syntheses/chapters/05-rays-into-the-shadow.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/05-rays-into-the-shadow.md",
       "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/05-rays-into-the-shadow.md.html"
@@ -60,7 +87,7 @@
       "title": "Chapter 6 \u2014 How Can We Know?",
       "path": "wiki/syntheses/chapters/06-how-can-we-know.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/06-how-can-we-know.md",
       "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/06-how-can-we-know.md.html"
@@ -69,7 +96,7 @@
       "title": "Chapter 7 \u2014 Many Agents, One Song",
       "path": "wiki/syntheses/chapters/07-many-agents-one-song.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/07-many-agents-one-song.md",
       "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/07-many-agents-one-song.md.html"
@@ -78,7 +105,7 @@
       "title": "Chapter 8 \u2014 The Limit of the Trivial",
       "path": "wiki/syntheses/chapters/08-the-limit-of-the-trivial.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/08-the-limit-of-the-trivial.md",
       "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/08-the-limit-of-the-trivial.md.html"
@@ -87,7 +114,7 @@
       "title": "Chapter 9 \u2014 Open Questions",
       "path": "wiki/syntheses/chapters/09-open-questions.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/09-open-questions.md",
       "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/09-open-questions.md.html"
@@ -96,7 +123,7 @@
       "title": "Conversation Map \u2014 The Exchange Comes First",
       "path": "wiki/summaries/conversation-map.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/summaries/conversation-map.md",
       "html": "/wiki/rays-into-the-shadow/wiki/summaries/conversation-map.md.html"
@@ -105,7 +132,7 @@
       "title": "Editorial Method \u2014 Say What You Mean",
       "path": "wiki/summaries/editorial-method.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/summaries/editorial-method.md",
       "html": "/wiki/rays-into-the-shadow/wiki/summaries/editorial-method.md.html"
@@ -114,37 +141,10 @@
       "title": "Preface \u2014 What This Book Keeps",
       "path": "wiki/syntheses/chapters/00-preface.md",
       "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
+      "namespace_title": "Chat Musings",
       "updated": "2026-07-27",
       "raw": "/raw/rays-into-the-shadow/wiki/syntheses/chapters/00-preface.md",
       "html": "/wiki/rays-into-the-shadow/wiki/syntheses/chapters/00-preface.md.html"
-    },
-    {
-      "title": "Rays into the Shadow",
-      "path": "README.md",
-      "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
-      "updated": "2026-07-27",
-      "raw": "/raw/rays-into-the-shadow/README.md",
-      "html": "/wiki/rays-into-the-shadow/README.md.html"
-    },
-    {
-      "title": "Rays into the Shadow \u2014 Activity Log",
-      "path": "wiki/log.md",
-      "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
-      "updated": "2026-07-27",
-      "raw": "/raw/rays-into-the-shadow/wiki/log.md",
-      "html": "/wiki/rays-into-the-shadow/wiki/log.md.html"
-    },
-    {
-      "title": "Rays into the Shadow \u2014 Table of Contents",
-      "path": "wiki/index.md",
-      "namespace": "rays-into-the-shadow",
-      "namespace_title": "Rays into the Shadow",
-      "updated": "2026-07-27",
-      "raw": "/raw/rays-into-the-shadow/wiki/index.md",
-      "html": "/wiki/rays-into-the-shadow/wiki/index.md.html"
     },
     {
       "title": "AI-Native Product Surfaces \u2014 Activity Log",

@@ -1,6 +1,6 @@
-# Rays into the Shadow Namespace Instructions
+# Chat Musings Namespace Instructions
 
-This namespace is an open, annotated conversation. It is not a finished essay.
+The public reading copy is a cleaned, sectioned conversation. The namespace also retains the earlier annotated editorial material and immutable source records.
 
 ## Source rules
 

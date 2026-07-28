@@ -340,10 +340,10 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertFalse((ROOT / "raw" / "ai-native-product-surfaces" / "wiki" / "concepts" / "misconception-first-explanation-loop.md").exists())
         self.assertFalse((ROOT / "wiki" / "ai-native-product-surfaces" / "wiki" / "concepts" / "misconception-first-explanation-loop.md.html").exists())
 
-    def test_rays_into_the_shadow_keeps_the_exchange_as_its_north_star(self) -> None:
+    def test_chat_musings_keeps_the_exchange_as_its_north_star(self) -> None:
         registry = {wiki["slug"]: wiki for wiki in self.data["wikis"]}
         wiki = registry["rays-into-the-shadow"]
-        self.assertEqual(wiki["title"], "Rays into the Shadow")
+        self.assertEqual(wiki["title"], "Chat Musings")
         self.assertEqual(wiki["category"], "conversation")
         self.assertEqual(wiki["documentCount"], 19)
 
@@ -358,33 +358,46 @@ class NamespaceRegistryContractTest(unittest.TestCase):
         self.assertIn('<a class="button-link" href="#other-wikis">Other Wikis</a>', homepage)
         self.assertIn('<section class="wiki-group" id="other-wikis">', homepage)
         self.assertIn('<article class="card" id="rays-into-the-shadow">', homepage)
+        self.assertIn("Chat Musings", homepage)
 
         landing_html = (ROOT / "wiki" / "rays-into-the-shadow" / "README.md.html").read_text(encoding="utf-8")
-        self.assertIn("<title>Rays into the Shadow — Pixi Wiki</title>", landing_html)
+        self.assertIn("<title>Chat Musings — Pixi Wiki</title>", landing_html)
         self.assertEqual(landing_html.count("<h1"), 1)
         self.assertNotIn("<h2>Structure</h2>", landing_html)
-        self.assertIn("Open edition · 0.1", landing_html)
+        self.assertIn("A cleaned conversation between Jamie (Pixiedust) and Pham", landing_html)
         self.assertIn("/pixi-wiki/wiki/rays-into-the-shadow/assets/books/rays-into-the-shadow.html", landing_html)
 
-        book_path = ROOT / "wiki" / "rays-into-the-shadow" / "assets" / "books" / "rays-into-the-shadow.html"
-        self.assertTrue(book_path.is_file())
-        book_html = book_path.read_text(encoding="utf-8")
-        self.assertIn("Rays into the Shadow — An Open Conversation", book_html)
-        self.assertEqual(book_html.count('class="panel chapter"'), 10)
-        self.assertEqual(book_html.count('class="chapter-nav"'), 10)
-        self.assertIn("Preface — What This Book Keeps", book_html)
-        for chapter_number in range(1, 10):
-            self.assertIn(f"Chapter {chapter_number} —", book_html)
-        self.assertIn("Read by scrolling", book_html)
-        self.assertIn("Present by chapter", book_html)
-        self.assertIn("I’d be curious to hear what specifically got you stuck after that point.", book_html)
-        self.assertIn("convergence is evidence, not proof", book_html)
-        self.assertIn("Sounds good!", book_html)
-        self.assertIn("They united and sang as one", book_html)
-        self.assertIn("26f818a54881262c5e4295ab6e6dfeeef0008dc06d52aba5904a4bca5daa8d93", book_html)
-        self.assertIn("d0cf24417c875addefee8b5a1b2e9647e116f5fba9124b7648a0f76b13cbac9d", book_html)
-        self.assertNotIn("Visual Conversation Report", book_html)
-        self.assertNotIn("TODO", book_html)
+        transcript_path = ROOT / "wiki" / "rays-into-the-shadow" / "assets" / "books" / "rays-into-the-shadow.html"
+        self.assertTrue(transcript_path.is_file())
+        transcript_html = transcript_path.read_text(encoding="utf-8")
+        self.assertIn("<title>Chat Musings — Jamie and Pham</title>", transcript_html)
+        self.assertEqual(transcript_html.count('class="conversation-section"'), 9)
+        self.assertEqual(transcript_html.count('class="speaker jamie"'), 3)
+        self.assertEqual(transcript_html.count('class="speaker pham"'), 7)
+        for heading in [
+            "Introduction",
+            "How Pham came to AI",
+            "Working at the boundary",
+            "Jamie asks what got Pham stuck",
+            "Documenting the work and deciding what comes next",
+            "Looking into unknown problems",
+            "How can we know what is true?",
+            "Many agents, one conclusion",
+            "Where Pham felt stuck",
+        ]:
+            self.assertIn(heading, transcript_html)
+        self.assertIn("lightly reformulated for readability", transcript_html)
+        self.assertIn("what specifically got you stuck after that point", transcript_html)
+        self.assertIn("Sounds good!", transcript_html)
+        self.assertIn("We cannot see into the shadow at first", transcript_html)
+        self.assertIn("They united and sang as one", transcript_html)
+        self.assertIn("26f818a54881262c5e4295ab6e6dfeeef0008dc06d52aba5904a4bca5daa8d93", transcript_html)
+        self.assertIn("d0cf24417c875addefee8b5a1b2e9647e116f5fba9124b7648a0f76b13cbac9d", transcript_html)
+        self.assertNotIn('class="panel chapter"', transcript_html)
+        self.assertNotIn("Editor's note", transcript_html)
+        self.assertNotIn("Preface", transcript_html)
+        self.assertNotIn("Open Questions", transcript_html)
+        self.assertNotIn("TODO", transcript_html)
 
         legacy_report_path = ROOT / "wiki" / "rays-into-the-shadow" / "assets" / "reports" / "rays-into-the-shadow.html"
         self.assertTrue(legacy_report_path.is_file())

@@ -1,27 +1,27 @@
 ---
-title: Rays into the Shadow — Table of Contents
-description: The open table of contents for the exchange between Jamie (Pixiedust) and Pham and the ideas it opens.
+title: Chat Musings — Editorial Index
+description: Supporting source and editorial pages for the conversation between Jamie (Pixiedust) and Pham.
 created: 2026-07-27
-updated: 2026-07-27
+updated: 2026-07-28
 type: index
 status: ongoing
 namespace: rays-into-the-shadow
 ---
 
-# Rays into the Shadow
+# Chat Musings — Editorial Index
 
-> **A conversation between Jamie (Pixiedust) and Pham**
-> Edition 0.1 · Source through 25 July 2026
+> **Supporting material for the conversation between Jamie (Pixiedust) and Pham**
+> Source through 25 July 2026
 
-The book is still being written because the conversation is still taking place. Each new source section will keep its date. Each new turn will change the map before it changes the downstream concepts.
+The main artifact is a cleaned, sectioned conversation. The pages below preserve the earlier source analysis and remain available for provenance; they are not part of the primary reading copy.
 
-## HTML book
+## Main reading copy
 
-- [Read the complete HTML edition](/pixi-wiki/wiki/rays-into-the-shadow/assets/books/rays-into-the-shadow.html) — the preface and Chapters 1–9 in scrolling or chapter-presentation mode.
+- [Read Chat Musings](/pixi-wiki/wiki/rays-into-the-shadow/assets/books/rays-into-the-shadow.html) — the conversation organized under simple topic headers.
 
-## North star
+## Supporting map
 
-Start with the [[summaries/conversation-map|Conversation Map]]. It defines the ontology—what exists in the conversation—and the epistemology—how the book treats claims and evidence. The exchange between Jamie and Pham organizes everything that follows.
+The [[summaries/conversation-map|Conversation Map]] records how the earlier editorial pass connected speakers, claims, and evidence.
 
 ## Part I — The exchange
 

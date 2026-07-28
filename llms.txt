@@ -137,18 +137,18 @@
 - [Content Distribution Systems — Activity Log](/raw/content-distribution/wiki/log.md) ([html](/wiki/content-distribution/wiki/log.md.html))
 - [Attention Architecture for Long-Form Content](/raw/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md) ([html](/wiki/content-distribution/wiki/syntheses/attention-architecture-for-long-form-content.md.html))
 
-## Rays into the Shadow
+## Chat Musings
 
-> A friend introduced Jamie, writing as Pixiedust, and Pham on 25 July 2026. Pham described a recent burst of ideas and work. Jamie asked the question that gives the exchange its direction: what, exactly, got him stuck?
-> Current as of: 2026-07-27
+> A mutual friend introduced Jamie and Pham so they could explain their ideas directly to one another. Pham described his recent work with AI and computational physics. Jamie asked what had left him feeling stuck.
+> Current as of: 2026-07-28
 > Agent access: [/wiki/rays-into-the-shadow/llms.txt](/wiki/rays-into-the-shadow/llms.txt) [/wiki/rays-into-the-shadow/llms-full.txt](/wiki/rays-into-the-shadow/llms-full.txt) [/wiki/rays-into-the-shadow/index.json](/wiki/rays-into-the-shadow/index.json)
 
-- [Rays into the Shadow Namespace Instructions](/raw/rays-into-the-shadow/CLAUDE.md) ([html](/wiki/rays-into-the-shadow/CLAUDE.md.html))
-- [Rays into the Shadow](/raw/rays-into-the-shadow/README.md) ([html](/wiki/rays-into-the-shadow/README.md.html))
+- [Chat Musings Namespace Instructions](/raw/rays-into-the-shadow/CLAUDE.md) ([html](/wiki/rays-into-the-shadow/CLAUDE.md.html))
+- [Chat Musings](/raw/rays-into-the-shadow/README.md) ([html](/wiki/rays-into-the-shadow/README.md.html))
 - [Rays into the Shadow — Source Conversation, 25 July 2026](/raw/rays-into-the-shadow/raw/transcripts/2026-07-25-introduction.md) ([html](/wiki/rays-into-the-shadow/raw/transcripts/2026-07-25-introduction.md.html))
 - [Rays into the Shadow — Supplementary Conversation Excerpt](/raw/rays-into-the-shadow/raw/transcripts/2026-07-25-request-excerpt.md) ([html](/wiki/rays-into-the-shadow/raw/transcripts/2026-07-25-request-excerpt.md.html))
-- [Rays into the Shadow — Table of Contents](/raw/rays-into-the-shadow/wiki/index.md) ([html](/wiki/rays-into-the-shadow/wiki/index.md.html))
-- [Rays into the Shadow — Activity Log](/raw/rays-into-the-shadow/wiki/log.md) ([html](/wiki/rays-into-the-shadow/wiki/log.md.html))
+- [Chat Musings — Editorial Index](/raw/rays-into-the-shadow/wiki/index.md) ([html](/wiki/rays-into-the-shadow/wiki/index.md.html))
+- [Chat Musings — Activity Log](/raw/rays-into-the-shadow/wiki/log.md) ([html](/wiki/rays-into-the-shadow/wiki/log.md.html))
 - [Artifacts Mentioned — Source Register](/raw/rays-into-the-shadow/wiki/summaries/artifacts-mentioned.md) ([html](/wiki/rays-into-the-shadow/wiki/summaries/artifacts-mentioned.md.html))
 - [Conversation Map — The Exchange Comes First](/raw/rays-into-the-shadow/wiki/summaries/conversation-map.md) ([html](/wiki/rays-into-the-shadow/wiki/summaries/conversation-map.md.html))
 - [Editorial Method — Say What You Mean](/raw/rays-into-the-shadow/wiki/summaries/editorial-method.md) ([html](/wiki/rays-into-the-shadow/wiki/summaries/editorial-method.md.html))

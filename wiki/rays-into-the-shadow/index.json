@@ -1,7 +1,7 @@
 {
   "slug": "rays-into-the-shadow",
-  "title": "Rays into the Shadow",
-  "description": "A friend introduced Jamie, writing as Pixiedust, and Pham on 25 July 2026. Pham described a recent burst of ideas and work. Jamie asked the question that gives the exchange its direction: what, exactly, got him stuck?",
+  "title": "Chat Musings",
+  "description": "A mutual friend introduced Jamie and Pham so they could explain their ideas directly to one another. Pham described his recent work with AI and computational physics. Jamie asked what had left him feeling stuck.",
   "documentCount": 19,
   "counts": {
     "wiki": 1,
@@ -12,14 +12,14 @@
   },
   "documents": [
     {
-      "title": "Rays into the Shadow Namespace Instructions",
+      "title": "Chat Musings Namespace Instructions",
       "path": "CLAUDE.md",
       "raw": "/raw/rays-into-the-shadow/CLAUDE.md",
       "html": "/wiki/rays-into-the-shadow/CLAUDE.md.html",
       "category": "other"
     },
     {
-      "title": "Rays into the Shadow",
+      "title": "Chat Musings",
       "path": "README.md",
       "raw": "/raw/rays-into-the-shadow/README.md",
       "html": "/wiki/rays-into-the-shadow/README.md.html",
@@ -40,14 +40,14 @@
       "category": "other"
     },
     {
-      "title": "Rays into the Shadow \u2014 Table of Contents",
+      "title": "Chat Musings \u2014 Editorial Index",
       "path": "wiki/index.md",
       "raw": "/raw/rays-into-the-shadow/wiki/index.md",
       "html": "/wiki/rays-into-the-shadow/wiki/index.md.html",
       "category": "other"
     },
     {
-      "title": "Rays into the Shadow \u2014 Activity Log",
+      "title": "Chat Musings \u2014 Activity Log",
       "path": "wiki/log.md",
       "raw": "/raw/rays-into-the-shadow/wiki/log.md",
       "html": "/wiki/rays-into-the-shadow/wiki/log.md.html",

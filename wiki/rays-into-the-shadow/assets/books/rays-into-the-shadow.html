@@ -3,594 +3,431 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Rays into the Shadow: an open, annotated book of the conversation between Jamie (Pixiedust) and Pham.">
-<meta name="theme-color" content="#171a1a">
-<title>Rays into the Shadow — An Open Conversation</title>
+<meta name="description" content="Chat Musings: a cleaned conversation between Jamie (Pixiedust) and Pham.">
+<meta name="theme-color" content="#181b1a">
+<title>Chat Musings — Jamie and Pham</title>
 <style>
   :root {
-    color-scheme:light dark;
-    --paper:#f5f0e5;
-    --paper-2:#ece3d3;
-    --surface:#fffaf0;
-    --ink:#181713;
-    --soft:#4e4a42;
-    --muted:#777064;
-    --line:#d8cdbc;
-    --shadow:#171a1a;
-    --ray:#b86f08;
-    --ray-bright:#ffc45c;
-    --max:1180px;
+    color-scheme: light dark;
+    --page: #f4efe4;
+    --surface: #fffaf0;
+    --surface-soft: #ece4d6;
+    --ink: #1d1b17;
+    --body: #4b463e;
+    --muted: #746d62;
+    --line: #d6cbbb;
+    --header: #181b1a;
+    --header-ink: #f8efdf;
+    --header-muted: #bbb1a2;
+    --accent: #b56f0b;
+    --jamie: #6d65b5;
+    --pham: #b56f0b;
+    --max: 1080px;
+    --reading: 70ch;
   }
-  @media (prefers-color-scheme:dark) {
+
+  @media (prefers-color-scheme: dark) {
     :root {
-      --paper:#171918;
-      --paper-2:#222421;
-      --surface:#1e211f;
-      --ink:#f1eadc;
-      --soft:#cbc2b2;
-      --muted:#9f978a;
-      --line:#3c403b;
-      --shadow:#0d0f0f;
-      --ray:#e39a2c;
-      --ray-bright:#ffd37a;
+      --page: #171918;
+      --surface: #202321;
+      --surface-soft: #272b28;
+      --ink: #f2eadc;
+      --body: #cbc2b4;
+      --muted: #a39a8c;
+      --line: #3b403b;
+      --header: #101211;
+      --header-ink: #fff5e5;
+      --header-muted: #aaa194;
+      --accent: #e2a143;
+      --jamie: #aaa2ef;
+      --pham: #e2a143;
     }
   }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
-    margin:0; overflow-x:hidden; background:var(--paper); color:var(--ink);
-    font:16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--page);
+    color: var(--body);
+    font: 17px/1.72 Georgia, "Times New Roman", serif;
   }
-  a:focus-visible, button:focus-visible, select:focus-visible { outline:3px solid var(--ray-bright); outline-offset:3px; }
-  .skip-link { position:fixed; left:14px; top:-70px; z-index:100; padding:10px 14px; background:var(--ink); color:var(--paper); }
-  .skip-link:focus { top:14px; }
-  .visually-hidden { position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-  .topbar {
-    position:fixed; inset:12px 14px auto; z-index:70; pointer-events:none;
-    display:flex; justify-content:space-between; align-items:center; gap:12px;
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
   }
-  .topbar > * { pointer-events:auto; }
-  .wiki-link, .mode-toggle, .chapter-select {
-    min-height:44px; border:1px solid color-mix(in srgb,var(--line) 80%,transparent);
-    border-radius:999px; background:color-mix(in srgb,var(--surface) 94%,transparent); color:var(--soft);
-    box-shadow:0 3px 16px rgba(0,0,0,.1); backdrop-filter:blur(10px);
-    font:750 12px/1 ui-sans-serif,system-ui,sans-serif;
+  .skip-link {
+    position: fixed;
+    top: -80px;
+    left: 16px;
+    z-index: 20;
+    padding: 10px 14px;
+    background: var(--surface);
+    color: var(--ink);
+    font: 700 13px/1.2 ui-sans-serif, system-ui, sans-serif;
   }
-  .wiki-link { display:inline-flex; align-items:center; padding:0 15px; text-decoration:none; }
-  .reader-controls { display:flex; align-items:center; gap:8px; }
-  .chapter-select { max-width:270px; padding:0 36px 0 14px; cursor:pointer; }
-  .mode-toggle { padding:0 15px; cursor:pointer; }
+  .skip-link:focus { top: 16px; }
 
-  main { width:100%; }
-  .panel { position:relative; scroll-margin-top:0; }
-  body.slides { height:100dvh; overflow:hidden; }
-  body.slides .panel { display:none; }
-  body.slides .panel.active { display:block; height:100dvh; overflow-y:auto; animation:enter .28s ease both; }
-  body.scroll { padding-bottom:52px; }
-  body.scroll .panel { display:block; border-bottom:1px solid var(--line); }
-  body.scroll .deck-nav, body.scroll .slide-count { display:none; }
-  @keyframes enter { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  .hero {
+    background: var(--header);
+    color: var(--header-ink);
+    border-bottom: 4px solid var(--accent);
+  }
+  .hero-inner {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+    padding: 44px 0 48px;
+  }
+  .wiki-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: var(--header-muted);
+    font: 750 12px/1 ui-sans-serif, system-ui, sans-serif;
+    text-decoration: none;
+  }
+  .eyebrow {
+    margin: 38px 0 10px;
+    color: var(--header-muted);
+    font: 800 11px/1.3 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+  h1, h2 {
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    letter-spacing: -.025em;
+    text-wrap: balance;
+  }
+  h1 {
+    max-width: 12ch;
+    margin: 0;
+    color: var(--header-ink);
+    font-size: clamp(46px, 8vw, 86px);
+    line-height: .98;
+  }
+  .subtitle {
+    max-width: 55ch;
+    margin: 22px 0 0;
+    color: #d4c9b8;
+    font-size: clamp(18px, 2.4vw, 22px);
+    line-height: 1.55;
+  }
+  .editing-note {
+    max-width: 75ch;
+    margin: 26px 0 0;
+    padding-top: 18px;
+    border-top: 1px solid #363a36;
+    color: var(--header-muted);
+    font: 13px/1.6 ui-sans-serif, system-ui, sans-serif;
+  }
 
-  .cover { min-height:100dvh; background:var(--shadow); color:#f7efdf; overflow:hidden; }
-  .cover-inner { width:min(var(--max),calc(100% - 48px)); margin:0 auto; padding:92px 0 88px; }
-  .cover-grid { display:grid; grid-template-columns:minmax(0,.82fr) minmax(430px,1.18fr); gap:clamp(42px,7vw,100px); align-items:start; }
-  .eyebrow, .part-label {
-    color:var(--muted); font-size:10px; line-height:1.35; font-weight:850;
-    text-transform:uppercase; letter-spacing:.15em;
+  .layout {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: clamp(34px, 7vw, 88px);
+    align-items: start;
   }
-  .cover .eyebrow { color:#aaa294; }
-  h1, h2, h3, .display { font-family:Georgia,"Times New Roman",serif; font-weight:500; letter-spacing:-.025em; text-wrap:balance; }
-  h1 { max-width:9ch; margin:18px 0 24px; color:#fff6e4; font-size:clamp(60px,8.6vw,116px); line-height:.87; }
-  .cover-intro { max-width:48ch; color:#d0c6b4; font:19px/1.62 Georgia,"Times New Roman",serif; }
-  .cover-quote { margin:36px 0 0; padding-top:22px; border-top:1px solid #383d39; color:#f3e5c8; font:25px/1.35 Georgia,"Times New Roman",serif; max-width:30ch; }
-  .cover-meta { display:flex; flex-wrap:wrap; gap:9px 24px; margin-top:28px; color:#9f9789; font-size:11px; text-transform:uppercase; letter-spacing:.09em; }
-  .provenance { margin-top:24px; max-width:58ch; color:#a9a092; font-size:11px; }
-  .provenance summary { color:#d9cfbe; cursor:pointer; font-weight:800; }
-  .provenance p { margin:10px 0 0; line-height:1.55; }
-  .provenance a { color:#e8b85f; text-underline-offset:3px; }
-  .provenance code { overflow-wrap:anywhere; font:10px/1.4 ui-monospace,Consolas,monospace; }
-  .contents { background:#202321; border:1px solid #383d39; padding:clamp(24px,4vw,42px); }
-  .contents h2 { margin:8px 0 24px; color:#fff2dc; font-size:42px; line-height:1; }
-  .contents ol { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:1fr 1fr; gap:3px 22px; }
-  .contents li.part { grid-column:1/-1; display:flex; gap:8px; margin:16px 0 5px; color:#9e9689; font-size:9px; text-transform:uppercase; letter-spacing:.12em; font-weight:850; }
-  .contents li.part:first-child { margin-top:0; }
-  .contents a { display:grid; grid-template-columns:62px 1fr; gap:8px; padding:7px 0; color:#d4cbbd; text-decoration:none; border-bottom:1px solid #303431; }
-  .contents a:hover { color:#ffd17a; }
-  .contents a span { color:#8e877c; font-size:10px; text-transform:uppercase; letter-spacing:.06em; }
-  .contents a strong { font:600 13px/1.32 ui-sans-serif,system-ui,sans-serif; }
-  .reading-key { grid-column:1/-1; margin-top:28px; padding-top:18px; border-top:1px solid #383d39; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .reading-key b { display:block; color:#efdfc2; font-size:11px; margin-bottom:3px; }
-  .reading-key span { color:#9f9789; font-size:11px; line-height:1.4; }
+  .jump-nav {
+    position: sticky;
+    top: 22px;
+    padding: 48px 0;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  .jump-nav strong {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+  .jump-nav ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .jump-nav li + li { margin-top: 3px; }
+  .jump-nav a {
+    display: block;
+    padding: 7px 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+  .jump-nav a:hover { color: var(--accent); }
 
-  .chapter { background:var(--paper); }
-  .chapter:nth-of-type(even) { background:color-mix(in srgb,var(--paper) 93%,var(--surface)); }
-  .chapter-frame {
-    width:min(var(--max),calc(100% - 48px)); min-height:100dvh; margin:0 auto; padding:96px 0 100px;
-    display:grid; grid-template-columns:minmax(220px,.56fr) minmax(0,1.44fr); gap:clamp(44px,8vw,118px); align-items:start;
+  .conversation { min-width: 0; }
+  .conversation-section {
+    scroll-margin-top: 24px;
+    padding: 58px 0 64px;
+    border-bottom: 1px solid var(--line);
   }
-  .chapter-header { position:sticky; top:92px; align-self:start; }
-  body.slides .chapter-header { top:92px; }
-  .chapter-index { color:color-mix(in srgb,var(--ray) 24%,transparent); font:500 clamp(74px,10vw,142px)/.78 Georgia,"Times New Roman",serif; letter-spacing:-.07em; margin-bottom:26px; }
-  .chapter-header h2 { max-width:15ch; margin:12px 0 22px; font-size:clamp(34px,4.2vw,56px); line-height:1.02; }
-  .back-to-contents { color:var(--ray); font-size:11px; font-weight:800; text-decoration:none; text-transform:uppercase; letter-spacing:.09em; }
-  .chapter-body { max-width:720px; min-width:0; padding-top:4px; }
-  .chapter-body > :first-child { margin-top:0; }
-  .chapter-body h3 { margin:44px 0 14px; font:500 29px/1.16 Georgia,"Times New Roman",serif; letter-spacing:-.015em; }
-  .chapter-body h4 { margin:32px 0 11px; font:800 13px/1.3 ui-sans-serif,system-ui,sans-serif; text-transform:uppercase; letter-spacing:.09em; }
-  .chapter-body p, .chapter-body li { color:var(--soft); font:18px/1.78 Georgia,"Times New Roman",serif; }
-  .chapter-body p + p { margin-top:20px; }
-  .chapter-body ul, .chapter-body ol { margin:18px 0 26px; padding-left:24px; }
-  .chapter-body li + li { margin-top:9px; }
-  .chapter-body blockquote { margin:28px 0; padding:25px 30px; background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); color:var(--ink); font:24px/1.48 Georgia,"Times New Roman",serif; }
-  .chapter-body blockquote p { color:inherit; font:inherit; }
-  .chapter-body a { color:var(--ray); text-underline-offset:3px; }
-  .chapter-body code { padding:1px 4px; background:var(--paper-2); font:12px/1.5 ui-monospace,Consolas,monospace; overflow-wrap:anywhere; }
-  .table-wrap { width:100%; overflow-x:auto; margin:24px 0; }
-  .chapter-body table { width:100%; border-collapse:collapse; font-size:14px; }
-  .chapter-body th, .chapter-body td { padding:10px 12px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
-  .chapter-body th { color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.08em; }
-  .chapter-body hr { border:0; border-top:1px solid var(--line); margin:42px 0; }
-  .chapter-nav { display:flex; justify-content:space-between; gap:26px; margin-top:56px; padding-top:18px; border-top:1px solid var(--line); }
-  .chapter-nav a { display:grid; gap:3px; max-width:46%; color:var(--ink); text-decoration:none; }
-  .chapter-nav a:last-child { margin-left:auto; text-align:right; }
-  .chapter-nav span { color:var(--muted); font:850 9px/1.3 ui-sans-serif,system-ui,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
-  .chapter-nav strong { font:700 13px/1.35 ui-sans-serif,system-ui,sans-serif; }
+  .section-number {
+    color: var(--accent);
+    font: 800 10px/1.3 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+  h2 {
+    max-width: 18ch;
+    margin: 8px 0 28px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.08;
+  }
+  .context {
+    max-width: var(--reading);
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .speaker {
+    max-width: var(--reading);
+    margin-top: 20px;
+    padding: 22px 24px 23px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .04);
+  }
+  .speaker.jamie { border-left-color: var(--jamie); }
+  .speaker.pham { border-left-color: var(--pham); }
+  .speaker-label {
+    margin-bottom: 12px;
+    font: 850 11px/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .jamie .speaker-label { color: var(--jamie); }
+  .pham .speaker-label { color: var(--pham); }
+  .speaker p { margin: 0; }
+  .speaker p + p { margin-top: 16px; }
+  .shared-material {
+    max-width: var(--reading);
+    margin: 20px 0 0;
+    padding: 15px 18px;
+    background: var(--surface-soft);
+    color: var(--muted);
+    font: 13px/1.55 ui-sans-serif, system-ui, sans-serif;
+  }
 
-  .deck-nav {
-    position:fixed; left:22px; bottom:14px; z-index:65;
-    display:flex; align-items:center; gap:10px; padding:7px 10px;
-    background:color-mix(in srgb,var(--surface) 94%,transparent); border:1px solid var(--line); border-radius:999px;
-    box-shadow:0 7px 26px rgba(0,0,0,.14); backdrop-filter:blur(10px);
+  .sources {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+    padding: 44px 0 70px;
   }
-  .deck-nav button { width:44px; height:44px; border:0; border-radius:50%; background:transparent; color:var(--soft); cursor:pointer; font-size:18px; }
-  .deck-nav button:hover { background:var(--paper-2); color:var(--ink); }
-  .deck-progress { min-width:110px; text-align:center; color:var(--muted); font:800 10px/1 ui-monospace,Consolas,monospace; text-transform:uppercase; letter-spacing:.08em; }
-  .slide-count { position:fixed; right:22px; bottom:23px; z-index:60; color:var(--muted); font:750 10px/1 ui-monospace,Consolas,monospace; }
+  .sources details {
+    max-width: var(--reading);
+    margin-left: auto;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--muted);
+    font: 12px/1.6 ui-sans-serif, system-ui, sans-serif;
+  }
+  .sources summary {
+    min-height: 28px;
+    color: var(--ink);
+    cursor: pointer;
+    font-weight: 800;
+  }
+  .sources p { margin: 12px 0 0; }
+  .sources code {
+    overflow-wrap: anywhere;
+    color: var(--body);
+    font-size: 10px;
+  }
 
-  @media (max-width:840px) {
-    .topbar { inset:9px 9px auto; }
-    .wiki-link { padding:0 12px; }
-    .chapter-select { max-width:190px; }
-    .cover-inner, .chapter-frame { width:min(100% - 32px,var(--max)); }
-    .cover-grid, .chapter-frame { grid-template-columns:1fr; }
-    .cover-inner { padding-top:82px; }
-    .contents ol { grid-template-columns:1fr; }
-    .reading-key { grid-template-columns:1fr; }
-    .chapter-frame { padding:84px 0 96px; gap:26px; }
-    .chapter-header, body.slides .chapter-header { position:static; }
-    .chapter-index { font-size:72px; margin-bottom:18px; }
-    .chapter-header h2 { margin-bottom:14px; }
+  @media (max-width: 780px) {
+    .hero-inner, .layout, .sources { width: min(100% - 28px, var(--max)); }
+    .hero-inner { padding-top: 24px; }
+    .eyebrow { margin-top: 28px; }
+    .layout { display: block; }
+    .jump-nav {
+      position: static;
+      padding: 24px 0 0;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--line);
+    }
+    .jump-nav ol {
+      display: flex;
+      gap: 8px;
+      padding-bottom: 18px;
+    }
+    .jump-nav li + li { margin: 0; }
+    .jump-nav a {
+      min-width: max-content;
+      min-height: 44px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .conversation-section { padding: 42px 0 48px; }
+    .speaker { padding: 19px 18px 20px; }
+    .sources details { margin-left: 0; }
   }
-  @media (max-width:560px) {
-    .wiki-link { width:48px; font-size:0; }
-    .wiki-link::after { content:"Wiki"; font-size:11px; }
-    .chapter-select { width:132px; max-width:132px; }
-    .mode-toggle { width:92px; padding:0 10px; font-size:0; }
-    .mode-toggle::after { content:"☰ Scroll"; font-size:11px; }
-    body.scroll .mode-toggle::after { content:"▸ Slides"; }
-    h1 { font-size:58px; }
-    .cover-intro { font-size:17px; }
-    .contents { padding:22px 18px; }
-    .contents a { grid-template-columns:54px 1fr; }
-    .chapter-body p, .chapter-body li { font-size:17px; }
-    .chapter-body blockquote { padding:21px 18px; font-size:21px; }
-    .chapter-nav { gap:16px; }
-    .deck-nav { display:none; }
-    .slide-count { display:none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
-  @media (prefers-reduced-motion:reduce) {
-    html { scroll-behavior:auto; }
-    body.slides .panel.active { animation:none; }
-  }
+
   @media print {
-    * { print-color-adjust:exact; -webkit-print-color-adjust:exact; }
-    .topbar, .deck-nav, .slide-count { display:none !important; }
-    body, body.slides, body.scroll { height:auto; overflow:visible; padding:0; }
-    body.slides .panel, body.scroll .panel { display:block !important; height:auto; overflow:visible; break-before:page; }
-    .cover { break-before:auto !important; }
-    .chapter-frame { min-height:auto; width:100%; padding:54px 0; grid-template-columns:180px 1fr; gap:44px; }
-    .chapter-header { position:static; }
-    .chapter-body p, .chapter-body li { font-size:12pt; }
-    a { text-decoration:none; }
+    .skip-link, .jump-nav, .wiki-link { display: none; }
+    .hero { background: none; color: var(--ink); border-bottom: 1px solid var(--line); }
+    .hero-inner, .layout, .sources { width: 100%; }
+    h1, .subtitle { color: var(--ink); }
+    .editing-note, .eyebrow { color: var(--muted); border-color: var(--line); }
+    .layout { display: block; }
+    .conversation-section { break-inside: avoid; padding: 30px 0; }
+    .speaker { box-shadow: none; }
   }
 </style>
 </head>
-<body class="slides">
-<a class="skip-link" href="#book">Skip to book</a>
-<div class="topbar">
-  <a class="wiki-link" href="/pixi-wiki/wiki/rays-into-the-shadow/README.md.html">Pixi Wiki ↗</a>
-  <div class="reader-controls">
-    <label><span class="visually-hidden">Jump to chapter</span><select class="chapter-select" id="chapterSelect" aria-label="Jump to chapter"><option value="cover">Cover & contents</option><option value="chapter-00-preface">Preface — What This Book Keeps</option><option value="chapter-01-an-introduction-between-strangers">Chapter 1 — An Introduction Between Strangers</option><option value="chapter-02-arriving-late-moving-quickly">Chapter 2 — Arriving Late, Moving Quickly</option><option value="chapter-03-jamie-asks-what-got-you-stuck">Chapter 3 — Jamie Asks What Got You Stuck</option><option value="chapter-04-the-edge-of-the-non-testable">Chapter 4 — The Edge of the Non-Testable</option><option value="chapter-05-rays-into-the-shadow">Chapter 5 — Rays into the Shadow</option><option value="chapter-06-how-can-we-know">Chapter 6 — How Can We Know?</option><option value="chapter-07-many-agents-one-song">Chapter 7 — Many Agents, One Song</option><option value="chapter-08-the-limit-of-the-trivial">Chapter 8 — The Limit of the Trivial</option><option value="chapter-09-open-questions">Chapter 9 — Open Questions</option></select></label>
-    <button class="mode-toggle" id="modeToggle" type="button" aria-pressed="false">☰ Read by scrolling</button>
+<body>
+<a class="skip-link" href="#conversation">Skip to conversation</a>
+<header class="hero">
+  <div class="hero-inner">
+    <a class="wiki-link" href="/pixi-wiki/wiki/rays-into-the-shadow/README.md.html">← Pixi Wiki</a>
+    <p class="eyebrow">Jamie × Pham · 25 July 2026</p>
+    <h1>Chat Musings</h1>
+    <p class="subtitle">A cleaned conversation between Jamie (Pixiedust) and Pham about AI, unknown problems, truth, and what it means to move beyond known work.</p>
+    <p class="editing-note">Discord timestamps, attachment previews, and export clutter have been removed. The language is lightly reformulated for readability; the ideas, sequence, metaphors, uncertainty, and emotional tone are kept. This is a reading copy of the conversation, not a summary or an analysis.</p>
   </div>
-</div>
+</header>
 
-<main id="book">
-  <section class="panel cover" id="cover" aria-labelledby="book-title">
-    <div class="cover-inner">
-      <div class="cover-grid">
-        <header>
-          <div class="eyebrow">An open, annotated conversation · Edition 0.1</div>
-          <h1 id="book-title">Rays into the Shadow</h1>
-          <p class="cover-intro">A chaptered account of the exchange between Jamie (Pixiedust) and Pham about unknown problems, independent methods, convergence, truth, and the edge of known work.</p>
-          <blockquote class="cover-quote">“We cannot see into the shadow at first. We send a ray of light into it.”</blockquote>
-          <div class="cover-meta"><span>Source through 25 July 2026</span><span>Status: ongoing</span><span>10 reading sections</span></div>
-          <details class="provenance">
-            <summary>Source records & editorial status</summary>
-            <p><a href="/pixi-wiki/wiki/rays-into-the-shadow/raw/transcripts/2026-07-25-introduction.md.html">First supplied transcript</a> · Body SHA-256 <code>26f818a54881262c5e4295ab6e6dfeeef0008dc06d52aba5904a4bca5daa8d93</code></p>
-            <p><a href="/pixi-wiki/wiki/rays-into-the-shadow/raw/transcripts/2026-07-25-request-excerpt.md.html">Publication-request excerpt</a> · Body SHA-256 <code>d0cf24417c875addefee8b5a1b2e9647e116f5fba9124b7648a0f76b13cbac9d</code></p>
-            <p>The records remain separate. Quotes are preserved. Editorial claims are labeled. Named artifacts without supplied bodies remain not reviewed.</p>
-          </details>
-        </header>
-        <nav class="contents" id="contents" aria-label="Book contents">
-          <div class="eyebrow">Browse the book</div>
-          <h2>Contents</h2>
-          <ol><li class="part"><span>Part I</span>The exchange</li><li><a href="#chapter-00-preface" data-panel-target="chapter-00-preface"><span>Preface</span><strong>What This Book Keeps</strong></a></li><li><a href="#chapter-01-an-introduction-between-strangers" data-panel-target="chapter-01-an-introduction-between-strangers"><span>Chapter 1</span><strong>An Introduction Between Strangers</strong></a></li><li><a href="#chapter-02-arriving-late-moving-quickly" data-panel-target="chapter-02-arriving-late-moving-quickly"><span>Chapter 2</span><strong>Arriving Late, Moving Quickly</strong></a></li><li><a href="#chapter-03-jamie-asks-what-got-you-stuck" data-panel-target="chapter-03-jamie-asks-what-got-you-stuck"><span>Chapter 3</span><strong>Jamie Asks What Got You Stuck</strong></a></li><li class="part"><span>Part II</span>Pham’s reply to Jamie’s question</li><li><a href="#chapter-04-the-edge-of-the-non-testable" data-panel-target="chapter-04-the-edge-of-the-non-testable"><span>Chapter 4</span><strong>The Edge of the Non-Testable</strong></a></li><li><a href="#chapter-05-rays-into-the-shadow" data-panel-target="chapter-05-rays-into-the-shadow"><span>Chapter 5</span><strong>Rays into the Shadow</strong></a></li><li><a href="#chapter-06-how-can-we-know" data-panel-target="chapter-06-how-can-we-know"><span>Chapter 6</span><strong>How Can We Know?</strong></a></li><li><a href="#chapter-07-many-agents-one-song" data-panel-target="chapter-07-many-agents-one-song"><span>Chapter 7</span><strong>Many Agents, One Song</strong></a></li><li><a href="#chapter-08-the-limit-of-the-trivial" data-panel-target="chapter-08-the-limit-of-the-trivial"><span>Chapter 8</span><strong>The Limit of the Trivial</strong></a></li><li class="part"><span>Part III</span>The next exchange</li><li><a href="#chapter-09-open-questions" data-panel-target="chapter-09-open-questions"><span>Chapter 9</span><strong>Open Questions</strong></a></li></ol>
-          <div class="reading-key">
-            <div><b>Quoted passage</b><span>The speaker’s words, preserved from the supplied source.</span></div>
-            <div><b>Editor’s note</b><span>What the passage says, supports, or leaves open.</span></div>
-            <div><b>Not reviewed</b><span>An artifact was named, but its body was not supplied for this edition.</span></div>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </section>
-  <section class="panel chapter" id="chapter-00-preface" aria-labelledby="chapter-00-preface-title">
-    <div class="chapter-frame">
-      <header class="chapter-header">
-        <div class="chapter-index">00</div>
-        <div class="part-label">Part I · The exchange</div>
-        <h2 id="chapter-00-preface-title">Preface — What This Book Keeps</h2>
-        <a class="back-to-contents" href="#contents" data-panel-target="cover">Contents ↑</a>
-      </header>
-      <article class="chapter-body">
-        <blockquote>“We cannot see into the shadow at first. We sent a ray of light into it.”</blockquote>
-<p>On 25 July 2026, a friend introduced Jamie, writing as Pixiedust, and Pham. Pham shared a group of files and ideas. Jamie asked what had stopped him. Their exchange opens a harder question: how can two people use AI to work on problems whose full answers are not known, and how can they tell truth from a convincing mistake?</p>
-<p>This book follows their exchange by turn and by theme. It is not a profile of Pham. It is not a polished speech placed in either speaker&#x27;s mouth. Pham&#x27;s long first account and Jamie&#x27;s shorter questions both shape the argument.</p>
-<h3>The editing boundary</h3>
-<p>Quoted passages keep the words from the supplied transcript. The editor has not silently fixed grammar, spelling, repetition, or metaphor inside them.</p>
-<p>The prose outside the quotations follows a simpler rule: say what the passage means, say what the evidence supports, and say what remains open. The <a href="/pixi-wiki/wiki/rays-into-the-shadow/wiki/summaries/editorial-method.md.html">editorial method</a> gives the full test.</p>
-<h3>An open edition</h3>
-<p>This is edition 0.1. The source ends while the speakers are still talking. Later messages will enter as new dated sources and new numbered chapters. Earlier source files will remain unchanged.</p>
-        <nav class="chapter-nav" aria-label="Chapter navigation"><a href="#chapter-01-an-introduction-between-strangers" data-panel-target="chapter-01-an-introduction-between-strangers"><span>Next</span><strong>An Introduction Between Strangers</strong></a></nav>
+<main class="layout" id="conversation">
+  <nav class="jump-nav" aria-label="Conversation sections">
+    <strong>Jump to</strong>
+    <ol>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#coming-to-ai">Coming to AI</a></li>
+      <li><a href="#boundary">The boundary</a></li>
+      <li><a href="#jamie-asks">Jamie asks</a></li>
+      <li><a href="#next">What comes next</a></li>
+      <li><a href="#unknown">Unknown problems</a></li>
+      <li><a href="#truth">Truth</a></li>
+      <li><a href="#agents">Many agents</a></li>
+      <li><a href="#stuck">Feeling stuck</a></li>
+    </ol>
+  </nav>
+
+  <div class="conversation">
+    <section class="conversation-section" id="introduction">
+      <div class="section-number">01 · Meeting</div>
+      <h2>Introduction</h2>
+      <p class="context">A mutual friend introduced Jamie, writing as Pixiedust, and Pham so they could explain their ideas directly to each other.</p>
+      <article class="speaker jamie">
+        <div class="speaker-label">Jamie · Pixiedust</div>
+        <p>Hello 🙂</p>
       </article>
-    </div>
-  </section>
-  <section class="panel chapter" id="chapter-01-an-introduction-between-strangers" aria-labelledby="chapter-01-an-introduction-between-strangers-title">
-    <div class="chapter-frame">
-      <header class="chapter-header">
-        <div class="chapter-index">01</div>
-        <div class="part-label">Part I · The exchange</div>
-        <h2 id="chapter-01-an-introduction-between-strangers-title">Chapter 1 — An Introduction Between Strangers</h2>
-        <a class="back-to-contents" href="#contents" data-panel-target="cover">Contents ↑</a>
-      </header>
-      <article class="chapter-body">
-        <h3>Source passage</h3>
-<blockquote><strong>text:</strong> Hello!!<br>pham meet pixi<br>pixi meet pham<br><br><strong>Pixiedust:</strong> Hello 🙂<br><br><strong>text:</strong> i tried my best to explain a little about both of your ideas<br>but you&#x27;ll be able to explain them better</blockquote>
-<h3>Editor&#x27;s note</h3>
-<p>The transcript labels the introducer as <code>text</code>. This may be an export label rather than a chosen name, so the book calls this speaker <strong>the introducer</strong> outside quotations.</p>
-<p>The opening creates the space for a conversation between Jamie, writing as Pixiedust, and Pham. Jamie answers the introduction. Pham then offers his path into the problem. The chapters that follow must keep returning to what they ask and answer together.</p>
-        <nav class="chapter-nav" aria-label="Chapter navigation"><a href="#chapter-00-preface" data-panel-target="chapter-00-preface"><span>Previous</span><strong>What This Book Keeps</strong></a><a href="#chapter-02-arriving-late-moving-quickly" data-panel-target="chapter-02-arriving-late-moving-quickly"><span>Next</span><strong>Arriving Late, Moving Quickly</strong></a></nav>
+    </section>
+
+    <section class="conversation-section" id="coming-to-ai">
+      <div class="section-number">02 · Starting point</div>
+      <h2>How Pham came to AI</h2>
+      <article class="speaker pham">
+        <div class="speaker-label">Pham</div>
+        <p>I started using AI about a week before Fable 5 was released. I came to it late, but I wanted to understand what was possible, so I began studying and obsessing over how AI behaves and what it is.</p>
+        <p>I hadn’t read the existing AI literature. I followed my own pathways and independently arrived at ideas that seemed to point toward the same unifying principles.</p>
       </article>
-    </div>
-  </section>
-  <section class="panel chapter" id="chapter-02-arriving-late-moving-quickly" aria-labelledby="chapter-02-arriving-late-moving-quickly-title">
-    <div class="chapter-frame">
-      <header class="chapter-header">
-        <div class="chapter-index">02</div>
-        <div class="part-label">Part I · The exchange</div>
-        <h2 id="chapter-02-arriving-late-moving-quickly-title">Chapter 2 — Arriving Late, Moving Quickly</h2>
-        <a class="back-to-contents" href="#contents" data-panel-target="cover">Contents ↑</a>
-      </header>
-      <article class="chapter-body">
-        <h3>Source passage</h3>
-<blockquote><strong>phamfam:</strong> Began using AI 1 week before Fable 5 was released. Was late but wanted to understand and begin to see what was possible and began studying and obsessing over the behavior and nature.... no independent research on any of the AI literature... all fully independent and fully independent pathways and conclusions to the same unifying ideas.....</blockquote>
-<h3>Editor&#x27;s note</h3>
-<p>The reference to “Fable 5” appears exactly as written. This edition does not guess what name or date Pham meant.</p>
-<p>The passage makes three claims:</p>
-<ol>
-<li>Pham had only recently begun to use AI.</li>
-<li>He studied its behaviour closely.</li>
-<li>He believes he reached ideas by his own route before reading the related AI literature.</li>
-</ol>
-<p>The third point is a claim about his path, not independent proof of it. The attachments may help trace that path, but this edition has only their names and sizes.</p>
-<p>This opening account becomes a conversation in Jamie&#x27;s next turn. Jamie keeps the independent path in view and asks what stopped the work.</p>
-        <nav class="chapter-nav" aria-label="Chapter navigation"><a href="#chapter-01-an-introduction-between-strangers" data-panel-target="chapter-01-an-introduction-between-strangers"><span>Previous</span><strong>An Introduction Between Strangers</strong></a><a href="#chapter-03-jamie-asks-what-got-you-stuck" data-panel-target="chapter-03-jamie-asks-what-got-you-stuck"><span>Next</span><strong>Jamie Asks What Got You Stuck</strong></a></nav>
+    </section>
+
+    <section class="conversation-section" id="boundary">
+      <div class="section-number">03 · The work</div>
+      <h2>Working at the boundary</h2>
+      <article class="speaker pham">
+        <div class="speaker-label">Pham</div>
+        <p>I viewed the problem through epistemology, consilience, and provenance: how we know something, how different kinds of evidence support one another, and where each claim or result came from.</p>
+        <p>I wanted to understand the edge of programs that could not be tested in the usual way—problems with no known solution, but where an answer could still be bounded and gradually approached.</p>
+        <p>I worked to build up an understanding of computational physics and mathematics, then tried to make a multi-front, concurrent move across all of known physics.</p>
       </article>
-    </div>
-  </section>
-  <section class="panel chapter" id="chapter-03-jamie-asks-what-got-you-stuck" aria-labelledby="chapter-03-jamie-asks-what-got-you-stuck-title">
-    <div class="chapter-frame">
-      <header class="chapter-header">
-        <div class="chapter-index">03</div>
-        <div class="part-label">Part I · The exchange</div>
-        <h2 id="chapter-03-jamie-asks-what-got-you-stuck-title">Chapter 3 — Jamie Asks What Got You Stuck</h2>
-        <a class="back-to-contents" href="#contents" data-panel-target="cover">Contents ↑</a>
-      </header>
-      <article class="chapter-body">
-        <h3>Jamie&#x27;s turn</h3>
-<blockquote><strong>Jamie (Pixiedust):</strong> Sounds like you’ve done an incredible amount in a really short time - pretty intense deep dive!  Interesting you managed to rediscover those ideas without prior exposure — there’s something powerful about arriving at ideas independently. I’d be curious to hear what specifically got you stuck after that point. I’m not an expert in all those fields and sounds like you have a very unique approach but happy to try and bring my skills and knowledge to help think them through. I imagine like all things once I read it I’ll have a million questions!</blockquote>
-<h3>What this turn changes</h3>
-<p>Jamie does three things.</p>
-<ol>
-<li>Jamie recognizes the speed and scope of Pham&#x27;s work.</li>
-<li>Jamie treats independent arrival as interesting, while stopping short of calling it proof.</li>
-<li>Jamie asks where the work stopped.</li>
-</ol>
-<p>That last question is the north star for the rest of this edition. Pham&#x27;s later remarks about non-testable programs, rays, truth, many agents, and the “domain of the trivial” are read as parts of his answer. They are not free-standing doctrine.</p>
-<p>Jamie also offers a role: read, ask questions, and bring another set of skills. The conversation can therefore test ideas between two people instead of turning one person&#x27;s account into a finished system.</p>
-<h3>Pham&#x27;s immediate reply</h3>
-<blockquote><strong>Pham:</strong> Yup. I haven’t really tried to map out or think about what is necessarily  next. But I’ve been driven to finish documenting and trace back fully all of my work and my line of thinking as extensively as possible. I’m really happy with my own personal wiki and codex for myself as it helps me reason. I now have everything fully traceable. Verifiable. And public.<br><br>I am going to finish exploring that and picking a few cool and interesting projects to improve upon for a little and figure out what’s next.<br><br><strong>Jamie (Pixiedust):</strong> Sounds good!</blockquote>
-<p>Jamie briefly accepts the practical plan. Pham&#x27;s account then continues into the deeper boundary behind it: non-testable programs, rays, truth, many agents, and the limit of known work.</p>
-        <nav class="chapter-nav" aria-label="Chapter navigation"><a href="#chapter-02-arriving-late-moving-quickly" data-panel-target="chapter-02-arriving-late-moving-quickly"><span>Previous</span><strong>Arriving Late, Moving Quickly</strong></a><a href="#chapter-04-the-edge-of-the-non-testable" data-panel-target="chapter-04-the-edge-of-the-non-testable"><span>Next</span><strong>The Edge of the Non-Testable</strong></a></nav>
+      <aside class="shared-material">Pham shared supporting work alongside this message, including Tapestry PDFs, a computational physics portfolio, the Huygens Chronicle, Proof Machine briefs, an almanac, and a campaign sheet. The file sizes and preview fragments have been removed here.</aside>
+    </section>
+
+    <section class="conversation-section" id="jamie-asks">
+      <div class="section-number">04 · Jamie’s response</div>
+      <h2>Jamie asks what got Pham stuck</h2>
+      <article class="speaker jamie">
+        <div class="speaker-label">Jamie · Pixiedust</div>
+        <p>Mmm, I’m not an expert either 😅, but I can read through it and try to get a sense of what you’re building.</p>
+        <p>It sounds like you’ve done an incredible amount in a really short time—a pretty intense deep dive. It’s interesting that you managed to rediscover those ideas without prior exposure. There’s something powerful about arriving at ideas independently.</p>
+        <p>I’d be curious to hear what specifically got you stuck after that point. I’m not an expert in all those fields, and your approach sounds unique, but I’m happy to bring my own skills and knowledge to help think them through. I imagine I’ll have a million questions once I’ve read it.</p>
       </article>
-    </div>
-  </section>
-  <section class="panel chapter" id="chapter-04-the-edge-of-the-non-testable" aria-labelledby="chapter-04-the-edge-of-the-non-testable-title">
-    <div class="chapter-frame">
-      <header class="chapter-header">
-        <div class="chapter-index">04</div>
-        <div class="part-label">Part II · Pham’s reply to Jamie’s question</div>
-        <h2 id="chapter-04-the-edge-of-the-non-testable-title">Chapter 4 — The Edge of the Non-Testable</h2>
-        <a class="back-to-contents" href="#contents" data-panel-target="cover">Contents ↑</a>
-      </header>
-      <article class="chapter-body">
-        <h3>Exchange anchor</h3>
-<p>Jamie has just asked what got Pham stuck. The next remarks describe the boundary he was trying to cross.</p>
-<h3>Source passages</h3>
-<p>The export records these lines between the attachment list and the next timestamp. It does not repeat the speaker&#x27;s name there.</p>
-<blockquote>viewed the problem from the perspective of epistemology, consilience, provenance<br><br>Wanted to understand the edge of programs that were Non-Testable<br>programs with no known solution but can be converged and bounded upon<br><br>Worked to build up understanding of all computational physics and computational mathematics and do a multi-frontal concurrent and parallel move upon all of known physics</blockquote>
-<h3>Editor&#x27;s note</h3>
-<p>The central point is narrow: some problems have no known answer that can serve as a full test. That does not make every check impossible.</p>
-<p>A researcher may still test a bound, a special case, a conservation law, a known limit, or agreement with another method. These checks do not reveal the whole answer. They mark the edges of what an answer must satisfy.</p>
-<p>The source uses three technical words:</p>
-<ul>
-<li><strong>Epistemology:</strong> how we know.</li>
-<li><strong>Consilience:</strong> support from different kinds of evidence.</li>
-<li><strong>Provenance:</strong> where a claim, datum, or result came from.</li>
-</ul>
-<p>These words stay because each names a distinct part of the problem. The rest can be said plainly: approach the unknown from several directions, keep the path, and compare the results.</p>
-        <nav class="chapter-nav" aria-label="Chapter navigation"><a href="#chapter-03-jamie-asks-what-got-you-stuck" data-panel-target="chapter-03-jamie-asks-what-got-you-stuck"><span>Previous</span><strong>Jamie Asks What Got You Stuck</strong></a><a href="#chapter-05-rays-into-the-shadow" data-panel-target="chapter-05-rays-into-the-shadow"><span>Next</span><strong>Rays into the Shadow</strong></a></nav>
+    </section>
+
+    <section class="conversation-section" id="next">
+      <div class="section-number">05 · Immediate next step</div>
+      <h2>Documenting the work and deciding what comes next</h2>
+      <article class="speaker pham">
+        <div class="speaker-label">Pham</div>
+        <p>Yeah. I haven’t really tried to map out or decide what comes next. I’ve been driven to finish documenting all my work and trace my line of thinking as fully as possible.</p>
+        <p>I’m really happy with the personal wiki and codex I’ve made for myself, because they help me reason. Everything is now traceable, verifiable, and public.</p>
+        <p>I’m going to finish exploring that, choose a few cool and interesting projects to improve, and use that time to figure out what comes next.</p>
       </article>
-    </div>
-  </section>
-  <section class="panel chapter" id="chapter-05-rays-into-the-shadow" aria-labelledby="chapter-05-rays-into-the-shadow-title">
-    <div class="chapter-frame">
-      <header class="chapter-header">
-        <div class="chapter-index">05</div>
-        <div class="part-label">Part II · Pham’s reply to Jamie’s question</div>
-        <h2 id="chapter-05-rays-into-the-shadow-title">Chapter 5 — Rays into the Shadow</h2>
-        <a class="back-to-contents" href="#contents" data-panel-target="cover">Contents ↑</a>
-      </header>
-      <article class="chapter-body">
-        <h3>Source passage</h3>
-<blockquote><strong>phamfam:</strong> The sense is that many problems are not known but we know the edges of them and can bound them<br><br>We look at the different edges and versions and problems of it<br><br>We cannot see into the shadow at first. We sent a ray of light into it. We send another ray of light from a different angle. They both combine together and we can see.</blockquote>
-<h3>Editor&#x27;s note</h3>
-<p>The shadow is the unknown problem. A ray is one method of inquiry. A second ray uses another angle. Where their results meet, part of the hidden structure may become clearer.</p>
-<p>The image becomes useful when each word points to something concrete:</p>
-<div class="table-wrap"><table><thead><tr><th>Image</th><th>Working meaning</th></tr></thead><tbody><tr><td>Shadow</td><td>The part of the problem not yet known</td></tr><tr><td>Edge</td><td>A bound, limit, special case, or observed fact</td></tr><tr><td>Ray</td><td>A method, model, experiment, proof, or agent inquiry</td></tr><tr><td>Angle</td><td>The assumptions, evidence, and tools used by that route</td></tr><tr><td>Overlap</td><td>Agreement that survives comparison</td></tr></tbody></table></div>
-<p>One caution follows. Two rays can share the same flaw. Agreement matters most when the routes are truly different and their paths can be checked.</p>
-        <nav class="chapter-nav" aria-label="Chapter navigation"><a href="#chapter-04-the-edge-of-the-non-testable" data-panel-target="chapter-04-the-edge-of-the-non-testable"><span>Previous</span><strong>The Edge of the Non-Testable</strong></a><a href="#chapter-06-how-can-we-know" data-panel-target="chapter-06-how-can-we-know"><span>Next</span><strong>How Can We Know?</strong></a></nav>
+      <article class="speaker jamie">
+        <div class="speaker-label">Jamie · Pixiedust</div>
+        <p>Sounds good!</p>
       </article>
-    </div>
-  </section>
-  <section class="panel chapter" id="chapter-06-how-can-we-know" aria-labelledby="chapter-06-how-can-we-know-title">
-    <div class="chapter-frame">
-      <header class="chapter-header">
-        <div class="chapter-index">06</div>
-        <div class="part-label">Part II · Pham’s reply to Jamie’s question</div>
-        <h2 id="chapter-06-how-can-we-know-title">Chapter 6 — How Can We Know?</h2>
-        <a class="back-to-contents" href="#contents" data-panel-target="cover">Contents ↑</a>
-      </header>
-      <article class="chapter-body">
-        <h3>Source passage</h3>
-<blockquote><strong>phamfam:</strong> I asked myself how can one know anything. How can one know if the AI lies or tells the truth.<br><br>How can one know anything a human says is true. It is all tied to the Unity of Knowledge. The resonance of it all. It all must unite to one. The center. The underlying truth we all share. This is Truth. This is God. This is the underlying means by which everything must derive from.<br><br>Everything must cascade from what we know from the start.<br><br>And everything from all angles must tie together as one.</blockquote>
-<h3>Editor&#x27;s note</h3>
-<p>Pham joins two questions.</p>
-<p>The first is practical: how should we test a claim made by an AI or a person?</p>
-<p>The second is theological: what makes truth one rather than a set of unrelated facts? Pham answers that the valid accounts must meet in one underlying reality, which he names God.</p>
-<p>The book records both claims without treating one as proof of the other. A scientific check can test a result. It cannot, by itself, prove a theological account of truth. A theological belief can guide why someone seeks unity. It cannot replace the sources, measurements, calculations, and refuters needed to test a scientific claim.</p>
-<p>The open work is to state what “we know from the start” means in each case. Is it an observation, an axiom, a law, a definition, or a belief? Clear names let the reader see which kind of claim is doing the work.</p>
-        <nav class="chapter-nav" aria-label="Chapter navigation"><a href="#chapter-05-rays-into-the-shadow" data-panel-target="chapter-05-rays-into-the-shadow"><span>Previous</span><strong>Rays into the Shadow</strong></a><a href="#chapter-07-many-agents-one-song" data-panel-target="chapter-07-many-agents-one-song"><span>Next</span><strong>Many Agents, One Song</strong></a></nav>
+    </section>
+
+    <section class="conversation-section" id="unknown">
+      <div class="section-number">06 · Bounded unknowns</div>
+      <h2>Looking into unknown problems</h2>
+      <article class="speaker pham">
+        <div class="speaker-label">Pham</div>
+        <p>The sense I have is that many problems are unknown, but we know their edges and can bound them. We can look at different boundaries, versions, and formulations of the same problem.</p>
+        <p>We cannot see into the shadow at first. We send one ray of light into it, then another from a different angle. When the rays combine, we begin to see.</p>
       </article>
-    </div>
-  </section>
-  <section class="panel chapter" id="chapter-07-many-agents-one-song" aria-labelledby="chapter-07-many-agents-one-song-title">
-    <div class="chapter-frame">
-      <header class="chapter-header">
-        <div class="chapter-index">07</div>
-        <div class="part-label">Part II · Pham’s reply to Jamie’s question</div>
-        <h2 id="chapter-07-many-agents-one-song-title">Chapter 7 — Many Agents, One Song</h2>
-        <a class="back-to-contents" href="#contents" data-panel-target="cover">Contents ↑</a>
-      </header>
-      <article class="chapter-body">
-        <h3>Source passage</h3>
-<blockquote><strong>phamfam:</strong> We send agents out from all angles and they must come together and come to the same conclusion as one.<br><br>A single AI agent is fallible but all of them moving outward and coming together upon the same truth must be resonanting to the same song.<br><br>The singular song that must sing out into every corner.</blockquote>
-<h3>Editor&#x27;s note</h3>
-<p>Pham turns the image into a method: give the same question to several agents, let them approach it from different directions, and compare the results.</p>
-<p>A lone agent can fail. A group can fail too. Agents may share a model, prompt, source, benchmark, or hidden assumption. If they do, agreement may show repetition rather than independent support.</p>
-<p>For convergence to carry weight, each agent should show:</p>
-<ul>
-<li>the question it answered;</li>
-<li>the sources it used;</li>
-<li>the assumptions it made;</li>
-<li>the steps it took;</li>
-<li>the checks it ran;</li>
-<li>the result that would change its conclusion.</li>
-</ul>
-<p>The practical rule is simple: <strong>convergence is evidence, not proof</strong>. Disagreement is also useful. It can reveal an assumption that agreement would have hidden.</p>
-        <nav class="chapter-nav" aria-label="Chapter navigation"><a href="#chapter-06-how-can-we-know" data-panel-target="chapter-06-how-can-we-know"><span>Previous</span><strong>How Can We Know?</strong></a><a href="#chapter-08-the-limit-of-the-trivial" data-panel-target="chapter-08-the-limit-of-the-trivial"><span>Next</span><strong>The Limit of the Trivial</strong></a></nav>
+    </section>
+
+    <section class="conversation-section" id="truth">
+      <div class="section-number">07 · Knowing</div>
+      <h2>How can we know what is true?</h2>
+      <article class="speaker pham">
+        <div class="speaker-label">Pham</div>
+        <p>I asked myself: how can anyone know anything? How can we know whether an AI is lying or telling the truth? How can we know whether anything a human says is true?</p>
+        <p>For me, this is tied to the unity of knowledge and its resonance. Everything must unite as one around a common center—the underlying truth we all share. This is Truth. This is God. It is the underlying source from which everything else must derive.</p>
+        <p>Everything must cascade from what we know at the beginning. Evidence from every angle must tie together as one.</p>
       </article>
-    </div>
-  </section>
-  <section class="panel chapter" id="chapter-08-the-limit-of-the-trivial" aria-labelledby="chapter-08-the-limit-of-the-trivial-title">
-    <div class="chapter-frame">
-      <header class="chapter-header">
-        <div class="chapter-index">08</div>
-        <div class="part-label">Part II · Pham’s reply to Jamie’s question</div>
-        <h2 id="chapter-08-the-limit-of-the-trivial-title">Chapter 8 — The Limit of the Trivial</h2>
-        <a class="back-to-contents" href="#contents" data-panel-target="cover">Contents ↑</a>
-      </header>
-      <article class="chapter-body">
-        <h3>Source passage</h3>
-<blockquote><strong>Jamie (Pixiedust):</strong> I’d be curious to hear what specifically got you stuck after that point.<br><br><strong>Pham:</strong> I just felt so stuck.<br><br>I mapped out known computational physics. Fluid Dynamics. Electromagnetics. Mechanics. Chemical Evolution.<br><br>But I was stuck. They united and sang as one, but they were still in the domain of the trivial.</blockquote>
-<h3>Editor&#x27;s note</h3>
-<p>Jamie&#x27;s question receives a direct answer: Pham had found unity across several known fields, but that unity did not solve the deeper problem.</p>
-<p>A map can be wide, coherent, and still remain inside known territory. Several methods can reproduce accepted results and still discover nothing new. The block was not only how to unite fields. It was how to move from a checked map of known answers into a question whose answer no one yet has.</p>
-<p>“Trivial” here does not mean easy or worthless. It marks a boundary in Pham&#x27;s account: work can be hard and correct while still staying within results that are already known.</p>
-<p>The source stops at that boundary.</p>
-        <nav class="chapter-nav" aria-label="Chapter navigation"><a href="#chapter-07-many-agents-one-song" data-panel-target="chapter-07-many-agents-one-song"><span>Previous</span><strong>Many Agents, One Song</strong></a><a href="#chapter-09-open-questions" data-panel-target="chapter-09-open-questions"><span>Next</span><strong>Open Questions</strong></a></nav>
+    </section>
+
+    <section class="conversation-section" id="agents">
+      <div class="section-number">08 · Convergence</div>
+      <h2>Many agents, one conclusion</h2>
+      <article class="speaker pham">
+        <div class="speaker-label">Pham</div>
+        <p>We send agents out from many different angles, then bring them back together. They must converge on the same conclusion.</p>
+        <p>A single AI agent is fallible. But when many agents move outward independently and return to the same truth, they begin to resonate with the same song—a singular song that can carry into every corner.</p>
       </article>
-    </div>
-  </section>
-  <section class="panel chapter" id="chapter-09-open-questions" aria-labelledby="chapter-09-open-questions-title">
-    <div class="chapter-frame">
-      <header class="chapter-header">
-        <div class="chapter-index">09</div>
-        <div class="part-label">Part III · The next exchange</div>
-        <h2 id="chapter-09-open-questions-title">Chapter 9 — Open Questions</h2>
-        <a class="back-to-contents" href="#contents" data-panel-target="cover">Contents ↑</a>
-      </header>
-      <article class="chapter-body">
-        <p>This edition ends before the conversation does. It should not invent a conclusion.</p>
-<h3>Between Jamie and Pham</h3>
-<ul>
-<li>Which parts of Pham&#x27;s answer does Jamie accept, question, or reject?</li>
-<li>What does Jamie mean by “stuck” after reading the work?</li>
-<li>Which of Jamie&#x27;s questions changes Pham&#x27;s map of the problem?</li>
-<li>Where do their definitions of truth, evidence, and discovery differ?</li>
-</ul>
-<h3>About the shadow</h3>
-<ul>
-<li>What exact problem sits in the shadow?</li>
-<li>Which edges can already be observed or bounded?</li>
-<li>What would count as a result beyond the known map?</li>
-</ul>
-<h3>About the rays</h3>
-<ul>
-<li>Which methods are independent enough to count as different angles?</li>
-<li>What sources, models, prompts, or assumptions do they share?</li>
-<li>What result would refute each route?</li>
-</ul>
-<h3>About convergence</h3>
-<ul>
-<li>How should the group judge disagreement?</li>
-<li>When does agreement strengthen a claim?</li>
-<li>When does it only repeat one error?</li>
-</ul>
-<h3>About truth</h3>
-<ul>
-<li>What does each speaker mean by truth?</li>
-<li>Which claims are scientific, philosophical, or theological?</li>
-<li>How can those claims speak to one another without borrowing proof they have not earned?</li>
-</ul>
-<h3>About the next section</h3>
-<p>The next dated source should begin where the speakers continue, not where the editor guesses they will go.</p>
-        <nav class="chapter-nav" aria-label="Chapter navigation"><a href="#chapter-08-the-limit-of-the-trivial" data-panel-target="chapter-08-the-limit-of-the-trivial"><span>Previous</span><strong>The Limit of the Trivial</strong></a><a href="#contents" data-panel-target="cover"><span>Return</span><strong>Cover & contents</strong></a></nav>
+    </section>
+
+    <section class="conversation-section" id="stuck">
+      <div class="section-number">09 · The limit</div>
+      <h2>Where Pham felt stuck</h2>
+      <article class="speaker pham">
+        <div class="speaker-label">Pham</div>
+        <p>I still felt so stuck.</p>
+        <p>I had mapped out known computational physics: fluid dynamics, electromagnetics, mechanics, and chemical evolution.</p>
+        <p>But I was stuck. They united and sang as one, but they were still in the domain of the trivial.</p>
       </article>
-    </div>
-  </section>
+      <p class="context">The supplied conversation ends here.</p>
+    </section>
+  </div>
 </main>
 
-<nav class="deck-nav" aria-label="Presentation navigation">
-  <button id="prevBtn" type="button" aria-label="Previous chapter">←</button>
-  <div class="deck-progress" id="deckProgress" aria-live="polite"></div>
-  <button id="nextBtn" type="button" aria-label="Next chapter">→</button>
-</nav>
-<div class="slide-count" id="slideCount"></div>
-
-<script>
-(function () {
-  "use strict";
-  var panels = Array.prototype.slice.call(document.querySelectorAll(".panel"));
-  var body = document.body;
-  var toggle = document.getElementById("modeToggle");
-  var select = document.getElementById("chapterSelect");
-  var progress = document.getElementById("deckProgress");
-  var count = document.getElementById("slideCount");
-  var index = Math.max(0, panels.findIndex(function (panel) { return "#" + panel.id === location.hash; }));
-
-  function isSlides() { return body.classList.contains("slides"); }
-  function updateControls() {
-    select.value = panels[index].id;
-    progress.textContent = index === 0 ? "Cover" : "Chapter " + index;
-    count.textContent = (index + 1) + " / " + panels.length;
-  }
-  function render() {
-    panels.forEach(function (panel, i) {
-      var active = i === index;
-      panel.classList.toggle("active", active);
-      panel.setAttribute("aria-hidden", active ? "false" : "true");
-      if (active) panel.scrollTop = 0;
-    });
-    updateControls();
-    history.replaceState(null, "", "#" + panels[index].id);
-  }
-  function goTo(target, smooth) {
-    var next = typeof target === "number" ? target : panels.findIndex(function (panel) { return panel.id === target; });
-    if (next < 0) return;
-    index = Math.max(0, Math.min(panels.length - 1, next));
-    if (isSlides()) {
-      render();
-    } else {
-      updateControls();
-      panels[index].scrollIntoView({ behavior:smooth ? "smooth" : "auto", block:"start" });
-    }
-  }
-  function setMode(mode, keepPosition) {
-    var scroll = mode === "scroll";
-    body.classList.toggle("scroll", scroll);
-    body.classList.toggle("slides", !scroll);
-    toggle.textContent = scroll ? "▸ Present by chapter" : "☰ Read by scrolling";
-    toggle.setAttribute("aria-pressed", scroll ? "true" : "false");
-    panels.forEach(function (panel) { panel.removeAttribute("aria-hidden"); panel.classList.remove("active"); });
-    if (scroll) {
-      if (keepPosition) requestAnimationFrame(function () { panels[index].scrollIntoView({ block:"start" }); });
-      updateControls();
-    } else {
-      window.scrollTo(0,0);
-      render();
-    }
-    try { localStorage.setItem("rays-book-mode", mode); } catch (error) {}
-  }
-
-  document.querySelectorAll("[data-panel-target]").forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      goTo(link.getAttribute("data-panel-target"), true);
-    });
-  });
-  select.addEventListener("change", function () { goTo(select.value, true); });
-  toggle.addEventListener("click", function () { setMode(isSlides() ? "scroll" : "slides", true); });
-  document.getElementById("prevBtn").addEventListener("click", function () { goTo(index - 1); });
-  document.getElementById("nextBtn").addEventListener("click", function () { goTo(index + 1); });
-  document.addEventListener("keydown", function (event) {
-    if (!isSlides() || /^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(event.target.tagName)) return;
-    if (["ArrowRight","PageDown"," "].includes(event.key)) { event.preventDefault(); goTo(index + 1); }
-    if (["ArrowLeft","PageUp"].includes(event.key)) { event.preventDefault(); goTo(index - 1); }
-    if (event.key === "Home") goTo(0);
-    if (event.key === "End") goTo(panels.length - 1);
-  });
-
-  if ("IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      if (isSlides()) return;
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && entry.intersectionRatio > .2) {
-          var found = panels.indexOf(entry.target);
-          if (found >= 0) { index = found; updateControls(); }
-        }
-      });
-    }, { threshold:[.2,.5] });
-    panels.forEach(function (panel) { observer.observe(panel); });
-  }
-
-  var requested = new URLSearchParams(location.search).get("mode");
-  var saved = "";
-  try { saved = localStorage.getItem("rays-book-mode") || ""; } catch (error) {}
-  setMode(requested === "scroll" || requested === "slides" ? requested : (saved || "slides"), false);
-  if (isSlides()) render();
-})();
-</script>
+<footer class="sources">
+  <details>
+    <summary>Source records and editing boundary</summary>
+    <p>Two supplied exports overlap but do not match word for word. This reading copy groups their preserved conversational material by topic rather than pretending they are one literal timestamp transcript. The original records remain separate:</p>
+    <p><a href="/pixi-wiki/wiki/rays-into-the-shadow/raw/transcripts/2026-07-25-introduction.md.html">First supplied conversation export</a><br><code>26f818a54881262c5e4295ab6e6dfeeef0008dc06d52aba5904a4bca5daa8d93</code></p>
+    <p><a href="/pixi-wiki/wiki/rays-into-the-shadow/raw/transcripts/2026-07-25-request-excerpt.md.html">Supplementary conversation excerpt</a><br><code>d0cf24417c875addefee8b5a1b2e9647e116f5fba9124b7648a0f76b13cbac9d</code></p>
+  </details>
+</footer>
 </body>
 </html>
